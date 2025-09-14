@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://Jingyuan-Zheng.github.io/</loc>
-    <lastmod>2025-09-14T15:00:00+08:00</lastmod>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -15,8 +15,39 @@
                 href="https://Jingyuan-Zheng.github.io/"
                 />
   </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/git/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/github/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/hugo/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/macos/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://Jingyuan-Zheng.github.io/post/</loc>
-    <lastmod>2025-09-14T15:00:00+08:00</lastmod>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://Jingyuan-Zheng.github.io/zh-cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://Jingyuan-Zheng.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Jingyuan-Zheng.github.io/p/my-first-blog-setup-guide/</loc>
+    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://Jingyuan-Zheng.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
@@ -62,18 +93,6 @@
     <loc>https://Jingyuan-Zheng.github.io/links/</loc>
   </url><url>
     <loc>https://Jingyuan-Zheng.github.io/search/</loc>
-  </url><url>
-    <loc>https://Jingyuan-Zheng.github.io/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://Jingyuan-Zheng.github.io/zh-cn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://Jingyuan-Zheng.github.io/tags/"
-                />
   </url><url>
     <loc>https://Jingyuan-Zheng.github.io/categories/test/</loc>
   </url>
