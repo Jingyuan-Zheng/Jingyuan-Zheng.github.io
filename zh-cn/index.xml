@@ -410,69 +410,73 @@ transform: translateX(8px);
         <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/cover.png" alt="Featured image of post 如何在线足不出户办理马耳他eID" /&gt;&lt;p&gt;eID 在各项官方服务里都需要用到，比如考驾照等，什么业务都跑线下不如自己网上填好 😊&lt;/p&gt;
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/malta-eid/cover.png" alt="Featured image of post 如何在线足不出户办理马耳他eID" /&gt;&lt;style&gt;
+.post-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.5rem 0;
+    gap: 18px;
+}
+.post-figure img {
+    /* 核心逻辑：满足 width 或 height 任意一个上限即可，保持比例 */
+    max-width: 40%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+/* 悬停查看细节 */
+.post-figure img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.post-figure .caption {
+    font-size: 1.05rem;
+    color: var(--card-text-color-secondary);
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+@media (max-width: 768px) {
+    .post-figure img { max-width: 95%; max-height: 60vh; }
+    .post-figure img:hover { transform: none; }
+}
+&lt;/style&gt;
+&lt;p&gt;eID 在各项官方服务里都需要用到，比如考驾照等，什么业务都跑线下不如自己网上填好 😊&lt;/p&gt;
 &lt;p&gt;✳️ &lt;strong&gt;前提条件&lt;/strong&gt;：马耳他居民 / 永久居民 / 公民 / 获批的移民申请人&lt;/p&gt;
 &lt;p&gt;✳️ &lt;strong&gt;注意&lt;/strong&gt;：填过 form ID 10 的人或者明确知道申请过没激活，直接上网搜 eid malta，提供号码让其邮件（地址可见图 1）给你发激活链接就不用后续验证了（图 2）。如果不确定可以按照下面步骤操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;邮件联系方式&#34;
-	
-	
-&gt;
-&lt;em&gt;图 1：eID 邮件联系方式&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img2.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;激活示例&#34;
-	
-	
-&gt;
-&lt;em&gt;图 2：激活流程示例&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;1️⃣ &lt;strong&gt;登录身份局 Identità 官网&lt;/strong&gt;（图 3），选择首页的 &lt;strong&gt;Contact Us&lt;/strong&gt;（图 4）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img3.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;官网首页&#34;
-	
-	
-&gt;
-&lt;em&gt;图 3：Identità 官网首页&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;2️⃣ &lt;strong&gt;Support Station 下拉选择 eID 选项&lt;/strong&gt;（图 4），其他提问框根据自己的情况选择或填写。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img1.png&#34; alt=&#34;邮件联系方式&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 1：eID 邮件联系方式。直接联系身份局获取激活链接，省去复杂的验证步骤。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img2.png&#34; alt=&#34;激活示例&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 2：激活流程示例。收到邮件后的激活界面参考。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;1️⃣ &lt;strong&gt;登录身份局 Identità 官网&lt;/strong&gt;，选择首页的 &lt;strong&gt;Contact Us&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img3.png&#34; alt=&#34;官网首页&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 3：Identità 官网首页。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;2️⃣ &lt;strong&gt;Support Station 下拉选择 eID 选项&lt;/strong&gt;，其他提问框根据自己的情况选择或填写。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：这里的 Identity Card Number 填写的&lt;strong&gt;不是&lt;/strong&gt;欧盟居留卡右上角的号码，而是卡片人像背面的右下角 &lt;strong&gt;IDENTITY DOCUMENT NUMBER&lt;/strong&gt; 字样下的身份证号码（图 5）。如果你没有实体卡只有身份纸或者在办理卡片中，可询问工作人员。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img4.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;联系表单&#34;
-	
-	
-&gt;
-&lt;em&gt;图 4：选择 eID 支持选项&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img5.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ID Number 说明&#34;
-	
-	
-&gt;
-&lt;em&gt;图 5：IDENTITY DOCUMENT NUMBER 位置说明&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img4.png&#34; alt=&#34;联系表单&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 4：选择 eID 支持选项。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img5.png&#34; alt=&#34;ID Number 说明&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 5：IDENTITY DOCUMENT NUMBER 位置说明。请务必翻到卡片背面查找。&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;3️⃣ &lt;strong&gt;填写完成后等待电子邮件&lt;/strong&gt;。上班时间内几分钟就会有工作人员回复，可以继续通过电子邮件根据工作人员指示提供资料和信息，一般很简单。
 &lt;em&gt;邮件内会发一个 Customer Care 的链接可以激活咨询账户，相当于一个聊天室可以在这里对话，和电子邮件一样，不想麻烦也可以直接用电邮沟通。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;4️⃣ &lt;strong&gt;完成后工作人员会给你一个激活链接&lt;/strong&gt;。它会发送到办理身份时留的邮箱里。
@@ -480,30 +484,16 @@ transform: translateX(8px);
 &lt;p&gt;&lt;strong&gt;重点出现 ‼️&lt;/strong&gt;
 ✅ &lt;strong&gt;ID Number&lt;/strong&gt;：就是之前说的 IDENTITY DOCUMENT NUMBER（见图 5）。
 ✅ &lt;strong&gt;Document No.&lt;/strong&gt;：一般是输入欧盟居留卡正面的右上角带有国家代码的字母数字全部（图 6）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img6.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;居留卡正面对比&#34;
-	
-	
-&gt;
-&lt;em&gt;图 6：Document No. 示例&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img6.jpg&#34; alt=&#34;居留卡正面对比&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 6：Document No. 示例。此处输入卡面正面的完整文档编号。&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;激活成功以后可以修改邮件地址或者设置双因素验证，可以根据网页上的指导下载 App。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;小 Tips ⭐️&lt;/strong&gt;：iPhone 用户用自带扫码器或者系统相机扫码就可以省去下载一个软件（图 7）。如果习惯短信验证码也可以用手机短信，&lt;strong&gt;注意：不要用国内电话，否则收不到验证码。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img7.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;扫码小技巧&#34;
-	
-	
-&gt;
-&lt;em&gt;图 7：iPhone 快捷操作&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;小 Tips ⭐️&lt;/strong&gt;：iPhone 用户用自带扫码器或者系统相机扫码就可以省去下载一个软件。如果习惯短信验证码也可以用手机短信，&lt;strong&gt;注意：不要用国内电话，否则收不到验证码。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/malta-eid/img7.jpg&#34; alt=&#34;扫码小技巧&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 7：iPhone 快捷操作。直接使用系统相机扫码即可。&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;如果方便的话去现场办工作人员可能会给指导，不想跑的话参考这个攻略也可以顺利完成。&lt;/p&gt;
 &lt;p&gt;#马耳他 #马耳他EID申请 #马耳他生活 #马耳他移民&lt;/p&gt;
 </description>
