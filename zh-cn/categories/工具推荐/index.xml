@@ -8,6 +8,75 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>BewlyBewly for Safari “复活”指南</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</guid>
+        <description>&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BewlyBewly/BewlyBewly&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BewlyBewly&lt;/a&gt; 是由开发者 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hakadao&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hakadao&lt;/a&gt; 独立开发、维护了三年的浏览器扩展，旨在彻底重新设计 Bilibili 的网页端界面。它的设计灵感来自 YouTube、visionOS 和 iOS，带来毛玻璃效果、深色模式、更简洁的首页布局，以及大量个性化设置选项——让原本略显臃肿的 B 站网页变得赏心悦目。&lt;/p&gt;
+&lt;p&gt;插件支持 Chrome、Edge 和 Firefox，在开源社区积累了大量用户和贡献者。原始仓库地址：&lt;/p&gt;
+&lt;p&gt;👉 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BewlyBewly/BewlyBewly&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/BewlyBewly/BewlyBewly&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;停更始末一场关于开源精神的风波&#34;&gt;停更始末：一场关于开源精神的风波
+&lt;/h2&gt;&lt;h3 id=&#34;时间线&#34;&gt;时间线
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;2024 年 8 月&lt;/strong&gt;
+Hakadao 本人尝试将 BewlyBewly 上架 Safari App Store，为此需要注册 Apple Developer Program（年费 $99）。注册过程麻烦重重，屡屡碰壁，最终放弃。这一经历让他留下了深刻的挫败感。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025 年 2 月初（约 2 月 12-14 日）&lt;/strong&gt;
+一名第三方开发者将 BewlyBewly 打包为 Safari 扩展，以&amp;quot;Bewley&amp;quot;为名上架 App Store，&lt;strong&gt;收费 6 元买断&lt;/strong&gt;。问题在于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上架时&lt;strong&gt;未保留原项目的 MIT 许可证声明&lt;/strong&gt;，违反了唯一的开源协议条款；&lt;/li&gt;
+&lt;li&gt;在小红书等平台宣传时&lt;strong&gt;只字不提原项目地址&lt;/strong&gt;，有意模糊来源；&lt;/li&gt;
+&lt;li&gt;将支持页面直接指向原项目的 GitHub 仓库，变相把用户的 bug 反馈和维护工作转嫁给开源社区；&lt;/li&gt;
+&lt;li&gt;收了钱，但对用户反馈不闻不问。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2025 年 2 月 14 日&lt;/strong&gt;
+消息传开，社区哗然。Hakadao 在 Twitter（X）发声，明确表示&amp;quot;Bewley 不由我们发布，我们不为其背书&amp;quot;，并指出该上架者违反了 MIT 许可证。随后，&lt;strong&gt;GitHub 仓库于 2025 年 2 月 14 日首次归档（设为只读）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025 年 2 月（归档后短暂复活）&lt;/strong&gt;
+Hakadao 一度将仓库 unarchive，关闭了 issues 和 discussions，想静下心来重新开发 v1.0.0 版本。然而，部分用户将此举解读为&amp;quot;刻意掩盖&amp;quot;，攻击声音不断。加之 Safari 用户长期以来对&amp;quot;为何不支持 Safari&amp;quot;的质疑和苛责，开发者的耐心逐渐耗尽。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025 年 2 月 26 日&lt;/strong&gt;
+Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一个版本 &lt;strong&gt;v0.41.0&lt;/strong&gt; 发布，GitHub 仓库再次归档，永久进入只读状态。&lt;/p&gt;
+&lt;p&gt;在告别推文中，Hakadao 吐露了心声：月薪 8500，维护三年，B 站打赏加爱发电收到的赞助加起来可能只有一千多元。而他面对的，是不断涌来的要求、不被理解的委屈，以及&amp;quot;用了 MIT 活该被人利用&amp;quot;这样的冷嘲热讽。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;我承认自己做错很多次了，我真的累了，你行你上。&amp;rdquo;
+——Hakadao，2025 年 2 月 26 日&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;社区的接棒bewlycat&#34;&gt;社区的接棒：BewlyCat
+&lt;/h2&gt;&lt;p&gt;BewlyBewly 停更后，社区并没有就此沉寂。开发者 &lt;a class=&#34;link&#34; href=&#34;https://github.com/keleus&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;keleus&lt;/a&gt; 在原项目基础上 fork 并持续维护，推出了续作 &lt;strong&gt;BewlyCat&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;👉 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/keleus/BewlyCat&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/keleus/BewlyCat&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;BewlyCat 保留了 BewlyBewly 的核心设计语言，同时在功能上持续迭代更新——修复了 B 站接口变动导致的问题，适配了 Chrome、Edge 和 Firefox，并在 Chrome Web Store 和 Firefox Add-ons 均有上架。值得注意的是，BewlyCat 在许可证上吸取了前车之鉴，明确禁止在 Electron 等可打包独立网页的客户端中使用，不允许以任何手段将其以独立客户端形式加载——这显然是针对当年&amp;quot;Bewley&amp;quot;风波的直接回应。&lt;/p&gt;
+&lt;p&gt;如果你是 Chrome、Edge 或 Firefox 用户，BewlyCat 是目前最推荐的替代方案，仍在活跃维护中。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;safari-用户的困境&#34;&gt;Safari 用户的困境
+&lt;/h2&gt;&lt;p&gt;风波过后，App Store 上的 Bewley 随即下架，Safari 版本从全网消失。此前社区整理的&amp;quot;通过 Xcode 将 extension.zip 转换为 Safari 扩展&amp;quot;的方法，在最新版本的插件上已&lt;strong&gt;无法正常使用&lt;/strong&gt;。旧版 Safari 扩展也因兼容性问题失效。全网几乎找不到可用的安装包。&lt;/p&gt;
+&lt;p&gt;对于 macOS 用户来说，BewlyBewly 就此成了一个&amp;quot;有名无实&amp;quot;的存在。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;峰回路转找到了可用安装包&#34;&gt;峰回路转：找到了可用安装包
+&lt;/h2&gt;&lt;p&gt;经过一番搜寻，我在 B 站 UP 主&lt;strong&gt;新起点curtain&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/1498818076&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@1498818076&lt;/a&gt; 的分享下找到了目前可以正常使用的 BewlyBewly Safari 安装包（经本人验证，在 &lt;strong&gt;macOS 26.3&lt;/strong&gt; 上可用）。&lt;/p&gt;
+&lt;p&gt;非常感谢这位 B 站用户的资源分享！&lt;/p&gt;
+&lt;p&gt;为了让更多人能方便获取，我将安装包托管在了自己的 GitHub 仓库，&lt;strong&gt;完全免费&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;👉 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/BewlyBewly_Safari&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Jingyuan-Zheng/BewlyBewly_Safari&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装包可在 &lt;strong&gt;Releases&lt;/strong&gt; 页面下载。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;尾声开源不是理所当然&#34;&gt;尾声：开源不是理所当然
+&lt;/h2&gt;&lt;p&gt;BewlyBewly 的故事，是一个关于开源开发者困境的缩影。一个人利用业余时间，凭着热爱维护了三年的项目，却因为许可证被滥用、用户苛责不断，最终心灰意冷离场。&lt;/p&gt;
+&lt;p&gt;MIT 协议允许任何人自由使用、修改、甚至商用，但&amp;quot;允许&amp;quot;不等于&amp;quot;理所当然&amp;quot;。尊重开源作者，至少从保留一行许可证声明开始。&lt;/p&gt;
+&lt;p&gt;如果你还在用 BewlyBewly，珍惜它吧。&lt;/p&gt;
+&lt;p&gt;当然，苹果开发者账户收费真是最大恶极呀。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;如有问题，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/BewlyBewly_Safari&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; 提 issue。&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
         <link>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
