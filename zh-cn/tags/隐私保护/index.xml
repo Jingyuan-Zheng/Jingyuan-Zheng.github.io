@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>隐私保护 on 小景</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/tags/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/</link>
+        <description>Recent content in 隐私保护 on 小景</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/tags/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/translator-cover.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
+&lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mac-Lite-Translator GUI&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-演示视频&#34;&gt;📺 演示视频
+&lt;/h2&gt;&lt;p&gt;先来看看它的实际表现吧！你可以看到极速的响应速度和精准的学术翻译模式：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video
+    controls
+    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
+    
+    
+    &gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;-技术内核为什么选-mlx--gemma&#34;&gt;🚀 技术内核：为什么选 MLX + Gemma？
+&lt;/h2&gt;&lt;p&gt;传统的本地翻译工具往往依赖通用的 CPU 推理，速度缓慢。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 的核心优势在于：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Apple MLX 框架支持：&lt;/strong&gt; 专门为 Apple Silicon (M1-M4) 统一内存架构优化的深度学习框架，推理速度远超通用的推理后端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 12B 模型：&lt;/strong&gt; 来自 Google 的先进大模型，经过微调后专门针对翻译任务优化，12B 的参数规模在 4-bit 量化下，既保证了翻译的深度（如上下文理解、文学修辞），又保证了极速响应。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-小白科普什么是-translategemma&#34;&gt;🧐 小白科普：什么是 TranslateGemma？
+&lt;/h2&gt;&lt;p&gt;如果你是第一次听说这个名字，不用担心。简单来说，&lt;strong&gt;TranslateGemma&lt;/strong&gt; 是由 Google 官方推出的一系列专门为“翻译”任务量身打造的开源大模型。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;它的由来：&lt;/strong&gt; 它是基于 Google 强大的 &lt;strong&gt;Gemma 2&lt;/strong&gt; 模型（和 Gemini 同源）进行“二次深造”（微调）而来的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;为什么更强：&lt;/strong&gt; 普通的大模型虽然也能翻译，但 TranslateGemma 学习了海量的专业翻译语料。因此在处理长难句、自动语种识别以及保持译文自然度方面，表现得更像一名“职业翻译官”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持广泛：&lt;/strong&gt; 它原生支持 55 种语言之间的相互翻译，是目前开源社区中翻译质量最顶尖的模型之一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;👉 点击这里了解 TranslateGemma 官方技术详情&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它能为你做什么&#34;&gt;💡 它能为你做什么？
+&lt;/h2&gt;&lt;h3 id=&#34;1-多样化的翻译模式&#34;&gt;1. 多样化的翻译模式
+&lt;/h3&gt;&lt;p&gt;不同于原生翻译只有一种输出，你可以一键切换多种翻译风格：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;学术模式 (Academic)：&lt;/strong&gt; 针对论文、专业文档优化，术语严谨，句式正式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;休闲模式 (Casual)：&lt;/strong&gt; 适合日常对话、社交媒体，语言更具亲和力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网页聊天 (Web Chat)：&lt;/strong&gt; 适配口语化的快速交流场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-深度词典功能&#34;&gt;2. 深度词典功能
+&lt;/h3&gt;&lt;p&gt;当你翻译单个单词或短语时，脚本会自动进入 &lt;strong&gt;词典模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供标准的 &lt;strong&gt;IPA 音标&lt;/strong&gt;（英/美）。&lt;/li&gt;
+&lt;li&gt;给出详细的 &lt;strong&gt;定义、同义词&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;列举 &lt;strong&gt;实际例句&lt;/strong&gt;，帮助你真正掌握单词。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-系统级无缝集成&#34;&gt;3. 系统级无缝集成
+&lt;/h3&gt;&lt;p&gt;通过 macOS 的 &lt;strong&gt;快捷指令 (Shortcuts)&lt;/strong&gt; 和 &lt;strong&gt;右键菜单&lt;/strong&gt;，你可以像使用原生功能一样调用 Mac-Lite-Translator。只需选中一段文字，右键点击，极速翻译即刻呈现在屏幕上。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-隐私与成本真正的本地化&#34;&gt;🔒 隐私与成本：真正的本地化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100% 隐私保护：&lt;/strong&gt; 你的所有翻译请求都不会离开你的电脑。无论是公司机密还是个人隐私，都无需担心被上传至云端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0 运行成本：&lt;/strong&gt; 无需订阅费，无需购买 ChatGPT 或 DeepL 的 API Key。只要你的电脑有电，翻译就是免费的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;离线可用：&lt;/strong&gt; 在飞机上、地下室或其他无网络环境，它依然是你的得力助手。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何开始&#34;&gt;🛠 如何开始？
+&lt;/h2&gt;&lt;p&gt;项目已在 GitHub 开源，你只需简单的几步配置即可体验：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;推荐环境：&lt;/strong&gt; 建议 16GB 及以上内存的 Apple Silicon Mac 以获得最佳体验。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。&lt;/p&gt;
+&lt;p&gt;如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

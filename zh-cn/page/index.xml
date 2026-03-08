@@ -6,13 +6,156 @@
         <description>Recent content in Pages on 小景</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Jingyuan Zheng</copyright><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>关于</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E/</link>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于我</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+        <description>&lt;style&gt;
+@import url(&#39;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap&#39;);
+
+/* 彻底隐藏默认元数据 */
+.article-header, .article-metadata, .language-switch, .article-translations { display: none !important; }
+
+:root {
+--cv-accent: var(--accent-color);
+--cv-glass-bg: var(--card-background);
+--cv-glass-border: rgba(var(--accent-color-rgb), 0.25);
+--cv-font-serif: &#39;Playfair Display&#39;, serif;
+--cv-font-sans: &#39;Inter&#39;, system-ui, sans-serif;
+--cv-text-main: var(--card-text-color-main);
+--cv-text-sec: var(--card-text-color-secondary);
+}
+
+.cv-super-container {
+max-width: 900px;
+margin: 0 auto;
+padding: 3rem 20px;
+font-family: var(--cv-font-sans);
+animation: cvFadeIn 1s ease-out;
+}
+
+@keyframes cvFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Header 样式同步英文版 */
+.cv-hero-header {
+margin-bottom: 5rem;
+}
+
+.cv-hero-header h1 {
+font-family: var(--cv-font-serif);
+font-size: 4.8rem;
+line-height: 1.1;
+margin-bottom: 2.5rem;
+color: var(--cv-accent);
+font-weight: 800;
+letter-spacing: -2px;
+}
+
+.cv-intro-para {
+font-size: 1.7rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+opacity: 0.95;
+margin-bottom: 3rem;
+}
+
+/* 毛玻璃卡片 */
+.cv-module-card {
+background: var(--cv-glass-bg);
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 40px;
+padding: 4rem;
+box-shadow: var(--shadow-l2);
+text-align: center;
+}
+
+.cv-zh-content {
+font-size: 1.5rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+text-align: left;
+margin-bottom: 4rem;
+}
+
+/* 跳转按钮：深度适配明暗模式 */
+.cv-jump-btn {
+display: inline-flex;
+align-items: center;
+gap: 15px;
+background: var(--cv-accent);
+/* 在深色模式下，如果 accent 色较亮，我们将字体设为深色以保证对比度 */
+color: #fff !important; 
+padding: 18px 40px;
+border-radius: 50px;
+font-size: 1.5rem;
+font-weight: 700;
+text-decoration: none;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+box-shadow: 0 10px 30px rgba(var(--accent-color-rgb), 0.3);
+}
+
+/* 深色模式下的特殊处理 */
+html[data-scheme=&#34;dark&#34;] .cv-jump-btn {
+    color: #1a1a1a !important; /* 深色背景下使用近乎黑色的文字，与亮色背景形成极高对比度 */
+}
+
+.cv-jump-btn:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 40px rgba(var(--accent-color-rgb), 0.4);
+filter: brightness(1.1);
+}
+
+.cv-jump-btn svg {
+width: 28px;
+height: 28px;
+transition: transform 0.3s ease;
+}
+
+.cv-jump-btn:hover svg {
+transform: translateX(8px);
+}
+
+@media (max-width: 800px) {
+.cv-hero-header h1 { font-size: 3.5rem; }
+.cv-intro-para, .cv-zh-content { font-size: 1.3rem; }
+.cv-jump-btn { font-size: 1.2rem; padding: 15px 30px; }
+}
+&lt;/style&gt;
+&lt;div class=&#34;cv-super-container&#34;&gt;
+&lt;header class=&#34;cv-hero-header&#34;&gt;
+&lt;h1&gt;Hi, I am Jingyuan Zheng 🤩&lt;/h1&gt;
+&lt;p class=&#34;cv-intro-para&#34;&gt;
+我目前在&lt;strong&gt;香港大学 (HKU)&lt;/strong&gt; 攻读物流与工业工程硕士学位。我热衷于探索高效物流背后的美学，以及复杂数据中的内在逻辑。
+&lt;/p&gt;
+&lt;/header&gt;
+&lt;section class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-zh-content&#34;&gt;
+在这里，我会分享关于供应链优化、数据科学的见解，以及在香港生活的一些有趣瞬间。
+&lt;br&gt;&lt;br&gt;
+如果你对我的学术背景、实习经历以及研究成果感兴趣，请点击下方链接查看我的&lt;strong&gt;完整英文简历&lt;/strong&gt;。
+&lt;/div&gt;
+&lt;a href=&#34;https://Jingyuan-Zheng.github.io/about-me/&#34; class=&#34;cv-jump-btn&#34;&gt;
+&lt;span&gt;View My Full CV (English)&lt;/span&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2.5&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;line x1=&#34;5&#34; y1=&#34;12&#34; x2=&#34;19&#34; y2=&#34;12&#34;/&gt;&lt;polyline points=&#34;12 5 19 12 12 19&#34;/&gt;&lt;/svg&gt;
+&lt;/a&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>链接</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</guid>
+        <description>&lt;h2 id=&#34;-发现我&#34;&gt;🚀 发现我
+&lt;/h2&gt;&lt;p&gt;欢迎来到我的链接页面！在这里，你可以通过不同的平台更全面地了解我的工作成果、技术思考和日常生活。期待与你的交流！&lt;/p&gt;
+&lt;hr&gt;
 </description>
         </item>
         

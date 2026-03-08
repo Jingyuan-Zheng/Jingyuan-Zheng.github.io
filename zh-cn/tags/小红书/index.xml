@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>小红书 on 小景</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/</link>
+        <description>Recent content in 小红书 on 小景</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/no-new-tab-cover.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+&lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-项目介绍什么是-no-new-tab&#34;&gt;🚀 项目介绍：什么是 No-New-Tab？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;No-New-Tab&lt;/strong&gt; 是一款专为国内主流社交和内容平台设计的 Tampermonkey（油猴）脚本。它的核心逻辑非常纯粹：&lt;strong&gt;把选择权还给用户。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它能拦截网站默认的强制开新窗口行为，强制所有链接在当前标签页跳转。如果你真的需要开新窗口，只需按住 &lt;code&gt;Cmd/Ctrl + 点击&lt;/code&gt; 即可，一切回归直觉。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/No-New-Tab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持平台：&lt;/strong&gt; Bilibili（主站/搜索/直播）、知乎、微博、小红书 (RedNote)、Appstorrent、Skymods 等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它解决了哪些痛点&#34;&gt;💡 它解决了哪些痛点？
+&lt;/h2&gt;&lt;h3 id=&#34;1-终结标签页地狱&#34;&gt;1. 终结“标签页地狱”
+&lt;/h3&gt;&lt;p&gt;无需再频繁手动关闭那些看完即丢的搜索结果页和评论区页面。你的浏览器顶栏将保持清爽，内存占用也显著降低。&lt;/p&gt;
+&lt;h3 id=&#34;2-找回后退按钮的直觉&#34;&gt;2. 找回“后退”按钮的直觉
+&lt;/h3&gt;&lt;p&gt;在新标签页打开链接后，浏览器的“后退”按钮往往是灰色的。使用 No-New-Tab 后，所有的跳转都发生在同一个历史记录栈中，点击“后退”即可回到上一级，这才是网页本该有的交互方式。&lt;/p&gt;
+&lt;h3 id=&#34;3-深度覆盖不仅仅是主链接&#34;&gt;3. 深度覆盖：不仅仅是主链接
+&lt;/h3&gt;&lt;p&gt;很多脚本只能处理文章标题链接。No-New-Tab 针对 B 站等平台进行了深度优化，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;搜索框优化：&lt;/strong&gt; 搜索结果直接在当前页加载，不再弹出新窗口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评论区交互：&lt;/strong&gt; 点击头像、用户名、话题（Hashtag）等均保持在当前页。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态加载支持：&lt;/strong&gt; 完美适配瀑布流加载的内容，新生成的链接也会被实时捕获。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-模拟原生-app般的丝滑&#34;&gt;4. 模拟“原生 App”般的丝滑
+&lt;/h3&gt;&lt;p&gt;在手机 App 上浏览时，我们习惯了层级式的进入和退出。No-New-Tab 让桌面端浏览器也拥有这种逻辑连贯性，非常适合深度刷帖和沉浸式阅读。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何安装使用&#34;&gt;🛠 如何安装使用？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;安装油猴插件：&lt;/strong&gt; 如果你还没安装，请先在 Chrome、Edge 或 Safari 商店搜索并安装 &lt;code&gt;Tampermonkey&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;获取脚本：&lt;/strong&gt; 访问 &lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/514467-no-new-tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Greasy Fork&lt;/a&gt; 点击安装。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;即刻生效：&lt;/strong&gt; 刷新你正在浏览的 B 站或知乎页面，感受不再“弹窗”的清爽体验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而不是替用户做决定。&lt;strong&gt;No-New-Tab&lt;/strong&gt; 只是一个微小的尝试，希望能在这个强制用户停留在“围墙花园”里的时代，通过一点点代码，找回最初那种简单、纯粹的 Web 浏览体验。&lt;/p&gt;
+&lt;p&gt;如果你喜欢这个项目，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; 给个 Star，或者提交 Issue 告诉我想支持哪些新网站！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

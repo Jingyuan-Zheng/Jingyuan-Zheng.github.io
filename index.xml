@@ -7,96 +7,524 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Sun, 14 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站</title>
-        <link>https://Jingyuan-Zheng.github.io/p/my-first-blog-setup-guide/</link>
-        <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About Me</title>
+        <link>https://Jingyuan-Zheng.github.io/about-me/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/p/my-first-blog-setup-guide/</guid>
-        <description>&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
-&lt;p&gt;正如标题所说，这是我的第一篇博客。作为一个喜欢记录和分享的人，我一直梦想着拥有一个属于自己的、可以自由书写的空间。在探索了各种方案后，我最终选择了 &lt;strong&gt;Hugo + GitHub Pages&lt;/strong&gt; 这套组合，因为它足够&lt;strong&gt;快速、免费、强大&lt;/strong&gt;，而且折腾起来非常有成就感。&lt;/p&gt;
-&lt;p&gt;这篇文章，就是为了记录我从一个想法到网站上线的全过程，并特别点出一些教程里可能没详细说明、但我亲身遇到的“坑”。&lt;/p&gt;
-&lt;p&gt;搭建过程我主要参考了以下优秀教程，强烈推荐大家先看一遍：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;文字教程： &lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Hugo + Stack 主题打造自定义博客&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;视频教程：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;【雷】Hugo + Github免费搭建博客，并实现自动化部署&lt;/a&gt;&lt;/li&gt;
+        <guid>https://Jingyuan-Zheng.github.io/about-me/</guid>
+        <description>&lt;style&gt;
+@import url(&#39;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap&#39;);
+
+/* 净化界面 */
+.article-header, .article-metadata, .language-switch, .article-translations { display: none !important; }
+
+:root {
+--cv-accent: var(--accent-color);
+--cv-glass-bg: var(--card-background);
+--cv-glass-border: rgba(var(--accent-color-rgb), 0.25);
+--cv-font-serif: &#39;Playfair Display&#39;, serif;
+--cv-font-sans: &#39;Inter&#39;, system-ui, sans-serif;
+--cv-text-main: var(--card-text-color-main);
+--cv-text-sec: var(--card-text-color-secondary);
+}
+
+.cv-super-container {
+max-width: 1000px;
+margin: 0 auto;
+padding: 2rem 0;
+font-family: var(--cv-font-sans);
+}
+
+/* 侧边隐藏胶囊导航 */
+.cv-side-nav-container {
+position: fixed;
+right: -250px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 9999;
+transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+display: flex;
+align-items: center;
+}
+
+.cv-side-nav-container:hover {
+right: 30px;
+}
+
+/* 导航触发图标 - 修复深浅模式可见性 */
+.cv-nav-trigger {
+width: 55px;
+height: 55px;
+background: var(--cv-glass-bg); /* 跟随主题背景 */
+color: var(--cv-accent); /* 使用主题强调色 */
+backdrop-filter: blur(20px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 15px 0 0 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: var(--shadow-l1);
+margin-right: -2px;
+transition: transform 0.3s ease;
+}
+
+.cv-nav-trigger:hover {
+transform: scale(1.1);
+color: var(--cv-text-main);
+}
+
+/* 胶囊菜单 */
+.cv-nav-capsule {
+background: var(--cv-glass-bg);
+backdrop-filter: blur(25px);
+-webkit-backdrop-filter: blur(25px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 40px;
+padding: 20px 15px;
+box-shadow: var(--shadow-l2);
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.cv-nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.cv-nav-item a {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 30px;
+color: var(--cv-text-sec);
+text-decoration: none;
+font-size: 1.8rem;
+font-weight: 700;
+border-radius: 30px;
+white-space: nowrap;
+transition: all 0.3s ease;
+}
+
+.cv-nav-item a:hover {
+background: rgba(var(--accent-color-rgb), 0.15);
+color: var(--cv-accent);
+transform: translateX(-5px);
+}
+
+@media (max-width: 1200px) { .cv-side-nav-container { display: none; } }
+
+/* 头部 Header */
+.cv-hero-header {
+margin-bottom: 5rem;
+padding: 0 1rem;
+}
+
+.cv-hero-header h1 {
+font-family: var(--cv-font-serif);
+font-size: 4.8rem;
+line-height: 1.1;
+margin-bottom: 2.5rem;
+color: var(--cv-accent);
+font-weight: 800;
+letter-spacing: -2px;
+}
+
+.cv-intro-para {
+font-size: 1.7rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+opacity: 0.95;
+max-width: 850px;
+}
+
+/* 模块卡片 */
+.cv-module-card {
+background: var(--cv-glass-bg);
+backdrop-filter: blur(12px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 36px;
+margin-bottom: 4rem;
+box-shadow: var(--shadow-l1);
+overflow: hidden;
+}
+
+.cv-card-title {
+padding: 2.5rem 3.5rem;
+font-family: var(--cv-font-serif);
+font-size: 2.2rem;
+font-weight: 700;
+display: flex;
+align-items: center;
+gap: 25px;
+color: var(--cv-text-main);
+background: rgba(var(--accent-color-rgb), 0.05);
+border-bottom: 2px solid var(--cv-glass-border);
+}
+
+.cv-card-title svg {
+width: 38px;
+height: 38px;
+stroke: var(--cv-accent);
+}
+
+.cv-card-body {
+padding: 3.5rem;
+}
+
+/* 简历内容排版 */
+.cv-entry-item {
+margin-bottom: 5rem;
+}
+
+.cv-entry-item:last-child { margin-bottom: 0; }
+
+.cv-entry-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1.5rem;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.cv-inst-name {
+font-size: 2rem;
+font-weight: 800;
+color: var(--cv-text-main);
+}
+
+.cv-time-tag {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--cv-accent);
+background: rgba(var(--accent-color-rgb), 0.12);
+padding: 8px 20px;
+border-radius: 30px;
+}
+
+.cv-pos-title {
+font-size: 1.7rem;
+font-weight: 700;
+color: var(--cv-text-sec);
+margin-bottom: 1.2rem;
+font-style: italic;
+display: block;
+}
+
+.cv-meta-text {
+font-size: 1.5rem;
+color: var(--cv-text-sec);
+margin-bottom: 10px;
+display: block;
+opacity: 0.95;
+}
+
+.cv-desc-list {
+margin: 2rem 0 0 2rem;
+font-size: 1.5rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+}
+
+.cv-desc-list li { margin-bottom: 1.5rem; }
+
+/* 技能标签设计 */
+.cv-pill-tag {
+background: rgba(var(--accent-color-rgb), 0.08);
+border: 2px solid var(--cv-glass-border);
+padding: 12px 28px;
+border-radius: 18px;
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--cv-text-main);
+display: inline-block;
+margin: 0 12px 12px 0;
+}
+
+@media (max-width: 800px) {
+.cv-hero-header h1 { font-size: 3.5rem; }
+.cv-inst-name { font-size: 1.6rem; }
+.cv-pos-title { font-size: 1.4rem; }
+.cv-desc-list, .cv-meta-text, .cv-time-tag { font-size: 1.25rem; }
+.cv-card-body { padding: 2rem; }
+}
+&lt;/style&gt;
+&lt;div class=&#34;cv-side-nav-container&#34;&gt;
+&lt;div class=&#34;cv-nav-trigger&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;30&#34; height=&#34;30&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2.5&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;line x1=&#34;3&#34; y1=&#34;12&#34; x2=&#34;21&#34; y2=&#34;12&#34;/&gt;&lt;line x1=&#34;3&#34; y1=&#34;6&#34; x2=&#34;21&#34; y2=&#34;6&#34;/&gt;&lt;line x1=&#34;3&#34; y1=&#34;18&#34; x2=&#34;21&#34; y2=&#34;18&#34;/&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-nav-capsule&#34;&gt;
+&lt;ul class=&#34;cv-nav-list&#34;&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#education&#34;&gt;Education&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#internship&#34;&gt;Internship&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#research&#34;&gt;Research&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#activities&#34;&gt;Activities&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#achievements&#34;&gt;Achievements&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#skills&#34;&gt;Skills&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;整体思路&#34;&gt;整体思路
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;在本地电脑上安装 Hugo。&lt;/li&gt;
-&lt;li&gt;创建网站、配置主题、撰写文章。&lt;/li&gt;
-&lt;li&gt;将网站源码推送到 GitHub，触发自动化部署。&lt;/li&gt;
-&lt;li&gt;最终，通过 &lt;code&gt;username.github.io&lt;/code&gt; 访问你的博客。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;第一步环境准备-macos&#34;&gt;第一步：环境准备 (macOS)
-&lt;/h2&gt;&lt;p&gt;首先，我们需要一些基础工具。在 macOS 上，推荐使用 Homebrew 这个包管理器来安装，非常方便。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-super-container&#34;&gt;
+&lt;div class=&#34;cv-main-content&#34;&gt;
+&lt;header class=&#34;cv-hero-header&#34;&gt;
+&lt;h1&gt;Hi, I am Jingyuan Zheng 🤩&lt;/h1&gt;
+&lt;p class=&#34;cv-intro-para&#34;&gt;
+I’m a Master’s student at &lt;strong&gt;The University of Hong Kong (HKU)&lt;/strong&gt; who finds the beauty in efficient logistics and the logic behind complex data. 
+&lt;br&gt;&lt;br&gt;
+Whether I&#39;m diving into supply chain optimization or searching for the best coffee spots in HK, I’m all about that &lt;strong&gt;&#34;efficiency with soul&#34;&lt;/strong&gt; vibe. I believe the invisible threads that keep our world moving are the most interesting to explore. Take a look at my journey below!
+&lt;/p&gt;
+&lt;/header&gt;
+&lt;section id=&#34;education&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M22 10v6M2 10l10-5 10 5-10 5z&#34;/&gt;&lt;path d=&#34;M6 12v5c3 3 9 3 12 0v-5&#34;/&gt;&lt;/svg&gt;
+ACADEMIC QUALIFICATION
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;The University of Hong Kong&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2024 - 09/2025&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Master of Science in Engineering (Industrial Engineering and Logistics Management)&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Ranked 17 in QS World University Rankings 2025&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;&lt;strong&gt;Main Courses:&lt;/strong&gt; Machine learning and applications (A), Digital enterprises and e-commerce (A)&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2019 - 06/2024&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Bachelor of Management Studies (Logistics Management)&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Project 211 of China&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;&lt;strong&gt;Main Courses:&lt;/strong&gt; International Logistics (91), Operational Research (90), Forecasting Methods and Skills (90), Database Technology and Application (90)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;internship&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;rect x=&#34;2&#34; y=&#34;7&#34; width=&#34;20&#34; height=&#34;14&#34; rx=&#34;2&#34; ry=&#34;2&#34;/&gt;&lt;path d=&#34;M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16&#34;/&gt;&lt;/svg&gt;
+INTERNSHIP EXPERIENCE
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Oriental Logistics Group (China) Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;02/2024 - 04/2024&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Business Intern, Xiamen Branch&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Spearheaded the management of Southeast Asia shipping routes, acting as the primary point of contact for major shipping partners. Streamlined cargo follow-up processes with a structured schedule, ensuring proactive updates three times per week and reducing shipment delays by 1 day.&lt;/li&gt;
+&lt;li&gt;Executed a client acquisition strategy, successfully onboarding two stable clients from China and the Philippines. Utilized market insights to position company services effectively, generating an additional $2000 in weekly revenue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Xiamen Wu Zhen Ni Hai I/E Co., Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;07/2023 - 09/2023&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Material Planner&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Conducted detailed analysis of 8 months of sales and inventory data using advanced data analytics techniques to uncover demand trends. Developed actionable recommendations that streamlined material requirements planning and reduced excess 25% stock for two seasonal products.&lt;/li&gt;
+&lt;li&gt;Optimized the inventory management system by updating the database structure. Organized the inventory database for 100 products based on historical company data and updated the database weekly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Xiamen Haixi Real Estate Marketing Planning Co., Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;07/2022 - 09/2022&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Customer Information Administrator&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Analyzed customer information for real estate sales projects using data analysis and mining techniques of python and identified four distinct customer types and characteristics, providing valuable insights and suggestions for the sales team.&lt;/li&gt;
+&lt;li&gt;Compiled and analyzed the company’s sales data from the first two quarters and created a 15,000-word report and summary presentation, providing advices for the focus areas in the next quarter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;research&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;circle cx=&#34;11&#34; cy=&#34;11&#34; r=&#34;8&#34;/&gt;&lt;line x1=&#34;21&#34; y1=&#34;21&#34; x2=&#34;16.65&#34; y2=&#34;16.65&#34;/&gt;&lt;/svg&gt;
+RESEARCH EXPERIENCE
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Spare Parts Management for PV Power Station Inverters&lt;/span&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Inventory Control Optimization (01/2025 - 02/2025) | Prof. Yao Cheng&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Developed a multi-objective optimization model using CTMC and NSGA-II to optimize microinverter spare parts inventory for cost and sustainability in a Phoenix, AZ PV station; validated via Monte Carlo simulations, reduced lifecycle costs by 12.9% and carbon emissions by 20.9% vs. zero-inventory approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Evolution of Operational Risks in Xiamen Maritime Supply Chain&lt;/span&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;System Dynamics Research (10/2023 - 06/2024) | Prof. Haidong Yang&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Developed a system dynamics model to simulate the evolution of operational risks within a three-tier indicator system, revealed that different risk subsystems display distinct trends. Recognized as an Outstanding Undergraduate Degree Dissertation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;activities&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2&#34;/&gt;&lt;circle cx=&#34;9&#34; cy=&#34;7&#34; r=&#34;4&#34;/&gt;&lt;path d=&#34;M23 21v-2a4 4 0 0 0-3-3.87&#34;/&gt;&lt;path d=&#34;M16 3.13a4 4 0 0 1 0 7.75&#34;/&gt;&lt;/svg&gt;
+ACTIVITIES
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Director, Psychological Development Department&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2020 - 09/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University | Excellent Psychological Development Department Award granted&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Student Library Manager&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2020 - 01/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Leader, Chinese Culture Society&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;03/2020 - 01/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;achievements&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;polygon points=&#34;12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2&#34;/&gt;&lt;/svg&gt;
+ACHIEVEMENTS
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Outstanding Participant&lt;/strong&gt; in the 2021-2022 China Ningbo Youth College Students’ Entrepreneurship Competition (06/2021).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Third-Class Scholarship&lt;/strong&gt; for the First Semester at Fuzhou University (04/2021 &amp; 08/2020).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outstanding Team&lt;/strong&gt; in the Final of Fujian Division of the “Zhengda Cup” 2020 Innovation practical Marketing Competition (07/2020).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;skills&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M12 19l7-7 3 3-7 7-3-3z&#34;/&gt;&lt;path d=&#34;M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z&#34;/&gt;&lt;path d=&#34;M2 2l7.5 1.5&#34;/&gt;&lt;path d=&#34;M14 11l-4-4&#34;/&gt;&lt;/svg&gt;
+TECHNICAL SKILLS
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-tag-cloud&#34;&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Python&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;SQL Server&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;MATLAB&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;C&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;FlexSim&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Vensim&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;SPSS Statistics&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;English (IELTS 6.5)&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Mandarin (Native)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Blazing Fast &amp; 100% Private: Why Mac-Lite-Translator is the Ultimate AI Translation Tool for Apple Silicon</title>
+        <link>https://Jingyuan-Zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/translator-cover.png" alt="Featured image of post Blazing Fast &amp; 100% Private: Why Mac-Lite-Translator is the Ultimate AI Translation Tool for Apple Silicon" /&gt;&lt;p&gt;While macOS&amp;rsquo;s native translation is convenient, it often falls short when dealing with complex academic papers, creative writing, or nuanced professional documents. Meanwhile, cloud-based services like ChatGPT and DeepL offer superior quality but raise significant privacy concerns and often require expensive API keys.&lt;/p&gt;
+&lt;p&gt;To bridge this gap, I developed &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;, a high-performance, &lt;strong&gt;100% local AI translation tool&lt;/strong&gt; specifically optimized for Apple Silicon (M1, M2, M3, M4) Macs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mac-Lite-Translator GUI&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-demo-video&#34;&gt;📺 Demo Video
+&lt;/h2&gt;&lt;p&gt;See Mac-Lite-Translator in action! Watch how it handles academic translation with blazing speed:&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video
+    controls
+    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
+    
+    
+    &gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;-the-core-google-gemma--apple-mlx&#34;&gt;🚀 The Core: Google Gemma + Apple MLX
+&lt;/h2&gt;&lt;p&gt;The secret to its speed and accuracy lies in its modern tech stack:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;安装 Homebrew&lt;/strong&gt; (如果已经安装，请跳过)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;安装 Hugo 和 Git&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install git
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;安装完成后，可以通过 &lt;code&gt;hugo version&lt;/code&gt; 和 &lt;code&gt;git --version&lt;/code&gt; 来检查。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Apple MLX Framework:&lt;/strong&gt; Unlike generic translation tools, this project is built on Apple&amp;rsquo;s dedicated machine learning framework. It fully utilizes the Unified Memory and GPU acceleration of M-series chips, delivering performance that leaves standard CPU inference in the dust.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 12B (4-bit):&lt;/strong&gt; Powered by Google&amp;rsquo;s state-of-the-art Gemma 12B model, fine-tuned specifically for translation.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;核心搭建步骤跟随教程--注意差异&#34;&gt;核心搭建步骤：跟随教程 &amp;amp; 注意差异
-&lt;/h2&gt;&lt;p&gt;从创建 Hugo 网站、安装 Stack 主题，到配置 &lt;code&gt;hugo.toml&lt;/code&gt; 文件、设置 GitHub Actions 自动化部署，上面链接的教程已经讲得非常详细清晰了，我就不再赘述。&lt;/p&gt;
-&lt;p&gt;在这里，我只想补充一点 &lt;strong&gt;macOS 用户&lt;/strong&gt; 需要注意的小差异：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;macOS 用户请注意：&lt;/strong&gt;
-在视频教程中，你可能会看到讲师使用的是 &lt;code&gt;hugo.exe&lt;/code&gt; 命令。这是因为他可能是在 Windows 上直接下载的二进制文件。
-在 macOS 上，通过 Homebrew 安装后，&lt;strong&gt;直接使用 &lt;code&gt;hugo&lt;/code&gt; 命令即可&lt;/strong&gt;，例如 &lt;code&gt;hugo server -D&lt;/code&gt;。不需要 &lt;code&gt;.exe&lt;/code&gt; 后缀。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;关键一步首次-git-push-与-github-令牌token&#34;&gt;关键一步：首次 &lt;code&gt;git push&lt;/code&gt; 与 GitHub 令牌（Token）
-&lt;/h2&gt;&lt;p&gt;当你本地的所有工作都完成后，最后一步是 &lt;code&gt;git push&lt;/code&gt;，将你的网站源码推送到 GitHub 仓库。&lt;strong&gt;这是新手最容易卡住的地方。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;现在 GitHub 不再支持使用账户密码直接进行 &lt;code&gt;git&lt;/code&gt; 操作，我们必须使用 &lt;strong&gt;个人访问令牌（Personal Access Token, PAT）&lt;/strong&gt;。&lt;/p&gt;
-&lt;h4 id=&#34;1-为什么需要令牌&#34;&gt;1. 为什么需要令牌？
-&lt;/h4&gt;&lt;p&gt;简单来说，令牌是比密码更安全的一种认证方式。&lt;/p&gt;
-&lt;h4 id=&#34;2-第一次-push-的正确姿势&#34;&gt;2. 第一次 Push 的正确姿势
-&lt;/h4&gt;&lt;p&gt;当你第一次执行 &lt;code&gt;git push&lt;/code&gt; 时，系统会弹出一个窗口或在命令行提示你输入用户名和密码：&lt;/p&gt;
+&lt;h2 id=&#34;-new-to-ai-what-is-translategemma&#34;&gt;🧐 New to AI? What is TranslateGemma?
+&lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re wondering what makes this model special compared to a standard chatbot, here&amp;rsquo;s the breakdown:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TranslateGemma&lt;/strong&gt; is a family of open models from Google, purpose-built for high-quality translation tasks.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; 输入你的 GitHub 用户名。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;strong&gt;千万不要输入你的 GitHub 登录密码！&lt;/strong&gt; 在这里应该粘贴你提前生成好的&lt;strong&gt;个人访问令牌&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Origin:&lt;/strong&gt; It&amp;rsquo;s a fine-tuned version of Google&amp;rsquo;s powerful &lt;strong&gt;Gemma 2&lt;/strong&gt; models (built from the same tech behind Gemini).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Difference:&lt;/strong&gt; While general AI models can translate, TranslateGemma has been &amp;ldquo;specialized&amp;rdquo; through training on massive amounts of professional translation data. This makes it far more reliable for complex sentence structures and natural-sounding results across 55+ languages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Expert Level:&lt;/strong&gt; It understands nuances better than smaller, generic models, acting more like a professional translator than a simple word-swapper.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;如何生成令牌？&lt;/strong&gt;
-前往 GitHub -&amp;gt; 点击右上角头像 -&amp;gt; Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Tokens (classic) -&amp;gt; Generate new token。
-&lt;strong&gt;权限 (Scopes)&lt;/strong&gt; 至少要勾选 &lt;code&gt;repo&lt;/code&gt;。
-生成后，&lt;strong&gt;立刻复制并保存好这个令牌&lt;/strong&gt;，因为这个页面关掉后你将再也看不到它了。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h4 id=&#34;3-救命我的令牌过期了错了该如何更新&#34;&gt;3. 救命！我的令牌过期了/错了，该如何更新？
-&lt;/h4&gt;&lt;p&gt;这是一个非常常见的问题。如果你之前设置过错误的令牌，或者令牌过期了，&lt;code&gt;git push&lt;/code&gt; 会一直失败，提示认证错误。这是因为 macOS 的“钥匙串”已经帮你记住了那个旧的、无效的令牌。&lt;/p&gt;
-&lt;p&gt;我们需要手动删除它，让 Git 重新问你要新的。&lt;/p&gt;
-&lt;p&gt;在最新版的 macOS 中，操作非常简单：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;打开“系统设置”&lt;/strong&gt; (System Settings)。&lt;/li&gt;
-&lt;li&gt;在左侧菜单找到并进入 &lt;strong&gt;“密码”&lt;/strong&gt; (Passwords) 区域 (需要 Touch ID 或密码解锁)。&lt;/li&gt;
-&lt;li&gt;在密码列表上方的搜索框中，输入 &lt;code&gt;github.com&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;找到相关的条目，点击右侧的“信息”图标 (i)，然后选择 &lt;strong&gt;“删除密码”&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;删除后，回到你的终端，再次执行 &lt;code&gt;git push&lt;/code&gt;。此时，系统就会重新提示你输入用户名和密码了，这时再粘贴你的&lt;strong&gt;新令牌&lt;/strong&gt;，问题就解决了！&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结
-&lt;/h2&gt;&lt;p&gt;搭建博客的过程，就是跟随教程、解决问题的过程。希望我补充的这两点关于 macOS 的命令差异和 GitHub 令牌的经验，能帮你绕过新手常见的“坑”。&lt;/p&gt;
-&lt;p&gt;现在，轮到你来书写自己的故事了。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;👉 Learn more about TranslateGemma on its official page&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-what-makes-it-unique&#34;&gt;💡 What Makes It Unique?
+&lt;/h2&gt;&lt;h3 id=&#34;1-contextual-style-switching&#34;&gt;1. Contextual Style Switching
+&lt;/h3&gt;&lt;p&gt;Different scenarios require different tones. Mac-Lite-Translator allows you to toggle between:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Academic Mode:&lt;/strong&gt; Formal, precise, and perfect for research papers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Casual Mode:&lt;/strong&gt; Natural and approachable for social media or blogging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Chat Mode:&lt;/strong&gt; Quick and idiomatic for instant messaging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-built-in-smart-dictionary&#34;&gt;2. Built-in Smart Dictionary
+&lt;/h3&gt;&lt;p&gt;Translating a single word? The script automatically transitions into &lt;strong&gt;Dictionary Mode&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IPA Phonetics:&lt;/strong&gt; Accurate pronunciation (US/UK).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contextual Definitions:&lt;/strong&gt; Lists meanings, synonyms, and usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Example Sentences:&lt;/strong&gt; Helps you master the word in context.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-native-macos-experience&#34;&gt;3. Native macOS Experience
+&lt;/h3&gt;&lt;p&gt;Integration is key to productivity. By leveraging &lt;strong&gt;macOS Shortcuts&lt;/strong&gt; and &lt;strong&gt;Automator&lt;/strong&gt;, Mac-Lite-Translator feels like a part of the OS. Simply select text, right-click, and see the translation instantly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-privacy--performance-no-strings-attached&#34;&gt;🔒 Privacy &amp;amp; Performance: No Strings Attached
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100% Offline:&lt;/strong&gt; Your data never leaves your device. No cloud uploads, no tracking, and no privacy compromises.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zero Costs:&lt;/strong&gt; No subscriptions. No API fees for OpenAI or DeepL. As long as your Mac is running, translation is free.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instant Response:&lt;/strong&gt; Thanks to MLX, the 12B model responds at reading speed, making it feel snappier than many cloud alternatives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-getting-started&#34;&gt;🛠 Getting Started
+&lt;/h2&gt;&lt;p&gt;This project is open-source and ready for you to explore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Repository:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recommended Setup:&lt;/strong&gt; For the best experience, an Apple Silicon Mac with at least 16GB of RAM is recommended.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Translation is more than just swapping words; it&amp;rsquo;s about preserving meaning and privacy. &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; brings cutting-edge generative AI to your desktop, proving that high-end productivity doesn&amp;rsquo;t have to come at the cost of your data.&lt;/p&gt;
+&lt;p&gt;If you find this tool helpful, feel free to give it a star on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;!&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -108,66 +536,14 @@
         <description></description>
         </item>
         <item>
-        <title>About</title>
-        <link>https://Jingyuan-Zheng.github.io/about/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://Jingyuan-Zheng.github.io/about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>Links</title>
         <link>https://Jingyuan-Zheng.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/links/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-connect-with-me&#34;&gt;🚀 Connect with Me
+&lt;/h2&gt;&lt;p&gt;Welcome! You can find more of my work, thoughts, and daily life across these platforms. Feel free to reach out or follow my latest updates!&lt;/p&gt;
+&lt;hr&gt;
 </description>
         </item>
         <item>

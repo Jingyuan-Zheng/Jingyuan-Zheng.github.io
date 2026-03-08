@@ -7,7 +7,432 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About Me</title>
+        <link>https://Jingyuan-Zheng.github.io/about-me/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/about-me/</guid>
+        <description>&lt;style&gt;
+@import url(&#39;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap&#39;);
+
+/* 净化界面 */
+.article-header, .article-metadata, .language-switch, .article-translations { display: none !important; }
+
+:root {
+--cv-accent: var(--accent-color);
+--cv-glass-bg: var(--card-background);
+--cv-glass-border: rgba(var(--accent-color-rgb), 0.25);
+--cv-font-serif: &#39;Playfair Display&#39;, serif;
+--cv-font-sans: &#39;Inter&#39;, system-ui, sans-serif;
+--cv-text-main: var(--card-text-color-main);
+--cv-text-sec: var(--card-text-color-secondary);
+}
+
+.cv-super-container {
+max-width: 1000px;
+margin: 0 auto;
+padding: 2rem 0;
+font-family: var(--cv-font-sans);
+}
+
+/* 侧边隐藏胶囊导航 */
+.cv-side-nav-container {
+position: fixed;
+right: -250px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 9999;
+transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+display: flex;
+align-items: center;
+}
+
+.cv-side-nav-container:hover {
+right: 30px;
+}
+
+/* 导航触发图标 - 修复深浅模式可见性 */
+.cv-nav-trigger {
+width: 55px;
+height: 55px;
+background: var(--cv-glass-bg); /* 跟随主题背景 */
+color: var(--cv-accent); /* 使用主题强调色 */
+backdrop-filter: blur(20px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 15px 0 0 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: var(--shadow-l1);
+margin-right: -2px;
+transition: transform 0.3s ease;
+}
+
+.cv-nav-trigger:hover {
+transform: scale(1.1);
+color: var(--cv-text-main);
+}
+
+/* 胶囊菜单 */
+.cv-nav-capsule {
+background: var(--cv-glass-bg);
+backdrop-filter: blur(25px);
+-webkit-backdrop-filter: blur(25px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 40px;
+padding: 20px 15px;
+box-shadow: var(--shadow-l2);
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.cv-nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.cv-nav-item a {
+display: flex;
+align-items: center;
+gap: 15px;
+padding: 12px 30px;
+color: var(--cv-text-sec);
+text-decoration: none;
+font-size: 1.8rem;
+font-weight: 700;
+border-radius: 30px;
+white-space: nowrap;
+transition: all 0.3s ease;
+}
+
+.cv-nav-item a:hover {
+background: rgba(var(--accent-color-rgb), 0.15);
+color: var(--cv-accent);
+transform: translateX(-5px);
+}
+
+@media (max-width: 1200px) { .cv-side-nav-container { display: none; } }
+
+/* 头部 Header */
+.cv-hero-header {
+margin-bottom: 5rem;
+padding: 0 1rem;
+}
+
+.cv-hero-header h1 {
+font-family: var(--cv-font-serif);
+font-size: 4.8rem;
+line-height: 1.1;
+margin-bottom: 2.5rem;
+color: var(--cv-accent);
+font-weight: 800;
+letter-spacing: -2px;
+}
+
+.cv-intro-para {
+font-size: 1.7rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+opacity: 0.95;
+max-width: 850px;
+}
+
+/* 模块卡片 */
+.cv-module-card {
+background: var(--cv-glass-bg);
+backdrop-filter: blur(12px);
+border: 2px solid var(--cv-glass-border);
+border-radius: 36px;
+margin-bottom: 4rem;
+box-shadow: var(--shadow-l1);
+overflow: hidden;
+}
+
+.cv-card-title {
+padding: 2.5rem 3.5rem;
+font-family: var(--cv-font-serif);
+font-size: 2.2rem;
+font-weight: 700;
+display: flex;
+align-items: center;
+gap: 25px;
+color: var(--cv-text-main);
+background: rgba(var(--accent-color-rgb), 0.05);
+border-bottom: 2px solid var(--cv-glass-border);
+}
+
+.cv-card-title svg {
+width: 38px;
+height: 38px;
+stroke: var(--cv-accent);
+}
+
+.cv-card-body {
+padding: 3.5rem;
+}
+
+/* 简历内容排版 */
+.cv-entry-item {
+margin-bottom: 5rem;
+}
+
+.cv-entry-item:last-child { margin-bottom: 0; }
+
+.cv-entry-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1.5rem;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.cv-inst-name {
+font-size: 2rem;
+font-weight: 800;
+color: var(--cv-text-main);
+}
+
+.cv-time-tag {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--cv-accent);
+background: rgba(var(--accent-color-rgb), 0.12);
+padding: 8px 20px;
+border-radius: 30px;
+}
+
+.cv-pos-title {
+font-size: 1.7rem;
+font-weight: 700;
+color: var(--cv-text-sec);
+margin-bottom: 1.2rem;
+font-style: italic;
+display: block;
+}
+
+.cv-meta-text {
+font-size: 1.5rem;
+color: var(--cv-text-sec);
+margin-bottom: 10px;
+display: block;
+opacity: 0.95;
+}
+
+.cv-desc-list {
+margin: 2rem 0 0 2rem;
+font-size: 1.5rem;
+line-height: 1.8;
+color: var(--cv-text-main);
+}
+
+.cv-desc-list li { margin-bottom: 1.5rem; }
+
+/* 技能标签设计 */
+.cv-pill-tag {
+background: rgba(var(--accent-color-rgb), 0.08);
+border: 2px solid var(--cv-glass-border);
+padding: 12px 28px;
+border-radius: 18px;
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--cv-text-main);
+display: inline-block;
+margin: 0 12px 12px 0;
+}
+
+@media (max-width: 800px) {
+.cv-hero-header h1 { font-size: 3.5rem; }
+.cv-inst-name { font-size: 1.6rem; }
+.cv-pos-title { font-size: 1.4rem; }
+.cv-desc-list, .cv-meta-text, .cv-time-tag { font-size: 1.25rem; }
+.cv-card-body { padding: 2rem; }
+}
+&lt;/style&gt;
+&lt;div class=&#34;cv-side-nav-container&#34;&gt;
+&lt;div class=&#34;cv-nav-trigger&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;30&#34; height=&#34;30&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2.5&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;line x1=&#34;3&#34; y1=&#34;12&#34; x2=&#34;21&#34; y2=&#34;12&#34;/&gt;&lt;line x1=&#34;3&#34; y1=&#34;6&#34; x2=&#34;21&#34; y2=&#34;6&#34;/&gt;&lt;line x1=&#34;3&#34; y1=&#34;18&#34; x2=&#34;21&#34; y2=&#34;18&#34;/&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-nav-capsule&#34;&gt;
+&lt;ul class=&#34;cv-nav-list&#34;&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#education&#34;&gt;Education&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#internship&#34;&gt;Internship&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#research&#34;&gt;Research&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#activities&#34;&gt;Activities&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#achievements&#34;&gt;Achievements&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&#34;cv-nav-item&#34;&gt;&lt;a href=&#34;#skills&#34;&gt;Skills&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-super-container&#34;&gt;
+&lt;div class=&#34;cv-main-content&#34;&gt;
+&lt;header class=&#34;cv-hero-header&#34;&gt;
+&lt;h1&gt;Hi, I am Jingyuan Zheng 🤩&lt;/h1&gt;
+&lt;p class=&#34;cv-intro-para&#34;&gt;
+I’m a Master’s student at &lt;strong&gt;The University of Hong Kong (HKU)&lt;/strong&gt; who finds the beauty in efficient logistics and the logic behind complex data. 
+&lt;br&gt;&lt;br&gt;
+Whether I&#39;m diving into supply chain optimization or searching for the best coffee spots in HK, I’m all about that &lt;strong&gt;&#34;efficiency with soul&#34;&lt;/strong&gt; vibe. I believe the invisible threads that keep our world moving are the most interesting to explore. Take a look at my journey below!
+&lt;/p&gt;
+&lt;/header&gt;
+&lt;section id=&#34;education&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M22 10v6M2 10l10-5 10 5-10 5z&#34;/&gt;&lt;path d=&#34;M6 12v5c3 3 9 3 12 0v-5&#34;/&gt;&lt;/svg&gt;
+ACADEMIC QUALIFICATION
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;The University of Hong Kong&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2024 - 09/2025&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Master of Science in Engineering (Industrial Engineering and Logistics Management)&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Ranked 17 in QS World University Rankings 2025&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;&lt;strong&gt;Main Courses:&lt;/strong&gt; Machine learning and applications (A), Digital enterprises and e-commerce (A)&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2019 - 06/2024&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Bachelor of Management Studies (Logistics Management)&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Project 211 of China&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;&lt;strong&gt;Main Courses:&lt;/strong&gt; International Logistics (91), Operational Research (90), Forecasting Methods and Skills (90), Database Technology and Application (90)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;internship&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;rect x=&#34;2&#34; y=&#34;7&#34; width=&#34;20&#34; height=&#34;14&#34; rx=&#34;2&#34; ry=&#34;2&#34;/&gt;&lt;path d=&#34;M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16&#34;/&gt;&lt;/svg&gt;
+INTERNSHIP EXPERIENCE
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Oriental Logistics Group (China) Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;02/2024 - 04/2024&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Business Intern, Xiamen Branch&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Spearheaded the management of Southeast Asia shipping routes, acting as the primary point of contact for major shipping partners. Streamlined cargo follow-up processes with a structured schedule, ensuring proactive updates three times per week and reducing shipment delays by 1 day.&lt;/li&gt;
+&lt;li&gt;Executed a client acquisition strategy, successfully onboarding two stable clients from China and the Philippines. Utilized market insights to position company services effectively, generating an additional $2000 in weekly revenue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Xiamen Wu Zhen Ni Hai I/E Co., Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;07/2023 - 09/2023&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Material Planner&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Conducted detailed analysis of 8 months of sales and inventory data using advanced data analytics techniques to uncover demand trends. Developed actionable recommendations that streamlined material requirements planning and reduced excess 25% stock for two seasonal products.&lt;/li&gt;
+&lt;li&gt;Optimized the inventory management system by updating the database structure. Organized the inventory database for 100 products based on historical company data and updated the database weekly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Xiamen Haixi Real Estate Marketing Planning Co., Ltd.&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;07/2022 - 09/2022&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Customer Information Administrator&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Analyzed customer information for real estate sales projects using data analysis and mining techniques of python and identified four distinct customer types and characteristics, providing valuable insights and suggestions for the sales team.&lt;/li&gt;
+&lt;li&gt;Compiled and analyzed the company’s sales data from the first two quarters and created a 15,000-word report and summary presentation, providing advices for the focus areas in the next quarter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;research&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;circle cx=&#34;11&#34; cy=&#34;11&#34; r=&#34;8&#34;/&gt;&lt;line x1=&#34;21&#34; y1=&#34;21&#34; x2=&#34;16.65&#34; y2=&#34;16.65&#34;/&gt;&lt;/svg&gt;
+RESEARCH EXPERIENCE
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Spare Parts Management for PV Power Station Inverters&lt;/span&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;Inventory Control Optimization (01/2025 - 02/2025) | Prof. Yao Cheng&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Developed a multi-objective optimization model using CTMC and NSGA-II to optimize microinverter spare parts inventory for cost and sustainability in a Phoenix, AZ PV station; validated via Monte Carlo simulations, reduced lifecycle costs by 12.9% and carbon emissions by 20.9% vs. zero-inventory approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Evolution of Operational Risks in Xiamen Maritime Supply Chain&lt;/span&gt;
+&lt;span class=&#34;cv-pos-title&#34;&gt;System Dynamics Research (10/2023 - 06/2024) | Prof. Haidong Yang&lt;/span&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;Developed a system dynamics model to simulate the evolution of operational risks within a three-tier indicator system, revealed that different risk subsystems display distinct trends. Recognized as an Outstanding Undergraduate Degree Dissertation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;activities&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2&#34;/&gt;&lt;circle cx=&#34;9&#34; cy=&#34;7&#34; r=&#34;4&#34;/&gt;&lt;path d=&#34;M23 21v-2a4 4 0 0 0-3-3.87&#34;/&gt;&lt;path d=&#34;M16 3.13a4 4 0 0 1 0 7.75&#34;/&gt;&lt;/svg&gt;
+ACTIVITIES
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Director, Psychological Development Department&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2020 - 09/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University | Excellent Psychological Development Department Award granted&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Student Library Manager&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;09/2020 - 01/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cv-entry-item&#34;&gt;
+&lt;div class=&#34;cv-entry-top&#34;&gt;
+&lt;span class=&#34;cv-inst-name&#34;&gt;Leader, Chinese Culture Society&lt;/span&gt;
+&lt;span class=&#34;cv-time-tag&#34;&gt;03/2020 - 01/2021&lt;/span&gt;
+&lt;/div&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;Fuzhou University&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;achievements&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;polygon points=&#34;12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2&#34;/&gt;&lt;/svg&gt;
+ACHIEVEMENTS
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Outstanding Participant&lt;/strong&gt; in the 2021-2022 China Ningbo Youth College Students’ Entrepreneurship Competition (06/2021).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Third-Class Scholarship&lt;/strong&gt; for the First Semester at Fuzhou University (04/2021 &amp; 08/2020).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outstanding Team&lt;/strong&gt; in the Final of Fujian Division of the “Zhengda Cup” 2020 Innovation practical Marketing Competition (07/2020).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section id=&#34;skills&#34; class=&#34;cv-module-card&#34;&gt;
+&lt;div class=&#34;cv-card-title&#34;&gt;
+&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;path d=&#34;M12 19l7-7 3 3-7 7-3-3z&#34;/&gt;&lt;path d=&#34;M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z&#34;/&gt;&lt;path d=&#34;M2 2l7.5 1.5&#34;/&gt;&lt;path d=&#34;M14 11l-4-4&#34;/&gt;&lt;/svg&gt;
+TECHNICAL SKILLS
+&lt;/div&gt;
+&lt;div class=&#34;cv-card-body&#34;&gt;
+&lt;div class=&#34;cv-tag-cloud&#34;&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Python&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;SQL Server&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;MATLAB&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;C&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;FlexSim&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Vensim&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;SPSS Statistics&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;English (IELTS 6.5)&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Mandarin (Native)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
         <title>Archives</title>
         <link>https://Jingyuan-Zheng.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
@@ -16,66 +441,14 @@
         <description></description>
         </item>
         <item>
-        <title>About</title>
-        <link>https://Jingyuan-Zheng.github.io/about/</link>
-        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://Jingyuan-Zheng.github.io/about/</guid>
-        <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
-&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
-&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
-&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
-&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>Links</title>
         <link>https://Jingyuan-Zheng.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/links/</guid>
-        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
-&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
+        <description>&lt;h2 id=&#34;-connect-with-me&#34;&gt;🚀 Connect with Me
+&lt;/h2&gt;&lt;p&gt;Welcome! You can find more of my work, thoughts, and daily life across these platforms. Feel free to reach out or follow my latest updates!&lt;/p&gt;
+&lt;hr&gt;
 </description>
         </item>
         <item>

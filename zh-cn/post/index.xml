@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on 小景</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/post/</link>
+        <description>Recent content in Posts on 小景</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/no-new-tab-cover.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+&lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-项目介绍什么是-no-new-tab&#34;&gt;🚀 项目介绍：什么是 No-New-Tab？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;No-New-Tab&lt;/strong&gt; 是一款专为国内主流社交和内容平台设计的 Tampermonkey（油猴）脚本。它的核心逻辑非常纯粹：&lt;strong&gt;把选择权还给用户。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它能拦截网站默认的强制开新窗口行为，强制所有链接在当前标签页跳转。如果你真的需要开新窗口，只需按住 &lt;code&gt;Cmd/Ctrl + 点击&lt;/code&gt; 即可，一切回归直觉。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/No-New-Tab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持平台：&lt;/strong&gt; Bilibili（主站/搜索/直播）、知乎、微博、小红书 (RedNote)、Appstorrent、Skymods 等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它解决了哪些痛点&#34;&gt;💡 它解决了哪些痛点？
+&lt;/h2&gt;&lt;h3 id=&#34;1-终结标签页地狱&#34;&gt;1. 终结“标签页地狱”
+&lt;/h3&gt;&lt;p&gt;无需再频繁手动关闭那些看完即丢的搜索结果页和评论区页面。你的浏览器顶栏将保持清爽，内存占用也显著降低。&lt;/p&gt;
+&lt;h3 id=&#34;2-找回后退按钮的直觉&#34;&gt;2. 找回“后退”按钮的直觉
+&lt;/h3&gt;&lt;p&gt;在新标签页打开链接后，浏览器的“后退”按钮往往是灰色的。使用 No-New-Tab 后，所有的跳转都发生在同一个历史记录栈中，点击“后退”即可回到上一级，这才是网页本该有的交互方式。&lt;/p&gt;
+&lt;h3 id=&#34;3-深度覆盖不仅仅是主链接&#34;&gt;3. 深度覆盖：不仅仅是主链接
+&lt;/h3&gt;&lt;p&gt;很多脚本只能处理文章标题链接。No-New-Tab 针对 B 站等平台进行了深度优化，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;搜索框优化：&lt;/strong&gt; 搜索结果直接在当前页加载，不再弹出新窗口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评论区交互：&lt;/strong&gt; 点击头像、用户名、话题（Hashtag）等均保持在当前页。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态加载支持：&lt;/strong&gt; 完美适配瀑布流加载的内容，新生成的链接也会被实时捕获。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-模拟原生-app般的丝滑&#34;&gt;4. 模拟“原生 App”般的丝滑
+&lt;/h3&gt;&lt;p&gt;在手机 App 上浏览时，我们习惯了层级式的进入和退出。No-New-Tab 让桌面端浏览器也拥有这种逻辑连贯性，非常适合深度刷帖和沉浸式阅读。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何安装使用&#34;&gt;🛠 如何安装使用？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;安装油猴插件：&lt;/strong&gt; 如果你还没安装，请先在 Chrome、Edge 或 Safari 商店搜索并安装 &lt;code&gt;Tampermonkey&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;获取脚本：&lt;/strong&gt; 访问 &lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/514467-no-new-tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Greasy Fork&lt;/a&gt; 点击安装。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;即刻生效：&lt;/strong&gt; 刷新你正在浏览的 B 站或知乎页面，感受不再“弹窗”的清爽体验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而不是替用户做决定。&lt;strong&gt;No-New-Tab&lt;/strong&gt; 只是一个微小的尝试，希望能在这个强制用户停留在“围墙花园”里的时代，通过一点点代码，找回最初那种简单、纯粹的 Web 浏览体验。&lt;/p&gt;
+&lt;p&gt;如果你喜欢这个项目，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; 给个 Star，或者提交 Issue 告诉我想支持哪些新网站！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/translator-cover.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
+&lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mac-Lite-Translator GUI&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-演示视频&#34;&gt;📺 演示视频
+&lt;/h2&gt;&lt;p&gt;先来看看它的实际表现吧！你可以看到极速的响应速度和精准的学术翻译模式：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video
+    controls
+    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
+    
+    
+    &gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;-技术内核为什么选-mlx--gemma&#34;&gt;🚀 技术内核：为什么选 MLX + Gemma？
+&lt;/h2&gt;&lt;p&gt;传统的本地翻译工具往往依赖通用的 CPU 推理，速度缓慢。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 的核心优势在于：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Apple MLX 框架支持：&lt;/strong&gt; 专门为 Apple Silicon (M1-M4) 统一内存架构优化的深度学习框架，推理速度远超通用的推理后端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 12B 模型：&lt;/strong&gt; 来自 Google 的先进大模型，经过微调后专门针对翻译任务优化，12B 的参数规模在 4-bit 量化下，既保证了翻译的深度（如上下文理解、文学修辞），又保证了极速响应。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-小白科普什么是-translategemma&#34;&gt;🧐 小白科普：什么是 TranslateGemma？
+&lt;/h2&gt;&lt;p&gt;如果你是第一次听说这个名字，不用担心。简单来说，&lt;strong&gt;TranslateGemma&lt;/strong&gt; 是由 Google 官方推出的一系列专门为“翻译”任务量身打造的开源大模型。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;它的由来：&lt;/strong&gt; 它是基于 Google 强大的 &lt;strong&gt;Gemma 2&lt;/strong&gt; 模型（和 Gemini 同源）进行“二次深造”（微调）而来的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;为什么更强：&lt;/strong&gt; 普通的大模型虽然也能翻译，但 TranslateGemma 学习了海量的专业翻译语料。因此在处理长难句、自动语种识别以及保持译文自然度方面，表现得更像一名“职业翻译官”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持广泛：&lt;/strong&gt; 它原生支持 55 种语言之间的相互翻译，是目前开源社区中翻译质量最顶尖的模型之一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;👉 点击这里了解 TranslateGemma 官方技术详情&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它能为你做什么&#34;&gt;💡 它能为你做什么？
+&lt;/h2&gt;&lt;h3 id=&#34;1-多样化的翻译模式&#34;&gt;1. 多样化的翻译模式
+&lt;/h3&gt;&lt;p&gt;不同于原生翻译只有一种输出，你可以一键切换多种翻译风格：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;学术模式 (Academic)：&lt;/strong&gt; 针对论文、专业文档优化，术语严谨，句式正式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;休闲模式 (Casual)：&lt;/strong&gt; 适合日常对话、社交媒体，语言更具亲和力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网页聊天 (Web Chat)：&lt;/strong&gt; 适配口语化的快速交流场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-深度词典功能&#34;&gt;2. 深度词典功能
+&lt;/h3&gt;&lt;p&gt;当你翻译单个单词或短语时，脚本会自动进入 &lt;strong&gt;词典模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供标准的 &lt;strong&gt;IPA 音标&lt;/strong&gt;（英/美）。&lt;/li&gt;
+&lt;li&gt;给出详细的 &lt;strong&gt;定义、同义词&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;列举 &lt;strong&gt;实际例句&lt;/strong&gt;，帮助你真正掌握单词。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-系统级无缝集成&#34;&gt;3. 系统级无缝集成
+&lt;/h3&gt;&lt;p&gt;通过 macOS 的 &lt;strong&gt;快捷指令 (Shortcuts)&lt;/strong&gt; 和 &lt;strong&gt;右键菜单&lt;/strong&gt;，你可以像使用原生功能一样调用 Mac-Lite-Translator。只需选中一段文字，右键点击，极速翻译即刻呈现在屏幕上。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-隐私与成本真正的本地化&#34;&gt;🔒 隐私与成本：真正的本地化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100% 隐私保护：&lt;/strong&gt; 你的所有翻译请求都不会离开你的电脑。无论是公司机密还是个人隐私，都无需担心被上传至云端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0 运行成本：&lt;/strong&gt; 无需订阅费，无需购买 ChatGPT 或 DeepL 的 API Key。只要你的电脑有电，翻译就是免费的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;离线可用：&lt;/strong&gt; 在飞机上、地下室或其他无网络环境，它依然是你的得力助手。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何开始&#34;&gt;🛠 如何开始？
+&lt;/h2&gt;&lt;p&gt;项目已在 GitHub 开源，你只需简单的几步配置即可体验：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;推荐环境：&lt;/strong&gt; 建议 16GB 及以上内存的 Apple Silicon Mac 以获得最佳体验。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。&lt;/p&gt;
+&lt;p&gt;如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</link>
+        <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</guid>
+        <description>&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
+&lt;p&gt;正如标题所说，这是我的第一篇博客。作为一个喜欢记录和分享的人，我一直梦想着拥有一个属于自己的、可以自由书写的空间。在探索了各种方案后，我最终选择了 &lt;strong&gt;Hugo + GitHub Pages&lt;/strong&gt; 这套组合，因为它足够&lt;strong&gt;快速、免费、强大&lt;/strong&gt;，而且折腾起来非常有成就感。&lt;/p&gt;
+&lt;p&gt;这篇文章，就是为了记录我从一个想法到网站上线的全过程，并特别点出一些教程里可能没详细说明、但我亲身遇到的“坑”。&lt;/p&gt;
+&lt;p&gt;搭建过程我主要参考了以下优秀教程，强烈推荐大家先看一遍：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文字教程： &lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo + Stack 主题打造自定义博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;视频教程：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bovfeaEtQ/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【雷】Hugo + Github免费搭建博客，并实现自动化部署&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;整体思路&#34;&gt;整体思路
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在本地电脑上安装 Hugo。&lt;/li&gt;
+&lt;li&gt;创建网站、配置主题、撰写文章。&lt;/li&gt;
+&lt;li&gt;将网站源码推送到 GitHub，触发自动化部署。&lt;/li&gt;
+&lt;li&gt;最终，通过 &lt;code&gt;username.github.io&lt;/code&gt; 访问你的博客。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;第一步环境准备-macos&#34;&gt;第一步：环境准备 (macOS)
+&lt;/h2&gt;&lt;p&gt;首先，我们需要一些基础工具。在 macOS 上，推荐使用 Homebrew 这个包管理器来安装，非常方便。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安装 Homebrew&lt;/strong&gt; (如果已经安装，请跳过)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/bin/bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安装 Hugo 和 Git&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成后，可以通过 &lt;code&gt;hugo version&lt;/code&gt; 和 &lt;code&gt;git --version&lt;/code&gt; 来检查。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;核心搭建步骤跟随教程--注意差异&#34;&gt;核心搭建步骤：跟随教程 &amp;amp; 注意差异
+&lt;/h2&gt;&lt;p&gt;从创建 Hugo 网站、安装 Stack 主题，到配置 &lt;code&gt;hugo.toml&lt;/code&gt; 文件、设置 GitHub Actions 自动化部署，上面链接的教程已经讲得非常详细清晰了，我就不再赘述。&lt;/p&gt;
+&lt;p&gt;在这里，我只想补充一点 &lt;strong&gt;macOS 用户&lt;/strong&gt; 需要注意的小差异：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;macOS 用户请注意：&lt;/strong&gt;
+在视频教程中，你可能会看到讲师使用的是 &lt;code&gt;hugo.exe&lt;/code&gt; 命令。这是因为他可能是在 Windows 上直接下载的二进制文件。
+在 macOS 上，通过 Homebrew 安装后，&lt;strong&gt;直接使用 &lt;code&gt;hugo&lt;/code&gt; 命令即可&lt;/strong&gt;，例如 &lt;code&gt;hugo server -D&lt;/code&gt;。不需要 &lt;code&gt;.exe&lt;/code&gt; 后缀。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关键一步首次-git-push-与-github-令牌token&#34;&gt;关键一步：首次 &lt;code&gt;git push&lt;/code&gt; 与 GitHub 令牌（Token）
+&lt;/h2&gt;&lt;p&gt;当你本地的所有工作都完成后，最后一步是 &lt;code&gt;git push&lt;/code&gt;，将你的网站源码推送到 GitHub 仓库。&lt;strong&gt;这是新手最容易卡住的地方。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;现在 GitHub 不再支持使用账户密码直接进行 &lt;code&gt;git&lt;/code&gt; 操作，我们必须使用 &lt;strong&gt;个人访问令牌（Personal Access Token, PAT）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;1-为什么需要令牌&#34;&gt;1. 为什么需要令牌？
+&lt;/h4&gt;&lt;p&gt;简单来说，令牌是比密码更安全的一种认证方式。&lt;/p&gt;
+&lt;h4 id=&#34;2-第一次-push-的正确姿势&#34;&gt;2. 第一次 Push 的正确姿势
+&lt;/h4&gt;&lt;p&gt;当你第一次执行 &lt;code&gt;git push&lt;/code&gt; 时，系统会弹出一个窗口或在命令行提示你输入用户名和密码：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; 输入你的 GitHub 用户名。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;strong&gt;千万不要输入你的 GitHub 登录密码！&lt;/strong&gt; 在这里应该粘贴你提前生成好的&lt;strong&gt;个人访问令牌&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;如何生成令牌？&lt;/strong&gt;
+前往 GitHub -&amp;gt; 点击右上角头像 -&amp;gt; Settings -&amp;gt; Developer settings -&amp;gt; Personal access tokens -&amp;gt; Tokens (classic) -&amp;gt; Generate new token。
+&lt;strong&gt;权限 (Scopes)&lt;/strong&gt; 至少要勾选 &lt;code&gt;repo&lt;/code&gt;。
+生成后，&lt;strong&gt;立刻复制并保存好这个令牌&lt;/strong&gt;，因为这个页面关掉后你将再也看不到它了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3-救命我的令牌过期了错了该如何更新&#34;&gt;3. 救命！我的令牌过期了/错了，该如何更新？
+&lt;/h4&gt;&lt;p&gt;这是一个非常常见的问题。如果你之前设置过错误的令牌，或者令牌过期了，&lt;code&gt;git push&lt;/code&gt; 会一直失败，提示认证错误。这是因为 macOS 的“钥匙串”已经帮你记住了那个旧的、无效的令牌。&lt;/p&gt;
+&lt;p&gt;我们需要手动删除它，让 Git 重新问你要新的。&lt;/p&gt;
+&lt;p&gt;在最新版的 macOS 中，操作非常简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开“系统设置”&lt;/strong&gt; (System Settings)。&lt;/li&gt;
+&lt;li&gt;在左侧菜单找到并进入 &lt;strong&gt;“密码”&lt;/strong&gt; (Passwords) 区域 (需要 Touch ID 或密码解锁)。&lt;/li&gt;
+&lt;li&gt;在密码列表上方的搜索框中，输入 &lt;code&gt;github.com&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;找到相关的条目，点击右侧的“信息”图标 (i)，然后选择 &lt;strong&gt;“删除密码”&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;删除后，回到你的终端，再次执行 &lt;code&gt;git push&lt;/code&gt;。此时，系统就会重新提示你输入用户名和密码了，这时再粘贴你的&lt;strong&gt;新令牌&lt;/strong&gt;，问题就解决了！&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;搭建博客的过程，就是跟随教程、解决问题的过程。希望我补充的这两点关于 macOS 的命令差异和 GitHub 令牌的经验，能帮你绕过新手常见的“坑”。&lt;/p&gt;
+&lt;p&gt;现在，轮到你来书写自己的故事了。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="想要在 Mac 上拥有 ChatGPT 级别的翻译体验，又担心隐私泄露？Mac-Lite-Translator 结合 Google Gemma 模型与苹果 MLX 框架，为你打造极速、私密的本地 AI 翻译专家。">
+<title>拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</title>
+
+<link rel='canonical' href='https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/'>
+
+<link rel="stylesheet" href="/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞">
+<meta property='og:description' content="想要在 Mac 上拥有 ChatGPT 级别的翻译体验，又担心隐私泄露？Mac-Lite-Translator 结合 Google Gemma 模型与苹果 MLX 框架，为你打造极速、私密的本地 AI 翻译专家。">
+<meta property='og:url' content='https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Mac 软件' /><meta property='article:tag' content='Gemma 模型' /><meta property='article:tag' content='MLX 框架' /><meta property='article:tag' content='AI 翻译' /><meta property='article:tag' content='隐私保护' /><meta property='article:tag' content='效率工具' /><meta property='article:published_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://Jingyuan-Zheng.github.io/img/translator-cover.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞">
+<meta name="twitter:description" content="想要在 Mac 上拥有 ChatGPT 级别的翻译体验，又担心隐私泄露？Mac-Lite-Translator 结合 Google Gemma 模型与苹果 MLX 框架，为你打造极速、私密的本地 AI 翻译专家。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://Jingyuan-Zheng.github.io/img/translator-cover.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/zh-cn/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_87566998d571ad6c.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/collection/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>文集</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://Jingyuan-Zheng.github.io/" >English</option>
+                                
+                                    <option value="https://Jingyuan-Zheng.github.io/zh-cn/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-演示视频">📺 演示视频</a></li>
+    <li><a href="#-技术内核为什么选-mlx--gemma">🚀 技术内核：为什么选 MLX + Gemma？</a></li>
+    <li><a href="#-小白科普什么是-translategemma">🧐 小白科普：什么是 TranslateGemma？</a></li>
+    <li><a href="#-它能为你做什么">💡 它能为你做什么？</a>
+      <ol>
+        <li><a href="#1-多样化的翻译模式">1. 多样化的翻译模式</a></li>
+        <li><a href="#2-深度词典功能">2. 深度词典功能</a></li>
+        <li><a href="#3-系统级无缝集成">3. 系统级无缝集成</a></li>
+      </ol>
+    </li>
+    <li><a href="#-隐私与成本真正的本地化">🔒 隐私与成本：真正的本地化</a></li>
+    <li><a href="#-如何开始">🛠 如何开始？</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/zh-cn/p/mac-lite-translator-local-ai-translation/">
+                
+                    <img src="/img/translator-cover.png" loading="lazy" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/zh-cn/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" >
+                工具推荐
+            </a>
+        
+            <a href="/zh-cn/categories/apple-silicon/" >
+                Apple Silicon
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/mac-lite-translator-local-ai-translation/">拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            想要在 Mac 上拥有 ChatGPT 级别的翻译体验，又担心隐私泄露？Mac-Lite-Translator 结合 Google Gemma 模型与苹果 MLX 框架，为你打造极速、私密的本地 AI 翻译专家。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">08/Mar/2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://Jingyuan-Zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/" class="link">English</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。</p>
+<p>为了解决这些痛点，我开发了 <strong>Mac-Lite-Translator</strong>。它不仅能在你的 Mac 上 <strong>100% 本地运行</strong>，还集成了强大的 <strong>Google Gemma 12B</strong> 模型，通过苹果官方的 <strong>MLX 框架</strong> 榨干 M 系列芯片的每一滴性能。</p>
+<p><img src="https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Mac-Lite-Translator GUI"
+	
+	
+></p>
+<hr>
+<h2 id="-演示视频">📺 演示视频
+</h2><p>先来看看它的实际表现吧！你可以看到极速的响应速度和精准的学术翻译模式：</p>
+<div class="video-wrapper">
+    <video
+    controls
+    src="https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74"
+    
+    
+    >
+        <p>
+            Your browser doesn't support HTML5 video. Here is a
+            <a href="https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74">link to the video</a> instead.
+        </p>
+    </video>
+</div>
+
+<hr>
+<h2 id="-技术内核为什么选-mlx--gemma">🚀 技术内核：为什么选 MLX + Gemma？
+</h2><p>传统的本地翻译工具往往依赖通用的 CPU 推理，速度缓慢。<strong>Mac-Lite-Translator</strong> 的核心优势在于：</p>
+<ol>
+<li><strong>Apple MLX 框架支持：</strong> 专门为 Apple Silicon (M1-M4) 统一内存架构优化的深度学习框架，推理速度远超通用的推理后端。</li>
+<li><strong>Gemma 12B 模型：</strong> 来自 Google 的先进大模型，经过微调后专门针对翻译任务优化，12B 的参数规模在 4-bit 量化下，既保证了翻译的深度（如上下文理解、文学修辞），又保证了极速响应。</li>
+</ol>
+<hr>
+<h2 id="-小白科普什么是-translategemma">🧐 小白科普：什么是 TranslateGemma？
+</h2><p>如果你是第一次听说这个名字，不用担心。简单来说，<strong>TranslateGemma</strong> 是由 Google 官方推出的一系列专门为“翻译”任务量身打造的开源大模型。</p>
+<ul>
+<li><strong>它的由来：</strong> 它是基于 Google 强大的 <strong>Gemma 2</strong> 模型（和 Gemini 同源）进行“二次深造”（微调）而来的。</li>
+<li><strong>为什么更强：</strong> 普通的大模型虽然也能翻译，但 TranslateGemma 学习了海量的专业翻译语料。因此在处理长难句、自动语种识别以及保持译文自然度方面，表现得更像一名“职业翻译官”。</li>
+<li><strong>支持广泛：</strong> 它原生支持 55 种语言之间的相互翻译，是目前开源社区中翻译质量最顶尖的模型之一。</li>
+</ul>
+<blockquote>
+<p><a class="link" href="https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0"  target="_blank" rel="noopener"
+    >👉 点击这里了解 TranslateGemma 官方技术详情</a></p>
+</blockquote>
+<hr>
+<h2 id="-它能为你做什么">💡 它能为你做什么？
+</h2><h3 id="1-多样化的翻译模式">1. 多样化的翻译模式
+</h3><p>不同于原生翻译只有一种输出，你可以一键切换多种翻译风格：</p>
+<ul>
+<li><strong>学术模式 (Academic)：</strong> 针对论文、专业文档优化，术语严谨，句式正式。</li>
+<li><strong>休闲模式 (Casual)：</strong> 适合日常对话、社交媒体，语言更具亲和力。</li>
+<li><strong>网页聊天 (Web Chat)：</strong> 适配口语化的快速交流场景。</li>
+</ul>
+<h3 id="2-深度词典功能">2. 深度词典功能
+</h3><p>当你翻译单个单词或短语时，脚本会自动进入 <strong>词典模式</strong>：</p>
+<ul>
+<li>提供标准的 <strong>IPA 音标</strong>（英/美）。</li>
+<li>给出详细的 <strong>定义、同义词</strong>。</li>
+<li>列举 <strong>实际例句</strong>，帮助你真正掌握单词。</li>
+</ul>
+<h3 id="3-系统级无缝集成">3. 系统级无缝集成
+</h3><p>通过 macOS 的 <strong>快捷指令 (Shortcuts)</strong> 和 <strong>右键菜单</strong>，你可以像使用原生功能一样调用 Mac-Lite-Translator。只需选中一段文字，右键点击，极速翻译即刻呈现在屏幕上。</p>
+<hr>
+<h2 id="-隐私与成本真正的本地化">🔒 隐私与成本：真正的本地化
+</h2><ul>
+<li><strong>100% 隐私保护：</strong> 你的所有翻译请求都不会离开你的电脑。无论是公司机密还是个人隐私，都无需担心被上传至云端。</li>
+<li><strong>0 运行成本：</strong> 无需订阅费，无需购买 ChatGPT 或 DeepL 的 API Key。只要你的电脑有电，翻译就是免费的。</li>
+<li><strong>离线可用：</strong> 在飞机上、地下室或其他无网络环境，它依然是你的得力助手。</li>
+</ul>
+<hr>
+<h2 id="-如何开始">🛠 如何开始？
+</h2><p>项目已在 GitHub 开源，你只需简单的几步配置即可体验：</p>
+<ul>
+<li><strong>项目 GitHub 地址：</strong> <a class="link" href="https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma"  target="_blank" rel="noopener"
+    >Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma</a></li>
+<li><strong>推荐环境：</strong> 建议 16GB 及以上内存的 Apple Silicon Mac 以获得最佳体验。</li>
+</ul>
+<hr>
+<h2 id="结语">结语
+</h2><p>浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。<strong>Mac-Lite-Translator</strong> 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。</p>
+<p>如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh-cn/tags/mac-%E8%BD%AF%E4%BB%B6/">Mac 软件</a>
+        
+            <a href="/zh-cn/tags/gemma-%E6%A8%A1%E5%9E%8B/">Gemma 模型</a>
+        
+            <a href="/zh-cn/tags/mlx-%E6%A1%86%E6%9E%B6/">MLX 框架</a>
+        
+            <a href="/zh-cn/tags/ai-%E7%BF%BB%E8%AF%91/">AI 翻译</a>
+        
+            <a href="/zh-cn/tags/%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/">隐私保护</a>
+        
+            <a href="/zh-cn/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/no-new-tab-browser-efficiency-tool/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/no-new-tab-cover.png" loading="lazy" data-key="no-new-tab-browser-efficiency-tool" data-hash="/img/no-new-tab-cover.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo=""
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 Jingyuan Zheng
+    </section>
+    
+    <section class="powerby">
+        
+            Welcome to my site! <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
