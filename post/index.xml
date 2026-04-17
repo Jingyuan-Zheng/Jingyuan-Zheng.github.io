@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Jingyuan</title>
+        <link>https://Jingyuan-Zheng.github.io/post/</link>
+        <description>Recent content in Posts on Jingyuan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Fri, 17 Apr 2026 18:30:00 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Introducing Ġabra: A Native Maltese Dictionary for macOS</title>
+        <link>https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
+        <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Introducing Ġabra: A Native Maltese Dictionary for macOS" /&gt;&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;why-this-project&#34;&gt;Why this project?
+&lt;/h3&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://mlrs.research.um.edu.mt/resources/gabra-api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ġabra project&lt;/a&gt; from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &amp;ldquo;Look up&amp;rdquo; feature (three-finger tap).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png&#34;
+	width=&#34;1910&#34;
+	height=&#34;1474&#34;
+	srcset=&#34;https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_75d02d7847d7a5d7.png 480w, https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_460e280d918adfd8.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Screenshot of Ġabra Dictionary&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;129&#34;
+		data-flex-basis=&#34;310px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;technical-challenges&#34;&gt;Technical Challenges
+&lt;/h3&gt;&lt;p&gt;The primary challenge was the sheer volume of data. While there are about 21,000 base lexemes, the lexicon includes nearly &lt;strong&gt;4.5 million inflected word forms&lt;/strong&gt;. Converting this from BSON (the format provided by the Ġabra team) to the Apple Dictionary XML format required a high-performance streaming approach.&lt;/p&gt;
+&lt;p&gt;I wrote a Python engine that processes these millions of entries without loading the entire 1.3GB dataset into memory. This ensures that the dictionary is not only comprehensive but also accurately indexes every plural, conjugation, and variant.&lt;/p&gt;
+&lt;h3 id=&#34;features&#34;&gt;Features
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;21,083 entries&lt;/strong&gt;: Full coverage of the Ġabra lexicon.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4.5 Million forms&lt;/strong&gt;: Search for &amp;ldquo;skrejjen&amp;rdquo; (plural) and find &amp;ldquo;skrun&amp;rdquo; (propeller) instantly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rich Metadata&lt;/strong&gt;: Includes phonetic transcriptions, grammatical categories (POS), and root information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Native Experience&lt;/strong&gt;: Works perfectly with Dark Mode, Spotlight, and &amp;ldquo;Look up&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;open-source&#34;&gt;Open Source
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve decided to open-source the entire build pipeline. You can find the repository on GitHub:&lt;/p&gt;
+&lt;p&gt;👉 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/gabra-maltese-macos-dictionary&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The repository includes an &lt;code&gt;update.sh&lt;/code&gt; script that automates the process of downloading the latest data and rebuilding the dictionary, ensuring it stays up-to-date with the official Ġabra database.&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Installation
+&lt;/h3&gt;&lt;p&gt;If you just want to use the dictionary, you can download the DMG from the &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Releases page&lt;/a&gt;. Simply drag it to your Dictionaries folder and enable it in the Dictionary app settings!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I hope this tool helps learners and native speakers alike in exploring the richness of the Maltese language. Sahha!&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blazing Fast &amp; 100% Private: Why Mac-Lite-Translator is the Ultimate AI Translation Tool for Apple Silicon</title>
+        <link>https://Jingyuan-Zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/translator-cover.png" alt="Featured image of post Blazing Fast &amp; 100% Private: Why Mac-Lite-Translator is the Ultimate AI Translation Tool for Apple Silicon" /&gt;&lt;p&gt;While macOS&amp;rsquo;s native translation is convenient, it often falls short when dealing with complex academic papers, creative writing, or nuanced professional documents. Meanwhile, cloud-based services like ChatGPT and DeepL offer superior quality but raise significant privacy concerns and often require expensive API keys.&lt;/p&gt;
+&lt;p&gt;To bridge this gap, I developed &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;, a high-performance, &lt;strong&gt;100% local AI translation tool&lt;/strong&gt; specifically optimized for Apple Silicon (M1, M2, M3, M4) Macs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mac-Lite-Translator GUI&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-demo-video&#34;&gt;📺 Demo Video
+&lt;/h2&gt;&lt;p&gt;See Mac-Lite-Translator in action! Watch how it handles academic translation with blazing speed:&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video
+    controls
+    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
+    
+    
+    &gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;-the-core-google-gemma--apple-mlx&#34;&gt;🚀 The Core: Google Gemma + Apple MLX
+&lt;/h2&gt;&lt;p&gt;The secret to its speed and accuracy lies in its modern tech stack:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Apple MLX Framework:&lt;/strong&gt; Unlike generic translation tools, this project is built on Apple&amp;rsquo;s dedicated machine learning framework. It fully utilizes the Unified Memory and GPU acceleration of M-series chips, delivering performance that leaves standard CPU inference in the dust.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 12B (4-bit):&lt;/strong&gt; Powered by Google&amp;rsquo;s state-of-the-art Gemma 12B model, fine-tuned specifically for translation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-new-to-ai-what-is-translategemma&#34;&gt;🧐 New to AI? What is TranslateGemma?
+&lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re wondering what makes this model special compared to a standard chatbot, here&amp;rsquo;s the breakdown:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TranslateGemma&lt;/strong&gt; is a family of open models from Google, purpose-built for high-quality translation tasks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Origin:&lt;/strong&gt; It&amp;rsquo;s a fine-tuned version of Google&amp;rsquo;s powerful &lt;strong&gt;Gemma 2&lt;/strong&gt; models (built from the same tech behind Gemini).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Difference:&lt;/strong&gt; While general AI models can translate, TranslateGemma has been &amp;ldquo;specialized&amp;rdquo; through training on massive amounts of professional translation data. This makes it far more reliable for complex sentence structures and natural-sounding results across 55+ languages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Expert Level:&lt;/strong&gt; It understands nuances better than smaller, generic models, acting more like a professional translator than a simple word-swapper.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;👉 Learn more about TranslateGemma on its official page&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-what-makes-it-unique&#34;&gt;💡 What Makes It Unique?
+&lt;/h2&gt;&lt;h3 id=&#34;1-contextual-style-switching&#34;&gt;1. Contextual Style Switching
+&lt;/h3&gt;&lt;p&gt;Different scenarios require different tones. Mac-Lite-Translator allows you to toggle between:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Academic Mode:&lt;/strong&gt; Formal, precise, and perfect for research papers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Casual Mode:&lt;/strong&gt; Natural and approachable for social media or blogging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Chat Mode:&lt;/strong&gt; Quick and idiomatic for instant messaging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-built-in-smart-dictionary&#34;&gt;2. Built-in Smart Dictionary
+&lt;/h3&gt;&lt;p&gt;Translating a single word? The script automatically transitions into &lt;strong&gt;Dictionary Mode&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IPA Phonetics:&lt;/strong&gt; Accurate pronunciation (US/UK).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contextual Definitions:&lt;/strong&gt; Lists meanings, synonyms, and usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Example Sentences:&lt;/strong&gt; Helps you master the word in context.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-native-macos-experience&#34;&gt;3. Native macOS Experience
+&lt;/h3&gt;&lt;p&gt;Integration is key to productivity. By leveraging &lt;strong&gt;macOS Shortcuts&lt;/strong&gt; and &lt;strong&gt;Automator&lt;/strong&gt;, Mac-Lite-Translator feels like a part of the OS. Simply select text, right-click, and see the translation instantly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-privacy--performance-no-strings-attached&#34;&gt;🔒 Privacy &amp;amp; Performance: No Strings Attached
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100% Offline:&lt;/strong&gt; Your data never leaves your device. No cloud uploads, no tracking, and no privacy compromises.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zero Costs:&lt;/strong&gt; No subscriptions. No API fees for OpenAI or DeepL. As long as your Mac is running, translation is free.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instant Response:&lt;/strong&gt; Thanks to MLX, the 12B model responds at reading speed, making it feel snappier than many cloud alternatives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-getting-started&#34;&gt;🛠 Getting Started
+&lt;/h2&gt;&lt;p&gt;This project is open-source and ready for you to explore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Repository:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recommended Setup:&lt;/strong&gt; For the best experience, an Apple Silicon Mac with at least 16GB of RAM is recommended.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Translation is more than just swapping words; it&amp;rsquo;s about preserving meaning and privacy. &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; brings cutting-edge generative AI to your desktop, proving that high-end productivity doesn&amp;rsquo;t have to come at the cost of your data.&lt;/p&gt;
+&lt;p&gt;If you find this tool helpful, feel free to give it a star on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;!&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
