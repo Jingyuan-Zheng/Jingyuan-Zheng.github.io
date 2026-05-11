@@ -232,6 +232,7 @@
   <ol>
     <li><a href="#简介">简介</a></li>
     <li><a href="#资源说明">资源说明</a></li>
+    <li><a href="#开发者与源码维护">开发者与源码维护</a></li>
     <li><a href="#安装方法">安装方法</a></li>
     <li><a href="#下载链接">下载链接</a></li>
   </ol>
@@ -349,6 +350,14 @@
 <li><strong>格式</strong>：Apple Dictionary Service (.dictionary)</li>
 <li><strong>文件大小</strong>：约 1.3 GB</li>
 <li><strong>制作说明</strong>：由 MDX 原版转换而来，保留了原有的样式和排版，适配 macOS 系统字体。</li>
+</ul>
+<h2 id="开发者与源码维护">开发者与源码维护
+</h2><p>为了方便有开发需求或想定制样式的同学，我已经将该词典的构建源码（包括 CSS 样式、Makefile、逻辑脚本及示例 XML 结构）全部开源。</p>
+<p>如果你想参与维护、更新词条或修改 UI，可以查看仓库中的 <code>src</code> 目录：</p>
+<ul>
+<li><strong>CSS 排版</strong>: <code>The_Little_Dict.css</code> 控制了所有的视觉显示。</li>
+<li><strong>构建脚本</strong>: 使用提供的 <code>Makefile</code> 配合 Apple Dictionary Development Kit 即可一键编译。</li>
+<li><strong>示例结构</strong>: <code>sample_structure.xml</code> 展示了如何将数据组织成苹果词典所需的 XML 格式。</li>
 </ul>
 <h2 id="安装方法">安装方法
 </h2><ol>

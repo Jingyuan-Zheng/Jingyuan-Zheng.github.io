@@ -34,6 +34,14 @@
 &lt;li&gt;&lt;strong&gt;文件大小&lt;/strong&gt;：约 1.3 GB&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;制作说明&lt;/strong&gt;：由 MDX 原版转换而来，保留了原有的样式和排版，适配 macOS 系统字体。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;开发者与源码维护&#34;&gt;开发者与源码维护
+&lt;/h2&gt;&lt;p&gt;为了方便有开发需求或想定制样式的同学，我已经将该词典的构建源码（包括 CSS 样式、Makefile、逻辑脚本及示例 XML 结构）全部开源。&lt;/p&gt;
+&lt;p&gt;如果你想参与维护、更新词条或修改 UI，可以查看仓库中的 &lt;code&gt;src&lt;/code&gt; 目录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CSS 排版&lt;/strong&gt;: &lt;code&gt;The_Little_Dict.css&lt;/code&gt; 控制了所有的视觉显示。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;构建脚本&lt;/strong&gt;: 使用提供的 &lt;code&gt;Makefile&lt;/code&gt; 配合 Apple Dictionary Development Kit 即可一键编译。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例结构&lt;/strong&gt;: &lt;code&gt;sample_structure.xml&lt;/code&gt; 展示了如何将数据组织成苹果词典所需的 XML 格式。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;安装方法&#34;&gt;安装方法
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;下载并打开 &lt;code&gt;The_Little_Dict.dmg&lt;/code&gt;。&lt;/li&gt;
