@@ -13,7 +13,7 @@
         <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/the-little-dict-macos/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/the-little-dict-macos.png" alt="Featured image of post The Little Dict (Apple Dictionary 格式) - macOS 专用分享" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/featured.png" alt="Featured image of post The Little Dict (Apple Dictionary 格式) - macOS 专用分享" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;The Little Dict&lt;/strong&gt; 是一款非常经典的词典，原版为 MDX 格式。虽然 MDX 在第三方词典软件中表现极佳，但对于 macOS 用户来说，没法用系统原生的“三指触摸查词”始终是个遗憾。macOS 的原生查词体验极佳，一按即查，这种系统级的无缝衔接是任何第三方软件很难完美替代的。&lt;/p&gt;
 &lt;p&gt;因此，为了方便 macOS 用户原生使用，我将其转换成了苹果词典（.dictionary）格式，并打包成了 DMG 镜像，方便安装和分享。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Jingyuan-Zheng/The-Little-Dict-macOS/master/screenshot.png&#34;
@@ -62,7 +62,7 @@
 &lt;li&gt;打开 &lt;strong&gt;系统设置 (System Settings)&lt;/strong&gt; -&amp;gt; &lt;strong&gt;辅助功能 (Accessibility)&lt;/strong&gt; -&amp;gt; &lt;strong&gt;朗读内容 (Read &amp;amp; Speak)&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;打开 &lt;strong&gt;“朗读所选内容” (Speak selection)&lt;/strong&gt; 开关。&lt;/li&gt;
 &lt;li&gt;点击右侧的 &lt;strong&gt;“i” (感叹号)&lt;/strong&gt; 图标，可以自定义快捷键（默认为 &lt;code&gt;Option + Esc&lt;/code&gt;）。
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_1.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_1.png&#34;
 	
 	
 	
@@ -72,7 +72,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_shortcut.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_shortcut.png&#34;
 	
 	
 	
@@ -83,7 +83,7 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;在 &lt;strong&gt;“系统语音” (System voice)&lt;/strong&gt; 旁点击感叹号，选择你喜欢的发音。建议下载带有 &lt;strong&gt;Enhanced&lt;/strong&gt; 或 &lt;strong&gt;Premium&lt;/strong&gt; 标签的高质量语音（例如英音 Jamie 或美音 Samantha），这些声音在 macOS 26 中已经进化得非常拟人。
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_2.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_2.png&#34;
 	
 	
 	
@@ -199,7 +199,7 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/no-new-tab-cover.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
 &lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
 &lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
@@ -387,7 +387,7 @@ transform: translateX(8px);
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/translator-cover.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/mac-lite-translator/featured.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
 &lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
 	

@@ -13,7 +13,7 @@
         <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/the-little-dict-macos/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/the-little-dict-macos.png" alt="Featured image of post The Little Dict (Apple Dictionary 格式) - macOS 专用分享" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/featured.png" alt="Featured image of post The Little Dict (Apple Dictionary 格式) - macOS 专用分享" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;The Little Dict&lt;/strong&gt; 是一款非常经典的词典，原版为 MDX 格式。虽然 MDX 在第三方词典软件中表现极佳，但对于 macOS 用户来说，没法用系统原生的“三指触摸查词”始终是个遗憾。macOS 的原生查词体验极佳，一按即查，这种系统级的无缝衔接是任何第三方软件很难完美替代的。&lt;/p&gt;
 &lt;p&gt;因此，为了方便 macOS 用户原生使用，我将其转换成了苹果词典（.dictionary）格式，并打包成了 DMG 镜像，方便安装和分享。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Jingyuan-Zheng/The-Little-Dict-macOS/master/screenshot.png&#34;
@@ -62,7 +62,7 @@
 &lt;li&gt;打开 &lt;strong&gt;系统设置 (System Settings)&lt;/strong&gt; -&amp;gt; &lt;strong&gt;辅助功能 (Accessibility)&lt;/strong&gt; -&amp;gt; &lt;strong&gt;朗读内容 (Read &amp;amp; Speak)&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;打开 &lt;strong&gt;“朗读所选内容” (Speak selection)&lt;/strong&gt; 开关。&lt;/li&gt;
 &lt;li&gt;点击右侧的 &lt;strong&gt;“i” (感叹号)&lt;/strong&gt; 图标，可以自定义快捷键（默认为 &lt;code&gt;Option + Esc&lt;/code&gt;）。
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_1.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_1.png&#34;
 	
 	
 	
@@ -72,7 +72,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_shortcut.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_shortcut.png&#34;
 	
 	
 	
@@ -83,7 +83,7 @@
 	
 &gt;&lt;/li&gt;
 &lt;li&gt;在 &lt;strong&gt;“系统语音” (System voice)&lt;/strong&gt; 旁点击感叹号，选择你喜欢的发音。建议下载带有 &lt;strong&gt;Enhanced&lt;/strong&gt; 或 &lt;strong&gt;Premium&lt;/strong&gt; 标签的高质量语音（例如英音 Jamie 或美音 Samantha），这些声音在 macOS 26 中已经进化得非常拟人。
-&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/tts_2.png&#34;
+&lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/the-little-dict-macos/tts_2.png&#34;
 	
 	
 	
