@@ -7,7 +7,26 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Fri, 17 Apr 2026 18:30:00 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/categories/open-source/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/categories/open-source/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DMG Maker: Create Beautiful macOS Installers Automatically</title>
+        <link>https://Jingyuan-Zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
+        <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: Create Beautiful macOS Installers Automatically" /&gt;&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
+&lt;h2 id=&#34;why-dmg-maker&#34;&gt;Why DMG Maker?
+&lt;/h2&gt;&lt;p&gt;Creating a DMG with a custom background usually involves manual AppleScripting or tedious Finder configurations. DMG Maker automates this using a single command.&lt;/p&gt;
+&lt;h2 id=&#34;key-features&#34;&gt;Key Features
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Auto-Symlink&lt;/strong&gt;: Automatically detects file types (like &lt;code&gt;.dictionary&lt;/code&gt; or &lt;code&gt;.app&lt;/code&gt;) and links them to the correct system folders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Aesthetics&lt;/strong&gt;: Easily apply backgrounds and position icons via coordinates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: Check it out on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/dmg-maker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Check out the project to start making your own installers!&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Introducing Ġabra: A Native Maltese Dictionary for macOS</title>
         <link>https://Jingyuan-Zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
         <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
