@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>EID on Jingyuan</title>
+        <link>https://Jingyuan-Zheng.github.io/tags/eid/</link>
+        <description>Recent content in EID on Jingyuan</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>Jingyuan Zheng</copyright>
+        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/tags/eid/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Malta AI for All: How to Claim One Year of ChatGPT Plus or Microsoft 365 Personal with Copilot</title>
+        <link>https://Jingyuan-Zheng.github.io/p/ai4all-malta-free-ai-courses/</link>
+        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/p/ai4all-malta-free-ai-courses/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/featured.png" alt="Featured image of post Malta AI for All: How to Claim One Year of ChatGPT Plus or Microsoft 365 Personal with Copilot" /&gt;&lt;style&gt;
+.post-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.25rem 0;
+    gap: 16px;
+}
+.post-figure img {
+    max-width: min(92%, 980px);
+    max-height: 72vh;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.12);
+    cursor: zoom-in;
+}
+.post-figure .caption {
+    font-size: 0.98rem;
+    color: var(--card-text-color-secondary);
+    text-align: center;
+    max-width: min(92%, 820px);
+    line-height: 1.65;
+    opacity: 0.88;
+}
+@media (max-width: 768px) {
+    .post-figure { margin: 2.5rem 0; }
+    .post-figure img { max-width: 96%; max-height: 70vh; }
+}
+&lt;/style&gt;
+&lt;p&gt;Malta&amp;rsquo;s official &lt;strong&gt;AI for All / AI għal Kulħadd&lt;/strong&gt; programme is a free national AI literacy initiative. According to the &lt;a class=&#34;link&#34; href=&#34;https://mdia.gov.mt/services/ai-for-all-ai-ghal-kulhadd/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MDIA programme page&lt;/a&gt;, Maltese citizens and residents with an active eID account can take part. After completing the three fundamental modules, eligible participants receive a free subscription to a designated AI platform. OpenAI also announced that the programme gives successful participants &lt;a class=&#34;link&#34; href=&#34;https://openai.com/index/malta-chatgpt-plus-partnership/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;one year of ChatGPT Plus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The registration portal is here: &lt;a class=&#34;link&#34; href=&#34;https://ai4all.gov.mt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ai4all.gov.mt&lt;/a&gt;. This guide walks through the practical steps from registration to claiming the subscription.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: this guide was written on May 19, 2026. The official pages, course flow, and subscription options may change, so check the AI4ALL and MDIA pages before submitting anything important.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;before-you-start&#34;&gt;Before You Start
+&lt;/h2&gt;&lt;p&gt;Prepare these first:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;an active Malta eID account and password;&lt;/li&gt;
+&lt;li&gt;your eID two-factor authentication method, either SMS or authenticator app;&lt;/li&gt;
+&lt;li&gt;the ID number printed on the bottom-right of the back of your Maltese identity card;&lt;/li&gt;
+&lt;li&gt;a personal email address for Coursera account recovery;&lt;/li&gt;
+&lt;li&gt;Chrome or Edge.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I do not recommend Safari for this process. In my test, the minister&amp;rsquo;s video page did not redirect correctly in Safari after playback. Chrome and Edge were more reliable.&lt;/p&gt;
+&lt;h2 id=&#34;open-the-ai4all-website&#34;&gt;Open the AI4ALL Website
+&lt;/h2&gt;&lt;p&gt;Go to the &lt;a class=&#34;link&#34; href=&#34;https://ai4all.gov.mt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AI4ALL official website&lt;/a&gt;. The top of the site shows the AI Għal Kulħadd project page (Figure 1). Scroll down and click &lt;strong&gt;Register with e-ID&lt;/strong&gt; (Figure 2).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-1.png&#34; alt=&#34;AI Għal Kulħadd homepage&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 1: AI Għal Kulħadd homepage.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-2.png&#34; alt=&#34;Register with e-ID button on the AI4ALL website&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 2: Scroll down and click Register with e-ID.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;watch-the-introductory-video&#34;&gt;Watch the Introductory Video
+&lt;/h2&gt;&lt;p&gt;After clicking the registration button, you will see a video message from the minister (Figure 3). The video cannot be skipped. Once it finishes, the page should redirect to the AI4ALL login screen (Figure 4).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-3-1.png&#34; alt=&#34;Minister video page before AI4ALL registration&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 3: The video page before registration. Wait until it finishes.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-3-2.png&#34; alt=&#34;AI4ALL login page after the video&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 4: The AI4ALL login page after the video redirect.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;sign-in-with-eid-and-authorise-the-service&#34;&gt;Sign in with eID and Authorise the Service
+&lt;/h2&gt;&lt;p&gt;Enter your ID number and eID password (Figure 5). The ID number should be taken from the bottom-right of the back of your identity card. It is not the document number on the front of the residence card.&lt;/p&gt;
+&lt;p&gt;Next, enter the one-time code from SMS or your authenticator app (Figure 6). After verification, the platform will ask you to authorise AI Għal Kulħadd to access the required eID details. Review the information, tick the preference box if appropriate, and proceed (Figure 7).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-4-1.png&#34; alt=&#34;Malta eID sign-in page&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 5: eID sign-in. Use the ID number from the back of your identity card.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-4-2.png&#34; alt=&#34;Malta eID two-factor verification page&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 6: Enter the one-time verification code.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-1.png&#34; alt=&#34;eID authorisation page for AI Għal Kulħadd&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 7: Authorise AI Għal Kulħadd to access the required eID details.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;complete-your-ai4all-profile&#34;&gt;Complete Your AI4ALL Profile
+&lt;/h2&gt;&lt;p&gt;After authorisation, you will enter the AI4ALL registration flow. Choose your preferred language first (Figure 8). I selected English. Then fill in the profile and questionnaire (Figure 9). For personal details such as nationality, employment status, and education level, keep them consistent with your official records where possible.&lt;/p&gt;
+&lt;p&gt;The Terms and Conditions page requires you to scroll to the bottom before continuing. Tick &lt;strong&gt;I have read and understood the terms and conditions above&lt;/strong&gt;, then click Continue (Figure 10).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-2.png&#34; alt=&#34;AI4ALL language selection screen&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 8: Choose your preferred platform language.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-3.png&#34; alt=&#34;AI4ALL profile questionnaire&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 9: Complete the profile and questionnaire.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-4.png&#34; alt=&#34;AI4ALL terms and conditions confirmation&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 10: Scroll to the bottom of the terms, tick the checkbox, and continue.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;activate-the-ai-programme-bundle&#34;&gt;Activate the AI Programme Bundle
+&lt;/h2&gt;&lt;p&gt;On the learning platform, find &lt;strong&gt;AI Programme Bundle&lt;/strong&gt; and click &lt;strong&gt;Activate&lt;/strong&gt; (Figure 11). After activation, you should see the three fundamental courses: &lt;strong&gt;Fundamentals of AI&lt;/strong&gt;, &lt;strong&gt;AI for Everyday Life&lt;/strong&gt;, and &lt;strong&gt;AI for Learning&lt;/strong&gt; (Figure 12).&lt;/p&gt;
+&lt;p&gt;You need to complete all three. Click &lt;strong&gt;Access course&lt;/strong&gt; for each one to open Coursera.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-6-1.png&#34; alt=&#34;AI Programme Bundle activation card&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 11: Activate the AI Programme Bundle.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-6-2.png&#34; alt=&#34;Three AI4ALL fundamental courses&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 12: The three fundamental courses appear after activation.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The first time you enter Coursera, you may be asked to create a password for an automatically generated account. That account is usually an email address ending in &lt;code&gt;mt&lt;/code&gt;; it is not your personal email address. Save both the generated Coursera account and the password.&lt;/p&gt;
+&lt;h2 id=&#34;set-up-coursera-and-start-a-course&#34;&gt;Set up Coursera and Start a Course
+&lt;/h2&gt;&lt;p&gt;Coursera will ask you to accept its terms and privacy policy, then add a personal recovery email address. The screenshots for this part depend heavily on your Coursera language settings, so I am not including the Chinese-interface screenshots here. The important sequence is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;set a password for the generated Coursera account;&lt;/li&gt;
+&lt;li&gt;accept Coursera&amp;rsquo;s terms;&lt;/li&gt;
+&lt;li&gt;add your personal email address;&lt;/li&gt;
+&lt;li&gt;open the course page and click the blue enrol button;&lt;/li&gt;
+&lt;li&gt;tick the course commitment checkbox;&lt;/li&gt;
+&lt;li&gt;click the button to start learning.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;complete-each-course&#34;&gt;Complete Each Course
+&lt;/h2&gt;&lt;p&gt;The courses are not long. Most videos are only a few minutes, but they cannot simply be skipped because questions appear during the videos (Figure 13). If you listen carefully, the questions are straightforward. The English level is moderate, and the reading materials are easier than a typical IELTS Reading Part 1 passage.&lt;/p&gt;
+&lt;p&gt;Some reading materials also appear to require time on page before you can continue. Read the material, answer the questions, and return to the AI4ALL platform for the next course.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-8-1.png&#34; alt=&#34;Coursera AI course learning page&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 13: Coursera course page. Some videos include embedded questions.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;After completing one course, go back to the official AI4ALL platform. You may need to click &lt;strong&gt;View My Bundle&lt;/strong&gt; to return to the programme bundle and continue with the next course (Figure 14).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-1.png&#34; alt=&#34;Return to AI4ALL platform after completing a course&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 14: Return to AI4ALL and continue with the remaining courses.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;finish-the-exams-and-pathway&#34;&gt;Finish the Exams and Pathway
+&lt;/h2&gt;&lt;p&gt;After all three courses are completed, wait a little and return to the programme home page. Each course area should show an exam entry such as &lt;strong&gt;Check Your Knowledge&lt;/strong&gt;. Open the instructions, scroll down, agree to the conditions, and then enter the exam page.&lt;/p&gt;
+&lt;p&gt;All three courses require an exam. After passing, you will see a completion message (Figure 15), and the platform will show the completed status for the courses (Figure 16).&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-2.png&#34; alt=&#34;AI4ALL exam completion message&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 15: Completion message after passing the exam.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-3.png&#34; alt=&#34;AI4ALL courses completed and passed&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 16: The three fundamental courses show Completed / Pass.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The platform will then move you to the Pathway stage. Activate it and complete the scale-style questionnaire. Once the programme progress reaches 100%, the subscription claim page becomes available.&lt;/p&gt;
+&lt;h2 id=&#34;claim-the-one-year-subscription&#34;&gt;Claim the One-Year Subscription
+&lt;/h2&gt;&lt;p&gt;The final claim page lets you choose between &lt;strong&gt;ChatGPT Plus&lt;/strong&gt; and &lt;strong&gt;Microsoft 365 Personal with Copilot AI&lt;/strong&gt; (Figure 17). After choosing one, click the claim button. The activation code will be sent to the email address registered with your eID.&lt;/p&gt;
+&lt;p&gt;If you choose ChatGPT Plus, follow the redirect to &lt;a class=&#34;link&#34; href=&#34;https://chatgpt.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ChatGPT&lt;/a&gt; and activate the offer there (Figure 18). If you choose Microsoft 365 Personal with Copilot, check the &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/en-us/microsoft-365-copilot/personal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft 365 Copilot Personal page&lt;/a&gt; and follow the instructions in the activation email.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-4.png&#34; alt=&#34;AI4ALL page for choosing ChatGPT Plus or Microsoft 365 Personal with Copilot&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 17: Choose either ChatGPT Plus or Microsoft 365 Personal with Copilot AI.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-5.png&#34; alt=&#34;ChatGPT Plus activation page&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 18: ChatGPT Plus activation page after following the offer link.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes
+&lt;/h2&gt;&lt;p&gt;The three places most likely to cause confusion are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Browser redirect: use Chrome or Edge instead of Safari.&lt;/li&gt;
+&lt;li&gt;eID login: use the ID number from the back of the identity card.&lt;/li&gt;
+&lt;li&gt;Coursera account: the generated &lt;code&gt;mt&lt;/code&gt; account is different from your personal email address, so save its password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The course itself is manageable, but the videos and reading sections take real time. Once the three courses, three exams, and Pathway questionnaire are complete, the platform should show 100% progress and let you claim the one-year subscription.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
