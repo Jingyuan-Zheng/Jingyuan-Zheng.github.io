@@ -7,7 +7,194 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>马耳他 AI for All 免费课程：领取一年 ChatGPT Plus 或 Microsoft 365 Personal with Copilot 攻略</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/ai4all-malta-free-ai-courses/</link>
+        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/ai4all-malta-free-ai-courses/</guid>
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/featured.png" alt="Featured image of post 马耳他 AI for All 免费课程：领取一年 ChatGPT Plus 或 Microsoft 365 Personal with Copilot 攻略" /&gt;&lt;style&gt;
+.post-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.25rem 0;
+    gap: 16px;
+}
+.post-figure img {
+    max-width: min(92%, 980px);
+    max-height: 72vh;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.12);
+    cursor: zoom-in;
+}
+.post-figure .caption {
+    font-size: 0.98rem;
+    color: var(--card-text-color-secondary);
+    text-align: center;
+    max-width: min(92%, 820px);
+    line-height: 1.65;
+    opacity: 0.88;
+}
+@media (max-width: 768px) {
+    .post-figure { margin: 2.5rem 0; }
+    .post-figure img { max-width: 96%; max-height: 70vh; }
+}
+&lt;/style&gt;
+&lt;p&gt;马耳他官方的 &lt;strong&gt;AI for All / AI għal Kulħadd&lt;/strong&gt; 是一个免费的国家 AI 素养项目。根据 &lt;a class=&#34;link&#34; href=&#34;https://mdia.gov.mt/services/ai-for-all-ai-ghal-kulhadd/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MDIA 官方说明&lt;/a&gt;，持有有效 eID 的马耳他公民和居民可以参加，完成三门基础课程后可获得指定 AI 平台的一年免费订阅；OpenAI 也在 &lt;a class=&#34;link&#34; href=&#34;https://openai.com/index/malta-chatgpt-plus-partnership/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方公告&lt;/a&gt; 中说明，完成课程后可获得一年 ChatGPT Plus。&lt;/p&gt;
+&lt;p&gt;实际领取入口是项目官网：&lt;a class=&#34;link&#34; href=&#34;https://ai4all.gov.mt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ai4all.gov.mt&lt;/a&gt;。下面是我这次从注册到领取权益的完整流程。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：这篇记录写于 2026 年 5 月 19 日。官方页面、课程细节和可领取产品可能会调整，提交前建议再看一眼官网和 MDIA 页面。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;准备事项&#34;&gt;准备事项
+&lt;/h2&gt;&lt;p&gt;开始前建议先准备好：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有效的马耳他 eID 账号和密码；&lt;/li&gt;
+&lt;li&gt;eID 绑定的手机验证码或验证器；&lt;/li&gt;
+&lt;li&gt;身份卡背面右下角的身份证号，也就是登录页面要求的 ID Number / Identity Card Number；&lt;/li&gt;
+&lt;li&gt;一个你常用的个人邮箱，用来后续绑定 Coursera；&lt;/li&gt;
+&lt;li&gt;Chrome 或 Edge 等浏览器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里特别提醒：不要用 Safari 做这套流程。我这次测试时，部长视频讲话页面结束后 Safari 没能正常跳转，Chrome / Edge 更稳。&lt;/p&gt;
+&lt;h2 id=&#34;1-进入-ai4all-官网&#34;&gt;1. 进入 AI4ALL 官网
+&lt;/h2&gt;&lt;p&gt;打开 &lt;a class=&#34;link&#34; href=&#34;https://ai4all.gov.mt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AI4ALL 官方网站&lt;/a&gt;。首页顶部会看到 AI Għal Kulħadd 的项目页面（见图 1），继续往下滚动，会看到 &lt;strong&gt;Register with e-ID&lt;/strong&gt; 按钮（见图 2）。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-1.png&#34; alt=&#34;AI Għal Kulħadd 官网首页&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 1：AI Għal Kulħadd 官网首页。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-2.png&#34; alt=&#34;Register with e-ID 按钮位置&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 2：往下滚动后点击 Register with e-ID。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;2-看完部长视频后跳转登录&#34;&gt;2. 看完部长视频后跳转登录
+&lt;/h2&gt;&lt;p&gt;点击注册后，会进入部长视频讲话页面（见图 3）。这个视频不能跳过，等播放完成后才会自动进入 eID 登录页面（见图 4）。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-3-1.png&#34; alt=&#34;部长视频讲话页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 3：注册前的视频页面，需要等待播放结束。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-3-2.png&#34; alt=&#34;AI4ALL eID 登录入口&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 4：视频结束后会跳转到 AI4ALL 登录页。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;3-使用-eid-登录并授权&#34;&gt;3. 使用 eID 登录并授权
+&lt;/h2&gt;&lt;p&gt;登录时输入身份证号和 eID 密码（见图 5）。身份证号注意看卡片背面右下角的号码，不是居留卡正面右上角那串文件号。&lt;/p&gt;
+&lt;p&gt;之后会进入双重验证页面，输入短信或验证器里的一次性验证码（见图 6）。验证完成后，页面会要求授权 AI Għal Kulħadd 访问部分 eID 资料，确认信息无误后勾选记住偏好并继续（见图 7）。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-4-1.png&#34; alt=&#34;eID 登录页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 5：eID 登录页面。ID Number 请填写身份卡背面右下角的号码。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-4-2.png&#34; alt=&#34;eID 双重验证页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 6：输入短信或验证器的一次性验证码。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-1.png&#34; alt=&#34;eID 服务授权页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 7：确认授权 AI Għal Kulħadd 访问所需 eID 资料。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;4-完成-ai4all-profile-和条款&#34;&gt;4. 完成 AI4ALL Profile 和条款
+&lt;/h2&gt;&lt;p&gt;授权后会进入 AI 注册页面。先选择语言，我选的是 English（见图 8）。随后填写 profile 和问卷（见图 9），涉及国籍、就业状态、教育程度等个人信息时，尽量和你提交给官方系统的资料保持一致。&lt;/p&gt;
+&lt;p&gt;继续往下会看到 Terms and Conditions。这里需要把条款内容滚动到最下面，勾选 &lt;strong&gt;I have read and understood the terms and conditions above&lt;/strong&gt;，然后点 Continue（见图 10）。如果没有滚到底，继续按钮可能无法使用。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-2.png&#34; alt=&#34;选择 AI4ALL 平台语言&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 8：选择平台语言。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-3.png&#34; alt=&#34;填写 AI4ALL Profile&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 9：填写 Profile 和问卷。个人信息尽量与官方资料一致。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-5-4.png&#34; alt=&#34;AI4ALL 条款确认页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 10：条款滚动到底部后，勾选确认并继续。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;5-激活-ai-programme-bundle&#34;&gt;5. 激活 AI Programme Bundle
+&lt;/h2&gt;&lt;p&gt;进入学习平台后，在 &lt;strong&gt;AI Programme Bundle&lt;/strong&gt; 这一栏点击 &lt;strong&gt;Activate&lt;/strong&gt;（见图 11）。激活后会看到三门基础课程：&lt;strong&gt;Fundamentals of AI&lt;/strong&gt;、&lt;strong&gt;AI for Everyday Life&lt;/strong&gt;、&lt;strong&gt;AI for Learning&lt;/strong&gt;（见图 12）。&lt;/p&gt;
+&lt;p&gt;三门课都需要完成。每门课旁边都有 &lt;strong&gt;Access course&lt;/strong&gt;，点击后会进入 Coursera。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-6-1.png&#34; alt=&#34;AI Programme Bundle 激活入口&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 11：在 AI Programme Bundle 里点击 Activate。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-6-2.png&#34; alt=&#34;AI Programme Bundle 三门课程&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 12：激活后会出现三门基础课程，逐个点击 Access course。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;第一次进入 Coursera 时，系统会让你给自动生成的账号设置密码（见图 13）。这个账号通常是一个以 &lt;code&gt;mt&lt;/code&gt; 结尾的邮箱，不是你自己的个人邮箱。把这个 Coursera 账号和密码记好，后面可能还会用到。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-6-3.png&#34; alt=&#34;Coursera 自动账号设置密码&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 13：首次进入 Coursera 时，为系统自动生成的账号设置密码。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;6-接受-coursera-条款并绑定邮箱&#34;&gt;6. 接受 Coursera 条款并绑定邮箱
+&lt;/h2&gt;&lt;p&gt;进入 Coursera 后会先看到条款页面，这里应该可以看到中文界面。勾选同意 Coursera 的服务条款和隐私政策后继续（见图 14）。&lt;/p&gt;
+&lt;p&gt;接着绑定你的个人邮箱（见图 15）。完成后进入课程页面，点击蓝色注册按钮（见图 16），显示已注册后会进入承诺环节。勾选承诺并点击 &lt;strong&gt;开始学习课程&lt;/strong&gt;（见图 17）。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-7-1.png&#34; alt=&#34;Coursera 设置密码后接受条款&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 14：接受 Coursera 条款后继续。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-7-2.png&#34; alt=&#34;Coursera 添加恢复电子邮件地址&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 15：添加你的个人邮箱，方便后续找回或接收通知。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-7-3.png&#34; alt=&#34;Coursera 课程注册页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 16：课程页面里点击蓝色注册按钮。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-7-4.png&#34; alt=&#34;Coursera 课程承诺页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 17：勾选学习承诺，然后点击开始学习课程。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;7-完成每门课程&#34;&gt;7. 完成每门课程
+&lt;/h2&gt;&lt;p&gt;课程内容不多，每个视频一般只有几分钟（见图 18）。但视频中间会出现题目，不能直接跳过；认真听完再做题会比较简单。整体英语难度大概类似雅思口语 Part 2，阅读材料比雅思阅读 Part 1 略低一些。&lt;/p&gt;
+&lt;p&gt;阅读材料看起来也需要花时间读完，最后根据材料回答问题即可。如果英文阅读有困难，可以用浏览器自带翻译、沉浸式翻译等插件辅助理解；答题时建议仍然回到原文核对关键信息。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-8-1.png&#34; alt=&#34;Coursera AI 课程学习页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 18：Coursera 课程学习页面。视频中会穿插题目。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;完成一门课后，回到 AI4ALL 官方平台继续下一门。这一次通常需要点击 &lt;strong&gt;View My Bundle&lt;/strong&gt; 才能回到课程包（见图 19）。之后重复上面的 Access course、注册、承诺和学习流程。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-1.png&#34; alt=&#34;回到 AI4ALL 平台继续课程&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 19：完成一门课后，回到官方平台继续下一门课程。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;8-完成三门考试和-pathway&#34;&gt;8. 完成三门考试和 Pathway
+&lt;/h2&gt;&lt;p&gt;三门课程都完成后，需要稍等一会儿再回到项目主页。每门课刚刚进入课程的位置会出现考试入口，例如 &lt;strong&gt;Check Your Knowledge&lt;/strong&gt;（见图 19）。点进去后先看说明，往下滚动同意后才能进入考试页面。&lt;/p&gt;
+&lt;p&gt;三门都要考。考试完成后会看到通过提示（见图 20）。随后项目主页会出现完成状态（见图 21）。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-2.png&#34; alt=&#34;AI4ALL 考试完成提示&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 20：考试通过后会出现完成提示。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-3.png&#34; alt=&#34;三门课程通过状态&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 21：三门基础课程显示 Completed / Pass。&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;之后会进入 Pathway 环节，需要先激活，再完成一个量表问卷。全部完成后，课程进度显示 100%，就会出现领取资格页面。&lt;/p&gt;
+&lt;h2 id=&#34;9-领取一年订阅&#34;&gt;9. 领取一年订阅
+&lt;/h2&gt;&lt;p&gt;领取页面会让你二选一：&lt;strong&gt;ChatGPT Plus&lt;/strong&gt; 或 &lt;strong&gt;Microsoft 365 Personal with Copilot AI&lt;/strong&gt;（见图 22）。选择后点击领取，激活码会发送到你的 eID 登记邮箱。&lt;/p&gt;
+&lt;p&gt;如果选择 ChatGPT Plus，按页面跳转到 &lt;a class=&#34;link&#34; href=&#34;https://chatgpt.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ChatGPT&lt;/a&gt; 激活即可（见图 23）。如果选择 Microsoft 365 Personal with Copilot，可以先查看 &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/en-us/microsoft-365-copilot/personal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft 365 Copilot Personal 官方页面&lt;/a&gt;，再按邮件里的激活说明操作。&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-4.png&#34; alt=&#34;AI4ALL 领取 ChatGPT Plus 或 Microsoft 365 Personal with Copilot&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 22：完成课程后，可在 ChatGPT Plus 和 Microsoft 365 Personal with Copilot AI 中选择一个。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://Jingyuan-Zheng.github.io/img/ai4all-malta-free-ai-courses/fig-9-5.png&#34; alt=&#34;ChatGPT Plus 激活页面&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;图 23：跳转到 ChatGPT 后，按页面提示激活一年权益。&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结
+&lt;/h2&gt;&lt;p&gt;整个流程最容易卡住的地方有三个：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器跳转：尽量用 Chrome 或 Edge，不建议 Safari；&lt;/li&gt;
+&lt;li&gt;eID 登录：ID Number 看身份卡背面右下角；&lt;/li&gt;
+&lt;li&gt;Coursera 账号：第一次进入时系统自动生成的 &lt;code&gt;mt&lt;/code&gt; 邮箱账号和你自己的邮箱不是一回事，密码要记好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;课程本身不难，但因为视频和阅读材料都不能完全跳过，建议预留一段完整时间慢慢做。完成三门课程、三门考试和 Pathway 问卷后，看到进度 100% 就可以领取一年会员了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>DMG Maker: 自动化创建精美的 macOS 安装包</title>
         <link>https://Jingyuan-Zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>

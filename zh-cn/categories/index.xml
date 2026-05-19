@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/categories/ai/</link>
+        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/categories/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>生活指南</title>
+        <link>https://Jingyuan-Zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</link>
+        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://Jingyuan-Zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>MacOS</title>
         <link>https://Jingyuan-Zheng.github.io/zh-cn/categories/macos/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
@@ -45,14 +61,6 @@
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>生活指南</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</link>
-        <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</guid>
         <description></description>
         </item>
         
