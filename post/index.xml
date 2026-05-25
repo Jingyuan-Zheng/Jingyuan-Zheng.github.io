@@ -7,7 +7,95 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Mon, 25 May 2026 10:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS</title>
+        <link>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</link>
+        <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS" /&gt;&lt;p&gt;I have open-sourced &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;, a macOS keyboard layout for people who want to keep typing on a standard US ABC keyboard while gaining fast access to European Latin characters, Greek letters, pinyin tone marks, Maltese-friendly extensions, mathematical symbols, numbered markers, and technical symbols.&lt;/p&gt;
+&lt;p&gt;The project is here: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-i-built-it&#34;&gt;Why I Built It
+&lt;/h2&gt;&lt;p&gt;The standard US keyboard is comfortable for daily English typing, programming, and shortcuts. The problem starts when multilingual writing enters the workflow.&lt;/p&gt;
+&lt;p&gt;Typing German, French, Italian, Spanish, Portuguese, Maltese, Greek, pinyin, or academic notation often means switching input sources, opening the character viewer, or memorizing unrelated shortcuts. Language-specific keyboard layouts can solve one problem but create another: the physical keys no longer match US keyboard muscle memory. A German layout, for example, moves &lt;code&gt;Y&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;ABC Custom keeps the base layer as standard US ABC, then adds mnemonic &lt;code&gt;Option&lt;/code&gt; layers on top of it. The goal is simple: one US keyboard for multilingual writing and research.&lt;/p&gt;
+&lt;h2 id=&#34;start-from-the-normal-us-abc-layout&#34;&gt;Start from the Normal US ABC Layout
+&lt;/h2&gt;&lt;p&gt;ABC Custom assumes a standard US ABC physical layout. The base layer stays familiar, so everyday English typing and most &lt;code&gt;Command&lt;/code&gt; / &lt;code&gt;Control&lt;/code&gt; shortcuts continue to behave as expected.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/01-us-abc-base.svg&#34; alt=&#34;Standard US ABC base keyboard layout&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 1: The base layer remains the standard US ABC layout.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;direct-option-layers&#34;&gt;Direct Option Layers
+&lt;/h2&gt;&lt;p&gt;Hold &lt;code&gt;Option&lt;/code&gt; and press a key to type the symbol shown on that key. Blue keys are dead-key prefixes: press the prefix first, release it, then press the target key.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/02-option-layer.svg&#34; alt=&#34;ABC Custom Option keyboard layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 2: The Option layer adds common symbols and mnemonic dead-key prefixes.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Shift&lt;/code&gt; + &lt;code&gt;Option&lt;/code&gt; opens a second direct layer, including superscript and circled-character prefixes.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/03-shift-option-layer.svg&#34; alt=&#34;ABC Custom Shift Option keyboard layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 3: Shift + Option extends the symbol layer without changing the base layout.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The direct layers cover common symbols such as &lt;code&gt;ℕ&lt;/code&gt;, &lt;code&gt;ℤ&lt;/code&gt;, &lt;code&gt;ℚ&lt;/code&gt;, &lt;code&gt;ℝ&lt;/code&gt;, &lt;code&gt;π&lt;/code&gt;, &lt;code&gt;Σ&lt;/code&gt;, &lt;code&gt;√&lt;/code&gt;, &lt;code&gt;∂&lt;/code&gt;, &lt;code&gt;≠&lt;/code&gt;, &lt;code&gt;≤&lt;/code&gt;, &lt;code&gt;≥&lt;/code&gt;, arrows, dashes, currency signs, checkmarks, and boxed or starred markers.&lt;/p&gt;
+&lt;h2 id=&#34;dead-keys-that-are-easier-to-remember&#34;&gt;Dead Keys That Are Easier to Remember
+&lt;/h2&gt;&lt;p&gt;Dead keys make composition fast without assigning every accented character to a separate shortcut.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt;, then &lt;code&gt;a&lt;/code&gt;, outputs &lt;code&gt;ā&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;2&lt;/code&gt;, then &lt;code&gt;e&lt;/code&gt;, outputs &lt;code&gt;é&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;5&lt;/code&gt;, then &lt;code&gt;u&lt;/code&gt;, outputs &lt;code&gt;ü&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;G&lt;/code&gt;, then &lt;code&gt;p&lt;/code&gt;, outputs &lt;code&gt;π&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The pinyin tone layers follow tone numbering: &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;4&lt;/code&gt; correspond to tones 1-4.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/04-dead-key-tone-1.svg&#34; alt=&#34;ABC Custom pinyin tone 1 dead key layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 4: Tone 1 uses Option + 1, then a vowel key.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The umlaut layer uses &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;5&lt;/code&gt; because the &lt;code&gt;%&lt;/code&gt; key visually suggests two dots. The dot-above layer uses &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;8&lt;/code&gt; because the &lt;code&gt;*&lt;/code&gt; key suggests a dot or star.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/08-dead-key-umlaut.svg&#34; alt=&#34;ABC Custom umlaut dead key layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 5: The umlaut layer covers letters such as ä, ë, ï, ö, and ü.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/13-dead-key-dot-above.svg&#34; alt=&#34;ABC Custom dot above dead key layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 6: Dot-above characters are useful for Maltese and scholarly transliteration.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;greek-subscripts-superscripts-and-technical-symbols&#34;&gt;Greek, Subscripts, Superscripts, and Technical Symbols
+&lt;/h2&gt;&lt;p&gt;For academic writing, the layout also includes Greek letters on mnemonic Latin keys. &lt;code&gt;Option&lt;/code&gt; + &lt;code&gt;G&lt;/code&gt; enters the Greek layer, so &lt;code&gt;p&lt;/code&gt; maps to &lt;code&gt;π&lt;/code&gt;, &lt;code&gt;m&lt;/code&gt; maps to &lt;code&gt;μ&lt;/code&gt;, &lt;code&gt;l&lt;/code&gt; maps to &lt;code&gt;λ&lt;/code&gt;, &lt;code&gt;w&lt;/code&gt; maps to &lt;code&gt;ω&lt;/code&gt;, and &lt;code&gt;d&lt;/code&gt; maps to &lt;code&gt;δ&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/11-dead-key-greek.svg&#34; alt=&#34;ABC Custom Greek dead key layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 7: The Greek layer places common letters on mnemonic Latin keys.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;There are also paired subscript and superscript layers, plus degree, diameter, empty-set, copyright, registered, trademark, circled characters, and round operators.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/abc-custom-keyboard/15-dead-key-superscript.svg&#34; alt=&#34;ABC Custom superscript dead key layer&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 8: Superscripts are available from Shift + Option + 9.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation
+&lt;/h2&gt;&lt;p&gt;The easiest path is the DMG release:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;code&gt;ABC-Custom-Keyboard.dmg&lt;/code&gt; from the latest GitHub Release.&lt;/li&gt;
+&lt;li&gt;Open it and drag &lt;code&gt;ABC Custom.bundle&lt;/code&gt; to the &lt;code&gt;Keyboard Layouts&lt;/code&gt; folder shown in the DMG window.&lt;/li&gt;
+&lt;li&gt;Log out and log back in, or restart macOS.&lt;/li&gt;
+&lt;li&gt;Open System Settings and add &lt;code&gt;ABC Custom&lt;/code&gt; from Keyboard Input Sources.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Manual installation is also available by copying &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt; to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/Library/Keyboard Layouts/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Then log out and back in, or restart macOS.&lt;/p&gt;
+&lt;h2 id=&#34;files-for-people-who-want-to-modify-it&#34;&gt;Files for People Who Want to Modify It
+&lt;/h2&gt;&lt;p&gt;The editable layout file is &lt;code&gt;layouts/ABC Custom.keylayout&lt;/code&gt;. The packaged release bundle is under &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt;, and the keyboard maps in the README are generated from &lt;code&gt;assets/*.svg&lt;/code&gt; with &lt;code&gt;tools/generate_keymap_svg.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you write in multiple European languages, use pinyin tone marks, type Maltese characters, or frequently need Greek and math symbols, ABC Custom gives those characters a predictable home without giving up the standard US keyboard.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Translate Document Quick Action: Translate Files from Finder Without Losing Structure</title>
         <link>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>

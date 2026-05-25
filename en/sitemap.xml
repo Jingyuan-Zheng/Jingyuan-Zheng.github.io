@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -15,8 +15,21 @@
                 href="https://jingyuan-zheng.github.io/"
                 />
   </url><url>
+    <loc>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/p/abc-custom-keyboard/"
+                />
+  </url><url>
     <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -26,6 +39,73 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://jingyuan-zheng.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/greek/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/keyboard-layout/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/categories/macos/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/categories/macos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/categories/macos/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/macos/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/tags/macos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/tags/macos/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/multilingual/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/categories/open-source/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/pinyin/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/post/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/tags/</loc>
+    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/tags/"
                 />
   </url><url>
     <loc>https://jingyuan-zheng.github.io/tags/document-translation/</loc>
@@ -57,19 +137,6 @@
                 href="https://jingyuan-zheng.github.io/tags/finder-quick-action/"
                 />
   </url><url>
-    <loc>https://jingyuan-zheng.github.io/categories/macos/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jingyuan-zheng.github.io/zh-cn/categories/macos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://jingyuan-zheng.github.io/categories/macos/"
-                />
-  </url><url>
     <loc>https://jingyuan-zheng.github.io/tags/ocr/</loc>
     <lastmod>2026-05-25T10:00:00+02:00</lastmod>
     <xhtml:link
@@ -83,9 +150,6 @@
                 href="https://jingyuan-zheng.github.io/tags/ocr/"
                 />
   </url><url>
-    <loc>https://jingyuan-zheng.github.io/categories/open-source/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://jingyuan-zheng.github.io/tags/pdf/</loc>
     <lastmod>2026-05-25T10:00:00+02:00</lastmod>
     <xhtml:link
@@ -97,32 +161,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://jingyuan-zheng.github.io/tags/pdf/"
-                />
-  </url><url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jingyuan-zheng.github.io/zh-cn/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://jingyuan-zheng.github.io/post/"
-                />
-  </url><url>
-    <loc>https://jingyuan-zheng.github.io/tags/</loc>
-    <lastmod>2026-05-25T10:00:00+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jingyuan-zheng.github.io/zh-cn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://jingyuan-zheng.github.io/tags/"
                 />
   </url><url>
     <loc>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</loc>
@@ -330,19 +368,6 @@
   </url><url>
     <loc>https://jingyuan-zheng.github.io/tags/gemma/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jingyuan-zheng.github.io/tags/macos/</loc>
-    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jingyuan-zheng.github.io/zh-cn/tags/macos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://jingyuan-zheng.github.io/tags/macos/"
-                />
   </url><url>
     <loc>https://jingyuan-zheng.github.io/tags/mlx/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
