@@ -124,6 +124,11 @@
 &lt;p&gt;DOCX translation covers normal body text, headers, footers, footnotes, endnotes, and comments. Very complex Word features such as SmartArt, embedded objects, equations, or unusual text boxes may need additional testing.&lt;/p&gt;
 &lt;p&gt;The lightweight &lt;code&gt;simple-macos&lt;/code&gt; image engine is best for clean screenshots, slides, and diagrams. It is not AI inpainting. For manga or complex backgrounds, the optional &lt;code&gt;manga-image-translator&lt;/code&gt; adapter is a better fit.&lt;/p&gt;
 &lt;p&gt;If your daily translation work jumps between PDFs, Word documents, Markdown notes, screenshots, and recordings, this project gives you one place to start instead of a pile of one-off scripts.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For fully local AI text translation on Apple Silicon, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/&#34; &gt;Mac-Lite-Translator&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For multilingual typing and academic symbols on macOS, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

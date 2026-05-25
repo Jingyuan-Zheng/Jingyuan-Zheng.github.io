@@ -24,6 +24,11 @@
     &gt;GitHub&lt;/a&gt; 上查看源码。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;快来尝试为你的项目制作精美的安装包吧！&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;我在 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/&#34; &gt;The Little Dict (Apple Dictionary 格式) - macOS 专用分享&lt;/a&gt; 里就用到了 DMG 分发词典文件，这类 &lt;code&gt;.dictionary&lt;/code&gt; 安装包很适合用 DMG 做引导。&lt;/li&gt;
+&lt;li&gt;如果你想做更完整的 macOS 工具分发，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

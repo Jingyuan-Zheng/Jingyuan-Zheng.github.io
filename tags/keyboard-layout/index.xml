@@ -93,6 +93,11 @@
 &lt;h2 id=&#34;files-for-people-who-want-to-modify-it&#34;&gt;Files for People Who Want to Modify It
 &lt;/h2&gt;&lt;p&gt;The editable layout file is &lt;code&gt;layouts/ABC Custom.keylayout&lt;/code&gt;. The packaged release bundle is under &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt;, and the keyboard maps in the README are generated from &lt;code&gt;assets/*.svg&lt;/code&gt; with &lt;code&gt;tools/generate_keymap_svg.py&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;If you write in multiple European languages, use pinyin tone marks, type Maltese characters, or frequently need Greek and math symbols, ABC Custom gives those characters a predictable home without giving up the standard US keyboard.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For a native Maltese dictionary that works with macOS Look Up, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For document translation workflows that pair well with multilingual typing, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

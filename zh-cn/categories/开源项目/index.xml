@@ -94,6 +94,11 @@
 &lt;h2 id=&#34;如果你想自己修改&#34;&gt;如果你想自己修改
 &lt;/h2&gt;&lt;p&gt;可编辑的布局文件在 &lt;code&gt;layouts/ABC Custom.keylayout&lt;/code&gt;。发布用的 macOS 键盘布局 bundle 在 &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt;，README 里的键位图来自 &lt;code&gt;assets/*.svg&lt;/code&gt;，可以通过 &lt;code&gt;tools/generate_keymap_svg.py&lt;/code&gt; 重新生成。&lt;/p&gt;
 &lt;p&gt;如果你经常在欧洲语言、拼音声调、马耳他语字符、希腊字母和数学符号之间切换，ABC Custom Keyboard 可以把这些字符放到一套更稳定、更容易记忆的位置上，同时不牺牲标准美式键盘的输入习惯。&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你的多语言工作还涉及文档翻译，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你想在 macOS 上使用系统原生词典，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/&#34; &gt;The Little Dict (Apple Dictionary 格式) - macOS 专用分享&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -215,6 +220,11 @@
 &lt;p&gt;DOCX 目前覆盖正文、页眉、页脚、脚注、尾注和批注等常见内容。像 SmartArt、嵌入对象、公式、复杂文本框这类 Word 高级结构，仍然需要更多测试。&lt;/p&gt;
 &lt;p&gt;图片里的 &lt;code&gt;simple-macos&lt;/code&gt; 引擎适合干净截图、图表和幻灯片。它不是 AI 修图或智能重绘。如果背景复杂，或者是漫画这类场景，更适合接入可选的 &lt;code&gt;manga-image-translator&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;如果你的翻译工作经常在 PDF、Word、Markdown、截图和录音之间来回切换，这个项目至少能把入口统一起来，让常见任务不用再散落在一堆临时脚本里。&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你更关心纯文本的本地 AI 翻译和隐私，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/&#34; &gt;Mac-Lite-Translator：基于 Google Gemma 的 Mac 本地翻译工具&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你经常处理多语言写作，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -234,6 +244,11 @@
     &gt;GitHub&lt;/a&gt; 上查看源码。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;快来尝试为你的项目制作精美的安装包吧！&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;我在 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/&#34; &gt;The Little Dict (Apple Dictionary 格式) - macOS 专用分享&lt;/a&gt; 里就用到了 DMG 分发词典文件，这类 &lt;code&gt;.dictionary&lt;/code&gt; 安装包很适合用 DMG 做引导。&lt;/li&gt;
+&lt;li&gt;如果你想做更完整的 macOS 工具分发，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

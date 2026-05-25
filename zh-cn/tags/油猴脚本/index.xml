@@ -53,6 +53,10 @@
 &lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而不是替用户做决定。&lt;strong&gt;No-New-Tab&lt;/strong&gt; 只是一个微小的尝试，希望能在这个强制用户停留在“围墙花园”里的时代，通过一点点代码，找回最初那种简单、纯粹的 Web 浏览体验。&lt;/p&gt;
 &lt;p&gt;如果你喜欢这个项目，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub&lt;/a&gt; 给个 Star，或者提交 Issue 告诉我想支持哪些新网站！&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你也是 Safari 用户，并且关心 B 站网页端体验，可以继续看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/&#34; &gt;BewlyBewly for Safari “复活”指南&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

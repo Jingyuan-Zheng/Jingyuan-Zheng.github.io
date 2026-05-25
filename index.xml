@@ -93,6 +93,11 @@
 &lt;h2 id=&#34;files-for-people-who-want-to-modify-it&#34;&gt;Files for People Who Want to Modify It
 &lt;/h2&gt;&lt;p&gt;The editable layout file is &lt;code&gt;layouts/ABC Custom.keylayout&lt;/code&gt;. The packaged release bundle is under &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt;, and the keyboard maps in the README are generated from &lt;code&gt;assets/*.svg&lt;/code&gt; with &lt;code&gt;tools/generate_keymap_svg.py&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;If you write in multiple European languages, use pinyin tone marks, type Maltese characters, or frequently need Greek and math symbols, ABC Custom gives those characters a predictable home without giving up the standard US keyboard.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For a native Maltese dictionary that works with macOS Look Up, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For document translation workflows that pair well with multilingual typing, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -212,6 +217,11 @@
 &lt;p&gt;DOCX translation covers normal body text, headers, footers, footnotes, endnotes, and comments. Very complex Word features such as SmartArt, embedded objects, equations, or unusual text boxes may need additional testing.&lt;/p&gt;
 &lt;p&gt;The lightweight &lt;code&gt;simple-macos&lt;/code&gt; image engine is best for clean screenshots, slides, and diagrams. It is not AI inpainting. For manga or complex backgrounds, the optional &lt;code&gt;manga-image-translator&lt;/code&gt; adapter is a better fit.&lt;/p&gt;
 &lt;p&gt;If your daily translation work jumps between PDFs, Word documents, Markdown notes, screenshots, and recordings, this project gives you one place to start instead of a pile of one-off scripts.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For fully local AI text translation on Apple Silicon, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/&#34; &gt;Mac-Lite-Translator&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For multilingual typing and academic symbols on macOS, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -386,6 +396,11 @@
 &lt;li&gt;Coursera account: the generated &lt;code&gt;mt&lt;/code&gt; account is different from your personal email address, so save its password.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The course itself is manageable, but the videos and reading sections take real time. Once the three courses, three exams, and Pathway questionnaire are complete, the platform should show 100% progress and let you claim the one-year subscription.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;If your work involves translating PDFs, Word documents, screenshots, or transcripts, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you frequently type Maltese characters or other European Latin letters on a US keyboard, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -405,6 +420,11 @@
     &gt;GitHub&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Check out the project to start making your own installers!&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;I used the same kind of DMG distribution flow for dictionary-style macOS tools such as &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you are packaging a keyboard layout instead of an app, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -451,6 +471,11 @@
     &gt;Releases page&lt;/a&gt;. Simply drag it to your Dictionaries folder and enable it in the Dictionary app settings!&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;I hope this tool helps learners and native speakers alike in exploring the richness of the Maltese language. Sahha!&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;If you need a keyboard layout for Maltese characters, European Latin letters, and academic symbols, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you are building macOS dictionary or app installers, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/&#34; &gt;DMG Maker&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -975,6 +1000,11 @@ TECHNICAL SKILLS
 &lt;/h2&gt;&lt;p&gt;Translation is more than just swapping words; it&amp;rsquo;s about preserving meaning and privacy. &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; brings cutting-edge generative AI to your desktop, proving that high-end productivity doesn&amp;rsquo;t have to come at the cost of your data.&lt;/p&gt;
 &lt;p&gt;If you find this tool helpful, feel free to give it a star on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub&lt;/a&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;For translating PDFs, DOCX files, Markdown, screenshots, and transcripts from Finder, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For multilingual typing on macOS, especially accented letters, pinyin tones, Greek, and Maltese-friendly characters, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

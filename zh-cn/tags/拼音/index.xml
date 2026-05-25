@@ -94,6 +94,11 @@
 &lt;h2 id=&#34;如果你想自己修改&#34;&gt;如果你想自己修改
 &lt;/h2&gt;&lt;p&gt;可编辑的布局文件在 &lt;code&gt;layouts/ABC Custom.keylayout&lt;/code&gt;。发布用的 macOS 键盘布局 bundle 在 &lt;code&gt;bundle/ABC Custom.bundle&lt;/code&gt;，README 里的键位图来自 &lt;code&gt;assets/*.svg&lt;/code&gt;，可以通过 &lt;code&gt;tools/generate_keymap_svg.py&lt;/code&gt; 重新生成。&lt;/p&gt;
 &lt;p&gt;如果你经常在欧洲语言、拼音声调、马耳他语字符、希腊字母和数学符号之间切换，ABC Custom Keyboard 可以把这些字符放到一套更稳定、更容易记忆的位置上，同时不牺牲标准美式键盘的输入习惯。&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你的多语言工作还涉及文档翻译，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你想在 macOS 上使用系统原生词典，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/&#34; &gt;The Little Dict (Apple Dictionary 格式) - macOS 专用分享&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

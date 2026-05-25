@@ -24,6 +24,11 @@
     &gt;GitHub&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Check out the project to start making your own installers!&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;I used the same kind of DMG distribution flow for dictionary-style macOS tools such as &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If you are packaging a keyboard layout instead of an app, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         

@@ -98,6 +98,11 @@
 &lt;h2 id=&#34;结语&#34;&gt;结语
 &lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。&lt;/p&gt;
 &lt;p&gt;如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你更想翻译 PDF、Word、Markdown、图片或音视频转录稿，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你经常输入多语言字符、拼音声调或学术符号，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         
