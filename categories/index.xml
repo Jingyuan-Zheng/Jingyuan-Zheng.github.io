@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 May 2026 10:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MacOS</title>
+        <link>https://jingyuan-zheng.github.io/categories/macos/</link>
+        <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/categories/macos/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Open Source</title>
+        <link>https://jingyuan-zheng.github.io/categories/open-source/</link>
+        <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/categories/open-source/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>AI</title>
         <link>https://jingyuan-zheng.github.io/categories/ai/</link>
         <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
@@ -21,22 +37,6 @@
         <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/categories/guides/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>MacOS</title>
-        <link>https://jingyuan-zheng.github.io/categories/macos/</link>
-        <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/macos/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Open Source</title>
-        <link>https://jingyuan-zheng.github.io/categories/open-source/</link>
-        <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/open-source/</guid>
         <description></description>
         </item>
         <item>
