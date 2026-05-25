@@ -273,7 +273,7 @@ margin: 0 12px 12px 0;
 &lt;header class=&#34;cv-hero-header&#34;&gt;
 &lt;h1&gt;Hi, I am Jingyuan Zheng 🤩&lt;/h1&gt;
 &lt;p class=&#34;cv-intro-para&#34;&gt;
-I’m a Master’s student at &lt;strong&gt;The University of Hong Kong (HKU)&lt;/strong&gt; who finds the beauty in efficient logistics and the logic behind complex data. 
+I’m an MSc Engineering graduate from &lt;strong&gt;The University of Hong Kong (HKU)&lt;/strong&gt; who finds the beauty in efficient logistics and the logic behind complex data.
 &lt;br&gt;&lt;br&gt;
 Whether I&#39;m diving into supply chain optimization or searching for the best coffee spots in HK, I’m all about that &lt;strong&gt;&#34;efficiency with soul&#34;&lt;/strong&gt; vibe. I believe the invisible threads that keep our world moving are the most interesting to explore. Take a look at my journey below!
 &lt;/p&gt;
@@ -290,7 +290,7 @@ ACADEMIC QUALIFICATION
 &lt;span class=&#34;cv-time-tag&#34;&gt;09/2024 - 09/2025&lt;/span&gt;
 &lt;/div&gt;
 &lt;span class=&#34;cv-pos-title&#34;&gt;Master of Science in Engineering (Industrial Engineering and Logistics Management)&lt;/span&gt;
-&lt;span class=&#34;cv-meta-text&#34;&gt;Ranked 17 in QS World University Rankings 2025&lt;/span&gt;
+&lt;span class=&#34;cv-meta-text&#34;&gt;English-medium programme; HKU ranked 11th in QS World University Rankings 2026&lt;/span&gt;
 &lt;span class=&#34;cv-meta-text&#34;&gt;&lt;strong&gt;Main Courses:&lt;/strong&gt; Machine learning and applications (A), Digital enterprises and e-commerce (A)&lt;/span&gt;
 &lt;/div&gt;
 &lt;div class=&#34;cv-entry-item&#34;&gt;
@@ -355,14 +355,14 @@ RESEARCH EXPERIENCE
 &lt;span class=&#34;cv-inst-name&#34;&gt;Spare Parts Management for PV Power Station Inverters&lt;/span&gt;
 &lt;span class=&#34;cv-pos-title&#34;&gt;Inventory Control Optimization (01/2025 - 02/2025) | Prof. Yao Cheng&lt;/span&gt;
 &lt;ul class=&#34;cv-desc-list&#34;&gt;
-&lt;li&gt;Developed a multi-objective optimization model using CTMC and NSGA-II to optimize microinverter spare parts inventory for cost and sustainability in a Phoenix, AZ PV station; validated via Monte Carlo simulations, reduced lifecycle costs by 12.9% and carbon emissions by 20.9% vs. zero-inventory approaches.&lt;/li&gt;
+&lt;li&gt;Developed a multi-objective optimization model using CTMC and NSGA-II to optimize microinverter spare parts inventory for cost and sustainability in a Phoenix, AZ PV station; validated via Monte Carlo simulations, reduced lifecycle costs by 12.9% and carbon emissions by 20.9% vs. zero-inventory approaches, and conducted sensitivity analysis on failure rates and lead times with practical operator recommendations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&#34;cv-entry-item&#34;&gt;
 &lt;span class=&#34;cv-inst-name&#34;&gt;Evolution of Operational Risks in Xiamen Maritime Supply Chain&lt;/span&gt;
 &lt;span class=&#34;cv-pos-title&#34;&gt;System Dynamics Research (10/2023 - 06/2024) | Prof. Haidong Yang&lt;/span&gt;
 &lt;ul class=&#34;cv-desc-list&#34;&gt;
-&lt;li&gt;Developed a system dynamics model to simulate the evolution of operational risks within a three-tier indicator system, revealed that different risk subsystems display distinct trends. Recognized as an Outstanding Undergraduate Degree Dissertation.&lt;/li&gt;
+&lt;li&gt;Developed a system dynamics model to simulate the evolution of operational risks within a three-tier indicator system, based on a questionnaire survey of Xiamen’s international maritime supply chain, revealing that different risk subsystems display distinct trends. Recognized as an Outstanding Undergraduate Degree Dissertation.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -403,6 +403,7 @@ ACHIEVEMENTS
 &lt;/div&gt;
 &lt;div class=&#34;cv-card-body&#34;&gt;
 &lt;ul class=&#34;cv-desc-list&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Tony Reynolds Academic Excellence Prize 2024-25&lt;/strong&gt;, The University of Hong Kong, Department of Data and Systems Engineering (11/2025).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Outstanding Participant&lt;/strong&gt; in the 2021-2022 China Ningbo Youth College Students’ Entrepreneurship Competition (06/2021).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Third-Class Scholarship&lt;/strong&gt; for the First Semester at Fuzhou University (04/2021 &amp; 08/2020).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Outstanding Team&lt;/strong&gt; in the Final of Fujian Division of the “Zhengda Cup” 2020 Innovation practical Marketing Competition (07/2020).&lt;/li&gt;
@@ -424,7 +425,10 @@ TECHNICAL SKILLS
 &lt;span class=&#34;cv-pill-tag&#34;&gt;Vensim&lt;/span&gt;
 &lt;span class=&#34;cv-pill-tag&#34;&gt;SPSS Statistics&lt;/span&gt;
 &lt;span class=&#34;cv-pill-tag&#34;&gt;English (IELTS 6.5)&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;English-medium MSc&lt;/span&gt;
 &lt;span class=&#34;cv-pill-tag&#34;&gt;Mandarin (Native)&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;AI-assisted workflows&lt;/span&gt;
+&lt;span class=&#34;cv-pill-tag&#34;&gt;Open-source projects on GitHub&lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/section&gt;
