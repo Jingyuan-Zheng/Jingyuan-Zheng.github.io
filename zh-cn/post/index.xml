@@ -336,7 +336,7 @@
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</guid>
-        <description>&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/bewlybewly-safari-revival/featured.png" alt="Featured image of post BewlyBewly for Safari “复活”指南" /&gt;&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BewlyBewly/BewlyBewly&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;BewlyBewly&lt;/a&gt; 是由开发者 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hakadao&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hakadao&lt;/a&gt; 独立开发、维护了三年的浏览器扩展，旨在彻底重新设计 Bilibili 的网页端界面。它的设计灵感来自 YouTube、visionOS 和 iOS，带来毛玻璃效果、深色模式、更简洁的首页布局，以及大量个性化设置选项——让原本略显臃肿的 B 站网页变得赏心悦目。&lt;/p&gt;
@@ -546,7 +546,7 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</guid>
-        <description>&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/my-first-blog-setup-guide/featured.png" alt="Featured image of post 我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站" /&gt;&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
 &lt;p&gt;正如标题所说，这是我的第一篇博客。作为一个喜欢记录和分享的人，我一直梦想着拥有一个属于自己的、可以自由书写的空间。在探索了各种方案后，我最终选择了 &lt;strong&gt;Hugo + GitHub Pages&lt;/strong&gt; 这套组合，因为它足够&lt;strong&gt;快速、免费、强大&lt;/strong&gt;，而且折腾起来非常有成就感。&lt;/p&gt;
 &lt;p&gt;这篇文章，就是为了记录我从一个想法到网站上线的全过程，并特别点出一些教程里可能没详细说明、但我亲身遇到的“坑”。&lt;/p&gt;
 &lt;p&gt;搭建过程我主要参考了以下优秀教程，强烈推荐大家先看一遍：&lt;/p&gt;
@@ -640,7 +640,7 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
         <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/malta-eid/cover.png" alt="Featured image of post 如何在线足不出户办理马耳他eID" /&gt;&lt;style&gt;
+        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/malta-eid/featured.png" alt="Featured image of post 如何在线足不出户办理马耳他eID" /&gt;&lt;style&gt;
 .post-figure {
     display: flex;
     flex-direction: column;
