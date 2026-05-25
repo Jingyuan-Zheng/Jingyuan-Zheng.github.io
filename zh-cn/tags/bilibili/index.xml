@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Bilibili on 小景</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/tags/bilibili/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/tags/bilibili/</link>
         <description>Recent content in Bilibili on 小景</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/tags/bilibili/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/bilibili/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>BewlyBewly for Safari “复活”指南</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/bewlybewly-safari-revival/featured.png" alt="Featured image of post BewlyBewly for Safari “复活”指南" /&gt;&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
+        <guid>https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/bewlybewly-safari-revival/featured.png" alt="Featured image of post BewlyBewly for Safari “复活”指南" /&gt;&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BewlyBewly/BewlyBewly&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;BewlyBewly&lt;/a&gt; 是由开发者 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hakadao&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hakadao&lt;/a&gt; 独立开发、维护了三年的浏览器扩展，旨在彻底重新设计 Bilibili 的网页端界面。它的设计灵感来自 YouTube、visionOS 和 iOS，带来毛玻璃效果、深色模式、更简洁的首页布局，以及大量个性化设置选项——让原本略显臃肿的 B 站网页变得赏心悦目。&lt;/p&gt;
@@ -78,11 +78,11 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
         </item>
         <item>
         <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+        <guid>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
 &lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
 &lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;

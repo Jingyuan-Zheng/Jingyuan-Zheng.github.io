@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>DMG on Jingyuan</title>
-        <link>https://Jingyuan-Zheng.github.io/tags/dmg/</link>
+        <link>https://jingyuan-zheng.github.io/tags/dmg/</link>
         <description>Recent content in DMG on Jingyuan</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/tags/dmg/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/dmg/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DMG Maker: Create Beautiful macOS Installers Automatically</title>
-        <link>https://Jingyuan-Zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
+        <link>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
-        <description>&lt;img src="https://Jingyuan-Zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: Create Beautiful macOS Installers Automatically" /&gt;&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
+        <guid>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: Create Beautiful macOS Installers Automatically" /&gt;&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
 &lt;h2 id=&#34;why-dmg-maker&#34;&gt;Why DMG Maker?
 &lt;/h2&gt;&lt;p&gt;Creating a DMG with a custom background usually involves manual AppleScripting or tedious Finder configurations. DMG Maker automates this using a single command.&lt;/p&gt;
 &lt;h2 id=&#34;key-features&#34;&gt;Key Features

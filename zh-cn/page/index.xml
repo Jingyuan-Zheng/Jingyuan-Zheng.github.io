@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 小景</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/page/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/page/</link>
         <description>Recent content in Pages on 小景</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://Jingyuan-Zheng.github.io/zh-cn/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于我</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+        <guid>https://jingyuan-zheng.github.io/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
         <description>&lt;style&gt;
 @import url(&#39;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap&#39;);
 
@@ -139,7 +139,7 @@ transform: translateX(8px);
 &lt;br&gt;&lt;br&gt;
 如果你对我的学术背景、实习经历以及研究成果感兴趣，请点击下方链接查看我的&lt;strong&gt;完整英文简历&lt;/strong&gt;。
 &lt;/div&gt;
-&lt;a href=&#34;https://Jingyuan-Zheng.github.io/about-me/&#34; class=&#34;cv-jump-btn&#34;&gt;
+&lt;a href=&#34;https://jingyuan-zheng.github.io/about-me/&#34; class=&#34;cv-jump-btn&#34;&gt;
 &lt;span&gt;View My Full CV (English)&lt;/span&gt;
 &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2.5&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;line x1=&#34;5&#34; y1=&#34;12&#34; x2=&#34;19&#34; y2=&#34;12&#34;/&gt;&lt;polyline points=&#34;12 5 19 12 12 19&#34;/&gt;&lt;/svg&gt;
 &lt;/a&gt;
@@ -149,10 +149,10 @@ transform: translateX(8px);
         </item>
         <item>
         <title>链接</title>
-        <link>https://Jingyuan-Zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://Jingyuan-Zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;h2 id=&#34;-发现我&#34;&gt;🚀 发现我
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的链接页面！在这里，你可以通过不同的平台更全面地了解我的工作成果、技术思考和日常生活。期待与你的交流！&lt;/p&gt;
 &lt;hr&gt;
