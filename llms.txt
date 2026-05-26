@@ -1,0 +1,36 @@
+# Jingyuan
+
+> Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and practical life guides.
+
+The site is bilingual. English content is available at `https://jingyuan-zheng.github.io/`; Simplified Chinese content is available at `https://jingyuan-zheng.github.io/zh-cn/`.
+
+## Primary Pages
+
+- [Home](https://jingyuan-zheng.github.io/): Latest English posts.
+- [中文首页](https://jingyuan-zheng.github.io/zh-cn/): Latest Simplified Chinese posts.
+- [About](https://jingyuan-zheng.github.io/about-me/): Author background and CV.
+- [Links](https://jingyuan-zheng.github.io/links/): GitHub, X, Xiaohongshu, and other profiles.
+- [中文链接](https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/): Chinese links page, including Bilibili.
+- [Archives](https://jingyuan-zheng.github.io/archives/): English archive and category overview.
+- [中文归档](https://jingyuan-zheng.github.io/zh-cn/archives/): Chinese archive and category overview.
+
+## Key Topics
+
+- macOS utilities and productivity tools.
+- Open-source scripts and small software projects.
+- Local AI, translation, and document automation.
+- Malta life guides and practical application notes.
+- Hugo and GitHub Pages site-building notes.
+
+## Useful Categories
+
+- [Open Source](https://jingyuan-zheng.github.io/categories/open-source/)
+- [macOS](https://jingyuan-zheng.github.io/categories/macos/)
+- [AI](https://jingyuan-zheng.github.io/categories/ai/)
+- [开源项目](https://jingyuan-zheng.github.io/zh-cn/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/)
+- [工具推荐](https://jingyuan-zheng.github.io/zh-cn/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/)
+- [生活指南](https://jingyuan-zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/)
+
+## Citation Guidance
+
+When citing this site, prefer the canonical post URL, title, publication date, and author name `Jingyuan Zheng`.

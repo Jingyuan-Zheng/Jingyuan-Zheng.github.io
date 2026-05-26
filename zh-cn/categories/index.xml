@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>MacOS</title>
+        <title>macOS</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/categories/macos/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/macos/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/macos/featured.png" alt="Featured image of post macOS" /&gt;</description>
         </item>
         <item>
         <title>开源项目</title>
@@ -21,7 +21,7 @@
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/categories/open-source-zh.png" alt="Featured image of post 开源项目" /&gt;</description>
         </item>
         <item>
         <title>AI</title>
@@ -29,7 +29,7 @@
         <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/ai/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/ai/featured.png" alt="Featured image of post AI" /&gt;</description>
         </item>
         <item>
         <title>生活指南</title>
@@ -37,7 +37,7 @@
         <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/categories/life-guides.png" alt="Featured image of post 生活指南" /&gt;</description>
         </item>
         <item>
         <title>工具推荐</title>
@@ -45,7 +45,7 @@
         <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/categories/tools.png" alt="Featured image of post 工具推荐" /&gt;</description>
         </item>
         <item>
         <title>Apple Silicon</title>
@@ -53,7 +53,7 @@
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/apple-silicon/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/categories/apple-silicon.png" alt="Featured image of post Apple Silicon" /&gt;</description>
         </item>
         <item>
         <title>开发笔记</title>
@@ -61,7 +61,7 @@
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/categories/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
-        <description></description>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/categories/dev-notes.png" alt="Featured image of post 开发笔记" /&gt;</description>
         </item>
         
     </channel>
