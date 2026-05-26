@@ -148,6 +148,14 @@ transform: translateX(8px);
 </description>
         </item>
         <item>
+        <title>归档</title>
+        <link>https://jingyuan-zheng.github.io/zh-cn/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/zh-cn/archives/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>链接</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -157,6 +165,14 @@ transform: translateX(8px);
 &lt;/h2&gt;&lt;p&gt;欢迎来到我的链接页面！在这里，你可以通过不同的平台更全面地了解我的工作成果、技术思考和日常生活。期待与你的交流！&lt;/p&gt;
 &lt;hr&gt;
 </description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://jingyuan-zheng.github.io/zh-cn/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/zh-cn/search/</guid>
+        <description></description>
         </item>
         
     </channel>

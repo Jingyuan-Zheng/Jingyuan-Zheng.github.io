@@ -473,6 +473,19 @@
                 href="https://jingyuan-zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/"
                 />
   </url><url>
+    <loc>https://jingyuan-zheng.github.io/zh-cn/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/archives/"
+                />
+  </url><url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/</loc>
     <xhtml:link
                 rel="alternate"
@@ -483,6 +496,18 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jingyuan-zheng.github.io/zh-cn/%E9%93%BE%E6%8E%A5/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/zh-cn/search/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/search/"
                 />
   </url>
 </urlset>
