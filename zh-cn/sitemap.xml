@@ -1,9 +1,10 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/</loc>
-    <lastmod>2026-05-25T12:00:00+02:00</lastmod>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -13,6 +14,32 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://jingyuan-zheng.github.io/zh-cn/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/zh-cn/page/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/page/"
+                />
+  </url><url>
+    <loc>https://jingyuan-zheng.github.io/zh-cn/privacy-policy/</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://jingyuan-zheng.github.io/privacy-policy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://jingyuan-zheng.github.io/zh-cn/privacy-policy/"
                 />
   </url><url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/categories/</loc>
@@ -383,19 +410,6 @@
     <loc>https://jingyuan-zheng.github.io/zh-cn/tags/no-new-tab/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jingyuan-zheng.github.io/zh-cn/page/</loc>
-    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://jingyuan-zheng.github.io/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://jingyuan-zheng.github.io/zh-cn/page/"
-                />
-  </url><url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/tags/safari/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -416,12 +430,6 @@
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jingyuan-zheng.github.io/zh-cn/collection/placeholder/</loc>
-    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jingyuan-zheng.github.io/zh-cn/collection/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jingyuan-zheng.github.io/zh-cn/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/</loc>

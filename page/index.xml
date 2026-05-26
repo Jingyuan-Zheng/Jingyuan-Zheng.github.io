@@ -7,7 +7,45 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Privacy Policy</title>
+        <link>https://jingyuan-zheng.github.io/privacy-policy/</link>
+        <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/privacy-policy/</guid>
+        <description>&lt;p&gt;This privacy policy explains how Jingyuan Zheng&amp;rsquo;s personal website handles visitor information, cookies, advertising, and third-party links.&lt;/p&gt;
+&lt;p&gt;Last updated: May 26, 2026.&lt;/p&gt;
+&lt;h2 id=&#34;website-operator&#34;&gt;Website Operator
+&lt;/h2&gt;&lt;p&gt;This website is a personal website operated by Jingyuan Zheng and hosted on GitHub Pages.&lt;/p&gt;
+&lt;p&gt;Contact: &lt;a class=&#34;link&#34; href=&#34;mailto:mr.jingyuan.zheng@outlook.com&#34; &gt;mr.jingyuan.zheng@outlook.com&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;information-this-site-collects&#34;&gt;Information This Site Collects
+&lt;/h2&gt;&lt;p&gt;This is a static personal website. I do not run user accounts, payment forms, newsletters, or comment databases on this site.&lt;/p&gt;
+&lt;p&gt;If you contact me by email, I may receive the information you choose to send, such as your name, email address, and message content. I use that information only to read and respond to your message.&lt;/p&gt;
+&lt;h2 id=&#34;hosting-and-technical-logs&#34;&gt;Hosting and Technical Logs
+&lt;/h2&gt;&lt;p&gt;This site is hosted by GitHub Pages. GitHub may process standard technical information such as IP address, browser details, request time, and pages requested in order to provide hosting, security, and abuse prevention. GitHub&amp;rsquo;s handling of this information is governed by GitHub&amp;rsquo;s own policies.&lt;/p&gt;
+&lt;h2 id=&#34;cookies-and-local-storage&#34;&gt;Cookies and Local Storage
+&lt;/h2&gt;&lt;p&gt;The site theme may use local browser storage to remember display preferences such as light or dark mode.&lt;/p&gt;
+&lt;p&gt;This site may also use third-party services that set cookies or similar technologies. These services can include embedded content, external links, site verification tools, analytics, or advertising services.&lt;/p&gt;
+&lt;h2 id=&#34;advertising-and-google-adsense&#34;&gt;Advertising and Google AdSense
+&lt;/h2&gt;&lt;p&gt;This site may display Google AdSense ads.&lt;/p&gt;
+&lt;p&gt;Third-party vendors, including Google, use cookies to serve ads based on a user&amp;rsquo;s prior visits to this website or other websites. Google&amp;rsquo;s use of advertising cookies enables Google and its partners to serve ads based on visits to this site and other sites on the Internet.&lt;/p&gt;
+&lt;p&gt;Users may opt out of personalized advertising by visiting &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/settings/ads&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google Ads Settings&lt;/a&gt;. Users may also visit &lt;a class=&#34;link&#34; href=&#34;https://www.aboutads.info/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;www.aboutads.info&lt;/a&gt; to learn more about choices for personalized advertising from participating third-party vendors.&lt;/p&gt;
+&lt;p&gt;If other third-party ad networks are used in the future, this policy will be updated to identify them where appropriate.&lt;/p&gt;
+&lt;h2 id=&#34;european-users-and-consent&#34;&gt;European Users and Consent
+&lt;/h2&gt;&lt;p&gt;For visitors in the European Economic Area, the United Kingdom, or Switzerland, this site may show a consent message before using advertising cookies or personalized advertising features where consent is required.&lt;/p&gt;
+&lt;p&gt;If Google AdSense is enabled, consent choices may be managed through Google&amp;rsquo;s Privacy &amp;amp; messaging tools or another Google-certified consent management platform.&lt;/p&gt;
+&lt;h2 id=&#34;third-party-links-and-embedded-content&#34;&gt;Third-Party Links and Embedded Content
+&lt;/h2&gt;&lt;p&gt;Articles may link to external websites such as GitHub, government websites, documentation pages, social platforms, or software project pages. External websites are controlled by their own operators and are not covered by this privacy policy.&lt;/p&gt;
+&lt;p&gt;Embedded or linked third-party content may collect data according to the third party&amp;rsquo;s own privacy policy.&lt;/p&gt;
+&lt;h2 id=&#34;childrens-privacy&#34;&gt;Children&amp;rsquo;s Privacy
+&lt;/h2&gt;&lt;p&gt;This site is intended for a general audience and is not directed at children. I do not knowingly collect personal information from children.&lt;/p&gt;
+&lt;h2 id=&#34;changes-to-this-policy&#34;&gt;Changes to This Policy
+&lt;/h2&gt;&lt;p&gt;I may update this policy when the site changes or when legal, hosting, analytics, or advertising requirements change. The latest version will be published on this page.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>About Me</title>
         <link>https://jingyuan-zheng.github.io/about-me/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>

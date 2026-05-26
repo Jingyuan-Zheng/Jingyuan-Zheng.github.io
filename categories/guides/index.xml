@@ -187,6 +187,99 @@
 &lt;/ul&gt;
 </description>
         </item>
+        <item>
+        <title>How to Apply for Malta eID Online</title>
+        <link>https://jingyuan-zheng.github.io/p/how-to-apply-for-malta-eid-online/</link>
+        <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/p/how-to-apply-for-malta-eid-online/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/malta-eid/featured.png" alt="Featured image of post How to Apply for Malta eID Online" /&gt;&lt;style&gt;
+.post-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.5rem 0;
+    gap: 18px;
+}
+.post-figure img {
+    max-width: 40%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+.post-figure img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.post-figure .caption {
+    font-size: 1.05rem;
+    color: var(--card-text-color-secondary);
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+@media (max-width: 768px) {
+    .post-figure img { max-width: 95%; max-height: 60vh; }
+    .post-figure img:hover { transform: none; }
+}
+&lt;/style&gt;
+&lt;p&gt;This guide explains how to request and activate a Malta eID online through Identità, including the identity document number, document number, activation email, and verification steps that are easy to mix up.&lt;/p&gt;
+&lt;p&gt;Malta eID is needed for many official online services, including services related to driving licences and other government processes. If you prefer not to handle everything in person, the online route is usually enough once you know where to look.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Who this applies to:&lt;/strong&gt; Malta residents, permanent residents, citizens, and approved immigration applicants who are eligible for an eID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; If you have already submitted Form ID 10, or you know your eID was requested but not activated, you can contact Identità directly and ask for an activation link. The official Register Residence page lists &lt;code&gt;+356 25904300&lt;/code&gt; and &lt;code&gt;infoeid.identita@gov.mt&lt;/code&gt; as contact options. If you are not sure whether an eID request exists for you, follow the steps below.&lt;/p&gt;
+&lt;h2 id=&#34;open-the-identità-website&#34;&gt;Open the Identità Website
+&lt;/h2&gt;&lt;p&gt;Go to the Identità website and choose &lt;strong&gt;Contact Us&lt;/strong&gt; from the homepage.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img3.png&#34; alt=&#34;Identità homepage&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 1: Identità homepage.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;choose-the-eid-support-option&#34;&gt;Choose the eID Support Option
+&lt;/h2&gt;&lt;p&gt;In the support form, choose the &lt;strong&gt;eID&lt;/strong&gt; option under Support Station. Fill in the other fields according to your situation.&lt;/p&gt;
+&lt;p&gt;The most important field is &lt;strong&gt;Identity Card Number&lt;/strong&gt;. For residence card holders, this is usually &lt;strong&gt;not&lt;/strong&gt; the number on the top-right front side of the card. Look at the back of the card instead and find the number under &lt;strong&gt;IDENTITY DOCUMENT NUMBER&lt;/strong&gt; (Figure 3). If you do not yet have the physical card, ask the staff which number you should use.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img4.png&#34; alt=&#34;Identità contact form with eID support selected&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 2: Select the eID support option.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img5.png&#34; alt=&#34;Identity Document Number on the back of a Malta residence card&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 3: The Identity Document Number is on the back of the card.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;wait-for-identitàs-email&#34;&gt;Wait for Identità&amp;rsquo;s Email
+&lt;/h2&gt;&lt;p&gt;After submitting the form, wait for an email reply. During working hours, the response can arrive within a few minutes. The staff may ask for extra details by email; in my case, the follow-up was straightforward.&lt;/p&gt;
+&lt;p&gt;The email may also include a Customer Care link. Activating it gives you a support chat-style account, but continuing by normal email is also fine if that is easier.&lt;/p&gt;
+&lt;h2 id=&#34;use-the-activation-link&#34;&gt;Use the Activation Link
+&lt;/h2&gt;&lt;p&gt;Once the staff process your request, they will send an activation link to the email address registered with your identity record.&lt;/p&gt;
+&lt;p&gt;If you do not receive it, check your spam folder and ask them to try again. If the registered email address is wrong or inaccessible, you may need to visit an office with your ID card to update the email first.&lt;/p&gt;
+&lt;p&gt;During activation, two numbers are easy to confuse:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ID Number:&lt;/strong&gt; use the &lt;strong&gt;IDENTITY DOCUMENT NUMBER&lt;/strong&gt; from the back of the card (Figure 3).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Document No.:&lt;/strong&gt; usually use the full alphanumeric document number printed on the top-right front side of the residence card (Figure 4), including the country-code letters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img6.jpg&#34; alt=&#34;Document number on the front of a Malta residence card&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 4: Document No. usually refers to the full number on the front of the card.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;set-up-email-and-two-factor-verification&#34;&gt;Set Up Email and Two-Factor Verification
+&lt;/h2&gt;&lt;p&gt;After activation, you can update your email address and set up two-factor verification. The website will guide you through the options.&lt;/p&gt;
+&lt;p&gt;If you use an iPhone, the built-in Camera app or the system code scanner can scan the QR code directly, so you may not need to install a separate authenticator app. SMS verification is also possible if it is available for your number.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img7.jpg&#34; alt=&#34;Scanning the Malta eID verification QR code with iPhone&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 5: On iPhone, the system camera can scan the verification QR code directly.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes
+&lt;/h2&gt;&lt;p&gt;If visiting an Identità office is convenient, staff may be able to guide you through the process in person. If you prefer to handle it remotely, the online request and activation flow should work as long as the registered email address is correct and you use the right numbers from the card.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;After your eID is active, you may also find the &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/ai4all-malta-free-ai-courses/&#34; &gt;Malta AI for All guide&lt;/a&gt; useful. That programme also uses eID login for registration and subscription claiming.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
         
     </channel>
 </rss>

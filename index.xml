@@ -7,7 +7,45 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Privacy Policy</title>
+        <link>https://jingyuan-zheng.github.io/privacy-policy/</link>
+        <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/privacy-policy/</guid>
+        <description>&lt;p&gt;This privacy policy explains how Jingyuan Zheng&amp;rsquo;s personal website handles visitor information, cookies, advertising, and third-party links.&lt;/p&gt;
+&lt;p&gt;Last updated: May 26, 2026.&lt;/p&gt;
+&lt;h2 id=&#34;website-operator&#34;&gt;Website Operator
+&lt;/h2&gt;&lt;p&gt;This website is a personal website operated by Jingyuan Zheng and hosted on GitHub Pages.&lt;/p&gt;
+&lt;p&gt;Contact: &lt;a class=&#34;link&#34; href=&#34;mailto:mr.jingyuan.zheng@outlook.com&#34; &gt;mr.jingyuan.zheng@outlook.com&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;information-this-site-collects&#34;&gt;Information This Site Collects
+&lt;/h2&gt;&lt;p&gt;This is a static personal website. I do not run user accounts, payment forms, newsletters, or comment databases on this site.&lt;/p&gt;
+&lt;p&gt;If you contact me by email, I may receive the information you choose to send, such as your name, email address, and message content. I use that information only to read and respond to your message.&lt;/p&gt;
+&lt;h2 id=&#34;hosting-and-technical-logs&#34;&gt;Hosting and Technical Logs
+&lt;/h2&gt;&lt;p&gt;This site is hosted by GitHub Pages. GitHub may process standard technical information such as IP address, browser details, request time, and pages requested in order to provide hosting, security, and abuse prevention. GitHub&amp;rsquo;s handling of this information is governed by GitHub&amp;rsquo;s own policies.&lt;/p&gt;
+&lt;h2 id=&#34;cookies-and-local-storage&#34;&gt;Cookies and Local Storage
+&lt;/h2&gt;&lt;p&gt;The site theme may use local browser storage to remember display preferences such as light or dark mode.&lt;/p&gt;
+&lt;p&gt;This site may also use third-party services that set cookies or similar technologies. These services can include embedded content, external links, site verification tools, analytics, or advertising services.&lt;/p&gt;
+&lt;h2 id=&#34;advertising-and-google-adsense&#34;&gt;Advertising and Google AdSense
+&lt;/h2&gt;&lt;p&gt;This site may display Google AdSense ads.&lt;/p&gt;
+&lt;p&gt;Third-party vendors, including Google, use cookies to serve ads based on a user&amp;rsquo;s prior visits to this website or other websites. Google&amp;rsquo;s use of advertising cookies enables Google and its partners to serve ads based on visits to this site and other sites on the Internet.&lt;/p&gt;
+&lt;p&gt;Users may opt out of personalized advertising by visiting &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/settings/ads&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google Ads Settings&lt;/a&gt;. Users may also visit &lt;a class=&#34;link&#34; href=&#34;https://www.aboutads.info/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;www.aboutads.info&lt;/a&gt; to learn more about choices for personalized advertising from participating third-party vendors.&lt;/p&gt;
+&lt;p&gt;If other third-party ad networks are used in the future, this policy will be updated to identify them where appropriate.&lt;/p&gt;
+&lt;h2 id=&#34;european-users-and-consent&#34;&gt;European Users and Consent
+&lt;/h2&gt;&lt;p&gt;For visitors in the European Economic Area, the United Kingdom, or Switzerland, this site may show a consent message before using advertising cookies or personalized advertising features where consent is required.&lt;/p&gt;
+&lt;p&gt;If Google AdSense is enabled, consent choices may be managed through Google&amp;rsquo;s Privacy &amp;amp; messaging tools or another Google-certified consent management platform.&lt;/p&gt;
+&lt;h2 id=&#34;third-party-links-and-embedded-content&#34;&gt;Third-Party Links and Embedded Content
+&lt;/h2&gt;&lt;p&gt;Articles may link to external websites such as GitHub, government websites, documentation pages, social platforms, or software project pages. External websites are controlled by their own operators and are not covered by this privacy policy.&lt;/p&gt;
+&lt;p&gt;Embedded or linked third-party content may collect data according to the third party&amp;rsquo;s own privacy policy.&lt;/p&gt;
+&lt;h2 id=&#34;childrens-privacy&#34;&gt;Children&amp;rsquo;s Privacy
+&lt;/h2&gt;&lt;p&gt;This site is intended for a general audience and is not directed at children. I do not knowingly collect personal information from children.&lt;/p&gt;
+&lt;h2 id=&#34;changes-to-this-policy&#34;&gt;Changes to This Policy
+&lt;/h2&gt;&lt;p&gt;I may update this policy when the site changes or when legal, hosting, analytics, or advertising requirements change. The latest version will be published on this page.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</title>
         <link>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
@@ -1010,6 +1048,99 @@ TECHNICAL SKILLS
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;For translating PDFs, DOCX files, Markdown, screenshots, and transcripts from Finder, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;For multilingual typing on macOS, especially accented letters, pinyin tones, Greek, and Maltese-friendly characters, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>How to Apply for Malta eID Online</title>
+        <link>https://jingyuan-zheng.github.io/p/how-to-apply-for-malta-eid-online/</link>
+        <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/p/how-to-apply-for-malta-eid-online/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/malta-eid/featured.png" alt="Featured image of post How to Apply for Malta eID Online" /&gt;&lt;style&gt;
+.post-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.5rem 0;
+    gap: 18px;
+}
+.post-figure img {
+    max-width: 40%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+.post-figure img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.post-figure .caption {
+    font-size: 1.05rem;
+    color: var(--card-text-color-secondary);
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+@media (max-width: 768px) {
+    .post-figure img { max-width: 95%; max-height: 60vh; }
+    .post-figure img:hover { transform: none; }
+}
+&lt;/style&gt;
+&lt;p&gt;This guide explains how to request and activate a Malta eID online through Identità, including the identity document number, document number, activation email, and verification steps that are easy to mix up.&lt;/p&gt;
+&lt;p&gt;Malta eID is needed for many official online services, including services related to driving licences and other government processes. If you prefer not to handle everything in person, the online route is usually enough once you know where to look.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Who this applies to:&lt;/strong&gt; Malta residents, permanent residents, citizens, and approved immigration applicants who are eligible for an eID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; If you have already submitted Form ID 10, or you know your eID was requested but not activated, you can contact Identità directly and ask for an activation link. The official Register Residence page lists &lt;code&gt;+356 25904300&lt;/code&gt; and &lt;code&gt;infoeid.identita@gov.mt&lt;/code&gt; as contact options. If you are not sure whether an eID request exists for you, follow the steps below.&lt;/p&gt;
+&lt;h2 id=&#34;open-the-identità-website&#34;&gt;Open the Identità Website
+&lt;/h2&gt;&lt;p&gt;Go to the Identità website and choose &lt;strong&gt;Contact Us&lt;/strong&gt; from the homepage.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img3.png&#34; alt=&#34;Identità homepage&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 1: Identità homepage.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;choose-the-eid-support-option&#34;&gt;Choose the eID Support Option
+&lt;/h2&gt;&lt;p&gt;In the support form, choose the &lt;strong&gt;eID&lt;/strong&gt; option under Support Station. Fill in the other fields according to your situation.&lt;/p&gt;
+&lt;p&gt;The most important field is &lt;strong&gt;Identity Card Number&lt;/strong&gt;. For residence card holders, this is usually &lt;strong&gt;not&lt;/strong&gt; the number on the top-right front side of the card. Look at the back of the card instead and find the number under &lt;strong&gt;IDENTITY DOCUMENT NUMBER&lt;/strong&gt; (Figure 3). If you do not yet have the physical card, ask the staff which number you should use.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img4.png&#34; alt=&#34;Identità contact form with eID support selected&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 2: Select the eID support option.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img5.png&#34; alt=&#34;Identity Document Number on the back of a Malta residence card&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 3: The Identity Document Number is on the back of the card.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;wait-for-identitàs-email&#34;&gt;Wait for Identità&amp;rsquo;s Email
+&lt;/h2&gt;&lt;p&gt;After submitting the form, wait for an email reply. During working hours, the response can arrive within a few minutes. The staff may ask for extra details by email; in my case, the follow-up was straightforward.&lt;/p&gt;
+&lt;p&gt;The email may also include a Customer Care link. Activating it gives you a support chat-style account, but continuing by normal email is also fine if that is easier.&lt;/p&gt;
+&lt;h2 id=&#34;use-the-activation-link&#34;&gt;Use the Activation Link
+&lt;/h2&gt;&lt;p&gt;Once the staff process your request, they will send an activation link to the email address registered with your identity record.&lt;/p&gt;
+&lt;p&gt;If you do not receive it, check your spam folder and ask them to try again. If the registered email address is wrong or inaccessible, you may need to visit an office with your ID card to update the email first.&lt;/p&gt;
+&lt;p&gt;During activation, two numbers are easy to confuse:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ID Number:&lt;/strong&gt; use the &lt;strong&gt;IDENTITY DOCUMENT NUMBER&lt;/strong&gt; from the back of the card (Figure 3).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Document No.:&lt;/strong&gt; usually use the full alphanumeric document number printed on the top-right front side of the residence card (Figure 4), including the country-code letters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img6.jpg&#34; alt=&#34;Document number on the front of a Malta residence card&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 4: Document No. usually refers to the full number on the front of the card.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;set-up-email-and-two-factor-verification&#34;&gt;Set Up Email and Two-Factor Verification
+&lt;/h2&gt;&lt;p&gt;After activation, you can update your email address and set up two-factor verification. The website will guide you through the options.&lt;/p&gt;
+&lt;p&gt;If you use an iPhone, the built-in Camera app or the system code scanner can scan the QR code directly, so you may not need to install a separate authenticator app. SMS verification is also possible if it is available for your number.&lt;/p&gt;
+&lt;div class=&#34;post-figure&#34;&gt;
+    &lt;img src=&#34;https://jingyuan-zheng.github.io/img/malta-eid/img7.jpg&#34; alt=&#34;Scanning the Malta eID verification QR code with iPhone&#34;&gt;
+    &lt;div class=&#34;caption&#34;&gt;Figure 5: On iPhone, the system camera can scan the verification QR code directly.&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes
+&lt;/h2&gt;&lt;p&gt;If visiting an Identità office is convenient, staff may be able to guide you through the process in person. If you prefer to handle it remotely, the online request and activation flow should work as long as the registered email address is correct and you use the right numbers from the card.&lt;/p&gt;
+&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;After your eID is active, you may also find the &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/ai4all-malta-free-ai-courses/&#34; &gt;Malta AI for All guide&lt;/a&gt; useful. That programme also uses eID login for registration and subscription claiming.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
