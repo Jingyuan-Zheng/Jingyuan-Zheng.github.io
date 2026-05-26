@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号</title>
+        <title>macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号" /&gt;&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符" /&gt;&lt;p&gt;本文介绍 ABC Custom Keyboard：日常输入仍然是美式键盘，但按住 Option 就能输入重音字母、拼音声调、希腊字母、马耳他语字符和常用符号。&lt;/p&gt;
+&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它的目标很直接：保留标准 US ABC / 美式键盘的日常输入体验，同时在 &lt;code&gt;Option&lt;/code&gt; 层加入一套有规律、容易联想的扩展输入，用来输入欧洲拉丁字母、希腊字母、汉语拼音声调、马耳他语相关扩展字母、数学符号、编号符号和技术符号。&lt;/p&gt;
@@ -102,12 +103,13 @@
 </description>
         </item>
         <item>
-        <title>Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构</title>
+        <title>Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构" /&gt;&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理" /&gt;&lt;p&gt;本文介绍 Translate Document Quick Action，一个可以从 Finder 调用的 Mac 文档翻译工具，支持 PDF、Word、Markdown、TXT、图片 OCR 和音视频转录文本。&lt;/p&gt;
+&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/translate-document-quick-action&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/translate-document-quick-action&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它最初是一个 macOS Finder Quick Action：选中文档，右键运行，就在原文件旁边生成翻译后的文件。后来我把核心逻辑整理成了普通 Python 脚本，所以它也可以从命令行使用。&lt;/p&gt;
@@ -228,12 +230,12 @@
 </description>
         </item>
         <item>
-        <title>马耳他 AI for All：领取一年 ChatGPT Plus 或 Microsoft 365 Personal with Copilot 会员攻略</title>
+        <title>马耳他如何领取一年 ChatGPT Plus：AI for All 注册、上课和激活流程</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/ai4all-malta-free-ai-courses/</link>
         <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/ai4all-malta-free-ai-courses/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/ai4all-malta-free-ai-courses/featured.png" alt="Featured image of post 马耳他 AI for All：领取一年 ChatGPT Plus 或 Microsoft 365 Personal with Copilot 会员攻略" /&gt;&lt;style&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/ai4all-malta-free-ai-courses/featured.png" alt="Featured image of post 马耳他如何领取一年 ChatGPT Plus：AI for All 注册、上课和激活流程" /&gt;&lt;style&gt;
 .post-figure {
     display: flex;
     flex-direction: column;
@@ -263,6 +265,7 @@
     .post-figure img { max-width: 96%; max-height: 70vh; }
 }
 &lt;/style&gt;
+&lt;p&gt;本文介绍在马耳他通过 AI for All 领取一年 ChatGPT Plus 或 Microsoft 365 Personal with Copilot 的完整流程，包括 eID 登录、Coursera 上课、考试和最后激活会员。&lt;/p&gt;
 &lt;p&gt;马耳他官方的 &lt;strong&gt;AI for All / AI għal Kulħadd&lt;/strong&gt; 是一个免费的国家 AI 素养项目。根据 &lt;a class=&#34;link&#34; href=&#34;https://mdia.gov.mt/services/ai-for-all-ai-ghal-kulhadd/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;MDIA 官方说明&lt;/a&gt;，持有有效 eID 的马耳他公民和居民可以参加，完成三门基础课程后可获得指定 AI 平台的一年免费订阅；OpenAI 也在 &lt;a class=&#34;link&#34; href=&#34;https://openai.com/index/malta-chatgpt-plus-partnership/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方公告&lt;/a&gt; 中说明，完成课程后可获得一年 ChatGPT Plus。&lt;/p&gt;
@@ -419,12 +422,13 @@
 </description>
         </item>
         <item>
-        <title>DMG Maker: 自动化创建精美的 macOS 安装包</title>
+        <title>Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: 自动化创建精美的 macOS 安装包" /&gt;&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像" /&gt;&lt;p&gt;本文介绍 DMG Maker，一个帮 macOS 小工具自动生成 DMG 安装包的脚本，适合需要背景图、图标摆放和快捷链接的分发场景。&lt;/p&gt;
+&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
 &lt;h2 id=&#34;为什么使用-dmg-maker&#34;&gt;为什么使用 DMG Maker？
 &lt;/h2&gt;&lt;p&gt;手动制作带背景图的 DMG 通常需要编写复杂的 AppleScript 或者繁琐的 Finder 手动操作。DMG Maker 通过一行命令将这一切自动化。&lt;/p&gt;
 &lt;h2 id=&#34;核心功能&#34;&gt;核心功能
@@ -443,12 +447,13 @@
 </description>
         </item>
         <item>
-        <title>The Little Dict (Apple Dictionary 格式) - macOS 专用分享</title>
+        <title>The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/</link>
         <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/the-little-dict-macos/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/the-little-dict-macos/featured.png" alt="Featured image of post The Little Dict (Apple Dictionary 格式) - macOS 专用分享" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/the-little-dict-macos/featured.png" alt="Featured image of post The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词" /&gt;&lt;p&gt;本文分享 The Little Dict 的 macOS 系统词典版本，安装后可以在词典 App、Spotlight 和三指查词里直接使用。&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;The Little Dict&lt;/strong&gt; 是一款非常经典的词典，原版为 MDX 格式。虽然 MDX 在第三方词典软件中表现极佳，但对于 macOS 用户来说，没法用系统原生的“三指触摸查词”始终是个遗憾。macOS 的原生查词体验极佳，一按即查，这种系统级的无缝衔接是任何第三方软件很难完美替代的。&lt;/p&gt;
 &lt;p&gt;因此，为了方便 macOS 用户原生使用，我将其转换成了苹果词典（.dictionary）格式，并打包成了 DMG 镜像，方便安装和分享。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Jingyuan-Zheng/The-Little-Dict-macOS/master/screenshot.png&#34;
@@ -565,12 +570,66 @@
 </description>
         </item>
         <item>
-        <title>BewlyBewly for Safari “复活”指南</title>
+        <title>B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览</title>
+        <link>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
+        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览" /&gt;&lt;p&gt;本文介绍 No-New-Tab，一个把 B 站、知乎、小红书等网站的强制新标签页打开改回当前页浏览的油猴脚本。&lt;/p&gt;
+&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+&lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-项目介绍什么是-no-new-tab&#34;&gt;🚀 项目介绍：什么是 No-New-Tab？
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;No-New-Tab&lt;/strong&gt; 是一款专为国内主流社交和内容平台设计的 Tampermonkey（油猴）脚本。它的核心逻辑非常纯粹：&lt;strong&gt;把选择权还给用户。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它能拦截网站默认的强制开新窗口行为，强制所有链接在当前标签页跳转。如果你真的需要开新窗口，只需按住 &lt;code&gt;Cmd/Ctrl + 点击&lt;/code&gt; 即可，一切回归直觉。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/No-New-Tab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持平台：&lt;/strong&gt; Bilibili（主站/搜索/直播）、知乎、微博、小红书 (RedNote)、Appstorrent、Skymods 等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它解决了哪些痛点&#34;&gt;💡 它解决了哪些痛点？
+&lt;/h2&gt;&lt;h3 id=&#34;1-终结标签页地狱&#34;&gt;1. 终结“标签页地狱”
+&lt;/h3&gt;&lt;p&gt;无需再频繁手动关闭那些看完即丢的搜索结果页和评论区页面。你的浏览器顶栏将保持清爽，内存占用也显著降低。&lt;/p&gt;
+&lt;h3 id=&#34;2-找回后退按钮的直觉&#34;&gt;2. 找回“后退”按钮的直觉
+&lt;/h3&gt;&lt;p&gt;在新标签页打开链接后，浏览器的“后退”按钮往往是灰色的。使用 No-New-Tab 后，所有的跳转都发生在同一个历史记录栈中，点击“后退”即可回到上一级，这才是网页本该有的交互方式。&lt;/p&gt;
+&lt;h3 id=&#34;3-深度覆盖不仅仅是主链接&#34;&gt;3. 深度覆盖：不仅仅是主链接
+&lt;/h3&gt;&lt;p&gt;很多脚本只能处理文章标题链接。No-New-Tab 针对 B 站等平台进行了深度优化，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;搜索框优化：&lt;/strong&gt; 搜索结果直接在当前页加载，不再弹出新窗口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评论区交互：&lt;/strong&gt; 点击头像、用户名、话题（Hashtag）等均保持在当前页。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态加载支持：&lt;/strong&gt; 完美适配瀑布流加载的内容，新生成的链接也会被实时捕获。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-模拟原生-app般的丝滑&#34;&gt;4. 模拟“原生 App”般的丝滑
+&lt;/h3&gt;&lt;p&gt;在手机 App 上浏览时，我们习惯了层级式的进入和退出。No-New-Tab 让桌面端浏览器也拥有这种逻辑连贯性，非常适合深度刷帖和沉浸式阅读。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何安装使用&#34;&gt;🛠 如何安装使用？
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;安装油猴插件：&lt;/strong&gt; 如果你还没安装，请先在 Chrome、Edge 或 Safari 商店搜索并安装 &lt;code&gt;Tampermonkey&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;获取脚本：&lt;/strong&gt; 访问 &lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/527007&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Greasy Fork&lt;/a&gt; 点击安装。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;即刻生效：&lt;/strong&gt; 刷新你正在浏览的 B 站或知乎页面，感受不再“弹窗”的清爽体验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而不是替用户做决定。&lt;strong&gt;No-New-Tab&lt;/strong&gt; 只是一个微小的尝试，希望能在这个强制用户停留在“围墙花园”里的时代，通过一点点代码，找回最初那种简单、纯粹的 Web 浏览体验。&lt;/p&gt;
+&lt;p&gt;如果你喜欢这个项目，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt; 给个 Star，或者提交 Issue 告诉我想支持哪些新网站！&lt;/p&gt;
+&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;如果你也是 Safari 用户，并且关心 B 站网页端体验，可以继续看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/&#34; &gt;BewlyBewly for Safari “复活”指南&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/bewlybewly-safari-revival/featured.png" alt="Featured image of post BewlyBewly for Safari “复活”指南" /&gt;&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/bewlybewly-safari-revival/featured.png" alt="Featured image of post BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件" /&gt;&lt;p&gt;本文整理 BewlyBewly Safari 的可用下载资源，并说明在项目停更后，macOS 用户如何继续安装和使用这款 B 站网页美化插件。&lt;/p&gt;
+&lt;h2 id=&#34;什么是-bewlybewly&#34;&gt;什么是 BewlyBewly？
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/BewlyBewly/BewlyBewly&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;BewlyBewly&lt;/a&gt; 是由开发者 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hakadao&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hakadao&lt;/a&gt; 独立开发、维护了三年的浏览器扩展，旨在彻底重新设计 Bilibili 的网页端界面。它的设计灵感来自 YouTube、visionOS 和 iOS，带来毛玻璃效果、深色模式、更简洁的首页布局，以及大量个性化设置选项——让原本略显臃肿的 B 站网页变得赏心悦目。&lt;/p&gt;
@@ -638,54 +697,101 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
 </description>
         </item>
         <item>
-        <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
-        <link>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
+        <title>Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文</title>
+        <link>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
-&lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
-&lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
+        <guid>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/mac-lite-translator/featured.png" alt="Featured image of post Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文" /&gt;&lt;p&gt;Mac-Lite-Translator 是一个基于 Google TranslateGemma 和 Apple MLX 的 Mac 本地翻译工具，适合在不上传云端的情况下快速、准确地翻译长文、论文和日常文本。&lt;/p&gt;
+&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
+&lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Mac-Lite-Translator GUI&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;-项目介绍什么是-no-new-tab&#34;&gt;🚀 项目介绍：什么是 No-New-Tab？
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;No-New-Tab&lt;/strong&gt; 是一款专为国内主流社交和内容平台设计的 Tampermonkey（油猴）脚本。它的核心逻辑非常纯粹：&lt;strong&gt;把选择权还给用户。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;它能拦截网站默认的强制开新窗口行为，强制所有链接在当前标签页跳转。如果你真的需要开新窗口，只需按住 &lt;code&gt;Cmd/Ctrl + 点击&lt;/code&gt; 即可，一切回归直觉。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Jingyuan-Zheng/No-New-Tab&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;支持平台：&lt;/strong&gt; Bilibili（主站/搜索/直播）、知乎、微博、小红书 (RedNote)、Appstorrent、Skymods 等。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;-演示视频&#34;&gt;📺 演示视频
+&lt;/h2&gt;&lt;p&gt;先来看看它的实际表现吧！你可以看到极速的响应速度和精准的学术翻译模式：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video
+    controls
+    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
+    
+    
+    &gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+
 &lt;hr&gt;
-&lt;h2 id=&#34;-它解决了哪些痛点&#34;&gt;💡 它解决了哪些痛点？
-&lt;/h2&gt;&lt;h3 id=&#34;1-终结标签页地狱&#34;&gt;1. 终结“标签页地狱”
-&lt;/h3&gt;&lt;p&gt;无需再频繁手动关闭那些看完即丢的搜索结果页和评论区页面。你的浏览器顶栏将保持清爽，内存占用也显著降低。&lt;/p&gt;
-&lt;h3 id=&#34;2-找回后退按钮的直觉&#34;&gt;2. 找回“后退”按钮的直觉
-&lt;/h3&gt;&lt;p&gt;在新标签页打开链接后，浏览器的“后退”按钮往往是灰色的。使用 No-New-Tab 后，所有的跳转都发生在同一个历史记录栈中，点击“后退”即可回到上一级，这才是网页本该有的交互方式。&lt;/p&gt;
-&lt;h3 id=&#34;3-深度覆盖不仅仅是主链接&#34;&gt;3. 深度覆盖：不仅仅是主链接
-&lt;/h3&gt;&lt;p&gt;很多脚本只能处理文章标题链接。No-New-Tab 针对 B 站等平台进行了深度优化，包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;搜索框优化：&lt;/strong&gt; 搜索结果直接在当前页加载，不再弹出新窗口。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;评论区交互：&lt;/strong&gt; 点击头像、用户名、话题（Hashtag）等均保持在当前页。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动态加载支持：&lt;/strong&gt; 完美适配瀑布流加载的内容，新生成的链接也会被实时捕获。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;4-模拟原生-app般的丝滑&#34;&gt;4. 模拟“原生 App”般的丝滑
-&lt;/h3&gt;&lt;p&gt;在手机 App 上浏览时，我们习惯了层级式的进入和退出。No-New-Tab 让桌面端浏览器也拥有这种逻辑连贯性，非常适合深度刷帖和沉浸式阅读。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-如何安装使用&#34;&gt;🛠 如何安装使用？
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;安装油猴插件：&lt;/strong&gt; 如果你还没安装，请先在 Chrome、Edge 或 Safari 商店搜索并安装 &lt;code&gt;Tampermonkey&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;获取脚本：&lt;/strong&gt; 访问 &lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/527007&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Greasy Fork&lt;/a&gt; 点击安装。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;即刻生效：&lt;/strong&gt; 刷新你正在浏览的 B 站或知乎页面，感受不再“弹窗”的清爽体验。&lt;/li&gt;
+&lt;h2 id=&#34;-技术内核为什么选-mlx--gemma&#34;&gt;🚀 技术内核：为什么选 MLX + Gemma？
+&lt;/h2&gt;&lt;p&gt;传统的本地翻译工具往往依赖通用的 CPU 推理，速度缓慢。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 的核心优势在于：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Apple MLX 框架支持：&lt;/strong&gt; 专门为 Apple Silicon (M1-M4) 统一内存架构优化的深度学习框架，推理速度远超通用的推理后端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemma 12B 模型：&lt;/strong&gt; 来自 Google 的先进大模型，经过微调后专门针对翻译任务优化，12B 的参数规模在 4-bit 量化下，既保证了翻译的深度（如上下文理解、文学修辞），又保证了极速响应。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
+&lt;h2 id=&#34;-小白科普什么是-translategemma&#34;&gt;🧐 小白科普：什么是 TranslateGemma？
+&lt;/h2&gt;&lt;p&gt;如果你是第一次听说这个名字，不用担心。简单来说，&lt;strong&gt;TranslateGemma&lt;/strong&gt; 是由 Google 官方推出的一系列专门为“翻译”任务量身打造的开源大模型。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;它的由来：&lt;/strong&gt; 它是基于 Google 强大的 &lt;strong&gt;Gemma 2&lt;/strong&gt; 模型（和 Gemini 同源）进行“二次深造”（微调）而来的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;为什么更强：&lt;/strong&gt; 普通的大模型虽然也能翻译，但 TranslateGemma 学习了海量的专业翻译语料。因此在处理长难句、自动语种识别以及保持译文自然度方面，表现得更像一名“职业翻译官”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持广泛：&lt;/strong&gt; 它原生支持 55 种语言之间的相互翻译，是目前开源社区中翻译质量最顶尖的模型之一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;👉 点击这里了解 TranslateGemma 官方技术详情&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-它能为你做什么&#34;&gt;💡 它能为你做什么？
+&lt;/h2&gt;&lt;h3 id=&#34;1-多样化的翻译模式&#34;&gt;1. 多样化的翻译模式
+&lt;/h3&gt;&lt;p&gt;不同于原生翻译只有一种输出，你可以一键切换多种翻译风格：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;学术模式 (Academic)：&lt;/strong&gt; 针对论文、专业文档优化，术语严谨，句式正式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;休闲模式 (Casual)：&lt;/strong&gt; 适合日常对话、社交媒体，语言更具亲和力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网页聊天 (Web Chat)：&lt;/strong&gt; 适配口语化的快速交流场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-深度词典功能&#34;&gt;2. 深度词典功能
+&lt;/h3&gt;&lt;p&gt;当你翻译单个单词或短语时，脚本会自动进入 &lt;strong&gt;词典模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供标准的 &lt;strong&gt;IPA 音标&lt;/strong&gt;（英/美）。&lt;/li&gt;
+&lt;li&gt;给出详细的 &lt;strong&gt;定义、同义词&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;列举 &lt;strong&gt;实际例句&lt;/strong&gt;，帮助你真正掌握单词。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-系统级无缝集成&#34;&gt;3. 系统级无缝集成
+&lt;/h3&gt;&lt;p&gt;通过 macOS 的 &lt;strong&gt;快捷指令 (Shortcuts)&lt;/strong&gt; 和 &lt;strong&gt;右键菜单&lt;/strong&gt;，你可以像使用原生功能一样调用 Mac-Lite-Translator。只需选中一段文字，右键点击，极速翻译即刻呈现在屏幕上。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-隐私与成本真正的本地化&#34;&gt;🔒 隐私与成本：真正的本地化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100% 隐私保护：&lt;/strong&gt; 你的所有翻译请求都不会离开你的电脑。无论是公司机密还是个人隐私，都无需担心被上传至云端。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0 运行成本：&lt;/strong&gt; 无需订阅费，无需购买 ChatGPT 或 DeepL 的 API Key。只要你的电脑有电，翻译就是免费的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;离线可用：&lt;/strong&gt; 在飞机上、地下室或其他无网络环境，它依然是你的得力助手。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-如何开始&#34;&gt;🛠 如何开始？
+&lt;/h2&gt;&lt;p&gt;项目已在 GitHub 开源，你只需简单的几步配置即可体验：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;推荐环境：&lt;/strong&gt; 建议 16GB 及以上内存的 Apple Silicon Mac 以获得最佳体验。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;结语&#34;&gt;结语
-&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而不是替用户做决定。&lt;strong&gt;No-New-Tab&lt;/strong&gt; 只是一个微小的尝试，希望能在这个强制用户停留在“围墙花园”里的时代，通过一点点代码，找回最初那种简单、纯粹的 Web 浏览体验。&lt;/p&gt;
-&lt;p&gt;如果你喜欢这个项目，欢迎在 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/No-New-Tab&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt; 给个 Star，或者提交 Issue 告诉我想支持哪些新网站！&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。&lt;/p&gt;
+&lt;p&gt;如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！&lt;/p&gt;
 &lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;如果你也是 Safari 用户，并且关心 B 站网页端体验，可以继续看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/bewlybewly-safari-revival/&#34; &gt;BewlyBewly for Safari “复活”指南&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你更想翻译 PDF、Word、Markdown、图片或音视频转录稿，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;如果你经常输入多语言字符、拼音声调或学术符号，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -830,104 +936,6 @@ transform: translateX(8px);
 </description>
         </item>
         <item>
-        <title>拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</title>
-        <link>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</link>
-        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/mac-lite-translator/featured.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
-&lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Mac-Lite-Translator GUI&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-演示视频&#34;&gt;📺 演示视频
-&lt;/h2&gt;&lt;p&gt;先来看看它的实际表现吧！你可以看到极速的响应速度和精准的学术翻译模式：&lt;/p&gt;
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;video
-    controls
-    src=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;
-    
-    
-    &gt;
-        &lt;p&gt;
-            Your browser doesn&#39;t support HTML5 video. Here is a
-            &lt;a href=&#34;https://github.com/user-attachments/assets/63cae308-71da-452e-8c8a-0f5a54464e74&#34;&gt;link to the video&lt;/a&gt; instead.
-        &lt;/p&gt;
-    &lt;/video&gt;
-&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;h2 id=&#34;-技术内核为什么选-mlx--gemma&#34;&gt;🚀 技术内核：为什么选 MLX + Gemma？
-&lt;/h2&gt;&lt;p&gt;传统的本地翻译工具往往依赖通用的 CPU 推理，速度缓慢。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 的核心优势在于：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Apple MLX 框架支持：&lt;/strong&gt; 专门为 Apple Silicon (M1-M4) 统一内存架构优化的深度学习框架，推理速度远超通用的推理后端。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gemma 12B 模型：&lt;/strong&gt; 来自 Google 的先进大模型，经过微调后专门针对翻译任务优化，12B 的参数规模在 4-bit 量化下，既保证了翻译的深度（如上下文理解、文学修辞），又保证了极速响应。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-小白科普什么是-translategemma&#34;&gt;🧐 小白科普：什么是 TranslateGemma？
-&lt;/h2&gt;&lt;p&gt;如果你是第一次听说这个名字，不用担心。简单来说，&lt;strong&gt;TranslateGemma&lt;/strong&gt; 是由 Google 官方推出的一系列专门为“翻译”任务量身打造的开源大模型。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;它的由来：&lt;/strong&gt; 它是基于 Google 强大的 &lt;strong&gt;Gemma 2&lt;/strong&gt; 模型（和 Gemini 同源）进行“二次深造”（微调）而来的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;为什么更强：&lt;/strong&gt; 普通的大模型虽然也能翻译，但 TranslateGemma 学习了海量的专业翻译语料。因此在处理长难句、自动语种识别以及保持译文自然度方面，表现得更像一名“职业翻译官”。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;支持广泛：&lt;/strong&gt; 它原生支持 55 种语言之间的相互翻译，是目前开源社区中翻译质量最顶尖的模型之一。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/google/translategemma-release-66f26487e497554902c524b0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;👉 点击这里了解 TranslateGemma 官方技术详情&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-它能为你做什么&#34;&gt;💡 它能为你做什么？
-&lt;/h2&gt;&lt;h3 id=&#34;1-多样化的翻译模式&#34;&gt;1. 多样化的翻译模式
-&lt;/h3&gt;&lt;p&gt;不同于原生翻译只有一种输出，你可以一键切换多种翻译风格：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;学术模式 (Academic)：&lt;/strong&gt; 针对论文、专业文档优化，术语严谨，句式正式。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;休闲模式 (Casual)：&lt;/strong&gt; 适合日常对话、社交媒体，语言更具亲和力。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;网页聊天 (Web Chat)：&lt;/strong&gt; 适配口语化的快速交流场景。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;2-深度词典功能&#34;&gt;2. 深度词典功能
-&lt;/h3&gt;&lt;p&gt;当你翻译单个单词或短语时，脚本会自动进入 &lt;strong&gt;词典模式&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;提供标准的 &lt;strong&gt;IPA 音标&lt;/strong&gt;（英/美）。&lt;/li&gt;
-&lt;li&gt;给出详细的 &lt;strong&gt;定义、同义词&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;列举 &lt;strong&gt;实际例句&lt;/strong&gt;，帮助你真正掌握单词。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-系统级无缝集成&#34;&gt;3. 系统级无缝集成
-&lt;/h3&gt;&lt;p&gt;通过 macOS 的 &lt;strong&gt;快捷指令 (Shortcuts)&lt;/strong&gt; 和 &lt;strong&gt;右键菜单&lt;/strong&gt;，你可以像使用原生功能一样调用 Mac-Lite-Translator。只需选中一段文字，右键点击，极速翻译即刻呈现在屏幕上。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-隐私与成本真正的本地化&#34;&gt;🔒 隐私与成本：真正的本地化
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;100% 隐私保护：&lt;/strong&gt; 你的所有翻译请求都不会离开你的电脑。无论是公司机密还是个人隐私，都无需担心被上传至云端。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;0 运行成本：&lt;/strong&gt; 无需订阅费，无需购买 ChatGPT 或 DeepL 的 API Key。只要你的电脑有电，翻译就是免费的。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;离线可用：&lt;/strong&gt; 在飞机上、地下室或其他无网络环境，它依然是你的得力助手。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-如何开始&#34;&gt;🛠 如何开始？
-&lt;/h2&gt;&lt;p&gt;项目已在 GitHub 开源，你只需简单的几步配置即可体验：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;项目 GitHub 地址：&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;推荐环境：&lt;/strong&gt; 建议 16GB 及以上内存的 Apple Silicon Mac 以获得最佳体验。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;结语&#34;&gt;结语
-&lt;/h2&gt;&lt;p&gt;浏览器的职责是展示信息，而翻译工具的职责是打破隔阂。&lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt; 让先进的生成式 AI 不再局限于云端。它不仅是一个工具，更是对 Mac 生产力边界的一次小小探索。&lt;/p&gt;
-&lt;p&gt;如果你觉得这个工具有用，欢迎去 GitHub 点个 Star！&lt;/p&gt;
-&lt;h2 id=&#34;相关阅读&#34;&gt;相关阅读
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;如果你更想翻译 PDF、Word、Markdown、图片或音视频转录稿，可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/&#34; &gt;Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;如果你经常输入多语言字符、拼音声调或学术符号，也可以看 &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>完善中：一纸素心，待写华章</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/collection/placeholder/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
@@ -950,12 +958,13 @@ transform: translateX(8px);
 </description>
         </item>
         <item>
-        <title>我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站</title>
+        <title>Hugo &#43; Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</link>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/my-first-blog-setup-guide/featured.png" alt="Featured image of post 我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站" /&gt;&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/my-first-blog-setup-guide/featured.png" alt="Featured image of post Hugo &#43; Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录" /&gt;&lt;p&gt;本文记录第一次用 Hugo + Stack 搭建个人博客的过程，重点是 macOS 环境、GitHub Pages 自动部署和 GitHub Token 认证问题。&lt;/p&gt;
+&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
 &lt;p&gt;正如标题所说，这是我的第一篇博客。作为一个喜欢记录和分享的人，我一直梦想着拥有一个属于自己的、可以自由书写的空间。在探索了各种方案后，我最终选择了 &lt;strong&gt;Hugo + GitHub Pages&lt;/strong&gt; 这套组合，因为它足够&lt;strong&gt;快速、免费、强大&lt;/strong&gt;，而且折腾起来非常有成就感。&lt;/p&gt;
 &lt;p&gt;这篇文章，就是为了记录我从一个想法到网站上线的全过程，并特别点出一些教程里可能没详细说明、但我亲身遇到的“坑”。&lt;/p&gt;
 &lt;p&gt;搭建过程我主要参考了以下优秀教程，强烈推荐大家先看一遍：&lt;/p&gt;
@@ -1048,12 +1057,12 @@ transform: translateX(8px);
 </description>
         </item>
         <item>
-        <title>如何在线足不出户办理马耳他eID</title>
+        <title>马耳他 eID 在线申请教程：不用跑现场，也能完成激活</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/</link>
         <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/malta-eid/featured.png" alt="Featured image of post 如何在线足不出户办理马耳他eID" /&gt;&lt;style&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/malta-eid/featured.png" alt="Featured image of post 马耳他 eID 在线申请教程：不用跑现场，也能完成激活" /&gt;&lt;style&gt;
 .post-figure {
     display: flex;
     flex-direction: column;
@@ -1092,6 +1101,7 @@ transform: translateX(8px);
     .post-figure img:hover { transform: none; }
 }
 &lt;/style&gt;
+&lt;p&gt;本文介绍如何在线申请和激活马耳他 eID，包括联系 Identità、填写身份号码、等待邮件和处理验证码这些容易卡住的步骤。&lt;/p&gt;
 &lt;p&gt;eID 在各项官方服务里都需要用到，比如考驾照等，什么业务都跑线下不如自己网上填好 😊&lt;/p&gt;
 &lt;p&gt;✳️ &lt;strong&gt;前提条件&lt;/strong&gt;：马耳他居民 / 永久居民 / 公民 / 获批的移民申请人&lt;/p&gt;
 &lt;p&gt;✳️ &lt;strong&gt;注意&lt;/strong&gt;：填过 Form ID 10，或者明确知道自己已经申请过 eID 但还没激活的人，可以先直接联系 Identità 申请激活链接。&lt;a class=&#34;link&#34; href=&#34;https://eid.gov.mt/auth/Help/RegisterResidence&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

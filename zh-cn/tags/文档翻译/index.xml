@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 10:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构</title>
+        <title>Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构" /&gt;&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理" /&gt;&lt;p&gt;本文介绍 Translate Document Quick Action，一个可以从 Finder 调用的 Mac 文档翻译工具，支持 PDF、Word、Markdown、TXT、图片 OCR 和音视频转录文本。&lt;/p&gt;
+&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/translate-document-quick-action&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/translate-document-quick-action&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它最初是一个 macOS Finder Quick Action：选中文档，右键运行，就在原文件旁边生成翻译后的文件。后来我把核心逻辑整理成了普通 Python 脚本，所以它也可以从命令行使用。&lt;/p&gt;

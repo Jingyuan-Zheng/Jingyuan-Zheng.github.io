@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/%E6%8B%BC%E9%9F%B3/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号</title>
+        <title>macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号" /&gt;&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符" /&gt;&lt;p&gt;本文介绍 ABC Custom Keyboard：日常输入仍然是美式键盘，但按住 Option 就能输入重音字母、拼音声调、希腊字母、马耳他语字符和常用符号。&lt;/p&gt;
+&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它的目标很直接：保留标准 US ABC / 美式键盘的日常输入体验，同时在 &lt;code&gt;Option&lt;/code&gt; 层加入一套有规律、容易联想的扩展输入，用来输入欧洲拉丁字母、希腊字母、汉语拼音声调、马耳他语相关扩展字母、数学符号、编号符号和技术符号。&lt;/p&gt;

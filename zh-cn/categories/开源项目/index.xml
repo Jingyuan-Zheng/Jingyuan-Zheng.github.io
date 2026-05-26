@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号</title>
+        <title>macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard：一把美式键盘覆盖多语言写作和学术符号" /&gt;&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符" /&gt;&lt;p&gt;本文介绍 ABC Custom Keyboard：日常输入仍然是美式键盘，但按住 Option 就能输入重音字母、拼音声调、希腊字母、马耳他语字符和常用符号。&lt;/p&gt;
+&lt;p&gt;我开源了 &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;，这是一个面向 macOS 的自定义键盘布局。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它的目标很直接：保留标准 US ABC / 美式键盘的日常输入体验，同时在 &lt;code&gt;Option&lt;/code&gt; 层加入一套有规律、容易联想的扩展输入，用来输入欧洲拉丁字母、希腊字母、汉语拼音声调、马耳他语相关扩展字母、数学符号、编号符号和技术符号。&lt;/p&gt;
@@ -102,12 +103,13 @@
 </description>
         </item>
         <item>
-        <title>Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构</title>
+        <title>Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Document Quick Action：在 Finder 里一键翻译文档，并尽量保留原结构" /&gt;&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理" /&gt;&lt;p&gt;本文介绍 Translate Document Quick Action，一个可以从 Finder 调用的 Mac 文档翻译工具，支持 PDF、Word、Markdown、TXT、图片 OCR 和音视频转录文本。&lt;/p&gt;
+&lt;p&gt;我开源了一个新的小工具：&lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;项目地址在这里：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/translate-document-quick-action&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/translate-document-quick-action&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;它最初是一个 macOS Finder Quick Action：选中文档，右键运行，就在原文件旁边生成翻译后的文件。后来我把核心逻辑整理成了普通 Python 脚本，所以它也可以从命令行使用。&lt;/p&gt;
@@ -228,12 +230,13 @@
 </description>
         </item>
         <item>
-        <title>DMG Maker: 自动化创建精美的 macOS 安装包</title>
+        <title>Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: 自动化创建精美的 macOS 安装包" /&gt;&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像" /&gt;&lt;p&gt;本文介绍 DMG Maker，一个帮 macOS 小工具自动生成 DMG 安装包的脚本，适合需要背景图、图标摆放和快捷链接的分发场景。&lt;/p&gt;
+&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
 &lt;h2 id=&#34;为什么使用-dmg-maker&#34;&gt;为什么使用 DMG Maker？
 &lt;/h2&gt;&lt;p&gt;手动制作带背景图的 DMG 通常需要编写复杂的 AppleScript 或者繁琐的 Finder 手动操作。DMG Maker 通过一行命令将这一切自动化。&lt;/p&gt;
 &lt;h2 id=&#34;核心功能&#34;&gt;核心功能

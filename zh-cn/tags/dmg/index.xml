@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/dmg/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>DMG Maker: 自动化创建精美的 macOS 安装包</title>
+        <title>Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: 自动化创建精美的 macOS 安装包" /&gt;&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像" /&gt;&lt;p&gt;本文介绍 DMG Maker，一个帮 macOS 小工具自动生成 DMG 安装包的脚本，适合需要背景图、图标摆放和快捷链接的分发场景。&lt;/p&gt;
+&lt;p&gt;我刚刚开源了 &lt;strong&gt;DMG Maker&lt;/strong&gt;，这是一个旨在简化 macOS 专业安装包制作过程的小工具。&lt;/p&gt;
 &lt;h2 id=&#34;为什么使用-dmg-maker&#34;&gt;为什么使用 DMG Maker？
 &lt;/h2&gt;&lt;p&gt;手动制作带背景图的 DMG 通常需要编写复杂的 AppleScript 或者繁琐的 Finder 手动操作。DMG Maker 通过一行命令将这一切自动化。&lt;/p&gt;
 &lt;h2 id=&#34;核心功能&#34;&gt;核心功能

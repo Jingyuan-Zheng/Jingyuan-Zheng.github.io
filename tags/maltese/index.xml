@@ -8,12 +8,13 @@
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Fri, 17 Apr 2026 18:30:00 +0800</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/maltese/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Introducing Ġabra: A Native Maltese Dictionary for macOS</title>
+        <title>Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</title>
         <link>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
         <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Introducing Ġabra: A Native Maltese Dictionary for macOS" /&gt;&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" /&gt;&lt;p&gt;This post shares a Maltese dictionary packaged for the native macOS Dictionary app, so Maltese words can be looked up from Dictionary, Spotlight, or the three-finger Look Up gesture.&lt;/p&gt;
+&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;why-this-project&#34;&gt;Why this project?
 &lt;/h3&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://mlrs.research.um.edu.mt/resources/gabra-api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Ġabra project&lt;/a&gt; from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &amp;ldquo;Look up&amp;rdquo; feature (three-finger tap).&lt;/p&gt;

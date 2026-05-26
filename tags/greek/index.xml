@@ -8,12 +8,13 @@
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/greek/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS</title>
+        <title>A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</title>
         <link>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS" /&gt;&lt;p&gt;I have open-sourced &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;, a macOS keyboard layout for people who want to keep typing on a standard US ABC keyboard while gaining fast access to European Latin characters, Greek letters, pinyin tone marks, Maltese-friendly extensions, mathematical symbols, numbered markers, and technical symbols.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" /&gt;&lt;p&gt;This post introduces ABC Custom Keyboard, a macOS keyboard layout that keeps normal US typing unchanged while making accents, pinyin tones, Greek letters, Maltese characters, and symbols easier to type.&lt;/p&gt;
+&lt;p&gt;I have open-sourced &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;, a macOS keyboard layout for people who want to keep typing on a standard US ABC keyboard while gaining fast access to European Latin characters, Greek letters, pinyin tone marks, Maltese-friendly extensions, mathematical symbols, numbered markers, and technical symbols.&lt;/p&gt;
 &lt;p&gt;The project is here: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;why-i-built-it&#34;&gt;Why I Built It

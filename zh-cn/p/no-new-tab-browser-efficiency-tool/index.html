@@ -2,17 +2,17 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="国内主流网站（如 B 站、知乎、微博、小红书等）总是强制在新标签页打开链接，导致浏览器窗口迅速堆积。No-New-Tab 油猴脚本强制同标签页跳转，找回移动端般的丝滑浏览体验。">
-<title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
+<title>B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览</title>
 
 <link rel='canonical' href='https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/'>
 
-<link rel="stylesheet" href="/scss/style.min.ec5a5d41dff80964d23d26a145e0a743b60995890460ec55cc7c563165596274.css"><meta property='og:title' content="告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本">
+<link rel="stylesheet" href="/scss/style.min.ec5a5d41dff80964d23d26a145e0a743b60995890460ec55cc7c563165596274.css"><meta property='og:title' content="B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览">
 <meta property='og:description' content="国内主流网站（如 B 站、知乎、微博、小红书等）总是强制在新标签页打开链接，导致浏览器窗口迅速堆积。No-New-Tab 油猴脚本强制同标签页跳转，找回移动端般的丝滑浏览体验。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/'>
 <meta property='og:site_name' content='小景'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='油猴脚本' /><meta property='article:tag' content='效率工具' /><meta property='article:tag' content='浏览器插件' /><meta property='article:tag' content='Bilibili' /><meta property='article:tag' content='知乎' /><meta property='article:tag' content='小红书' /><meta property='article:tag' content='No-New-Tab' /><meta property='article:published_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/no-new-tab/featured.png' />
 <meta name="twitter:site" content="@AndersJheng">
-    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览">
 <meta name="twitter:description" content="国内主流网站（如 B 站、知乎、微博、小红书等）总是强制在新标签页打开链接，导致浏览器窗口迅速堆积。No-New-Tab 油猴脚本强制同标签页跳转，找回移动端般的丝滑浏览体验。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/no-new-tab/featured.png' />
     <link rel="shortcut icon" href="/favicon.png" />
@@ -258,7 +258,7 @@
         <div class="article-image">
             <a href="/zh-cn/p/no-new-tab-browser-efficiency-tool/">
                 
-                    <img src="/img/no-new-tab/featured.png" loading="lazy" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" />
+                    <img src="/img/no-new-tab/featured.png" loading="lazy" alt="Featured image of post B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览" />
                 
             </a>
         </div>
@@ -281,7 +281,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/zh-cn/p/no-new-tab-browser-efficiency-tool/">告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</a>
+            <a href="/zh-cn/p/no-new-tab-browser-efficiency-tool/">B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览</a>
         </h2>
     
         
@@ -337,7 +337,8 @@
     <section class="article-content">
     
     
-    <p>你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？</p>
+    <p>本文介绍 No-New-Tab，一个把 B 站、知乎、小红书等网站的强制新标签页打开改回当前页浏览的油猴脚本。</p>
+<p>你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？</p>
 <p>这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 <code>target=&quot;_blank&quot;</code>（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。</p>
 <p>为了解决这个问题，我开发了一个简单的油猴脚本：<strong>No-New-Tab</strong>。</p>
 <hr>
@@ -472,7 +473,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">BewlyBewly for Safari “复活”指南</h2>
+            <h2 class="article-title">BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件</h2>
         </div>
     </a>
 </article>
@@ -491,7 +492,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</h2>
+            <h2 class="article-title">Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文</h2>
         </div>
     </a>
 </article>
@@ -510,7 +511,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">The Little Dict (Apple Dictionary 格式) - macOS 专用分享</h2>
+            <h2 class="article-title">The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词</h2>
         </div>
     </a>
 </article>

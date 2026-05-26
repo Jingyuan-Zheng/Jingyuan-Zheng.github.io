@@ -8,12 +8,13 @@
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/macos/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS</title>
+        <title>A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</title>
         <link>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</link>
         <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/abc-custom-keyboard/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post ABC Custom Keyboard: One US Keyboard for Multilingual Writing on macOS" /&gt;&lt;p&gt;I have open-sourced &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;, a macOS keyboard layout for people who want to keep typing on a standard US ABC keyboard while gaining fast access to European Latin characters, Greek letters, pinyin tone marks, Maltese-friendly extensions, mathematical symbols, numbered markers, and technical symbols.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/abc-custom-keyboard/featured.png" alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" /&gt;&lt;p&gt;This post introduces ABC Custom Keyboard, a macOS keyboard layout that keeps normal US typing unchanged while making accents, pinyin tones, Greek letters, Maltese characters, and symbols easier to type.&lt;/p&gt;
+&lt;p&gt;I have open-sourced &lt;strong&gt;ABC Custom Keyboard&lt;/strong&gt;, a macOS keyboard layout for people who want to keep typing on a standard US ABC keyboard while gaining fast access to European Latin characters, Greek letters, pinyin tone marks, Maltese-friendly extensions, mathematical symbols, numbered markers, and technical symbols.&lt;/p&gt;
 &lt;p&gt;The project is here: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/ABC-Custom-Keyboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/ABC-Custom-Keyboard&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;why-i-built-it&#34;&gt;Why I Built It
@@ -101,12 +102,13 @@
 </description>
         </item>
         <item>
-        <title>Translate Document Quick Action: Translate Files from Finder Without Losing Structure</title>
+        <title>Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts</title>
         <link>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Document Quick Action: Translate Files from Finder Without Losing Structure" /&gt;&lt;p&gt;I have open-sourced &lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;, a small macOS-focused tool for translating everyday documents directly from Finder, with the core translation workers kept as plain Python scripts.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" /&gt;&lt;p&gt;This post introduces Translate Document Quick Action, a Mac workflow that translates PDFs, Word files, Markdown, images, and audio transcripts directly from Finder.&lt;/p&gt;
+&lt;p&gt;I have open-sourced &lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;, a small macOS-focused tool for translating everyday documents directly from Finder, with the core translation workers kept as plain Python scripts.&lt;/p&gt;
 &lt;p&gt;The project is here: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/translate-document-quick-action&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/translate-document-quick-action&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;why-i-built-it&#34;&gt;Why I Built It
@@ -225,12 +227,13 @@
 </description>
         </item>
         <item>
-        <title>DMG Maker: Create Beautiful macOS Installers Automatically</title>
+        <title>How to Make a macOS DMG Installer with a Custom Background</title>
         <link>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
         <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post DMG Maker: Create Beautiful macOS Installers Automatically" /&gt;&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" /&gt;&lt;p&gt;This post introduces DMG Maker, a small tool for creating macOS DMG installers with custom backgrounds, icon placement, and destination shortcuts.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
 &lt;h2 id=&#34;why-dmg-maker&#34;&gt;Why DMG Maker?
 &lt;/h2&gt;&lt;p&gt;Creating a DMG with a custom background usually involves manual AppleScripting or tedious Finder configurations. DMG Maker automates this using a single command.&lt;/p&gt;
 &lt;h2 id=&#34;key-features&#34;&gt;Key Features
@@ -249,12 +252,13 @@
 </description>
         </item>
         <item>
-        <title>Introducing Ġabra: A Native Maltese Dictionary for macOS</title>
+        <title>Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</title>
         <link>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
         <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Introducing Ġabra: A Native Maltese Dictionary for macOS" /&gt;&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" /&gt;&lt;p&gt;This post shares a Maltese dictionary packaged for the native macOS Dictionary app, so Maltese words can be looked up from Dictionary, Spotlight, or the three-finger Look Up gesture.&lt;/p&gt;
+&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;why-this-project&#34;&gt;Why this project?
 &lt;/h3&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://mlrs.research.um.edu.mt/resources/gabra-api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Ġabra project&lt;/a&gt; from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &amp;ldquo;Look up&amp;rdquo; feature (three-finger tap).&lt;/p&gt;

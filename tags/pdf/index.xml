@@ -8,12 +8,13 @@
         <language>en-us</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 10:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Translate Document Quick Action: Translate Files from Finder Without Losing Structure</title>
+        <title>Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts</title>
         <link>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</link>
         <pubDate>Mon, 25 May 2026 10:00:00 +0200</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/p/translate-document-quick-action/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Document Quick Action: Translate Files from Finder Without Losing Structure" /&gt;&lt;p&gt;I have open-sourced &lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;, a small macOS-focused tool for translating everyday documents directly from Finder, with the core translation workers kept as plain Python scripts.&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/translate-document-quick-action/featured.png" alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" /&gt;&lt;p&gt;This post introduces Translate Document Quick Action, a Mac workflow that translates PDFs, Word files, Markdown, images, and audio transcripts directly from Finder.&lt;/p&gt;
+&lt;p&gt;I have open-sourced &lt;strong&gt;Translate Document Quick Action&lt;/strong&gt;, a small macOS-focused tool for translating everyday documents directly from Finder, with the core translation workers kept as plain Python scripts.&lt;/p&gt;
 &lt;p&gt;The project is here: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/translate-document-quick-action&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Jingyuan-Zheng/translate-document-quick-action&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;why-i-built-it&#34;&gt;Why I Built It

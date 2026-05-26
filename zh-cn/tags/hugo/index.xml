@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Sun, 14 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站</title>
+        <title>Hugo &#43; Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</link>
         <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/my-first-blog-setup-guide/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/my-first-blog-setup-guide/featured.png" alt="Featured image of post 我的第一篇博客：从零到一，用 Hugo &#43; Stack 主题搭建个人网站" /&gt;&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/my-first-blog-setup-guide/featured.png" alt="Featured image of post Hugo &#43; Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录" /&gt;&lt;p&gt;本文记录第一次用 Hugo + Stack 搭建个人博客的过程，重点是 macOS 环境、GitHub Pages 自动部署和 GitHub Token 认证问题。&lt;/p&gt;
+&lt;p&gt;你好，世界！欢迎来到我的小站。&lt;/p&gt;
 &lt;p&gt;正如标题所说，这是我的第一篇博客。作为一个喜欢记录和分享的人，我一直梦想着拥有一个属于自己的、可以自由书写的空间。在探索了各种方案后，我最终选择了 &lt;strong&gt;Hugo + GitHub Pages&lt;/strong&gt; 这套组合，因为它足够&lt;strong&gt;快速、免费、强大&lt;/strong&gt;，而且折腾起来非常有成就感。&lt;/p&gt;
 &lt;p&gt;这篇文章，就是为了记录我从一个想法到网站上线的全过程，并特别点出一些教程里可能没详细说明、但我亲身遇到的“坑”。&lt;/p&gt;
 &lt;p&gt;搭建过程我主要参考了以下优秀教程，强烈推荐大家先看一遍：&lt;/p&gt;

@@ -8,12 +8,13 @@
         <language>zh-cn</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh-cn/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本</title>
+        <title>B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/no-new-tab-browser-efficiency-tool/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post 告别标签页“爆炸”！No-New-Tab：让 B 站、知乎、小红书浏览更丝滑的油猴脚本" /&gt;&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/no-new-tab/featured.png" alt="Featured image of post B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览" /&gt;&lt;p&gt;本文介绍 No-New-Tab，一个把 B 站、知乎、小红书等网站的强制新标签页打开改回当前页浏览的油猴脚本。&lt;/p&gt;
+&lt;p&gt;你是否有过这样的困扰：在浏览器上刷 B 站、知乎或小红书，原本只是想随便看看评论区或搜索一个关键词，结果半小时后回头一看，浏览器顶栏已经密密麻麻挤了几十个标签页？&lt;/p&gt;
 &lt;p&gt;这种“标签页爆炸”现象在很多国内主流网站中非常普遍。为了增加页面留存和点击量，这些平台往往默认将所有链接设置为 &lt;code&gt;target=&amp;quot;_blank&amp;quot;&lt;/code&gt;（即在新窗口打开）。这不仅极度消耗内存，还打断了我们的浏览心流。&lt;/p&gt;
 &lt;p&gt;为了解决这个问题，我开发了一个简单的油猴脚本：&lt;strong&gt;No-New-Tab&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
@@ -60,12 +61,13 @@
 </description>
         </item>
         <item>
-        <title>拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞</title>
+        <title>Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文</title>
         <link>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/mac-lite-translator/featured.png" alt="Featured image of post 拒绝云端泄密！这款基于 Google Gemma 的 Mac 本地翻译神器，让 M 芯片性能原地起飞" /&gt;&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
+        <description>&lt;img src="https://jingyuan-zheng.github.io/img/mac-lite-translator/featured.png" alt="Featured image of post Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文" /&gt;&lt;p&gt;Mac-Lite-Translator 是一个基于 Google TranslateGemma 和 Apple MLX 的 Mac 本地翻译工具，适合在不上传云端的情况下快速、准确地翻译长文、论文和日常文本。&lt;/p&gt;
+&lt;p&gt;在使用 macOS 时，系统自带的翻译功能虽然方便，但在处理长难句、学术论文或非正式俚语时，翻译结果往往略显生硬。而像 ChatGPT、DeepL 这样的在线翻译，不仅需要稳定的网络环境，还涉及敏感数据的云端隐私问题。&lt;/p&gt;
 &lt;p&gt;为了解决这些痛点，我开发了 &lt;strong&gt;Mac-Lite-Translator&lt;/strong&gt;。它不仅能在你的 Mac 上 &lt;strong&gt;100% 本地运行&lt;/strong&gt;，还集成了强大的 &lt;strong&gt;Google Gemma 12B&lt;/strong&gt; 模型，通过苹果官方的 &lt;strong&gt;MLX 框架&lt;/strong&gt; 榨干 M 系列芯片的每一滴性能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/Jingyuan-Zheng/Mac-Lite-Translator_TranslateGemma/raw/main/Screenshots/GUI.png&#34;
 	
