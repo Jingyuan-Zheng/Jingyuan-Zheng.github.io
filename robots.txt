@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jingyuan-zheng.github.io/sitemap.xml
+Sitemap: https://jingyuan-zheng.github.io/sitemap-flat.xml
