@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head>
-	<meta name="generator" content="Hugo 0.162.0"><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Share something interesting!">
+	<meta name="generator" content="Hugo 0.162.1"><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        if (false) {
+            localStorage.setItem(colorSchemeKey, "auto");
+        } else if (!localStorage.getItem(colorSchemeKey)) {
+            localStorage.setItem(colorSchemeKey, "auto");
+        }
+
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode ? 'dark' : 'light';
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="Share something interesting!">
 <title>Jingyuan</title>
 
 <link rel='canonical' href='https://jingyuan-zheng.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.0294b61ab2d41e1bc18d7f1577f69830d7e5f9990df5920d6d566356e2ed982a.css"><meta property='og:title' content="Jingyuan">
+<link rel="stylesheet" href="/scss/style.min.c300b6d4164c1f8bf08d9686cfbaa42d4879e3ec381d26b2cacb5ad0ceed2053.css"><meta property='og:title' content="Jingyuan">
 <meta property='og:description' content="Share something interesting!">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -77,7 +109,7 @@
 }</script>
 
     </head>
-    <body class="">
+    <body class="home-profile-layout">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -516,6 +548,91 @@
     
     
     
+
+    <section class="home-profile" aria-labelledby="home-profile-title">
+        
+            
+                <figure class="home-profile__avatar">
+                    <a href="/" aria-label="Jingyuan">
+                        
+                            
+                            
+                                
+                                <img src="/img/avatar_hu_790ffa84d6ffff74.png" width="360" height="360" loading="eager" alt="Avatar">
+                            
+                        
+                    </a>
+                    
+                        <span class="home-profile__emoji">🤩</span>
+                    
+                </figure>
+            
+        
+
+        <div class="home-profile__copy">
+            
+            <p class="home-profile__greeting" data-home-greeting data-greeting-morning="Good morning, I&#39;m" data-greeting-afternoon="Good afternoon, I&#39;m" data-greeting-evening="Good evening, I&#39;m" data-greeting-night="Good night, I&#39;m">Hi, I&#39;m</p>
+            <h1 id="home-profile-title">Jingyuan</h1>
+            <p class="home-profile__subtitle">Share something interesting!</p>
+        </div><ol class="home-profile__social" aria-label="Social links">
+                
+                    <li>
+                        <a
+                            href='mailto:mr.jingyuan.zheng@outlook.com'
+                            target="_blank"
+                            title="Email" aria-label="Email"
+                            rel="me"
+                        >
+                            
+                            
+                                <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a
+                            href='https://github.com/Jingyuan-Zheng'
+                            target="_blank"
+                            title="GitHub" aria-label="GitHub"
+                            rel="me"
+                        >
+                            
+                            
+                                <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a
+                            href='https://x.com/AndersJheng'
+                            target="_blank"
+                            title="X" aria-label="X"
+                            rel="me"
+                        >
+                            
+                            
+                                <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a
+                            href='https://xhslink.com/m/4zZJoXggJEO'
+                            target="_blank"
+                            title="小红书" aria-label="小红书"
+                            rel="me"
+                        >
+                            
+                            
+                                <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                            
+                        </a>
+                    </li>
+                
+            </ol></section>
 
     <section class="article-list">
         
@@ -1235,7 +1352,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.3abfab473ffbcc03863dad6d9c5af5b6d5bac8b2975e56e7807dfb8caa9c1e8b.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.dac9dfc32e3370fb9137854336934aa3e25df10a22afdda10ce8d8b8b6f596b7.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
