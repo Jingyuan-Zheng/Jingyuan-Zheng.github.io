@@ -496,6 +496,19 @@
       />
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/pictures/</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-us"
+      href="https://jingyuan-zheng.github.io/pictures/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://jingyuan-zheng.github.io/zh-cn/pictures/"
+      />
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/search/</loc>
     <xhtml:link
       rel="alternate"
