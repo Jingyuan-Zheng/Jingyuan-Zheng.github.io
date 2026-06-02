@@ -1,64 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Maltese on Jingyuan</title>
         <link>https://jingyuan-zheng.github.io/tags/maltese/</link>
         <description>Recent content in Maltese on Jingyuan</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Fri, 17 Apr 2026 18:30:00 +0800</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/maltese/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</title>
-        <link>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
-        <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" /&gt;&lt;p&gt;This post shares a Maltese dictionary packaged for the native macOS Dictionary app, so Maltese words can be looked up from Dictionary, Spotlight, or the three-finger Look Up gesture.&lt;/p&gt;
-&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;why-this-project&#34;&gt;Why this project?
-&lt;/h3&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://mlrs.research.um.edu.mt/resources/gabra-api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Ġabra project&lt;/a&gt; from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &amp;ldquo;Look up&amp;rdquo; feature (three-finger tap).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png&#34;
-	width=&#34;1910&#34;
-	height=&#34;1474&#34;
-	srcset=&#34;https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_75d02d7847d7a5d7.png 480w, https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_460e280d918adfd8.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Screenshot of Ġabra Dictionary&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;129&#34;
-		data-flex-basis=&#34;310px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;technical-challenges&#34;&gt;Technical Challenges
-&lt;/h3&gt;&lt;p&gt;The primary challenge was the sheer volume of data. While there are about 21,000 base lexemes, the lexicon includes nearly &lt;strong&gt;4.5 million inflected word forms&lt;/strong&gt;. Converting this from BSON (the format provided by the Ġabra team) to the Apple Dictionary XML format required a high-performance streaming approach.&lt;/p&gt;
-&lt;p&gt;I wrote a Python engine that processes these millions of entries without loading the entire 1.3GB dataset into memory. This ensures that the dictionary is not only comprehensive but also accurately indexes every plural, conjugation, and variant.&lt;/p&gt;
-&lt;h3 id=&#34;features&#34;&gt;Features
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;21,083 entries&lt;/strong&gt;: Full coverage of the Ġabra lexicon.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;4.5 Million forms&lt;/strong&gt;: Search for &amp;ldquo;skrejjen&amp;rdquo; (plural) and find &amp;ldquo;skrun&amp;rdquo; (propeller) instantly.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rich Metadata&lt;/strong&gt;: Includes phonetic transcriptions, grammatical categories (POS), and root information.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Native Experience&lt;/strong&gt;: Works perfectly with Dark Mode, Spotlight, and &amp;ldquo;Look up&amp;rdquo;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;open-source&#34;&gt;Open Source
-&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve decided to open-source the entire build pipeline. You can find the repository on GitHub:&lt;/p&gt;
-&lt;p&gt;👉 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Jingyuan-Zheng/gabra-maltese-macos-dictionary&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The repository includes an &lt;code&gt;update.sh&lt;/code&gt; script that automates the process of downloading the latest data and rebuilding the dictionary, ensuring it stays up-to-date with the official Ġabra database.&lt;/p&gt;
-&lt;h3 id=&#34;installation&#34;&gt;Installation
-&lt;/h3&gt;&lt;p&gt;If you just want to use the dictionary, you can download the DMG from the &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Releases page&lt;/a&gt;. Simply drag it to your Dictionaries folder and enable it in the Dictionary app settings!&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;I hope this tool helps learners and native speakers alike in exploring the richness of the Maltese language. Sahha!&lt;/p&gt;
-&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;If you need a keyboard layout for Maltese characters, European Latin letters, and academic symbols, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;If you are building macOS dictionary or app installers, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/&#34; &gt;DMG Maker&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
+            <title>Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</title>
+            <link>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</link>
+            <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
+            <guid>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png&#34; alt=&#34;Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap&#34; /&gt;&lt;p&gt;This post shares a Maltese dictionary packaged for the native macOS Dictionary app, so Maltese words can be looked up from Dictionary, Spotlight, or the three-finger Look Up gesture.&lt;/p&gt;&#xA;&lt;p&gt;Maltese is a unique and beautiful language, but native digital tools for it can sometimes be scarce. Today, I&amp;rsquo;m excited to share a project I&amp;rsquo;ve been working on: &lt;strong&gt;Ġabra Maltese Dictionary for macOS&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-this-project&#34;&gt;Why this project?&#xA;&lt;/h3&gt;&lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://mlrs.research.um.edu.mt/resources/gabra-api/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Ġabra project&lt;/a&gt; from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &amp;ldquo;Look up&amp;rdquo; feature (three-finger tap).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img alt=&#34;Screenshot of Ġabra Dictionary&#34; class=&#34;gallery-image&#34; data-flex-basis=&#34;310px&#34; data-flex-grow=&#34;129&#34; height=&#34;1474&#34; loading=&#34;lazy&#34; sizes=&#34;(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px&#34; src=&#34;https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png&#34; srcset=&#34;https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w, https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png 1910w&#34; width=&#34;1910&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;technical-challenges&#34;&gt;Technical Challenges&#xA;&lt;/h3&gt;&lt;p&gt;The primary challenge was the sheer volume of data. While there are about 21,000 base lexemes, the lexicon includes nearly &lt;strong&gt;4.5 million inflected word forms&lt;/strong&gt;. Converting this from BSON (the format provided by the Ġabra team) to the Apple Dictionary XML format required a high-performance streaming approach.&lt;/p&gt;&#xA;&lt;p&gt;I wrote a Python engine that processes these millions of entries without loading the entire 1.3GB dataset into memory. This ensures that the dictionary is not only comprehensive but also accurately indexes every plural, conjugation, and variant.&lt;/p&gt;&#xA;&lt;h3 id=&#34;features&#34;&gt;Features&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;21,083 entries&lt;/strong&gt;: Full coverage of the Ġabra lexicon.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;4.5 Million forms&lt;/strong&gt;: Search for &amp;ldquo;skrejjen&amp;rdquo; (plural) and find &amp;ldquo;skrun&amp;rdquo; (propeller) instantly.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rich Metadata&lt;/strong&gt;: Includes phonetic transcriptions, grammatical categories (POS), and root information.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Native Experience&lt;/strong&gt;: Works perfectly with Dark Mode, Spotlight, and &amp;ldquo;Look up&amp;rdquo;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;open-source&#34;&gt;Open Source&#xA;&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve decided to open-source the entire build pipeline. You can find the repository on GitHub:&lt;/p&gt;&#xA;&lt;p&gt;👉 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Jingyuan-Zheng/gabra-maltese-macos-dictionary&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;The repository includes an &lt;code&gt;update.sh&lt;/code&gt; script that automates the process of downloading the latest data and rebuilding the dictionary, ensuring it stays up-to-date with the official Ġabra database.&lt;/p&gt;&#xA;&lt;h3 id=&#34;installation&#34;&gt;Installation&#xA;&lt;/h3&gt;&lt;p&gt;If you just want to use the dictionary, you can download the DMG from the &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/gabra-maltese-macos-dictionary/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Releases page&lt;/a&gt;. Simply drag it to your Dictionaries folder and enable it in the Dictionary app settings!&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;I hope this tool helps learners and native speakers alike in exploring the richness of the Maltese language. Sahha!&lt;/p&gt;&#xA;&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;If you need a keyboard layout for Maltese characters, European Latin letters, and academic symbols, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;If you are building macOS dictionary or app installers, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/&#34; &gt;DMG Maker&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+        </item></channel>
 </rss>

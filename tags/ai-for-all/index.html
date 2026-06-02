@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-US" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        if (false) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        } else if (!localStorage.getItem(colorSchemeKey)) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        }
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-        document.documentElement.dataset.scheme = colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode ? 'dark' : 'light';
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
     })();
 </script>
 <style>
@@ -34,17 +31,23 @@
         color-scheme: dark;
     }
 </style><meta name='description' content="Share something interesting!">
-<title>Tag: AI for All - Jingyuan</title>
+<title>AI for All</title>
+
 
 <link rel='canonical' href='https://jingyuan-zheng.github.io/tags/ai-for-all/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
-<link rel="stylesheet" href="/scss/style.min.4026d4ec08ba42f505b6cbac3238d794f9243b1e8a37e4f7ef16a7a3d71c21c0.css"><meta property='og:title' content="Tag: AI for All - Jingyuan">
+
+<link rel="stylesheet" href="/scss/style.min.5d2c45dca16bad5c92bd2cd01d1a0f79955b455eb4ec3a20b2cf837ecc789ae0.css"><meta property='og:title' content="AI for All">
 <meta property='og:description' content="Share something interesting!">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/tags/ai-for-all/'>
 <meta property='og:site_name' content='Jingyuan'>
 <meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-05-26T00:00:00&#43;00:00 '/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/site-default-og.png' />
 <meta name="twitter:site" content="@AndersJheng">
-    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Tag: AI for All - Jingyuan">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="AI for All">
 <meta name="twitter:description" content="Share something interesting!"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/site-default-og.png' /><link rel="alternate" type="application/rss&#43;xml" href="https://jingyuan-zheng.github.io/tags/ai-for-all/index.xml">
     <link rel="shortcut icon" href="/favicon.png" />
@@ -96,7 +99,7 @@
       "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
       "inLanguage": [
         "en",
-        "zh-cn"
+        "zh"
       ],
       "name": "Jingyuan",
       "publisher": {
@@ -139,25 +142,19 @@
     </button>
 
     <header>
-        
-            
-            <figure class="site-avatar">
+        <figure class="site-avatar">
                 <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu_d76d1502d495a6d6.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
                 </a>
                 
                     <span class="emoji">🤩</span>
                 
             </figure>
-            
         
         
         <div class="site-meta">
@@ -229,8 +226,6 @@
         <li >
             <a href='/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -249,8 +244,6 @@
         <li >
             <a href='/about-me/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="7" r="4" />
@@ -267,8 +260,6 @@
         
         <li >
             <a href='/archives/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -288,8 +279,6 @@
         <li >
             <a href='/search/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
@@ -306,8 +295,6 @@
         
         <li >
             <a href='/pictures/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -327,8 +314,6 @@
         <li >
             <a href='/links/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
@@ -344,9 +329,8 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -357,15 +341,30 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
                                 
-                                    <option value="https://jingyuan-zheng.github.io/" selected>English</option>
                                 
-                                    <option value="https://jingyuan-zheng.github.io/zh-cn/" >简体中文</option>
+                                    
+                                        
+                                    
                                 
-                            </select>
-                        </li>
-                    
+                                    
+                                
+                                <option value="/tags/ai-for-all/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/tags/ai-for-all/" >简体中文</option>
+                            
+                        </select>
+                    </li>
                 
 
                 
@@ -427,10 +426,12 @@
 
 
         </div>
-        <h2 class="widget-title section-title">Archives</h2>
+        <h2 class="widget-title section-title">
+            <a href="/archives/">
+                Archives
+            </a>
+        </h2>
 
-        
-        
         
         
         
@@ -457,7 +458,8 @@
             
         
             
-                <section class="widget tagCloud">
+                
+<section class="widget tagCloud">
     <div class="widget-icon">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -470,27 +472,33 @@
 
 
     </div>
-    <h2 class="widget-title section-title">Categories</h2>
+    <h2 class="widget-title section-title">
+        
+            <a href="/categories/">
+                Categories
+            </a>
+        
+    </h2>
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/open-source/" class="font_size_5">
+            <a href="/categories/open-source/">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" class="font_size_4">
+            <a href="/categories/macos/">
                 macOS
             </a>
         
-            <a href="/categories/guides/" class="font_size_2">
+            <a href="/categories/guides/">
                 Guides
             </a>
         
-            <a href="/categories/ai/" class="font_size_1">
+            <a href="/categories/ai/">
                 AI
             </a>
         
-            <a href="/categories/tech-review/" class="font_size_1">
+            <a href="/categories/tech-review/">
                 Tech Review
             </a>
         
@@ -500,7 +508,8 @@
             
         
             
-                <section class="widget tagCloud">
+                
+<section class="widget tagCloud">
     <div class="widget-icon">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -511,52 +520,59 @@
 
 
     </div>
-    <h2 class="widget-title section-title">Tags</h2>
+    <h2 class="widget-title section-title">
+        
+            <a href="/tags/">
+                Tags
+            </a>
+        
+    </h2>
 
     <div class="tagCloud-tags">
         
-            <a href="/tags/eid/" class="font_size_2">
+            <a href="/tags/eid/">
                 EID
             </a>
         
-            <a href="/tags/macos/" class="font_size_2">
+            <a href="/tags/macos/">
                 MacOS
             </a>
         
-            <a href="/tags/malta/" class="font_size_2">
+            <a href="/tags/malta/">
                 Malta
             </a>
         
-            <a href="/tags/ai-for-all/" class="font_size_1">
+            <a href="/tags/ai-for-all/">
                 AI for All
             </a>
         
-            <a href="/tags/ai-translation/" class="font_size_1">
+            <a href="/tags/ai-translation/">
                 AI Translation
             </a>
         
-            <a href="/tags/automation/" class="font_size_1">
+            <a href="/tags/automation/">
                 Automation
             </a>
         
-            <a href="/tags/bash/" class="font_size_1">
+            <a href="/tags/bash/">
                 Bash
             </a>
         
-            <a href="/tags/chatgpt-plus/" class="font_size_1">
+            <a href="/tags/chatgpt-plus/">
                 ChatGPT Plus
             </a>
         
-            <a href="/tags/coursera/" class="font_size_1">
+            <a href="/tags/coursera/">
                 Coursera
             </a>
         
-            <a href="/tags/dictionary/" class="font_size_1">
+            <a href="/tags/dictionary/">
                 Dictionary
             </a>
         
     </div>
 </section>
+
             
         
     </aside>
@@ -579,27 +595,25 @@
         </div>
     </header>
     
-    <section class="article-list--compact">
-        
-            <article>
+    
+        <section class="article-list--compact">
+            
+                <article>
     <a href="/p/ai4all-malta-free-ai-courses/">
         <div class="article-details">
             <h2 class="article-title">How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation</h2>
-            <footer class="article-time">
-                <time datetime='2026-05-19T00:00:00Z'>19/May/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-05-19T00:00:00Z">19/May/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" loading="lazy" src="/img/ai4all-malta-free-ai-courses/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/ai4all-malta-free-ai-courses/featured.png" loading="lazy" alt="Featured image of post How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" />
-                
-            </div>
         
     </a>
 </article>
-        
-    </section>
-<footer class="site-footer">
+            
+        </section>
+    <footer class="site-footer">
     <section class="copyright">
         &copy;
         
@@ -616,22 +630,9 @@
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
 
     </body>
 </html>

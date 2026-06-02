@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-US" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        if (false) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        } else if (!localStorage.getItem(colorSchemeKey)) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        }
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-        document.documentElement.dataset.scheme = colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode ? 'dark' : 'light';
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
     })();
 </script>
 <style>
@@ -36,9 +33,15 @@
 </style><meta name='description' content="">
 <title>Archives</title>
 
-<link rel='canonical' href='https://jingyuan-zheng.github.io/archives/'>
 
-<link rel="stylesheet" href="/scss/style.min.4026d4ec08ba42f505b6cbac3238d794f9243b1e8a37e4f7ef16a7a3d71c21c0.css"><meta property='og:title' content="Archives">
+<link rel='canonical' href='https://jingyuan-zheng.github.io/archives/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.5d2c45dca16bad5c92bd2cd01d1a0f79955b455eb4ec3a20b2cf837ecc789ae0.css"><meta property='og:title' content="Archives">
 <meta property='og:description' content="">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/archives/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -96,7 +99,7 @@
       "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
       "inLanguage": [
         "en",
-        "zh-cn"
+        "zh"
       ],
       "name": "Jingyuan",
       "publisher": {
@@ -157,25 +160,19 @@
     </button>
 
     <header>
-        
-            
-            <figure class="site-avatar">
+        <figure class="site-avatar">
                 <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu_d76d1502d495a6d6.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
                 </a>
                 
                     <span class="emoji">🤩</span>
                 
             </figure>
-            
         
         
         <div class="site-meta">
@@ -247,8 +244,6 @@
         <li >
             <a href='/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -267,8 +262,6 @@
         <li >
             <a href='/about-me/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="7" r="4" />
@@ -283,10 +276,8 @@
         </li>
         
         
-        <li  class='current' >
+        <li  class='current'>
             <a href='/archives/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -306,8 +297,6 @@
         <li >
             <a href='/search/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
@@ -324,8 +313,6 @@
         
         <li >
             <a href='/pictures/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -345,8 +332,6 @@
         <li >
             <a href='/links/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
@@ -362,9 +347,8 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -375,15 +359,30 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
                                 
-                                    <option value="https://jingyuan-zheng.github.io/" selected>English</option>
                                 
-                                    <option value="https://jingyuan-zheng.github.io/zh-cn/" >简体中文</option>
+                                    
+                                        
+                                    
                                 
-                            </select>
-                        </li>
-                    
+                                    
+                                
+                                <option value="/archives/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/archives/" >简体中文</option>
+                            
+                        </select>
+                    </li>
                 
 
                 
@@ -422,129 +421,87 @@
 <article class="has-image">
     <a href="/categories/macos/">
         
-        
-            <div class="article-image">
-                <img src="/categories/macos/featured.fd0114b16014aa572daa65f754064a21_hu_95764c9327466012.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post macOS"
-                        data-key="macos" 
-                        data-hash="md5-/QEUsWAUqlctqmX3VAZKIQ==">
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post macOS" height="150" loading="lazy" src="/categories/macos/featured_hu_95764c9327466012.png" srcset="/categories/macos/featured_hu_95764c9327466012.png 1x, /categories/macos/featured_hu_4ce6a33ff4d3edf5.png 2x" width="250">
+
+        </div>
         
 
-        <div class="article-details">
+        <div class="article-details"style="background: linear-gradient(0deg, #3b3f4780 0%, #cdcfd3C0 100%);">
             <h2 class="article-title">macOS</h2>
         </div>
     </a>
 </article>
-
                 
                     
 <article class="has-image">
     <a href="/categories/open-source/">
         
-        
-            <div class="article-image">
-                <img src="/categories/open-source/featured.7627ac71fc7373898f0758919e7ff1c8_hu_c3ef6c7af76600cf.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Open Source"
-                        data-key="open-source" 
-                        data-hash="md5-diescfxzc4mPB1iRnn/xyA==">
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post Open Source" height="150" loading="lazy" src="/categories/open-source/featured_hu_c3ef6c7af76600cf.png" srcset="/categories/open-source/featured_hu_c3ef6c7af76600cf.png 1x, /categories/open-source/featured_hu_1a217b15bce2b84e.png 2x" width="250">
+
+        </div>
         
 
-        <div class="article-details">
+        <div class="article-details"style="background: linear-gradient(0deg, #31383580 0%, #e0dbd7C0 100%);">
             <h2 class="article-title">Open Source</h2>
         </div>
     </a>
 </article>
-
                 
                     
 <article class="has-image">
     <a href="/categories/ai/">
         
-        
-            <div class="article-image">
-                <img src="/categories/ai/featured.96daaf548291dc06ca4f170ea4b23828_hu_d406568e7140f9c0.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post AI"
-                        data-key="ai" 
-                        data-hash="md5-ltqvVIKR3AbKTxcOpLI4KA==">
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post AI" height="150" loading="lazy" src="/categories/ai/featured_hu_d406568e7140f9c0.png" srcset="/categories/ai/featured_hu_d406568e7140f9c0.png 1x, /categories/ai/featured_hu_f993aabe3132966e.png 2x" width="250">
+
+        </div>
         
 
-        <div class="article-details">
+        <div class="article-details"style="background: linear-gradient(0deg, #d0baa080 0%, #4e5954C0 100%);">
             <h2 class="article-title">AI</h2>
         </div>
     </a>
 </article>
-
                 
                     
 <article class="has-image">
     <a href="/categories/guides/">
         
-        
-            <div class="article-image">
-                <img src="/categories/guides/featured.6290811f807cd83979417e2934d6d861_hu_557ffc7659adc91c.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Guides"
-                        data-key="guides" 
-                        data-hash="md5-YpCBH4B82Dl5QX4pNNbYYQ==">
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post Guides" height="150" loading="lazy" src="/categories/guides/featured_hu_557ffc7659adc91c.png" srcset="/categories/guides/featured_hu_557ffc7659adc91c.png 1x, /categories/guides/featured_hu_a71edb62b1c71163.png 2x" width="250">
+
+        </div>
         
 
-        <div class="article-details">
+        <div class="article-details"style="background: linear-gradient(0deg, #454d4080 0%, #d3d2c8C0 100%);">
             <h2 class="article-title">Guides</h2>
         </div>
     </a>
 </article>
-
                 
                     
 <article class="has-image">
     <a href="/categories/tech-review/">
         
-        
-            <div class="article-image">
-                <img src="/categories/tech-review/featured.0bd78dc0c5334d0c484b1342be1d475c_hu_cbabc479f1511854.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Tech Review"
-                        data-key="tech-review" 
-                        data-hash="md5-C9eNwMUzTQxISxNCvh1HXA==">
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post Tech Review" height="150" loading="lazy" src="/categories/tech-review/featured_hu_cbabc479f1511854.png" srcset="/categories/tech-review/featured_hu_cbabc479f1511854.png 1x, /categories/tech-review/featured_hu_fe2d29fa767b0c3a.png 2x" width="250">
+
+        </div>
         
 
-        <div class="article-details">
+        <div class="article-details"style="background: linear-gradient(0deg, #272f3a80 0%, #d5d7dbC0 100%);">
             <h2 class="article-title">Tech Review</h2>
         </div>
     </a>
 </article>
-
                 
             </div>
         </div>
         
     </header>
 
-    
-    
     
 
     
@@ -557,15 +514,12 @@
     <a href="/p/abc-custom-keyboard/">
         <div class="article-details">
             <h2 class="article-title">A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</h2>
-            <footer class="article-time">
-                <time datetime='2026-05-25T12:00:00&#43;02:00'>25/May/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-05-25T12:00:00&#43;02:00">25/May/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" loading="lazy" src="/img/abc-custom-keyboard/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/abc-custom-keyboard/featured.png" loading="lazy" alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" />
-                
-            </div>
         
     </a>
 </article>
@@ -574,15 +528,12 @@
     <a href="/p/translate-document-quick-action/">
         <div class="article-details">
             <h2 class="article-title">Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts</h2>
-            <footer class="article-time">
-                <time datetime='2026-05-25T10:00:00&#43;02:00'>25/May/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-05-25T10:00:00&#43;02:00">25/May/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" loading="lazy" src="/img/translate-document-quick-action/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/translate-document-quick-action/featured.png" loading="lazy" alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" />
-                
-            </div>
         
     </a>
 </article>
@@ -591,15 +542,12 @@
     <a href="/p/ai4all-malta-free-ai-courses/">
         <div class="article-details">
             <h2 class="article-title">How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation</h2>
-            <footer class="article-time">
-                <time datetime='2026-05-19T00:00:00Z'>19/May/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-05-19T00:00:00Z">19/May/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" loading="lazy" src="/img/ai4all-malta-free-ai-courses/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/ai4all-malta-free-ai-courses/featured.png" loading="lazy" alt="Featured image of post How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" />
-                
-            </div>
         
     </a>
 </article>
@@ -608,15 +556,12 @@
     <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
         <div class="article-details">
             <h2 class="article-title">How to Make a macOS DMG Installer with a Custom Background</h2>
-            <footer class="article-time">
-                <time datetime='2026-05-12T20:10:17&#43;08:00'>12/May/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-05-12T20:10:17&#43;08:00">12/May/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="How to Make a macOS DMG Installer with a Custom Background" loading="lazy" src="/img/dmg-maker/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/dmg-maker/featured.png" loading="lazy" alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" />
-                
-            </div>
         
     </a>
 </article>
@@ -625,18 +570,12 @@
     <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
         <div class="article-details">
             <h2 class="article-title">Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</h2>
-            <footer class="article-time">
-                <time datetime='2026-04-17T18:30:00&#43;08:00'>17/Apr/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-04-17T18:30:00&#43;08:00">17/Apr/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" height="60" loading="lazy" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_73771da0aadd4576.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_73771da0aadd4576.png 1x, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_92dfafe6865d73b1.png 2x" width="60">
+
         </div>
-            <div class="article-image">
-                <img src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_92dfafe6865d73b1.png" 
-                        width="120"
-                        height="120" 
-                        alt="Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap"
-                        loading="lazy">
-                
-            </div>
         
     </a>
 </article>
@@ -645,15 +584,12 @@
     <a href="/p/mac-lite-translator-apple-silicon-mlx/">
         <div class="article-details">
             <h2 class="article-title">Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline</h2>
-            <footer class="article-time">
-                <time datetime='2026-03-08T00:00:00Z'>08/Mar/2026</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2026-03-08T00:00:00Z">08/Mar/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" loading="lazy" src="/img/mac-lite-translator/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/mac-lite-translator/featured.png" loading="lazy" alt="Featured image of post Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" />
-                
-            </div>
         
     </a>
 </article>
@@ -670,15 +606,12 @@
     <a href="/p/how-to-apply-for-malta-eid-online/">
         <div class="article-details">
             <h2 class="article-title">How to Apply for Malta eID Online</h2>
-            <footer class="article-time">
-                <time datetime='2025-05-07T00:00:00Z'>07/May/2025</time>
-            </footer>
+                <footer class="article-meta"><time datetime="2025-05-07T00:00:00Z">07/May/2025</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="How to Apply for Malta eID Online" loading="lazy" src="/img/malta-eid/featured.png">
+
         </div>
-            <div class="article-image">
-                
-                    <img src="/img/malta-eid/featured.png" loading="lazy" alt="Featured image of post How to Apply for Malta eID Online" />
-                
-            </div>
         
     </a>
 </article>
@@ -704,22 +637,9 @@
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
 
     </body>
 </html>

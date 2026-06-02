@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-US" dir="ltr">
     <head>
 	<meta name="generator" content="Hugo 0.162.1"><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        if (false) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        } else if (!localStorage.getItem(colorSchemeKey)) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        }
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-        document.documentElement.dataset.scheme = colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode ? 'dark' : 'light';
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
     })();
 </script>
 <style>
@@ -37,9 +34,15 @@
 </style><meta name='description' content="Share something interesting!">
 <title>Jingyuan</title>
 
-<link rel='canonical' href='https://jingyuan-zheng.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.4026d4ec08ba42f505b6cbac3238d794f9243b1e8a37e4f7ef16a7a3d71c21c0.css"><meta property='og:title' content="Jingyuan">
+<link rel='canonical' href='https://jingyuan-zheng.github.io/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.5d2c45dca16bad5c92bd2cd01d1a0f79955b455eb4ec3a20b2cf837ecc789ae0.css"><meta property='og:title' content="Jingyuan">
 <meta property='og:description' content="Share something interesting!">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -97,7 +100,7 @@
       "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
       "inLanguage": [
         "en",
-        "zh-cn"
+        "zh"
       ],
       "name": "Jingyuan",
       "publisher": {
@@ -140,25 +143,19 @@
     </button>
 
     <header>
-        
-            
-            <figure class="site-avatar">
+        <figure class="site-avatar">
                 <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu_d76d1502d495a6d6.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
                 </a>
                 
                     <span class="emoji">🤩</span>
                 
             </figure>
-            
         
         
         <div class="site-meta">
@@ -227,10 +224,8 @@
         
         
         
-        <li  class='current' >
+        <li  class='current'>
             <a href='/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -250,8 +245,6 @@
         <li >
             <a href='/about-me/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="7" r="4" />
@@ -268,8 +261,6 @@
         
         <li >
             <a href='/archives/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -289,8 +280,6 @@
         <li >
             <a href='/search/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
@@ -307,8 +296,6 @@
         
         <li >
             <a href='/pictures/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -328,8 +315,6 @@
         <li >
             <a href='/links/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
@@ -345,9 +330,8 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -358,15 +342,30 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
                                 
-                                    <option value="https://jingyuan-zheng.github.io/" selected>English</option>
                                 
-                                    <option value="https://jingyuan-zheng.github.io/zh-cn/" >简体中文</option>
+                                    
+                                        
+                                    
                                 
-                            </select>
-                        </li>
-                    
+                                    
+                                
+                                <option value="/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/" >简体中文</option>
+                            
+                        </select>
+                    </li>
                 
 
                 
@@ -428,10 +427,12 @@
 
 
         </div>
-        <h2 class="widget-title section-title">Archives</h2>
+        <h2 class="widget-title section-title">
+            <a href="/archives/">
+                Archives
+            </a>
+        </h2>
 
-        
-        
         
         
         
@@ -458,7 +459,8 @@
             
         
             
-                <section class="widget tagCloud">
+                
+<section class="widget tagCloud">
     <div class="widget-icon">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -471,27 +473,33 @@
 
 
     </div>
-    <h2 class="widget-title section-title">Categories</h2>
+    <h2 class="widget-title section-title">
+        
+            <a href="/categories/">
+                Categories
+            </a>
+        
+    </h2>
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/open-source/" class="font_size_5">
+            <a href="/categories/open-source/">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" class="font_size_4">
+            <a href="/categories/macos/">
                 macOS
             </a>
         
-            <a href="/categories/guides/" class="font_size_2">
+            <a href="/categories/guides/">
                 Guides
             </a>
         
-            <a href="/categories/ai/" class="font_size_1">
+            <a href="/categories/ai/">
                 AI
             </a>
         
-            <a href="/categories/tech-review/" class="font_size_1">
+            <a href="/categories/tech-review/">
                 Tech Review
             </a>
         
@@ -501,7 +509,8 @@
             
         
             
-                <section class="widget tagCloud">
+                
+<section class="widget tagCloud">
     <div class="widget-icon">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -512,58 +521,66 @@
 
 
     </div>
-    <h2 class="widget-title section-title">Tags</h2>
+    <h2 class="widget-title section-title">
+        
+            <a href="/tags/">
+                Tags
+            </a>
+        
+    </h2>
 
     <div class="tagCloud-tags">
         
-            <a href="/tags/eid/" class="font_size_2">
+            <a href="/tags/eid/">
                 EID
             </a>
         
-            <a href="/tags/macos/" class="font_size_2">
+            <a href="/tags/macos/">
                 MacOS
             </a>
         
-            <a href="/tags/malta/" class="font_size_2">
+            <a href="/tags/malta/">
                 Malta
             </a>
         
-            <a href="/tags/ai-for-all/" class="font_size_1">
+            <a href="/tags/ai-for-all/">
                 AI for All
             </a>
         
-            <a href="/tags/ai-translation/" class="font_size_1">
+            <a href="/tags/ai-translation/">
                 AI Translation
             </a>
         
-            <a href="/tags/automation/" class="font_size_1">
+            <a href="/tags/automation/">
                 Automation
             </a>
         
-            <a href="/tags/bash/" class="font_size_1">
+            <a href="/tags/bash/">
                 Bash
             </a>
         
-            <a href="/tags/chatgpt-plus/" class="font_size_1">
+            <a href="/tags/chatgpt-plus/">
                 ChatGPT Plus
             </a>
         
-            <a href="/tags/coursera/" class="font_size_1">
+            <a href="/tags/coursera/">
                 Coursera
             </a>
         
-            <a href="/tags/dictionary/" class="font_size_1">
+            <a href="/tags/dictionary/">
                 Dictionary
             </a>
         
     </div>
 </section>
+
             
         
     </aside>
 
 
             <main class="main full-width">
+    
     
     
     
@@ -656,20 +673,15 @@
     <section class="home-profile" aria-labelledby="home-profile-title">
         
             
-                <figure class="home-profile__avatar">
-                    <a href="/" aria-label="Jingyuan">
-                        
-                            
-                            
-                                
-                                <img src="/img/avatar_hu_790ffa84d6ffff74.png" width="360" height="360" loading="eager" alt="Avatar">
-                            
-                        
-                    </a>
-                    
-                        <span class="home-profile__emoji">🤩</span>
-                    
-                </figure>
+            
+            <figure class="home-profile__avatar">
+                <a href="/" aria-label="Jingyuan">
+                    <img src="/img/avatar.png" width="800" height="800" loading="eager" alt="Avatar">
+                </a>
+                
+                    <span class="home-profile__emoji">🤩</span>
+                
+            </figure>
             
         
 
@@ -802,24 +814,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/abc-custom-keyboard/">
-                
-                    <img src="/img/abc-custom-keyboard/featured.png" loading="lazy" alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/abc-custom-keyboard/">
+            <img alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/abc-custom-keyboard/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" >
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
                 macOS
             </a>
         
@@ -842,10 +858,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -854,13 +874,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">25/May/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-05-25T12:00:00&#43;02:00'>25/May/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -868,17 +886,16 @@
 
 
 
-                <time class="article-time--reading">
-                    4 minute read
-                </time>
+                    <time class="article-time--reading">
+                        4 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -889,12 +906,14 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/abc-custom-keyboard/" class="link">简体中文</a>
+                    <a href="/zh/p/abc-custom-keyboard/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
@@ -904,24 +923,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/translate-document-quick-action/">
-                
-                    <img src="/img/translate-document-quick-action/featured.png" loading="lazy" alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/translate-document-quick-action/">
+            <img alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/translate-document-quick-action/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" >
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
                 macOS
             </a>
         
@@ -944,10 +967,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -956,13 +983,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">25/May/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-05-25T10:00:00&#43;02:00'>25/May/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -970,17 +995,16 @@
 
 
 
-                <time class="article-time--reading">
-                    4 minute read
-                </time>
+                    <time class="article-time--reading">
+                        4 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -991,12 +1015,14 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/translate-document-quick-action/" class="link">简体中文</a>
+                    <a href="/zh/p/translate-document-quick-action/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
@@ -1006,24 +1032,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/ai4all-malta-free-ai-courses/">
-                
-                    <img src="/img/ai4all-malta-free-ai-courses/featured.png" loading="lazy" alt="Featured image of post How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/ai4all-malta-free-ai-courses/">
+            <img alt="Featured image of post How to Claim One Year of ChatGPT Plus in Malta: AI for All Registration, Courses, and Activation" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/ai4all-malta-free-ai-courses/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/guides/" >
+            
+            
+            
+            <a href="/categories/guides/" style="background-color: hsl(176, 60%, 84%); color: hsl(176, 60%, 15%);">
                 Guides
             </a>
         
-            <a href="/categories/ai/" >
+            
+            
+            
+            <a href="/categories/ai/" style="background-color: hsl(167, 60%, 84%); color: hsl(167, 60%, 15%);">
                 AI
             </a>
         
@@ -1046,10 +1076,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -1058,13 +1092,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">19/May/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-05-19T00:00:00Z'>19/May/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -1072,17 +1104,16 @@
 
 
 
-                <time class="article-time--reading">
-                    6 minute read
-                </time>
+                    <time class="article-time--reading">
+                        6 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -1093,12 +1124,14 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/ai4all-malta-free-ai-courses/" class="link">简体中文</a>
+                    <a href="/zh/p/ai4all-malta-free-ai-courses/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
@@ -1108,24 +1141,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
-                
-                    <img src="/img/dmg-maker/featured.png" loading="lazy" alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
+            <img alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/dmg-maker/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" >
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
                 macOS
             </a>
         
@@ -1148,10 +1185,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -1160,13 +1201,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">12/May/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-05-12T20:10:17&#43;08:00'>12/May/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -1174,17 +1213,16 @@
 
 
 
-                <time class="article-time--reading">
-                    1 minute read
-                </time>
+                    <time class="article-time--reading">
+                        1 minute read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -1195,12 +1233,14 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/" class="link">简体中文</a>
+                    <a href="/zh/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
@@ -1210,28 +1250,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
-                <img src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png"
-                        srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w"
-                        width="800" 
-                        height="617" 
-                        loading="lazy"
-                        alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
+            <img alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" height="1474" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png 1910w" width="1910">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" >
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
                 macOS
             </a>
         
@@ -1254,10 +1294,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -1266,13 +1310,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">17/Apr/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-04-17T18:30:00&#43;08:00'>17/Apr/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -1280,14 +1322,17 @@
 
 
 
-                <time class="article-time--reading">
-                    2 minute read
-                </time>
+                    <time class="article-time--reading">
+                        2 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
+        
+
+        
+    </footer>
     
 </div>
 
@@ -1297,24 +1342,28 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/mac-lite-translator-apple-silicon-mlx/">
-                
-                    <img src="/img/mac-lite-translator/featured.png" loading="lazy" alt="Featured image of post Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/mac-lite-translator-apple-silicon-mlx/">
+            <img alt="Featured image of post Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/mac-lite-translator/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/tech-review/" >
+            
+            
+            
+            <a href="/categories/tech-review/" style="background-color: hsl(219, 60%, 84%); color: hsl(219, 60%, 15%);">
                 Tech Review
             </a>
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
@@ -1337,10 +1386,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -1349,13 +1402,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">08/Mar/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-03-08T00:00:00Z'>08/Mar/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -1363,17 +1414,16 @@
 
 
 
-                <time class="article-time--reading">
-                    3 minute read
-                </time>
+                    <time class="article-time--reading">
+                        3 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -1384,12 +1434,14 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/mac-lite-translator-local-ai-translation/" class="link">简体中文</a>
+                    <a href="/zh/p/mac-lite-translator-local-ai-translation/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
@@ -1399,20 +1451,21 @@
             
 <article class="has-image">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/how-to-apply-for-malta-eid-online/">
-                
-                    <img src="/img/malta-eid/featured.png" loading="lazy" alt="Featured image of post How to Apply for Malta eID Online" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/how-to-apply-for-malta-eid-online/">
+            <img alt="Featured image of post How to Apply for Malta eID Online" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/malta-eid/featured.png">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/guides/" >
+            
+            
+            
+            <a href="/categories/guides/" style="background-color: hsl(176, 60%, 84%); color: hsl(176, 60%, 15%);">
                 Guides
             </a>
         
@@ -1435,10 +1488,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -1447,13 +1504,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">07/May/2025</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2025-05-07T00:00:00Z'>07/May/2025</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -1461,17 +1516,16 @@
 
 
 
-                <time class="article-time--reading">
-                    4 minute read
-                </time>
+                    <time class="article-time--reading">
+                        4 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
-    
-        <footer class="article-translations">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -1482,20 +1536,21 @@
 
 
 
-            <div>
                 
-                    <a href="https://jingyuan-zheng.github.io/zh-cn/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/" class="link">简体中文</a>
+                    <a href="/zh/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/" class="link">简体中文</a>
                 
             </div>
-        </footer>
+        
+
+        
+    </footer>
     
 </div>
 
 </header>
 </article>
         
-    </section>
-<footer class="site-footer">
+    </section><footer class="site-footer">
     <section class="copyright">
         &copy;
         
@@ -1511,22 +1566,9 @@
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
 
     </body>
 </html>

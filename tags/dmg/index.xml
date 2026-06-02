@@ -1,37 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>DMG on Jingyuan</title>
         <link>https://jingyuan-zheng.github.io/tags/dmg/</link>
         <description>Recent content in DMG on Jingyuan</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Tue, 12 May 2026 20:10:17 +0800</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/dmg/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>How to Make a macOS DMG Installer with a Custom Background</title>
-        <link>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
-        <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/img/dmg-maker/featured.png" alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" /&gt;&lt;p&gt;This post introduces DMG Maker, a small tool for creating macOS DMG installers with custom backgrounds, icon placement, and destination shortcuts.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;
-&lt;h2 id=&#34;why-dmg-maker&#34;&gt;Why DMG Maker?
-&lt;/h2&gt;&lt;p&gt;Creating a DMG with a custom background usually involves manual AppleScripting or tedious Finder configurations. DMG Maker automates this using a single command.&lt;/p&gt;
-&lt;h2 id=&#34;key-features&#34;&gt;Key Features
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Auto-Symlink&lt;/strong&gt;: Automatically detects file types (like &lt;code&gt;.dictionary&lt;/code&gt; or &lt;code&gt;.app&lt;/code&gt;) and links them to the correct system folders.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Custom Aesthetics&lt;/strong&gt;: Easily apply backgrounds and position icons via coordinates.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: Check it out on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/dmg-maker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Check out the project to start making your own installers!&lt;/p&gt;
-&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;I used the same kind of DMG distribution flow for dictionary-style macOS tools such as &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;If you are packaging a keyboard layout instead of an app, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
+            <title>How to Make a macOS DMG Installer with a Custom Background</title>
+            <link>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</link>
+            <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
+            <guid>https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/img/dmg-maker/featured.png&#34; alt=&#34;Featured image of post How to Make a macOS DMG Installer with a Custom Background&#34; /&gt;&lt;p&gt;This post introduces DMG Maker, a small tool for creating macOS DMG installers with custom backgrounds, icon placement, and destination shortcuts.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve just open-sourced &lt;strong&gt;DMG Maker&lt;/strong&gt;, a tool that simplifies the process of creating professional macOS DMG installers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-dmg-maker&#34;&gt;Why DMG Maker?&#xA;&lt;/h2&gt;&lt;p&gt;Creating a DMG with a custom background usually involves manual AppleScripting or tedious Finder configurations. DMG Maker automates this using a single command.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Auto-Symlink&lt;/strong&gt;: Automatically detects file types (like &lt;code&gt;.dictionary&lt;/code&gt; or &lt;code&gt;.app&lt;/code&gt;) and links them to the correct system folders.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Custom Aesthetics&lt;/strong&gt;: Easily apply backgrounds and position icons via coordinates.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: Check it out on &lt;a class=&#34;link&#34; href=&#34;https://github.com/Jingyuan-Zheng/dmg-maker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;GitHub&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Check out the project to start making your own installers!&lt;/p&gt;&#xA;&lt;h2 id=&#34;related-posts&#34;&gt;Related Posts&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;I used the same kind of DMG distribution flow for dictionary-style macOS tools such as &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/introducing-%c4%a1abra-a-native-maltese-dictionary-for-macos/&#34; &gt;Ġabra Maltese Dictionary for macOS&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;If you are packaging a keyboard layout instead of an app, see &lt;a class=&#34;link&#34; href=&#34;https://jingyuan-zheng.github.io/p/abc-custom-keyboard/&#34; &gt;ABC Custom Keyboard&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+        </item></channel>
 </rss>

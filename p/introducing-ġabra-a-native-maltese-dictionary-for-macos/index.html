@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-US" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        if (false) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        } else if (!localStorage.getItem(colorSchemeKey)) {
-            localStorage.setItem(colorSchemeKey, "auto");
-        }
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-        document.documentElement.dataset.scheme = colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode ? 'dark' : 'light';
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
     })();
 </script>
 <style>
@@ -36,9 +33,15 @@
 </style><meta name='description' content="A high-performance open-source Maltese dictionary for macOS with 4.5 million word forms.">
 <title>Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</title>
 
-<link rel='canonical' href='https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/'>
 
-<link rel="stylesheet" href="/scss/style.min.4026d4ec08ba42f505b6cbac3238d794f9243b1e8a37e4f7ef16a7a3d71c21c0.css"><meta property='og:title' content="Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap">
+<link rel='canonical' href='https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.5d2c45dca16bad5c92bd2cd01d1a0f79955b455eb4ec3a20b2cf837ecc789ae0.css"><meta property='og:title' content="Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap">
 <meta property='og:description' content="A high-performance open-source Maltese dictionary for macOS with 4.5 million word forms.">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -96,7 +99,7 @@
       "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
       "inLanguage": [
         "en",
-        "zh-cn"
+        "zh"
       ],
       "name": "Jingyuan",
       "publisher": {
@@ -194,25 +197,19 @@
     </button>
 
     <header>
-        
-            
-            <figure class="site-avatar">
+        <figure class="site-avatar">
                 <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hu_d76d1502d495a6d6.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
                 </a>
                 
                     <span class="emoji">🤩</span>
                 
             </figure>
-            
         
         
         <div class="site-meta">
@@ -284,8 +281,6 @@
         <li >
             <a href='/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -304,8 +299,6 @@
         <li >
             <a href='/about-me/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="7" r="4" />
@@ -322,8 +315,6 @@
         
         <li >
             <a href='/archives/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -343,8 +334,6 @@
         <li >
             <a href='/search/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="10" cy="10" r="7" />
@@ -361,8 +350,6 @@
         
         <li >
             <a href='/pictures/' >
-                
-                
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -382,8 +369,6 @@
         <li >
             <a href='/links/' >
                 
-                
-                
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
@@ -399,9 +384,8 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -412,15 +396,24 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
                                 
-                                    <option value="https://jingyuan-zheng.github.io/" selected>English</option>
                                 
-                                    <option value="https://jingyuan-zheng.github.io/zh-cn/" >简体中文</option>
+                                    
+                                        
+                                    
                                 
-                            </select>
-                        </li>
-                    
+                                <option value="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/zh/" >简体中文</option>
+                            
+                        </select>
+                    </li>
                 
 
                 
@@ -469,7 +462,8 @@
         <h2 class="widget-title section-title">Table of contents</h2>
         
         <div class="widget--toc">
-            <nav id="TableOfContents">
+            <nav class="toc-nav" id="TableOfContents">
+                
   <ol>
     <li>
       <ol>
@@ -482,7 +476,8 @@
     </li>
     <li><a href="#related-posts">Related Posts</a></li>
   </ol>
-</nav>
+
+            </nav>
         </div>
     </section>
 
@@ -494,28 +489,28 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
-                <img src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png"
-                        srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w"
-                        width="800" 
-                        height="617" 
-                        loading="lazy"
-                        alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
+            <img alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" height="1474" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png 1910w" width="1910">
+        </a>
+    </div>
     
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/open-source/" >
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
                 Open Source
             </a>
         
-            <a href="/categories/macos/" >
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
                 macOS
             </a>
         
@@ -538,10 +533,14 @@
     
     
     
-    <footer class="article-time">
+    
+    
+    
+    <footer class="article-meta">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
   <circle cx="18" cy="18" r="4" />
@@ -550,13 +549,11 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">17/Apr/2026</time>
-            </div>
-        
+                    <time class="article-time--published" datetime='2026-04-17T18:30:00&#43;08:00'>17/Apr/2026</time>
+                
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -564,14 +561,17 @@
 
 
 
-                <time class="article-time--reading">
-                    2 minute read
-                </time>
+                    <time class="article-time--reading">
+                        2 minutes read
+                    </time>
+                
             </div>
         
-    </footer>
-    
 
+        
+
+        
+    </footer>
     
 </div>
 
@@ -627,6 +627,35 @@
 </section>
 
 
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#why-this-project">Why this project?</a></li>
+        <li><a href="#technical-challenges">Technical Challenges</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#open-source">Open Source</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ol>
+    </li>
+    <li><a href="#related-posts">Related Posts</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
     <section class="article-content">
     
     
@@ -635,20 +664,7 @@
 <h3 id="why-this-project">Why this project?
 </h3><p>The <a class="link" href="https://mlrs.research.um.edu.mt/resources/gabra-api/"  target="_blank" rel="noopener"
     >Ġabra project</a> from the University of Malta provides an incredible open lexicon of the Maltese language. However, using this data typically requires interacting with an API or a database. I wanted to bring this wealth of information directly into the macOS ecosystem, allowing users to look up words instantly using the built-in Dictionary app or the system-wide &ldquo;Look up&rdquo; feature (three-finger tap).</p>
-<p><img src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png"
-	width="1910"
-	height="1474"
-	srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_75d02d7847d7a5d7.png 480w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_460e280d918adfd8.png 1024w"
-	loading="lazy"
-	
-		alt="Screenshot of Ġabra Dictionary"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="129"
-		data-flex-basis="310px"
-	
-></p>
+<p><img alt="Screenshot of Ġabra Dictionary" class="gallery-image" data-flex-basis="310px" data-flex-grow="129" height="1474" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_b2b1c02b486b8bf8.png 800w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_4ce9601067cfcc3d.png 1600w, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover.png 1910w" width="1910"></p>
 <h3 id="technical-challenges">Technical Challenges
 </h3><p>The primary challenge was the sheer volume of data. While there are about 21,000 base lexemes, the lexicon includes nearly <strong>4.5 million inflected word forms</strong>. Converting this from BSON (the format provided by the Ġabra team) to the Apple Dictionary XML format required a high-performance streaming approach.</p>
 <p>I wrote a Python engine that processes these millions of entries without loading the entire 1.3GB dataset into memory. This ensures that the dictionary is not only comprehensive but also accurately indexes every plural, conjugation, and variant.</p>
@@ -678,7 +694,7 @@
 </section>
 
 
-    <footer class="article-footer">
+    <footer class="article-meta article-footer">
     
     <section class="article-tags">
         
@@ -692,7 +708,7 @@
 
 
     
-    <section class="article-copyright">
+    <section class="article-copyright inline-meta">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
@@ -720,18 +736,24 @@
                 >
             </script><script>
     window.addEventListener("DOMContentLoaded", () => {
-	const mainArticleElement = document.querySelector(".main-article");
-        renderMathInElement(mainArticleElement, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
+        const elementsToRender = [".main-article", ".widget--toc"];
 
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
     
 </article>
 
@@ -740,21 +762,19 @@
 
     
 
-<aside class="related-content--wrapper">
+<aside>
     <h2 class="section-title">Related content</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
+    <div class="subsection-list">
+        <div class="article-list--tile">
             
                 
 <article class="has-image">
     <a href="/p/abc-custom-keyboard/">
         
-        
-            <div class="article-image">
-                
-                    <img src="/img/abc-custom-keyboard/featured.png" loading="lazy" data-key="abc-custom-keyboard" data-hash="/img/abc-custom-keyboard/featured.png"/>
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" loading="lazy" src="/img/abc-custom-keyboard/featured.png">
+
+        </div>
         
 
         <div class="article-details">
@@ -762,18 +782,15 @@
         </div>
     </a>
 </article>
-
             
                 
 <article class="has-image">
     <a href="/p/translate-document-quick-action/">
         
-        
-            <div class="article-image">
-                
-                    <img src="/img/translate-document-quick-action/featured.png" loading="lazy" data-key="translate-document-quick-action" data-hash="/img/translate-document-quick-action/featured.png"/>
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" loading="lazy" src="/img/translate-document-quick-action/featured.png">
+
+        </div>
         
 
         <div class="article-details">
@@ -781,18 +798,15 @@
         </div>
     </a>
 </article>
-
             
                 
 <article class="has-image">
     <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
         
-        
-            <div class="article-image">
-                
-                    <img src="/img/dmg-maker/featured.png" loading="lazy" data-key="dmg-maker-create-beautiful-macos-installers-automatically" data-hash="/img/dmg-maker/featured.png"/>
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" loading="lazy" src="/img/dmg-maker/featured.png">
+
+        </div>
         
 
         <div class="article-details">
@@ -800,18 +814,15 @@
         </div>
     </a>
 </article>
-
             
                 
 <article class="has-image">
     <a href="/p/mac-lite-translator-apple-silicon-mlx/">
         
-        
-            <div class="article-image">
-                
-                    <img src="/img/mac-lite-translator/featured.png" loading="lazy" data-key="mac-lite-translator-apple-silicon-mlx" data-hash="/img/mac-lite-translator/featured.png"/>
-                
-            </div>
+        <div class="article-image">
+            <img alt="Featured image of post Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" loading="lazy" src="/img/mac-lite-translator/featured.png">
+
+        </div>
         
 
         <div class="article-details">
@@ -819,7 +830,6 @@
         </div>
     </a>
 </article>
-
             
         </div>
     </div>
@@ -828,7 +838,8 @@
      
     
         
-    <script
+
+        <script
     src="https://giscus.app/client.js"
     data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
     data-repo-id="R_kgDOPvRxjA"
@@ -897,101 +908,42 @@
 
 
     
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
 
     
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
 
     </body>
 </html>

@@ -1,52 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Jingyuan</title>
         <link>https://jingyuan-zheng.github.io/categories/</link>
         <description>Recent content in Categories on Jingyuan</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
         <lastBuildDate>Mon, 25 May 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>macOS</title>
-        <link>https://jingyuan-zheng.github.io/categories/macos/</link>
-        <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/macos/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/macos/featured.png" alt="Featured image of post macOS" /&gt;</description>
-        </item>
-        <item>
-        <title>Open Source</title>
-        <link>https://jingyuan-zheng.github.io/categories/open-source/</link>
-        <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/open-source/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/open-source/featured.png" alt="Featured image of post Open Source" /&gt;</description>
-        </item>
-        <item>
-        <title>AI</title>
-        <link>https://jingyuan-zheng.github.io/categories/ai/</link>
-        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/ai/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/ai/featured.png" alt="Featured image of post AI" /&gt;</description>
-        </item>
-        <item>
-        <title>Guides</title>
-        <link>https://jingyuan-zheng.github.io/categories/guides/</link>
-        <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/guides/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/guides/featured.png" alt="Featured image of post Guides" /&gt;</description>
-        </item>
-        <item>
-        <title>Tech Review</title>
-        <link>https://jingyuan-zheng.github.io/categories/tech-review/</link>
-        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://jingyuan-zheng.github.io/categories/tech-review/</guid>
-        <description>&lt;img src="https://jingyuan-zheng.github.io/categories/tech-review/featured.png" alt="Featured image of post Tech Review" /&gt;</description>
-        </item>
-        
-    </channel>
+            <title>macOS</title>
+            <link>https://jingyuan-zheng.github.io/categories/macos/</link>
+            <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/macos/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/categories/macos/featured.png&#34; alt=&#34;Featured image of post macOS&#34; /&gt;</description>
+        </item><item>
+            <title>Open Source</title>
+            <link>https://jingyuan-zheng.github.io/categories/open-source/</link>
+            <pubDate>Mon, 25 May 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/open-source/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/categories/open-source/featured.png&#34; alt=&#34;Featured image of post Open Source&#34; /&gt;</description>
+        </item><item>
+            <title>AI</title>
+            <link>https://jingyuan-zheng.github.io/categories/ai/</link>
+            <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/ai/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/categories/ai/featured.png&#34; alt=&#34;Featured image of post AI&#34; /&gt;</description>
+        </item><item>
+            <title>Guides</title>
+            <link>https://jingyuan-zheng.github.io/categories/guides/</link>
+            <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/guides/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/categories/guides/featured.png&#34; alt=&#34;Featured image of post Guides&#34; /&gt;</description>
+        </item><item>
+            <title>Tech Review</title>
+            <link>https://jingyuan-zheng.github.io/categories/tech-review/</link>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/tech-review/</guid>
+            <description>&lt;img src=&#34;https://jingyuan-zheng.github.io/categories/tech-review/featured.png&#34; alt=&#34;Featured image of post Tech Review&#34; /&gt;</description>
+        </item></channel>
 </rss>
