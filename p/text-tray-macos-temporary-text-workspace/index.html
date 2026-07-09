@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="Text Tray is an open-source macOS app for quickly reading, editing, cleaning, translating, and saving temporary text without turning it into a note or document.">
+<title>Text Tray for macOS: A Temporary Workspace for Copied Text</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.4506392b13901deb945b42a260998a8caf816230bf8ab9c05319115dad3f4500.css"><meta property='og:title' content="Text Tray for macOS: A Temporary Workspace for Copied Text">
+<meta property='og:description' content="Text Tray is an open-source macOS app for quickly reading, editing, cleaning, translating, and saving temporary text without turning it into a note or document.">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/'>
+<meta property='og:site_name' content='Jingyuan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Text Tray' /><meta property='article:tag' content='macOS' /><meta property='article:tag' content='clipboard' /><meta property='article:tag' content='Apple Intelligence' /><meta property='article:tag' content='Swift' /><meta property='article:published_time' content='2026-07-09T18:45:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-09T18:45:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/text-tray/featured.jpg' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Text Tray for macOS: A Temporary Workspace for Copied Text">
+<meta name="twitter:description" content="Text Tray is an open-source macOS app for quickly reading, editing, cleaning, translating, and saving temporary text without turning it into a note or document."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/text-tray/featured.jpg' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/",
+          "name": "Home",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/categories/open-source/",
+          "name": "Open Source",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/",
+          "name": "Text Tray for macOS: A Temporary Workspace for Copied Text",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "Open Source",
+        "macOS"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-09T18:45:00+02:00",
+      "datePublished": "2026-07-09T18:45:00+02:00",
+      "description": "Text Tray is an open-source macOS app for quickly reading, editing, cleaning, translating, and saving temporary text without turning it into a note or document.",
+      "headline": "Text Tray for macOS: A Temporary Workspace for Copied Text",
+      "image": "https://jingyuan-zheng.github.io/img/text-tray/featured.jpg",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "Text Tray, macOS, clipboard, Apple Intelligence, Swift",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Jingyuan</a></h1>
+            <h2 class="site-description">Share something interesting!</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:mr.jingyuan.zheng@outlook.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/text-tray-macos-temporary-text-workspace/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/text-tray-macos-temporary-text-workspace/" >简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#the-kind-of-problem-it-solves">The Kind of Problem It Solves</a></li>
+    <li><a href="#temporary-by-design">Temporary by Design</a></li>
+    <li><a href="#reading-editing-and-basic-counts">Reading, Editing, and Basic Counts</a></li>
+    <li><a href="#cleanup-for-text-that-comes-from-pdfs">Cleanup for Text That Comes from PDFs</a></li>
+    <li><a href="#smart-actions-without-leaving-the-window">Smart Actions Without Leaving the Window</a></li>
+    <li><a href="#system-writing-tools-and-translation">System Writing Tools and Translation</a></li>
+    <li><a href="#saving-when-temporary-text-becomes-useful">Saving When Temporary Text Becomes Useful</a></li>
+    <li><a href="#launching-from-shortcuts">Launching from Shortcuts</a></li>
+    <li><a href="#where-it-fits">Where It Fits</a></li>
+    <li><a href="#related-posts">Related Posts</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/text-tray-macos-temporary-text-workspace/">
+            <img alt="Featured image of post Text Tray for macOS: A Temporary Workspace for Copied Text" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/text-tray/featured.jpg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/open-source/" style="background-color: hsl(278, 60%, 84%); color: hsl(278, 60%, 15%);">
+                Open Source
+            </a>
+        
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
+                macOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/text-tray-macos-temporary-text-workspace/">Text Tray for macOS: A Temporary Workspace for Copied Text</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Text Tray is an open-source macOS app for quickly reading, editing, cleaning, translating, and saving temporary text without turning it into a note or document.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-09T18:45:00&#43;02:00'>09/Jul/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        6 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/zh/p/text-tray-macos-temporary-text-workspace/" class="link">简体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="Share this article"
+    data-article-share
+    data-share-title="Text Tray for macOS: A Temporary Workspace for Copied Text"
+    data-share-url="https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/"
+    data-copy-label="Copy link"
+    data-copied-label="Copied"
+    data-copy-error-label="Copy failed">
+    <button class="article-share__button" type="button" data-share-print aria-label="Print" title="Print">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="Copy link" title="Copy link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="Share" title="Share">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Ftext-tray-macos-temporary-text-workspace%2F&text=Text&#43;Tray&#43;for&#43;macOS%3A&#43;A&#43;Temporary&#43;Workspace&#43;for&#43;Copied&#43;Text" target="_blank" rel="noopener noreferrer" aria-label="Share on X" title="Share on X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.reddit.com/submit?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Ftext-tray-macos-temporary-text-workspace%2F&title=Text&#43;Tray&#43;for&#43;macOS%3A&#43;A&#43;Temporary&#43;Workspace&#43;for&#43;Copied&#43;Text" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit" title="Share on Reddit">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Ftext-tray-macos-temporary-text-workspace%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://api.whatsapp.com/send?text=Text&#43;Tray&#43;for&#43;macOS%3A&#43;A&#43;Temporary&#43;Workspace&#43;for&#43;Copied&#43;Text&#43;https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Ftext-tray-macos-temporary-text-workspace%2F" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="mailto:?subject=Text&#43;Tray&#43;for&#43;macOS%3A&#43;A&#43;Temporary&#43;Workspace&#43;for&#43;Copied&#43;Text&body=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Ftext-tray-macos-temporary-text-workspace%2F" aria-label="Share by email" title="Share by email">
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#the-kind-of-problem-it-solves">The Kind of Problem It Solves</a></li>
+    <li><a href="#temporary-by-design">Temporary by Design</a></li>
+    <li><a href="#reading-editing-and-basic-counts">Reading, Editing, and Basic Counts</a></li>
+    <li><a href="#cleanup-for-text-that-comes-from-pdfs">Cleanup for Text That Comes from PDFs</a></li>
+    <li><a href="#smart-actions-without-leaving-the-window">Smart Actions Without Leaving the Window</a></li>
+    <li><a href="#system-writing-tools-and-translation">System Writing Tools and Translation</a></li>
+    <li><a href="#saving-when-temporary-text-becomes-useful">Saving When Temporary Text Becomes Useful</a></li>
+    <li><a href="#launching-from-shortcuts">Launching from Shortcuts</a></li>
+    <li><a href="#where-it-fits">Where It Fits</a></li>
+    <li><a href="#related-posts">Related Posts</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>This post introduces Text Tray, a small open-source macOS app that gives copied or passed-in text a temporary place to be read, edited, cleaned up, translated, saved, or copied again.</p>
+<p>I have open-sourced <strong>Text Tray</strong>, a tiny macOS utility for a very specific kind of everyday friction: you have some text in the clipboard, but opening Notes, a full editor, a browser AI tool, or a translation app feels heavier than the job deserves.</p>
+<p>The project is here: <a class="link" href="https://github.com/Jingyuan-Zheng/TextTray"  target="_blank" rel="noopener"
+    >Jingyuan-Zheng/TextTray</a>.</p>
+<h2 id="the-kind-of-problem-it-solves">The Kind of Problem It Solves
+</h2><p>There is a category of text work that is too small to become a document but too annoying to do in the original app.</p>
+<p>Maybe a copied email is too narrow to read comfortably. Maybe a PDF paragraph comes out with broken line endings. Maybe you need to count characters before submitting a form. Maybe you only want to rewrite a reply, extract the dates, translate a paragraph, or save a short snippet as Markdown.</p>
+<p>Text Tray is built for that middle space. It is not a note-taking app, and it is not a clipboard manager. It opens a focused editor for the current clipboard or supplied text, lets you do the small operation, then gets out of the way.</p>
+<div class="post-figure">
+    <img src="/img/text-tray/featured.jpg" alt="Text Tray main window showing temporary text, line numbers, and text statistics">
+    <div class="caption">Figure 1: Text Tray gives temporary text a larger, editable workspace.</div>
+</div>
+<h2 id="temporary-by-design">Temporary by Design
+</h2><p>The most important design choice is that Text Tray treats text as temporary.</p>
+<p>It does not keep a clipboard history, monitor the clipboard in the background, auto-save the editor content, or clear the system clipboard when it closes. Preferences such as language, font size, line numbers, word wrap, statistics, and pinning are saved, but the text itself is not stored.</p>
+<p>That makes the tool feel closer to a scratch tray than a permanent notebook. You can paste a contract clause, a message draft, or a copied table into it without wondering whether you just created another long-lived record to clean up later.</p>
+<h2 id="reading-editing-and-basic-counts">Reading, Editing, and Basic Counts
+</h2><p>The main window is intentionally plain: a text view, line numbers, word wrap, adjustable font size, and a compact status area.</p>
+<p>The status area shows useful small signals such as character count, word count, line count, selection length, font size, and cursor position. Those are boring features until you need them, which is exactly why I wanted them nearby instead of hidden inside a heavier editor.</p>
+<p>The window can also stay on top of other apps, which is useful when copying from one place and editing in another.</p>
+<h2 id="cleanup-for-text-that-comes-from-pdfs">Cleanup for Text That Comes from PDFs
+</h2><p>One of the first practical cleanup actions is <strong>Repair PDF Line Breaks</strong>.</p>
+<p>Text copied from PDFs often preserves visual line breaks instead of logical paragraphs. Text Tray includes a local cleanup pass that joins ordinary paragraph lines while protecting common list shapes such as bullets, numbered items, and indented blocks.</p>
+<div class="post-figure">
+    <img src="/img/text-tray/pdf-line-breaks.jpg" alt="Text Tray repairing copied PDF line breaks">
+    <div class="caption">Figure 2: PDF line-break repair turns copied visual lines back into readable paragraphs.</div>
+</div>
+<p>There are also smaller cleanup actions for trimming leading and trailing whitespace, removing extra blank lines, normalizing line endings, and removing trailing spaces on each line. The app keeps one-step undo for the last processing operation, which is enough for this kind of quick utility without turning the interface into a workflow editor.</p>
+<h2 id="smart-actions-without-leaving-the-window">Smart Actions Without Leaving the Window
+</h2><p>Text Tray also has an AI menu for lightweight structure extraction and rewriting tasks. The current actions include extracting tasks, dates, amounts, and contacts, summarizing requirements, explaining text, checking risks, drafting replies, and organizing content as a checklist or table.</p>
+<p>On supported systems, these actions use Apple&rsquo;s Foundation Models framework. The app checks whether the system model is available and shows a clear message when Apple Intelligence is not enabled, the device is not eligible, or the model is not ready.</p>
+<div class="post-figure">
+    <img src="/img/text-tray/ai-tasks.jpg" alt="Text Tray extracting tasks from an email">
+    <div class="caption">Figure 3: AI actions are meant for small, structured operations on the text already in the tray.</div>
+</div>
+<p>This is deliberately not trying to replace a full AI chat app. The point is speed: if the text is already there, the next action should be one menu command, not another round trip through copy, paste, prompt, copy back.</p>
+<h2 id="system-writing-tools-and-translation">System Writing Tools and Translation
+</h2><p>Text Tray also integrates with macOS system Writing Tools when available, so the editor can participate in the same system-level writing assistance used by other native apps.</p>
+<p>For translation, it uses Apple&rsquo;s Translation framework on supported macOS versions. It can translate to Chinese, translate to English, or produce a Chinese-English bilingual version.</p>
+<div class="post-figure">
+    <img src="/img/text-tray/translation.jpg" alt="Text Tray showing a translation result">
+    <div class="caption">Figure 4: Translation lives inside the same temporary text window.</div>
+</div>
+<p>The base app targets macOS 13 or later. The newer Apple Intelligence and system translation actions depend on the macOS versions and device support required by Apple&rsquo;s frameworks, so older Macs still get the core editor, cleanup, counting, copy, save, and print features.</p>
+<h2 id="saving-when-temporary-text-becomes-useful">Saving When Temporary Text Becomes Useful
+</h2><p>Most tray text can disappear after copying, but sometimes a scratch note turns into something worth keeping.</p>
+<p>Text Tray can save the current text as <code>.txt</code>, <code>.md</code>, <code>.json</code>, <code>.csv</code>, <code>.html</code>, <code>.swift</code>, <code>.py</code>, <code>.js</code>, or a custom extension. The default file name uses a timestamp such as <code>Text_YYYYMMDDHHMMSS.txt</code>, which is simple but avoids accidental overwrites.</p>
+<div class="post-figure">
+    <img src="/img/text-tray/export.jpg" alt="Text Tray save and export options">
+    <div class="caption">Figure 5: Save options cover plain text, Markdown, code snippets, and custom extensions.</div>
+</div>
+<p>There is also a print action, mostly for the occasional case where temporary text needs to leave the screen.</p>
+<h2 id="launching-from-shortcuts">Launching from Shortcuts
+</h2><p>The app can be launched normally, but it is more useful when wired into macOS Shortcuts or another automation.</p>
+<p>For a basic launcher:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">open -n <span class="s2">&#34;/Applications/Text Tray.app&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>To pass text directly through standard input:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">APP</span><span class="o">=</span><span class="s2">&#34;/Applications/Text Tray.app&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&#34;</span><span class="nv">$SHORTCUT_INPUT</span><span class="s2">&#34;</span> <span class="p">|</span> <span class="s2">&#34;</span><span class="nv">$APP</span><span class="s2">/Contents/MacOS/TemporaryClipboardViewer&#34;</span> --stdin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="post-figure">
+    <img src="/img/text-tray/shortcut-setup.jpg" alt="macOS Shortcuts setup for launching Text Tray">
+    <div class="caption">Figure 6: Shortcuts makes Text Tray feel like a system text action.</div>
+</div>
+<p>The source is intentionally small: the app is built with Swift, AppKit, SwiftUI, Apple&rsquo;s Foundation Models framework, and the Translation framework. The build script produces a normal <code>.app</code> bundle and packages it as <code>TextTray.zip</code>.</p>
+<h2 id="where-it-fits">Where It Fits
+</h2><p>Text Tray is not for long writing, project notes, knowledge management, or clipboard archiving. Those jobs already have better tools.</p>
+<p>It is for the awkward thirty-second text task: make this readable, count this, clean this, extract the dates, draft a reply, translate this paragraph, save this snippet, then move on.</p>
+<p>That is a small niche, but it appears many times a day. Text Tray gives that niche a proper little window.</p>
+<h2 id="related-posts">Related Posts
+</h2><ul>
+<li>For document-level translation from Finder, see <a class="link" href="/p/translate-document-quick-action/" >Translate Document Quick Action</a>.</li>
+<li>For local AI translation on Apple Silicon, see <a class="link" href="/p/mac-lite-translator-apple-silicon-mlx/" >Mac-Lite-Translator</a>.</li>
+<li>For packaging small macOS tools, see <a class="link" href="/p/dmg-maker-create-beautiful-macos-installers-automatically/" >How to Make a macOS DMG Installer with a Custom Background</a>.</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/text-tray/">Text Tray</a>
+        
+            <a href="/tags/macos/">MacOS</a>
+        
+            <a href="/tags/clipboard/">Clipboard</a>
+        
+            <a href="/tags/apple-intelligence/">Apple Intelligence</a>
+        
+            <a href="/tags/swift/">Swift</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/abc-custom-keyboard/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" loading="lazy" src="/img/abc-custom-keyboard/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/translate-document-quick-action/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" loading="lazy" src="/img/translate-document-quick-action/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" loading="lazy" src="/img/dmg-maker/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">How to Make a macOS DMG Installer with a Custom Background</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" height="150" loading="lazy" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_7baef6a68dbfd893.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_7baef6a68dbfd893.png 1x, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_cbf8b02e297f9b69.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #14141480 0%, #fcfcfcC0 100%);">
+            <h2 class="article-title">Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/mac-lite-translator-apple-silicon-mlx/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline" loading="lazy" src="/img/mac-lite-translator/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Local Translation on Mac with TranslateGemma: Fast, Accurate, and Offline</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <br>
+        <span>
+            Powered by
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
+
+
+    </body>
+</html>
