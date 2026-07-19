@@ -8,7 +8,7 @@ The site is bilingual. English content is available at `https://jingyuan-zheng.g
 
 - [Home](https://jingyuan-zheng.github.io/): Latest English posts.
 - [中文首页](https://jingyuan-zheng.github.io/zh/): Latest Simplified Chinese posts.
-- [About](https://jingyuan-zheng.github.io/about-me/): Author background and CV.
+- [About](https://jingyuan-zheng.github.io/about-me/): Personal CV page, temporarily under maintenance.
 - [Links](https://jingyuan-zheng.github.io/links/): GitHub, X, Xiaohongshu, and other profiles.
 - [中文链接](https://jingyuan-zheng.github.io/zh/%E9%93%BE%E6%8E%A5/): Chinese links page, including Bilibili.
 - [Archives](https://jingyuan-zheng.github.io/archives/): English archive and category overview.
