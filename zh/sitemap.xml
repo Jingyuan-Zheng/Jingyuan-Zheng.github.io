@@ -103,6 +103,34 @@
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/page/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://jingyuan-zheng.github.io/zh/page/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/friend-links-rules/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/friend-links-rules/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://jingyuan-zheng.github.io/zh/friend-links-rules/"
+      />
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/apple-intelligence/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
     <xhtml:link
@@ -175,20 +203,6 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/%E5%89%AA%E8%B4%B4%E6%9D%BF/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
-    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/page/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://jingyuan-zheng.github.io/zh/page/"
-      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/privacy-policy/</loc>

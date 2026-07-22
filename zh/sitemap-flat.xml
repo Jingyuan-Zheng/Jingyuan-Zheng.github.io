@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-07-09T18:45:00+02:00</lastmod>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/friend-links-rules/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/page/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/apple-intelligence/</loc>
@@ -46,10 +54,6 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/page/</loc>
-    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/privacy-policy/</loc>
@@ -273,6 +277,14 @@
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/friend-links-rules/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/apple-intelligence/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
   </url>
@@ -295,10 +307,6 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/%E5%89%AA%E8%B4%B4%E6%9D%BF/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
-    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/privacy-policy/</loc>
