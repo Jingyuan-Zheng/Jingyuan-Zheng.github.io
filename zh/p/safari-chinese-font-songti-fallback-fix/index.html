@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="Safari 浏览中文网页时，部分文字会从苹方突然回退成宋体或明体。本文介绍一个只修复 CJK 字体回退、不强制替换英文与网页原有衬线设计的轻量 CSS 方案。">
+<title>Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.4506392b13901deb945b42a260998a8caf816230bf8ab9c05319115dad3f4500.css"><meta property='og:title' content="Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方">
+<meta property='og:description' content="Safari 浏览中文网页时，部分文字会从苹方突然回退成宋体或明体。本文介绍一个只修复 CJK 字体回退、不强制替换英文与网页原有衬线设计的轻量 CSS 方案。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Safari' /><meta property='article:tag' content='中文字体' /><meta property='article:tag' content='苹方' /><meta property='article:tag' content='CSS' /><meta property='article:tag' content='CJK' /><meta property='article:tag' content='Font Fallback' /><meta property='article:published_time' content='2026-07-22T11:00:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-22T11:00:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方">
+<meta name="twitter:description" content="Safari 浏览中文网页时，部分文字会从苹方突然回退成宋体或明体。本文介绍一个只修复 CJK 字体回退、不强制替换英文与网页原有衬线设计的轻量 CSS 方案。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/",
+          "name": "开源项目",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/",
+          "name": "Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "开源项目",
+        "macOS"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-22T11:00:00+02:00",
+      "datePublished": "2026-07-22T11:00:00+02:00",
+      "description": "Safari 浏览中文网页时，部分文字会从苹方突然回退成宋体或明体。本文介绍一个只修复 CJK 字体回退、不强制替换英文与网页原有衬线设计的轻量 CSS 方案。",
+      "headline": "Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方",
+      "image": "https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "Safari, 中文字体, 苹方, CSS, CJK, Font Fallback",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/" >English</option>
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/safari-chinese-font-songti-fallback-fix/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#这不是字号或编码问题">这不是字号或编码问题</a></li>
+    <li><a href="#为什么常见的全局替换并不理想">为什么常见的全局替换并不理想</a></li>
+    <li><a href="#这个项目怎样只修复中文部分">这个项目怎样只修复中文部分</a></li>
+    <li><a href="#安装方法">安装方法</a></li>
+    <li><a href="#修复后什么会改变">修复后什么会改变</a></li>
+    <li><a href="#隐私与适用范围">隐私与适用范围</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ol>
+        <li><a href="#为什么导入后没有立即生效">为什么导入后没有立即生效？</a></li>
+        <li><a href="#它会把所有宋体都换成苹方吗">它会把所有宋体都换成苹方吗？</a></li>
+        <li><a href="#会影响英文-arial-或-helvetica-吗">会影响英文 Arial 或 Helvetica 吗？</a></li>
+        <li><a href="#需要安装字体或-safari-扩展吗">需要安装字体或 Safari 扩展吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#一个小问题也值得被认真修好">一个小问题，也值得被认真修好</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+    <li><a href="#相关阅读">相关阅读</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/safari-chinese-font-songti-fallback-fix/">
+            <img alt="Featured image of post Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/safari-cjk-font-fallback-fix/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" style="background-color: hsl(47, 60%, 84%); color: hsl(47, 60%, 15%);">
+                开源项目
+            </a>
+        
+            
+            
+            
+            <a href="/zh/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
+                macOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh/p/safari-chinese-font-songti-fallback-fix/">Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Safari 浏览中文网页时，部分文字会从苹方突然回退成宋体或明体。本文介绍一个只修复 CJK 字体回退、不强制替换英文与网页原有衬线设计的轻量 CSS 方案。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-22T11:00:00&#43;02:00'>22/7月/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 6 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="Safari 中文字体变宋体？用一个 CSS 样式表恢复苹方"
+    data-share-url="https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印" title="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接" title="复制链接">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享" title="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F&title=Safari&#43;%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%8F%98%E5%AE%8B%E4%BD%93%EF%BC%9F%E7%94%A8%E4%B8%80%E4%B8%AA&#43;CSS&#43;%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%81%A2%E5%A4%8D%E8%8B%B9%E6%96%B9" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F&title=Safari&#43;%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%8F%98%E5%AE%8B%E4%BD%93%EF%BC%9F%E7%94%A8%E4%B8%80%E4%B8%AA&#43;CSS&#43;%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%81%A2%E5%A4%8D%E8%8B%B9%E6%96%B9" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F&text=Safari&#43;%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%8F%98%E5%AE%8B%E4%BD%93%EF%BC%9F%E7%94%A8%E4%B8%80%E4%B8%AA&#43;CSS&#43;%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%81%A2%E5%A4%8D%E8%8B%B9%E6%96%B9" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#这不是字号或编码问题">这不是字号或编码问题</a></li>
+    <li><a href="#为什么常见的全局替换并不理想">为什么常见的全局替换并不理想</a></li>
+    <li><a href="#这个项目怎样只修复中文部分">这个项目怎样只修复中文部分</a></li>
+    <li><a href="#安装方法">安装方法</a></li>
+    <li><a href="#修复后什么会改变">修复后什么会改变</a></li>
+    <li><a href="#隐私与适用范围">隐私与适用范围</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ol>
+        <li><a href="#为什么导入后没有立即生效">为什么导入后没有立即生效？</a></li>
+        <li><a href="#它会把所有宋体都换成苹方吗">它会把所有宋体都换成苹方吗？</a></li>
+        <li><a href="#会影响英文-arial-或-helvetica-吗">会影响英文 Arial 或 Helvetica 吗？</a></li>
+        <li><a href="#需要安装字体或-safari-扩展吗">需要安装字体或 Safari 扩展吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#一个小问题也值得被认真修好">一个小问题，也值得被认真修好</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+    <li><a href="#相关阅读">相关阅读</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本文介绍 Safari 中文字体变宋体的原因与修复方法：通过一个轻量级用户样式表，让本该使用无衬线字体的中文优先回到苹方，同时保留网站有意使用的宋体、楷体和仿宋。</p>
+<p>如果你在 Mac 上主要使用 Safari，可能见过这种很难忽略的画面：同一个网页里，大部分中文是苹方，某个按钮、导航、搜索结果或一小段正文却突然变成宋体；英文和数字看起来正常，旁边的中文却像从另一个网站拼了进来。</p>
+<p>更让人困惑的是，同一个页面放到 Chrome 里往往又是正常的。</p>
+<p>我为这个问题整理了一个开源解决方案：<strong>Safari CJK Font Fallback Fix</strong>。项目只有一个 CSS 文件，不需要安装 Safari 扩展，也不包含 JavaScript。</p>
+<p>项目地址：<a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
+    >Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix</a></p>
+<h2 id="这不是字号或编码问题">这不是字号或编码问题
+</h2><p>Safari 中的“字体突然变宋体”，通常不是网页乱码，也不是字号、缩放比例或文字编码出了问题。</p>
+<p>很多网站的字体列表首先写的是 Arial、Helvetica、Inter、Roboto 等西文字体。它们可以显示英文和数字，却不一定包含完整的中文字形。浏览器遇到中文时，只能继续沿着字体列表寻找可用字形；如果网站后面又放了宋体，或者沿用了面向 Windows 的微软雅黑、等线、中易黑体等字体名，Safari 最终选到的中文字体就可能与网站想要的无衬线风格不一致。</p>
+<p>这就是字体回退（font fallback）：前面的字体没有这个字符，浏览器便寻找下一种能画出它的字体。</p>
+<p>不同浏览器处理字体名称和回退顺序的方式并不完全相同，所以才会出现“Chrome 是苹方，Safari 却变成宋体”的情况。WebKit 对语言与 CJK 字体选择的讨论已经持续多年；Safari 目前也仍然保留了导入用户样式表的入口，Apple 在官方说明中将它放在“Safari 设置 → 高级 → 样式表”。</p>
+<h2 id="为什么常见的全局替换并不理想">为什么常见的全局替换并不理想
+</h2><p>网上最常见的解决办法，是给所有元素强制设置一种字体：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;PingFang SC&#34;</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>它确实简单，也经常能立刻让宋体消失，但代价是把整个网页的字体设计一起覆盖掉。</p>
+<p>图标字体可能因此显示成方块，代码块失去等宽字体，英文标题不再使用网站原来的字体；更重要的是，新闻正文、古籍内容或品牌页面本来就可能有意选择宋体。把所有字体都替换为苹方，并不是修复回退，而是重新设计整个网站。</p>
+<p>在 V2EX 关于 Safari 自定义字体的讨论中，就有用户遇到全局替换后投票按钮图标变成方格的问题。这个反馈也是我没有采用“全局强制苹方”方案的原因。</p>
+<h2 id="这个项目怎样只修复中文部分">这个项目怎样只修复中文部分
+</h2><p>这个样式表的核心不是修改网页上的每个元素，而是用 <code>@font-face</code> 和 <code>unicode-range</code> 补全常见西文字体缺失的 CJK 字符。</p>
+<p>以 Arial 为例，规则只在遇到汉字、CJK 标点和全角字符时调用苹方：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s2">&#34;Arial&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s2">&#34;PingFangSC-Regular&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">100</span> <span class="nt">599</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">2E80-2FFF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">3000-303F</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">U</span><span class="o">+</span><span class="nt">3400-4DBF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">4E00-9FFF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">F900-FAFF</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">U</span><span class="o">+</span><span class="nt">FF00-FFEF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">20000-2FA1F</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样一来，英文字母和数字仍然由 Arial 显示，中文缺口则由 PingFang SC 补上。页面原来的英文宽度、间距和视觉风格不会被一并改掉。</p>
+<p>项目还针对 Arial、Helvetica、Verdana、Tahoma、Segoe UI、Roboto、Inter、Open Sans 等常见字体分别补充了中文范围，并把微软雅黑、等线等 Windows 无衬线字体名映射到 macOS 的苹方。繁体中文字体名则对应 PingFang TC。</p>
+<p>常规字重和粗体也分别映射到 <code>PingFangSC-Regular</code> 与 <code>PingFangSC-Semibold</code>，避免正文恢复苹方之后，粗体又突然跳回另一套字体。</p>
+<p>宋体、楷体和仿宋并没有被禁止。网站明确指定 <code>SimSun</code>、<code>KaiTi</code>、<code>FangSong</code>、<code>PMingLiU</code> 等字体时，样式表会继续把它们对应到 macOS 上合适的宋体、楷体或仿宋字体。</p>
+<h2 id="安装方法">安装方法
+</h2><p>整个安装过程只需要一个 CSS 文件：</p>
+<ol>
+<li>下载项目中的 <a class="link" href="https://raw.githubusercontent.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix/main/safari-fix.css"  target="_blank" rel="noopener"
+    ><code>safari-fix.css</code></a>。</li>
+<li>打开 Safari，进入“Safari 浏览器 → 设置 → 高级”。</li>
+<li>在“样式表”菜单中选择刚刚下载的 <code>safari-fix.css</code>。</li>
+<li>使用 <kbd>Command</kbd>+<kbd>Q</kbd> 完整退出 Safari，然后重新打开。</li>
+</ol>
+<p>只关闭当前标签页或刷新网页，Safari 可能仍然使用之前读取的样式表。修改 CSS 后也建议完整退出并重开 Safari。</p>
+<p>如果想停用它，只需回到同一个“样式表”菜单，改回“未选择”即可，不会修改系统字体或网站文件。</p>
+<h2 id="修复后什么会改变">修复后什么会改变
+</h2><p>启用后，原本应当采用无衬线风格、却因为回退错误而显示成宋体的中文，会优先使用 PingFang SC；繁体中文无衬线字体名称会对应到 PingFang TC。</p>
+<p>与此同时：</p>
+<ul>
+<li>英文和数字继续使用网站原本指定的西文字体；</li>
+<li>图标字体和代码字体不会因为全局 <code>font-family</code> 覆盖而被统一替换；</li>
+<li>网站明确选择的宋体、楷体和仿宋仍然保留；</li>
+<li>普通与粗体中文会使用匹配的苹方字重；</li>
+<li>不需要为每一个网站分别安装脚本或扩展。</li>
+</ul>
+<p>它修复的是“意外回退”，不是把整个互联网统一成一种字体。</p>
+<h2 id="隐私与适用范围">隐私与适用范围
+</h2><p>项目只有 CSS，不含 JavaScript，不读取浏览记录、账号或网页内容，不包含统计与遥测，也不会发起网络请求。</p>
+<p>它面向 macOS 上的 Safari。跨域 iframe、Shadow DOM、Canvas 绘制的文字，以及图片中的文字可能不受用户样式表影响。网站如果刻意采用“英文无衬线、中文宋体”的混排设计，启用后其中的中文也可能改用苹方；CSS 无法百分之百猜中每个设计者的意图。</p>
+<h2 id="常见问题">常见问题
+</h2><h3 id="为什么导入后没有立即生效">为什么导入后没有立即生效？
+</h3><p>请使用 <kbd>Command</kbd>+<kbd>Q</kbd> 完整退出 Safari，再重新打开。普通刷新通常不会重新读取用户样式表。</p>
+<h3 id="它会把所有宋体都换成苹方吗">它会把所有宋体都换成苹方吗？
+</h3><p>不会。项目保留了明确指定的宋体、楷体和仿宋，只处理本应采用无衬线字体却发生错误回退的情况。</p>
+<h3 id="会影响英文-arial-或-helvetica-吗">会影响英文 Arial 或 Helvetica 吗？
+</h3><p>不会。<code>unicode-range</code> 只为 CJK 字符补充苹方，拉丁字母、数字、字宽和间距仍由原字体处理。</p>
+<h3 id="需要安装字体或-safari-扩展吗">需要安装字体或 Safari 扩展吗？
+</h3><p>不需要。苹方是 macOS 的系统中文字体，Safari 本身支持加载用户样式表。</p>
+<h2 id="一个小问题也值得被认真修好">一个小问题，也值得被认真修好
+</h2><p>字体回退很少让网页彻底不能用，但它会不断制造细小的视觉跳变。尤其在一整页干净的苹方中突然出现一行宋体时，你很难再假装没有看见。</p>
+<p>这个项目不试图替网站决定所有排版，只在浏览器缺少合适的中文无衬线字形时，补上更符合 macOS 阅读体验的那一块。一个 CSS 文件，随时启用、随时关闭，也不要求把浏览权限交给扩展。</p>
+<p>如果你遇到新的 Safari 中文字体回退问题，可以在 <a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix/issues"  target="_blank" rel="noopener"
+    >GitHub Issues</a> 提交公开复现网址、实际 <code>font-family</code>、macOS 与 Safari 版本，以及预期和实际字体。请不要附上私人网址、账号信息或浏览记录。</p>
+<h2 id="参考资料">参考资料
+</h2><ul>
+<li><a class="link" href="https://support.apple.com/zh-cn/guide/safari/ibrw1075/mac"  target="_blank" rel="noopener"
+    >Apple：在 Mac 上的 Safari 浏览器中更改“高级”设置</a></li>
+<li><a class="link" href="https://bugs.webkit.org/show_bug.cgi?id=10874"  target="_blank" rel="noopener"
+    >WebKit Bug 10874：CJK 字体选择与语言信息</a></li>
+<li><a class="link" href="https://www.v2ex.com/t/855444"  target="_blank" rel="noopener"
+    >V2EX：求一个 macOS Safari 强制使用系统字体的样式表</a></li>
+</ul>
+<h2 id="相关阅读">相关阅读
+</h2><ul>
+<li>如果你还想改善 Safari 上的 B 站浏览体验，可以看 <a class="link" href="/zh/p/bewlybewly-safari-revival/" >BewlyBewly Safari 下载与安装指南</a>。</li>
+<li>如果你厌倦了 B 站、知乎、小红书不断打开新标签页，可以看 <a class="link" href="/zh/p/no-new-tab-browser-efficiency-tool/" >No-New-Tab：改回当前页浏览</a>。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/safari/">Safari</a>
+        
+            <a href="/zh/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/">中文字体</a>
+        
+            <a href="/zh/tags/%E8%8B%B9%E6%96%B9/">苹方</a>
+        
+            <a href="/zh/tags/css/">CSS</a>
+        
+            <a href="/zh/tags/cjk/">CJK</a>
+        
+            <a href="/zh/tags/font-fallback/">Font Fallback</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/text-tray-macos-temporary-text-workspace/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Text Tray：给复制文本一个临时工作台" loading="lazy" src="/img/text-tray/featured.jpg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Text Tray：给复制文本一个临时工作台</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/abc-custom-keyboard/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符" loading="lazy" src="/img/abc-custom-keyboard/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">macOS 美式键盘增强：输入重音字母、拼音声调、希腊字母和马耳他语字符</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/translate-document-quick-action/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理" loading="lazy" src="/img/translate-document-quick-action/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像" loading="lazy" src="/img/dmg-maker/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac DMG 安装包怎么做？用 DMG Maker 自动生成带背景的安装镜像</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/the-little-dict-macos/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词" loading="lazy" src="/img/the-little-dict-macos/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.ea5f6719354f8e078ec98d7f25a328a1b4767c5fab1f5783ca5b93fecd804623.js" defer></script>
+
+
+    </body>
+</html>
