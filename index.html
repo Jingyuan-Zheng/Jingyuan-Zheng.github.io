@@ -2,8 +2,45 @@
 <html lang="en-US" dir="ltr">
     <head>
 	<meta name="generator" content="Hugo 0.164.0"><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/","currentLanguage":"en","englishTarget":"/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
 
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
 <script>
     (function () {
         const colorSchemeKey = "StackColorScheme";
@@ -42,7 +79,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.9e0e2613f7bd39ca84ba5ca8d438affceea7df7b6916baa79262c4dde5221819.css"><meta property='og:title' content="Jingyuan">
+<link rel="stylesheet" href="/scss/style.min.6fb21676c7b89b7f8bf5b83e98af31fbc7ca7cf2c4a9c26c5e558e19c447ee51.css"><meta property='og:title' content="Jingyuan">
 <meta property='og:description' content="Share something interesting!">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -68,6 +105,9 @@
         }
       </script>
 <meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
      crossorigin="anonymous"></script><script type="application/ld+json">{
@@ -854,13 +894,49 @@
         
             
             
-            <figure class="home-profile__avatar">
-                <a href="/" aria-label="Jingyuan">
+            
+            
+            
+            
+            <figure class="home-profile__avatar" data-home-announcement data-announcement-id="new-domain-2026-07">
+                <button
+                    class="home-profile__announcement-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="home-profile-announcement"
+                    aria-label="Open website announcement, 1 unread"
+                    data-home-announcement-toggle
+                    data-announcement-open-label="Open website announcement"
+                    data-announcement-close-label="Close website announcement"
+                >
                     <img src="/img/avatar.png" width="800" height="800" loading="eager" alt="Avatar">
-                </a>
+                    <span class="home-profile__announcement-badge" data-home-announcement-badge aria-hidden="true">1</span>
+                </button>
                 
                     <span class="home-profile__emoji">🤩</span>
                 
+                <div
+                    class="home-profile__announcement-bubble"
+                    id="home-profile-announcement"
+                    data-home-announcement-bubble
+                    role="note"
+                    aria-live="polite"
+                    hidden
+                >
+                    <strong>Website announcement</strong>
+                    
+                        <p>
+                            This site is adopting a new domain:
+                            <a href="https://zjy.is-a.dev" target="_blank" rel="noopener" translate="no" class="notranslate">zjy.is-a.dev</a>.
+                            The existing
+                            <a href="https://jingyuan-zheng.github.io" target="_blank" rel="noopener" translate="no" class="notranslate">jingyuan-zheng.github.io</a>
+                            address will remain available long term, and you can also visit through the new domain.
+                        </p>
+                    
+                    <time class="home-profile__announcement-date" datetime="2026-07-24">
+                        24 Jul 2026
+                    </time>
+                </div>
             </figure>
             
         
@@ -1883,7 +1959,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.af5ababcf98cfb43a1ac94e0997dfb42858f0a125394a0b23f89adc29f042701.js" defer></script>
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.42656d33d7ed32dc229c58c2ad6b2d672f521021658cfbb933a2bcfc8e0cd373.js" defer></script>
 
 
     </body>

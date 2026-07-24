@@ -10,8 +10,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/"
       />
   </url>
   <url>
@@ -24,8 +29,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/friend-links-rules/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/friend-links-rules/"
       />
   </url>
   <url>
@@ -38,8 +48,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/page/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/page/"
       />
   </url>
   <url>
@@ -52,8 +67,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/apple-intelligence/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/apple-intelligence/"
       />
   </url>
   <url>
@@ -66,8 +86,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/categories/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/categories/"
       />
   </url>
   <url>
@@ -84,8 +109,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/categories/macos/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/categories/macos/"
       />
   </url>
   <url>
@@ -98,8 +128,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/macos/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/macos/"
       />
   </url>
   <url>
@@ -116,8 +151,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/post/"
       />
   </url>
   <url>
@@ -130,8 +170,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/swift/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/swift/"
       />
   </url>
   <url>
@@ -144,8 +189,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/"
       />
   </url>
   <url>
@@ -158,8 +208,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/text-tray/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/text-tray/"
       />
   </url>
   <url>
@@ -172,8 +227,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/text-tray-macos-temporary-text-workspace/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/text-tray-macos-temporary-text-workspace/"
       />
   </url>
   <url>
@@ -186,8 +246,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/privacy-policy/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/privacy-policy/"
       />
   </url>
   <url>
@@ -200,8 +265,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/abc-custom-keyboard/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/abc-custom-keyboard/"
       />
   </url>
   <url>
@@ -234,8 +304,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/docx/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/docx/"
       />
   </url>
   <url>
@@ -248,8 +323,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/finder-quick-action/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/finder-quick-action/"
       />
   </url>
   <url>
@@ -262,8 +342,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/ocr/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/ocr/"
       />
   </url>
   <url>
@@ -276,8 +361,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/pdf/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/pdf/"
       />
   </url>
   <url>
@@ -290,8 +380,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/translate-document-quick-action/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/translate-document-quick-action/"
       />
   </url>
   <url>
@@ -304,8 +399,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/categories/ai/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/categories/ai/"
       />
   </url>
   <url>
@@ -318,8 +418,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/ai-for-all/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/ai-for-all/"
       />
   </url>
   <url>
@@ -332,8 +437,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/chatgpt-plus/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/chatgpt-plus/"
       />
   </url>
   <url>
@@ -346,8 +456,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/coursera/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/coursera/"
       />
   </url>
   <url>
@@ -360,8 +475,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/eid/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/eid/"
       />
   </url>
   <url>
@@ -378,8 +498,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/ai4all-malta-free-ai-courses/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/ai4all-malta-free-ai-courses/"
       />
   </url>
   <url>
@@ -396,8 +521,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/microsoft-365-copilot/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/microsoft-365-copilot/"
       />
   </url>
   <url>
@@ -414,8 +544,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/bash/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/bash/"
       />
   </url>
   <url>
@@ -428,8 +563,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/dmg/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/dmg/"
       />
   </url>
   <url>
@@ -442,8 +582,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/dmg-maker-%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%BE%8E%E7%9A%84-macos-%E5%AE%89%E8%A3%85%E5%8C%85/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/"
       />
   </url>
   <url>
@@ -456,8 +601,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/tags/dictionary/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/dictionary/"
       />
   </url>
   <url>
@@ -482,8 +632,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/%E5%85%B3%E4%BA%8E%E6%88%91/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/about-me/"
       />
   </url>
   <url>
@@ -504,8 +659,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/mac-lite-translator-local-ai-translation/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/"
       />
   </url>
   <url>
@@ -538,8 +698,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/how-to-apply-for-malta-eid-online/"
       />
   </url>
   <url>
@@ -552,8 +717,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/archives/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/archives/"
       />
   </url>
   <url>
@@ -565,8 +735,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/apps/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/apps/"
       />
   </url>
   <url>
@@ -578,8 +753,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/%E9%93%BE%E6%8E%A5/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/links/"
       />
   </url>
   <url>
@@ -591,8 +771,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/pictures/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/pictures/"
       />
   </url>
   <url>
@@ -604,8 +789,13 @@
       />
     <xhtml:link
       rel="alternate"
-      hreflang="zh"
+      hreflang="zh-Hans"
       href="https://jingyuan-zheng.github.io/zh/search/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/search/"
       />
   </url>
 </urlset>

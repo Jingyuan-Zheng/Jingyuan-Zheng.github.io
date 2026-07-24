@@ -1,8 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh" dir="ltr">
+<html lang="zh-Hans" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/mac-lite-translator-local-ai-translation/","currentLanguage":"zh","englishTarget":"/p/mac-lite-translator-apple-silicon-mlx/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
 
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
 <script>
     (function () {
         const colorSchemeKey = "StackColorScheme";
@@ -41,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.9e0e2613f7bd39ca84ba5ca8d438affceea7df7b6916baa79262c4dde5221819.css"><meta property='og:title' content="Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文">
+<link rel="stylesheet" href="/scss/style.min.6fb21676c7b89b7f8bf5b83e98af31fbc7ca7cf2c4a9c26c5e558e19c447ee51.css"><meta property='og:title' content="Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文">
 <meta property='og:description' content="想要在 Mac 上拥有 ChatGPT 级别的翻译体验，又担心隐私泄露？Mac-Lite-Translator 结合 Google Gemma 模型与苹果 MLX 框架，为你打造极速、私密的本地 AI 翻译专家。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/mac-lite-translator-local-ai-translation/'>
 <meta property='og:site_name' content='小景'>
@@ -68,6 +105,9 @@
       </script>
 <meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
 <link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/mac-lite-translator-local-ai-translation/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/mac-lite-translator-apple-silicon-mlx/">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
      crossorigin="anonymous"></script><script type="application/ld+json">{
@@ -1025,7 +1065,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.af5ababcf98cfb43a1ac94e0997dfb42858f0a125394a0b23f89adc29f042701.js" defer></script>
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.42656d33d7ed32dc229c58c2ad6b2d672f521021658cfbb933a2bcfc8e0cd373.js" defer></script>
 
 
     </body>
