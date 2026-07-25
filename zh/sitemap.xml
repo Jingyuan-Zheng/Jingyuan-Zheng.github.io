@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/</loc>
-    <lastmod>2026-07-22T11:00:00+02:00</lastmod>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -17,6 +17,44 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/page/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/page/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/page/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/friend-links-rules/</loc>
+    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/friend-links-rules/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/friend-links-rules/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/friend-links-rules/"
       />
   </url>
   <url>
@@ -126,44 +164,6 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/%E8%8B%B9%E6%96%B9/</loc>
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/page/</loc>
-    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/page/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/page/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/page/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/friend-links-rules/</loc>
-    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/friend-links-rules/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/friend-links-rules/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/friend-links-rules/"
-      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/apple-intelligence/</loc>
