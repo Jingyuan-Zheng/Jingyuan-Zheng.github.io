@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/friend-links-application-system-launch/","currentLanguage":"zh","englishTarget":"/p/friend-links-application-system-launch/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="本站现已上线友链展示与中英双语在线申请系统。本文介绍友链页面、申请条件、提交步骤，以及评论区和邮件的使用方式。">
+<title>本站友链功能与在线申请系统上线</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.4e8d3a0ec18e255a659905e872bc1d3bfaab3160be329939a56c41b98a3537e3.css"><meta property='og:title' content="本站友链功能与在线申请系统上线">
+<meta property='og:description' content="本站现已上线友链展示与中英双语在线申请系统。本文介绍友链页面、申请条件、提交步骤，以及评论区和邮件的使用方式。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='友情链接' /><meta property='article:tag' content='独立博客' /><meta property='article:tag' content='网站更新' /><meta property='article:tag' content='Microsoft Forms' /><meta property='article:published_time' content='2026-07-25T16:20:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-25T16:20:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/friend-links-application-system-launch/featured.jpg' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="本站友链功能与在线申请系统上线">
+<meta name="twitter:description" content="本站现已上线友链展示与中英双语在线申请系统。本文介绍友链页面、申请条件、提交步骤，以及评论区和邮件的使用方式。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/friend-links-application-system-launch/featured.jpg' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/",
+          "name": "网站建设",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/",
+          "name": "本站友链功能与在线申请系统上线",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "网站建设"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-25T16:20:00+02:00",
+      "datePublished": "2026-07-25T16:20:00+02:00",
+      "description": "本站现已上线友链展示与中英双语在线申请系统。本文介绍友链页面、申请条件、提交步骤，以及评论区和邮件的使用方式。",
+      "headline": "本站友链功能与在线申请系统上线",
+      "image": "https://jingyuan-zheng.github.io/img/friend-links-application-system-launch/featured.jpg",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "友情链接, 独立博客, 网站更新, Microsoft Forms",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/friend-links-application-system-launch/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/friend-links-application-system-launch/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#新的友链页面">新的友链页面</a></li>
+    <li><a href="#为什么增加在线申请系统">为什么增加在线申请系统</a></li>
+    <li><a href="#申请前需要准备什么">申请前需要准备什么</a></li>
+    <li><a href="#哪些网站适合申请">哪些网站适合申请</a></li>
+    <li><a href="#评论区和邮件仍然保留">评论区和邮件仍然保留</a></li>
+    <li><a href="#欢迎新的网络邻居">欢迎新的网络邻居</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/friend-links-application-system-launch/">
+            <img alt="Featured image of post 本站友链功能与在线申请系统上线" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/friend-links-application-system-launch/featured.jpg">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="background-color: hsl(279, 60%, 84%); color: hsl(279, 60%, 15%);">
+                网站建设
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh/p/friend-links-application-system-launch/">本站友链功能与在线申请系统上线</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本站现已上线友链展示与中英双语在线申请系统。本文介绍友链页面、申请条件、提交步骤，以及评论区和邮件的使用方式。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-25T16:20:00&#43;02:00'>25/7月/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 3 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/p/friend-links-application-system-launch/" class="link">English</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="本站友链功能与在线申请系统上线"
+    data-share-url="https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印" title="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接" title="复制链接">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享" title="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Ffriend-links-application-system-launch%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E5%8F%8B%E9%93%BE%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%9C%A8%E7%BA%BF%E7%94%B3%E8%AF%B7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%BA%BF" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Ffriend-links-application-system-launch%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E5%8F%8B%E9%93%BE%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%9C%A8%E7%BA%BF%E7%94%B3%E8%AF%B7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%BA%BF" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Ffriend-links-application-system-launch%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E6%9C%AC%E7%AB%99%E5%8F%8B%E9%93%BE%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%9C%A8%E7%BA%BF%E7%94%B3%E8%AF%B7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%BA%BF" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#新的友链页面">新的友链页面</a></li>
+    <li><a href="#为什么增加在线申请系统">为什么增加在线申请系统</a></li>
+    <li><a href="#申请前需要准备什么">申请前需要准备什么</a></li>
+    <li><a href="#哪些网站适合申请">哪些网站适合申请</a></li>
+    <li><a href="#评论区和邮件仍然保留">评论区和邮件仍然保留</a></li>
+    <li><a href="#欢迎新的网络邻居">欢迎新的网络邻居</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/">https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>本文介绍本站新上线的友链功能与在线申请系统，包括友链展示方式、申请前的准备、提交入口和后续沟通渠道。</p>
+<p>本站的<a class="link" href="/zh/%e9%93%be%e6%8e%a5/" >链接页面</a>现在多了一个“网络邻居”区域，用来收集我常读、常逛，也愿意推荐给其他读者的个人网站和独立博客。</p>
+<h2 id="新的友链页面">新的友链页面
+</h2><p>友链不再只是名称和网址组成的普通列表。每个网站会以独立卡片展示站点名称、头像、简介和域名，点击卡片即可访问对方网站。</p>
+<p>页面同时增加了<a class="link" href="/zh/friend-links-rules/" >友链规则</a>，集中说明基本要求、需要提交的资料、审核方式和后续维护原则。申请入口也直接嵌入友链页面，不需要再到评论区复制一长串资料。</p>
+<h2 id="为什么增加在线申请系统">为什么增加在线申请系统
+</h2><p>之前通过评论或邮件申请友链，格式很难统一，也容易漏掉头像、描述或对方友链页地址。评论还是公开内容，并不适合提交联系邮箱等资料；邮件则会让普通咨询和正式申请混在一起。</p>
+<p>新的申请系统把流程集中到一张表单中，并提供中文和英文两种填写路径。系统会依次确认申请语言、是否已经添加本站友链，并收集审核所需的网站资料。这样可以减少来回补充信息，也方便我按照同一套规则逐项检查。</p>
+
+    <blockquote>
+        <p><a class="link" href="https://forms.cloud.microsoft/r/FHb0VL45Ye"  target="_blank" rel="noopener"
+    >打开友链申请系统</a></p>
+
+    </blockquote>
+<h2 id="申请前需要准备什么">申请前需要准备什么
+</h2><p>本站采用双向友链。提交前，请先把本站添加到你的友链页面，并确认该页面无需登录即可公开访问。</p>
+<p>申请时请准备：</p>
+<ol>
+<li>网站名称；</li>
+<li>网站地址；</li>
+<li>一句话描述；</li>
+<li>头像或站点图标地址；</li>
+<li>已经添加本站的友链页面地址；</li>
+<li>英文名称和英文描述（可选）。</li>
+</ol>
+<p>如果没有提供英文名称或描述，英文友链页面会保留你提交的原文，不会自行翻译。</p>
+<h2 id="哪些网站适合申请">哪些网站适合申请
+</h2><p>友链主要面向持续维护的个人网站和独立博客。网站需要能够正常访问、使用 HTTPS，并有明确的站点名称和原创内容。</p>
+<p>主题、技术栈、访问量和更新频率不需要与本站相同。技术文章、生活记录、摄影、阅读、个人项目或其他长期经营的独立内容都可以申请。纯广告推广、采集搬运、恶意跳转以及可能危害访客安全的网站不会收录。</p>
+<p>完整条件请以<a class="link" href="/zh/friend-links-rules/" >友链规则</a>为准。符合规则并不代表一定收录，也不承诺固定的处理时间。</p>
+<h2 id="评论区和邮件仍然保留">评论区和邮件仍然保留
+</h2><p>评论区会继续开放，欢迎围绕文章和网站交流，但不再作为友链申请渠道。新的友链申请和资料变更，请统一通过在线申请系统提交。</p>
+<p>如果在填写或提交表单时遇到问题，可以发送邮件至 <a class="link" href="mailto:mr.jingyuan.zheng@gmail.com" >mr.jingyuan.zheng@gmail.com</a> 咨询。邮件用于解决问题，不作为常规申请入口。</p>
+<h2 id="欢迎新的网络邻居">欢迎新的网络邻居
+</h2><p>独立网站之间的链接看起来很朴素，却是开放网络里很重要的一种关系。它不依赖推荐算法，也不需要关注数字，只是站长认真看过彼此的内容，然后愿意给读者留下一条通往另一处网络空间的路。</p>
+<p>如果你也在长期维护自己的个人网站，欢迎先阅读规则、添加本站，再通过申请系统提交资料。</p>
+
+    <blockquote>
+        <p><a class="link" href="/zh/%e9%93%be%e6%8e%a5/#friend-link-application" >查看友链页面并开始申请</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/">友情链接</a>
+        
+            <a href="/zh/tags/%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">独立博客</a>
+        
+            <a href="/zh/tags/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0/">网站更新</a>
+        
+            <a href="/zh/tags/microsoft-forms/">Microsoft Forms</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.1e52231165cdcef9e760bc02a3c1aa2fe5fd94a0e80c21aa02761fe883338ba6.js" defer></script>
+
+
+    </body>
+</html>

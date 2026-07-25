@@ -6,7 +6,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Thu, 09 Jul 2026 18:45:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 25 Jul 2026 16:20:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Site Updates</title>
+            <link>https://jingyuan-zheng.github.io/categories/site-updates/</link>
+            <pubDate>Sat, 25 Jul 2026 16:20:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/categories/site-updates/</guid>
+            <description></description>
+        </item><item>
             <title>macOS</title>
             <link>https://jingyuan-zheng.github.io/categories/macos/</link>
             <pubDate>Thu, 09 Jul 2026 18:45:00 +0200</pubDate>

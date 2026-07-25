@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-07-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -17,6 +17,117 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/categories/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/categories/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/categories/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/friend-links/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/p/friend-links-application-system-launch/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/indie-web/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/microsoft-forms/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/microsoft-forms/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/personal-websites/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/site-updates/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/"
       />
   </url>
   <url>
@@ -77,25 +188,6 @@
       />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/categories/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/categories/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/categories/"
-      />
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/tags/clipboard/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
   </url>
@@ -142,25 +234,6 @@
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/post/"
-      />
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/tags/swift/</loc>
     <lastmod>2026-07-09T18:45:00+02:00</lastmod>
     <xhtml:link
@@ -177,25 +250,6 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/tags/swift/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/</loc>
-    <lastmod>2026-07-09T18:45:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/tags/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/tags/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/tags/"
       />
   </url>
   <url>
