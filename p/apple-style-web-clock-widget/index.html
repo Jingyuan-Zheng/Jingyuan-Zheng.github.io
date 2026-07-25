@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/apple-style-web-clock-widget/","currentLanguage":"en","englishTarget":"/p/apple-style-web-clock-widget/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="How I designed and built the new Apple-style dual-time web clock on my blog, including time-zone conversion, analog hand geometry, day-and-night dials, theme separation, and accessibility.">
+<title>An Apple-Style Web Clock Widget: Design Notes and Technical Details</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.bcd769f184e3f0c08b6a45fd824625ec52fefc891a267a4229c963e7c0d33b5f.css"><meta property='og:title' content="An Apple-Style Web Clock Widget: Design Notes and Technical Details">
+<meta property='og:description' content="How I designed and built the new Apple-style dual-time web clock on my blog, including time-zone conversion, analog hand geometry, day-and-night dials, theme separation, and accessibility.">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/'>
+<meta property='og:site_name' content='Jingyuan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='World Clock' /><meta property='article:tag' content='JavaScript' /><meta property='article:tag' content='CSS' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2026-07-24T20:00:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-24T20:00:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/apple-style-web-clock-widget/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="An Apple-Style Web Clock Widget: Design Notes and Technical Details">
+<meta name="twitter:description" content="How I designed and built the new Apple-style dual-time web clock on my blog, including time-zone conversion, analog hand geometry, day-and-night dials, theme separation, and accessibility."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/apple-style-web-clock-widget/featured.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/apple-style-web-clock-widget/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/",
+          "name": "Home",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/categories/site-updates/",
+          "name": "Site Updates",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/",
+          "name": "An Apple-Style Web Clock Widget: Design Notes and Technical Details",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "Site Updates"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-24T20:00:00+02:00",
+      "datePublished": "2026-07-24T20:00:00+02:00",
+      "description": "How I designed and built the new Apple-style dual-time web clock on my blog, including time-zone conversion, analog hand geometry, day-and-night dials, theme separation, and accessibility.",
+      "headline": "An Apple-Style Web Clock Widget: Design Notes and Technical Details",
+      "image": "https://jingyuan-zheng.github.io/img/apple-style-web-clock-widget/featured.png",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "World Clock, JavaScript, CSS, Hugo",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Jingyuan</a></h1>
+            <h2 class="site-description">Share something interesting!</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:mr.jingyuan.zheng@gmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/apple-style-web-clock-widget/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/apple-style-web-clock-widget/" >简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#a-familiar-interface-without-copying-an-app">A Familiar Interface Without Copying an App</a></li>
+    <li><a href="#one-instant-two-wall-clocks">One Instant, Two Wall Clocks</a></li>
+    <li><a href="#calculating-the-time-difference">Calculating the Time Difference</a></li>
+    <li><a href="#turning-time-into-hand-angles">Turning Time into Hand Angles</a></li>
+    <li><a href="#the-site-theme-and-the-dial-theme-are-different">The Site Theme and the Dial Theme Are Different</a></li>
+    <li><a href="#recalculate-instead-of-counting">Recalculate Instead of Counting</a></li>
+    <li><a href="#hugo-integration-and-the-desktop-only-decision">Hugo Integration and the Desktop-Only Decision</a></li>
+    <li><a href="#small-accessibility-and-localization-details">Small Accessibility and Localization Details</a></li>
+    <li><a href="#what-this-small-widget-taught-me">What This Small Widget Taught Me</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/apple-style-web-clock-widget/">
+            <img alt="Featured image of post An Apple-Style Web Clock Widget: Design Notes and Technical Details" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/apple-style-web-clock-widget/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/site-updates/" style="background-color: hsl(200, 60%, 84%); color: hsl(200, 60%, 15%);">
+                Site Updates
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/apple-style-web-clock-widget/">An Apple-Style Web Clock Widget: Design Notes and Technical Details</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            How I designed and built the new Apple-style dual-time web clock on my blog, including time-zone conversion, analog hand geometry, day-and-night dials, theme separation, and accessibility.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-24T20:00:00&#43;02:00'>24/Jul/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        3 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/zh/p/apple-style-web-clock-widget/" class="link">简体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="Share this article"
+    data-article-share
+    data-share-title="An Apple-Style Web Clock Widget: Design Notes and Technical Details"
+    data-share-url="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/"
+    data-copy-label="Copy link"
+    data-copied-label="Copied"
+    data-copy-error-label="Copy failed">
+    <button class="article-share__button" type="button" data-share-print aria-label="Print" title="Print">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="Copy link" title="Copy link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="Share" title="Share">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fapple-style-web-clock-widget%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=An&#43;Apple-Style&#43;Web&#43;Clock&#43;Widget%3A&#43;Design&#43;Notes&#43;and&#43;Technical&#43;Details" target="_blank" rel="noopener noreferrer" aria-label="Share on X" title="Share on X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.reddit.com/submit?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fapple-style-web-clock-widget%2F%3Futm_source%3Dreddit%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=An&#43;Apple-Style&#43;Web&#43;Clock&#43;Widget%3A&#43;Design&#43;Notes&#43;and&#43;Technical&#43;Details" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit" title="Share on Reddit">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fapple-style-web-clock-widget%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://api.whatsapp.com/send?text=An&#43;Apple-Style&#43;Web&#43;Clock&#43;Widget%3A&#43;Design&#43;Notes&#43;and&#43;Technical&#43;Details&#43;https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fapple-style-web-clock-widget%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dmessaging%26utm_campaign%3Darticle_share" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="mailto:?subject=An&#43;Apple-Style&#43;Web&#43;Clock&#43;Widget%3A&#43;Design&#43;Notes&#43;and&#43;Technical&#43;Details&body=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fapple-style-web-clock-widget%2F%3Futm_source%3Demail%26utm_medium%3Demail%26utm_campaign%3Darticle_share" aria-label="Share by email" title="Share by email">
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#a-familiar-interface-without-copying-an-app">A Familiar Interface Without Copying an App</a></li>
+    <li><a href="#one-instant-two-wall-clocks">One Instant, Two Wall Clocks</a></li>
+    <li><a href="#calculating-the-time-difference">Calculating the Time Difference</a></li>
+    <li><a href="#turning-time-into-hand-angles">Turning Time into Hand Angles</a></li>
+    <li><a href="#the-site-theme-and-the-dial-theme-are-different">The Site Theme and the Dial Theme Are Different</a></li>
+    <li><a href="#recalculate-instead-of-counting">Recalculate Instead of Counting</a></li>
+    <li><a href="#hugo-integration-and-the-desktop-only-decision">Hugo Integration and the Desktop-Only Decision</a></li>
+    <li><a href="#small-accessibility-and-localization-details">Small Accessibility and Localization Details</a></li>
+    <li><a href="#what-this-small-widget-taught-me">What This Small Widget Taught Me</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="Print attribution">
+        <p><strong>Author:</strong> Jingyuan</p>
+        <p><strong>Source:</strong> <a href="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/">https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>This post explains how I designed and built the new Apple-style dual-time web clock on my homepage, from its visual decisions to the time-zone and rendering logic behind it.</p>
+<p>The clock now sits directly below the search box on the desktop version of the <a class="link" href="/" >homepage</a>. It compares the visitor&rsquo;s current time with “My time” using two analog dials, while deliberately avoiding a widget title, a personal name, or a country label.</p>
+<p>It is a small addition, but it brought together more interesting problems than its size suggests: browser time zones, daylight-saving changes, analog geometry, light and dark presentation, responsive layout, bilingual text, and accessible live information.</p>
+<p><img alt="A light daytime clock and a dark nighttime clock inside an Apple-style web widget" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/apple-style-web-clock-widget/featured.png"></p>
+<p>The reusable source code is now available on GitHub:
+<a class="link" href="https://github.com/Jingyuan-Zheng/apple-style-web-clock-widget"  target="_blank" rel="noopener"
+    >Jingyuan-Zheng/apple-style-web-clock-widget</a>.
+The MIT-licensed repository includes a standalone demo, framework-free CSS and JavaScript, bilingual documentation, configuration examples, and tests for time-zone and hand-angle calculations.</p>
+<div class="clock-demo-embed">
+    <iframe
+        src="https://jingyuan-zheng.github.io/apple-style-web-clock-widget/?embed=1"
+        title="Interactive Apple-style web clock demo"
+        loading="lazy"
+    ></iframe>
+</div>
+<h2 id="a-familiar-interface-without-copying-an-app">A Familiar Interface Without Copying an App
+</h2><p>The visual direction is clearly inspired by Apple&rsquo;s clock interfaces: circular faces, thin hands, restrained typography, a bright orange second hand, and a rounded card with soft depth.</p>
+<p>The goal was not to reproduce a specific Apple screen pixel for pixel. It was to borrow the qualities that make those interfaces immediately understandable:</p>
+<ul>
+<li>the clock should be recognizable before any text is read;</li>
+<li>the two time zones should feel related but remain visually distinct;</li>
+<li>labels should explain only what the user needs;</li>
+<li>decoration should never compete with the hands or numerals.</li>
+</ul>
+<p>That is why the visible copy is reduced to <strong>“Your time”</strong> and <strong>“My time.”</strong> A heading such as “World Clock” would repeat what the two dials already communicate, while a personal name or country would add visual noise and expose more context than the widget needs.</p>
+<h2 id="one-instant-two-wall-clocks">One Instant, Two Wall Clocks
+</h2><p>The most important technical decision is to treat both dials as two views of the same instant.</p>
+<p>Every update starts from one <code>Date</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The visitor&rsquo;s zone comes from the browser:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">localZone</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Intl</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">().</span><span class="nx">resolvedOptions</span><span class="p">().</span><span class="nx">timeZone</span> <span class="o">||</span> <span class="s2">&#34;UTC&#34;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The second dial uses the time zone configured by the site. Both are passed through <code>Intl.DateTimeFormat</code> with <code>formatToParts()</code>, which gives numeric year, month, day, hour, minute, and second values for the selected IANA time zone.</p>
+<p>This is safer than manually adding a fixed number of hours. A fixed <code>+1</code> or <code>+2</code> eventually becomes wrong when daylight-saving rules change. The <code>Intl</code> API lets the browser&rsquo;s time-zone database resolve the applicable offset for the current instant.</p>
+<h2 id="calculating-the-time-difference">Calculating the Time Difference
+</h2><p>Displaying a wall-clock time is only half the job. The widget also shows the difference between the two zones.</p>
+<p>For a target zone, the formatted wall-clock parts are reconstructed as if they were UTC:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">wallTimeAsUtc</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">year</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">month</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">day</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hour</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">minute</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">second</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">offsetMinutes</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">wallTimeAsUtc</span> <span class="o">-</span> <span class="nx">currentSecond</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60000</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The difference displayed under the second clock is then:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="nx">targetOffsetMinutes</span> <span class="o">-</span> <span class="nx">localOffsetMinutes</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This also handles half-hour and quarter-hour zones. The output formatter keeps one decimal place when necessary instead of assuming that every time-zone difference is a whole number.</p>
+<h2 id="turning-time-into-hand-angles">Turning Time into Hand Angles
+</h2><p>An analog clock is mostly geometry. A complete circle is 360 degrees, so each minute or second represents 6 degrees, and each hour represents 30 degrees.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">minuteAngle</span> <span class="o">=</span> <span class="nx">minute</span> <span class="o">*</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">hourAngle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">hour</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="nx">minuteAngle</span> <span class="o">/</span> <span class="mi">12</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">secondAngle</span> <span class="o">=</span> <span class="nx">second</span> <span class="o">*</span> <span class="mi">6</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The small <code>minuteAngle / 12</code> term matters. Without it, the hour hand would jump abruptly from one number to the next. Including it makes the hour hand travel gradually as the minutes pass.</p>
+<p>Each hand is a narrow positioned element whose transform origin sits at its bottom center:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">transform</span><span class="o">:</span> <span class="nt">rotate</span><span class="o">(</span><span class="nt">var</span><span class="o">(</span><span class="nt">--clock-rotation</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl"><span class="nt">transform-origin</span><span class="o">:</span> <span class="nt">bottom</span> <span class="nt">center</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>JavaScript only updates the custom property. CSS remains responsible for the hand&rsquo;s shape, length, color, and positioning.</p>
+<p>The numerals use the same separation of concerns. Hugo generates twelve repeated elements, CSS rotates each one around the dial, and an inverse rotation keeps the numeral upright.</p>
+<h2 id="the-site-theme-and-the-dial-theme-are-different">The Site Theme and the Dial Theme Are Different
+</h2><p>The component has two independent kinds of appearance.</p>
+<p>The <strong>outer card</strong> follows the blog&rsquo;s light or dark theme so that it belongs naturally in the sidebar. The <strong>clock face</strong>, however, follows the time shown by that particular clock:</p>
+<ul>
+<li>07:00–18:59 uses a light dial;</li>
+<li>19:00–06:59 uses a dark dial.</li>
+</ul>
+<p>This distinction was important. If the entire widget followed only the website theme, switching the blog to dark mode would turn a daytime clock dark as well. That would remove useful information from the visual design.</p>
+<p>Because each dial evaluates its own zoned hour, it is possible—and intentional—for one face to be light while the other is dark.</p>
+<h2 id="recalculate-instead-of-counting">Recalculate Instead of Counting
+</h2><p>The widget refreshes once per second with <code>setInterval</code>, but it never treats the previous tick as the source of truth.</p>
+<p>Each tick creates a fresh <code>Date</code> and recalculates every hand from the current system time. If the browser delays a timer because a tab is in the background, the clock corrects itself on the next update instead of accumulating drift.</p>
+<p>This also means daylight-saving changes and system time adjustments are picked up naturally. The interval is only a request to repaint; it is not the clock&rsquo;s internal timekeeper.</p>
+<h2 id="hugo-integration-and-the-desktop-only-decision">Hugo Integration and the Desktop-Only Decision
+</h2><p>The widget is implemented as a local Hugo partial and registered immediately after the search widget in the homepage configuration. This keeps the structure modular: the search component remains unchanged, and the clock can be moved or removed through the widget list.</p>
+<p>The HTML contains the semantic structure and bilingual labels. SCSS owns the card, dial, hands, numerals, and theme states. TypeScript owns time-zone conversion and live updates.</p>
+<p>The <a class="link" href="https://github.com/Jingyuan-Zheng/apple-style-web-clock-widget"  target="_blank" rel="noopener"
+    >open-source version</a> removes the Hugo dependency and exposes the same ideas through standard <code>data-*</code> attributes, so it can be embedded in an ordinary webpage without a framework or build step.</p>
+<p>The blog&rsquo;s right sidebar appears only at desktop widths of 1024 pixels and above, so the clock does not consume space on phones. This is an intentional product decision rather than an unfinished responsive state. On a small screen, the article list and navigation are more important than a decorative time comparison.</p>
+<h2 id="small-accessibility-and-localization-details">Small Accessibility and Localization Details
+</h2><p>Animated clock hands are not enough for assistive technology. Each dial therefore receives an updated accessible label containing its name, digital time, and time difference. The visible difference line is hidden from screen readers to avoid announcing the same information twice.</p>
+<p>The labels and hour units come from the current Hugo language:</p>
+<ul>
+<li>English: “Your time,” “My time,” “hour,” and “hours”;</li>
+<li>Simplified Chinese: “你的时间,” “我的时间,” and “小时.”</li>
+</ul>
+<p>Time calculations deliberately use Latin digits and a Gregorian calendar internally. Presentation text remains localized without making the numeric parsing dependent on a browser&rsquo;s display language.</p>
+<h2 id="what-this-small-widget-taught-me">What This Small Widget Taught Me
+</h2><p>The main lesson was that a good widget needs boundaries more than it needs features.</p>
+<p>I removed the title, personal name, country label, and mobile version. I separated website theming from day-and-night dial logic. I let the browser handle time-zone rules, while keeping the analog drawing in simple CSS and geometry.</p>
+<p>The result is intentionally narrow: two clocks, one comparison, and no controls. That restraint is what lets it feel like part of the homepage instead of a miniature app competing with the rest of the site.</p>
+<p>Small interface components are often where design and engineering meet most directly. Every extra label, timer, color rule, and breakpoint has an immediate visual consequence. Building this clock was a useful reminder that polish usually comes not from adding more, but from deciding what the component can leave out.</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/world-clock/">World Clock</a>
+        
+            <a href="/tags/javascript/">JavaScript</a>
+        
+            <a href="/tags/css/">CSS</a>
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/friend-links-application-system-launch/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Friend Links and the New Online Application System" loading="lazy" src="/img/friend-links-application-system-launch/featured.jpg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Friend Links and the New Online Application System</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <br>
+        <span>
+            Powered by
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.1e52231165cdcef9e760bc02a3c1aa2fe5fd94a0e80c21aa02761fe883338ba6.js" defer></script>
+
+
+    </body>
+</html>

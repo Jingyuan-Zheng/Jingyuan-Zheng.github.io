@@ -169,11 +169,87 @@
       />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/zh/tags/cjk/</loc>
-    <lastmod>2026-07-22T11:00:00+02:00</lastmod>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/css/</loc>
+    <lastmod>2026-07-24T20:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/css/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/css/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/css/"
+      />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/zh/tags/css/</loc>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/hugo/</loc>
+    <lastmod>2026-07-24T20:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/hugo/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/hugo/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/hugo/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/javascript/</loc>
+    <lastmod>2026-07-24T20:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/javascript/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/javascript/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/javascript/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F/</loc>
+    <lastmod>2026-07-24T20:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/p/apple-style-web-clock-widget/</loc>
+    <lastmod>2026-07-24T20:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/p/apple-style-web-clock-widget/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/apple-style-web-clock-widget/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/cjk/</loc>
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
   </url>
   <url>
@@ -820,10 +896,6 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/github/</loc>
-    <lastmod>2025-09-14T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/tags/hugo/</loc>
     <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url>
   <url>
