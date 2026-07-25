@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/malta-waste-collection-calendar/","currentLanguage":"zh","englishTarget":"/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="根据马耳他官方收运安排制作的公开订阅日历，附垃圾分类说明、“明日垃圾提醒”Apple 快捷指令和自动化设置方法。">
+<title>马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.bcd769f184e3f0c08b6a45fd824625ec52fefc891a267a4229c963e7c0d33b5f.css"><meta property='og:title' content="马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么">
+<meta property='og:description' content="根据马耳他官方收运安排制作的公开订阅日历，附垃圾分类说明、“明日垃圾提醒”Apple 快捷指令和自动化设置方法。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='马耳他' /><meta property='article:tag' content='垃圾分类' /><meta property='article:tag' content='Apple 日历' /><meta property='article:tag' content='快捷指令' /><meta property='article:tag' content='生活指南' /><meta property='article:published_time' content='2026-07-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/malta-waste-collection-calendar/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么">
+<meta name="twitter:description" content="根据马耳他官方收运安排制作的公开订阅日历，附垃圾分类说明、“明日垃圾提醒”Apple 快捷指令和自动化设置方法。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/malta-waste-collection-calendar/featured.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/",
+          "name": "生活指南",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/",
+          "name": "马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "生活指南"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-25T00:00:00+00:00",
+      "datePublished": "2026-07-25T00:00:00+00:00",
+      "description": "根据马耳他官方收运安排制作的公开订阅日历，附垃圾分类说明、“明日垃圾提醒”Apple 快捷指令和自动化设置方法。",
+      "headline": "马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么",
+      "image": "https://jingyuan-zheng.github.io/img/malta-waste-collection-calendar/featured.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "马耳他, 垃圾分类, Apple 日历, 快捷指令, 生活指南",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/" >English</option>
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/malta-waste-collection-calendar/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#马耳他全国垃圾回收日期">马耳他全国垃圾回收日期</a></li>
+    <li><a href="#一键订阅马耳他垃圾回收日历">一键订阅“马耳他垃圾回收”日历</a>
+      <ol>
+        <li><a href="#iphoneipad-和-mac">iPhone、iPad 和 Mac</a></li>
+        <li><a href="#google-calendar">Google Calendar</a></li>
+        <li><a href="#outlook">Outlook</a></li>
+      </ol>
+    </li>
+    <li><a href="#不同颜色的垃圾袋分别装什么">不同颜色的垃圾袋分别装什么</a>
+      <ol>
+        <li><a href="#-白色袋有机垃圾">🍏 白色袋：有机垃圾</a></li>
+        <li><a href="#-灰色袋或绿色袋可回收垃圾">♻️ 灰色袋或绿色袋：可回收垃圾</a></li>
+        <li><a href="#-透明黑色袋混合垃圾">⚫ 透明黑色袋：混合垃圾</a></li>
+        <li><a href="#-玻璃瓶和玻璃罐">🍾 玻璃瓶和玻璃罐</a></li>
+      </ol>
+    </li>
+    <li><a href="#apple-快捷指令明日垃圾提醒">Apple 快捷指令：明日垃圾提醒</a>
+      <ol>
+        <li><a href="#安装后需要检查的设置">安装后需要检查的设置</a></li>
+      </ol>
+    </li>
+    <li><a href="#怎样设置每天自动提醒">怎样设置每天自动提醒</a></li>
+    <li><a href="#收运日期统一收运时间因地区而异">收运日期统一，收运时间因地区而异</a></li>
+    <li><a href="#大型垃圾电子产品和危险废物">大型垃圾、电子产品和危险废物</a></li>
+    <li><a href="#关于这份日历">关于这份日历</a></li>
+    <li><a href="#官方参考资料">官方参考资料</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/malta-waste-collection-calendar/">
+            <img alt="Featured image of post 马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/malta-waste-collection-calendar/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/" style="background-color: hsl(244, 60%, 84%); color: hsl(244, 60%, 15%);">
+                生活指南
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh/p/malta-waste-collection-calendar/">马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            根据马耳他官方收运安排制作的公开订阅日历，附垃圾分类说明、“明日垃圾提醒”Apple 快捷指令和自动化设置方法。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-25T00:00:00Z'>25/7月/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        阅读时长: 6 分钟
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="马耳他垃圾回收日历：一键订阅，自动提醒明天丢什么"
+    data-share-url="https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印" title="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接" title="复制链接">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享" title="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fmalta-waste-collection-calendar%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E9%A9%AC%E8%80%B3%E4%BB%96%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%97%A5%E5%8E%86%EF%BC%9A%E4%B8%80%E9%94%AE%E8%AE%A2%E9%98%85%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%8F%90%E9%86%92%E6%98%8E%E5%A4%A9%E4%B8%A2%E4%BB%80%E4%B9%88" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fmalta-waste-collection-calendar%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E9%A9%AC%E8%80%B3%E4%BB%96%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%97%A5%E5%8E%86%EF%BC%9A%E4%B8%80%E9%94%AE%E8%AE%A2%E9%98%85%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%8F%90%E9%86%92%E6%98%8E%E5%A4%A9%E4%B8%A2%E4%BB%80%E4%B9%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fmalta-waste-collection-calendar%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E9%A9%AC%E8%80%B3%E4%BB%96%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%97%A5%E5%8E%86%EF%BC%9A%E4%B8%80%E9%94%AE%E8%AE%A2%E9%98%85%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%8F%90%E9%86%92%E6%98%8E%E5%A4%A9%E4%B8%A2%E4%BB%80%E4%B9%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#马耳他全国垃圾回收日期">马耳他全国垃圾回收日期</a></li>
+    <li><a href="#一键订阅马耳他垃圾回收日历">一键订阅“马耳他垃圾回收”日历</a>
+      <ol>
+        <li><a href="#iphoneipad-和-mac">iPhone、iPad 和 Mac</a></li>
+        <li><a href="#google-calendar">Google Calendar</a></li>
+        <li><a href="#outlook">Outlook</a></li>
+      </ol>
+    </li>
+    <li><a href="#不同颜色的垃圾袋分别装什么">不同颜色的垃圾袋分别装什么</a>
+      <ol>
+        <li><a href="#-白色袋有机垃圾">🍏 白色袋：有机垃圾</a></li>
+        <li><a href="#-灰色袋或绿色袋可回收垃圾">♻️ 灰色袋或绿色袋：可回收垃圾</a></li>
+        <li><a href="#-透明黑色袋混合垃圾">⚫ 透明黑色袋：混合垃圾</a></li>
+        <li><a href="#-玻璃瓶和玻璃罐">🍾 玻璃瓶和玻璃罐</a></li>
+      </ol>
+    </li>
+    <li><a href="#apple-快捷指令明日垃圾提醒">Apple 快捷指令：明日垃圾提醒</a>
+      <ol>
+        <li><a href="#安装后需要检查的设置">安装后需要检查的设置</a></li>
+      </ol>
+    </li>
+    <li><a href="#怎样设置每天自动提醒">怎样设置每天自动提醒</a></li>
+    <li><a href="#收运日期统一收运时间因地区而异">收运日期统一，收运时间因地区而异</a></li>
+    <li><a href="#大型垃圾电子产品和危险废物">大型垃圾、电子产品和危险废物</a></li>
+    <li><a href="#关于这份日历">关于这份日历</a></li>
+    <li><a href="#官方参考资料">官方参考资料</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/">https://jingyuan-zheng.github.io/zh/p/malta-waste-collection-calendar/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>本文分享一份根据马耳他官方收运安排制作的垃圾回收订阅日历，以及能够自动预告次日垃圾类型的 Apple 快捷指令。</p>
+<p>在马耳他生活，垃圾分类本身不算特别复杂，真正容易忘记的是：<strong>明天究竟应该放哪一种垃圾？</strong></p>
+<p>星期一是白袋，星期二是黑袋，星期四是可回收垃圾；玻璃又只在每月特定的星期五收运。为了不用每周反复查询，我制作了一份可以直接订阅的 <strong>“马耳他垃圾回收”日历</strong>，还配套做了一个 <strong>“明日垃圾提醒”</strong> Apple 快捷指令。</p>
+<h2 id="马耳他全国垃圾回收日期">马耳他全国垃圾回收日期
+</h2><p><a class="link" href="https://www.wastecollection.mt/home-chinese/"  target="_blank" rel="noopener"
+    >马耳他全国垃圾收集网站</a>目前公布的住宅门前收运安排如下：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>星期</th>
+					<th>垃圾类型</th>
+					<th>袋子或容器</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>星期一</td>
+					<td>🍏 有机垃圾</td>
+					<td>白色生物降解袋</td>
+			</tr>
+			<tr>
+					<td>星期二</td>
+					<td>⚫ 混合垃圾</td>
+					<td>透明黑色袋</td>
+			</tr>
+			<tr>
+					<td>星期三</td>
+					<td>🍏 有机垃圾</td>
+					<td>白色生物降解袋</td>
+			</tr>
+			<tr>
+					<td>星期四</td>
+					<td>♻️ 可回收垃圾</td>
+					<td>灰色袋或绿色袋</td>
+			</tr>
+			<tr>
+					<td>星期五</td>
+					<td>🍏 有机垃圾</td>
+					<td>白色生物降解袋</td>
+			</tr>
+			<tr>
+					<td>每月第一个和第三个星期五</td>
+					<td>🍾 玻璃瓶和玻璃罐</td>
+					<td>可重复使用的坚固容器</td>
+			</tr>
+			<tr>
+					<td>星期六</td>
+					<td>⚫ 混合垃圾</td>
+					<td>透明黑色袋</td>
+			</tr>
+			<tr>
+					<td>星期日</td>
+					<td>没有常规住宅收运</td>
+					<td>—</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>这套日期适用于马耳他和戈佐岛的一般住宅门前收运。商业机构如果已有其他垃圾收运安排，不一定按照这份住宅日程执行。</p>
+<h2 id="一键订阅马耳他垃圾回收日历">一键订阅“马耳他垃圾回收”日历
+</h2><p>这是我通过 iCloud 分享的公开只读日历。订阅者可以查看日程并接收后续更新，但不能修改原始内容。</p>
+<h3 id="iphoneipad-和-mac">iPhone、iPad 和 Mac
+</h3><p>直接点击：</p>
+<p><strong><a class="link" href="webcal://p153-caldav.icloud.com/published/2/ODQxMjkzNjQzODg0MTI5M-_QY9YLjxXeBKfPJjBlLUuo01JvnJ2eHM1YWjBpOIwQlzKl7KoBXqHB05sILvQUtfbWmYvSUmRzJPrEB1XFi8c" >订阅“马耳他垃圾回收”日历</a></strong></p>
+<p>系统通常会打开 Apple 日历并询问是否订阅。订阅后，它会作为一份单独的只读日历显示。</p>
+<h3 id="google-calendar">Google Calendar
+</h3><p>请在电脑浏览器中打开 Google Calendar：</p>
+<ol>
+<li>找到左侧的“其他日历”；</li>
+<li>点击旁边的加号；</li>
+<li>选择“通过网址”；</li>
+<li>粘贴下面的 HTTPS 地址；</li>
+<li>点击“添加日历”。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://p153-caldav.icloud.com/published/2/ODQxMjkzNjQzODg0MTI5M-_QY9YLjxXeBKfPJjBlLUuo01JvnJ2eHM1YWjBpOIwQlzKl7KoBXqHB05sILvQUtfbWmYvSUmRzJPrEB1XFi8c
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Google Calendar 的“通过网址”功能通常需要在电脑网页端操作。</p>
+<h3 id="outlook">Outlook
+</h3><p>在 Outlook 网页版中打开“日历”，依次选择“添加日历”和“从 Web 订阅”，粘贴上面的 HTTPS 地址后保存。</p>
+<p>建议选择订阅，而不是只下载并导入一次 <code>.ics</code> 文件。订阅能够接收原始日历的后续更新，单次导入则不会同步变化。</p>
+<h2 id="不同颜色的垃圾袋分别装什么">不同颜色的垃圾袋分别装什么
+</h2><h3 id="-白色袋有机垃圾">🍏 白色袋：有机垃圾
+</h3><p>白色袋用于生熟食物和厨房有机垃圾，常见的有：</p>
+<ul>
+<li>剩饭、面包、蛋糕、意大利面和米饭；</li>
+<li>肉类、鱼类、海鲜和骨头；</li>
+<li>水果、蔬菜、果皮、果核和蛋壳；</li>
+<li>奶酪及其他乳制品；</li>
+<li>拆除包装后的过期食物；</li>
+<li>茶叶、茶包和咖啡渣；</li>
+<li>花朵、树叶，以及被食物弄脏的餐巾纸。</li>
+</ul>
+<p>烘焙纸、铝箔、电池、烟灰、咖啡胶囊、灰尘、树枝和湿纸巾不能放进有机垃圾袋。完整分类可查阅 <a class="link" href="https://www.wsm.com.mt/en/newguide"  target="_blank" rel="noopener"
+    >WasteServ 垃圾分类互动指南</a>。</p>
+<h3 id="-灰色袋或绿色袋可回收垃圾">♻️ 灰色袋或绿色袋：可回收垃圾
+</h3><p>灰色袋或绿色袋主要用于纸张、纸板、塑料和金属包装，例如：</p>
+<ul>
+<li>报纸、杂志、普通纸张、纸箱和纸袋；</li>
+<li>牛奶盒、果汁盒等饮料纸盒；</li>
+<li>塑料瓶、塑料容器和清洁的塑料包装；</li>
+<li>洗发水瓶、沐浴露瓶和清洁剂瓶；</li>
+<li>饮料罐、食品罐、喷雾罐；</li>
+<li>清洁的铝制托盘和铝箔。</li>
+</ul>
+<p>装袋前应清空容器；有食物或液体残留时，最好先简单冲洗。食物残渣、尿布、湿纸巾、电池、电子产品和严重脏污的包装不能放入可回收垃圾袋。</p>
+<h3 id="-透明黑色袋混合垃圾">⚫ 透明黑色袋：混合垃圾
+</h3><p>黑袋用于无法回收、不能作为有机垃圾处理，也不属于电子、危险或医药废物的剩余垃圾，例如：</p>
+<ul>
+<li>尿布和卫生用品；</li>
+<li>棉签、化妆棉、口罩和湿纸巾；</li>
+<li>烘焙纸、保鲜膜、糖果纸和零食包装；</li>
+<li>咖啡胶囊；</li>
+<li>灰尘、烟灰、烟头和宠物砂；</li>
+<li>脏污的外卖包装；</li>
+<li>破损的小块玻璃、镜子、陶瓷和 Pyrex 玻璃；</li>
+<li>无法继续使用的破损或严重脏污衣物。</li>
+</ul>
+<p>黑袋不是“不知道怎样分类时全部丢进去”的通用垃圾袋。食物、干净纸张、塑料包装和金属容器仍应放入对应的白袋或可回收袋。</p>
+<p>根据 <a class="link" href="https://era.org.mt/press-releases/consumers-encouraged-to-use-see-through-black-bags-as-of-july-1st/"  target="_blank" rel="noopener"
+    >ERA 关于透明黑袋的说明</a>，自 2024 年 7 月 1 日起，门前混合垃圾应使用能够看见袋内物品轮廓的透明黑色袋；普通不透明黑袋可以用于其他用途。</p>
+<h3 id="-玻璃瓶和玻璃罐">🍾 玻璃瓶和玻璃罐
+</h3><p>每月第一个和第三个星期五收运住宅玻璃垃圾。可投放的主要是清空并简单冲洗过的食品玻璃罐、食用油瓶、水瓶、酒瓶和其他玻璃饮料瓶。</p>
+<p>请取下瓶盖或罐盖，把玻璃放进可重复使用的坚固容器，例如桶或周转箱，<strong>不要装进塑料垃圾袋</strong>。</p>
+<p>碎玻璃和镜子、饮水杯、玻璃盘、Pyrex 厨具、眼镜、灯泡、灯管、陶瓷和瓷器不能按普通玻璃瓶罐回收。</p>
+<h2 id="apple-快捷指令明日垃圾提醒">Apple 快捷指令：明日垃圾提醒
+</h2><p>除了订阅日历，我还制作了一份 <strong>“明日垃圾提醒”</strong> 快捷指令：</p>
+<p><strong><a class="link" href="https://www.icloud.com/shortcuts/b13309b1a450439fa1f3b18f75a9fcf7"  target="_blank" rel="noopener"
+    >获取“明日垃圾提醒”快捷指令</a></strong></p>
+<p>它不会自己根据星期计算垃圾种类，而是直接读取前面分享的“马耳他垃圾回收”日历。运行时会：</p>
+<ol>
+<li>查找该日历中未来一天内开始的日程；</li>
+<li>判断是否找到垃圾回收事件；</li>
+<li>找到后，通过系统通知显示相应日程；</li>
+<li>没有事件时不发送通知。</li>
+</ol>
+<p>例如，星期三晚上运行会找到星期四的“♻️ 可回收垃圾”。每月第一个或第三个星期四晚上运行时，第二天可能同时找到有机垃圾和玻璃回收两项日程。星期六晚上运行时，因为星期日没有常规收运，所以不会发送通知。</p>
+<h3 id="安装后需要检查的设置">安装后需要检查的设置
+</h3><p>使用快捷指令前，请先订阅本文分享的日历。添加快捷指令后，打开它并检查“查找日历日程”操作中的筛选条件，应当是：</p>
+
+    <blockquote>
+        <p>日历是“马耳他垃圾回收”</p>
+
+    </blockquote>
+<p>共享快捷指令安装到不同设备后，可能需要点击日历名称，重新选择刚订阅的日历。第一次运行时，系统也可能请求访问日历和发送通知的权限。</p>
+<p>安装任何来自互联网的快捷指令时，都建议先查看其中的全部操作和权限，再决定是否运行。</p>
+<h2 id="怎样设置每天自动提醒">怎样设置每天自动提醒
+</h2><p>只添加快捷指令并不会让它每天自动运行，还需要在 iPhone 或 iPad 上建立个人自动化：</p>
+<ol>
+<li>打开“快捷指令”App；</li>
+<li>点击底部的“自动化”；</li>
+<li>新建个人自动化，选择“特定时间”；</li>
+<li>设置为每天傍晚或晚上运行；</li>
+<li>选择“运行快捷指令”，再选择“明日垃圾提醒”；</li>
+<li>设置为立即运行，或关闭“运行前询问”；</li>
+<li>保存自动化。</li>
+</ol>
+<p>Apple 官方说明，“特定时间”触发器可以按天重复，并可设为<a class="link" href="https://support.apple.com/en-gb/guide/shortcuts/apd602971e63/ios"  target="_blank" rel="noopener"
+    >无需询问自动运行</a>。</p>
+<p>个人自动化属于设备本地设置。如果希望另一台 iPhone 或 iPad 也自动提醒，需要在那台设备上重新建立自动化。</p>
+<h2 id="收运日期统一收运时间因地区而异">收运日期统一，收运时间因地区而异
+</h2><p>马耳他的垃圾收运<strong>日期</strong>采用全国安排，但不同城市和村镇的具体<strong>收运时间</strong>并不完全相同。</p>
+<p>请在 <a class="link" href="https://www.wastecollection.mt/"  target="_blank" rel="noopener"
+    >Waste Collection 官网</a>选择所在地，查询当天的门前收运时间。不要把“早上 7 点前”当成适用于所有地区的统一规则；应按照所在地公布的时间投放。</p>
+<p>公共假期、恶劣天气、道路工程或其他临时情况也可能影响实际收运。特殊日期请以 Local Council、Regional Council、ERA 或 WasteServ 的最新通知为准。</p>
+<h2 id="大型垃圾电子产品和危险废物">大型垃圾、电子产品和危险废物
+</h2><p>家具、家电、电子产品、电池、灯泡、油漆、溶剂、化学品和过期药品等，不应放进普通的白袋、灰绿袋或黑袋。</p>
+<p>家庭大型垃圾可以联系所在地 Local Council 预约上门收运，或送往 WasteServ 的 Civic Amenity Site。WasteServ 的 Roadshow Truck 也会定期到不同地区接收衣物、电池、小型电子产品、灯泡、油漆和溶剂等物品，日期和地点可在 <a class="link" href="https://www.wastecollection.mt/"  target="_blank" rel="noopener"
+    >Waste Collection 官网</a>或所在地 Local Council 查询。</p>
+<h2 id="关于这份日历">关于这份日历
+</h2><p>“马耳他垃圾回收”日历和“明日垃圾提醒”快捷指令由我根据官方规则自行制作，并不是 ERA、WasteServ、Regional Council 或任何 Local Council 发布的官方产品。</p>
+<p>我会尽量跟随政策更新日历，但无法保证所有临时取消、公共假期调整或个别地区安排都能立即反映在订阅日历中。如内容与政府部门或所在地 Local Council 的最新公告不一致，请以官方公告为准。</p>
+<p>希望这份日历和快捷指令能让在马耳他生活的人少记一张时间表，也减少放错垃圾袋、错过收运日期或临时重新查询的麻烦。</p>
+<h2 id="官方参考资料">官方参考资料
+</h2><ul>
+<li><a class="link" href="https://www.wastecollection.mt/"  target="_blank" rel="noopener"
+    >Malta National Waste Collection Schedule</a></li>
+<li><a class="link" href="https://www.wastecollection.mt/home-chinese/"  target="_blank" rel="noopener"
+    >马耳他全国垃圾收集网站中文版</a></li>
+<li><a class="link" href="https://www.wsm.com.mt/en/newguide"  target="_blank" rel="noopener"
+    >WasteServ Waste Separation Interactive Guide</a></li>
+<li><a class="link" href="https://era.org.mt/press-releases/consumers-encouraged-to-use-see-through-black-bags-as-of-july-1st/"  target="_blank" rel="noopener"
+    >ERA：See-through Black Bags</a></li>
+<li><a class="link" href="https://support.apple.com/en-gb/guide/shortcuts/apd602971e63/ios"  target="_blank" rel="noopener"
+    >Apple：让个人自动化无需询问自动运行</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/%E9%A9%AC%E8%80%B3%E4%BB%96/">马耳他</a>
+        
+            <a href="/zh/tags/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/">垃圾分类</a>
+        
+            <a href="/zh/tags/apple-%E6%97%A5%E5%8E%86/">Apple 日历</a>
+        
+            <a href="/zh/tags/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/">快捷指令</a>
+        
+            <a href="/zh/tags/%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8D%97/">生活指南</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/ai4all-malta-free-ai-courses/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 马耳他如何领取一年 ChatGPT Plus：AI for All 注册、上课和激活流程" loading="lazy" src="/img/ai4all-malta-free-ai-courses/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">马耳他如何领取一年 ChatGPT Plus：AI for All 注册、上课和激活流程</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 马耳他 eID 在线申请教程：不用跑现场，也能完成激活" loading="lazy" src="/img/malta-eid/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">马耳他 eID 在线申请教程：不用跑现场，也能完成激活</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.1e52231165cdcef9e760bc02a3c1aa2fe5fd94a0e80c21aa02761fe883338ba6.js" defer></script>
+
+
+    </body>
+</html>
