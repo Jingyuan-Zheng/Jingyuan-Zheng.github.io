@@ -283,6 +283,21 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/font-fallback/</loc>
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/font-fallback/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/font-fallback/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/font-fallback/"
+      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/categories/macos/</loc>
@@ -306,10 +321,40 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/safari/</loc>
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/safari/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/safari/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/safari/"
+      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/</loc>
     <lastmod>2026-07-22T11:00:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/"
+      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</loc>

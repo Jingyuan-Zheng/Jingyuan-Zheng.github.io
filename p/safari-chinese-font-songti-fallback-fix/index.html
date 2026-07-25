@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/safari-chinese-font-songti-fallback-fix/","currentLanguage":"en","englishTarget":"/p/safari-chinese-font-songti-fallback-fix/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="A practical guide for web developers and designers: why Chinese text can become serif in Safari, how to build a safer font stack, and how to test CJK typography without overriding the rest of a site.">
+<title>Why Chinese Text Falls Back to a Serif Font in Safari</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.bcd769f184e3f0c08b6a45fd824625ec52fefc891a267a4229c963e7c0d33b5f.css"><meta property='og:title' content="Why Chinese Text Falls Back to a Serif Font in Safari">
+<meta property='og:description' content="A practical guide for web developers and designers: why Chinese text can become serif in Safari, how to build a safer font stack, and how to test CJK typography without overriding the rest of a site.">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/'>
+<meta property='og:site_name' content='Jingyuan'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Safari' /><meta property='article:tag' content='Chinese typography' /><meta property='article:tag' content='web fonts' /><meta property='article:tag' content='font fallback' /><meta property='article:tag' content='CSS' /><meta property='article:published_time' content='2026-07-22T11:00:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-22T11:00:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Why Chinese Text Falls Back to a Serif Font in Safari">
+<meta name="twitter:description" content="A practical guide for web developers and designers: why Chinese text can become serif in Safari, how to build a safer font stack, and how to test CJK typography without overriding the rest of a site."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JLM0JS1M8M');
+        }
+      </script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/safari-chinese-font-songti-fallback-fix/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/",
+          "name": "Home",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/categories/web-development/",
+          "name": "Web Development",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/",
+          "name": "Why Chinese Text Falls Back to a Serif Font in Safari",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "Web Development",
+        "macOS"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-22T11:00:00+02:00",
+      "datePublished": "2026-07-22T11:00:00+02:00",
+      "description": "A practical guide for web developers and designers: why Chinese text can become serif in Safari, how to build a safer font stack, and how to test CJK typography without overriding the rest of a site.",
+      "headline": "Why Chinese Text Falls Back to a Serif Font in Safari",
+      "image": "https://jingyuan-zheng.github.io/img/safari-cjk-font-fallback-fix/featured.png",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "Safari, Chinese typography, web fonts, font fallback, CSS",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Jingyuan</a></h1>
+            <h2 class="site-description">Share something interesting!</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:mr.jingyuan.zheng@gmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/safari-chinese-font-songti-fallback-fix/" selected>English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/safari-chinese-font-songti-fallback-fix/" >简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#if-you-read-chinese-and-just-want-to-fix-safari">If You Read Chinese and Just Want to Fix Safari</a></li>
+    <li><a href="#the-short-explanation">The Short Explanation</a></li>
+    <li><a href="#start-with-a-better-font-stack">Start with a Better Font Stack</a></li>
+    <li><a href="#do-not-solve-it-by-overriding-every-font">Do Not Solve It by Overriding Every Font</a></li>
+    <li><a href="#a-targeted-fallback-rule">A Targeted Fallback Rule</a></li>
+    <li><a href="#a-user-fix-and-a-website-fix-are-different">A User Fix and a Website Fix Are Different</a></li>
+    <li><a href="#what-designers-should-check">What Designers Should Check</a></li>
+    <li><a href="#what-developers-should-test">What Developers Should Test</a></li>
+    <li><a href="#privacy-and-limitations">Privacy and Limitations</a></li>
+    <li><a href="#the-broader-lesson">The Broader Lesson</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/safari-chinese-font-songti-fallback-fix/">
+            <img alt="Featured image of post Why Chinese Text Falls Back to a Serif Font in Safari" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/safari-cjk-font-fallback-fix/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/web-development/" style="background-color: hsl(256, 60%, 84%); color: hsl(256, 60%, 15%);">
+                Web Development
+            </a>
+        
+            
+            
+            
+            <a href="/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">
+                macOS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/safari-chinese-font-songti-fallback-fix/">Why Chinese Text Falls Back to a Serif Font in Safari</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            A practical guide for web developers and designers: why Chinese text can become serif in Safari, how to build a safer font stack, and how to test CJK typography without overriding the rest of a site.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-22T11:00:00&#43;02:00'>22/Jul/2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        6 minutes read
+                    </time>
+                
+            </div>
+        
+
+        
+            <div class="inline-meta">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                
+                    <a href="/zh/p/safari-chinese-font-songti-fallback-fix/" class="link">简体中文</a>
+                
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="Share this article"
+    data-article-share
+    data-share-title="Why Chinese Text Falls Back to a Serif Font in Safari"
+    data-share-url="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/"
+    data-copy-label="Copy link"
+    data-copied-label="Copied"
+    data-copy-error-label="Copy failed">
+    <button class="article-share__button" type="button" data-share-print aria-label="Print" title="Print">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="Copy link" title="Copy link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="Share" title="Share">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=Why&#43;Chinese&#43;Text&#43;Falls&#43;Back&#43;to&#43;a&#43;Serif&#43;Font&#43;in&#43;Safari" target="_blank" rel="noopener noreferrer" aria-label="Share on X" title="Share on X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.reddit.com/submit?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F%3Futm_source%3Dreddit%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=Why&#43;Chinese&#43;Text&#43;Falls&#43;Back&#43;to&#43;a&#43;Serif&#43;Font&#43;in&#43;Safari" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit" title="Share on Reddit">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://api.whatsapp.com/send?text=Why&#43;Chinese&#43;Text&#43;Falls&#43;Back&#43;to&#43;a&#43;Serif&#43;Font&#43;in&#43;Safari&#43;https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dmessaging%26utm_campaign%3Darticle_share" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/whatsapp.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="mailto:?subject=Why&#43;Chinese&#43;Text&#43;Falls&#43;Back&#43;to&#43;a&#43;Serif&#43;Font&#43;in&#43;Safari&body=https%3A%2F%2Fjingyuan-zheng.github.io%2Fp%2Fsafari-chinese-font-songti-fallback-fix%2F%3Futm_source%3Demail%26utm_medium%3Demail%26utm_campaign%3Darticle_share" aria-label="Share by email" title="Share by email">
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>Table of contents</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#if-you-read-chinese-and-just-want-to-fix-safari">If You Read Chinese and Just Want to Fix Safari</a></li>
+    <li><a href="#the-short-explanation">The Short Explanation</a></li>
+    <li><a href="#start-with-a-better-font-stack">Start with a Better Font Stack</a></li>
+    <li><a href="#do-not-solve-it-by-overriding-every-font">Do Not Solve It by Overriding Every Font</a></li>
+    <li><a href="#a-targeted-fallback-rule">A Targeted Fallback Rule</a></li>
+    <li><a href="#a-user-fix-and-a-website-fix-are-different">A User Fix and a Website Fix Are Different</a></li>
+    <li><a href="#what-designers-should-check">What Designers Should Check</a></li>
+    <li><a href="#what-developers-should-test">What Developers Should Test</a></li>
+    <li><a href="#privacy-and-limitations">Privacy and Limitations</a></li>
+    <li><a href="#the-broader-lesson">The Broader Lesson</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="Print attribution">
+        <p><strong>Author:</strong> Jingyuan</p>
+        <p><strong>Source:</strong> <a href="https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/">https://jingyuan-zheng.github.io/p/safari-chinese-font-songti-fallback-fix/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>This post explains a common Safari typography problem for developers and designers: a page is intended to use a clean sans-serif style, but some Chinese text unexpectedly appears in a serif font.</p>
+<p>To readers who use Chinese every day, the change is immediately visible. It is roughly comparable to a navigation label suddenly switching from a modern sans-serif face to Times New Roman. The text remains readable, but it no longer belongs to the surrounding interface.</p>
+<div class="post-figure">
+    <img src="/img/safari-cjk-font-fallback-fix/fig-before.webp" alt="A Bilibili page in Safari with some Chinese text unexpectedly rendered in a serif font">
+    <div class="caption">Figure 1: Before the fix, parts of the interface fall back to a Chinese serif font.</div>
+</div>
+<div class="post-figure">
+    <img src="/img/safari-cjk-font-fallback-fix/fig-after.webp" alt="The same Bilibili page in Safari with Chinese text rendered in a matching sans-serif font">
+    <div class="caption">Figure 2: After the fix, the Chinese text matches the intended sans-serif interface.</div>
+</div>
+<h2 id="if-you-read-chinese-and-just-want-to-fix-safari">If You Read Chinese and Just Want to Fix Safari
+</h2><p>You do not need to understand the CSS or change any website code. The project provides one ready-to-use stylesheet:</p>
+<ol>
+<li><a class="link" href="https://raw.githubusercontent.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix/main/safari-fix.css"  target="_blank" rel="noopener"
+    >Download the complete <code>safari-fix.css</code></a>.</li>
+<li>Open Safari Settings and select <strong>Advanced</strong>.</li>
+<li>Choose the downloaded file from the <strong>Style sheet</strong> menu.</li>
+<li>Quit Safari completely with <kbd>Command</kbd>+<kbd>Q</kbd>, then reopen it.</li>
+</ol>
+<p>If you later want to disable the fix, return to the same menu and select <strong>None Selected</strong>. It does not install a font, modify macOS, or require a Safari extension.</p>
+<div class="post-figure">
+    <img src="/img/safari-cjk-font-fallback-fix/fig-safari-stylesheet.webp" alt="Safari Advanced settings with safari-fix.css selected in the Style sheet menu">
+    <div class="caption">Figure 3: Select safari-fix.css from Safari Settings → Advanced → Style sheet.</div>
+</div>
+<p>The rest of this article explains the underlying problem and how developers can prevent it on their own websites.</p>
+<h2 id="the-short-explanation">The Short Explanation
+</h2><p>Many sites begin their font stack with Arial, Helvetica, Inter, Roboto, or another Latin typeface. These fonts can render English letters and numbers, but they may not contain Chinese characters.</p>
+<p>When the browser reaches a character that the selected font cannot draw, it must find another font. This is font fallback. If the remaining stack does not name a suitable Chinese sans-serif font, Safari may choose a Chinese serif font instead.</p>
+<p>That is why a line can contain perfectly normal English alongside Chinese text that looks as though it came from a different design system. Chrome and Safari may also choose different fallback fonts for the same CSS, so testing only one browser can hide the problem.</p>
+<h2 id="start-with-a-better-font-stack">Start with a Better Font Stack
+</h2><p>If the design is meant to be sans-serif, say so for both Latin and Chinese text. A practical stack for a multilingual interface might look like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Inter</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="o">-</span><span class="n">apple-system</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BlinkMacSystemFont</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;PingFang SC&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Hiragino Sans GB&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Microsoft YaHei&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="kc">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The exact order depends on the product and supported platforms, but the intention should be clear:</p>
+<ul>
+<li>keep the preferred Latin or brand typeface first;</li>
+<li>include an appropriate Chinese sans-serif family;</li>
+<li>include a suitable Windows alternative when Windows is supported;</li>
+<li>end with the generic <code>sans-serif</code> family.</li>
+</ul>
+<p>Avoid placing <code>SimSun</code>, <code>Songti SC</code>, or another Chinese serif face inside a stack that is otherwise intended to be sans-serif. Those fonts can be excellent choices for editorial reading, literature, or a deliberately serif design. They are simply the wrong fallback for a sans-serif interface.</p>
+<p>If the design intentionally uses a Chinese serif font, declare that choice explicitly rather than relying on whichever fallback the browser happens to find.</p>
+<h2 id="do-not-solve-it-by-overriding-every-font">Do Not Solve It by Overriding Every Font
+</h2><p>A frequently shared workaround applies PingFang to every element:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;PingFang SC&#34;</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This removes the visible serif fallback, but it also removes much of the site&rsquo;s typography.</p>
+<p>It can replace icon fonts, change monospace code, alter Latin headings, override component-specific styles, and erase intentional serif typography. In other words, it fixes one fallback decision by taking all font decisions away from the page.</p>
+<p>A safer solution should change only the missing Chinese glyphs while leaving Latin text, numbers, icons, code, and deliberate serif choices alone.</p>
+<h2 id="a-targeted-fallback-rule">A Targeted Fallback Rule
+</h2><p>The core technique used by this project is an <code>@font-face</code> rule with <code>unicode-range</code>. The following shortened example tells Safari to use PingFang only for the listed Chinese character ranges when a page requests Arial:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s2">&#34;Arial&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="o">:</span> <span class="nt">local</span><span class="o">(</span><span class="s2">&#34;PingFangSC-Regular&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">unicode-range</span><span class="o">:</span> <span class="nt">U</span><span class="o">+</span><span class="nt">3000-303F</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">3400-4DBF</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">U</span><span class="o">+</span><span class="nt">4E00-9FFF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">F900-FAFF</span><span class="o">,</span> <span class="nt">U</span><span class="o">+</span><span class="nt">FF00-FFEF</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Latin characters still come from Arial. Chinese characters that Arial cannot provide come from PingFang. The page therefore keeps its existing Latin metrics and visual identity while gaining a predictable Chinese sans-serif fallback.</p>
+<p>The complete project also covers bold text, Traditional Chinese, extended character ranges, common Latin font names, and Windows Chinese font names. The snippet above is only an explanation, not the full stylesheet.</p>
+<p>You can review or download the maintained file here:</p>
+<ul>
+<li><a class="link" href="https://raw.githubusercontent.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix/main/safari-fix.css"  target="_blank" rel="noopener"
+    >Download the complete <code>safari-fix.css</code></a></li>
+<li><a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
+    >View Safari CJK Font Fallback Fix on GitHub</a></li>
+</ul>
+<h2 id="a-user-fix-and-a-website-fix-are-different">A User Fix and a Website Fix Are Different
+</h2><p>When you do not control the affected websites, the downloadable Safari stylesheet is a practical compatibility layer. For a site you maintain, correcting the site&rsquo;s own font stack is preferable because every visitor benefits without installing anything.</p>
+<h2 id="what-designers-should-check">What Designers Should Check
+</h2><p>CJK typography should be part of design review, not left entirely to the browser.</p>
+<p>A useful review does not require every team member to read Chinese. Check the visible form of the text:</p>
+<ul>
+<li>Does Chinese body text use a serif or sans-serif style that matches the design?</li>
+<li>Do navigation labels and buttons look consistent with nearby Latin text?</li>
+<li>Do regular and bold Chinese text have a clear but stable weight difference?</li>
+<li>Are punctuation, brackets, and full-width symbols visually consistent?</li>
+<li>Does the design still work when a single line mixes Chinese, English, and numbers?</li>
+</ul>
+<p>Chinese characters are visually dense, so differences in weight and spacing can be more obvious than expected. A Latin-only mock-up is not enough to validate a multilingual interface.</p>
+<h2 id="what-developers-should-test">What Developers Should Test
+</h2><p>Use actual Chinese content in browser testing. A few translated menu labels are more useful than placeholder boxes or repeated sample characters.</p>
+<p>At minimum, test:</p>
+<ul>
+<li>Safari and Chrome on macOS;</li>
+<li>normal and bold text;</li>
+<li>headings, navigation, buttons, form controls, and code blocks;</li>
+<li>Simplified and Traditional Chinese when both are supported;</li>
+<li>mixed Chinese, English, numbers, and punctuation;</li>
+<li>the production build after web fonts finish loading.</li>
+</ul>
+<p>In browser developer tools, inspect the font that actually renders the Chinese glyphs, not only the computed <code>font-family</code> declaration. The computed stack may say Arial or Inter even though a different local font supplied the Chinese characters.</p>
+<p>Also test web-font failure. A blocked, slow, or partially loaded font should fall back to a typeface from the same broad category rather than unexpectedly switching from sans-serif to serif.</p>
+<h2 id="privacy-and-limitations">Privacy and Limitations
+</h2><p>The project is CSS only. It contains no JavaScript, analytics, telemetry, or access to browsing history.</p>
+<p>As a Safari user stylesheet, it cannot reliably change text drawn into images or canvas elements, and some embedded or isolated components may not inherit its rules. No generic stylesheet can perfectly infer whether every serif choice was intentional, which is another reason the website&rsquo;s own font stack remains the best place to solve the problem.</p>
+<h2 id="the-broader-lesson">The Broader Lesson
+</h2><p><code>sans-serif</code> is a design category, not a guarantee that every writing system will receive the expected local font. A multilingual font stack should describe the intended result for the scripts the product actually supports.</p>
+<p>For Chinese interfaces, the essential principle is simple: pair a Latin sans-serif design with an explicit Chinese sans-serif fallback, preserve deliberate serif typography, and test the rendered fonts in the browsers your users rely on.</p>
+<h2 id="references">References
+</h2><ul>
+<li><a class="link" href="https://support.apple.com/guide/safari/ibrw1075/mac"  target="_blank" rel="noopener"
+    >Apple: Change Advanced settings in Safari on Mac</a></li>
+<li><a class="link" href="https://bugs.webkit.org/show_bug.cgi?id=10874"  target="_blank" rel="noopener"
+    >WebKit Bug 10874: CJK font selection and language information</a></li>
+<li><a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
+    >Safari CJK Font Fallback Fix on GitHub</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/safari/">Safari</a>
+        
+            <a href="/tags/chinese-typography/">Chinese Typography</a>
+        
+            <a href="/tags/web-fonts/">Web Fonts</a>
+        
+            <a href="/tags/font-fallback/">Font Fallback</a>
+        
+            <a href="/tags/css/">CSS</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">Related content</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/text-tray-macos-temporary-text-workspace/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Text Tray for macOS: A Temporary Workspace for Copied Text" loading="lazy" src="/img/text-tray/featured.jpg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Text Tray for macOS: A Temporary Workspace for Copied Text</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/abc-custom-keyboard/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters" loading="lazy" src="/img/abc-custom-keyboard/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">A Better US Keyboard for Mac: Accents, Pinyin Tones, Greek Letters, and Maltese Characters</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/translate-document-quick-action/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts" loading="lazy" src="/img/translate-document-quick-action/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/dmg-maker-create-beautiful-macos-installers-automatically/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post How to Make a macOS DMG Installer with a Custom Background" loading="lazy" src="/img/dmg-maker/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">How to Make a macOS DMG Installer with a Custom Background</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap" height="150" loading="lazy" src="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_7baef6a68dbfd893.png" srcset="/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_7baef6a68dbfd893.png 1x, /p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/cover_hu_cbf8b02e297f9b69.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #14141480 0%, #fcfcfcC0 100%);">
+            <h2 class="article-title">Maltese Dictionary for Mac: Look Up Ġabra Words in Dictionary, Spotlight, and Three-Finger Tap</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <br>
+        <span>
+            Powered by
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.1e52231165cdcef9e760bc02a3c1aa2fe5fd94a0e80c21aa02761fe883338ba6.js" defer></script>
+
+
+    </body>
+</html>

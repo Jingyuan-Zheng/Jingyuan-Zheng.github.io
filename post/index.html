@@ -599,7 +599,7 @@
                     <a href="/archives/#2026">
                         
                             <span class="year">2026</span>
-                            <span class="count">9</span>
+                            <span class="count">10</span>
                         
                     </a> 
                 </div>
@@ -641,12 +641,12 @@
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/open-source/">
-                Open Source
-            </a>
-        
             <a href="/categories/macos/">
                 macOS
+            </a>
+        
+            <a href="/categories/open-source/">
+                Open Source
             </a>
         
             <a href="/categories/guides/">
@@ -663,6 +663,10 @@
         
             <a href="/categories/tech-review/">
                 Tech Review
+            </a>
+        
+            <a href="/categories/web-development/">
+                Web Development
             </a>
         
     </div>
@@ -697,6 +701,10 @@
                 MacOS
             </a>
         
+            <a href="/tags/css/">
+                CSS
+            </a>
+        
             <a href="/tags/eid/">
                 EID
             </a>
@@ -729,10 +737,6 @@
                 ChatGPT Plus
             </a>
         
-            <a href="/tags/clipboard/">
-                Clipboard
-            </a>
-        
     </div>
 </section>
 
@@ -751,7 +755,7 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">10 pages</h3>
+                <h3 class="section-count">11 pages</h3>
                 <h1 class="section-term">Posts</h1>
                 
             </div>
@@ -783,6 +787,20 @@
                 </footer></div>
         <div class="article-image">
             <img alt="An Apple-Style Web Clock Widget: Design Notes and Technical Details" loading="lazy" src="/img/apple-style-web-clock-widget/featured.png">
+
+        </div>
+        
+    </a>
+</article>
+            
+                <article>
+    <a href="/p/safari-chinese-font-songti-fallback-fix/">
+        <div class="article-details">
+            <h2 class="article-title">Why Chinese Text Falls Back to a Serif Font in Safari</h2>
+                <footer class="article-meta"><time datetime="2026-07-22T11:00:00&#43;02:00">22/Jul/2026</time>
+                </footer></div>
+        <div class="article-image">
+            <img alt="Why Chinese Text Falls Back to a Serif Font in Safari" loading="lazy" src="/img/safari-cjk-font-fallback-fix/featured.png">
 
         </div>
         
@@ -887,22 +905,57 @@
     </a>
 </article>
             
-                <article>
-    <a href="/p/how-to-apply-for-malta-eid-online/">
-        <div class="article-details">
-            <h2 class="article-title">How to Apply for Malta eID Online</h2>
-                <footer class="article-meta"><time datetime="2025-05-07T00:00:00Z">07/May/2025</time>
-                </footer></div>
-        <div class="article-image">
-            <img alt="How to Apply for Malta eID Online" loading="lazy" src="/img/malta-eid/featured.png">
-
-        </div>
-        
-    </a>
-</article>
-            
         </section>
-    <footer class="site-footer">
+    <nav
+        class="pagination"
+        role="navigation"
+        aria-label="pagination"
+        data-total="2"
+        data-first-url="/post/"
+        data-format-url="/post/page/2/"><a
+            class="page-link disabled"aria-disabled="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+        </a><a
+            class="page-link current"
+            aria-label="Page 1"aria-current="page">
+            1
+        </a><a
+            class="page-link "href="/post/page/2/"aria-label="Page 2">
+            2
+        </a><a
+            class="page-link "href="/post/page/2/"
+                aria-label="Next page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+        </a>
+    </nav>
+
+    <dialog id="pagination-jump-dialog" aria-labelledby="pagination-jump-title">
+        <form method="dialog" class="pagination-jump-form">
+            <header>
+                <label id="pagination-jump-title" class="title" for="pagination-jump-input">
+                    Jump to page
+                </label>
+                <span class="subtitle">(1 - 2)</span>
+            </header>
+            <div class="pagination-jump-input-group">
+                <input
+                    type="number"
+                    id="pagination-jump-input"
+                    min="1"
+                    max="2"
+                    autofocus
+                    autocomplete="off"
+                    required>
+                <button type="submit" class="btn btn-primary">
+                    Go
+                </button>
+            </div>
+            <div class="pagination-jump-hint">
+                <kbd>Enter</kbd>
+                <span>Press Enter to jump</span>
+            </div>
+        </form>
+    </dialog><footer class="site-footer">
     <section class="copyright">
         &copy;
         
