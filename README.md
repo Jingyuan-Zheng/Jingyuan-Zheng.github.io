@@ -6,7 +6,7 @@ This repository contains the generated static files for Jingyuan's personal webs
 
 Visit the website at **[https://jingyuan-zheng.github.io/](https://jingyuan-zheng.github.io/)**.
 
-The Hugo source code is maintained in [Jingyuan-Zheng/hugo-main](https://github.com/Jingyuan-Zheng/hugo-main). This deployment repository is updated automatically by GitHub Actions, so generated files should not be edited directly.
+The website is built with Hugo and deployed automatically through GitHub Actions. Its source repository is maintained privately, so generated files in this deployment repository should not be edited directly.
 
 ---
 
@@ -18,4 +18,4 @@ The Hugo source code is maintained in [Jingyuan-Zheng/hugo-main](https://github.
 
 请访问 **[https://jingyuan-zheng.github.io/](https://jingyuan-zheng.github.io/)**。
 
-Hugo 源码维护在 [Jingyuan-Zheng/hugo-main](https://github.com/Jingyuan-Zheng/hugo-main)。本部署仓库由 GitHub Actions 自动更新，请勿直接修改其中的生成文件。
+网站使用 Hugo 构建，并通过 GitHub Actions 自动部署；源码仓库为私有维护，因此请勿直接修改本部署仓库中的生成文件。
