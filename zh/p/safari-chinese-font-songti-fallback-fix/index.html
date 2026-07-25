@@ -744,7 +744,8 @@
 </ul>
 <p>这通常不是乱码，也不用重装字体或 Safari。可以先直接按下面的方法修复，技术原因放在后面解释。</p>
 <h2 id="先把问题解决">先把问题解决
-</h2><p>我为这个问题整理了一个开源方案：<strong>Safari CJK Font Fallback Fix</strong>。它只有一个 CSS 文件，不需要安装字体或 Safari 扩展。</p>
+</h2><p>我为这个问题整理了一个开源方案：<a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
+    ><strong>Safari CJK Font Fallback Fix</strong></a>。它只有一个 CSS 文件，不需要安装字体或 Safari 扩展。</p>
 <ol>
 <li>下载项目中的 <a class="link" href="https://raw.githubusercontent.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix/main/safari-fix.css"  target="_blank" rel="noopener"
     ><code>safari-fix.css</code></a>。</li>
@@ -758,16 +759,16 @@
 </div>
 <p>只刷新网页可能不会生效，一定要完整退出并重新打开 Safari。以后如果想停用，回到同一个菜单改为“未选择”即可。</p>
 <p>项目地址：<a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
-    >Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix</a></p>
+    >Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix</a>。如果它解决了你的问题，也欢迎在 GitHub 上点一个 <strong>Star</strong>，让更多遇到同样问题的人更容易发现它。</p>
 <h2 id="修复前后有什么区别">修复前后有什么区别
-</h2><p>下面是同一个 B 站页面的实际对比。修复前，部分中文突然变成了宋体；启用样式表后，这些文字恢复为苹方，页面布局和英文排版则保持原样。</p>
+</h2><p>下面是同一个 B 站页面的实际对比。图 2 是正常的苹方效果，图 3 则是 Safari 意外显示宋体时的效果。</p>
 <div class="post-figure">
-    <img src="/img/safari-cjk-font-fallback-fix/fig-before.webp" alt="Safari 中文字体修复前，B 站页面部分文字回退为宋体">
-    <div class="caption">图 2：修复前，页面中的部分中文意外显示为宋体。</div>
+    <img src="/img/safari-cjk-font-fallback-fix/fig-pingfang.webp" alt="B 站页面中的中文在 Safari 中正常显示为苹方">
+    <div class="caption">图 2：正常效果，页面中的中文使用苹方。</div>
 </div>
 <div class="post-figure">
-    <img src="/img/safari-cjk-font-fallback-fix/fig-after.webp" alt="Safari 中文字体修复后，B 站页面文字恢复为苹方">
-    <div class="caption">图 3：修复后，同一页面的中文恢复为苹方。</div>
+    <img src="/img/safari-cjk-font-fallback-fix/fig-songti.webp" alt="B 站页面中的部分中文在 Safari 中意外显示为宋体">
+    <div class="caption">图 3：异常效果，同一页面中的部分中文变成宋体。</div>
 </div>
 <h2 id="为什么这个方案比网上的常见办法更好">为什么这个方案比网上的常见办法更好
 </h2><p>网上常见的做法，是强制所有网页、所有文字都使用苹方。这样确实简单，但更像是把整个网站的排版重新刷了一遍。</p>

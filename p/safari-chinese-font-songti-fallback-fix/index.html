@@ -735,12 +735,12 @@
     <p>This post explains a common Safari typography problem for developers and designers: a page is intended to use a clean sans-serif style, but some Chinese text unexpectedly appears in a serif font.</p>
 <p>To readers who use Chinese every day, the change is immediately visible. It is roughly comparable to a navigation label suddenly switching from a modern sans-serif face to Times New Roman. The text remains readable, but it no longer belongs to the surrounding interface.</p>
 <div class="post-figure">
-    <img src="/img/safari-cjk-font-fallback-fix/fig-before.webp" alt="A Bilibili page in Safari with some Chinese text unexpectedly rendered in a serif font">
-    <div class="caption">Figure 1: Before the fix, parts of the interface fall back to a Chinese serif font.</div>
+    <img src="/img/safari-cjk-font-fallback-fix/fig-pingfang.webp" alt="A Bilibili page in Safari with Chinese text correctly rendered in PingFang">
+    <div class="caption">Figure 1: The intended result—the Chinese interface text uses the sans-serif PingFang family.</div>
 </div>
 <div class="post-figure">
-    <img src="/img/safari-cjk-font-fallback-fix/fig-after.webp" alt="The same Bilibili page in Safari with Chinese text rendered in a matching sans-serif font">
-    <div class="caption">Figure 2: After the fix, the Chinese text matches the intended sans-serif interface.</div>
+    <img src="/img/safari-cjk-font-fallback-fix/fig-songti.webp" alt="The same Bilibili page in Safari with some Chinese text unexpectedly rendered in Songti">
+    <div class="caption">Figure 2: The fallback problem—parts of the same interface unexpectedly use the serif Songti family.</div>
 </div>
 <h2 id="if-you-read-chinese-and-just-want-to-fix-safari">If You Read Chinese and Just Want to Fix Safari
 </h2><p>You do not need to understand the CSS or change any website code. The project provides one ready-to-use stylesheet:</p>
@@ -844,6 +844,7 @@
 <li><a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
     >View Safari CJK Font Fallback Fix on GitHub</a></li>
 </ul>
+<p>If the project fixes the problem for you, consider giving it a <strong>Star on GitHub</strong>. It helps other Safari users and web developers find the solution.</p>
 <h2 id="a-user-fix-and-a-website-fix-are-different">A User Fix and a Website Fix Are Different
 </h2><p>When you do not control the affected websites, the downloadable Safari stylesheet is a practical compatibility layer. For a site you maintain, correcting the site&rsquo;s own font stack is preferable because every visitor benefits without installing anything.</p>
 <h2 id="what-designers-should-check">What Designers Should Check
