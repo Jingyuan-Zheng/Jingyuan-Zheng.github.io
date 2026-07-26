@@ -88,21 +88,37 @@
 <meta name="twitter:description" content="随心分享！"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/site-default-og.png' /><link rel="alternate" type="application/rss&#43;xml" href="https://jingyuan-zheng.github.io/zh/tags/index.xml">
     <link rel="shortcut icon" href="/favicon.png" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-JLM0JS1M8M');
-        }
-      </script>
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
 <meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
 <link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
 <link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/tags/">
