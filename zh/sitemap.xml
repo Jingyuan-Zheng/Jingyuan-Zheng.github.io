@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/</loc>
-    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/categories/</loc>
-    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -39,27 +39,8 @@
       />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/zh/tags/microsoft-forms/</loc>
-    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/tags/microsoft-forms/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
-      />
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/zh/post/</loc>
-    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -78,7 +59,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/</loc>
-    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -93,6 +74,53 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/tags/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E5%8D%9A%E7%89%A9%E9%A6%86/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E5%B7%B4%E9%BB%8E/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/categories/%E6%97%85%E8%A1%8C%E6%94%BB%E7%95%A5/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E6%B3%95%E5%9B%BD/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E6%B3%95%E8%AF%AD/</loc>
+    <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/microsoft-forms/</loc>
+    <lastmod>2026-07-25T16:20:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/microsoft-forms/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/microsoft-forms/"
       />
   </url>
   <url>

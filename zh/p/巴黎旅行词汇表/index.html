@@ -1,0 +1,3509 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/","currentLanguage":"zh","englishTarget":"/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="为来欧洲旅行的华人整理巴黎关键地标、当地特色、博物馆、交通和美食的英文／法文名称，附近似发音与中文释义。">
+<title>巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.ab4f097ab529d7ea40c23f69121f5866547b8c598440d9a36a5401e87a756730.css"><meta property='og:title' content="巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词">
+<meta property='og:description' content="为来欧洲旅行的华人整理巴黎关键地标、当地特色、博物馆、交通和美食的英文／法文名称，附近似发音与中文释义。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='巴黎' /><meta property='article:tag' content='法国' /><meta property='article:tag' content='旅行词汇' /><meta property='article:tag' content='博物馆' /><meta property='article:tag' content='法语' /><meta property='article:published_time' content='2026-07-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-27T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/paris-travel-vocabulary/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词">
+<meta name="twitter:description" content="为来欧洲旅行的华人整理巴黎关键地标、当地特色、博物馆、交通和美食的英文／法文名称，附近似发音与中文释义。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/paris-travel-vocabulary/featured.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
+
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E6%97%85%E8%A1%8C%E6%94%BB%E7%95%A5/",
+          "name": "旅行攻略",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/",
+          "name": "巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "旅行攻略"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-27T00:00:00+00:00",
+      "datePublished": "2026-07-27T00:00:00+00:00",
+      "description": "为来欧洲旅行的华人整理巴黎关键地标、当地特色、博物馆、交通和美食的英文／法文名称，附近似发音与中文释义。",
+      "headline": "巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词",
+      "image": "https://jingyuan-zheng.github.io/img/paris-travel-vocabulary/featured.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "巴黎, 法国, 旅行词汇, 博物馆, 法语",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh/">
+                    <img src="/img/avatar.png" 
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E9%93%BE%E6%8E%A5/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/" >English</option>
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#使用方法">使用方法</a></li>
+    <li><a href="#景点街区与博物馆">景点、街区与博物馆</a>
+      <ol>
+        <li><a href="#iconic-landmarks-标志性地标">Iconic Landmarks 标志性地标</a></li>
+        <li><a href="#neighbourhoods-街区">Neighbourhoods 街区</a></li>
+        <li><a href="#museums--galleries-博物馆与美术馆">Museums &amp; Galleries 博物馆与美术馆</a></li>
+      </ol>
+    </li>
+    <li><a href="#艺术品与馆藏">艺术品与馆藏</a>
+      <ol>
+        <li><a href="#musée-dorsay-奥赛博物馆">Musée d&rsquo;Orsay 奥赛博物馆</a></li>
+        <li><a href="#louvre-museum-卢浮宫">Louvre Museum 卢浮宫</a></li>
+      </ol>
+    </li>
+    <li><a href="#著名人物">著名人物</a>
+      <ol>
+        <li><a href="#artists-艺术家">Artists 艺术家</a></li>
+        <li><a href="#historical-figures-历史人物">Historical Figures 历史人物</a></li>
+      </ol>
+    </li>
+    <li><a href="#艺术流派与审美">艺术流派与审美</a>
+      <ol>
+        <li><a href="#major-movements-主要流派">Major Movements 主要流派</a></li>
+        <li><a href="#medium--technique-媒材与技法">Medium &amp; Technique 媒材与技法</a></li>
+        <li><a href="#aesthetic-vocabulary-审美词汇">Aesthetic Vocabulary 审美词汇</a></li>
+      </ol>
+    </li>
+    <li><a href="#历史与博物馆词汇">历史与博物馆词汇</a>
+      <ol>
+        <li><a href="#political--historical-events-政治历史事件">Political &amp; Historical Events 政治历史事件</a></li>
+        <li><a href="#dynasties--regimes-王朝与政权">Dynasties &amp; Regimes 王朝与政权</a></li>
+        <li><a href="#architecture--urban-history-建筑与城市历史">Architecture &amp; Urban History 建筑与城市历史</a></li>
+        <li><a href="#ancient-egypt-古埃及">Ancient Egypt 古埃及</a></li>
+        <li><a href="#ancient-greece--hellenistic-world-古希腊">Ancient Greece &amp; Hellenistic World 古希腊</a></li>
+        <li><a href="#ancient-rome-古罗马">Ancient Rome 古罗马</a></li>
+        <li><a href="#mesopotamia-美索不达米亚">Mesopotamia 美索不达米亚</a></li>
+        <li><a href="#ancient-persia-古波斯">Ancient Persia 古波斯</a></li>
+        <li><a href="#antiquity--museum-terminology-古物与博物馆通用术语">Antiquity &amp; Museum Terminology 古物与博物馆通用术语</a></li>
+      </ol>
+    </li>
+    <li><a href="#交通">交通</a></li>
+    <li><a href="#美食与饮品">美食与饮品</a>
+      <ol>
+        <li><a href="#food-食物">Food 食物</a></li>
+        <li><a href="#famous-restaurants--dining-concepts-著名餐厅">Famous Restaurants &amp; Dining Concepts 著名餐厅</a></li>
+        <li><a href="#beverages-饮品">Beverages 饮品</a></li>
+        <li><a href="#coffee-culture-notes-咖啡文化">Coffee Culture Notes 咖啡文化</a></li>
+      </ol>
+    </li>
+    <li><a href="#实用短语">实用短语</a></li>
+    <li><a href="#出发前的快速清单">出发前的快速清单</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/">
+            <img alt="Featured image of post 巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/paris-travel-vocabulary/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E6%97%85%E8%A1%8C%E6%94%BB%E7%95%A5/" style="background-color: hsl(168, 60%, 84%); color: hsl(168, 60%, 15%);">旅行攻略</a>
+        
+    </header>
+    
+    <div class="article-title-wrapper">
+        <h2 class="article-title"><a href="/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/">巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词</a></h2>
+        <h3 class="article-subtitle">为来欧洲旅行的华人整理巴黎关键地标、当地特色、博物馆、交通和美食的英文／法文名称，附近似发音与中文释义。</h3>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+        <div class="inline-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg><time class="article-time--published" datetime='2026-07-27T00:00:00Z'>27/7月/2026</time>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+<time class="article-time--reading">阅读时长: 10 分钟</time>
+        </div>
+        
+        
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="巴黎旅行英语词汇表：350 个地标、景点、美食与看展常用词"
+    data-share-url="https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印" title="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接" title="复制链接">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享" title="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2F%25E5%25B7%25B4%25E9%25BB%258E%25E6%2597%2585%25E8%25A1%258C%25E8%25AF%258D%25E6%25B1%2587%25E8%25A1%25A8%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E8%A1%A8%EF%BC%9A350&#43;%E4%B8%AA%E5%9C%B0%E6%A0%87%E3%80%81%E6%99%AF%E7%82%B9%E3%80%81%E7%BE%8E%E9%A3%9F%E4%B8%8E%E7%9C%8B%E5%B1%95%E5%B8%B8%E7%94%A8%E8%AF%8D" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2F%25E5%25B7%25B4%25E9%25BB%258E%25E6%2597%2585%25E8%25A1%258C%25E8%25AF%258D%25E6%25B1%2587%25E8%25A1%25A8%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E8%A1%A8%EF%BC%9A350&#43;%E4%B8%AA%E5%9C%B0%E6%A0%87%E3%80%81%E6%99%AF%E7%82%B9%E3%80%81%E7%BE%8E%E9%A3%9F%E4%B8%8E%E7%9C%8B%E5%B1%95%E5%B8%B8%E7%94%A8%E8%AF%8D" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2F%25E5%25B7%25B4%25E9%25BB%258E%25E6%2597%2585%25E8%25A1%258C%25E8%25AF%258D%25E6%25B1%2587%25E8%25A1%25A8%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E8%A1%A8%EF%BC%9A350&#43;%E4%B8%AA%E5%9C%B0%E6%A0%87%E3%80%81%E6%99%AF%E7%82%B9%E3%80%81%E7%BE%8E%E9%A3%9F%E4%B8%8E%E7%9C%8B%E5%B1%95%E5%B8%B8%E7%94%A8%E8%AF%8D" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#使用方法">使用方法</a></li>
+    <li><a href="#景点街区与博物馆">景点、街区与博物馆</a>
+      <ol>
+        <li><a href="#iconic-landmarks-标志性地标">Iconic Landmarks 标志性地标</a></li>
+        <li><a href="#neighbourhoods-街区">Neighbourhoods 街区</a></li>
+        <li><a href="#museums--galleries-博物馆与美术馆">Museums &amp; Galleries 博物馆与美术馆</a></li>
+      </ol>
+    </li>
+    <li><a href="#艺术品与馆藏">艺术品与馆藏</a>
+      <ol>
+        <li><a href="#musée-dorsay-奥赛博物馆">Musée d&rsquo;Orsay 奥赛博物馆</a></li>
+        <li><a href="#louvre-museum-卢浮宫">Louvre Museum 卢浮宫</a></li>
+      </ol>
+    </li>
+    <li><a href="#著名人物">著名人物</a>
+      <ol>
+        <li><a href="#artists-艺术家">Artists 艺术家</a></li>
+        <li><a href="#historical-figures-历史人物">Historical Figures 历史人物</a></li>
+      </ol>
+    </li>
+    <li><a href="#艺术流派与审美">艺术流派与审美</a>
+      <ol>
+        <li><a href="#major-movements-主要流派">Major Movements 主要流派</a></li>
+        <li><a href="#medium--technique-媒材与技法">Medium &amp; Technique 媒材与技法</a></li>
+        <li><a href="#aesthetic-vocabulary-审美词汇">Aesthetic Vocabulary 审美词汇</a></li>
+      </ol>
+    </li>
+    <li><a href="#历史与博物馆词汇">历史与博物馆词汇</a>
+      <ol>
+        <li><a href="#political--historical-events-政治历史事件">Political &amp; Historical Events 政治历史事件</a></li>
+        <li><a href="#dynasties--regimes-王朝与政权">Dynasties &amp; Regimes 王朝与政权</a></li>
+        <li><a href="#architecture--urban-history-建筑与城市历史">Architecture &amp; Urban History 建筑与城市历史</a></li>
+        <li><a href="#ancient-egypt-古埃及">Ancient Egypt 古埃及</a></li>
+        <li><a href="#ancient-greece--hellenistic-world-古希腊">Ancient Greece &amp; Hellenistic World 古希腊</a></li>
+        <li><a href="#ancient-rome-古罗马">Ancient Rome 古罗马</a></li>
+        <li><a href="#mesopotamia-美索不达米亚">Mesopotamia 美索不达米亚</a></li>
+        <li><a href="#ancient-persia-古波斯">Ancient Persia 古波斯</a></li>
+        <li><a href="#antiquity--museum-terminology-古物与博物馆通用术语">Antiquity &amp; Museum Terminology 古物与博物馆通用术语</a></li>
+      </ol>
+    </li>
+    <li><a href="#交通">交通</a></li>
+    <li><a href="#美食与饮品">美食与饮品</a>
+      <ol>
+        <li><a href="#food-食物">Food 食物</a></li>
+        <li><a href="#famous-restaurants--dining-concepts-著名餐厅">Famous Restaurants &amp; Dining Concepts 著名餐厅</a></li>
+        <li><a href="#beverages-饮品">Beverages 饮品</a></li>
+        <li><a href="#coffee-culture-notes-咖啡文化">Coffee Culture Notes 咖啡文化</a></li>
+      </ol>
+    </li>
+    <li><a href="#实用短语">实用短语</a></li>
+    <li><a href="#出发前的快速清单">出发前的快速清单</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/">https://jingyuan-zheng.github.io/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>本文为来欧洲旅行的华人整理 350 个巴黎常用英文／法文词，覆盖关键地标、景点、当地特色、博物馆、交通、美食与基础交流；适合出发前认路、看展、点餐时随手翻阅。</p>
+
+    <blockquote>
+        <p>这不是法语课：词表优先帮助你看懂地图、菜单、博物馆说明和交通指示。发音为便于中文读者理解的近似英文标注，不替代法语的标准发音；巴黎地名、馆名和菜名常保留法文拼写，实际使用时出示拼写也很方便。</p>
+
+    </blockquote>
+<h2 id="使用方法">使用方法
+</h2><ul>
+<li>先看“交通”“美食与饮品”“实用短语”，解决抵达、出行、点餐和沟通。</li>
+<li>参观卢浮宫、奥赛或历史建筑前，再按“景点”“艺术品”“历史”分类预习。</li>
+<li>表格中的“说明”补充了容易混淆的背景；没有说明的词条可直接按中文释义理解。</li>
+</ul>
+<h2 id="景点街区与博物馆">景点、街区与博物馆
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Paris</td>
+					<td>pah-REE</td>
+					<td>巴黎</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Île-de-France</td>
+					<td>eel-duh-FRAHNSS</td>
+					<td>法兰西岛大区</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="iconic-landmarks-标志性地标">Iconic Landmarks 标志性地标
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Eiffel Tower</td>
+					<td>EYE-ful TOW-er</td>
+					<td>埃菲尔铁塔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Notre-Dame Cathedral</td>
+					<td>noh-truh-DAHM kuh-THEE-drul</td>
+					<td>巴黎圣母院</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sainte-Chapelle</td>
+					<td>sant sha-PEL</td>
+					<td>圣礼拜堂</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Louvre Museum</td>
+					<td>LOO-vruh myoo-ZEE-um</td>
+					<td>卢浮宫</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Arc de Triomphe</td>
+					<td>ark duh tree-Awnf</td>
+					<td>凯旋门</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Champs-Élysées</td>
+					<td>shahn-zay-lee-ZAY</td>
+					<td>香榭丽舍大街</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sacré-Cœur Basilica</td>
+					<td>sah-kray-Kur bah-Zil-ih-kuh</td>
+					<td>圣心大教堂</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Palais Royal</td>
+					<td>pah-LAY rwah-YAHL</td>
+					<td>皇家宫殿</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Place de la Bastille</td>
+					<td>plahss duh lah bah-STEE</td>
+					<td>巴士底广场</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Place de la Concorde</td>
+					<td>plahss duh lah kohn-KORD</td>
+					<td>协和广场</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Place du Champ de Mars</td>
+					<td>plahss dy shahn duh MARS</td>
+					<td>战神广场</td>
+					<td>埃菲尔铁塔前大型公共草坪广场</td>
+			</tr>
+			<tr>
+					<td>Tuileries Garden</td>
+					<td>TWEE-luh-ree GAR-den</td>
+					<td>杜乐丽花园</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Luxembourg Gardens</td>
+					<td>LUK-sum-burg GAR-denz</td>
+					<td>卢森堡花园</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Palais de Justice</td>
+					<td>pah-LAY duh zhoo-STEESS</td>
+					<td>司法宫</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Conciergerie</td>
+					<td>kohn-syair-zhuh-REE</td>
+					<td>古监狱</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pont Neuf</td>
+					<td>pohn NUF</td>
+					<td>新桥</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pont Alexandre III</td>
+					<td>pohn ah-lek-SAHN-druh trwah</td>
+					<td>亚历山大三世桥</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Seine River</td>
+					<td>SEN RIV-er</td>
+					<td>塞纳河</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bateaux Mouches</td>
+					<td>bah-TOH MOOSH</td>
+					<td>观光游船</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Moulin Rouge</td>
+					<td>moo-LAN ROOZH</td>
+					<td>红磨坊</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Place du Tertre</td>
+					<td>plahss dy TAIR-truh</td>
+					<td>特尔特尔广场</td>
+					<td>蒙马特画家聚集广场</td>
+			</tr>
+			<tr>
+					<td>Catacombs of Paris</td>
+					<td>KAT-uh-komz uv PAH-ree</td>
+					<td>巴黎地下墓穴</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Père Lachaise Cemetery</td>
+					<td>pair lah-SHAYZ SEM-ih-tree</td>
+					<td>拉雪兹神父公墓</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="neighbourhoods-街区">Neighbourhoods 街区
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Montmartre</td>
+					<td>mohn-MAR-truh</td>
+					<td>蒙马特</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Le Marais</td>
+					<td>luh mah-RAY</td>
+					<td>玛黑区</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Saint-Germain-des-Prés</td>
+					<td>san zhair-MAN day PRAY</td>
+					<td>圣日耳曼德佩区</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Latin Quarter</td>
+					<td>LAT-in KWOR-ter</td>
+					<td>拉丁区</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Île de la Cité</td>
+					<td>eel duh lah see-TAY</td>
+					<td>西堤岛</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Île Saint-Louis</td>
+					<td>eel san LOO-ee</td>
+					<td>圣路易岛</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pigalle</td>
+					<td>pee-GAHL</td>
+					<td>皮加勒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Belleville</td>
+					<td>bel-VEEL</td>
+					<td>贝尔维尔</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="museums--galleries-博物馆与美术馆">Museums &amp; Galleries 博物馆与美术馆
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Musée d&rsquo;Orsay</td>
+					<td>myoo-ZAY dor-SAY</td>
+					<td>奥赛博物馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Centre Pompidou</td>
+					<td>SAHN-truh pohm-pee-DOO</td>
+					<td>蓬皮杜中心</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Musée de l&rsquo;Orangerie</td>
+					<td>myoo-ZAY duh loh-RAHN-zhuh-ree</td>
+					<td>橘园博物馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Musée Rodin</td>
+					<td>myoo-ZAY roh-DAN</td>
+					<td>罗丹博物馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Musée Picasso</td>
+					<td>myoo-ZAY pee-KAH-soh</td>
+					<td>毕加索博物馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Palais de Chaillot</td>
+					<td>pah-LAY duh sha-YOH</td>
+					<td>夏约宫</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="艺术品与馆藏">艺术品与馆藏
+</h2><h3 id="musée-dorsay-奥赛博物馆">Musée d&rsquo;Orsay 奥赛博物馆
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>作者  Artist</th>
+					<th>作者发音</th>
+					<th>作者中文</th>
+					<th>备注</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>The Gleaners</td>
+					<td>thuh GLEE-nerz</td>
+					<td>拾穗者</td>
+					<td>Jean-François Millet</td>
+					<td>zhahn frahn-SWAH mee-YAY</td>
+					<td>让-弗朗索瓦·米勒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Self-Portrait</td>
+					<td>SELF por-trit</td>
+					<td>梵高自画像</td>
+					<td>Vincent van Gogh</td>
+					<td>VIN-sent van GOKH</td>
+					<td>文森特·梵高</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Starry Night Over the Rhône</td>
+					<td>STAH-ree nyt OH-ver thuh ROHN</td>
+					<td>罗纳河上的星夜</td>
+					<td>Vincent van Gogh</td>
+					<td>VIN-sent van GOKH</td>
+					<td>文森特·梵高</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Bedroom</td>
+					<td>thuh BED-room</td>
+					<td>阿尔勒的卧室</td>
+					<td>Vincent van Gogh</td>
+					<td>VIN-sent van GOKH</td>
+					<td>文森特·梵高</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Water Lilies</td>
+					<td>WAW-ter LIL-eez</td>
+					<td>睡莲</td>
+					<td>Claude Monet</td>
+					<td>klohd moh-NAY</td>
+					<td>克劳德·莫奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Woman with a Parasol</td>
+					<td>WOO-men with uh PAR-uh-sol</td>
+					<td>撑阳伞的女人</td>
+					<td>Claude Monet</td>
+					<td>klohd moh-NAY</td>
+					<td>克劳德·莫奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Haystacks</td>
+					<td>HAY-staks</td>
+					<td>干草垛</td>
+					<td>Claude Monet</td>
+					<td>klohd moh-NAY</td>
+					<td>克劳德·莫奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Houses of Parliament</td>
+					<td>HOW-ziz uv PAR-luh-ment</td>
+					<td>伦敦议会大楼</td>
+					<td>Claude Monet</td>
+					<td>klohd moh-NAY</td>
+					<td>克劳德·莫奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Young Flautist</td>
+					<td>thuh yung FLAW-tist</td>
+					<td>吹笛子的男孩</td>
+					<td>Édouard Manet</td>
+					<td>ay-DWAHR mah-NAY</td>
+					<td>爱德华·马奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Spring</td>
+					<td>thuh SPRING</td>
+					<td>泉水</td>
+					<td>Jean-Auguste-Dominique Ingres</td>
+					<td>zhahn oh-GOOST doh-mee-NEEK AN-gruh</td>
+					<td>让-奥古斯特-多米尼克·安格尔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Origin of the World</td>
+					<td>thuh OR-ih-jin uv thuh WURLD</td>
+					<td>世界之源</td>
+					<td>Gustave Courbet</td>
+					<td>goos-TAHV koor-BAY</td>
+					<td>居斯塔夫·库尔贝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Thinker</td>
+					<td>thuh THINK-er</td>
+					<td>沉思者／思想者</td>
+					<td>Auguste Rodin</td>
+					<td>oh-GOOST roh-DAN</td>
+					<td>奥古斯特·罗丹</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="louvre-museum-卢浮宫">Louvre Museum 卢浮宫
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>作者  Artist</th>
+					<th>作者发音</th>
+					<th>作者中文</th>
+					<th>备注</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Mona Lisa</td>
+					<td>MOH-nuh LEE-zuh</td>
+					<td>蒙娜丽莎</td>
+					<td>Leonardo da Vinci</td>
+					<td>lay-oh-NAR-doh dah VIN-chee</td>
+					<td>列奥纳多·达·芬奇</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Winged Victory of Samothrace</td>
+					<td>wingd VIK-tuh-ree uv SAM-uh-thrays</td>
+					<td>萨莫色雷斯的胜利女神</td>
+					<td>Unknown Hellenistic sculptor</td>
+					<td>un-NOHN hel-uh-NIS-tik SKULP-ter</td>
+					<td>无名希腊化时期雕塑家</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Venus de Milo</td>
+					<td>VEE-nus duh MEE-loh</td>
+					<td>米洛的维纳斯</td>
+					<td>Alexandros of Antioch</td>
+					<td>ah-lek-SAN-drohs uv AN-tee-ok</td>
+					<td>安提俄克的亚历山德罗斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Coronation of Napoleon</td>
+					<td>thuh kor-uh-NAY-shun uv nuh-POH-lee-un</td>
+					<td>拿破仑加冕礼</td>
+					<td>Jacques-Louis David</td>
+					<td>zhak LOO-ee dah-VEED</td>
+					<td>雅克-路易·大卫</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Liberty Leading the People</td>
+					<td>LIB-er-tee LEE-ding thuh PEE-pul</td>
+					<td>自由引导人民</td>
+					<td>Eugène Delacroix</td>
+					<td>uh-ZHEN duh-lah-KWAH</td>
+					<td>欧仁·德拉克罗瓦</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Wedding at Cana</td>
+					<td>thuh WED-ing at KAY-nuh</td>
+					<td>加纳的婚礼</td>
+					<td>Paolo Veronese</td>
+					<td>PAH-oh-loh veh-roh-NAY-zeh</td>
+					<td>保罗·韦罗内塞</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Death of Marat</td>
+					<td>thuh DETH uv mah-RAH</td>
+					<td>马拉之死</td>
+					<td>Jacques-Louis David</td>
+					<td>zhak LOO-ee dah-VEED</td>
+					<td>雅克-路易·大卫</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Portrait of Louis XIV</td>
+					<td>POR-trit uv LOO-ee thuh for-TEENTH</td>
+					<td>路易十四肖像</td>
+					<td>Hyacinthe Rigaud</td>
+					<td>ee-ah-SANT ree-GOH</td>
+					<td>亚森特·里戈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gabrielle d&rsquo;Estrées and Her Sister</td>
+					<td>gab-ree-EL des-TRAY and her SIS-ter</td>
+					<td>嘉柏俪和姐姐</td>
+					<td>School of Fontainebleau</td>
+					<td>skool uv fohn-ten-BLOH</td>
+					<td>枫丹白露派</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Grand Odalisque</td>
+					<td>thuh grand OH-duh-lisk</td>
+					<td>大宫女</td>
+					<td>Jean-Auguste-Dominique Ingres</td>
+					<td>zhahn oh-GOOST doh-mee-NEEK AN-gruh</td>
+					<td>让-奥古斯特-多米尼克·安格尔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Code of Hammurabi</td>
+					<td>thuh kohd uv ham-uh-RAH-bee</td>
+					<td>汉谟拉比法典</td>
+					<td>Ancient Babylonian artifact</td>
+					<td>AYN-shent bab-ih-LOH-nee-un AR-tih-fakt</td>
+					<td>古巴比伦文物</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Virgin of the Rocks</td>
+					<td>VUR-jin uv thuh ROKS</td>
+					<td>岩间圣母</td>
+					<td>Leonardo da Vinci</td>
+					<td>lay-oh-NAR-doh dah VIN-chee</td>
+					<td>列奥纳多·达·芬奇</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Rose Window</td>
+					<td>ROHZ WIN-doh</td>
+					<td>玫瑰花窗</td>
+					<td>Gothic Cathedral craftsmen</td>
+					<td>GOTH-ik kuh-THEE-drul KRAFTS-men</td>
+					<td>哥特式大教堂工匠</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="著名人物">著名人物
+</h2><h3 id="artists-艺术家">Artists 艺术家
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Leonardo da Vinci</td>
+					<td>lay-oh-NAR-doh dah VIN-chee</td>
+					<td>列奥纳多·达·芬奇</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Claude Monet</td>
+					<td>klohd moh-NAY</td>
+					<td>克劳德·莫奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Édouard Manet</td>
+					<td>ay-DWAHR mah-NAY</td>
+					<td>爱德华·马奈</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Vincent van Gogh</td>
+					<td>VIN-sent van GOKH</td>
+					<td>文森特·梵高</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Auguste Rodin</td>
+					<td>oh-GOOST roh-DAN</td>
+					<td>奥古斯特·罗丹</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Eugène Delacroix</td>
+					<td>uh-ZHEN duh-lah-KWAH</td>
+					<td>欧仁·德拉克罗瓦</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Jacques-Louis David</td>
+					<td>zhak LOO-ee dah-VEED</td>
+					<td>雅克-路易·大卫</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Jean-Auguste-Dominique Ingres</td>
+					<td>zhahn oh-GOOST doh-mee-NEEK AN-gruh</td>
+					<td>让-奥古斯特-多米尼克·安格尔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gustave Courbet</td>
+					<td>goos-TAHV koor-BAY</td>
+					<td>居斯塔夫·库尔贝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Jean-François Millet</td>
+					<td>zhahn frahn-SWAH mee-YAY</td>
+					<td>让-弗朗索瓦·米勒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pablo Picasso</td>
+					<td>PAH-bloh pee-KAH-soh</td>
+					<td>巴勃罗·毕加索</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Paul Cézanne</td>
+					<td>pohl say-ZAHN</td>
+					<td>保罗·塞尚</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Georges Seurat</td>
+					<td>zhorzh suh-RAH</td>
+					<td>乔治·修拉</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Henri Matisse</td>
+					<td>ahn-REE mah-TEESS</td>
+					<td>亨利·马蒂斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gustave Eiffel</td>
+					<td>goos-TAHV EYE-ful</td>
+					<td>居斯塔夫·埃菲尔</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="historical-figures-历史人物">Historical Figures 历史人物
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Napoleon Bonaparte</td>
+					<td>nuh-POH-lee-un BOH-nuh-part</td>
+					<td>拿破仑·波拿巴</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Napoleon III</td>
+					<td>nuh-POH-lee-un thuh THIRD</td>
+					<td>拿破仑三世</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Marie Antoinette</td>
+					<td>mah-REE an-twah-NET</td>
+					<td>玛丽·安托瓦内特</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Louis XIV</td>
+					<td>LOO-ee thuh for-TEENTH</td>
+					<td>路易十四</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Louis-Philippe</td>
+					<td>LOO-ee fee-LEEP</td>
+					<td>路易-菲利普</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Victor Hugo</td>
+					<td>vik-TOR yoo-GOH</td>
+					<td>维克多·雨果</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cardinal Richelieu</td>
+					<td>KAR-dih-nul REESH-uh-lyoo</td>
+					<td>黎塞留枢机主教</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Maximilien Robespierre</td>
+					<td>mak-see-MIL-ee-un rohbz-PYAIR</td>
+					<td>罗伯斯庇尔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Jean-Paul Marat</td>
+					<td>zhahn-pohl mah-RAH</td>
+					<td>让-保尔·马拉</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Joan of Arc</td>
+					<td>john uv ARK</td>
+					<td>圣女贞德</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Charles de Gaulle</td>
+					<td>sharl duh GOHL</td>
+					<td>戴高乐</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Georges-Eugène Haussmann</td>
+					<td>zhorzh uh-ZHEN OHS-mahn</td>
+					<td>乔治-欧仁·奥斯曼</td>
+					<td>巴黎改造者</td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="艺术流派与审美">艺术流派与审美
+</h2><h3 id="major-movements-主要流派">Major Movements 主要流派
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Impressionism</td>
+					<td>im-PRESH-uh-niz-um</td>
+					<td>印象派</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Post-Impressionism</td>
+					<td>pohst im-PRESH-uh-niz-um</td>
+					<td>后印象派</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Realism</td>
+					<td>REE-uh-liz-um</td>
+					<td>写实主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Neoclassicism</td>
+					<td>nee-oh-KLAS-ih-siz-um</td>
+					<td>新古典主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Romanticism</td>
+					<td>roh-MAN-tih-siz-um</td>
+					<td>浪漫主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Baroque</td>
+					<td>buh-ROHK</td>
+					<td>巴洛克</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Renaissance</td>
+					<td>REN-uh-sahns</td>
+					<td>文艺复兴</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gothic</td>
+					<td>GOTH-ik</td>
+					<td>哥特式</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Art Nouveau</td>
+					<td>ar noo-VOH</td>
+					<td>新艺术运动</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Art Deco</td>
+					<td>ar DEK-oh</td>
+					<td>装饰艺术风格</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cubism</td>
+					<td>KYOO-biz-um</td>
+					<td>立体主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Surrealism</td>
+					<td>suh-REE-uh-liz-um</td>
+					<td>超现实主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Expressionism</td>
+					<td>ik-SPRESH-uh-niz-um</td>
+					<td>表现主义</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Fauvism</td>
+					<td>FOH-viz-um</td>
+					<td>野兽派</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pointillism</td>
+					<td>PWAN-tih-liz-um</td>
+					<td>点彩画派</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="medium--technique-媒材与技法">Medium &amp; Technique 媒材与技法
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Oil painting</td>
+					<td>OYL PAYN-ting</td>
+					<td>油画</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Fresco</td>
+					<td>FRES-koh</td>
+					<td>壁画</td>
+					<td>湿壁画</td>
+			</tr>
+			<tr>
+					<td>Watercolour</td>
+					<td>WAW-ter-kul-er</td>
+					<td>水彩画</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sculpture</td>
+					<td>SKULP-cher</td>
+					<td>雕塑</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Marble</td>
+					<td>MAR-bul</td>
+					<td>大理石</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bronze</td>
+					<td>BRONZ</td>
+					<td>铜雕</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Engraving</td>
+					<td>in-GRAY-ving</td>
+					<td>版画／雕刻</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Mosaic</td>
+					<td>moh-ZAY-ik</td>
+					<td>马赛克镶嵌画</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Stained glass</td>
+					<td>staynd GLASS</td>
+					<td>彩色玻璃</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Chiaroscuro</td>
+					<td>kee-ar-uh-SKYOOR-oh</td>
+					<td>明暗对比法</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Perspective</td>
+					<td>per-SPEK-tiv</td>
+					<td>透视法</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sfumato</td>
+					<td>sfoo-MAH-toh</td>
+					<td>晕涂法</td>
+					<td>达芬奇技法</td>
+			</tr>
+			<tr>
+					<td>Trompe-l&rsquo;œil</td>
+					<td>tromp LOY</td>
+					<td>错视画法</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Plein air</td>
+					<td>plan AIR</td>
+					<td>外光派</td>
+					<td>户外写生</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="aesthetic-vocabulary-审美词汇">Aesthetic Vocabulary 审美词汇
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Composition</td>
+					<td>kom-puh-ZI-shun</td>
+					<td>构图</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Palette</td>
+					<td>PAL-it</td>
+					<td>调色板／色调</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Brushwork</td>
+					<td>BRUSH-wurk</td>
+					<td>笔触</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Texture</td>
+					<td>TEKS-cher</td>
+					<td>质感</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Proportion</td>
+					<td>pruh-POR-shun</td>
+					<td>比例</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Symmetry</td>
+					<td>SIM-ih-tree</td>
+					<td>对称</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Contrast</td>
+					<td>KON-trast</td>
+					<td>对比</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Harmony</td>
+					<td>HAR-muh-nee</td>
+					<td>和谐</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Luminosity</td>
+					<td>loo-mih-NOS-ih-tee</td>
+					<td>光感／发光度</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sublime</td>
+					<td>suh-BLYM</td>
+					<td>崇高感</td>
+					<td>美学概念</td>
+			</tr>
+			<tr>
+					<td>Pathos</td>
+					<td>PAY-thos</td>
+					<td>悲情／感染力</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Allegory</td>
+					<td>AL-uh-gor-ee</td>
+					<td>寓言画</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Iconography</td>
+					<td>eye-kuh-NOG-ruh-fee</td>
+					<td>图像学</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="历史与博物馆词汇">历史与博物馆词汇
+</h2><h3 id="political--historical-events-政治历史事件">Political &amp; Historical Events 政治历史事件
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>French Revolution</td>
+					<td>french rev-uh-LOO-shun</td>
+					<td>法国大革命</td>
+					<td>1789</td>
+			</tr>
+			<tr>
+					<td>Storming of the Bastille</td>
+					<td>STOR-ming uv thuh bah-STEE</td>
+					<td>攻占巴士底狱</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Reign of Terror</td>
+					<td>RAYN uv TER-er</td>
+					<td>恐怖统治时期</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>First French Empire</td>
+					<td>furst french EM-pyr</td>
+					<td>法兰西第一帝国</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>The Paris Commune</td>
+					<td>thuh PAR-is KOM-yoon</td>
+					<td>巴黎公社</td>
+					<td>1871</td>
+			</tr>
+			<tr>
+					<td>Belle Époque</td>
+					<td>bel ay-POK</td>
+					<td>美好年代</td>
+					<td>1880–1914</td>
+			</tr>
+			<tr>
+					<td>World War I</td>
+					<td>wurld wor WUN</td>
+					<td>第一次世界大战</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>World War II</td>
+					<td>wurld wor TOO</td>
+					<td>第二次世界大战</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Occupation of Paris</td>
+					<td>ok-yuh-PAY-shun uv PAH-ree</td>
+					<td>巴黎沦陷</td>
+					<td>1940–1944</td>
+			</tr>
+			<tr>
+					<td>Liberation of Paris</td>
+					<td>lib-er-AY-shun uv PAH-ree</td>
+					<td>巴黎解放</td>
+					<td>1944</td>
+			</tr>
+			<tr>
+					<td>Treaty of Versailles</td>
+					<td>TREE-tee uv ver-SY</td>
+					<td>《凡尔赛条约》</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="dynasties--regimes-王朝与政权">Dynasties &amp; Regimes 王朝与政权
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Capetian Dynasty</td>
+					<td>kuh-PEE-shun DY-nus-tee</td>
+					<td>卡佩王朝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Valois Dynasty</td>
+					<td>val-WAH DY-nus-tee</td>
+					<td>瓦卢瓦王朝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bourbon Dynasty</td>
+					<td>BUR-bun DY-nus-tee</td>
+					<td>波旁王朝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ancien Régime</td>
+					<td>ahn-SYAN ray-ZHEEM</td>
+					<td>旧制度</td>
+					<td>大革命前</td>
+			</tr>
+			<tr>
+					<td>The Second Empire</td>
+					<td>thuh SEK-und EM-pyr</td>
+					<td>法兰西第二帝国</td>
+					<td>拿破仑三世</td>
+			</tr>
+			<tr>
+					<td>The Fifth Republic</td>
+					<td>thuh fifth rih-PUB-lik</td>
+					<td>法兰西第五共和国</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="architecture--urban-history-建筑与城市历史">Architecture &amp; Urban History 建筑与城市历史
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Haussmannisation</td>
+					<td>ohs-mahn-ih-ZAY-shun</td>
+					<td>奥斯曼化</td>
+					<td>19世纪巴黎大改造</td>
+			</tr>
+			<tr>
+					<td>Gothic Cathedral</td>
+					<td>GOTH-ik kuh-THEE-drul</td>
+					<td>哥特式大教堂</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Flying Buttress</td>
+					<td>FLY-ing BUT-res</td>
+					<td>飞扶壁</td>
+					<td>哥特建筑结构</td>
+			</tr>
+			<tr>
+					<td>Rose Window</td>
+					<td>ROHZ WIN-doh</td>
+					<td>玫瑰花窗</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gargoyle</td>
+					<td>GAR-goyl</td>
+					<td>滴水兽</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Nave</td>
+					<td>NAYV</td>
+					<td>中殿</td>
+					<td>教堂中央走廊</td>
+			</tr>
+			<tr>
+					<td>Apse</td>
+					<td>APPS</td>
+					<td>后殿</td>
+					<td>教堂东端半圆形区</td>
+			</tr>
+			<tr>
+					<td>Spire</td>
+					<td>SPY-er</td>
+					<td>尖塔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Crypt</td>
+					<td>KRIPT</td>
+					<td>地下墓室</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Stained Glass Window</td>
+					<td>staynd glass WIN-doh</td>
+					<td>彩色玻璃窗</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Romanesque</td>
+					<td>roh-muh-NESK</td>
+					<td>罗马式建筑风格</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="ancient-egypt-古埃及">Ancient Egypt 古埃及
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Ancient Egypt</td>
+					<td>AYN-shent EE-jipt</td>
+					<td>古埃及</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pharaoh</td>
+					<td>FAIR-oh</td>
+					<td>法老</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Mummy</td>
+					<td>MUM-ee</td>
+					<td>木乃伊</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sarcophagus</td>
+					<td>sar-KOF-uh-gus</td>
+					<td>石棺</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Hieroglyphics</td>
+					<td>hy-er-oh-GLIF-iks</td>
+					<td>象形文字</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sphinx</td>
+					<td>SFINKS</td>
+					<td>狮身人面像</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Obelisk</td>
+					<td>OB-uh-lisk</td>
+					<td>方尖碑</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Papyrus</td>
+					<td>puh-PY-rus</td>
+					<td>纸莎草纸</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Amulet</td>
+					<td>AM-yuh-let</td>
+					<td>护身符</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Scarab</td>
+					<td>SKAIR-ub</td>
+					<td>圣甲虫</td>
+					<td>护身符造型</td>
+			</tr>
+			<tr>
+					<td>Canopic jar</td>
+					<td>kuh-NOH-pik JAR</td>
+					<td>卡诺匹克罐</td>
+					<td>存放木乃伊内脏</td>
+			</tr>
+			<tr>
+					<td>Ankh</td>
+					<td>ANKH</td>
+					<td>安卡十字</td>
+					<td>生命符号</td>
+			</tr>
+			<tr>
+					<td>Nile</td>
+					<td>NYL</td>
+					<td>尼罗河</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Dynasty</td>
+					<td>DY-nus-tee</td>
+					<td>王朝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ramesses II</td>
+					<td>RAM-uh-seez thuh SEK-und</td>
+					<td>拉美西斯二世</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Nefertiti</td>
+					<td>nef-er-TEE-tee</td>
+					<td>纳芙蒂蒂</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cleopatra</td>
+					<td>klee-oh-PAH-truh</td>
+					<td>克利奥帕特拉</td>
+					<td>埃及艳后</td>
+			</tr>
+			<tr>
+					<td>Tutankhamun</td>
+					<td>too-tan-KAH-mun</td>
+					<td>图坦卡蒙</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Book of the Dead</td>
+					<td>book uv thuh DED</td>
+					<td>死者之书</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Temple of Dendur</td>
+					<td>TEM-pul uv DEN-der</td>
+					<td>丹铎神庙</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="ancient-greece--hellenistic-world-古希腊">Ancient Greece &amp; Hellenistic World 古希腊
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Ancient Greece</td>
+					<td>AYN-shent GREES</td>
+					<td>古希腊</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Hellenistic</td>
+					<td>hel-uh-NIS-tik</td>
+					<td>希腊化时期的</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>City-state</td>
+					<td>SIT-ee stayt</td>
+					<td>城邦</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Athens</td>
+					<td>ATH-inz</td>
+					<td>雅典</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sparta</td>
+					<td>SPAR-tuh</td>
+					<td>斯巴达</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Acropolis</td>
+					<td>uh-KROP-uh-lis</td>
+					<td>卫城</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Parthenon</td>
+					<td>PAR-thuh-non</td>
+					<td>帕特农神庙</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Olympus</td>
+					<td>oh-LIM-pus</td>
+					<td>奥林匹斯山</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Amphora</td>
+					<td>AM-for-uh</td>
+					<td>双耳陶罐</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Kouros</td>
+					<td>KOOR-os</td>
+					<td>男青年立像</td>
+					<td>古风雕塑</td>
+			</tr>
+			<tr>
+					<td>Kore</td>
+					<td>KOR-ay</td>
+					<td>女青年立像</td>
+					<td>古风雕塑</td>
+			</tr>
+			<tr>
+					<td>Frieze</td>
+					<td>FREEZ</td>
+					<td>浮雕带</td>
+					<td>建筑装饰横带</td>
+			</tr>
+			<tr>
+					<td>Pediment</td>
+					<td>PED-ih-ment</td>
+					<td>山形墙</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Doric</td>
+					<td>DOR-ik</td>
+					<td>多立克柱式</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ionic</td>
+					<td>eye-ON-ik</td>
+					<td>爱奥尼克柱式</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Corinthian</td>
+					<td>kuh-RIN-thee-un</td>
+					<td>科林斯柱式</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Zeus</td>
+					<td>ZYOOS</td>
+					<td>宙斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Athena</td>
+					<td>uh-THEE-nuh</td>
+					<td>雅典娜</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Aphrodite</td>
+					<td>af-roh-DY-tee</td>
+					<td>阿佛洛狄忒</td>
+					<td>维纳斯原型</td>
+			</tr>
+			<tr>
+					<td>Hermes</td>
+					<td>HUR-meez</td>
+					<td>赫尔墨斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Dionysus</td>
+					<td>dy-oh-NY-sus</td>
+					<td>狄俄尼索斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Poseidon</td>
+					<td>poh-SY-dun</td>
+					<td>波塞冬</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ares</td>
+					<td>AIR-eez</td>
+					<td>阿瑞斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Artemis</td>
+					<td>AR-tuh-mis</td>
+					<td>阿尔忒弥斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Hera</td>
+					<td>HEER-uh</td>
+					<td>赫拉</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Hephaestus</td>
+					<td>hih-FES-tus</td>
+					<td>赫菲斯托斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Nike</td>
+					<td>NY-kee</td>
+					<td>尼刻</td>
+					<td>胜利女神</td>
+			</tr>
+			<tr>
+					<td>Homer</td>
+					<td>HOH-mer</td>
+					<td>荷马</td>
+					<td>诗人</td>
+			</tr>
+			<tr>
+					<td>Socrates</td>
+					<td>SOK-ruh-teez</td>
+					<td>苏格拉底</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Plato</td>
+					<td>PLAY-toh</td>
+					<td>柏拉图</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Aristotle</td>
+					<td>AIR-is-tot-ul</td>
+					<td>亚里士多德</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Alexander the Great</td>
+					<td>al-ig-ZAN-der thuh GRAYT</td>
+					<td>亚历山大大帝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pericles</td>
+					<td>PAIR-ih-kleez</td>
+					<td>伯里克利</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Phidias</td>
+					<td>FID-ee-us</td>
+					<td>菲狄亚斯</td>
+					<td>帕特农雕塑家</td>
+			</tr>
+			<tr>
+					<td>Praxiteles</td>
+					<td>prak-SIT-uh-leez</td>
+					<td>普拉克西特利斯</td>
+					<td>古典雕塑家</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="ancient-rome-古罗马">Ancient Rome 古罗马
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Ancient Rome</td>
+					<td>AYN-shent ROHM</td>
+					<td>古罗马</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Roman Republic</td>
+					<td>ROH-mun rih-PUB-lik</td>
+					<td>罗马共和国</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Roman Empire</td>
+					<td>ROH-mun EM-pyr</td>
+					<td>罗马帝国</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Senate</td>
+					<td>SEN-it</td>
+					<td>元老院</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Emperor</td>
+					<td>EM-per-er</td>
+					<td>皇帝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Consul</td>
+					<td>KON-sul</td>
+					<td>执政官</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Legion</td>
+					<td>LEE-jun</td>
+					<td>军团</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Forum</td>
+					<td>FOR-um</td>
+					<td>广场</td>
+					<td>政治中心</td>
+			</tr>
+			<tr>
+					<td>Bust</td>
+					<td>BUST</td>
+					<td>胸像</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Relief</td>
+					<td>rih-LEEF</td>
+					<td>浮雕</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Triumphal arch</td>
+					<td>try-UM-ful ARCH</td>
+					<td>凯旋门</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Toga</td>
+					<td>TOH-guh</td>
+					<td>托加袍</td>
+					<td>罗马长袍</td>
+			</tr>
+			<tr>
+					<td>Laurel wreath</td>
+					<td>LOR-ul REETH</td>
+					<td>月桂冠</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Julius Caesar</td>
+					<td>JOO-lee-us SEE-zer</td>
+					<td>尤利乌斯·凯撒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Augustus</td>
+					<td>aw-GUS-tus</td>
+					<td>奥古斯都</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Marcus Aurelius</td>
+					<td>MAR-kus aw-REE-lee-us</td>
+					<td>马可·奥勒留</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cicero</td>
+					<td>SIS-er-oh</td>
+					<td>西塞罗</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Virgil</td>
+					<td>VUR-jil</td>
+					<td>维吉尔</td>
+					<td>诗人</td>
+			</tr>
+			<tr>
+					<td>Ovid</td>
+					<td>OH-vid</td>
+					<td>奥维德</td>
+					<td>诗人</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="mesopotamia-美索不达米亚">Mesopotamia 美索不达米亚
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Mesopotamia</td>
+					<td>mes-oh-puh-TAY-mee-uh</td>
+					<td>美索不达米亚</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Sumer</td>
+					<td>SOO-mer</td>
+					<td>苏美尔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Akkadian</td>
+					<td>uh-KAY-dee-un</td>
+					<td>阿卡德文明</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Babylonia</td>
+					<td>bab-ih-LOH-nee-uh</td>
+					<td>巴比伦尼亚</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Assyria</td>
+					<td>uh-SIR-ee-uh</td>
+					<td>亚述</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Babylon</td>
+					<td>BAB-ih-lon</td>
+					<td>巴比伦</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cuneiform</td>
+					<td>kyoo-NEE-ih-form</td>
+					<td>楔形文字</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ziggurat</td>
+					<td>ZIG-uh-rat</td>
+					<td>金字形神塔</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Stele</td>
+					<td>STEE-lee</td>
+					<td>石碑</td>
+					<td>石板文物</td>
+			</tr>
+			<tr>
+					<td>Hammurabi</td>
+					<td>ham-uh-RAH-bee</td>
+					<td>汉谟拉比</td>
+					<td>巴比伦王</td>
+			</tr>
+			<tr>
+					<td>Lamassu</td>
+					<td>LAH-muh-soo</td>
+					<td>拉玛苏</td>
+					<td>人头牛身有翼神兽</td>
+			</tr>
+			<tr>
+					<td>Gilgamesh</td>
+					<td>GIL-guh-mesh</td>
+					<td>吉尔伽美什</td>
+					<td>史诗英雄</td>
+			</tr>
+			<tr>
+					<td>Tigris</td>
+					<td>TY-gris</td>
+					<td>底格里斯河</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Euphrates</td>
+					<td>yoo-FRAY-teez</td>
+					<td>幼发拉底河</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ishtar</td>
+					<td>ISH-tar</td>
+					<td>伊什塔尔</td>
+					<td>爱与战争女神</td>
+			</tr>
+			<tr>
+					<td>Marduk</td>
+					<td>MAR-dook</td>
+					<td>马尔杜克</td>
+					<td>巴比伦主神</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="ancient-persia-古波斯">Ancient Persia 古波斯
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Ancient Persia</td>
+					<td>AYN-shent PUR-zhuh</td>
+					<td>古波斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Achaemenid Empire</td>
+					<td>uh-KEE-muh-nid EM-pyr</td>
+					<td>阿契美尼德帝国</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Persepolis</td>
+					<td>per-SEP-uh-lis</td>
+					<td>波斯波利斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Darius</td>
+					<td>duh-RY-us</td>
+					<td>大流士</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Xerxes</td>
+					<td>ZUR-kseez</td>
+					<td>薛西斯</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Cyrus the Great</td>
+					<td>SY-rus thuh GRAYT</td>
+					<td>居鲁士大帝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Frieze of Archers</td>
+					<td>FREEZ uv AR-cherz</td>
+					<td>弓箭手浮雕</td>
+					<td>卢浮宫波斯藏品</td>
+			</tr>
+			<tr>
+					<td>Zoroastrianism</td>
+					<td>zor-oh-AS-tree-un-iz-um</td>
+					<td>琐罗亚斯德教</td>
+					<td>拜火教</td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="antiquity--museum-terminology-古物与博物馆通用术语">Antiquity &amp; Museum Terminology 古物与博物馆通用术语
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Antiquity</td>
+					<td>an-TIK-wih-tee</td>
+					<td>古代</td>
+					<td>泛指古典时期</td>
+			</tr>
+			<tr>
+					<td>Artifact</td>
+					<td>AR-tih-fakt</td>
+					<td>文物／人工制品</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Relic</td>
+					<td>REL-ik</td>
+					<td>遗物／圣物</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ruin</td>
+					<td>ROO-in</td>
+					<td>遗址／废墟</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Excavation</td>
+					<td>eks-kuh-VAY-shun</td>
+					<td>考古发掘</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Archaeology</td>
+					<td>ar-kee-OL-uh-jee</td>
+					<td>考古学</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Provenance</td>
+					<td>PROV-uh-nuns</td>
+					<td>文物来源／出处</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Collection</td>
+					<td>kuh-LEK-shun</td>
+					<td>馆藏／收藏</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Wing</td>
+					<td>WING</td>
+					<td>展馆翼楼</td>
+					<td>如 the Denon Wing</td>
+			</tr>
+			<tr>
+					<td>Gallery</td>
+					<td>GAL-er-ee</td>
+					<td>展厅</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Permanent collection</td>
+					<td>PUR-muh-nent kuh-LEK-shun</td>
+					<td>常设展</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Temporary exhibition</td>
+					<td>TEM-puh-rer-ee eks-ih-BISH-un</td>
+					<td>临时展览</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Audio guide</td>
+					<td>AW-dee-oh GYD</td>
+					<td>语音导览</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Curator</td>
+					<td>kyoo-RAY-ter</td>
+					<td>策展人</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Conservation</td>
+					<td>kon-ser-VAY-shun</td>
+					<td>文物保护</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Replica</td>
+					<td>REP-lih-kuh</td>
+					<td>复制品</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Original</td>
+					<td>uh-RIJ-ih-nul</td>
+					<td>原作</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>BC (Before Christ)</td>
+					<td>BEE SEE</td>
+					<td>公元前</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>AD (Anno Domini)</td>
+					<td>AY DEE</td>
+					<td>公元</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>BCE (Before Common Era)</td>
+					<td>BEE SEE EE</td>
+					<td>公元前</td>
+					<td>学术通用</td>
+			</tr>
+			<tr>
+					<td>CE (Common Era)</td>
+					<td>SEE EE</td>
+					<td>公元</td>
+					<td>学术通用</td>
+			</tr>
+			<tr>
+					<td>Millennium</td>
+					<td>mih-LEN-ee-um</td>
+					<td>千年</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Iron Age</td>
+					<td>EYE-ern AYJ</td>
+					<td>铁器时代</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bronze Age</td>
+					<td>BRONZ AYJ</td>
+					<td>青铜时代</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Neolithic</td>
+					<td>nee-oh-LITH-ik</td>
+					<td>新石器时代</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Paleolithic</td>
+					<td>pay-lee-oh-LITH-ik</td>
+					<td>旧石器时代</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="交通">交通
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Beauvais</td>
+					<td>boh-VAY</td>
+					<td>博韦</td>
+					<td>巴黎北部城市，博韦机场所在地</td>
+			</tr>
+			<tr>
+					<td>Paris Beauvais Airport</td>
+					<td>PAH-ree boh-VAY AIR-port</td>
+					<td>巴黎博韦机场</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Charles de Gaulle Airport</td>
+					<td>sharl duh GOHL AIR-port</td>
+					<td>戴高乐机场</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Orly Airport</td>
+					<td>OR-lee AIR-port</td>
+					<td>奥利机场</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Paris Gare du Nord</td>
+					<td>PAH-ree gar dy NOR</td>
+					<td>巴黎北站</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Paris Gare de l&rsquo;Est</td>
+					<td>PAH-ree gar duh LEST</td>
+					<td>巴黎东站</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Gare Saint-Lazare</td>
+					<td>gar san lah-ZAR</td>
+					<td>圣拉扎尔车站</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Paris Métro</td>
+					<td>PAH-ree MAY-troh</td>
+					<td>巴黎地铁</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>RER</td>
+					<td>air-uh-air</td>
+					<td>快铁</td>
+					<td>区域快速铁路</td>
+			</tr>
+			<tr>
+					<td>Navigo Card</td>
+					<td>NAH-vee-goh KARD</td>
+					<td>Navigo交通卡</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Navigo Liberté+</td>
+					<td>NAH-vee-goh lee-bair-TAY PLUS</td>
+					<td>Navigo Liberté+按次计费卡</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bus Beauvais</td>
+					<td>boos boh-VAY</td>
+					<td>博韦机场巴士</td>
+					<td>往返市区</td>
+			</tr>
+			<tr>
+					<td>Vélib'</td>
+					<td>vay-LEEB</td>
+					<td>巴黎共享单车</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Taxi</td>
+					<td>TAK-see</td>
+					<td>出租车</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="美食与饮品">美食与饮品
+</h2><h3 id="food-食物">Food 食物
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Croissant</td>
+					<td>kwah-SAHN</td>
+					<td>牛角面包</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pain au chocolat</td>
+					<td>pan oh shok-oh-LAH</td>
+					<td>巧克力面包</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Baguette</td>
+					<td>bah-GET</td>
+					<td>法棍面包</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Crêpe</td>
+					<td>KREP</td>
+					<td>可丽饼</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Galette</td>
+					<td>gah-LET</td>
+					<td>荞麦可丽饼</td>
+					<td>咸味</td>
+			</tr>
+			<tr>
+					<td>French Onion Soup</td>
+					<td>french UN-yun SOOP</td>
+					<td>法式洋葱汤</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Escargot</td>
+					<td>es-kar-GOH</td>
+					<td>法式焗蜗牛</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Foie gras</td>
+					<td>fwah GRAH</td>
+					<td>鹅肝</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Steak frites</td>
+					<td>stayk FREET</td>
+					<td>牛排薯条</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pot-au-feu</td>
+					<td>poh-toh-FUH</td>
+					<td>法式炖肉</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Ratatouille</td>
+					<td>rat-uh-TOO-ee</td>
+					<td>普罗旺斯杂烩</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Crème brûlée</td>
+					<td>krem broo-LAY</td>
+					<td>焦糖布丁</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Macaron</td>
+					<td>mak-ah-ROHN</td>
+					<td>马卡龙</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Mille-feuille</td>
+					<td>meel-FUY</td>
+					<td>拿破仑酥</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Éclair</td>
+					<td>ay-KLAIR</td>
+					<td>闪电泡芙</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Tarte Tatin</td>
+					<td>tart tah-TAN</td>
+					<td>翻转苹果塔</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="famous-restaurants--dining-concepts-著名餐厅">Famous Restaurants &amp; Dining Concepts 著名餐厅
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Bouillon Chartier</td>
+					<td>boo-YOHN shar-TYAY</td>
+					<td>布雍沙提耶餐厅</td>
+					<td>传统法式大众餐厅</td>
+			</tr>
+			<tr>
+					<td>Bouillon</td>
+					<td>boo-YOHN</td>
+					<td>布雍</td>
+					<td>巴黎经典大众食堂</td>
+			</tr>
+			<tr>
+					<td>Brasserie</td>
+					<td>bras-uh-REE</td>
+					<td>啤酒餐厅</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Bistro</td>
+					<td>BEE-stroh</td>
+					<td>小酒馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Café</td>
+					<td>kah-FAY</td>
+					<td>咖啡馆</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Patisserie</td>
+					<td>pah-TEES-uh-ree</td>
+					<td>甜点店</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Boulangerie</td>
+					<td>boo-lahn-zhuh-REE</td>
+					<td>面包店</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Fromagerie</td>
+					<td>froh-mah-zhuh-REE</td>
+					<td>奶酪店</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Prix fixe</td>
+					<td>pree FEEKS</td>
+					<td>固定价格套餐</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>À la carte</td>
+					<td>ah lah KART</td>
+					<td>单点菜单</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="beverages-饮品">Beverages 饮品
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Café au lait</td>
+					<td>kah-FAY oh LAY</td>
+					<td>法式牛奶咖啡</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Café noisette</td>
+					<td>kah-FAY nwah-ZET</td>
+					<td>榛子咖啡</td>
+					<td>浓缩加少量奶</td>
+			</tr>
+			<tr>
+					<td>Café crème</td>
+					<td>kah-FAY KREM</td>
+					<td>法式奶油咖啡</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Café allongé</td>
+					<td>kah-FAY ah-lohn-ZHAY</td>
+					<td>法式长咖啡</td>
+					<td>近似美式</td>
+			</tr>
+			<tr>
+					<td>Vin rouge</td>
+					<td>van ROOZH</td>
+					<td>红葡萄酒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Vin blanc</td>
+					<td>van BLAHN</td>
+					<td>白葡萄酒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Champagne</td>
+					<td>sham-PAN-yuh</td>
+					<td>香槟</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Kir</td>
+					<td>KEER</td>
+					<td>黑醋栗香槟鸡尾酒</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Orangina</td>
+					<td>oh-rahn-ZHEE-nah</td>
+					<td>橙汁汽水</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Perrier</td>
+					<td>PAIR-ee-ay</td>
+					<td>巴黎水</td>
+					<td>气泡矿泉水</td>
+			</tr>
+			<tr>
+					<td>Diabolo menthe</td>
+					<td>dee-AH-boh-loh MAHNT</td>
+					<td>薄荷苏打饮料</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h3 id="coffee-culture-notes-咖啡文化">Coffee Culture Notes 咖啡文化
+</h3><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Debout au comptoir</td>
+					<td>duh-BOO oh kohn-TWAHR</td>
+					<td>站在吧台</td>
+					<td>价格更便宜</td>
+			</tr>
+			<tr>
+					<td>Assis en salle</td>
+					<td>ah-SEE ahn SAL</td>
+					<td>坐在室内</td>
+					<td>价格稍贵</td>
+			</tr>
+			<tr>
+					<td>En terrasse</td>
+					<td>ahn teh-RASS</td>
+					<td>坐在露台</td>
+					<td>价格最贵</td>
+			</tr>
+			<tr>
+					<td>L&rsquo;addition, s&rsquo;il vous plaît</td>
+					<td>lah-dee-SYOHN seel voo PLAY</td>
+					<td>请结账</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="实用短语">实用短语
+</h2><div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>词  Word</th>
+					<th>发音  Pronunciation</th>
+					<th>中文  Chinese</th>
+					<th>说明  Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Bonjour</td>
+					<td>bohn-ZHOOR</td>
+					<td>你好</td>
+					<td>早安/日间问候</td>
+			</tr>
+			<tr>
+					<td>Bonsoir</td>
+					<td>bohn-SWAHR</td>
+					<td>晚上好</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Merci</td>
+					<td>mair-SEE</td>
+					<td>谢谢</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>S&rsquo;il vous plaît</td>
+					<td>seel voo PLAY</td>
+					<td>请</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Excusez-moi</td>
+					<td>eks-kyoo-zay MWAH</td>
+					<td>打扰一下</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Pardon</td>
+					<td>par-DOHN</td>
+					<td>对不起／请让一下</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Je ne parle pas français</td>
+					<td>zhuh nuh PARL pah frahn-SAY</td>
+					<td>我不会说法语</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Parlez-vous anglais?</td>
+					<td>par-lay voo ahn-GLAY</td>
+					<td>您会说英语吗？</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Où est&hellip;?</td>
+					<td>oo AY</td>
+					<td>……在哪里？</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Combien ça coûte?</td>
+					<td>kohm-BYAN sah KOOT</td>
+					<td>这个多少钱？</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table></div>
+<h2 id="出发前的快速清单">出发前的快速清单
+</h2><p>如果只想先记住最实用的一组，可以从 <code>Paris Métro</code>、<code>Navigo Card</code>、<code>Boulangerie</code>、<code>Café</code>、<code>L’addition, s’il vous plaît</code>、<code>Excusez-moi</code> 和 <code>Je ne parle pas français</code> 开始。进博物馆时，<code>audio guide</code>、<code>permanent collection</code>、<code>temporary exhibition</code>、<code>gallery</code> 也特别高频。</p>
+<p>祝你在巴黎既看得懂、吃得好，也更从容地开口交流。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/%E5%B7%B4%E9%BB%8E/">巴黎</a>
+        
+            <a href="/zh/tags/%E6%B3%95%E5%9B%BD/">法国</a>
+        
+            <a href="/zh/tags/%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87/">旅行词汇</a>
+        
+            <a href="/zh/tags/%E5%8D%9A%E7%89%A9%E9%A6%86/">博物馆</a>
+        
+            <a href="/zh/tags/%E6%B3%95%E8%AF%AD/">法语</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+     
+    
+        
+
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+    data-repo-id="R_kgDOPvRxjA"
+    data-category="General"
+    data-category-id="DIC_kwDOPvRxjM4C958O"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/sitemap/">网站地图</a>
+        
+        
+            <br>
+            <span data-view-count="article" data-view-label="浏览：" data-view-api="https://jingyuan-page-views.mr-jingyuan-zheng.workers.dev" data-view-path="/zh/p/%E5%B7%B4%E9%BB%8E%E6%97%85%E8%A1%8C%E8%AF%8D%E6%B1%87%E8%A1%A8/" hidden aria-live="polite">浏览：—</span>
+        
+        
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.b5431ca96c2d8ab65884d297735221402cb96ef33abf9245819ec48b3cd63ce1.js" defer></script>
+
+
+    </body>
+</html>
