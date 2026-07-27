@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Jingyuan — Content Manager</title>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const bilingualEntryPrefix = "#/collections/posts/entries/";
+
+        const openSingleLanguageEditor = () => {
+          if (!window.location.hash.startsWith(bilingualEntryPrefix)) return;
+
+          const entryPath = decodeURIComponent(
+            window.location.hash.slice(bilingualEntryPrefix.length),
+          );
+          const match = entryPath.match(/^([^/]+)\/index\.zh$/);
+
+          if (!match) return;
+
+          const entryName = `zh_${match[1]
+            .toLowerCase()
+            .replace(/[^a-z0-9_]/g, "_")}`;
+
+          window.location.replace(
+            `#/collections/single_language_posts/entries/${entryName}`,
+          );
+        };
+
+        window.addEventListener("hashchange", openSingleLanguageEditor);
+        openSingleLanguageEditor();
+      })();
+    </script>
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  </body>
+</html>

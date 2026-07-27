@@ -1,0 +1,623 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+# Sign in from /admin/ with a GitHub fine-grained personal access token that has
+# Contents: Read and write access to this repository. The token stays only in
+# the browser's local storage; do not add it to this file or commit it.
+backend:
+  name: github
+  repo: Jingyuan-Zheng/hugo-main
+  branch: main
+
+# Keep Hugo's existing English index.md / Chinese index.zh.md page-bundle
+# convention. Single-language articles remain independent and are exposed
+# through a compatibility collection without creating unpublished translations.
+i18n:
+  structure: multiple_files
+  locales: [en, zh]
+  default_locale: en
+  omit_default_locale_from_file_path: true
+  omit_default_locale_from_preview_path: true
+  initial_locales: [en, zh]
+
+# All existing public Hugo images live here. Article image folders stay intact.
+media_folder: /static/img
+public_folder: /img
+
+collections:
+
+  - name: single_language_loader_bewlybewly_safari_revival
+    label: "Single-language loader: Bewlybewly Safari Revival"
+    folder: content/post
+    path: bewlybewly-safari-revival/index.zh
+    extension: md
+    format: yaml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_malta_waste_collection_calendar
+    label: "Single-language loader: Malta Waste Collection Calendar"
+    folder: content/post
+    path: malta-waste-collection-calendar/index.zh
+    extension: md
+    format: toml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_newtest
+    label: "Single-language loader: New Test"
+    folder: content/post
+    path: newTEST/index.zh
+    extension: md
+    format: toml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_no_new_tab
+    label: "Single-language loader: No New Tab"
+    folder: content/post
+    path: no-new-tab/index.zh
+    extension: md
+    format: toml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_paris_travel_vocabulary
+    label: "Single-language loader: Paris Travel Vocabulary"
+    folder: content/post
+    path: paris-travel-vocabulary/index.zh
+    extension: md
+    format: yaml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_the_little_dict_macos
+    label: "Single-language loader: The Little Dict Macos"
+    folder: content/post
+    path: the-little-dict-macos/index.zh
+    extension: md
+    format: yaml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
+
+
+
+  - name: posts
+    label: Create or edit bilingual posts
+    label_singular: Blog post
+    folder: /content/post
+    path: '{{slug}}/index'
+    slug: '{{fields.slug}}'
+    media_folder: '{{media_folder}}/{{dirname}}'
+    public_folder: '{{public_folder}}/{{dirname}}'
+    i18n: true
+    extension: md
+    format: frontmatter
+    summary: '{{title}} — {{date}} ({{locales}})'
+    preview_path: '/p/{{slug}}/'
+    thumbnail: image
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        i18n: true
+      - label: URL slug
+        name: slug
+        widget: string
+        i18n: duplicate
+        hint: Stable URL identifier; do not change it after publishing.
+      - label: Description
+        name: description
+        widget: text
+        required: false
+        i18n: true
+      - label: Published date
+        name: date
+        widget: datetime
+        format: 'YYYY-MM-DDTHH:mm:ssZ'
+        date_format: 'YYYY-MM-DD'
+        time_format: 'HH:mm'
+        i18n: duplicate
+      - label: Cover image
+        name: image
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: Upload a new image or use an existing site path such as /img/post-name/featured.png.
+      - label: Categories
+        name: categories
+        widget: relation
+        required: false
+        collection: taxonomies
+        file: categories
+        multiple: true
+        value_field: '{{categories.*.name}}'
+        display_fields: ['{{categories.*.name}}']
+        search_fields: ['{{categories.*.name}}']
+        i18n: true
+      - label: Tags
+        name: tags
+        widget: relation
+        required: false
+        collection: taxonomies
+        file: tags
+        multiple: true
+        value_field: '{{tags.*.name}}'
+        display_fields: ['{{tags.*.name}}']
+        search_fields: ['{{tags.*.name}}']
+        i18n: true
+      - label: Article
+        name: body
+        widget: markdown
+        i18n: true
+
+
+  - name: single_language_posts
+    label: Create or edit single-language posts
+    label_singular: Single-language post
+    i18n: false
+    files:
+      - name: zh_bewlybewly_safari_revival
+        label: "Bewlybewly Safari Revival"
+        file: content/post/bewlybewly-safari-revival/index.zh.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_malta_waste_collection_calendar
+        label: "Malta Waste Collection Calendar"
+        file: content/post/malta-waste-collection-calendar/index.zh.md
+        format: toml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_newtest
+        label: "New Test"
+        file: content/post/newTEST/index.zh.md
+        format: toml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_no_new_tab
+        label: "No New Tab"
+        file: content/post/no-new-tab/index.zh.md
+        format: toml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_paris_travel_vocabulary
+        label: "Paris Travel Vocabulary"
+        file: content/post/paris-travel-vocabulary/index.zh.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_the_little_dict_macos
+        label: "The Little Dict Macos"
+        file: content/post/the-little-dict-macos/index.zh.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+
+
+
+  # Each photo is a separate entry so the CMS can provide thumbnails, a grid
+  # view and a New button while preserving the front-end order.
+  - name: photo_wall
+    label: Photo wall
+    label_singular: Photo
+    folder: /data/photo-wall
+    extension: yaml
+    format: yaml
+    identifier_field: id
+    slug: '{{fields.id}}'
+    summary: '{{title}} / {{titleZh}}'
+    thumbnail: image
+    media_folder: /static/img/gallery
+    public_folder: /img/gallery
+    reorder:
+      key: order
+    fields:
+      - { label: Order, name: order, widget: number, value_type: int }
+      - { label: Stable ID, name: id, widget: string, hint: Keep this unchanged after publishing so saved photo positions continue to work. }
+      - { label: Image, name: image, widget: image }
+      - { label: English title, name: title, widget: string }
+      - { label: Simplified Chinese title, name: titleZh, widget: string, required: false }
+      - { label: English description, name: description, widget: text, required: false }
+      - { label: Simplified Chinese description, name: descriptionZh, widget: text, required: false }
+      - { label: Date, name: date, widget: datetime, date_only: true, time_format: false, format: 'YYYY-MM-DD', required: false }
+      - { label: Optional link, name: link, widget: string, required: false }
+
+  - name: launchpad
+    label: Launchpad
+    label_singular: App
+    folder: /data/launchpad
+    extension: yaml
+    format: yaml
+    identifier_field: id
+    slug: '{{fields.id}}'
+    summary: '{{label}} / {{labelZh}}'
+    thumbnail: screenshot
+    media_folder: /static/img/launchpad
+    public_folder: /img/launchpad
+    reorder:
+      key: order
+    fields:
+      - { label: Order, name: order, widget: number, value_type: int }
+      - { label: Stable ID, name: id, widget: string, hint: Keep this unchanged after publishing. }
+      - { label: English name, name: name, widget: string }
+      - { label: Simplified Chinese name, name: nameZh, widget: string, required: false }
+      - { label: English grid label, name: label, widget: string }
+      - { label: Simplified Chinese grid label, name: labelZh, widget: string, required: false }
+      - { label: App icon, name: icon, widget: image }
+      - label: Icon style
+        name: iconMode
+        widget: select
+        options: [app]
+        default: app
+      - { label: Preview screenshot, name: screenshot, widget: image }
+      - { label: English screenshot description, name: screenshotAlt, widget: string }
+      - { label: Simplified Chinese screenshot description, name: screenshotAltZh, widget: string, required: false }
+      - { label: Close button horizontal position, name: closeX, widget: number, value_type: float, required: false, hint: Percentage from the left edge of the screenshot. }
+      - { label: Close button vertical position, name: closeY, widget: number, value_type: float, required: false, hint: Percentage from the top edge of the screenshot. }
+      - { label: English article URL, name: article, widget: string, required: false }
+      - { label: Simplified Chinese article URL, name: articleZh, widget: string, required: false }
+      - { label: Source repository URL, name: repository, widget: string, required: false }
+
+  - name: world_clock
+    label: World clock
+    files:
+      - name: settings
+        label: World clock settings
+        file: /data/widgets.yaml
+        format: yaml
+        fields:
+          - label: World clock
+            name: worldClock
+            widget: object
+            fields:
+              - { label: My time zone, name: timeZone, widget: string, hint: Use an IANA time zone such as Europe/Malta or Asia/Shanghai. }
+
+  # A shared vocabulary for post categories and tags. Relation fields above
+  # read from these lists, so additions become selectable in every post editor.
+  - name: taxonomies
+    label: Categories and tags
+    files:
+      - name: categories
+        label: Categories
+        file: /data/taxonomies/categories.yaml
+        format: yaml
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            root: true
+            label_singular: Category
+            summary: '{{name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
+      - name: tags
+        label: Tags
+        file: /data/taxonomies/tags.yaml
+        format: yaml
+        fields:
+          - label: Tags
+            name: tags
+            widget: list
+            root: true
+            label_singular: Tag
+            summary: '{{name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
+
+  - name: friend_links
+    label: Friend links
+    label_singular: Friend link
+    folder: /data/friend-links
+    extension: yaml
+    format: yaml
+    identifier_field: id
+    slug: '{{fields.id}}'
+    summary: '{{title}}'
+    thumbnail: image
+    media_folder: /content/page/links
+    public_folder: ''
+    reorder:
+      key: order
+    fields:
+      - { label: Order, name: order, widget: number, value_type: int }
+      - { label: Stable ID, name: id, widget: string, hint: Keep this unchanged after publishing. }
+      - { label: Website name, name: title, widget: string }
+      - { label: Special English name, name: titleEn, widget: string, required: false, hint: Leave blank when English uses the same name. }
+      - { label: One-line description, name: description, widget: text, required: false }
+      - { label: Special English description, name: descriptionEn, widget: text, required: false, hint: Leave blank when English uses the same description. }
+      - { label: Website URL, name: website, widget: string }
+      - { label: Avatar, name: image, widget: image, required: false }
+      - { label: RSS feed URL, name: rss, widget: string, required: false }
+
+asset_collections:
+  - name: img_abc_custom_keyboard
+    label: "abc-custom-keyboard"
+    media_folder: /static/img/abc-custom-keyboard
+    public_folder: /img/abc-custom-keyboard
+  - name: img_ai4all_malta_free_ai_courses
+    label: "ai4all-malta-free-ai-courses"
+    media_folder: /static/img/ai4all-malta-free-ai-courses
+    public_folder: /img/ai4all-malta-free-ai-courses
+  - name: img_apple_style_web_clock_widget
+    label: "apple-style-web-clock-widget"
+    media_folder: /static/img/apple-style-web-clock-widget
+    public_folder: /img/apple-style-web-clock-widget
+  - name: img_bewlybewly_safari_revival
+    label: "bewlybewly-safari-revival"
+    media_folder: /static/img/bewlybewly-safari-revival
+    public_folder: /img/bewlybewly-safari-revival
+  - name: img_categories
+    label: "categories"
+    media_folder: /static/img/categories
+    public_folder: /img/categories
+  - name: img_dmg_maker
+    label: "dmg-maker"
+    media_folder: /static/img/dmg-maker
+    public_folder: /img/dmg-maker
+  - name: img_friend_links_application_system_launch
+    label: "friend-links-application-system-launch"
+    media_folder: /static/img/friend-links-application-system-launch
+    public_folder: /img/friend-links-application-system-launch
+  - name: img_gallery
+    label: "gallery"
+    media_folder: /static/img/gallery
+    public_folder: /img/gallery
+  - name: img_launchpad
+    label: "launchpad"
+    media_folder: /static/img/launchpad
+    public_folder: /img/launchpad
+  - name: img_mac_lite_translator
+    label: "mac-lite-translator"
+    media_folder: /static/img/mac-lite-translator
+    public_folder: /img/mac-lite-translator
+  - name: img_malta_eid
+    label: "malta-eid"
+    media_folder: /static/img/malta-eid
+    public_folder: /img/malta-eid
+  - name: img_malta_waste_collection_calendar
+    label: "malta-waste-collection-calendar"
+    media_folder: /static/img/malta-waste-collection-calendar
+    public_folder: /img/malta-waste-collection-calendar
+  - name: img_my_first_blog_setup_guide
+    label: "my-first-blog-setup-guide"
+    media_folder: /static/img/my-first-blog-setup-guide
+    public_folder: /img/my-first-blog-setup-guide
+  - name: img_no_new_tab
+    label: "no-new-tab"
+    media_folder: /static/img/no-new-tab
+    public_folder: /img/no-new-tab
+  - name: img_paris_travel_vocabulary
+    label: "paris-travel-vocabulary"
+    media_folder: /static/img/paris-travel-vocabulary
+    public_folder: /img/paris-travel-vocabulary
+  - name: img_safari_cjk_font_fallback_fix
+    label: "safari-cjk-font-fallback-fix"
+    media_folder: /static/img/safari-cjk-font-fallback-fix
+    public_folder: /img/safari-cjk-font-fallback-fix
+  - name: img_social
+    label: "social"
+    media_folder: /static/img/social
+    public_folder: /img/social
+  - name: img_text_tray
+    label: "text-tray"
+    media_folder: /static/img/text-tray
+    public_folder: /img/text-tray
+  - name: img_the_little_dict_macos
+    label: "the-little-dict-macos"
+    media_folder: /static/img/the-little-dict-macos
+    public_folder: /img/the-little-dict-macos
+  - name: img_translate_document_quick_action
+    label: "translate-document-quick-action"
+    media_folder: /static/img/translate-document-quick-action
+    public_folder: /img/translate-document-quick-action
