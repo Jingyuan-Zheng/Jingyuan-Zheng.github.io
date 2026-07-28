@@ -22,6 +22,25 @@
         background: #f5f5fa;
       }
 
+      .cms-access-notice {
+        position: fixed;
+        z-index: 10;
+        right: 24px;
+        bottom: 24px;
+        margin: 0;
+        max-width: min(420px, calc(100vw - 48px));
+        padding: 12px 16px;
+        border: 1px solid rgba(52, 73, 94, 0.16);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #34495e;
+        font-size: 14px;
+        line-height: 1.55;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(30, 38, 51, 0.1);
+        backdrop-filter: blur(14px);
+      }
+
       #nc-root,
       #nc-root > .sui.app-shell {
         --sui-primary-accent-color: #34495e;
@@ -111,6 +130,12 @@
         background: #303030;
       }
 
+      :root[data-theme="dark"] .cms-access-notice {
+        border-color: rgba(174, 191, 201, 0.18);
+        background: rgba(54, 54, 54, 0.9);
+        color: #d9e1e5;
+      }
+
       :root[data-theme="dark"] #nc-root,
       :root[data-theme="dark"] #nc-root > .sui.app-shell {
         --sui-primary-accent-color: #34495e;
@@ -150,6 +175,9 @@
     </style>
   </head>
   <body>
+    <p class="cms-access-notice" role="note">
+      此后台仅供 <strong>@Jingyuan-Zheng</strong> 登录使用，暂不对外开放。
+    </p>
     <div id="nc-root"></div>
     <script>
       (() => {
