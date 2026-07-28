@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/waline-comment-system-migration/","currentLanguage":"zh","englishTarget":"/p/waline-comment-system-migration/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。">
+<title>本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.1a31a077b41f64a6c5ed50e57b54f801dbdb2ac25cc43351bd4e1993534933f1.css"><meta property='og:title' content="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合">
+<meta property='og:description' content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Waline' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Vercel' /><meta property='article:tag' content='Neon' /><meta property='article:tag' content='评论系统' /><meta property='article:tag' content='网站更新' /><meta property='article:published_time' content='2026-07-28T21:20:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-28T21:20:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合">
+<meta name="twitter:description" content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png' />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="shortcut icon" href="/favicon.png?v=2" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
+
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/waline-comment-system-migration/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/waline-comment-system-migration/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/",
+          "name": "网站建设",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/",
+          "name": "本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "网站建设"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-28T21:20:00+02:00",
+      "datePublished": "2026-07-28T21:20:00+02:00",
+      "description": "本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。",
+      "headline": "本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合",
+      "image": "https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "Waline, Hugo, Vercel, Neon, 评论系统, 网站更新",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar site-avatar--management"><button
+                    class="site-avatar__management-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="sidebar-management-menu"
+                    aria-label="打开网站管理选单"
+                    data-sidebar-management-toggle
+                >
+                    <img src="/img/avatar.png"
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </button>
+                <div
+                    class="sidebar-management-menu"
+                    id="sidebar-management-menu"
+                    role="menu"
+                    aria-label="网站管理"
+                    data-sidebar-management-menu
+                    hidden
+                >
+                    <div class="sidebar-management-menu__header">
+                        <div class="sidebar-management-menu__heading">
+                            <strong>网站管理</strong>
+                            <small>仅供网站管理员使用，不对外开放</small>
+                        </div>
+                        <a href="/zh/">返回主页</a>
+                    </div>
+                    <div class="sidebar-management-menu__items">
+                            <a
+                                href="/admin/"
+                                role="menuitem"
+                                
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/database.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>内容管理</span>
+                            </a>
+                            <a
+                                href="https://zjy-blog-waline-comments.vercel.app/ui"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                                </span>
+                                <span>评论管理</span>
+                            </a>
+                            <a
+                                href="https://github.com/Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>网站仓库主页</span>
+                            </a>
+                            <a
+                                href="https://github.com/Jingyuan-Zheng/hugo-main"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code-2.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Hugo 源码</span>
+                            </a>
+                            <a
+                                href="https://search.google.com/search-console"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlesearchconsole.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Google Search Console</span>
+                            </a>
+                            <a
+                                href="https://www.bing.com/webmasters/"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bing.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Bing Webmasters</span>
+                            </a>
+                            <a
+                                href="https://analytics.google.com/analytics/"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Google Analytics</span>
+                            </a>
+                            <a
+                                href="https://clarity.microsoft.com/projects/view/xsh8jmde5h/dashboard"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/chart-no-axes-combined.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Microsoft Clarity</span>
+                            </a>
+                            <a
+                                href="https://dash.cloudflare.com/"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Cloudflare 控制台</span>
+                            </a>
+                            <a
+                                href="https://vercel.com/"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Vercel 控制台</span>
+                            </a>
+                            <a
+                                href="https://console.neon.tech/"
+                                role="menuitem"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/neon.svg')" aria-hidden="true"></span>
+                                </span>
+                                <span>Neon 控制台</span>
+                            </a>
+                    </div>
+                </div>
+                    <span class="emoji">🤩</span>
+                
+            </figure>
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <circle cx="9" cy="9" r="2" />
+  <path d="M4 16l4 -4a2 2 0 0 1 3 0l5 5" />
+  <path d="M14 14l1 -1a2 2 0 0 1 3 0l2 2" />
+</svg>
+
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/links/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/waline-comment-system-migration/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/waline-comment-system-migration/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#为什么从-giscus-迁移">为什么从 Giscus 迁移</a></li>
+    <li><a href="#现在的托管结构">现在的托管结构</a></li>
+    <li><a href="#评论区怎样融入现有主题">评论区怎样融入现有主题</a></li>
+    <li><a href="#从-cloudflare-迁移浏览量">从 Cloudflare 迁移浏览量</a></li>
+    <li><a href="#全站页面怎样计数">全站页面怎样计数</a></li>
+    <li><a href="#邮件通知与双语模板">邮件通知与双语模板</a></li>
+    <li><a href="#评论数据是怎样迁移的">评论数据是怎样迁移的</a></li>
+    <li><a href="#隐私与评论须知">隐私与评论须知</a></li>
+    <li><a href="#接下来">接下来</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/waline-comment-system-migration/">
+            <img alt="Featured image of post 本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/waline-comment-system-migration/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" style="background-color: hsl(279, 60%, 84%); color: hsl(279, 60%, 15%);">网站建设</a>
+        
+    </header>
+    
+    <div class="article-title-wrapper">
+        <h2 class="article-title"><a href="/zh/p/waline-comment-system-migration/">本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合</a></h2>
+        <h3 class="article-subtitle">本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。</h3>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+        <div class="inline-meta">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg><time class="article-time--published" datetime='2026-07-28T21:20:00&#43;02:00'>28/7月/2026</time>
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock-3.svg')" aria-hidden="true"></span><time class="article-time--reading">阅读时长: 6 分钟</time>
+        </div>
+        
+        <div class="inline-meta"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+<a href="/p/waline-comment-system-migration/" class="link">English</a></div>
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合"
+    data-share-url="https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印" title="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接" title="复制链接">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享" title="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#为什么从-giscus-迁移">为什么从 Giscus 迁移</a></li>
+    <li><a href="#现在的托管结构">现在的托管结构</a></li>
+    <li><a href="#评论区怎样融入现有主题">评论区怎样融入现有主题</a></li>
+    <li><a href="#从-cloudflare-迁移浏览量">从 Cloudflare 迁移浏览量</a></li>
+    <li><a href="#全站页面怎样计数">全站页面怎样计数</a></li>
+    <li><a href="#邮件通知与双语模板">邮件通知与双语模板</a></li>
+    <li><a href="#评论数据是怎样迁移的">评论数据是怎样迁移的</a></li>
+    <li><a href="#隐私与评论须知">隐私与评论须知</a></li>
+    <li><a href="#接下来">接下来</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/">https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>本文介绍本站从 Giscus 迁移到 Waline 的原因、现在的评论与浏览量架构、历史数据迁移方法，以及访客评论和双语邮件通知的配置方式。</p>
+<p>现在打开任意文章，评论区已经换成了新的 Waline 界面。读者不需要 GitHub 账户，可以直接以访客身份参与讨论；如果希望在评论收到回复时得到通知，还可以选择填写邮箱。</p>
+<p><img alt="本站迁移后的 Waline 评论区，包括文章反应、访客评论输入框与评论列表" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/waline-comment-system-migration/featured.png"></p>
+<h2 id="为什么从-giscus-迁移">为什么从 Giscus 迁移
+</h2><p>Giscus 是一个很适合技术博客的评论方案：它把评论保存在 GitHub Discussions，维护成本低，也很符合开源社区的使用习惯。问题是，发表评论需要登录 GitHub。</p>
+<p>本站的内容已经不只面向开发者。工具介绍、马耳他生活信息、旅行内容和网站更新会吸引不同背景的读者。要求每位读者先拥有并登录 GitHub，实际上为一次普通留言设置了不必要的门槛。</p>
+<p>迁移到 Waline 主要是为了获得以下能力：</p>
+<ul>
+<li>支持访客评论，不强制注册或登录；</li>
+<li>邮箱选填，并可在评论收到回复时发送通知；</li>
+<li>支持评论点赞、文章反应和评论数量统计；</li>
+<li>将文章浏览量与评论系统放在同一套计数接口中；</li>
+<li>提供独立的评论管理后台，不必进入 GitHub Discussions 处理内容；</li>
+<li>保留中英文界面，并让通知邮件跟随文章语言。</li>
+</ul>
+<p>访客可以不登录，但评论服务仍会为了限流、安全防护和管理处理必要的技术信息。昵称和评论内容会公开显示，邮箱则不会显示在评论区。</p>
+<h2 id="现在的托管结构">现在的托管结构
+</h2><p>博客本身仍然是 Hugo 生成的静态网站，由 GitHub Actions 构建并发布到 GitHub Pages。内容编辑使用 Sveltia CMS，文章和页面最终仍保存到 GitHub 仓库。</p>
+<p>新的评论系统分成两部分：</p>
+<ol>
+<li>Waline Server 部署在 Vercel，负责评论 API、管理界面、邮件通知和计数请求；</li>
+<li>评论、用户、文章互动和浏览量数据存储在 Neon PostgreSQL。</li>
+</ol>
+<p>这种拆分不会把整个博客变成动态网站。GitHub Pages 继续提供静态页面，只有评论区和计数在浏览器中按需请求 Waline API。即使评论服务暂时不可用，文章正文仍然可以正常访问。</p>
+<p>仪表盘的管理选单也已经更新：</p>
+<ul>
+<li><strong>内容管理</strong>进入本站的 Sveltia CMS；</li>
+<li><strong>评论管理</strong>进入 Waline 管理界面。</li>
+</ul>
+<p>仪表盘的系统信息现在会同时标明内容系统由 GitHub 托管，评论系统使用 Vercel 与 Neon。</p>
+<h2 id="评论区怎样融入现有主题">评论区怎样融入现有主题
+</h2><p>Waline 自带完整的输入框、评论列表、排序、Markdown、图片上传和表情选择功能，但默认视觉需要与 Stack 主题进一步协调。</p>
+<p>我为评论区增加了一层主题适配，包括：</p>
+<ul>
+<li>使用网站现有的卡片背景、边框、圆角和阴影变量；</li>
+<li>同时适配浅色与深色模式；</li>
+<li>把浏览量和评论数放进评论须知卡片；</li>
+<li>保留移动端布局，避免输入框和用户信息被挤压；</li>
+<li>根据文章语言切换界面文案；</li>
+<li>使用 Twitter Emoji 风格的表情资源，保持不同系统上的显示一致。</li>
+</ul>
+<p>文章反应目前提供“喜欢、好笑、思考、惊讶、难过”五种选择。它们使用 Waline 的 Twitter Emoji 图片资源，而不是读取访客电脑中的本地表情文件，因此不同浏览器会看到一致的图案。</p>
+<h2 id="从-cloudflare-迁移浏览量">从 Cloudflare 迁移浏览量
+</h2><p>本站原来的浏览量系统运行在 Cloudflare Workers 与 D1 上，其中还合并了此前的 GA4 历史数据。迁移评论系统时，我没有从零重新计数，而是把已有统计带到 Waline。</p>
+<p>迁移快照中，Cloudflare D1 有 82 条原始计数键。部分中文路径同时存在百分号编码和 Unicode 两种形式，例如同一页面可能分别以编码后的中文 URL 和直接中文 URL 出现。</p>
+<p>迁移过程先对路径做规范化，再把相同页面合并，最终得到 76 个唯一 URL。全站累计浏览量在迁移时为 1,607。</p>
+<p>目标数据库使用 Waline 的 <code>wl_counter</code> 表。迁移时还处理了一个容易忽略的问题：该表默认只以数字 ID 为主键，没有强制要求 URL 唯一。早期通过公开 API 并发补数时，同一路径可能产生重复记录。</p>
+<p>最终采用数据库事务完成整理：</p>
+<ol>
+<li>每个 URL 保留一条计数记录；</li>
+<li>合并并清理重复项；</li>
+<li>为 URL 增加唯一索引；</li>
+<li>使用“只增不减”的写入规则补齐历史数据；</li>
+<li>核对缺失路径、重复路径和低于源数据的计数。</li>
+</ol>
+<p>验证结果为 76 条目标记录、0 个重复 URL、0 个缺失 URL，并且没有任何页面低于 Cloudflare 的迁移快照。使用“只增不减”规则，也避免了迁移期间的新访问被历史数据覆盖。</p>
+<h2 id="全站页面怎样计数">全站页面怎样计数
+</h2><p>新的计数并不只出现在文章页。网站页脚会在非 404 页面加载 Waline 的轻量浏览量模块，为当前页面增加一次访问，同时更新一个专门的全站累计计数。</p>
+<p>文章评论区显示浏览量时只读取现有数字，不会再次递增，这样可以避免同一次页面加载被页脚和评论组件重复计算。</p>
+<p>主页、归档、分类、标签、图片墙、链接页、仪表盘和中英文页面都使用同一套新计数系统。旧的 Cloudflare 浏览量接口不再负责前端统计。</p>
+<h2 id="邮件通知与双语模板">邮件通知与双语模板
+</h2><p>邮件通知通过 Vercel 环境变量配置。SMTP 账户、应用专用密码和数据库连接信息都保存在托管平台的敏感变量中，不会写入 Hugo 仓库、文章或前端代码。</p>
+<p>配置项包括：</p>
+<ul>
+<li>SMTP 服务、发件账户和应用专用密码；</li>
+<li>网站名称、网站地址和站长通知邮箱；</li>
+<li>发件人名称与地址；</li>
+<li>评论回复邮件与新评论通知邮件的标题和正文。</li>
+</ul>
+<p>Waline 的邮件模板可以读取评论所属页面路径。本站中文文章都位于 <code>/zh/</code> 下，因此模板会检查评论 URL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{% if self.url and &#39;/zh/&#39; in self.url %}
+</span></span><span class="line"><span class="cl">  中文通知内容
+</span></span><span class="line"><span class="cl">{% else %}
+</span></span><span class="line"><span class="cl">  English notification content
+</span></span><span class="line"><span class="cl">{% endif %}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>中文文章下的评论会收到中文邮件，其他页面使用英文邮件。模板只引用评论者昵称、评论正文和文章链接，不会在邮件正文中暴露数据库凭据或其他系统密钥。</p>
+<p>为了保护账户安全，SMTP 使用的是单独生成的应用专用密码，而不是邮箱账户的日常登录密码。密码更新后必须重新部署 Waline，新的环境变量才会进入生产函数。</p>
+<h2 id="评论数据是怎样迁移的">评论数据是怎样迁移的
+</h2><p>旧评论先导出为 Waline JSON 格式，再导入新数据库。迁移时保留了评论正文、文章路径、回复关系、发布时间和审核状态。</p>
+<p>部分由站长发布的旧评论在导出时缺少用户关联信息。处理时只补齐管理员用户 ID、昵称、邮箱标识、主页和客户端信息，不修改原评论内容、页面、回复关系或时间。</p>
+<p>这类修复很重要。如果只搬运文字而没有恢复用户关联，旧评论可能会被显示成普通访客留言，头像、站长标记和后续管理权限也会不一致。</p>
+<h2 id="隐私与评论须知">隐私与评论须知
+</h2><p>评论区现在使用以下提示：</p>
+
+    <blockquote>
+        <p>本站支持访客评论。如果您希望获得评论回复通知，可以填写您的邮箱；收到回复时，系统将自动发送通知给您。</p>
+
+    </blockquote>
+<p>邮箱不是发表评论的强制条件。填写邮箱的主要用途是回复通知和头像匹配，不会在评论列表中公开显示。</p>
+<p>由于评论系统会处理评论内容、可选邮箱以及必要的技术信息，本站的<a class="link" href="/zh/privacy-policy/" >隐私政策</a>也已经同步更新，说明 GitHub Pages、Vercel、Neon 和 Waline 在当前架构中的作用。</p>
+<h2 id="接下来">接下来
+</h2><p>评论系统迁移已经完成，但它仍需要在真实使用中继续观察。我会关注邮件送达、移动端输入体验、反垃圾策略、数据库计数和不同语言页面的通知效果。</p>
+<p>如果你在评论时遇到加载失败、通知未送达、路径计数不一致或界面问题，欢迎直接在本文下方以访客身份留言。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/waline/">Waline</a>
+        
+            <a href="/zh/tags/hugo/">Hugo</a>
+        
+            <a href="/zh/tags/vercel/">Vercel</a>
+        
+            <a href="/zh/tags/neon/">Neon</a>
+        
+            <a href="/zh/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">评论系统</a>
+        
+            <a href="/zh/tags/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0/">网站更新</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/friend-links-application-system-launch/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 本站友链功能与在线申请系统上线" loading="lazy" src="/img/friend-links-application-system-launch/featured.jpg">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">本站友链功能与在线申请系统上线</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/apple-style-web-clock-widget/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 苹果风格网页时钟小组件：上线心得与技术细节" loading="lazy" src="/img/apple-style-web-clock-widget/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">苹果风格网页时钟小组件：上线心得与技术细节</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/my-first-blog-setup-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Hugo + Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录" loading="lazy" src="/img/my-first-blog-setup-guide/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo &#43; Stack 搭建个人博客：GitHub Pages 部署和 Token 踩坑记录</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+    <section class="waline-container">
+        <aside class="waline-comments-notice" aria-labelledby="comments-notice-title">
+            <div>
+                <h3 id="comments-notice-title">评论须知</h3>
+                <p>
+                    本站支持访客评论。如果您希望获得评论回复通知，可以填写您的邮箱；收到回复时，系统将自动发送通知给您。
+                </p>
+            </div>
+            <div class="waline-comments-stats" aria-label="文章互动统计">
+                <span title="浏览量">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
+                    <span class="waline-pageview-count" data-path="/zh/p/waline-comment-system-migration/">—</span>
+                </span>
+                <span title="评论数">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                    <span class="waline-comment-count" data-path="/zh/p/waline-comment-system-migration/">—</span>
+                </span>
+            </div>
+        </aside>
+        <div id="waline-comments-root"></div>
+    </section>
+    <script type="module">
+        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+
+        const serverURL = "https://zjy-blog-waline-comments.vercel.app";
+
+        init({
+            el: "#waline-comments-root",
+            serverURL,
+            dark: 'html[data-scheme="dark"]',
+            lang: "zh-CN",
+            pageview: false,
+            comment:  true ,
+            reaction: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f60d.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f602.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f914.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f62e.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f622.png"],
+            emoji: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],
+            locale: {
+                reactionTitle: "这篇文章对你有帮助吗？",
+                reaction0: "喜欢",
+                reaction1: "好笑",
+                reaction2: "思考",
+                reaction3: "惊讶",
+                reaction4: "难过",
+            },
+        });
+
+        pageviewCount({
+            serverURL,
+            path: "/zh/p/waline-comment-system-migration/",
+            selector: ".waline-pageview-count",
+            update: false,
+        });
+    </script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/sitemap/">网站地图</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
+            <script type="module">
+                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+
+                const serverURL = "https://zjy-blog-waline-comments.vercel.app";
+                const lang = "zh-CN";
+
+                pageviewCount({
+                    serverURL,
+                    lang,
+                    selector: ".waline-pageview-tracker",
+                });
+
+                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        path: "/__site_total__/",
+                        type: "time",
+                        action: "inc",
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        const count = payload?.data?.[0]?.time;
+                        const element = document.querySelector(".waline-site-pageview-count");
+                        if (!element || typeof count !== "number") return;
+                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
+                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
+                        element.textContent = `${label} ${formatted}`;
+                    })
+                    .catch(() => {});
+            </script>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+        
+            <br>
+            <small class="site-runtime">
+                本站已运行
+                <strong data-site-runtime data-launch-date="2025-09-14">0</strong>
+                天
+            </small>
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.86f9028703d040ca1fce763480015cfa1797afc26361ee647caa2e779eacb455.js" defer></script>
+
+
+    </body>
+</html>

@@ -633,3 +633,7 @@ asset_collections:
     label: "translate-document-quick-action"
     media_folder: /static/img/translate-document-quick-action
     public_folder: /img/translate-document-quick-action
+  - name: img_waline_comment_system_migration
+    label: "waline-comment-system-migration"
+    media_folder: /static/img/waline-comment-system-migration
+    public_folder: /img/waline-comment-system-migration
