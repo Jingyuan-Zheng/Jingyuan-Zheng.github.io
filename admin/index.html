@@ -41,7 +41,7 @@
         backdrop-filter: blur(14px);
       }
 
-      .cms-access-notice__english {
+      .cms-access-notice__chinese {
         display: block;
         margin-top: 4px;
         font-size: 0.92em;
@@ -183,15 +183,20 @@
   </head>
   <body>
     <p class="cms-access-notice" role="note">
-      此后台仅供 <strong>@Jingyuan-Zheng</strong> 登录使用，暂不对外开放。
-      <span class="cms-access-notice__english" lang="en">
-        This CMS is for <strong>@Jingyuan-Zheng</strong> only and is not open to the public.
+      This CMS is for <strong>@Jingyuan-Zheng</strong> only and is not open to the public.
+      <span class="cms-access-notice__chinese" lang="zh-Hans">
+        此后台仅供 <strong>@Jingyuan-Zheng</strong> 登录使用，暂不对外开放。
       </span>
     </p>
     <div id="nc-root"></div>
     <script>
       (() => {
         const bilingualEntryPrefix = "#/collections/posts/entries/";
+        const accessNotice = document.querySelector(".cms-access-notice");
+
+        const updateAccessNotice = () => {
+          accessNotice.hidden = window.location.hash.startsWith("#/");
+        };
 
         const openSingleLanguageEditor = () => {
           if (!window.location.hash.startsWith(bilingualEntryPrefix)) return;
@@ -212,7 +217,11 @@
           );
         };
 
-        window.addEventListener("hashchange", openSingleLanguageEditor);
+        window.addEventListener("hashchange", () => {
+          updateAccessNotice();
+          openSingleLanguageEditor();
+        });
+        updateAccessNotice();
         openSingleLanguageEditor();
       })();
     </script>
