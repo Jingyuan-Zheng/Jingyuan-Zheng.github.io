@@ -4,9 +4,153 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Jingyuan — Content Manager</title>
+    <meta name="theme-color" content="#34495E" />
+    <link rel="icon" href="/admin/site-logo.png" />
+    <title>Jingyuan CMS</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family:
+          Inter, ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Segoe UI", sans-serif;
+        background: #f5f5fa;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f5f5fa;
+      }
+
+      #nc-root,
+      #nc-root > .sui.app-shell {
+        --sui-primary-accent-color: #34495e;
+        --sui-primary-accent-color-text: #34495e;
+        --sui-primary-accent-color-inverted: #ffffff;
+        --sui-primary-background-color: #ffffff;
+        --sui-secondary-background-color: #f5f5fa;
+        --sui-tertiary-background-color: #ffffff;
+        --sui-hover-background-color: #e9eef2;
+        --sui-selected-background-color: #dce4e9;
+        --sui-checkbox-border-radius: 50%;
+        --sui-checkbox-height: 24px;
+        --sui-control-small-border-radius: 999px;
+        --sui-control-medium-border-radius: 18px;
+        --sui-control-large-border-radius: 28px;
+        --sui-button-small-border-radius: 999px;
+        --sui-button-medium-border-radius: 999px;
+        --sui-button-large-border-radius: 999px;
+        font-family:
+          Inter, ui-rounded, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Segoe UI", sans-serif;
+      }
+
+      #nc-root .sui.checkbox .button[role="checkbox"] {
+        width: var(--sui-checkbox-height);
+        min-width: var(--sui-checkbox-height);
+        height: var(--sui-checkbox-height);
+        min-height: var(--sui-checkbox-height);
+        border-radius: 50%;
+        box-shadow: none;
+        transform: none;
+        aspect-ratio: 1;
+      }
+
+      #nc-root .button:not([role="checkbox"]) {
+        min-height: 48px;
+        font-weight: 700;
+        box-shadow: 0 12px 30px rgba(30, 38, 51, 0.08);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      #nc-root .button:not([role="checkbox"]):hover,
+      #nc-root .button:not([role="checkbox"]):focus-visible {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 34px rgba(30, 38, 51, 0.12);
+      }
+
+      #nc-root img.logo {
+        filter: drop-shadow(0 18px 24px rgba(30, 38, 51, 0.12));
+      }
+
+      #nc-root :has(> h1) > img.logo {
+        width: 280px;
+        height: 280px;
+      }
+
+      #nc-root :has(> img.logo) > h1 {
+        font-size: 42px;
+      }
+
+      #nc-root :has(> h1) .buttons > .button {
+        width: min(600px, calc(100vw - 48px));
+        min-height: 62px;
+        font-size: 18px;
+      }
+
+      @media (max-width: 600px) {
+        #nc-root :has(> h1) > img.logo {
+          width: 152px;
+          height: 152px;
+        }
+
+        #nc-root :has(> img.logo) > h1 {
+          font-size: 30px;
+        }
+
+        #nc-root :has(> h1) .buttons > .button {
+          min-height: 52px;
+          font-size: 16px;
+        }
+      }
+
+      :root[data-theme="dark"],
+      :root[data-theme="dark"] body {
+        background: #303030;
+      }
+
+      :root[data-theme="dark"] #nc-root,
+      :root[data-theme="dark"] #nc-root > .sui.app-shell {
+        --sui-primary-accent-color: #34495e;
+        --sui-primary-accent-color-text: #aebfc9;
+        --sui-primary-accent-color-inverted: #ffffff;
+        --sui-primary-background-color: #363636;
+        --sui-secondary-background-color: #303030;
+        --sui-tertiary-background-color: #3c3c3c;
+        --sui-hover-background-color: #3d4850;
+        --sui-selected-background-color: #34495e;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]),
+        :root:not([data-theme]) body {
+          background: #303030;
+        }
+
+        :root:not([data-theme]) #nc-root,
+        :root:not([data-theme]) #nc-root > .sui.app-shell {
+          --sui-primary-accent-color: #34495e;
+          --sui-primary-accent-color-text: #aebfc9;
+          --sui-primary-accent-color-inverted: #ffffff;
+          --sui-primary-background-color: #363636;
+          --sui-secondary-background-color: #303030;
+          --sui-tertiary-background-color: #3c3c3c;
+          --sui-hover-background-color: #3d4850;
+          --sui-selected-background-color: #34495e;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #nc-root .button:not([role="checkbox"]) {
+          transition: none;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="nc-root"></div>
     <script>
       (() => {
         const bilingualEntryPrefix = "#/collections/posts/entries/";
@@ -34,6 +178,9 @@
         openSingleLanguageEditor();
       })();
     </script>
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <script
+      data-cfasync="false"
+      src="https://unpkg.com/@sveltia/cms@0.174.0/dist/sveltia-cms.js"
+    ></script>
   </body>
 </html>

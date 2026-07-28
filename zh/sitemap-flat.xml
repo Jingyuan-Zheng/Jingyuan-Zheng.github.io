@@ -287,6 +287,9 @@
     <loc>https://jingyuan-zheng.github.io/admin/config.yml</loc>
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/dashboard/</loc>
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/apps/</loc>
   </url>
   <url>
@@ -700,6 +703,9 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/dashboard/</loc>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/apps/</loc>

@@ -1046,6 +1046,24 @@
       />
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/zh/dashboard/</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/dashboard/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/dashboard/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/dashboard/"
+      />
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/zh/apps/</loc>
     <xhtml:link
       rel="alternate"

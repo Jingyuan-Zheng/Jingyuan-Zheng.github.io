@@ -1,12 +1,20 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 
-# Sign in from /admin/ with a GitHub fine-grained personal access token that has
-# Contents: Read and write access to this repository. The token stays only in
-# the browser's local storage; do not add it to this file or commit it.
+# GitHub OAuth is handled by the dedicated Cloudflare Worker below. A fine-grained
+# personal access token with Contents: Read and write remains available as a
+# fallback and stays only in the browser's local storage.
 backend:
   name: github
   repo: Jingyuan-Zheng/hugo-main
   branch: main
+  base_url: https://blog-auth.zjydev.workers.dev
+
+site_url: https://jingyuan-zheng.github.io
+display_url: https://jingyuan-zheng.github.io
+app_title: Jingyuan CMS
+logo:
+  src: /admin/site-logo.png
+  show_in_header: true
 
 # Keep Hugo's existing English index.md / Chinese index.zh.md page-bundle
 # convention. Single-language articles remain independent and are exposed
@@ -561,6 +569,10 @@ asset_collections:
     label: "categories"
     media_folder: /static/img/categories
     public_folder: /img/categories
+  - name: img_dashboard
+    label: "dashboard"
+    media_folder: /static/img/dashboard
+    public_folder: /img/dashboard
   - name: img_dmg_maker
     label: "dmg-maker"
     media_folder: /static/img/dmg-maker
