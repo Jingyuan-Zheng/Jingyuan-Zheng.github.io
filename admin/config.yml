@@ -637,3 +637,7 @@ asset_collections:
     label: "waline-comment-system-migration"
     media_folder: /static/img/waline-comment-system-migration
     public_folder: /img/waline-comment-system-migration
+  - name: img_waline_icons
+    label: "waline-icons"
+    media_folder: /static/img/waline-icons
+    public_folder: /img/waline-icons
