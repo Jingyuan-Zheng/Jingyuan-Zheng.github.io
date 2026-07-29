@@ -67,7 +67,7 @@
         background: #303030;
         color-scheme: dark;
     }
-</style><meta name='description' content="My personal CV page is temporarily under maintenance.">
+</style><meta name='description' content="Jingyuan Zheng's academic background, research projects, technical skills, and professional experience.">
 <title>About Me</title>
 
 
@@ -79,13 +79,13 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.75c28c1ff1beb7ed3ccae4225f0ecd993df8eb330f523d1b71305d1674a0d50c.css"><meta property='og:title' content="About Me">
-<meta property='og:description' content="My personal CV page is temporarily under maintenance.">
+<meta property='og:description' content="Jingyuan Zheng's academic background, research projects, technical skills, and professional experience.">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/about-me/'>
 <meta property='og:site_name' content='Jingyuan'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-08T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/site-default-og.png' />
 <meta name="twitter:site" content="@AndersJheng">
     <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="My personal CV page is temporarily under maintenance."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Jingyuan Zheng's academic background, research projects, technical skills, and professional experience."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/site-default-og.png' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
@@ -624,7 +624,7 @@
     
     <div class="article-title-wrapper">
         <h2 class="article-title"><a href="/about-me/">About Me</a></h2>
-        <h3 class="article-subtitle">My personal CV page is temporarily under maintenance.</h3>
+        <h3 class="article-subtitle">Jingyuan Zheng&#39;s academic background, research projects, technical skills, and professional experience.</h3>
     </div>
     
     
@@ -644,7 +644,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg><time class="article-time--published" datetime='2026-03-08T00:00:00Z'>08/Mar/2026</time>
-            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock-3.svg')" aria-hidden="true"></span><time class="article-time--reading">1 minute read</time>
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock-3.svg')" aria-hidden="true"></span><time class="article-time--reading">5 minutes read</time>
         </div>
         
         <div class="inline-meta"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -706,47 +706,588 @@
     
     
     <style>
-.article-header, .article-metadata, .language-switch, .article-translations {
+.article-header,
+.article-metadata,
+.language-switch,
+.article-translations {
     display: none !important;
 }
 
-.cv-maintenance {
-    min-height: 58vh;
-    display: grid;
-    place-items: center;
-    padding: 3rem 1rem;
+.menu-social li:has(a[href^="mailto:"]) {
+    display: none;
 }
 
-.cv-maintenance__card {
-    width: min(680px, 100%);
-    padding: clamp(2.5rem, 7vw, 5rem);
-    text-align: center;
+:root {
+    --cv-accent: var(--accent-color);
+    --cv-border: rgba(var(--accent-color-rgb), 0.22);
+    --cv-soft: rgba(var(--accent-color-rgb), 0.07);
+    --cv-main: var(--card-text-color-main);
+    --cv-muted: var(--card-text-color-secondary);
+}
+
+.cv-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+    color: var(--cv-main);
+}
+
+.cv-page > * {
+    opacity: 0;
+    animation: cv-rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cv-page > :nth-child(2) { animation-delay: 0.08s; }
+.cv-page > :nth-child(3) { animation-delay: 0.14s; }
+.cv-page > :nth-child(4) { animation-delay: 0.2s; }
+.cv-page > :nth-child(5) { animation-delay: 0.26s; }
+.cv-page > :nth-child(6) { animation-delay: 0.32s; }
+.cv-page > :nth-child(7) { animation-delay: 0.38s; }
+.cv-page > :nth-child(8) { animation-delay: 0.44s; }
+
+@keyframes cv-rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cv-floating-nav {
+    position: fixed;
+    top: 50%;
+    right: 2.4rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    transform: translate(18.2rem, -50%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cv-floating-nav:hover,
+.cv-floating-nav:focus-within {
+    transform: translate(0, -50%);
+}
+
+.cv-floating-trigger {
+    display: grid;
+    flex: 0 0 5.2rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    place-items: center;
+    color: var(--cv-accent);
     background: var(--card-background);
-    border: 2px solid rgba(var(--accent-color-rgb), 0.25);
-    border-radius: 36px;
+    border: 1px solid var(--cv-border);
+    border-right: 0;
+    border-radius: 16px 0 0 16px;
+    box-shadow: var(--shadow-l1);
+}
+
+.cv-floating-trigger svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.cv-floating-links {
+    width: 18.2rem;
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    background: var(--card-background);
+    border: 1px solid var(--cv-border);
+    border-radius: 20px;
     box-shadow: var(--shadow-l2);
 }
 
-.cv-maintenance h1 {
-    margin: 0 0 1.25rem;
-    color: var(--card-text-color-main);
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
-    line-height: 1.1;
+.cv-floating-links a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: var(--cv-muted);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
-.cv-maintenance p {
-    max-width: 520px;
-    margin: 0 auto;
-    color: var(--card-text-color-secondary);
-    font-size: 1.6rem;
+.cv-floating-links a:hover,
+.cv-floating-links a:focus-visible {
+    color: var(--cv-accent);
+    background: var(--cv-soft);
+    transform: translateX(-0.35rem);
+}
+
+.cv-hero {
+    position: relative;
+    padding: clamp(2.5rem, 7vw, 5.5rem);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 92% 10%, rgba(var(--accent-color-rgb), 0.2), transparent 34%),
+        var(--card-background);
+    border: 1px solid var(--cv-border);
+    border-radius: 32px;
+    box-shadow: var(--shadow-l1);
+}
+
+.cv-hero::after {
+    position: absolute;
+    right: -5rem;
+    bottom: -8rem;
+    width: 22rem;
+    height: 22rem;
+    content: "";
+    border: 1px solid var(--cv-border);
+    border-radius: 50%;
+}
+
+.cv-kicker {
+    margin: 0 0 1.2rem;
+    color: var(--cv-accent);
+    font-size: 1.3rem;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.cv-hero h1 {
+    max-width: 720px;
+    margin: 0;
+    color: var(--cv-main);
+    font-size: clamp(3.6rem, 8vw, 6.2rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.cv-profile {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 2.2rem 0 0;
+    color: var(--cv-muted);
+    font-size: 1.7rem;
     line-height: 1.75;
 }
+
+.cv-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0 3rem;
+    padding: 0;
+    list-style: none;
+}
+
+.cv-nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--cv-muted);
+    font-size: 1.4rem;
+    font-weight: 650;
+    text-decoration: none;
+    background: var(--card-background);
+    border: 1px solid var(--cv-border);
+    border-radius: 999px;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cv-nav a:hover {
+    color: var(--cv-accent);
+    border-color: var(--cv-accent);
+    transform: translateY(-2px);
+}
+
+.cv-section {
+    margin-top: 2.2rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: var(--card-background);
+    border: 1px solid var(--cv-border);
+    border-radius: 26px;
+    box-shadow: var(--shadow-l1);
+    scroll-margin-top: 2rem;
+}
+
+.cv-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0 0 2.5rem;
+    color: var(--cv-main);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.cv-section-heading::before {
+    width: 0.45rem;
+    height: 2.6rem;
+    content: "";
+    background: var(--cv-accent);
+    border-radius: 999px;
+}
+
+.cv-entry {
+    position: relative;
+    padding: 0 0 2.7rem 2.2rem;
+    border-left: 1px solid var(--cv-border);
+}
+
+.cv-entry:last-child {
+    padding-bottom: 0;
+}
+
+.cv-entry::before {
+    position: absolute;
+    top: 0.45rem;
+    left: -0.45rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    content: "";
+    background: var(--cv-accent);
+    border: 3px solid var(--card-background);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--cv-border);
+}
+
+.cv-entry-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem 2rem;
+    align-items: baseline;
+}
+
+.cv-entry h3 {
+    margin: 0;
+    color: var(--cv-main);
+    font-size: 1.95rem;
+    line-height: 1.35;
+}
+
+.cv-date {
+    color: var(--cv-accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.cv-subtitle {
+    margin: 0.55rem 0 0;
+    color: var(--cv-muted);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.cv-detail {
+    margin: 0.4rem 0 0;
+    color: var(--cv-muted);
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.cv-list {
+    margin: 1.2rem 0 0;
+    padding-left: 1.4rem;
+    color: var(--cv-main);
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+.cv-list li + li {
+    margin-top: 0.65rem;
+}
+
+.cv-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.cv-skill {
+    padding: 1.4rem 1.5rem;
+    background: var(--cv-soft);
+    border: 1px solid var(--cv-border);
+    border-radius: 16px;
+}
+
+.cv-skill strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--cv-accent);
+    font-size: 1.4rem;
+}
+
+.cv-skill span {
+    color: var(--cv-main);
+    font-size: 1.4rem;
+    line-height: 1.55;
+}
+
+.cv-achievements {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cv-achievements li {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--cv-soft);
+    border-radius: 14px;
+    font-size: 1.45rem;
+    line-height: 1.55;
+}
+
+.cv-achievements time {
+    color: var(--cv-accent);
+    font-weight: 700;
+}
+
+.cv-links {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    .cv-page {
+        padding-top: 0.5rem;
+    }
+
+    .cv-hero,
+    .cv-section {
+        border-radius: 22px;
+    }
+
+    .cv-entry-header,
+    .cv-achievements li {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+
+    .cv-date {
+        white-space: normal;
+    }
+
+    .cv-skill-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cv-floating-nav {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cv-page > * {
+        opacity: 1;
+        animation: none;
+    }
+
+    .cv-floating-nav,
+    .cv-nav a,
+    .cv-floating-links a {
+        transition: none;
+    }
+}
+
+@media print {
+    .cv-nav,
+    .cv-floating-nav {
+        display: none;
+    }
+
+    .cv-hero,
+    .cv-section {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
 </style>
-<main class="cv-maintenance" aria-labelledby="cv-maintenance-title">
-    <section class="cv-maintenance__card">
-        <h1 id="cv-maintenance-title">Under Maintenance</h1>
-        <p>My personal CV is temporarily unavailable while I update it. Please check back soon.</p>
-    </section>
+<nav class="cv-floating-nav" aria-label="Quick CV navigation">
+<span class="cv-floating-trigger" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+</span>
+<ul class="cv-floating-links">
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#additional">Additional</a></li>
+</ul>
+</nav>
+<main class="cv-page">
+<header class="cv-hero">
+<p class="cv-kicker">Curriculum Vitae</p>
+<h1>Jingyuan Zheng</h1>
+<p class="cv-profile">Industrial engineering and logistics management graduate with experience in operations research, supply-chain analysis, reliability modelling, inventory planning, simulation, and data-driven decision support. I use Python, statistical methods, and optimisation models to improve operational efficiency, resilience, and sustainability in complex logistics and engineering systems.</p>
+</header>
+<nav aria-label="CV sections">
+<ul class="cv-nav">
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#additional">Additional</a></li>
+</ul>
+</nav>
+<section id="education" class="cv-section">
+<h2 class="cv-section-heading">Academic Qualification</h2>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>The University of Hong Kong</h3>
+<time class="cv-date">Sep 2024 - Sep 2025</time>
+</div>
+<p class="cv-subtitle">Master of Science in Engineering · Industrial Engineering and Logistics Management</p>
+<p class="cv-detail">English-medium programme · Relevant coursework: Data-driven Optimization, Operational Research, Machine Learning and Applications, Physical Internet</p>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Fuzhou University</h3>
+<time class="cv-date">Sep 2019 - Jun 2024</time>
+</div>
+<p class="cv-subtitle">Bachelor of Management · Logistics Management</p>
+<p class="cv-detail">GPA: 3.69/4.0 (Rank: 2/35) · Relevant coursework: Python, Database Technology and Application, Operational Research, Forecasting Methods, Logistics System Optimization, Modelling and Simulation of Logistics Systems</p>
+</article>
+</section>
+<section id="skills" class="cv-section">
+<h2 class="cv-section-heading">Research &amp; Technical Skills</h2>
+<div class="cv-skill-grid">
+<div class="cv-skill"><strong>Industrial Engineering &amp; Operations Research</strong><span>Multi-objective optimisation, network-flow modelling, Monte Carlo simulation, sensitivity analysis, and decision support.</span></div>
+<div class="cv-skill"><strong>Logistics &amp; Supply Chain</strong><span>Inventory planning, reliability and resilience analysis, maritime supply-chain risk, material requirements planning, and logistics system optimisation.</span></div>
+<div class="cv-skill"><strong>Data Analysis &amp; Research</strong><span>Data cleaning, statistical analysis, questionnaire design, factor analysis, regression, machine learning, and reproducible analytical workflows.</span></div>
+<div class="cv-skill"><strong>Tools</strong><span>Python, SQL Server, MATLAB, SPSS Statistics, Vensim, FlexSim, and Excel.</span></div>
+</div>
+</section>
+<section id="projects" class="cv-section">
+<h2 class="cv-section-heading">Research &amp; Analytical Projects</h2>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Reliability Modelling and Decision Support for PV Microinverter Systems</h3>
+<time class="cv-date">Nov 2024 - Jul 2025</time>
+</div>
+<p class="cv-subtitle">MSc Dissertation · The University of Hong Kong · Supervisor: Prof. Yao Cheng</p>
+<ul class="cv-list">
+<li>Developed a reliability-driven decision-support model for PV microinverter spare parts, linking stochastic failure behaviour, replenishment lead time, downtime loss, lifecycle cost, and carbon-emission impact.</li>
+<li>Applied CTMC-based reliability modelling, NSGA-II multi-objective optimisation, and Monte Carlo simulation to evaluate inventory policies under uncertain failures and supply conditions.</li>
+<li>Conducted sensitivity analysis and translated model outputs into practical recommendations for inventory levels, lead-time control, reliability improvement, and system resilience.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>System Dynamics Simulation of Operational Risk Evolution in Maritime Supply Chains</h3>
+<time class="cv-date">Oct 2023 - Jun 2024</time>
+</div>
+<p class="cv-subtitle">Undergraduate Dissertation · Fuzhou University · Supervisor: Prof. Haidong Yang</p>
+<ul class="cv-list">
+<li>Built a system dynamics model to simulate operational risk evolution in an international maritime supply-chain system using a three-tier risk indicator framework and questionnaire-based data.</li>
+<li>Applied questionnaire reliability testing and factor analysis to process survey responses, determine indicator weights, and convert qualitative risk factors into model inputs.</li>
+<li>Generated scenario-based recommendations for supplier reliability, logistics coordination, information-flow control, financial health, and operational resilience.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Machine Learning Classification of High-Dimensional Time-Series Signals</h3>
+<time class="cv-date">Dec 2024</time>
+</div>
+<p class="cv-subtitle">Academic Project · The University of Hong Kong · Directed by Dr. Shujia Qin</p>
+<ul class="cv-list">
+<li>Developed Python-based training and inference workflows for binary classification of 8,192-point time-series signals under limited domain information and a small labelled dataset.</li>
+<li>Extracted and compared time-domain, frequency-domain, and power spectral density features to guide feature engineering and model design.</li>
+<li>Implemented and compared a stacking ensemble, an RBF-kernel SVM, and a neural-network model with Bayesian hyperparameter tuning, documenting performance, limitations, and reproducibility.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Emergency Evacuation Optimisation Using Network Flow and Heuristic Algorithms</h3>
+<time class="cv-date">Nov 2024</time>
+</div>
+<p class="cv-subtitle">Academic Project · The University of Hong Kong · Directed by Prof. Junwei Wang</p>
+<ul class="cv-list">
+<li>Developed a network-flow-based evacuation optimisation model for disaster-management scenarios, balancing evacuation efficiency with fairness in shelter allocation.</li>
+<li>Evaluated shelter utilisation, congestion, distribution balance, and resource-allocation performance using simulation-based results.</li>
+<li>Proposed improvements for bottleneck reduction, fairer flow distribution, and more resilient emergency planning.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>High-Quality Development Evaluation of Historical and Cultural Blocks in Fuzhou</h3>
+<time class="cv-date">May 2022 - May 2023</time>
+</div>
+<p class="cv-subtitle">Undergraduate Research Project · Fuzhou University · Directed by Prof. Qin Zhang</p>
+<ul class="cv-list">
+<li>Supported a questionnaire-based research project by applying factor analysis and AHP to construct and evaluate an indicator system for historical-community development.</li>
+<li>Analysed development conditions and improvement priorities, translating quantitative findings into policy-oriented recommendations.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Analysis of Factors Influencing Students' Postgraduate Study Intentions</h3>
+<time class="cv-date">Mar 2022 - Jul 2022</time>
+</div>
+<p class="cv-subtitle">Research Methods Project · Fuzhou University · Directed by Prof. Quan Cheng and Yong Hu</p>
+<ul class="cv-list">
+<li>Designed and processed questionnaire data using SPSS, Likert-scale variables, and ordinal regression to analyse factors influencing postgraduate study intentions.</li>
+<li>Converted survey responses into structured numerical variables and interpreted model results to support evidence-based recommendations for higher-education planning.</li>
+</ul>
+</article>
+</section>
+<section id="experience" class="cv-section">
+<h2 class="cv-section-heading">Internship Experience</h2>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Business Intern · Oriental Logistics Group (China) Ltd.</h3>
+<time class="cv-date">Feb 2024 - Apr 2024</time>
+</div>
+<ul class="cv-list">
+<li>Maintained shipment-status records by checking vessel-space allocation, ETD/ETA changes, booking updates, documentation issues, and cargo-information discrepancies against shipping-company and partner updates.</li>
+<li>Maintained structured communication with customers, customs brokers, shipping companies, and partner firms, supporting schedule visibility and exception follow-up.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Material Planner · Xiamen Wu Zhen Ni Hai Import and Export Co., Ltd.</h3>
+<time class="cv-date">Jul 2023 - Sep 2023</time>
+</div>
+<ul class="cv-list">
+<li>Used Python, SQL, and inventory data analysis to review historical product flows, identify demand patterns, and support material-requirements planning.</li>
+<li>Maintained structured inventory records and proposed stock adjustments that reduced excess stock for two seasonal products by approximately 25%.</li>
+</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Customer Information Administrator · Xiamen Haixi Real Estate Marketing Planning Co., Ltd.</h3>
+<time class="cv-date">Jul 2022 - Sep 2022</time>
+</div>
+<ul class="cv-list">
+<li>Applied data analysis and customer segmentation to build structured customer profiles and compile analytical reports supporting targeted sales follow-up.</li>
+</ul>
+</article>
+</section>
+<section id="achievements" class="cv-section">
+<h2 class="cv-section-heading">Achievements</h2>
+<ul class="cv-achievements">
+<li><time>Nov 2025</time><span>Tony Reynolds Academic Excellence Prize 2024-25, Department of Data and Systems Engineering, The University of Hong Kong</span></li>
+<li><time>Jun 2024</time><span>Outstanding Undergraduate Dissertation, Fuzhou University</span></li>
+<li><time>Sep 2021</time><span>Second-Class Prize, National College Students' Ecological and Environmental Protection Competition</span></li>
+<li><time>Sep 2021</time><span>Excellent Psychological Development Department Award, Fuzhou University; contributed as Director of the student psychological development team</span></li>
+<li><time>Apr 2021 &amp; Aug 2020</time><span>Third-Class Scholarship, Fuzhou University</span></li>
+</ul>
+</section>
+<section id="additional" class="cv-section">
+<h2 class="cv-section-heading">Additional Information</h2>
+<p class="cv-links"><strong>Languages:</strong> English (IELTS 6.5, Oct 2023; MSc completed entirely in English) and Mandarin Chinese (native).</p>
+<p class="cv-links"><strong>Open-source work:</strong> I independently maintain this personal website and small open-source utility projects. View my work on <a href="https://github.com/Jingyuan-Zheng" rel="me">GitHub</a>.</p>
+</section>
 </main>
 
 </section>

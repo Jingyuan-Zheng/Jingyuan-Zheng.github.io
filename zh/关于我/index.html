@@ -835,21 +835,45 @@ transform: translateX(8px);
 <header class="cv-hero-header">
 <h1>Hi, I am Jingyuan Zheng 🤩</h1>
 <p class="cv-intro-para">
-我已在<strong>香港大学 (HKU)</strong> 完成物流与工业工程方向的工程硕士学习。我热衷于探索高效物流背后的美学，以及复杂数据中的内在逻辑。
+香港大学 (HKU) 工业工程与物流管理工程硕士
+<br>
+主要研究方向：工业工程、物流管理、运筹优化与数据分析。
 </p>
 </header>
 <section class="cv-module-card">
 <div class="cv-zh-content">
-在这里，我会分享关于供应链优化、数据科学的见解，以及在香港生活的一些有趣瞬间。
+我的研究主要聚焦于以下领域：
+<ul>
+<li>可靠性建模与决策支持</li>
+<li>供应链运营风险分析</li>
+<li>时间序列分析与机器学习</li>
+<li>系统仿真与网络流优化</li>
+</ul>
 <br><br>
-我的个人英文简历目前正在更新维护中，暂时无法查看，敬请稍后再来。
+如果你对我的学术背景、实习经历以及研究成果感兴趣，请点击下方链接查看我的<strong>完整英文简历</strong>。
 </div>
-<a href="/about-me/" class="cv-jump-btn">
-<span>CV Under Maintenance</span>
+<a href="/about-me/" class="cv-jump-btn" onclick="try { localStorage.setItem('jingyuan-language-preference', 'en'); } catch (_) {}">
+<span>View My Full CV (English)</span>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 </a>
 </section>
 </div>
+<script>
+(function () {
+    document.addEventListener("change", function (event) {
+        var select = event.target;
+        if (!(select instanceof HTMLSelectElement) || !select.matches("#i18n-switch select")) return;
+
+        var target = new URL(select.value, window.location.origin);
+        try {
+            localStorage.setItem(
+                "jingyuan-language-preference",
+                target.pathname === "/zh" || target.pathname.indexOf("/zh/") === 0 ? "zh" : "en"
+            );
+        } catch (_) {}
+    }, true);
+})();
+</script>
 
 </section>
 
