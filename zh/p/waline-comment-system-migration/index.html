@@ -67,8 +67,8 @@
         background: #303030;
         color-scheme: dark;
     }
-</style><meta name='description' content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。">
-<title>本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合</title>
+</style><meta name='description' content="记录本站从 Giscus 迁移到 Waline 的过程，以及访客留言、双语邮件通知、邮件样式和历史浏览量迁移中的实际问题。">
+<title>把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移</title>
 
 
 <link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/'>
@@ -78,14 +78,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.75c28c1ff1beb7ed3ccae4225f0ecd993df8eb330f523d1b71305d1674a0d50c.css"><meta property='og:title' content="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合">
-<meta property='og:description' content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。">
+<link rel="stylesheet" href="/scss/style.min.75c28c1ff1beb7ed3ccae4225f0ecd993df8eb330f523d1b71305d1674a0d50c.css"><meta property='og:title' content="把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移">
+<meta property='og:description' content="记录本站从 Giscus 迁移到 Waline 的过程，以及访客留言、双语邮件通知、邮件样式和历史浏览量迁移中的实际问题。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/'>
 <meta property='og:site_name' content='小景'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Waline' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='Vercel' /><meta property='article:tag' content='Neon' /><meta property='article:tag' content='评论系统' /><meta property='article:tag' content='网站更新' /><meta property='article:published_time' content='2026-07-28T21:20:00&#43;02:00'/><meta property='article:modified_time' content='2026-07-28T21:20:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png' />
 <meta name="twitter:site" content="@AndersJheng">
-    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合">
-<meta name="twitter:description" content="本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移">
+<meta name="twitter:description" content="记录本站从 Giscus 迁移到 Waline 的过程，以及访客留言、双语邮件通知、邮件样式和历史浏览量迁移中的实际问题。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
@@ -187,7 +187,7 @@
         {
           "@type": "ListItem",
           "item": "https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/",
-          "name": "本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合",
+          "name": "把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移",
           "position": 3
         }
       ]
@@ -203,8 +203,8 @@
       },
       "dateModified": "2026-07-28T21:20:00+02:00",
       "datePublished": "2026-07-28T21:20:00+02:00",
-      "description": "本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。",
-      "headline": "本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合",
+      "description": "记录本站从 Giscus 迁移到 Waline 的过程，以及访客留言、双语邮件通知、邮件样式和历史浏览量迁移中的实际问题。",
+      "headline": "把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移",
       "image": "https://jingyuan-zheng.github.io/img/waline-comment-system-migration/featured.png",
       "inLanguage": "zh",
       "isPartOf": {
@@ -697,7 +697,7 @@
     <header class="article-header">
     <div class="article-image">
         <a href="/zh/p/waline-comment-system-migration/">
-            <img alt="Featured image of post 本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/waline-comment-system-migration/featured.png">
+            <img alt="Featured image of post 把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/waline-comment-system-migration/featured.png">
         </a>
     </div>
     
@@ -714,8 +714,8 @@
     </header>
     
     <div class="article-title-wrapper">
-        <h2 class="article-title"><a href="/zh/p/waline-comment-system-migration/">本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合</a></h2>
-        <h3 class="article-subtitle">本站已从 Giscus 迁移到 Waline，并把评论、表情反应、点赞、邮件通知和浏览量整合到由 Vercel 与 Neon 托管的新系统。</h3>
+        <h2 class="article-title"><a href="/zh/p/waline-comment-system-migration/">把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移</a></h2>
+        <h3 class="article-subtitle">记录本站从 Giscus 迁移到 Waline 的过程，以及访客留言、双语邮件通知、邮件样式和历史浏览量迁移中的实际问题。</h3>
     </div>
     
     
@@ -735,7 +735,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg><time class="article-time--published" datetime='2026-07-28T21:20:00&#43;02:00'>28/7月/2026</time>
-            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock-3.svg')" aria-hidden="true"></span><time class="article-time--reading">阅读时长: 6 分钟</time>
+            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/clock-3.svg')" aria-hidden="true"></span><time class="article-time--reading">阅读时长: 7 分钟</time>
         </div>
         
         <div class="inline-meta"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -758,7 +758,7 @@
 
     <section class="article-share" aria-label="分享这篇文章"
     data-article-share
-    data-share-title="本站评论系统迁移到 Waline：访客评论、邮件通知与浏览量整合"
+    data-share-title="把博客评论迁到 Waline：访客留言、邮件通知与浏览量迁移"
     data-share-url="https://jingyuan-zheng.github.io/zh/p/waline-comment-system-migration/"
     data-copy-label="复制链接"
     data-copied-label="已复制"
@@ -783,15 +783,15 @@
     </button>
 
     
-        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%8A%8A%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E8%BF%81%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E7%95%99%E8%A8%80%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E8%BF%81%E7%A7%BB" target="_blank" rel="noopener noreferrer" aria-label="分享到微博" title="分享到微博">
             <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
         </a>
 
-        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E6%8A%8A%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E8%BF%81%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E7%95%99%E8%A8%80%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E8%BF%81%E7%A7%BB" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ" title="分享到 QQ">
             <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
         </a>
 
-        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E6%9C%AC%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E8%AF%84%E8%AE%BA%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E6%95%B4%E5%90%88" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fjingyuan-zheng.github.io%2Fzh%2Fp%2Fwaline-comment-system-migration%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E6%8A%8A%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E8%BF%81%E5%88%B0&#43;Waline%EF%BC%9A%E8%AE%BF%E5%AE%A2%E7%95%99%E8%A8%80%E3%80%81%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E4%B8%8E%E6%B5%8F%E8%A7%88%E9%87%8F%E8%BF%81%E7%A7%BB" target="_blank" rel="noopener noreferrer" aria-label="分享到 X" title="分享到 X">
             <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
         </a>
     
@@ -834,13 +834,13 @@
     <section class="article-content">
     
     
-    <p>本文介绍本站从 Giscus 迁移到 Waline 的原因、现在的评论与浏览量架构、历史数据迁移方法，以及访客评论和双语邮件通知的配置方式。</p>
+    <p>我原本只是想把评论区的 GitHub 登录门槛去掉，真正动手后才发现，这次迁移还牵出了邮件通知、历史浏览量和旧评论归属等一串问题。这篇文章记录本站从 Giscus 换到 Waline 的过程，也保留几处实际踩过的坑。</p>
 <p>现在打开任意文章，评论区已经换成了新的 Waline 界面。读者不需要 GitHub 账户，可以直接以访客身份参与讨论；如果希望在评论收到回复时得到通知，还可以选择填写邮箱。</p>
 <p><img alt="本站迁移后的 Waline 评论区，包括文章反应、访客评论输入框与评论列表" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/waline-comment-system-migration/featured.png"></p>
 <h2 id="为什么从-giscus-迁移">为什么从 Giscus 迁移
 </h2><p>Giscus 是一个很适合技术博客的评论方案：它把评论保存在 GitHub Discussions，维护成本低，也很符合开源社区的使用习惯。问题是，发表评论需要登录 GitHub。</p>
 <p>本站的内容已经不只面向开发者。工具介绍、马耳他生活信息、旅行内容和网站更新会吸引不同背景的读者。要求每位读者先拥有并登录 GitHub，实际上为一次普通留言设置了不必要的门槛。</p>
-<p>迁移到 Waline 主要是为了获得以下能力：</p>
+<p>最后选择 Waline，主要是因为它把我需要的几件事放在了一起：</p>
 <ul>
 <li>支持访客评论，不强制注册或登录；</li>
 <li>邮箱选填，并可在评论收到回复时发送通知；</li>
@@ -857,7 +857,7 @@
 <li>Waline Server 部署在 Vercel，负责评论 API、管理界面、邮件通知和计数请求；</li>
 <li>评论、用户、文章互动和浏览量数据存储在 Neon PostgreSQL。</li>
 </ol>
-<p>这种拆分不会把整个博客变成动态网站。GitHub Pages 继续提供静态页面，只有评论区和计数在浏览器中按需请求 Waline API。即使评论服务暂时不可用，文章正文仍然可以正常访问。</p>
+<p>这种拆分没有把整个博客变成动态网站。GitHub Pages 继续提供静态页面，只有评论区和计数在浏览器中按需请求 Waline API。哪怕评论服务偶尔不可用，文章正文仍然可以正常访问——这是我不想放弃的一点。</p>
 <p>仪表盘的管理选单也已经更新：</p>
 <ul>
 <li><strong>内容管理</strong>进入本站的 Sveltia CMS；</li>
@@ -895,14 +895,14 @@
 <p>文章评论区显示浏览量时只读取现有数字，不会再次递增，这样可以避免同一次页面加载被页脚和评论组件重复计算。</p>
 <p>主页、归档、分类、标签、图片墙、链接页、仪表盘和中英文页面都使用同一套新计数系统。旧的 Cloudflare 浏览量接口不再负责前端统计。</p>
 <h2 id="邮件通知与双语模板">邮件通知与双语模板
-</h2><p>邮件通知通过 Vercel 环境变量配置。SMTP 账户、应用专用密码和数据库连接信息都保存在托管平台的敏感变量中，不会写入 Hugo 仓库、文章或前端代码。</p>
-<p>配置项包括：</p>
+</h2><p>邮件通知是这次迁移里最容易让人产生错觉的一部分：配置项都填好了，不代表邮件真的会发出去；邮件成功送达，也不代表收件箱里看起来正常。</p>
+<p>第一次测试时，评论已经写进数据库，邮箱却没有任何动静。我最后在 Vercel 的函数日志里找到 Gmail 返回的 <code>535-5.7.8 Username and Password not accepted</code>。问题不在 Waline 模板，而在 SMTP 验证。换成 Gmail 单独生成的应用专用密码，并重新部署生产环境后，邮件才真正发出。</p>
+<p>这里有两个容易漏掉的细节：</p>
 <ul>
-<li>SMTP 服务、发件账户和应用专用密码；</li>
-<li>网站名称、网站地址和站长通知邮箱；</li>
-<li>发件人名称与地址；</li>
-<li>评论回复邮件与新评论通知邮件的标题和正文。</li>
+<li>Gmail SMTP 登录仍使用主邮箱地址；<code>+blogservice-noreply</code> 这样的加号地址适合做邮件标识，但不能代替真实登录账户；</li>
+<li>修改 Vercel 环境变量后需要重新部署，已经运行的生产函数不会自动读到新值。</li>
 </ul>
+<p>目前发件人显示为 <strong>Jingyuan’s Blog Comment Service</strong>，标题和正文则跟随评论所在页面的语言。中文新评论与回复邮件使用“小景的博客”，英文邮件使用 “Jingyuan’s Blog”。这样收件箱里一眼就能看出邮件来自博客评论服务，又不会把中英文混在同一封通知里。</p>
 <p>Waline 的邮件模板可以读取评论所属页面路径。本站中文文章都位于 <code>/zh/</code> 下，因此模板会检查评论 URL：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -921,7 +921,13 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>中文文章下的评论会收到中文邮件，其他页面使用英文邮件。模板只引用评论者昵称、评论正文和文章链接，不会在邮件正文中暴露数据库凭据或其他系统密钥。</p>
-<p>为了保护账户安全，SMTP 使用的是单独生成的应用专用密码，而不是邮箱账户的日常登录密码。密码更新后必须重新部署 Waline，新的环境变量才会进入生产函数。</p>
+<p>第一版邮件还有一个很直观的问题：评论正文周围出现了字面量 <code>&lt;p&gt;...&lt;/p&gt;</code>。原因是模板把 Waline 已经处理过的评论 HTML 又转义了一次。把对应字段按已清理的 HTML 输出后，段落标签才恢复为正常排版。</p>
+<p>随后我重新做了邮件样式。它没有照搬网页 CSS，而是采用更保守的单列卡片、表格布局和行内样式：浅灰背景、白色正文卡片、两块不同强调色的评论引用区，以及一个清晰的“查看并回复”按钮。邮件不加载外部字体、脚本或追踪图片，在 Gmail、Outlook 和窄屏设备里都更稳妥；Outlook 即使忽略部分圆角，也不会破坏阅读顺序。</p>
+<div class="post-figure">
+    <img src="/img/waline-comment-system-migration/email-reply-zh.png" alt="本站 Waline 中文评论回复邮件，包含原评论、回复内容和查看并回复按钮">
+    <div class="caption">图 2：最终的中文评论回复邮件。主题、正文和操作按钮都会随中文页面切换。</div>
+</div>
+<p>邮件凭据和模板均通过 Vercel 环境变量配置。SMTP 账户、应用专用密码和数据库连接信息只保存在托管平台的敏感变量中，不会写入 Hugo 仓库、文章或前端代码。为了保护账户安全，SMTP 使用的也是应用专用密码，而不是邮箱账户的日常登录密码。</p>
 <h2 id="评论数据是怎样迁移的">评论数据是怎样迁移的
 </h2><p>旧评论先导出为 Waline JSON 格式，再导入新数据库。迁移时保留了评论正文、文章路径、回复关系、发布时间和审核状态。</p>
 <p>部分由站长发布的旧评论在导出时缺少用户关联信息。处理时只补齐管理员用户 ID、昵称、邮箱标识、主页和客户端信息，不修改原评论内容、页面、回复关系或时间。</p>
@@ -936,8 +942,8 @@
 <p>邮箱不是发表评论的强制条件。填写邮箱的主要用途是回复通知和头像匹配，不会在评论列表中公开显示。</p>
 <p>由于评论系统会处理评论内容、可选邮箱以及必要的技术信息，本站的<a class="link" href="/zh/privacy-policy/" >隐私政策</a>也已经同步更新，说明 GitHub Pages、Vercel、Neon 和 Waline 在当前架构中的作用。</p>
 <h2 id="接下来">接下来
-</h2><p>评论系统迁移已经完成，但它仍需要在真实使用中继续观察。我会关注邮件送达、移动端输入体验、反垃圾策略、数据库计数和不同语言页面的通知效果。</p>
-<p>如果你在评论时遇到加载失败、通知未送达、路径计数不一致或界面问题，欢迎直接在本文下方以访客身份留言。</p>
+</h2><p>直到测试回复干净地出现在 Outlook 收件箱里，我才觉得这次迁移算真正完成。数据库写入成功只是第一步，读者最后看到的评论区和通知邮件，才是这套系统实际的样子。</p>
+<p>接下来我会继续留意邮件送达、垃圾邮件判定、移动端输入、反垃圾策略和计数一致性。如果你遇到加载失败、通知未送达或路径计数不对，欢迎直接在本文下方留言——现在不需要 GitHub 账户了。</p>
 
 </section>
 
