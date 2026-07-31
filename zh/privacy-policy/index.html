@@ -270,7 +270,7 @@
                 <span>内容管理</span>
             </a>
             <a
-                href="https://comment.zjy.is-a.dev/ui"
+                href="https://comments.zjy.is-a.dev/ui"
                 role="menuitem"
                 
                 target="_blank" rel="noopener noreferrer"
@@ -857,8 +857,13 @@
         <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
             <script type="module">
                 import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+                import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
 
-                const serverURL = "https://comment.zjy.is-a.dev";
+                const serverURL = await resolveWalineServerURL({
+                    primaryURL: "https://comments.zjy.is-a.dev",
+                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+                    timeoutMs:  2500 ,
+                });
                 const lang = "zh-CN";
 
                 pageviewCount({

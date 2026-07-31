@@ -268,7 +268,7 @@
                 <span>内容管理</span>
             </a>
             <a
-                href="https://comment.zjy.is-a.dev/ui"
+                href="https://comments.zjy.is-a.dev/ui"
                 role="menuitem"
                 
                 target="_blank" rel="noopener noreferrer"
@@ -612,7 +612,7 @@
                     >
                         <option value="" selected>管理</option>
                             <option value="/admin/">内容管理</option>
-                            <option value="https://comment.zjy.is-a.dev/ui">评论管理</option>
+                            <option value="https://comments.zjy.is-a.dev/ui">评论管理</option>
                             <option value="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?origin=NeoPortalPage&amp;subpage=design&amp;id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUMUpUVVdFVk82T0wwVzBITkpRUUNRVDJKRC4u&amp;analysis=true&amp;tab=0">友链申请系统</option>
                             <option value="https://github.com/Jingyuan-Zheng/Jingyuan-Zheng.github.io">网站仓库主页</option>
                             <option value="https://github.com/Jingyuan-Zheng/hugo-main">Hugo 源码</option>
@@ -1074,8 +1074,13 @@
         <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
             <script type="module">
                 import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+                import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
 
-                const serverURL = "https://comment.zjy.is-a.dev";
+                const serverURL = await resolveWalineServerURL({
+                    primaryURL: "https://comments.zjy.is-a.dev",
+                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+                    timeoutMs:  2500 ,
+                });
                 const lang = "zh-CN";
 
                 pageviewCount({
