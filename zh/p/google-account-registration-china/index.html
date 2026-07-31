@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/google-account-registration-china/","currentLanguage":"zh","englishTarget":"/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="本文介绍在中国安全注册 Google 账户的方法，涵盖官方应用、Gmail 地址选择、手机号验证、两步验证、通行密钥、恢复方式、注册后的安全设置和账号停用申诉。">
+<title>在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.fbcab536e571e31d00e4a625294cbfed4985db2eef91b6259185886d0befee2e.css"><meta property='og:title' content="在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南">
+<meta property='og:description' content="本文介绍在中国安全注册 Google 账户的方法，涵盖官方应用、Gmail 地址选择、手机号验证、两步验证、通行密钥、恢复方式、注册后的安全设置和账号停用申诉。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Google 账户' /><meta property='article:tag' content='Gmail' /><meta property='article:tag' content='谷歌账号注册' /><meta property='article:tag' content='账户安全' /><meta property='article:tag' content='两步验证' /><meta property='article:tag' content='通行密钥' /><meta property='article:published_time' content='2026-07-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-31T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/google-account-registration-china/featured.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南">
+<meta name="twitter:description" content="本文介绍在中国安全注册 Google 账户的方法，涵盖官方应用、Gmail 地址选择、手机号验证、两步验证、通行密钥、恢复方式、注册后的安全设置和账号停用申诉。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/google-account-registration-china/featured.png' />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="shortcut icon" href="/favicon.png?v=2" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
+
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/",
+          "name": "工具推荐",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/",
+          "name": "在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "工具推荐"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-07-31T00:00:00+00:00",
+      "datePublished": "2026-07-31T00:00:00+00:00",
+      "description": "本文介绍在中国安全注册 Google 账户的方法，涵盖官方应用、Gmail 地址选择、手机号验证、两步验证、通行密钥、恢复方式、注册后的安全设置和账号停用申诉。",
+      "headline": "在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南",
+      "image": "https://jingyuan-zheng.github.io/img/google-account-registration-china/featured.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "Google 账户, Gmail, 谷歌账号注册, 账户安全, 两步验证, 通行密钥",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar site-avatar--management">
+                <a class="site-avatar__home-link" href="/zh/" aria-label="返回主页">
+                    <img src="/img/avatar.png"
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <button
+                        class="emoji site-avatar__management-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="sidebar-management-menu"
+                        aria-label="打开网站管理选单"
+                        data-sidebar-management-toggle
+                    >🤩</button>
+                
+                <div
+    class="sidebar-management-menu"
+    id="sidebar-management-menu"
+    role="menu"
+    aria-label="网站管理"
+    data-sidebar-management-menu
+    hidden
+>
+    <div class="sidebar-management-menu__header">
+        <div class="sidebar-management-menu__heading">
+            <strong>网站管理</strong>
+            <small>仅供网站管理员使用，不对外开放</small>
+        </div>
+        <a href="/zh/">返回主页</a>
+    </div>
+    <div class="sidebar-management-menu__items">
+            <a
+                href="/admin/"
+                role="menuitem"
+                
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/database.svg')" aria-hidden="true"></span>
+                </span>
+                <span>内容管理</span>
+            </a>
+            <a
+                href="https://zjy-blog-waline-comments.vercel.app/ui"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                </span>
+                <span>评论管理</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                </span>
+                <span>网站仓库主页</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/hugo-main"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code-2.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Hugo 源码</span>
+            </a>
+            <a
+                href="https://search.google.com/search-console"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlesearchconsole.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Search Console</span>
+            </a>
+            <a
+                href="https://www.bing.com/webmasters/"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bing.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Bing Webmasters</span>
+            </a>
+            <a
+                href="https://analytics.google.com/analytics/"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Analytics</span>
+            </a>
+            <a
+                href="https://clarity.microsoft.com/projects/view/xsh8jmde5h/dashboard"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/chart-no-axes-combined.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Microsoft Clarity</span>
+            </a>
+            <a
+                href="https://dash.cloudflare.com/"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Cloudflare 控制台</span>
+            </a>
+            <a
+                href="https://vercel.com/"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Vercel 控制台</span>
+            </a>
+            <a
+                href="https://console.neon.tech/"
+                role="menuitem"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/neon.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Neon 控制台</span>
+            </a>
+    </div>
+</div>
+
+            </figure>
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='/zh/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg class="lucide lucide-house" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg class="lucide lucide-circle-user-round" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg class="lucide lucide-archive" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg class="lucide lucide-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg class="lucide lucide-images" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/><circle cx="13" cy="7" r="1" fill="currentColor"/><rect x="8" y="2" width="14" height="14" rx="2"/></svg>
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/links/' >
+                
+                    <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">
+                        <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/" >English</option>
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/google-account-registration-china/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <span class="sidebar-color-icon sidebar-color-icon--light">
+                            <svg class="lucide lucide-toggle-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+
+                        </span>
+                        <span class="sidebar-color-icon sidebar-color-icon--dark">
+                            <svg class="lucide lucide-toggle-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+
+                        </span>
+                        <span>暗色模式</span>
+                    </li>
+                
+
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg class="lucide lucide-list-tree" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h13"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="M3 10a2 2 0 0 0 2 2h3"/><path d="M3 5v12a2 2 0 0 0 2 2h3"/></svg>
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#开始之前">开始之前</a></li>
+    <li><a href="#使用官方应用注册">使用官方应用注册</a>
+      <ol>
+        <li><a href="#iphone-和-ipad">iPhone 和 iPad</a></li>
+        <li><a href="#android">Android</a></li>
+      </ol>
+    </li>
+    <li><a href="#语言界面和时区设置">语言界面和时区设置</a></li>
+    <li><a href="#填写个人信息">填写个人信息</a></li>
+    <li><a href="#gmail-地址要慎重选择">Gmail 地址要慎重选择</a>
+      <ol>
+        <li><a href="#比较正式的组合">比较正式的组合</a></li>
+        <li><a href="#一个非常重要的提醒">一个非常重要的提醒</a></li>
+      </ol>
+    </li>
+    <li><a href="#手机号和安全邮箱">手机号和安全邮箱</a></li>
+    <li><a href="#注册后先完成安全设置">注册后先完成安全设置</a></li>
+    <li><a href="#开启两步验证">开启两步验证</a></li>
+    <li><a href="#创建通行密钥">创建通行密钥</a>
+      <ol>
+        <li><a href="#apple-设备">Apple 设备</a></li>
+        <li><a href="#android-设备">Android 设备</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ol>
+    </li>
+    <li><a href="#添加验证器">添加验证器</a>
+      <ol>
+        <li><a href="#使用-iphone-自带的密码app">使用 iPhone 自带的“密码”App</a></li>
+        <li><a href="#使用-android">使用 Android</a></li>
+      </ol>
+    </li>
+    <li><a href="#开始正常使用账户">开始正常使用账户</a></li>
+    <li><a href="#推荐几个开源项目">推荐几个开源项目</a></li>
+    <li><a href="#账户被停用后的处理">账户被停用后的处理</a></li>
+    <li><a href="#最后">最后</a></li>
+    <li><a href="#官方参考资料">官方参考资料</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/google-account-registration-china/">
+            <img alt="Featured image of post 在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/google-account-registration-china/featured.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" style="background-color: hsl(166, 60%, 84%); color: hsl(166, 60%, 15%);">工具推荐</a>
+        
+    </header>
+    
+    <div class="article-title-wrapper">
+        <h2 class="article-title"><a href="/zh/p/google-account-registration-china/">在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南</a></h2>
+        <h3 class="article-subtitle">本文介绍在中国安全注册 Google 账户的方法，涵盖官方应用、Gmail 地址选择、手机号验证、两步验证、通行密钥、恢复方式、注册后的安全设置和账号停用申诉。</h3>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+        <div class="article-meta__time inline-meta">
+            <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+<time class="article-time--published" datetime='2026-07-31T00:00:00Z'>31/7月/2026</time>
+            <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
+<time class="article-time--reading">阅读时长: 17 分钟</time>
+        </div>
+        
+        
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="在中国如何安全注册 Google 账户：防封号、Gmail 与账号安全指南"
+    data-share-url="https://zjy.is-a.dev/zh/p/google-account-registration-china/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接">
+        <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fgoogle-account-registration-china%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E6%B3%A8%E5%86%8C&#43;Google&#43;%E8%B4%A6%E6%88%B7%EF%BC%9A%E9%98%B2%E5%B0%81%E5%8F%B7%E3%80%81Gmail&#43;%E4%B8%8E%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fgoogle-account-registration-china%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E6%B3%A8%E5%86%8C&#43;Google&#43;%E8%B4%A6%E6%88%B7%EF%BC%9A%E9%98%B2%E5%B0%81%E5%8F%B7%E3%80%81Gmail&#43;%E4%B8%8E%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fgoogle-account-registration-china%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E6%B3%A8%E5%86%8C&#43;Google&#43;%E8%B4%A6%E6%88%B7%EF%BC%9A%E9%98%B2%E5%B0%81%E5%8F%B7%E3%80%81Gmail&#43;%E4%B8%8E%E8%B4%A6%E5%8F%B7%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#开始之前">开始之前</a></li>
+    <li><a href="#使用官方应用注册">使用官方应用注册</a>
+      <ol>
+        <li><a href="#iphone-和-ipad">iPhone 和 iPad</a></li>
+        <li><a href="#android">Android</a></li>
+      </ol>
+    </li>
+    <li><a href="#语言界面和时区设置">语言界面和时区设置</a></li>
+    <li><a href="#填写个人信息">填写个人信息</a></li>
+    <li><a href="#gmail-地址要慎重选择">Gmail 地址要慎重选择</a>
+      <ol>
+        <li><a href="#比较正式的组合">比较正式的组合</a></li>
+        <li><a href="#一个非常重要的提醒">一个非常重要的提醒</a></li>
+      </ol>
+    </li>
+    <li><a href="#手机号和安全邮箱">手机号和安全邮箱</a></li>
+    <li><a href="#注册后先完成安全设置">注册后先完成安全设置</a></li>
+    <li><a href="#开启两步验证">开启两步验证</a></li>
+    <li><a href="#创建通行密钥">创建通行密钥</a>
+      <ol>
+        <li><a href="#apple-设备">Apple 设备</a></li>
+        <li><a href="#android-设备">Android 设备</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ol>
+    </li>
+    <li><a href="#添加验证器">添加验证器</a>
+      <ol>
+        <li><a href="#使用-iphone-自带的密码app">使用 iPhone 自带的“密码”App</a></li>
+        <li><a href="#使用-android">使用 Android</a></li>
+      </ol>
+    </li>
+    <li><a href="#开始正常使用账户">开始正常使用账户</a></li>
+    <li><a href="#推荐几个开源项目">推荐几个开源项目</a></li>
+    <li><a href="#账户被停用后的处理">账户被停用后的处理</a></li>
+    <li><a href="#最后">最后</a></li>
+    <li><a href="#官方参考资料">官方参考资料</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/">https://jingyuan-zheng.github.io/zh/p/google-account-registration-china/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <h1 id="如何安全地注册一个-google-账户不被封号谷歌账户注册注意事项和指南">如何安全地注册一个 Google 账户不被封号？谷歌账户注册注意事项和指南
+</h1><p>很多想要注册 ChatGPT、Claude 等 AI 服务或使用其他海外服务的小伙伴，可能没有 Gmail 邮箱或 Google 账户，导致部分注册、登录和订阅流程难以进行。Google 账户可以很好地解决这个问题。</p>
+<p>现在只要能够正常访问 Google，按照页面上的流程一般都能完成注册，但开始之前需要注意一些问题。</p>
+<p>本文介绍的是普通个人用户注册和保护 Google 账户的方法。不要批量注册账户，不要使用自动化注册工具，也不要使用来历不明的手机号码和应用。</p>
+<h2 id="开始之前">开始之前
+</h2><p>良好、通畅并且相对稳定的网络是必备条件。由于众所周知的原因，此处不讨论具体的网络工具。</p>
+<p>注册过程中尽量保持网络稳定，不要一会儿连接这个地区，一会儿又切换到另一个相距很远的地区。频繁改变网络出口、设备或登录环境，可能触发额外验证。</p>
+<h2 id="使用官方应用注册">使用官方应用注册
+</h2><p>首先是注册平台。</p>
+<p>不推荐直接在网页端注册，也不要在 QQ 邮箱、第三方应用的内置浏览器或其他来历不明的应用中注册。现在的账户安全检查较为严格，一些第三方应用的内置浏览器还可能无法正常调用验证码、通行密钥和设备安全功能。</p>
+<p>目前更推荐在真实手机上，<strong>通过 Google 官方应用完成注册</strong>。</p>
+<h3 id="iphone-和-ipad">iPhone 和 iPad
+</h3><p>可以在 App Store 下载以下官方应用：</p>
+<ul>
+<li><a class="link" href="https://apps.apple.com/app/google/id284815942"  target="_blank" rel="noopener"
+    >Google App</a></li>
+<li><a class="link" href="https://apps.apple.com/app/gmail-email-by-google/id422689480"  target="_blank" rel="noopener"
+    >Gmail</a></li>
+</ul>
+<p>打开 Google App 或 Gmail，点击右上角的头像区域，选择添加账户，然后选择创建账户。</p>
+<p>国区 App Store 可能无法搜索到某些 Google 应用，这时可能需要使用能够正常下载这些应用的 外区 Apple ID。关于外区 Apple ID 地区的注册问题，后续也许会单独写一篇文章。</p>
+<h3 id="android">Android
+</h3><p>Android 用户（特别是国际版、原生安卓、三星等）可以通过系统设置中的“添加 Google 账户”完成注册，也可以从 Google Play 下载 Gmail：</p>
+<ul>
+<li><a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.gm"  target="_blank" rel="noopener"
+    >Gmail for Android</a></li>
+</ul>
+<p><strong>国产手机在开始之前需要先启用相关的谷歌服务才可能看见这些选项。</strong></p>
+<p>近些年出厂的部分国产 Android 手机，可以在设置中找到“Google 基础服务”“Google 服务”或类似的选项。不同品牌和系统版本的位置并不完全相同。</p>
+<p>如果手机本身没有预装 Google 服务，可以通过“谷歌安装器”完成安装，但注意一下应用来源差别很大，不要随便安装一个来历不明的安装包，可以找一个相对可靠的网站平台下载安装器完成安装后注册。</p>
+<p>近年部分未预装 Google Mobile Services，也就是<strong>某花瓣品牌</strong>或者使用鸿蒙系统的手机，通常无法原生、完整地运行 Google 官方服务，<strong>我只能建议你换机</strong>，建议换一台原生支持 Google 服务的真实手机完成注册和安全设置。</p>
+<p><strong>不要使用安卓模拟器、云手机、服务器、VMOS、卓易通或其他虚拟环境注册账户</strong>，使用虚拟机是非常高危的行为。账户应当直接创建在你本人控制的真实手机中。</p>
+<h2 id="语言界面和时区设置">语言界面和时区设置
+</h2><p>进入应用后，按照正常的注册流程进行。</p>
+<p><strong>如果你的英语水平足够，推荐使用英语完成注册</strong>。也可以暂时将手机系统语言或 Google 应用语言调整为英语。</p>
+<p><strong>时区和地区方面，可以选择同样位于东八区，并且英语作为官方语言的地区</strong>，例如：</p>
+<ul>
+<li>新加坡 Singapore</li>
+<li>香港 Hong Kong</li>
+<li>菲律宾 Philippines</li>
+<li>马来西亚 Malaysia</li>
+<li>澳大利亚的珀斯 Perth, Australia</li>
+</ul>
+<p>这个设置只是建议，不是注册的必要条件。</p>
+<p>对于通过相关网络工具访问 Google，并且可以选择这些节点的用户，这样设置可以让语言、时区和IP网络环境尽可能保持一致，降低风险。<strong>以上地区与中国大陆同属东八区，不会影响正常查看时间</strong>。</p>
+<p>注册完成并稳定使用以后，语言、地区和时区都可以根据自己的需要修改回来。</p>
+<p>不要为了注册不断切换国家、地区和时区。选择一个与你常用网络环境相符的设置后，保持稳定后进入即可。</p>
+<h2 id="填写个人信息">填写个人信息
+</h2><p>账号必须具备实际意义和个人特征，否则在共享网络、频繁注册或其他异常环境下，很容易显得像批量创建的临时账户。</p>
+<p>很多人使用的网络出口实际上会被大量用户共同使用。从系统角度看，同一个 IP 地址可能在短时间内出现许多注册行为，因此账户本身的信息应当尽量正常、完整，并且像一个真实用户会长期使用的账户。</p>
+<p><strong>姓名建议使用自己的真实姓名拼音或长期使用的英文名</strong>。</p>
+<p>以后如果需要填写账单信息、注册开发者服务、求职、申请学校或进行其他正式活动，拉丁字母姓名通常更方便。</p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">First name: Your given name
+</span></span><span class="line"><span class="cl">Last name: Your family name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出生日期也建议如实填写。随意填写生日可能给后续的年龄验证、付款、家庭管理和账户恢复带来问题。</p>
+<h2 id="gmail-地址要慎重选择">Gmail 地址要慎重选择
+</h2><p>接下来是账户名，也就是 Gmail 地址中的前缀：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">username@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这一部分一定要慎重。</p>
+<p>Google 目前已经开始允许部分个人账户把原来的 <code>@gmail.com</code> 地址更改为另一个 <code>@gmail.com</code> 地址，但并不是所有账户都一定能够立即使用这一功能，具体以账户设置页面显示的选项为准。Google 也提醒，更改主要邮箱地址后，“使用 Google 登录”和部分关联服务可能出现识别或登录问题。</p>
+<p>即使你的账户已经支持修改 Gmail 地址，也不要把它当成可以随意更换的普通用户名。</p>
+<p>在海外互联网中，Google 账户在一定程度上相当于一个电子身份。很多网站都支持“使用 Google 登录”，作用类似于国内网站中的微信登录。</p>
+<p>规范接入 Google 登录的网站应当使用 Google 提供的账户标识识别用户，但不能保证每个网站都正确实现。有些网站可能直接把邮箱地址写进自己的用户数据库。更改 Gmail 地址后，可能遇到旧账户无法识别、资料关联失败，甚至被当作新用户的问题。</p>
+<p>因此，<strong>Gmail 地址牵一发而动全身，一开始就要认真选择</strong>。</p>
+<h3 id="比较正式的组合">比较正式的组合
+</h3><p><strong>推荐使用自己的姓名拼音或长期使用的英文名</strong>，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firstname.lastname@gmail.com
+</span></span><span class="line"><span class="cl">lastname.firstname@gmail.com
+</span></span><span class="line"><span class="cl">englishname.lastname@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>国际惯例通常是<strong>名字在前、姓氏在后</strong>。在亚洲地区继续使用姓氏在前的顺序也可以，关键是自己长期保持一致。</p>
+<p>如果已经被注册，可以使用姓名缩写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">f.lastname@gmail.com
+</span></span><span class="line"><span class="cl">firstname.l@gmail.com
+</span></span><span class="line"><span class="cl">flastname@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果仍然被注册，可以增加一个容易记住的数字：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firstname.lastname.2000@gmail.com
+</span></span><span class="line"><span class="cl">firstname.lastname01@gmail.com
+</span></span><span class="line"><span class="cl">f.lastname2026@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用出生年份会让别人推测出你的大致年龄，请自行权衡。也可以选择一个与证件号码、手机号和银行卡无关的普通数字。</p>
+<p>在个人 Gmail 地址中，英文句点 <code>.</code> 会被 Google 忽略。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">firstname.lastname@gmail.com
+</span></span><span class="line"><span class="cl">firstnamelastname@gmail.com
+</span></span><span class="line"><span class="cl">first.name.last.name@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这几个写法会被 Google 视为同一个 Gmail 地址。因此，增加句点不能解决用户名已经被注册的问题，句点主要是为了方便阅读。</p>
+<h3 id="一个非常重要的提醒">一个非常重要的提醒
+</h3><p><strong>千万不要，注意是千万不要：随手使用随机字母、随机数字或类似 QQ 号的全数字组合，作为准备长期使用的主邮箱。</strong></p>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">x7q92m18a@gmail.com
+</span></span><span class="line"><span class="cl">8392746291@gmail.com
+</span></span><span class="line"><span class="cl">qaz981273abc@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>系统不会只根据用户名这一项判断账户是否正常，但在共享 IP、频繁注册和新设备环境下，一个完全随机、没有任何个人特征的地址，会让整个账户更加像临时创建或批量生成的账号。</p>
+<p>这种地址也很难记，不适合用于求职、工作、学校申请、账单、开发者账户和正式通信。</p>
+<p>陌生人收到这种地址发来的邮件时，系统也更容易将它视为临时账号、营销账号或垃圾邮件进不去收件箱。</p>
+<p>如果准备长期使用这个邮箱，名字这一块尽量规矩和正式一些。一个 Gmail 地址很可能会跟随你很多年，关联大量文件、照片、付款记录、网站账号和第三方登录，后期修改会非常麻烦。</p>
+<h2 id="手机号和安全邮箱">手机号和安全邮箱
+</h2><p>接下来按照页面提示填写必要信息。</p>
+<p>注册过程中，Google 可能要求验证手机号码，也可能允许跳过。是否出现手机号验证，与设备、网络、地区和系统的安全判断有关。</p>
+<p>有些人可能会遇到中国大陆手机号无法完成验证。首先检查国家区号和号码是否填写正确，也可以在征得同意后尝试使用家人或朋友长期正常使用的号码暂时注册。</p>
+<p><strong>手机号验证有尝试次数限制，不要在失败后一直重复提交</strong>。连续失败时可以先停止操作，过一段时间再试，或者更换另一个本人能够长期联系到的号码。</p>
+<p>实在不行就只能使用公开接码平台、临时短信网站或网上购买的号码。这些号码可能已经被很多人使用，现在大概率是不可以用于注册的。但要注意：仅用于注册不要绑定恢复手机。</p>
+<p>安全邮箱可以使用 Outlook 或另一个长期使用的邮箱。</p>
+<p>如果暂时只有国内邮箱，也可以用作恢复邮箱。最重要的是这个邮箱必须由你本人控制、能够长期登录，并且可以及时收到 Google 的安全通知。</p>
+<p>不要把工作邮箱、学校邮箱或可能在短期内失效的邮箱作为唯一恢复方式。</p>
+<h2 id="注册后先完成安全设置">注册后先完成安全设置
+</h2><p>不出意外，按照页面一步一步操作以后，账户就可以创建成功。但是千万不能急着去马上去注册订阅ChatGPT，否则会被认为是高危账号遭到封禁。</p>
+<p><strong>创建成功后，千万不要立刻退出登录</strong>，也不要马上在很多设备、浏览器和不同地区同时登录。</p>
+<p>先留在当前注册手机的App中完成账户安全设置。</p>
+<p>进入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">右上角头像
+</span></span><span class="line"><span class="cl">管理您的 Google 账号
+</span></span><span class="line"><span class="cl">安全性和登录
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>英文界面通常显示为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Manage your Google Account
+</span></span><span class="line"><span class="cl">Security &amp; sign-in
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Google 的具体中文翻译可能随着应用版本发生变化，但一般都可以在“安全性和登录”页面中找到。</p>
+<p>进入后先完成安全检查，<strong>把能够添加的安全方式全部补充完整</strong>。至少应当完成：</p>
+<ul>
+<li>添加恢复邮箱</li>
+<li>添加恢复手机号</li>
+<li>开启两步验证</li>
+<li>创建通行密钥</li>
+<li>添加验证器</li>
+<li>保存备用代码</li>
+</ul>
+<p>不要只依赖一种验证方式。</p>
+<p>手机号可能停机，安全邮箱可能无法登录，手机也可能丢失。只有一种验证方式时，一旦出现问题就会非常被动。</p>
+<h2 id="开启两步验证">开启两步验证
+</h2><p>进入“安全性和登录”，找到“您登录 Google 的方式”，打开“两步验证”。</p>
+<p>Google 可能提供以下验证方式：</p>
+<ul>
+<li>Google 提示</li>
+<li>手机短信或电话</li>
+<li>通行密钥</li>
+<li>Google Authenticator</li>
+<li>硬件安全密钥</li>
+<li>备用代码</li>
+</ul>
+<p>手机号码应当使用自己能够长期接收短信的号码。以后登录新设备或触发安全验证时，可能需要通过这个号码接收验证码。</p>
+<p>短信验证使用方便，但不建议把它作为唯一验证方式。号码可能停机、换号，也可能遇到漫游、欠费或短信延迟问题。</p>
+<p>开启两步验证后，建议立即生成备用代码，并保存在安全的位置。备用代码不要只存放在当前手机中，否则手机丢失时，代码也会一起丢失。</p>
+<p>可以把备用代码：</p>
+<ul>
+<li>打印后放在安全位置</li>
+<li>保存在可信的密码管理器中</li>
+<li>保存在离线加密磁盘中</li>
+<li>放在只有自己能够访问的加密文件中</li>
+</ul>
+<p>不要把备用代码截图后直接上传到普通网盘、聊天软件或公开相册。</p>
+<h2 id="创建通行密钥">创建通行密钥
+</h2><p>通行密钥可以使用手机的指纹、人脸或锁屏密码登录账户。</p>
+<p>进入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Google 账号
+</span></span><span class="line"><span class="cl">安全性和登录
+</span></span><span class="line"><span class="cl">通行密钥和安全密钥
+</span></span><span class="line"><span class="cl">创建通行密钥
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>只在你本人拥有并控制的设备上创建通行密钥。</p>
+<p>不要在公共电脑、公司共用电脑、维修店设备或朋友的手机上创建。通行密钥创建以后，能够解锁这台设备的人可能也能够使用它登录你的 Google 账户。</p>
+<h3 id="apple-设备">Apple 设备
+</h3><p>在 iPhone、iPad 或 Mac 上创建的通行密钥，通常会保存到 Apple 的“密码”App 和 iCloud 钥匙串中，<strong>可以全平台通用</strong>。</p>
+<p>如果多台 Apple 设备：</p>
+<ul>
+<li>登录同一个 Apple 账户</li>
+<li>开启“密码与钥匙串”同步</li>
+<li>属于受信任设备</li>
+</ul>
+<p>密码、通行密钥和验证码可以通过 iCloud 钥匙串在这些设备之间同步，并使用各设备的 Face ID、Touch ID 或锁屏密码验证。</p>
+<p>这不代表其他人只要知道你的 Apple ID 邮箱就能使用通行密钥。对方仍然需要控制你的受信任设备，并通过 Apple 账户的安全验证。</p>
+<h3 id="android-设备">Android 设备
+</h3><p>Android 上的通行密钥通常会保存到 Google 密码管理工具或手机所使用的其他密码管理器中，<strong>仅可用于当前设备</strong>。</p>
+<p>支持同步的情况下，通行密钥可以在登录同一 Google 账户的设备上使用。具体能否同步，取决于 Android 版本、手机品牌和所使用的密码管理器。</p>
+<p>换手机之前，应当先检查通行密钥是否已经同步，同时保留验证器、恢复邮箱和备用代码。</p>
+<h3 id="windows">Windows
+</h3><p>Windows 上的通行密钥可能保存在 Windows Hello、浏览器或密码管理器中，<strong>通常是只能用于一个浏览器</strong>。比如如果你绑定了Edge，给Chrome用不了必须给Chrome也绑定一个，绑定常用浏览器即可。</p>
+<p>是否能够在不同浏览器之间共用，取决于通行密钥的保存位置和密码管理器。可以先在自己的常用浏览器中创建和测试，不必刚注册就把所有浏览器全部绑定一遍。</p>
+<p><strong>注意，账户刚创建时，只需要先绑定当前手机。其他电脑和设备以后再逐步添加。</strong></p>
+<h2 id="添加验证器">添加验证器
+</h2><p>接下来是验证器的绑定。</p>
+<p>验证器会定期生成一个六位数字。即使手机暂时没有网络或没有手机信号，一般也能正常生成验证码。</p>
+<p>可以使用：</p>
+<ul>
+<li>Google Authenticator</li>
+<li>Microsoft Authenticator</li>
+<li>Apple 自带的“密码”App</li>
+<li>其他可信的 TOTP 验证器</li>
+</ul>
+<h3 id="使用-iphone-自带的密码app">使用 iPhone 自带的“密码”App
+</h3><p>iPhone 用户不一定需要安装第三方验证器，系统自带的“密码”App 就可以完成。</p>
+<p>进入 Google 的两步验证页面，选择“验证器”。接下来 Google 会显示一个二维码，并且通常还会提供一串由字母和数字组成的设置密钥。</p>
+<p>这里需要注意，很多人是在同一台手机上操作的。二维码就在手机屏幕上时，相机无法扫描自己的屏幕，因此需要手动复制设置密钥。</p>
+<p>如果二维码显示在电脑、平板或另一台手机上，可以直接使用 iPhone 相机扫描。系统通常会询问是否把验证码添加到“密码”App。</p>
+<p>如果二维码和“密码”App 都在同一台 iPhone 上，可以选择手动输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">打开 Google 的验证器设置页面
+</span></span><span class="line"><span class="cl">选择无法扫描二维码或显示设置密钥
+</span></span><span class="line"><span class="cl">复制页面上给出的一长串字母和数字
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后打开 iPhone 的“密码”App：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">打开“密码”App
+</span></span><span class="line"><span class="cl">选择“全部”
+</span></span><span class="line"><span class="cl">找到已经保存的 Google 账户
+</span></span><span class="line"><span class="cl">点击“编辑”
+</span></span><span class="line"><span class="cl">选择“设置验证码”
+</span></span><span class="line"><span class="cl">选择“输入设置密钥”
+</span></span><span class="line"><span class="cl">粘贴刚刚复制的设置密钥
+</span></span><span class="line"><span class="cl">保存
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>英文界面通常显示为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Passwords
+</span></span><span class="line"><span class="cl">All
+</span></span><span class="line"><span class="cl">Edit
+</span></span><span class="line"><span class="cl">Set Up Verification Code
+</span></span><span class="line"><span class="cl">Enter Setup Key
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不同 iOS 版本中的中文名称可能略有不同，也可能显示为“设置验证代码”“设置验证码”或类似名称。</p>
+<p>保存后，“密码”App 中会出现一个每隔一段时间自动变化的六位数字。</p>
+<p>返回 Google 的验证器设置页面，在倒计时结束前输入这个六位数字，即可完成绑定。</p>
+<p>如果“密码”App 中还没有保存 Google 账户，可以点击右下角的加号，新建一条记录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">网站：google.com
+</span></span><span class="line"><span class="cl">用户名：完整的 Gmail 地址
+</span></span><span class="line"><span class="cl">密码：Google 账户密码
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存后再进入这条记录，添加设置密钥。</p>
+<p>如果页面只显示二维码，没有直接看到设置密钥，可以寻找下面这些按钮或文字：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">无法扫描二维码
+</span></span><span class="line"><span class="cl">手动输入
+</span></span><span class="line"><span class="cl">设置密钥
+</span></span><span class="line"><span class="cl">Can&#39;t scan it?
+</span></span><span class="line"><span class="cl">Enter setup key
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>点击后一般就会显示可以复制的一长串字符。</p>
+<p>这串设置密钥和二维码具有相同作用。任何获得它的人，都可以在自己的设备上生成你的六位验证码，因此不要截图发给别人，也不要上传到网盘、聊天软件或公开页面。</p>
+<h3 id="使用-android">使用 Android
+</h3><p>Android 用户可以按照 Google 页面提示安装 Google Authenticator。</p>
+<p>打开应用后，可以选择：</p>
+<ul>
+<li>扫描二维码</li>
+<li>输入设置密钥</li>
+</ul>
+<p>如果二维码显示在电脑或另一台设备上，可以直接扫描。</p>
+<p>如果是在同一台 Android 手机上设置，无法用手机相机扫描自己的屏幕，就选择“输入设置密钥”或“手动输入”，复制 Google 页面给出的一长串字母和数字，再粘贴到 Google Authenticator 中。</p>
+<p>一般需要填写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">账户名称：完整的 Gmail 地址
+</span></span><span class="line"><span class="cl">设置密钥：Google 页面提供的字符
+</span></span><span class="line"><span class="cl">密钥类型：基于时间
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存后，Google Authenticator 会显示一个不断变化的六位数字。返回 Google 设置页面，在倒计时结束前输入这个数字，即可完成绑定。</p>
+<p>如果暂时无法安装 Google Authenticator，也可以使用 Microsoft Authenticator。它们使用的是通用的动态验证码标准，功能基本相同。</p>
+<p>无论使用哪个验证器，都不要把二维码、设置密钥或六位验证码提供给别人。</p>
+<h2 id="开始正常使用账户">开始正常使用账户
+</h2><p>完成恢复邮箱、恢复手机号、两步验证、通行密钥、验证器和备用代码以后，账户安全设置基本完成，账号注册阶段大功告成，但是不要高兴的太早，还有可能被封。</p>
+<p>所以这时仍然<strong>不要急着退出登录</strong>，也不要立刻在大量设备、浏览器和不同地区同时登录，更不要马上连续注册和订阅许多服务。</p>
+<p>新创建的账户如果没有任何正常使用记录，只有注册、登录和连续绑定第三方服务等操作，从系统角度看很容易显得像一个临时账户或自动注册账户。</p>
+<p>因此，<strong>建议先像正常用户一样使用一段时间，让账户产生一些真实、自然的活动记录，要有“活人感”</strong>。</p>
+<p>你可以完成下面这些操作：</p>
+<ul>
+<li>换一个自己喜欢的头像</li>
+<li>在 Google Drive 上传几个自己的文件</li>
+<li>在 Google Photos 中上传或备份一些照片</li>
+<li>在 Google Maps 中收藏或标注几个地点</li>
+<li>使用 Gmail 给自己的其他邮箱发送几封测试邮件</li>
+<li>用其他邮箱回复 Gmail 发出的邮件</li>
+<li>订阅几个自己感兴趣的 YouTube 频道</li>
+<li>搜索和观看一些自己真正感兴趣的内容</li>
+<li>注册 GitHub 或其他自己以后会长期使用的网站</li>
+<li>在 GitHub 上给自己喜欢的项目点 Star</li>
+<li>Fork 一个自己感兴趣、以后可能研究或修改的仓库</li>
+</ul>
+<p>这里的重点是让账户出现正常用户会有的使用记录，而不是创建以后马上只用于大量注册、订阅和付款。</p>
+<p>特别是很多用户原本没有 GitHub 账户，可以考虑使用 Google 账户注册 GitHub。GitHub 本身也是海外互联网中非常常用的平台，以后无论是下载开源软件、反馈问题、关注项目，还是管理自己的代码和网站，都可能用到。</p>
+<p>注册 GitHub 后，可以根据自己的兴趣搜索一些项目，阅读介绍，给喜欢的项目点 Star，也可以 Fork 到自己的账户中留作以后查看或修改。</p>
+<p>这些操作不需要一次全部完成，也不要在几分钟内机械地重复大量相同动作。按照自己平时正常使用互联网的节奏逐步完成即可，还有可能触发风控导致你的账号被封，如果完成这些是非常好的活动记录。</p>
+<p>刚注册后还应尽量避免：</p>
+<ul>
+<li>短时间内连续注册大量第三方网站</li>
+<li>同时在许多设备和地区登录</li>
+<li>频繁修改密码、姓名和恢复信息</li>
+<li>大量发送内容完全相同的邮件</li>
+<li>使用脚本或自动化工具操作账户</li>
+<li>连续创建多个 Google 账户</li>
+<li>立即进行大量付款、退款或订阅操作</li>
+</ul>
+<p><strong>在完成安全设置和这些初次使用操作时，最好保存一些截图</strong>，例如：</p>
+<ul>
+<li>账户创建成功页面</li>
+<li>安全检查完成页面</li>
+<li>恢复邮箱和手机号已经添加的页面</li>
+<li>两步验证方式列表</li>
+<li>通行密钥设备列表</li>
+<li>Google Drive 文件上传记录</li>
+<li>Gmail 正常收发邮件记录</li>
+<li>GitHub 账户和项目活动记录</li>
+</ul>
+<p>截图时不要保存或公开展示密码、短信验证码、验证器设置密钥、六位验证码和备用代码。</p>
+<h2 id="推荐几个开源项目">推荐几个开源项目
+</h2><p>前面提到，可以注册 GitHub，并给自己喜欢或感兴趣的开源项目点 Star、Fork，或者参与项目讨论和改进。</p>
+<p>允许作者在这里毛遂自荐一下。</p>
+<p>如果下面这些项目刚好对你有帮助或符合你的兴趣，欢迎点一个 Star，也欢迎 Fork、提交 Issue、提交代码或参与改进。</p>
+<ul>
+<li>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/No-New-Tab"  target="_blank" rel="noopener"
+    >No New Tab</a><br>
+一个阻止 Bilibili、微博等网页随意弹出新标签页的脚本。</p>
+</li>
+<li>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/Safari-CJK-Font-Fallback-Fix"  target="_blank" rel="noopener"
+    >Safari CJK Font Fallback Fix</a><br>
+修复 Mac Safari 中文显示宋体等字体问题的脚本。</p>
+</li>
+<li>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/TextTray"  target="_blank" rel="noopener"
+    >Text Tray</a><br>
+Mac 上的临时文本托盘工具。</p>
+</li>
+<li>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/The-Little-Dict-macOS"  target="_blank" rel="noopener"
+    >The Little Dict for macOS</a><br>
+Mac 上的原生英文查词扩展。</p>
+</li>
+<li>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/translate-document-quick-action"  target="_blank" rel="noopener"
+    >Translate Document Quick Action</a><br>
+Mac 上的原生快捷翻译小工具。</p>
+</li>
+</ul>
+<p>如果这些项目对你有帮助，可以在完成 GitHub 注册和初次使用时顺手点一个 Star。也欢迎真正使用以后提交建议、反馈问题或参与贡献。</p>
+<p>完成这些步骤以后，账户已经具备比较完整的安全保护，可以逐步在自己的常用设备上登录和使用啦。</p>
+<h2 id="账户被停用后的处理">账户被停用后的处理
+</h2><p>如果非常不幸，账户突然被 Google 杀了一个回马枪停用了，不要马上放弃，也<strong>不要尝试重新注册新账户</strong>，因为即使注册新的账户也可能因为同样的机制遭到无情封杀。</p>
+<p>最佳选择是通过 Google 官方渠道<strong>提交申诉</strong>解决这个账户的问题。</p>
+<p>一般情况下，可以在浏览器中尝试登录被停用的账户。Google 会显示账户被停用的说明，并提供申诉入口：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Start Appeal
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Google 官方目前给出的流程是：</p>
+<ol>
+<li>在浏览器中登录被停用的 Google 账户。</li>
+<li>查看账户被停用的说明。</li>
+<li>选择 <code>Start Appeal</code>。</li>
+<li>按照页面提示提交申诉。</li>
+</ol>
+<p>有些情况下，Google 也会向恢复邮箱或手机发送通知。但不要假定通知邮件一定可以直接回复。很多系统邮件来自 <code>noreply</code> 地址，回复以后不会进入人工处理流程，<strong>不要回复<code>noreply</code> 地址，可能需要给官方给出的邮箱写信或回复</strong>。</p>
+<p>应以登录账户后显示的官方申诉入口为准，不要相信网上所谓的“内部客服”“付费解封”或“代申诉”。</p>
+<p>申诉时只需要如实说明：</p>
+<ul>
+<li>这是你的个人账户</li>
+<li>账户由你本人创建和使用</li>
+<li>只在自己的设备上登录</li>
+<li>已经绑定恢复邮箱和手机号</li>
+<li>已经设置两步验证、验证器和通行密钥</li>
+<li>网络位置可能因为使用了不可言说的网络工具发生变化</li>
+<li>没有使用账户发送垃圾邮件或进行自动化活动</li>
+<li>账户用于哪些正常用途</li>
+<li>账户中保存了哪些重要文件或资料</li>
+<li>愿意配合完成进一步验证</li>
+</ul>
+<p><strong>可以说明账户用于个人文件、照片、工作求职、网站登录、开发项目或其他真实的重要的用途</strong>（而这就是我们之前为什么需要搞那么多通行密钥等安全性步骤和让你做各种文件上传fork开源仓库等真实用户的行为）。</p>
+<p>如果页面允许上传材料，可以附上不包含密码和验证码的截图。这也是前面建议保存安全设置和使用记录截图的原因。</p>
+<p><strong>申诉可以使用英语书写</strong>。如果你按照本步骤操作的话，你的谷歌默认使用英文，而谷歌客服一般也是英语区人员中文客服几乎没有，所以这是要用英文写作的原因。参考内容如下（我推荐你用你的AI工具生成一个合适你自己的版本）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Hello Google Support,
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I believe my Google Account may have been disabled by mistake.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This is my personal account, created and used only by me on my own devices. I have added recovery information and enabled additional security methods, including two-step verification, an authenticator and a passkey.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">My network location may occasionally change because of the network services available to me, but I have not used the account for automated activity, spam, impersonation or any other prohibited purpose.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This account is important to me because I use it for personal files, email communication, account sign-ins and other legitimate services.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">I would appreciate it if you could review the account and restore access. I am willing to complete any additional verification required.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Thank you.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不要在申诉邮件、在线聊天或任何第三方网站中提供：</p>
+<ul>
+<li>Google 账户密码</li>
+<li>短信验证码</li>
+<li>六位验证器代码</li>
+<li>备用代码</li>
+<li>通行密钥</li>
+<li>验证器设置密钥</li>
+</ul>
+<p><strong>写完之后等回复，不出意外都会解封</strong>。提交申诉不代表一定能够恢复账户，但如果你账户确实由本人正常注册和使用，一般是不会为难你的。解封后你的账户在这一块基本就是安全了，可以放心开始注册和订阅了！</p>
+<h2 id="最后">最后
+</h2><p>注册 Google 账户没有什么神秘技巧，最重要的是保持注册环境稳定，使用正常、完整的个人信息，并及时完成安全设置。</p>
+<p>建议长期做到以下几点：</p>
+<ul>
+<li>使用正式、容易识别的 Gmail 地址</li>
+<li>保持恢复邮箱和手机号有效</li>
+<li>开启两步验证</li>
+<li>创建通行密钥</li>
+<li>添加验证器</li>
+<li>妥善保存备用代码</li>
+<li>不把账户借给别人</li>
+<li>不在虚拟设备中注册重要账户</li>
+<li>不批量注册或发送垃圾邮件</li>
+<li>不在来历不明的网站输入密码和验证码</li>
+<li>不频繁切换设备、地区和网络出口</li>
+</ul>
+<p>完成这些以后，你的 Google 账户就已经具备了比较完整的安全保护，可以用于 Gmail、Google Drive、Google Photos、YouTube、Google Maps，以及其他支持 Google 登录的海外服务。</p>
+<h2 id="官方参考资料">官方参考资料
+</h2><ul>
+<li><a class="link" href="https://support.google.com/accounts/answer/27441"  target="_blank" rel="noopener"
+    >创建 Google 账户</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/19870"  target="_blank" rel="noopener"
+    >更改 Google 账户邮箱地址</a></li>
+<li><a class="link" href="https://support.google.com/mail/answer/7436150"  target="_blank" rel="noopener"
+    >Gmail 地址中的句点规则</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/46526"  target="_blank" rel="noopener"
+    >Google 账户安全检查</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/183723"  target="_blank" rel="noopener"
+    >设置恢复手机号或恢复邮箱</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/185839"  target="_blank" rel="noopener"
+    >开启两步验证</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/13548313"  target="_blank" rel="noopener"
+    >使用通行密钥登录</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/1066447"  target="_blank" rel="noopener"
+    >使用 Google Authenticator</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/1187538"  target="_blank" rel="noopener"
+    >创建和使用备用代码</a></li>
+<li><a class="link" href="https://support.google.com/accounts/answer/40695"  target="_blank" rel="noopener"
+    >Google 账户被停用后的申诉流程</a></li>
+<li><a class="link" href="https://support.apple.com/guide/iphone/automatically-fill-in-verification-codes-ipha6173c19f/ios"  target="_blank" rel="noopener"
+    >Apple 密码 App 设置验证码</a></li>
+<li><a class="link" href="https://support.apple.com/en-us/120758"  target="_blank" rel="noopener"
+    >Apple 设备同步密码和通行密钥</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/google-%E8%B4%A6%E6%88%B7/">Google 账户</a>
+        
+            <a href="/zh/tags/gmail/">Gmail</a>
+        
+            <a href="/zh/tags/%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%E6%B3%A8%E5%86%8C/">谷歌账号注册</a>
+        
+            <a href="/zh/tags/%E8%B4%A6%E6%88%B7%E5%AE%89%E5%85%A8/">账户安全</a>
+        
+            <a href="/zh/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81/">两步验证</a>
+        
+            <a href="/zh/tags/%E9%80%9A%E8%A1%8C%E5%AF%86%E9%92%A5/">通行密钥</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/the-little-dict-macos/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词" loading="lazy" src="/img/the-little-dict-macos/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/no-new-tab-browser-efficiency-tool/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览" loading="lazy" src="/img/no-new-tab/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">B 站、知乎、小红书总是打开新标签页？用 No-New-Tab 改回当前页浏览</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/bewlybewly-safari-revival/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件" loading="lazy" src="/img/bewlybewly-safari-revival/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/mac-lite-translator-local-ai-translation/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文" loading="lazy" src="/img/mac-lite-translator/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 本地翻译工具：基于 TranslateGemma，离线、准确、快速翻译长文</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+    <section class="waline-container">
+        <aside class="waline-comments-notice" aria-labelledby="comments-notice-title">
+            <div>
+                <h3 id="comments-notice-title">评论须知</h3>
+                <p>
+                    本站支持访客评论。如果您希望获得评论回复通知，可以填写您的邮箱；收到回复时，系统将自动发送通知给您。
+                </p>
+            </div>
+            <div class="waline-comments-stats" aria-label="文章互动统计">
+                <span title="浏览量">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
+                    <span class="waline-pageview-count" data-path="/zh/p/google-account-registration-china/">—</span>
+                </span>
+                <span title="评论数">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                    <span class="waline-comment-count" data-path="/zh/p/google-account-registration-china/">—</span>
+                </span>
+            </div>
+        </aside>
+        <div id="waline-comments-root"></div>
+        <template id="waline-rss-icon-template"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span></template>
+    </section>
+    <script type="module">
+        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+
+        const serverURL = "https://zjy-blog-waline-comments.vercel.app";
+
+        init({
+            el: "#waline-comments-root",
+            serverURL,
+            dark: 'html[data-scheme="dark"]',
+            lang: "zh-CN",
+            pageview: false,
+            comment:  true ,
+            reaction: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f60d.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f602.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f914.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f62e.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f622.png"],
+            emoji: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],
+            locale: {
+                reactionTitle: "这篇文章对你有帮助吗？",
+                reaction0: "喜欢",
+                reaction1: "好笑",
+                reaction2: "思考",
+                reaction3: "惊讶",
+                reaction4: "难过",
+            },
+        });
+
+        const walineRoot = document.querySelector("#waline-comments-root");
+        const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
+        const useSiteRssIcons = () => {
+            if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
+
+            walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
+                if (link.dataset.siteRssIcon === "true") return;
+
+                const currentIcon = link.querySelector("svg");
+                const siteIcon = rssIconTemplate.content.firstElementChild?.cloneNode(true);
+                if (currentIcon && siteIcon instanceof Element) {
+                    currentIcon.replaceWith(siteIcon);
+                    link.dataset.siteRssIcon = "true";
+                }
+            });
+        };
+
+        if (walineRoot) {
+            new MutationObserver(useSiteRssIcons).observe(walineRoot, { childList: true, subtree: true });
+            useSiteRssIcons();
+        }
+
+        pageviewCount({
+            serverURL,
+            path: "/zh/p/google-account-registration-china/",
+            selector: ".waline-pageview-count",
+            update: false,
+        });
+    </script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/sitemap/">网站地图</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
+            <script type="module">
+                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+
+                const serverURL = "https://zjy-blog-waline-comments.vercel.app";
+                const lang = "zh-CN";
+
+                pageviewCount({
+                    serverURL,
+                    lang,
+                    selector: ".waline-pageview-tracker",
+                });
+
+                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        path: "/__site_total__/",
+                        type: "time",
+                        action: "inc",
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        const count = payload?.data?.[0]?.time;
+                        const element = document.querySelector(".waline-site-pageview-count");
+                        if (!element || typeof count !== "number") return;
+                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
+                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
+                        element.textContent = `${label} ${formatted}`;
+                    })
+                    .catch(() => {});
+            </script>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+        
+            <br>
+            <small class="site-runtime">
+                本站已运行
+                <strong data-site-runtime data-launch-date="2025-09-14">0</strong>
+                天
+            </small>
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.a480d7988a919b631eb851a15f822e8b91f4a7f29ea51c74c110ea2497f4960f.js" defer></script>
+
+
+    </body>
+</html>

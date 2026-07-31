@@ -51,6 +51,24 @@ collections:
       - { label: Categories, name: categories, widget: list, required: false }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Article, name: body, widget: markdown }
+  - name: single_language_loader_google_account_registration_china
+    label: "Single-language loader: Google Account Registration China"
+    folder: content/post
+    path: google-account-registration-china/index.zh
+    extension: md
+    format: yaml-frontmatter
+    i18n: false
+    create: false
+    hide: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: URL slug, name: slug, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Published date, name: date, widget: datetime, required: false }
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Categories, name: categories, widget: list, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Article, name: body, widget: markdown }
   - name: single_language_loader_malta_waste_collection_calendar
     label: "Single-language loader: Malta Waste Collection Calendar"
     folder: content/post
@@ -222,6 +240,38 @@ collections:
       - name: zh_bewlybewly_safari_revival
         label: "Bewlybewly Safari Revival"
         file: content/post/bewlybewly-safari-revival/index.zh.md
+        format: yaml-frontmatter
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL slug, name: slug, widget: string, required: false }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Published date, name: date, widget: datetime, required: false }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - label: Categories
+            name: categories
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: categories
+            multiple: true
+            value_field: '{{categories.*.name}}'
+            display_fields: ['{{categories.*.name}}']
+            search_fields: ['{{categories.*.name}}']
+          - label: Tags
+            name: tags
+            widget: relation
+            required: false
+            collection: taxonomies
+            file: tags
+            multiple: true
+            value_field: '{{tags.*.name}}'
+            display_fields: ['{{tags.*.name}}']
+            search_fields: ['{{tags.*.name}}']
+          - { label: Article, name: body, widget: markdown }
+
+      - name: zh_google_account_registration_china
+        label: "Google Account Registration China"
+        file: content/post/google-account-registration-china/index.zh.md
         format: yaml-frontmatter
         fields:
           - { label: Title, name: title, widget: string }
@@ -585,6 +635,10 @@ asset_collections:
     label: "gallery"
     media_folder: /static/img/gallery
     public_folder: /img/gallery
+  - name: img_google_account_registration_china
+    label: "google-account-registration-china"
+    media_folder: /static/img/google-account-registration-china
+    public_folder: /img/google-account-registration-china
   - name: img_launchpad
     label: "launchpad"
     media_folder: /static/img/launchpad
