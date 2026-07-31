@@ -51,10 +51,10 @@ collections:
       - { label: Categories, name: categories, widget: list, required: false }
       - { label: Tags, name: tags, widget: list, required: false }
       - { label: Article, name: body, widget: markdown }
-  - name: single_language_loader_google_account_registration_china
-    label: "Single-language loader: Google Account Registration China"
+  - name: single_language_loader_google_account_registration_guide
+    label: "Single-language loader: Google Account Registration Guide"
     folder: content/post
-    path: google-account-registration-china/index.zh
+    path: google-account-registration-guide/index.zh
     extension: md
     format: yaml-frontmatter
     i18n: false
@@ -269,9 +269,9 @@ collections:
             search_fields: ['{{tags.*.name}}']
           - { label: Article, name: body, widget: markdown }
 
-      - name: zh_google_account_registration_china
-        label: "Google Account Registration China"
-        file: content/post/google-account-registration-china/index.zh.md
+      - name: zh_google_account_registration_guide
+        label: "Google Account Registration Guide"
+        file: content/post/google-account-registration-guide/index.zh.md
         format: yaml-frontmatter
         fields:
           - { label: Title, name: title, widget: string }
@@ -635,10 +635,10 @@ asset_collections:
     label: "gallery"
     media_folder: /static/img/gallery
     public_folder: /img/gallery
-  - name: img_google_account_registration_china
-    label: "google-account-registration-china"
-    media_folder: /static/img/google-account-registration-china
-    public_folder: /img/google-account-registration-china
+  - name: img_google_account_registration_guide
+    label: "google-account-registration-guide"
+    media_folder: /static/img/google-account-registration-guide
+    public_folder: /img/google-account-registration-guide
   - name: img_launchpad
     label: "launchpad"
     media_folder: /static/img/launchpad
