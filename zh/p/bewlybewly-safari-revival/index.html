@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.a9458660586191456652035dd47c09b2ffa19d2621b95e2d948c290a08ad0803.css"><meta property='og:title' content="BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件">
+<link rel="stylesheet" href="/scss/style.min.813fd0b12f928f174bc21653457d9fd19923f666b3ebb85b736c066717f382bf.css"><meta property='og:title' content="BewlyBewly Safari 下载资源：macOS 上继续使用 B 站美化插件">
 <meta property='og:description' content="BewlyBewly 是目前最好用的 B 站网页端美化插件，但已于 2025 年 2 月停更归档。Safari 版本在一场风波后全网消失。经过一番波折，我找到了现在可用的安装包，并通过 GitHub 分享出来，供 macOS 用户免费使用。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/bewlybewly-safari-revival/'>
 <meta property='og:site_name' content='小景'>
@@ -1071,7 +1071,7 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
-        const useSiteRssIcons = () => {
+        const enhanceWalineComments = () => {
             if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
 
             walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
@@ -1084,11 +1084,21 @@ Hakadao 在 X 上发布告别推文，正式宣布 BewlyBewly 停更。最后一
                     link.dataset.siteRssIcon = "true";
                 }
             });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
         };
 
         if (walineRoot) {
-            new MutationObserver(useSiteRssIcons).observe(walineRoot, { childList: true, subtree: true });
-            useSiteRssIcons();
+            new MutationObserver(enhanceWalineComments).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWalineComments();
         }
 
         pageviewCount({

@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.a9458660586191456652035dd47c09b2ffa19d2621b95e2d948c290a08ad0803.css"><meta property='og:title' content="Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理">
+<link rel="stylesheet" href="/scss/style.min.813fd0b12f928f174bc21653457d9fd19923f666b3ebb85b736c066717f382bf.css"><meta property='og:title' content="Mac 上一键翻译文档：PDF、Word、Markdown、图片和录音都能处理">
 <meta property='og:description' content="一个开源的 macOS Quick Action 与 Python CLI 工具，可翻译 PDF、Word、Markdown、TXT、图片和音视频转录文本，并尽量保留文档结构。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/translate-document-quick-action/'>
 <meta property='og:site_name' content='小景'>
@@ -1145,7 +1145,7 @@
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
-        const useSiteRssIcons = () => {
+        const enhanceWalineComments = () => {
             if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
 
             walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
@@ -1158,11 +1158,21 @@
                     link.dataset.siteRssIcon = "true";
                 }
             });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
         };
 
         if (walineRoot) {
-            new MutationObserver(useSiteRssIcons).observe(walineRoot, { childList: true, subtree: true });
-            useSiteRssIcons();
+            new MutationObserver(enhanceWalineComments).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWalineComments();
         }
 
         pageviewCount({

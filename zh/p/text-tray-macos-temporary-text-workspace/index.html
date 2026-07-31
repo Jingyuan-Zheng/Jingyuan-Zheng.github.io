@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.a9458660586191456652035dd47c09b2ffa19d2621b95e2d948c290a08ad0803.css"><meta property='og:title' content="Text Tray：给复制文本一个临时工作台">
+<link rel="stylesheet" href="/scss/style.min.813fd0b12f928f174bc21653457d9fd19923f666b3ebb85b736c066717f382bf.css"><meta property='og:title' content="Text Tray：给复制文本一个临时工作台">
 <meta property='og:description' content="Text Tray 是一个开源 macOS 小工具，用来快速查看、编辑、清理、翻译、保存或重新复制临时文本，而不必把它变成一条笔记或一个正式文档。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/text-tray-macos-temporary-text-workspace/'>
 <meta property='og:site_name' content='小景'>
@@ -1119,7 +1119,7 @@
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
-        const useSiteRssIcons = () => {
+        const enhanceWalineComments = () => {
             if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
 
             walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
@@ -1132,11 +1132,21 @@
                     link.dataset.siteRssIcon = "true";
                 }
             });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
         };
 
         if (walineRoot) {
-            new MutationObserver(useSiteRssIcons).observe(walineRoot, { childList: true, subtree: true });
-            useSiteRssIcons();
+            new MutationObserver(enhanceWalineComments).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWalineComments();
         }
 
         pageviewCount({

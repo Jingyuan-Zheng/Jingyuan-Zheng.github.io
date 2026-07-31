@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.a9458660586191456652035dd47c09b2ffa19d2621b95e2d948c290a08ad0803.css"><meta property='og:title' content="马耳他 eID 在线申请教程：不用跑现场，也能完成激活">
+<link rel="stylesheet" href="/scss/style.min.813fd0b12f928f174bc21653457d9fd19923f666b3ebb85b736c066717f382bf.css"><meta property='og:title' content="马耳他 eID 在线申请教程：不用跑现场，也能完成激活">
 <meta property='og:description' content="eID 是马耳他官方服务（如考驾照、社保等）的通行证。本指南教你如何跳过线下排队，通过 Identità 官网在线申请与激活。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BA%BF%E8%B6%B3%E4%B8%8D%E5%87%BA%E6%88%B7%E5%8A%9E%E7%90%86%E9%A9%AC%E8%80%B3%E4%BB%96eid/'>
 <meta property='og:site_name' content='小景'>
@@ -1040,7 +1040,7 @@
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
-        const useSiteRssIcons = () => {
+        const enhanceWalineComments = () => {
             if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
 
             walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
@@ -1053,11 +1053,21 @@
                     link.dataset.siteRssIcon = "true";
                 }
             });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
         };
 
         if (walineRoot) {
-            new MutationObserver(useSiteRssIcons).observe(walineRoot, { childList: true, subtree: true });
-            useSiteRssIcons();
+            new MutationObserver(enhanceWalineComments).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWalineComments();
         }
 
         pageviewCount({
