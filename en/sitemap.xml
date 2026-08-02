@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -20,8 +20,12 @@
       />
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/tags/blog-theme/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -39,12 +43,27 @@
       />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/tags/comments/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
+    <loc>https://jingyuan-zheng.github.io/tags/cloudflare-pages/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/cloudflare-pages/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/cloudflare-pages/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/cloudflare-pages/"
+      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/hugo/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -60,6 +79,94 @@
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/tags/hugo/"
       />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/liquid-stack/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/liquid-stack/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/liquid-stack/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/liquid-stack/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/liquid-stack-open-source-release/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/p/liquid-stack-open-source-release/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/p/liquid-stack-open-source-release/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/liquid-stack-open-source-release/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/open-source/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/site-updates/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/</loc>
+    <lastmod>2026-08-02T20:30:00+02:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/comments/</loc>
+    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/p/waline-comment-system-migration/</loc>
@@ -100,50 +207,8 @@
       />
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/post/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/categories/site-updates/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/tags/site-updates/</loc>
     <lastmod>2026-07-28T21:20:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/</loc>
-    <lastmod>2026-07-28T21:20:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/tags/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/tags/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/tags/"
-      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/vercel/</loc>
