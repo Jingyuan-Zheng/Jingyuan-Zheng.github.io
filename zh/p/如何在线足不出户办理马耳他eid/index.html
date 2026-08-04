@@ -1031,6 +1031,7 @@
             failed: "图片上传失败，请稍后重试。",
             invalidResponse: "上传服务没有返回有效的图片地址。",
             tooManyImages: "每条评论最多包含 5 张图片。",
+            selectionTooManyImages: "最多只能选择 5 张图片，请先删除多余图片。",
             submitUploadFailed: "图片上传失败，评论尚未提交。",
         };
 
@@ -1044,6 +1045,7 @@
         let resolveTurnstileToken;
         let rejectTurnstileToken;
         const pendingImageFiles = new Map();
+        const maxCommentImages = 5;
         let submittingPendingImages = false;
         let bypassNextSubmitClick = false;
 
@@ -1230,14 +1232,22 @@
                 "image/gif",
             ]);
 
+            const rejectSelection = (message) => {
+                alert(message);
+                throw new Error(message);
+            };
+
             if (!(file instanceof File)) {
-                throw new Error(uploadMessages.invalidFile);
+                return rejectSelection(uploadMessages.invalidFile);
             }
             if (!allowedTypes.has(file.type)) {
-                throw new Error(uploadMessages.unsupportedType);
+                return rejectSelection(uploadMessages.unsupportedType);
             }
             if (file.size === 0 || file.size > maxFileSize) {
-                throw new Error(uploadMessages.tooLarge);
+                return rejectSelection(uploadMessages.tooLarge);
+            }
+            if (pendingImageFiles.size >= maxCommentImages) {
+                return rejectSelection(uploadMessages.selectionTooManyImages);
             }
 
             const localUrl = URL.createObjectURL(file);
@@ -1273,7 +1283,7 @@
 
             const localImages = [...pendingImageFiles.entries()]
                 .filter(([localUrl]) => content.includes(localUrl));
-            if (localImages.length > 5) {
+            if (localImages.length > maxCommentImages) {
                 throw new Error(uploadMessages.tooManyImages);
             }
 
@@ -1292,6 +1302,7 @@
             el: "#waline-comments-root",
             serverURL,
             imageUploader: prepareLocalCommentImage,
+            turnstileKey: turnstileSiteKey,
             dark: 'html[data-scheme="dark"]',
             lang: "zh-CN",
             pageview: false,

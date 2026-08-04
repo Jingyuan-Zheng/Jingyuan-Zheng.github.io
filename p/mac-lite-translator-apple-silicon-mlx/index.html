@@ -1125,6 +1125,7 @@
             failed: "Image upload failed. Please try again later.",
             invalidResponse: "The upload service did not return a valid image URL.",
             tooManyImages: "Each comment may contain at most 5 images.",
+            selectionTooManyImages: "You can select at most 5 images. Remove an image before selecting another.",
             submitUploadFailed: "Image upload failed. The comment was not submitted.",
         };
 
@@ -1138,6 +1139,7 @@
         let resolveTurnstileToken;
         let rejectTurnstileToken;
         const pendingImageFiles = new Map();
+        const maxCommentImages = 5;
         let submittingPendingImages = false;
         let bypassNextSubmitClick = false;
 
@@ -1324,14 +1326,22 @@
                 "image/gif",
             ]);
 
+            const rejectSelection = (message) => {
+                alert(message);
+                throw new Error(message);
+            };
+
             if (!(file instanceof File)) {
-                throw new Error(uploadMessages.invalidFile);
+                return rejectSelection(uploadMessages.invalidFile);
             }
             if (!allowedTypes.has(file.type)) {
-                throw new Error(uploadMessages.unsupportedType);
+                return rejectSelection(uploadMessages.unsupportedType);
             }
             if (file.size === 0 || file.size > maxFileSize) {
-                throw new Error(uploadMessages.tooLarge);
+                return rejectSelection(uploadMessages.tooLarge);
+            }
+            if (pendingImageFiles.size >= maxCommentImages) {
+                return rejectSelection(uploadMessages.selectionTooManyImages);
             }
 
             const localUrl = URL.createObjectURL(file);
@@ -1367,7 +1377,7 @@
 
             const localImages = [...pendingImageFiles.entries()]
                 .filter(([localUrl]) => content.includes(localUrl));
-            if (localImages.length > 5) {
+            if (localImages.length > maxCommentImages) {
                 throw new Error(uploadMessages.tooManyImages);
             }
 
@@ -1386,6 +1396,7 @@
             el: "#waline-comments-root",
             serverURL,
             imageUploader: prepareLocalCommentImage,
+            turnstileKey: turnstileSiteKey,
             dark: 'html[data-scheme="dark"]',
             lang: "en-US",
             pageview: false,
