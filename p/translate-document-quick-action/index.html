@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.e614f028b6026187fd0d708c366cc5c8e35c8f599e2bc383767f5a03db325f0c.css"><meta property='og:title' content="Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts">
+<link rel="stylesheet" href="/scss/style.min.dd5c3ac2132a49e4772f4d57410459c92f5064060cb6373c9dfb1fa18f009e4f.css"><meta property='og:title' content="Translate Documents on Mac from Finder: PDFs, Word Files, Images, and Transcripts">
 <meta property='og:description' content="An open-source macOS Quick Action and Python CLI for translating PDFs, Word documents, Markdown, TXT files, images, and audio transcripts while keeping useful structure intact.">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/p/translate-document-quick-action/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -1226,9 +1226,10 @@
             lang: "en-US",
             pageview: false,
             comment:  true ,
-            reaction: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f60d.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f602.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f914.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f62e.png","https://unpkg.com/@waline/emojis@1.4.0/tw-emoji/1f622.png"],
-            emoji: ["https://unpkg.com/@waline/emojis@1.4.0/tw-emoji"],
+            reaction: ["data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="],
+            emoji: [],
             locale: {
+                emoji: "Emoji",
                 reactionTitle: "Was this article helpful?",
                 reaction0: "Love it",
                 reaction1: "Funny",
@@ -1237,6 +1238,142 @@
                 reaction4: "Sad",
             },
         });
+
+        let unicodeEmojiLoadPromise;
+        let unicodeEmojiPanel;
+        let unicodeEmojiPicker;
+        let activeEmojiButton;
+        let activeEmojiTextarea;
+
+        const unicodeEmojiDataSource = "https://cdn.jsdelivr.net/npm/emoji-picker-element-data@1.8.0/en/emojibase/data.json";
+
+        const loadUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiLoadPromise) {
+                const pickerImport = import("https://cdn.jsdelivr.net/npm/emoji-picker-element@1.29.1/index.js");
+                const localeImport = 
+                    Promise.resolve(null)
+                ;
+
+                unicodeEmojiLoadPromise = Promise.all([pickerImport, localeImport])
+                    .then(([, localeModule]) => localeModule?.default);
+            }
+
+            return unicodeEmojiLoadPromise;
+        };
+
+        const closeUnicodeEmojiPicker = () => {
+            if (unicodeEmojiPanel) unicodeEmojiPanel.hidden = true;
+            if (activeEmojiButton) activeEmojiButton.setAttribute("aria-expanded", "false");
+            activeEmojiButton = undefined;
+            activeEmojiTextarea = undefined;
+        };
+
+        const positionUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiPanel || unicodeEmojiPanel.hidden || !activeEmojiButton) return;
+
+            const buttonRect = activeEmojiButton.getBoundingClientRect();
+            const panelRect = unicodeEmojiPanel.getBoundingClientRect();
+            const edge = 12;
+            const gap = 8;
+            const maxLeft = Math.max(edge, window.innerWidth - panelRect.width - edge);
+            const left = Math.min(Math.max(edge, buttonRect.left), maxLeft);
+            const belowTop = buttonRect.bottom + gap;
+            const aboveTop = buttonRect.top - panelRect.height - gap;
+            const top = belowTop + panelRect.height <= window.innerHeight - edge
+                ? belowTop
+                : Math.max(edge, aboveTop);
+
+            unicodeEmojiPanel.style.left = `${left}px`;
+            unicodeEmojiPanel.style.top = `${Math.min(top, window.innerHeight - panelRect.height - edge)}px`;
+        };
+
+        const insertUnicodeEmoji = (event) => {
+            const emoji = event.detail?.unicode;
+            const textarea = activeEmojiTextarea;
+            if (typeof emoji !== "string" || !textarea) return;
+
+            const start = textarea.selectionStart ?? textarea.value.length;
+            const end = textarea.selectionEnd ?? start;
+            const newValue = `${textarea.value.slice(0, start)}${emoji}${textarea.value.slice(end)}`;
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+
+            if (valueSetter) {
+                valueSetter.call(textarea, newValue);
+            } else {
+                textarea.value = newValue;
+            }
+
+            try {
+                textarea.dispatchEvent(new InputEvent("input", {
+                    bubbles: true,
+                    inputType: "insertText",
+                    data: emoji,
+                }));
+            } catch {
+                textarea.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+
+            textarea.focus();
+            textarea.setSelectionRange(start + emoji.length, start + emoji.length);
+        };
+
+        const createUnicodeEmojiPicker = async () => {
+            const locale = await loadUnicodeEmojiPicker();
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+
+            if (!unicodeEmojiPanel) {
+                unicodeEmojiPanel = document.createElement("div");
+                unicodeEmojiPanel.className = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.id = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.setAttribute("role", "dialog");
+                unicodeEmojiPanel.hidden = true;
+
+                unicodeEmojiPicker = document.createElement("emoji-picker");
+                unicodeEmojiPicker.locale = "en";
+                unicodeEmojiPicker.dataSource = unicodeEmojiDataSource;
+                
+                unicodeEmojiPicker.addEventListener("emoji-click", insertUnicodeEmoji);
+                unicodeEmojiPanel.append(unicodeEmojiPicker);
+                document.body.append(unicodeEmojiPanel);
+
+                document.addEventListener("click", (event) => {
+                    if (!(event.target instanceof Node)) return;
+                    if (unicodeEmojiPanel?.contains(event.target) || activeEmojiButton?.contains(event.target)) return;
+                    closeUnicodeEmojiPicker();
+                });
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "Escape") closeUnicodeEmojiPicker();
+                });
+                window.addEventListener("resize", closeUnicodeEmojiPicker);
+                window.addEventListener("scroll", closeUnicodeEmojiPicker, true);
+            }
+
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+            const isDark = document.documentElement.dataset.scheme === "dark";
+            unicodeEmojiPicker.classList.toggle("dark", isDark);
+            unicodeEmojiPicker.classList.toggle("light", !isDark);
+            unicodeEmojiPanel.hidden = false;
+            activeEmojiButton.setAttribute("aria-expanded", "true");
+            positionUnicodeEmojiPicker();
+        };
+
+        const toggleUnicodeEmojiPicker = async (button, textarea) => {
+            if (unicodeEmojiPanel && !unicodeEmojiPanel.hidden && activeEmojiButton === button) {
+                closeUnicodeEmojiPicker();
+                return;
+            }
+
+            activeEmojiButton = button;
+            activeEmojiTextarea = textarea;
+            try {
+                await createUnicodeEmojiPicker();
+            } catch {
+                closeUnicodeEmojiPicker();
+            }
+        };
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
@@ -1265,9 +1402,41 @@
             });
         };
 
-        if (walineRoot) {
-            new MutationObserver(enhanceWalineComments).observe(walineRoot, { childList: true, subtree: true });
+        const enhanceUnicodeEmojiButtons = () => {
+            if (!(walineRoot instanceof HTMLElement)) return;
+
+            walineRoot.querySelectorAll(".wl-comment .wl-actions button.wl-action").forEach((button) => {
+                if (!(button instanceof HTMLButtonElement)) return;
+                if (button.title !== "Emoji") return;
+                if (button.dataset.unicodeEmojiBound === "true") return;
+
+                button.dataset.unicodeEmoji = "true";
+                button.dataset.unicodeEmojiBound = "true";
+                button.setAttribute("aria-haspopup", "dialog");
+                button.setAttribute("aria-expanded", "false");
+                button.setAttribute("aria-controls", "waline-unicode-emoji-panel");
+                button.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const comment = button.closest(".wl-comment");
+                    const textarea = comment?.querySelector("textarea.wl-editor")
+                        || comment?.querySelector("textarea");
+                    if (textarea instanceof HTMLTextAreaElement) {
+                        void toggleUnicodeEmojiPicker(button, textarea);
+                    }
+                }, true);
+            });
+        };
+
+        const enhanceWaline = () => {
             enhanceWalineComments();
+            enhanceUnicodeEmojiButtons();
+        };
+
+        if (walineRoot) {
+            new MutationObserver(enhanceWaline).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWaline();
         }
 
         pageviewCount({
