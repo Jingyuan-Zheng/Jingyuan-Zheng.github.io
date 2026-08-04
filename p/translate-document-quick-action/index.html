@@ -1134,12 +1134,84 @@
             unsupportedType: "Only JPEG, PNG, WebP and GIF images are supported.",
             tooLarge: "The image must not exceed 3 MB.",
             forbidden: "This website is not allowed to upload images.",
+            verificationRequired: "Image uploads require a security verification.",
+            verificationUnavailable: "The security verification is unavailable, so the image cannot be uploaded.",
+            rateLimited: "The upload count or capacity limit has been reached. Please try again later.",
+            serviceUnavailable: "The upload service is temporarily unavailable or its security service is unavailable.",
             failed: "Image upload failed. Please try again later.",
             invalidResponse: "The upload service did not return a valid image URL.",
         };
 
         const uploadEndpoint =
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+
+        const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
+        let turnstileLoadPromise;
+        let turnstileWidgetId;
+
+        const loadTurnstile = () => {
+            if (!turnstileSiteKey) return Promise.reject(new Error(uploadMessages.verificationRequired));
+            if (window.turnstile) return Promise.resolve(window.turnstile);
+            if (!turnstileLoadPromise) {
+                turnstileLoadPromise = new Promise((resolve, reject) => {
+                    const existingScript = document.querySelector('script[data-waline-turnstile="true"]');
+                    if (existingScript) {
+                        existingScript.addEventListener("load", () => resolve(window.turnstile), { once: true });
+                        existingScript.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                        return;
+                    }
+                    const script = document.createElement("script");
+                    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+                    script.async = true;
+                    script.defer = true;
+                    script.dataset.walineTurnstile = "true";
+                    script.addEventListener("load", () => window.turnstile
+                        ? resolve(window.turnstile)
+                        : reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    script.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    document.head.append(script);
+                });
+            }
+            return turnstileLoadPromise;
+        };
+
+        const getTurnstileToken = async () => {
+            const turnstile = await loadTurnstile();
+            if (turnstileWidgetId === undefined) {
+                const container = document.createElement("div");
+                container.hidden = true;
+                container.dataset.walineTurnstile = "true";
+                document.body.append(container);
+                turnstileWidgetId = turnstile.render(container, {
+                    sitekey: turnstileSiteKey,
+                    action: "waline_image_upload",
+                    execution: "execute",
+                    appearance: "interaction-only",
+                    theme: document.documentElement.dataset.scheme === "dark" ? "dark" : "light",
+                });
+            }
+            return new Promise((resolve, reject) => {
+                let settled = false;
+                const finish = (callback, value) => {
+                    if (settled) return;
+                    settled = true;
+                    callback(value);
+                };
+                const widgetId = turnstileWidgetId;
+                turnstile.reset(widgetId);
+                turnstile.execute(widgetId, {
+                    action: "waline_image_upload",
+                });
+                const poll = () => {
+                    const token = turnstile.getResponse(widgetId);
+                    if (token) return finish(resolve, token);
+                    if (settled) return;
+                    setTimeout(poll, 100);
+                };
+                poll();
+                setTimeout(() => finish(reject, new Error(uploadMessages.verificationUnavailable)), 15000);
+            });
+        };
 
         const uploadCommentImage = async (file) => {
             const maxFileSize = 3 * 1024 * 1024;
@@ -1164,20 +1236,32 @@
             }
 
             let response;
+            let turnstileToken;
 
             try {
+                turnstileToken = await getTurnstileToken();
                 response = await fetch(uploadEndpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/octet-stream",
                         "X-Image-Type": file.type,
+                        "X-Turnstile-Token": turnstileToken,
                     },
                     body: file,
                     credentials: "omit",
                     cache: "no-store",
                 });
-            } catch {
+            } catch (error) {
+                if (!turnstileToken && error instanceof Error &&
+                    (error.message === uploadMessages.verificationRequired ||
+                        error.message === uploadMessages.verificationUnavailable)) {
+                    throw error;
+                }
                 throw new Error(uploadMessages.failed);
+            } finally {
+                if (turnstileWidgetId !== undefined && window.turnstile) {
+                    window.turnstile.reset(turnstileWidgetId);
+                }
             }
 
             let result = {};
@@ -1191,6 +1275,14 @@
             if (!response.ok) {
                 if (response.status === 403) {
                     throw new Error(uploadMessages.forbidden);
+                }
+
+                if (response.status === 429) {
+                    throw new Error(uploadMessages.rateLimited);
+                }
+
+                if (response.status === 503) {
+                    throw new Error(uploadMessages.serviceUnavailable);
                 }
 
                 if (response.status === 413) {

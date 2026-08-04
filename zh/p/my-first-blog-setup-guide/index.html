@@ -1085,12 +1085,84 @@
             unsupportedType: "仅支持 JPEG、PNG、WebP 和 GIF 图片。",
             tooLarge: "图片不能超过 3 MB。",
             forbidden: "当前网页没有图片上传权限。",
+            verificationRequired: "图片上传需要完成安全验证。",
+            verificationUnavailable: "安全验证暂时不可用，无法上传图片。",
+            rateLimited: "上传次数或容量已达到限制，请稍后再试。",
+            serviceUnavailable: "上传服务暂时关闭或安全服务不可用。",
             failed: "图片上传失败，请稍后重试。",
             invalidResponse: "上传服务没有返回有效的图片地址。",
         };
 
         const uploadEndpoint =
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+
+        const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
+        let turnstileLoadPromise;
+        let turnstileWidgetId;
+
+        const loadTurnstile = () => {
+            if (!turnstileSiteKey) return Promise.reject(new Error(uploadMessages.verificationRequired));
+            if (window.turnstile) return Promise.resolve(window.turnstile);
+            if (!turnstileLoadPromise) {
+                turnstileLoadPromise = new Promise((resolve, reject) => {
+                    const existingScript = document.querySelector('script[data-waline-turnstile="true"]');
+                    if (existingScript) {
+                        existingScript.addEventListener("load", () => resolve(window.turnstile), { once: true });
+                        existingScript.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                        return;
+                    }
+                    const script = document.createElement("script");
+                    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+                    script.async = true;
+                    script.defer = true;
+                    script.dataset.walineTurnstile = "true";
+                    script.addEventListener("load", () => window.turnstile
+                        ? resolve(window.turnstile)
+                        : reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    script.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    document.head.append(script);
+                });
+            }
+            return turnstileLoadPromise;
+        };
+
+        const getTurnstileToken = async () => {
+            const turnstile = await loadTurnstile();
+            if (turnstileWidgetId === undefined) {
+                const container = document.createElement("div");
+                container.hidden = true;
+                container.dataset.walineTurnstile = "true";
+                document.body.append(container);
+                turnstileWidgetId = turnstile.render(container, {
+                    sitekey: turnstileSiteKey,
+                    action: "waline_image_upload",
+                    execution: "execute",
+                    appearance: "interaction-only",
+                    theme: document.documentElement.dataset.scheme === "dark" ? "dark" : "light",
+                });
+            }
+            return new Promise((resolve, reject) => {
+                let settled = false;
+                const finish = (callback, value) => {
+                    if (settled) return;
+                    settled = true;
+                    callback(value);
+                };
+                const widgetId = turnstileWidgetId;
+                turnstile.reset(widgetId);
+                turnstile.execute(widgetId, {
+                    action: "waline_image_upload",
+                });
+                const poll = () => {
+                    const token = turnstile.getResponse(widgetId);
+                    if (token) return finish(resolve, token);
+                    if (settled) return;
+                    setTimeout(poll, 100);
+                };
+                poll();
+                setTimeout(() => finish(reject, new Error(uploadMessages.verificationUnavailable)), 15000);
+            });
+        };
 
         const uploadCommentImage = async (file) => {
             const maxFileSize = 3 * 1024 * 1024;
@@ -1115,20 +1187,32 @@
             }
 
             let response;
+            let turnstileToken;
 
             try {
+                turnstileToken = await getTurnstileToken();
                 response = await fetch(uploadEndpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/octet-stream",
                         "X-Image-Type": file.type,
+                        "X-Turnstile-Token": turnstileToken,
                     },
                     body: file,
                     credentials: "omit",
                     cache: "no-store",
                 });
-            } catch {
+            } catch (error) {
+                if (!turnstileToken && error instanceof Error &&
+                    (error.message === uploadMessages.verificationRequired ||
+                        error.message === uploadMessages.verificationUnavailable)) {
+                    throw error;
+                }
                 throw new Error(uploadMessages.failed);
+            } finally {
+                if (turnstileWidgetId !== undefined && window.turnstile) {
+                    window.turnstile.reset(turnstileWidgetId);
+                }
             }
 
             let result = {};
@@ -1142,6 +1226,14 @@
             if (!response.ok) {
                 if (response.status === 403) {
                     throw new Error(uploadMessages.forbidden);
+                }
+
+                if (response.status === 429) {
+                    throw new Error(uploadMessages.rateLimited);
+                }
+
+                if (response.status === 503) {
+                    throw new Error(uploadMessages.serviceUnavailable);
                 }
 
                 if (response.status === 413) {
