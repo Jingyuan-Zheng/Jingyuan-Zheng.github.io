@@ -1142,6 +1142,8 @@
 
         const uploadEndpoint =
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+        const uploadSessionEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-session`;
 
         const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
         let turnstileLoadPromise;
@@ -1175,8 +1177,6 @@
                     }
                     const script = document.createElement("script");
                     script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-                    script.async = true;
-                    script.defer = true;
                     script.dataset.walineTurnstile = "true";
                     script.addEventListener("load", () => window.turnstile
                         ? resolve(window.turnstile)
@@ -1230,7 +1230,55 @@
             });
         };
 
-        const uploadCommentImage = async (file) => {
+        const createUploadSession = async () => {
+            let response;
+            let turnstileToken;
+
+            try {
+                turnstileToken = await getTurnstileToken();
+                response = await fetch(uploadSessionEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "X-Turnstile-Token": turnstileToken,
+                    },
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch (error) {
+                if (!turnstileToken && error instanceof Error &&
+                    (error.message === uploadMessages.verificationRequired ||
+                        error.message === uploadMessages.verificationUnavailable)) {
+                    throw error;
+                }
+                throw new Error(uploadMessages.failed);
+            } finally {
+                if (turnstileWidgetId !== undefined && window.turnstile) {
+                    window.turnstile.reset(turnstileWidgetId);
+                }
+                if (turnstileContainer) turnstileContainer.style.display = "none";
+            }
+
+            let result = {};
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) throw new Error(uploadMessages.forbidden);
+                if (response.status === 429) throw new Error(uploadMessages.rateLimited);
+                if (response.status === 503) throw new Error(uploadMessages.serviceUnavailable);
+                throw new Error(uploadMessages.failed);
+            }
+
+            if (typeof result.sessionToken !== "string" || !result.sessionToken) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+            return result.sessionToken;
+        };
+
+        const uploadCommentImage = async (file, sessionToken) => {
             const maxFileSize = 3 * 1024 * 1024;
 
             const allowedTypes = new Set([
@@ -1253,33 +1301,21 @@
             }
 
             let response;
-            let turnstileToken;
 
             try {
-                turnstileToken = await getTurnstileToken();
                 response = await fetch(uploadEndpoint, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/octet-stream",
                         "X-Image-Type": file.type,
-                        "X-Turnstile-Token": turnstileToken,
+                        "X-Upload-Session": sessionToken,
                     },
                     body: file,
                     credentials: "omit",
                     cache: "no-store",
                 });
             } catch (error) {
-                if (!turnstileToken && error instanceof Error &&
-                    (error.message === uploadMessages.verificationRequired ||
-                        error.message === uploadMessages.verificationUnavailable)) {
-                    throw error;
-                }
                 throw new Error(uploadMessages.failed);
-            } finally {
-                if (turnstileWidgetId !== undefined && window.turnstile) {
-                    window.turnstile.reset(turnstileWidgetId);
-                }
-                if (turnstileContainer) turnstileContainer.style.display = "none";
             }
 
             let result = {};
@@ -1391,9 +1427,12 @@
             if (localImages.length > maxCommentImages) {
                 throw new Error(uploadMessages.tooManyImages);
             }
+            if (localImages.length === 0) return content;
+
+            const uploadSession = await createUploadSession();
 
             for (const [localUrl, file] of localImages) {
-                const uploadedUrl = await uploadCommentImage(file);
+                const uploadedUrl = await uploadCommentImage(file, uploadSession);
                 content = content.split(localUrl).join(uploadedUrl);
                 pendingImageFiles.delete(localUrl);
                 URL.revokeObjectURL(localUrl);
