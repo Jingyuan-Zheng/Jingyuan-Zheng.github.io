@@ -1112,6 +1112,8 @@
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
         const uploadSessionEndpoint =
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-session`;
+        const commentEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment`;
 
         const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
         let turnstileLoadPromise;
@@ -1123,6 +1125,7 @@
         const maxCommentImages = 5;
         let submittingPendingImages = false;
         let bypassNextSubmitClick = false;
+        let pendingCommentTurnstileToken;
 
         const finishTurnstileToken = (callback, value) => {
             const finish = callback;
@@ -1156,7 +1159,7 @@
             return turnstileLoadPromise;
         };
 
-        const getTurnstileToken = async () => {
+        const getTurnstileToken = async (action) => {
             const turnstile = await loadTurnstile();
             if (turnstileWidgetId === undefined) {
                 turnstileContainer = document.createElement("div");
@@ -1192,7 +1195,7 @@
                 if (turnstileContainer) turnstileContainer.style.display = "block";
                 turnstile.reset(widgetId);
                 turnstile.execute(widgetId, {
-                    action: "waline_image_upload",
+                    action,
                 });
                 setTimeout(() => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)), 15000);
             });
@@ -1203,7 +1206,7 @@
             let turnstileToken;
 
             try {
-                turnstileToken = await getTurnstileToken();
+                turnstileToken = await getTurnstileToken("waline_image_upload");
                 response = await fetch(uploadSessionEndpoint, {
                     method: "POST",
                     headers: {
@@ -1414,7 +1417,6 @@
             el: "#waline-comments-root",
             serverURL,
             imageUploader: prepareLocalCommentImage,
-            turnstileKey: turnstileSiteKey,
             dark: 'html[data-scheme="dark"]',
             lang: "zh-CN",
             pageview: false,
@@ -1580,6 +1582,23 @@
             return label === "submit" || label === "提交";
         };
 
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = (input, init) => {
+            const requestUrl = typeof input === "string" ? input : input?.url;
+            const requestMethod = String(init?.method || input?.method || "GET").toUpperCase();
+            if (pendingCommentTurnstileToken && requestMethod === "POST" && requestUrl === commentEndpoint) {
+                try {
+                    const payload = JSON.parse(init?.body || "{}");
+                    payload.turnstile = pendingCommentTurnstileToken;
+                    pendingCommentTurnstileToken = undefined;
+                    return nativeFetch(input, { ...init, body: JSON.stringify(payload) });
+                } catch {
+                    pendingCommentTurnstileToken = undefined;
+                }
+            }
+            return nativeFetch(input, init);
+        };
+
         const handleDeferredImageSubmission = async (event) => {
             if (bypassNextSubmitClick || submittingPendingImages) return;
             if (!(event.target instanceof Element)) return;
@@ -1593,10 +1612,6 @@
             if (!(textarea instanceof HTMLTextAreaElement)) return;
 
             cleanupUnreferencedLocalImages(textarea.value);
-            const hasLocalImages = [...pendingImageFiles.keys()]
-                .some((localUrl) => textarea.value.includes(localUrl));
-            if (!hasLocalImages) return;
-
             event.preventDefault();
             event.stopImmediatePropagation();
             submittingPendingImages = true;
@@ -1605,11 +1620,19 @@
 
             try {
                 await uploadPendingImagesBeforeSubmit(textarea);
+                pendingCommentTurnstileToken = await getTurnstileToken("waline_comment");
                 bypassNextSubmitClick = true;
                 submitButton.disabled = wasDisabled;
                 submitButton.click();
                 bypassNextSubmitClick = false;
+                setTimeout(() => {
+                    if (turnstileWidgetId !== undefined && window.turnstile) {
+                        window.turnstile.reset(turnstileWidgetId);
+                    }
+                    if (turnstileContainer) turnstileContainer.style.display = "none";
+                }, 1000);
             } catch (error) {
+                pendingCommentTurnstileToken = undefined;
                 submitButton.disabled = wasDisabled;
                 alert(error instanceof Error ? error.message : uploadMessages.submitUploadFailed);
             } finally {
