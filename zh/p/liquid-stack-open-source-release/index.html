@@ -1029,6 +1029,17 @@
         const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
         let turnstileLoadPromise;
         let turnstileWidgetId;
+        let turnstileContainer;
+        let resolveTurnstileToken;
+        let rejectTurnstileToken;
+
+        const finishTurnstileToken = (callback, value) => {
+            const finish = callback;
+            if (!finish) return;
+            resolveTurnstileToken = undefined;
+            rejectTurnstileToken = undefined;
+            finish(value);
+        };
 
         const loadTurnstile = () => {
             if (!turnstileSiteKey) return Promise.reject(new Error(uploadMessages.verificationRequired));
@@ -1059,38 +1070,42 @@
         const getTurnstileToken = async () => {
             const turnstile = await loadTurnstile();
             if (turnstileWidgetId === undefined) {
-                const container = document.createElement("div");
-                container.hidden = true;
-                container.dataset.walineTurnstile = "true";
-                document.body.append(container);
-                turnstileWidgetId = turnstile.render(container, {
+                turnstileContainer = document.createElement("div");
+                turnstileContainer.dataset.walineTurnstile = "true";
+                turnstileContainer.style.cssText = [
+                    "position:fixed",
+                    "left:50%",
+                    "top:50%",
+                    "transform:translate(-50%,-50%)",
+                    "z-index:2147483647",
+                    "padding:12px",
+                    "border-radius:12px",
+                    "background:var(--card-background, #fff)",
+                    "box-shadow:0 12px 40px rgba(0,0,0,.24)",
+                    "display:block",
+                ].join(";");
+                document.body.append(turnstileContainer);
+                turnstileWidgetId = turnstile.render(turnstileContainer, {
                     sitekey: turnstileSiteKey,
                     action: "waline_image_upload",
                     execution: "execute",
                     appearance: "interaction-only",
                     theme: document.documentElement.dataset.scheme === "dark" ? "dark" : "light",
+                    callback: (token) => finishTurnstileToken(resolveTurnstileToken, token),
+                    "error-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
+                    "expired-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
                 });
             }
             return new Promise((resolve, reject) => {
-                let settled = false;
-                const finish = (callback, value) => {
-                    if (settled) return;
-                    settled = true;
-                    callback(value);
-                };
+                resolveTurnstileToken = resolve;
+                rejectTurnstileToken = reject;
                 const widgetId = turnstileWidgetId;
+                if (turnstileContainer) turnstileContainer.style.display = "block";
                 turnstile.reset(widgetId);
                 turnstile.execute(widgetId, {
                     action: "waline_image_upload",
                 });
-                const poll = () => {
-                    const token = turnstile.getResponse(widgetId);
-                    if (token) return finish(resolve, token);
-                    if (settled) return;
-                    setTimeout(poll, 100);
-                };
-                poll();
-                setTimeout(() => finish(reject, new Error(uploadMessages.verificationUnavailable)), 15000);
+                setTimeout(() => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)), 15000);
             });
         };
 
@@ -1143,6 +1158,7 @@
                 if (turnstileWidgetId !== undefined && window.turnstile) {
                     window.turnstile.reset(turnstileWidgetId);
                 }
+                if (turnstileContainer) turnstileContainer.style.display = "none";
             }
 
             let result = {};
