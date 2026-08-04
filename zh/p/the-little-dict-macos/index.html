@@ -1072,6 +1072,8 @@
             serviceUnavailable: "上传服务暂时关闭或安全服务不可用。",
             failed: "图片上传失败，请稍后重试。",
             invalidResponse: "上传服务没有返回有效的图片地址。",
+            tooManyImages: "每条评论最多包含 5 张图片。",
+            submitUploadFailed: "图片上传失败，评论尚未提交。",
         };
 
         const uploadEndpoint =
@@ -1083,6 +1085,9 @@
         let turnstileContainer;
         let resolveTurnstileToken;
         let rejectTurnstileToken;
+        const pendingImageFiles = new Map();
+        let submittingPendingImages = false;
+        let bypassNextSubmitClick = false;
 
         const finishTurnstileToken = (callback, value) => {
             const finish = callback;
@@ -1258,10 +1263,77 @@
             return result.url;
         };
 
+        const prepareLocalCommentImage = async (file) => {
+            const maxFileSize = 3 * 1024 * 1024;
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            if (!(file instanceof File)) {
+                throw new Error(uploadMessages.invalidFile);
+            }
+            if (!allowedTypes.has(file.type)) {
+                throw new Error(uploadMessages.unsupportedType);
+            }
+            if (file.size === 0 || file.size > maxFileSize) {
+                throw new Error(uploadMessages.tooLarge);
+            }
+
+            const localUrl = URL.createObjectURL(file);
+            pendingImageFiles.set(localUrl, file);
+            return localUrl;
+        };
+
+        const setWalineTextareaValue = (textarea, value) => {
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+            if (valueSetter) valueSetter.call(textarea, value);
+            else textarea.value = value;
+            textarea.dispatchEvent(new InputEvent("input", {
+                bubbles: true,
+                inputType: "insertText",
+                data: null,
+            }));
+        };
+
+        const cleanupUnreferencedLocalImages = (content) => {
+            for (const localUrl of pendingImageFiles.keys()) {
+                if (content.includes(localUrl)) continue;
+                URL.revokeObjectURL(localUrl);
+                pendingImageFiles.delete(localUrl);
+            }
+        };
+
+        const uploadPendingImagesBeforeSubmit = async (textarea) => {
+            let content = textarea.value;
+            cleanupUnreferencedLocalImages(content);
+
+            const localImages = [...pendingImageFiles.entries()]
+                .filter(([localUrl]) => content.includes(localUrl));
+            if (localImages.length > 5) {
+                throw new Error(uploadMessages.tooManyImages);
+            }
+
+            for (const [localUrl, file] of localImages) {
+                const uploadedUrl = await uploadCommentImage(file);
+                content = content.split(localUrl).join(uploadedUrl);
+                pendingImageFiles.delete(localUrl);
+                URL.revokeObjectURL(localUrl);
+                setWalineTextareaValue(textarea, content);
+            }
+
+            return content;
+        };
+
         init({
             el: "#waline-comments-root",
             serverURL,
-            imageUploader: uploadCommentImage,
+            imageUploader: prepareLocalCommentImage,
             dark: 'html[data-scheme="dark"]',
             lang: "zh-CN",
             pageview: false,
@@ -1419,6 +1491,62 @@
 
         const walineRoot = document.querySelector("#waline-comments-root");
         const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
+
+        const isWalineSubmitButton = (button) => {
+            if (!(button instanceof HTMLButtonElement)) return false;
+            if (button.type === "submit") return true;
+            const label = button.textContent?.trim().toLowerCase();
+            return label === "submit" || label === "提交";
+        };
+
+        const handleDeferredImageSubmission = async (event) => {
+            if (bypassNextSubmitClick || submittingPendingImages) return;
+            if (!(event.target instanceof Element)) return;
+
+            const submitButton = event.target.closest("button");
+            if (!isWalineSubmitButton(submitButton)) return;
+
+            const editor = submitButton.closest("form") || walineRoot;
+            const textarea = editor?.querySelector("textarea.wl-editor")
+                || editor?.querySelector("textarea");
+            if (!(textarea instanceof HTMLTextAreaElement)) return;
+
+            cleanupUnreferencedLocalImages(textarea.value);
+            const hasLocalImages = [...pendingImageFiles.keys()]
+                .some((localUrl) => textarea.value.includes(localUrl));
+            if (!hasLocalImages) return;
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            submittingPendingImages = true;
+            const wasDisabled = submitButton.disabled;
+            submitButton.disabled = true;
+
+            try {
+                await uploadPendingImagesBeforeSubmit(textarea);
+                bypassNextSubmitClick = true;
+                submitButton.disabled = wasDisabled;
+                submitButton.click();
+                bypassNextSubmitClick = false;
+            } catch (error) {
+                submitButton.disabled = wasDisabled;
+                alert(error instanceof Error ? error.message : uploadMessages.submitUploadFailed);
+            } finally {
+                submittingPendingImages = false;
+            }
+        };
+
+        if (walineRoot) {
+            walineRoot.addEventListener("click", handleDeferredImageSubmission, true);
+            walineRoot.addEventListener("input", () => {
+                const textarea = walineRoot.querySelector("textarea.wl-editor")
+                    || walineRoot.querySelector("textarea");
+                if (textarea instanceof HTMLTextAreaElement) {
+                    cleanupUnreferencedLocalImages(textarea.value);
+                }
+            }, true);
+        }
+
         const enhanceWalineComments = () => {
             if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
 
