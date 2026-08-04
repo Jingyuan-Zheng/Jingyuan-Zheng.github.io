@@ -1021,9 +1021,99 @@
             timeoutMs:  2500 ,
         });
 
+        const uploadMessages = {
+            invalidFile: "The selected image could not be read.",
+            unsupportedType: "Only JPEG, PNG, WebP and GIF images are supported.",
+            tooLarge: "The image must not exceed 3 MB.",
+            forbidden: "This website is not allowed to upload images.",
+            failed: "Image upload failed. Please try again later.",
+            invalidResponse: "The upload service did not return a valid image URL.",
+        };
+
+        const uploadEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+
+        const uploadCommentImage = async (file) => {
+            const maxFileSize = 3 * 1024 * 1024;
+
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            if (!(file instanceof File)) {
+                throw new Error(uploadMessages.invalidFile);
+            }
+
+            if (!allowedTypes.has(file.type)) {
+                throw new Error(uploadMessages.unsupportedType);
+            }
+
+            if (file.size === 0 || file.size > maxFileSize) {
+                throw new Error(uploadMessages.tooLarge);
+            }
+
+            let response;
+
+            try {
+                response = await fetch(uploadEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/octet-stream",
+                        "X-Image-Type": file.type,
+                    },
+                    body: file,
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch {
+                throw new Error(uploadMessages.failed);
+            }
+
+            let result = {};
+
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) {
+                    throw new Error(uploadMessages.forbidden);
+                }
+
+                if (response.status === 413) {
+                    throw new Error(uploadMessages.tooLarge);
+                }
+
+                if (response.status === 415) {
+                    throw new Error(uploadMessages.unsupportedType);
+                }
+
+                throw new Error(
+                    typeof result.message === "string" && result.message
+                        ? result.message
+                        : uploadMessages.failed,
+                );
+            }
+
+            if (
+                typeof result.url !== "string" ||
+                !result.url.startsWith("https://")
+            ) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+
+            return result.url;
+        };
+
         init({
             el: "#waline-comments-root",
             serverURL,
+            imageUploader: uploadCommentImage,
             dark: 'html[data-scheme="dark"]',
             lang: "en-US",
             pageview: false,
