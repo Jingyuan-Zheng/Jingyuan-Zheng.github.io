@@ -3548,6 +3548,8 @@
             `${String(serverURL).replace(/\/+$/, "")}/api/upload-session`;
         const commentEndpoint =
             `${String(serverURL).replace(/\/+$/, "")}/api/comment`;
+        const commentContextEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment-context`;
 
         const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
         let turnstileLoadPromise;
@@ -3560,6 +3562,7 @@
         let submittingPendingImages = false;
         let bypassNextSubmitClick = false;
         let pendingCommentTurnstileToken;
+        let pendingCommentContext;
 
         const finishTurnstileToken = (callback, value) => {
             const finish = callback;
@@ -4024,7 +4027,9 @@
                 try {
                     const payload = JSON.parse(init?.body || "{}");
                     payload.turnstile = pendingCommentTurnstileToken;
+                    if (pendingCommentContext) Object.assign(payload, pendingCommentContext);
                     pendingCommentTurnstileToken = undefined;
+                    pendingCommentContext = undefined;
                     return nativeFetch(input, { ...init, body: JSON.stringify(payload) });
                 } catch {
                     pendingCommentTurnstileToken = undefined;
@@ -4054,6 +4059,23 @@
 
             try {
                 await uploadPendingImagesBeforeSubmit(textarea);
+                const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+                let context = {};
+                try {
+                    const contextResponse = await nativeFetch(commentContextEndpoint, {
+                        credentials: "omit",
+                        cache: "no-store",
+                    });
+                    if (contextResponse.ok) context = await contextResponse.json();
+                } catch {
+                    
+                }
+                pendingCommentContext = {
+                    clientTimezone: browserTimezone,
+                    ipTimezone: typeof context.timezone === "string" ? context.timezone : "",
+                    ipTimezoneProof: typeof context.proof === "string" ? context.proof : "",
+                    ipTimezoneExpiresAt: Number(context.expiresAt || 0),
+                };
                 pendingCommentTurnstileToken = await getTurnstileToken("waline_comment");
                 bypassNextSubmitClick = true;
                 submitButton.disabled = wasDisabled;
@@ -4067,6 +4089,7 @@
                 }, 1000);
             } catch (error) {
                 pendingCommentTurnstileToken = undefined;
+                pendingCommentContext = undefined;
                 submitButton.disabled = wasDisabled;
                 alert(error instanceof Error ? error.message : uploadMessages.submitUploadFailed);
             } finally {
