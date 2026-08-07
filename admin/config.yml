@@ -655,6 +655,10 @@ asset_collections:
     label: "mac-lite-translator"
     media_folder: /static/img/mac-lite-translator
     public_folder: /img/mac-lite-translator
+  - name: img_macos_default_icons_locations_icon_finder
+    label: "macos-default-icons-locations-icon-finder"
+    media_folder: /static/img/macos-default-icons-locations-icon-finder
+    public_folder: /img/macos-default-icons-locations-icon-finder
   - name: img_malta_eid
     label: "malta-eid"
     media_folder: /static/img/malta-eid
