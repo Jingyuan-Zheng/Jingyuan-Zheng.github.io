@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/search/","currentLanguage":"en","englishTarget":"/search/","excludePrompt":false}</script>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#f5f5fa' media='(prefers-color-scheme: light)'>
+<meta name='theme-color' content='#303030' media='(prefers-color-scheme: dark)'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/search/","currentLanguage":"en","englishTarget":"/search/","excludePrompt":false}</script>
 <script>
     (function () {
         var configElement = document.getElementById("site-language-config");
@@ -78,7 +80,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.11e198eaa5dc160b92616981b3c2638c6b9aec2f3049accd4bb5cb418ce6dc65.css"><meta property='og:title' content="Search">
+<link rel="stylesheet" href="/scss/style.min.83049bcf126fcf6c2c5abf13181cf6c50879eb012ed5e7a620fe6c0d8de021cb.css"><meta property='og:title' content="Search">
 <meta property='og:description' content="">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/search/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -213,11 +215,20 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
+    <button type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="mobile-menu-icon mobile-menu-icon--menu" aria-hidden="true"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg')" aria-hidden="true"></span></span>
     </button>
+
+    <div class="mobile-profile-controls" aria-label="Page settings">
+        <button type="button" class="mobile-profile-control" data-mobile-scheme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span class="mobile-profile-control__sun"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg')" aria-hidden="true"></span></span>
+            <span class="mobile-profile-control__moon"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg')" aria-hidden="true"></span></span>
+        </button>
+        <button type="button" class="mobile-profile-control" data-mobile-language-toggle aria-label="Switch language" title="Switch language">
+            <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+        </button>
+    </div>
 
     <header>
         <figure class="site-avatar site-avatar--management">
@@ -630,6 +641,1440 @@
 
 <script>
     window.searchResultTitleTemplate = "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
+    window.searchExtraData = [{
+            title: "\"Antigravity\"",
+            content: "\"Google's toolkit for AI-agent development, with desktop, CLI, IDE and SDK support for building, debugging and shipping software in a codebase.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"chatbox\"",
+            content: "\"A multi-model AI chat client supporting OpenAI-compatible APIs and local models; client features are free while models, APIs and advanced services may cost extra.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ChatGPT\"",
+            content: "\"OpenAI's official desktop client, bringing Chat, Work and Codex together; available features and usage limits depend on the account plan.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ChatX\"",
+            content: "\"A multi-model AI client for GPT, Claude, Gemini and DeepSeek, with custom APIs, prompts, rewriting, image generation and iCloud sync.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cherry Studio\"",
+            content: "\"A multi-model desktop client for cloud and local models; the client is open source and free, while model and API costs are separate.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Claude\"",
+            content: "\"Anthropic's official desktop client for long-form questions, file analysis, writing and coding collaboration, with a system-level entry point.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Gemini\"",
+            content: "\"Google's Gemini AI assistant for desktop, supporting text, image and file conversations; models, quotas and advanced features vary by account and region.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Kimi\"",
+            content: "\"An AI assistant desktop client from Moonshot AI for long-document reading, file analysis, web questions and content organization, especially for Chinese materials.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LM Studio\"",
+            content: "\"Downloads, runs and tests local large language models and provides a local API; the app is free, while third-party model licenses vary.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ollama\"",
+            content: "\"Runs and manages large language models locally on macOS, exposing them through the command line and local APIs to clients, developer tools and automations.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OpenCode\"",
+            content: "\"A terminal and desktop development tool for AI-assisted programming; the client is free, while the selected model or API may be paid.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Osaurus\"",
+            content: "\"Runs local AI models, agents, plugins and OpenAI-compatible services on a Mac, bringing them into a desktop workflow.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Perplexity\"",
+            content: "\"An AI search client centered on web research and cited sources, combining online information with follow-up questions for quick fact-finding.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pi-gui\"",
+            content: "\"A Codex-style desktop interface for the pi coding agent, with session timelines, Git worktrees, terminals, diffs and multi-agent orchestration.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DiffusionBee\"",
+            content: "\"A graphical local Stable Diffusion tool for text-to-image, image-to-image, inpainting and model management without uploading original images.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AI Deck\"",
+            content: "\"A graphical companion for Ollama that browses, filters and manages local models while showing downloads and running instances.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AgentIsland\"",
+            content: "\"Monitors local Claude Code, Claude Desktop and Codex sessions, usage and cost, and alerts when a task needs attention without uploading session content.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AI Memory Reader\"",
+            content: "\"A native viewer for memory files, rule files and JSONL session records generated by Claude Code, Codex, Cursor, Gemini and other AI agents.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CodexBar\"",
+            content: "\"Shows Codex and related AI-service usage, remaining quotas and reset times in the macOS menu bar.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"GroAsk\"",
+            content: "\"A macOS AI command center for launching and monitoring Claude Code, Codex and Gemini CLI, with a global shortcut for web AI; Early Access features are free.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cursor\"",
+            content: "\"An AI coding editor based on the VS Code experience, with completion, cross-file questions, agentic edits and terminal collaboration.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Changes\"",
+            content: "\"A native Git client for reviewing diffs, staging changes, creating commits and managing branches visually.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CotEditor\"",
+            content: "\"A lightweight native text and code editor with syntax highlighting, regular-expression search, encoding support and text-processing commands.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DMG Maker\"",
+            content: "\"Creates macOS DMG installers with SwiftUI backgrounds, Retina assets and command-line support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Gridex\"",
+            content: "\"A native cross-platform database IDE for PostgreSQL, MySQL, SQLite, Redis, MongoDB, SQL Server and ClickHouse, with AI chat and MCP support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nextpad++ for macOS\"",
+            content: "\"A native macOS port of the Notepad++ codebase without Wine or a compatibility layer, supporting syntax highlighting, plugins, macros, regex search and split editing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"SF Symbols\"",
+            content: "\"Apple's official symbol browser for searching, previewing and exporting system icons, including weight, scale and rendering checks.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Visual Studio Code\"",
+            content: "\"A general-purpose code editor with extensions, debugging and Git; Code-OSS is open source while Microsoft's binary adds branding and services.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Xcode\"",
+            content: "\"Apple's complete development environment for editing, building, debugging, profiling, simulation and interface design across macOS, iOS and other platforms.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Earth Pro\"",
+            content: "\"A desktop geography viewer for satellite imagery, 3D terrain, historical imagery and custom map data.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mathpix Snipping Tool\"",
+            content: "\"Recognizes equations, tables and text from screenshots or imported content and converts them to editable LaTeX or Markdown.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MATLAB\"",
+            content: "\"An integrated environment for scientific computing, engineering models and data analysis, with matrix operations, visualization, algorithms and simulation toolboxes.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MixTeX-Latex-OCR\"",
+            content: "\"Uses OCR to turn images of mathematical formulas into LaTeX through a macOS graphical interface.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QGIS-LTR\"",
+            content: "\"The long-term-support edition of the open-source GIS, for maps, vector and raster data, spatial analysis and professional plugins.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Zotero\"",
+            content: "\"Collects references, annotates PDFs, manages citations and generates bibliographies; the client is free and open source, while extra cloud storage may cost money.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Easydict\"",
+            content: "\"A native multi-engine translation tool with selection lookup, shortcuts, screenshot OCR and input translation across dictionaries and services.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ora\"",
+            content: "\"Uses the microphone for real-time speech recognition and translation, continuously turning speech into text and a target language.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyGlossaryTk\"",
+            content: "\"Converts and processes electronic dictionary data between formats such as StarDict and MDict for maintaining offline dictionaries.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Subtitle Me\"",
+            content: "\"Generates live captions and speech translation on Mac for meetings, videos and cross-language communication.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"实时字幕+\"",
+            content: "\"Converts system audio or microphone speech into live captions; the current download link is provided by a third-party cloud drive.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"邦宁同传\"",
+            content: "\"Transcribes and translates microphone or speaker audio into captions, with live screen-text translation and caption export.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Eudic\"",
+            content: "\"A dictionary and vocabulary tool for English learning, with definitions, examples, pronunciation, translation, word lists and review.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Graker\"",
+            content: "\"A macOS menu-bar grammar checker for Chinese English learners that reads selected text and checks or rewrites English.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"不背单词\"",
+            content: "\"An English vocabulary-learning app for Chinese users, using contextual examples, review plans and word-list progress to reinforce memory.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Anki\"",
+            content: "\"A spaced-repetition flashcard tool with custom card templates, media and review schedules for languages, exams and professional knowledge.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft OneNote\"",
+            content: "\"Microsoft's cross-platform digital notebook for organizing text, handwriting, images and attachments by notebooks and sections.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Obsidian\"",
+            content: "\"A local Markdown knowledge base and note-taking tool with bidirectional links; personal use is free while commercial licenses and sync or publish services are separate.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProNotes\"",
+            content: "\"Enhances Apple Notes with Markdown, templates and backlinks for accumulating notes, knowledge cards and personal reference material.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"GUI4OCRMyPDF\"",
+            content: "\"A SwiftUI interface for OCRmyPDF that adds searchable text layers to scanned PDFs.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PDFgear\"",
+            content: "\"An all-in-one PDF tool for reading, annotation, editing, conversion, signing and OCR.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PDFMathTranslate\"",
+            content: "\"Translates PDF documents while attempting to preserve original layout, mathematical formulas and page structure.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MinerU\"",
+            content: "\"An open-source document parser that converts PDFs, papers and scans into structured Markdown or JSON while identifying headings, tables, formulas and reading order.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"FloralMD\"",
+            content: "\"A native, file-first macOS Markdown editor with live inline rendering, tabs, outlines, floating notes and Finder Quick Look.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MarkEdit\"",
+            content: "\"A lightweight native Markdown editor with a clean writing interface, live preview and common formatting support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PasteMD\"",
+            content: "\"Converts Markdown, web AI conversations and formulas before pasting them into Word, WPS or Excel, including tables, LaTeX and rich text.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Typora\"",
+            content: "\"A WYSIWYG Markdown editor that combines source markup and rendered layout, with outlines, tables, formulas and multiple export formats.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OmniGraffle\"",
+            content: "\"A professional diagram and vector-drawing tool for flowcharts, architectures, wireframes and precisely laid-out documents.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Apparency\"",
+            content: "\"Inspects macOS application bundles, including code signing, permissions, sandbox settings, architectures and security properties.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AppCleaner\"",
+            content: "\"Finds preferences, caches and support files when uninstalling an app, helping remove related data left behind by dragging an app to the Trash.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Applite\"",
+            content: "\"A graphical Homebrew Cask manager for searching, installing, updating and uninstalling apps without requiring terminal use.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AppPorts\"",
+            content: "\"Moves apps and related data to external storage while preserving launch behavior through symlinks and signing support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cork\"",
+            content: "\"A graphical Homebrew package manager; the source can be built independently, while store or prebuilt distribution may be paid.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Latest\"",
+            content: "\"Checks installed apps that support update mechanisms such as Sparkle and helps view or install new versions centrally.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LaunchNext\"",
+            content: "\"Manages and launches apps with grids, pages and folders as a flexible Launchpad alternative.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LaunchOS\"",
+            content: "\"An app launcher and Launchpad alternative with search, grouping and layout backups.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Launchpad Manager\"",
+            content: "\"Rearranges Launchpad icons, pages and folders, with batch layout adjustments for large app collections.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Pearcleaner\"",
+            content: "\"An open-source app uninstaller and residue cleaner that scans related files and compares changes before removing configuration and caches.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"WailBrew\"",
+            content: "\"A graphical Homebrew manager for browsing installed packages, installing, updating, uninstalling and viewing Formula and Cask details.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"A Better Finder Attributes 7\"",
+            content: "\"Batch-edits file dates, Finder tags and extension visibility, making it easier to organize files and adjust Finder metadata.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"A Better Finder Rename 12\"",
+            content: "\"Batch-renames files and folders with rule chains for numbering, text replacement, dates, metadata and previews.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Advanced Renamer\"",
+            content: "\"Batch-renames files, folders and photos with multiple rules; personal use is free while commercial use requires a license.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterZip\"",
+            content: "\"Manages compressed archives by creating, browsing, editing and extracting ZIP, RAR, 7z and other formats without always unpacking them.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BookMacster\"",
+            content: "\"Organizes and synchronizes bookmarks, removes duplicates and coordinates collections across Safari, Chrome, Firefox and other browsers.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dropover\"",
+            content: "\"Creates a temporary shelf during drag and drop for holding files, images, URLs and text before moving, copying or sharing them.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nifty File Lists\"",
+            content: "\"Turns folder contents into printable or exportable lists with selectable file attributes, sorting and output formats.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QSpace Pro\"",
+            content: "\"A multi-pane Finder alternative with tabs, workspaces, archives, server connections and cloud-drive support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Riffo\"",
+            content: "\"Uses AI to understand file contents, generate meaningful names and classify materials such as screenshots, receipts and downloads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"EasyFind\"",
+            content: "\"Searches local files without relying on the Spotlight index, including names, contents, tags and hidden items.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Find Any File\"",
+            content: "\"Performs deep disk searches by name, size, date and other directory attributes; trial and donation options are available.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"HoudahSpot\"",
+            content: "\"Builds advanced Spotlight searches by combining file types, dates, tags and contents into reusable conditions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProFind\"",
+            content: "\"An advanced local file search tool with metadata, content, Boolean and natural-language filters, plus saved complex searches.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Search Everything\"",
+            content: "\"Indexes and quickly searches files and folders on internal and external Mac disks with multiple keywords and live updates.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Drive\"",
+            content: "\"Google's cloud-drive client for accessing online files in Finder, downloading on demand and sharing or co-editing material.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OneDrive\"",
+            content: "\"Microsoft's cloud-sync client for on-demand Finder files, folder backup and Microsoft 365 collaboration.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProvisionQL\"",
+            content: "\"Adds Quick Look previews for iOS and macOS provisioning profiles and signing information.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Folder Preview Pro\"",
+            content: "\"Adds richer Quick Look content for Finder folders, including previews of internal files and key information without opening the folder.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Glance\"",
+            content: "\"Provides Quick Look previews for source code, Markdown, archives and Jupyter Notebooks; MIT licensed and installable from GitHub Releases or Homebrew.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iPreview - Powerful Quick Look\"",
+            content: "\"Extends Finder Quick Look with previews for code, Markdown, Jupyter files, WebP, AVIF, 3D models and document formats.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Peek — A Quick Look Extension\"",
+            content: "\"Extends Finder Quick Look for Markdown, code and PostScript with search, navigation, syntax highlighting, MathJax and Mermaid.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QuickLook Video\"",
+            content: "\"Adds Quick Look previews and thumbnails for more video formats directly in Finder.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Burrow\"",
+            content: "\"Cleans development directories by identifying build artifacts, caches, dependencies and leftover installers before showing reclaimable space.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DaisyDisk\"",
+            content: "\"Visualizes disk and folder usage interactively to locate large files and remove unwanted content after review.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Duplicate File Finder 8\"",
+            content: "\"Scans duplicate files, similar photos and duplicate folders, compares their contents and helps choose which versions to keep.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Find Empty Folders\"",
+            content: "\"Scans selected directories for empty folders and lists them for review before removal.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OmniDiskSweeper\"",
+            content: "\"Lists files and folders by size in a hierarchy so the largest space consumers can be located and removed after inspection.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OnyX\"",
+            content: "\"A macOS maintenance and tuning tool for clearing caches, checking the system, rebuilding indexes and changing hidden settings.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Acon - Make Big Sur Style Icon\"",
+            content: "\"Creates Big Sur-style app icons with solid or gradient backgrounds, configurable size, corner radius and shadow.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Aquira\"",
+            content: "\"Sets accent colors for individual macOS apps; formerly Aquifer, with an open-source release planned by the developer.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Accents\"",
+            content: "\"Enables iMac and MacBook Neo-style system accent colors on any Mac through quick switches, scripts or system-level controls.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Color Folder Pro - Custom Icon\"",
+            content: "\"Batch-changes Finder folder colors and icons with custom images, gradients and built-in templates.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Fancy Folders\"",
+            content: "\"Customizes Finder folder colors and appearance to distinguish projects, material types and important directories.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Foldor\"",
+            content: "\"Creates and applies custom folder icons, with adjustable colors, symbols and styles for Finder directories.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ice\"",
+            content: "\"An open-source menu-bar manager for hiding, showing, searching and rearranging status items.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Thaw\"",
+            content: "\"A free, open-source macOS menu-bar manager for hiding, searching, rearranging and styling menu-bar items.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Accelerate\"",
+            content: "\"A Safari video-control extension for playback speed, seeking and picture-in-picture through keyboard shortcuts.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AdBlock\"",
+            content: "\"A browser content blocker for common ads and tracking elements, with per-site pauses and custom filtering rules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AdGuard for Safari\"",
+            content: "\"An open-source Safari content blocker for ads, trackers and annoying page elements, with filter lists and user rules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BewlyBewly\"",
+            content: "\"An open-source interface enhancement for the Bilibili website that reshapes layout, navigation and playback experience.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dark Night\"",
+            content: "\"Generates a dark appearance for Safari websites and adapts pages without their own dark theme for more comfortable night browsing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dark Reader for Safari\"",
+            content: "\"Creates adjustable dark themes for websites; the source is open while the Safari edition is commonly obtained through the App Store.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Immersive Translate\"",
+            content: "\"Provides bilingual webpages, PDF translation, video subtitles and input-box translation across multiple translation services.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Infinity New Tab (Pro)\"",
+            content: "\"Customizes the browser new-tab page with favorite sites, search, wallpapers and widgets, with layout sync across devices.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Noir\"",
+            content: "\"A Safari dark-mode extension that generates dark color schemes and stores per-site appearance settings.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"SingleFile\"",
+            content: "\"Saves a complete webpage, including styles and images, as a single HTML file for offline archiving.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Tampermonkey\"",
+            content: "\"A userscript manager for installing, editing and controlling scripts that customize websites or automate repeated tasks.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Voyager（原 Gemini Voyager）\"",
+            content: "\"A browser enhancement suite for Gemini, Google AI Studio, Claude and ChatGPT, with folders, timelines, prompt libraries, usage tracking and exports.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"xSearch\"",
+            content: "\"Adds custom search engines and keyword shortcuts to Safari for quick address-bar searches and site navigation.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cap\"",
+            content: "\"An open-source screen recorder and demo-video tool; the local app is open source while hosting and some services may cost extra.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iShot\"",
+            content: "\"Combines screenshots, scrolling capture, pinned images, screen recording, annotation and OCR for quick capture and sharing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"macshot\"",
+            content: "\"A native macOS capture and recording tool with annotation, scrolling screenshots, GIF, OCR, translation, redaction and video editing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PixPin\"",
+            content: "\"Provides region and long screenshots, pinned images, recording, annotation and OCR with quick post-capture editing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Screen Studio\"",
+            content: "\"Automatically adds smooth zooms, cursor emphasis and background layouts to screen recordings for polished demos and tutorials.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ScreenFlow\"",
+            content: "\"A professional screen and camera recorder with a multi-track timeline, annotation, transitions and audio processing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Snapzy\"",
+            content: "\"A native macOS screenshot, scrolling capture, recording, annotation, OCR, editing and history tool with S3 or Cloudflare R2 uploads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ExifRenamer\"",
+            content: "\"Reads EXIF capture dates and other metadata to batch-rename photos using templates and sortable filenames.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Lap\"",
+            content: "\"A local photo library that indexes images, adds tags and finds content by faces, places and visual similarity.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PowerPhotos\"",
+            content: "\"Manages Apple Photos libraries by finding duplicates, merging or splitting libraries, copying projects and helping repair library issues.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Audio Hijack\"",
+            content: "\"A modular audio capture and processing tool for recording apps, microphones and system devices with effects and mixing modules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Pixelmator Pro\"",
+            content: "\"A macOS image editor with layers, retouching, painting, vector elements and machine-learning enhancements.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Redacted\"",
+            content: "\"Quickly hides sensitive text, accounts and regions in images through blur, pixelation or masking before sharing.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"VideoFusion-macOS\"",
+            content: "\"A desktop video editor with timeline editing, subtitles, filters, transitions and export for social and everyday videos.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MacWhisper\"",
+            content: "\"Uses Whisper for local transcription of audio, video and live speech, exporting subtitles and text while reducing uploads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Permute 3\"",
+            content: "\"Batch-converts video, audio and image formats with presets, queues and basic editing for different devices and platforms.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Textream\"",
+            content: "\"A simple teleprompter that scrolls scripts at adjustable size and speed for videos, speeches and online meetings.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"FreeTube\"",
+            content: "\"A privacy-focused third-party YouTube desktop client for subscriptions, video viewing and local settings without the official web interface.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"IINA\"",
+            content: "\"A native macOS multi-format video player based on mpv with system gestures, picture-in-picture, subtitles and Touch Bar support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Spotify\"",
+            content: "\"A music and podcast streaming client.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Downie 4\"",
+            content: "\"A web video and audio downloader that detects many sites, selects quality, extracts audio and sends media to conversion tools.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Folx\"",
+            content: "\"A download manager with multi-thread acceleration, task categories, browser integration and BitTorrent support.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"imFile\"",
+            content: "\"A multi-protocol download manager based on the Motrix project, supporting HTTP, FTP, BitTorrent, magnet links and ed2k.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Motrix\"",
+            content: "\"A graphical aria2-based download manager for HTTP, FTP, BitTorrent and magnet links with centralized task management.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"NeatDownloadManager\"",
+            content: "\"A lightweight multi-threaded download manager that takes over browser downloads, accelerates segments and resumes interrupted tasks.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"qbittorrent\"",
+            content: "\"An open-source BitTorrent client with magnet links, queues, rate limits, RSS and remote web management without bundled ads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cloudflare WARP\"",
+            content: "\"Encrypts device traffic through Cloudflare's network and can optimize some routes, with standard and paid enhanced services.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Quantumult X\"",
+            content: "\"An advanced proxy and rules tool with routing, rewriting, scripts, packet capture and node management by domain or app.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ShadowsocksX-NG\"",
+            content: "\"An open-source macOS Shadowsocks client for servers, system proxy settings and PAC rules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Stash\"",
+            content: "\"A rules-driven proxy client with multi-protocol nodes, policy groups, scripts, rewriting and network debugging.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Transocks\"",
+            content: "\"Transparently forwards selected app or system traffic to a SOCKS proxy when the app itself lacks proxy settings.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"快帆\"",
+            content: "\"A China-network acceleration service for overseas users, offering routes for region-restricted video, music and other content.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AndroMeld: Manager for Android\"",
+            content: "\"Manages Android files, mirrored apps, notifications and clipboard on a Mac through USB or wireless ADB; free to download with paid in-app options.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"fuse-t\"",
+            content: "\"A user-space filesystem framework for macOS that lets third-party filesystems mount in Finder without kernel extensions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"i4tools\"",
+            content: "\"An iPhone and iPad management tool for backups, file transfer, app management and system maintenance.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iMazing Profile Editor\"",
+            content: "\"Creates and validates Apple configuration profiles for Wi-Fi, restrictions, certificates and other management payloads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LocalSend\"",
+            content: "\"A cross-platform local-network transfer tool for sending files, folders and text without accounts or cloud relays, protected by end-to-end encryption.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MacDroid\"",
+            content: "\"Transfers files between Mac and Android over USB or wireless connections and exposes phone storage in Finder.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mounty\"",
+            content: "\"Uses available macOS NTFS support to remount disks and attempt write access through a menu-bar entry.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nigate\"",
+            content: "\"An open-source NTFS mounting and management tool for reading and writing external NTFS disks on macOS.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterMouse\"",
+            content: "\"Enhances third-party mice with per-app buttons, scrolling, gestures, pointer speed and custom rules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mac Mouse Fix\"",
+            content: "\"Adds smooth scrolling, touch-style gestures and custom buttons to ordinary mice, including window and desktop actions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MiddleClick\"",
+            content: "\"Simulates middle-click through trackpad gestures or mouse actions for background browser tabs and other middle-click workflows.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mos\"",
+            content: "\"Provides smooth scrolling and independent scroll directions for external mice and trackpads.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MouseBoost Pro\"",
+            content: "\"Expands mouse context menus, gestures and button actions with window, file and clipboard commands.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CleanupBuddy\"",
+            content: "\"Temporarily locks input while cleaning a keyboard, Touch Bar or screen to prevent accidental actions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Karabiner-Elements\"",
+            content: "\"An advanced macOS keyboard remapper for single keys, combinations, device-specific rules and conditional mappings.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"KeyboardCleanTool\"",
+            content: "\"Temporarily disables keyboard input with one click for cleaning keycaps while the Mac remains on.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ukelele\"",
+            content: "\"A macOS keyboard-layout editor for custom mappings, dead keys and input rules that exports installable layouts.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Input Source Pro\"",
+            content: "\"Automatically switches input sources by app or website and controls input status, punctuation mode and function-key behavior.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AirBattery\"",
+            content: "\"Shows the battery and connection status of AirPods, iPhone, iPad and other Apple or Bluetooth devices in the menu bar.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterDisplay\"",
+            content: "\"Manages displays with resolution, scaling, brightness, HiDPI, virtual screens and independent multi-display profiles.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PairPods\"",
+            content: "\"A menu-bar Bluetooth audio utility for viewing AirPods connection and battery status and simplifying pairing or switching.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"WhatCable\"",
+            content: "\"Identifies USB-C, USB4 and Thunderbolt capabilities, cable speed, power delivery, charging bottlenecks and device topology.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CrossOver\"",
+            content: "\"Uses Wine-based compatibility technology to run selected Windows apps and games on macOS without a full Windows virtual machine.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MuMuPlayer Pro\"",
+            content: "\"A macOS Android emulator with keyboard and mouse mapping, multiple instances and performance settings for mobile apps and games.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Parallels Desktop\"",
+            content: "\"A full virtual machine for running Windows, Linux and other systems on a Mac with shared files, coherence mode and hardware controls.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PlayCover\"",
+            content: "\"Runs compatible iOS and iPadOS apps on Apple Silicon Macs with keyboard mapping, window settings and resolution controls.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AlDente\"",
+            content: "\"Controls MacBook charging with charge limits, temperature policies and calibration to reduce prolonged full-charge time.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Amphetamine\"",
+            content: "\"Prevents Mac sleep, display shutdown or disk idle through menu-bar controls and triggers for downloads, presentations and long tasks.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Hammerspoon\"",
+            content: "\"Connects keyboard, mouse, windows and system events through Lua scripts for shortcuts, window management and cross-app automation.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Maccy\"",
+            content: "\"A lightweight clipboard history manager for searching and pasting recent text with a keyboard shortcut.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Only Switch\"",
+            content: "\"Collects dark mode, hidden files, screen protection and sleep switches in the menu bar.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BitdefenderVirusScanner\"",
+            content: "\"Scans Mac files, apps and external storage on demand for malware and risky content.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Inspect\"",
+            content: "\"Tests Mac keyboard keys and checks displays for dead pixels through solid-color screens; the code is public but licensing is unclear.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Sloth\"",
+            content: "\"Shows files, directories, ports and system resources opened by processes through a graphical interface for troubleshooting.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Speedtest\"",
+            content: "\"Uses Ookla to test download speed, upload speed, latency and connection stability.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Stats\"",
+            content: "\"An open-source menu-bar monitor for CPU, memory, disk, network, sensors and battery information with configurable modules.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Suspicious Package\"",
+            content: "\"Expands and inspects macOS PKG installers before installation, showing files, scripts, signatures and permissions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mimestream\"",
+            content: "\"A native macOS Gmail client using the Gmail API with labels, search, calendar invitations, multiple accounts and server-side filters.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Thunderbird\"",
+            content: "\"Mozilla's open-source mail, calendar and contacts client for multiple accounts, local archives, search, filters and extensions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Chrome\"",
+            content: "\"Google's cross-platform browser based on Chromium, with sync, extensions, developer tools and Google-service integration; the product binary is not fully open source.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft Edge\"",
+            content: "\"Microsoft's Chromium-based browser with sync, vertical tabs, reading and PDF features and Microsoft-service integration.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Discord\"",
+            content: "\"A community and team messaging platform with text channels, voice rooms, video calls, streaming and bot extensions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Telegram\"",
+            content: "\"A cross-platform messaging client for private chats, groups, channels, voice and video calls and large-file transfer.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft To Do\"",
+            content: "\"A cross-platform task list for tasks, steps, due dates, repeating plans and reminders synchronized with a Microsoft account.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"NetNewsWire\"",
+            content: "\"An open-source RSS and Atom reader for subscribing to sites, organizing feeds and syncing unread status outside social-media algorithms.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Homebrew\"",
+            content: "\"A popular macOS package manager for installing, upgrading and removing command-line tools and graphical apps; most Formulae can be managed with brew install.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"npm\"",
+            content: "\"The default Node.js package manager for JavaScript and TypeScript dependencies, package scripts and globally available command-line tools.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"memo\"",
+            content: "\"Reads, creates, searches and manages Apple Notes from the terminal for scripts and automation.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"automake\"",
+            content: "\"A GNU build tool that generates portable build scripts from Makefile templates, commonly used in C and C++ build chains.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"create-dmg\"",
+            content: "\"Creates macOS DMG images from app bundles, files and custom backgrounds, with window, icon and signing options.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"czkawka\"",
+            content: "\"Scans for duplicate files, similar images, empty folders, temporary files and large files for batch cleanup.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"duti\"",
+            content: "\"Sets macOS default applications through bundle IDs and file-type declarations, including extensions, UTIs and URL schemes.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"exiftool\"",
+            content: "\"Reads, writes and batch-edits metadata in images, audio, video and documents across many formats.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"folderify\"",
+            content: "\"Generates macOS folder icons from images, symbols and colors and applies them to selected folders.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"gemini-cli\"",
+            content: "\"Google Gemini's terminal client for questions, generation, edits and automation around codebases and local files.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"gh\"",
+            content: "\"GitHub's official CLI for managing repositories, issues, pull requests, releases, Actions and authentication.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"git\"",
+            content: "\"A distributed version-control system for recording changes, branches, merges and collaboration with remote repositories.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"git-lfs\"",
+            content: "\"Git Large File Storage replaces large binaries with lightweight pointers stored in a separate service.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"googleworkspace-cli\"",
+            content: "\"Accesses and manages Google Workspace services from the terminal, including mail, calendars and cloud files.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"graphviz\"",
+            content: "\"Generates flowcharts, dependency graphs and relationship networks from DOT descriptions, exporting SVG, PDF and PNG.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"hugo\"",
+            content: "\"A fast static-site generator that builds blogs, documentation sites and other serverless websites from Markdown, themes and templates.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"imapsync\"",
+            content: "\"Migrates, copies and incrementally synchronizes mail between IMAP servers or accounts while preserving folders and common attributes.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"llmfit\"",
+            content: "\"Checks local CPU, GPU and memory conditions and evaluates how local language models and quantizations fit the hardware.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"mole\"",
+            content: "\"A macOS terminal maintenance tool for checking caches, logs, app leftovers and reclaimable space.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ocrmypdf\"",
+            content: "\"Corrects scanned PDF pages and adds searchable, copyable OCR text layers while preserving the original page images and structure.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pandoc\"",
+            content: "\"A universal document converter for Markdown, HTML, LaTeX, Word, EPUB and other formats, with templates and filters.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pdftk-java\"",
+            content: "\"A command-line PDF tool for merging, splitting, rotating, encrypting, decrypting and filling forms; the Java implementation of PDFtk Server.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"poppler\"",
+            content: "\"Provides PDF commands such as pdftotext, pdfinfo and pdftoppm for extracting text, inspecting documents and rendering pages.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"powerlevel10k\"",
+            content: "\"A fast, configurable Zsh prompt theme that displays Git state, runtime environments and command status.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ripgrep\"",
+            content: "\"A fast recursive text search tool that follows Git ignore rules and supports regular expressions, file-type filters and varied output.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"shc\"",
+            content: "\"Converts shell scripts to C source and compiles them into executables for distribution or reduced direct source visibility.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"remindctl\"",
+            content: "\"Reads, creates, completes and manages Apple Reminders from the command line for terminal workflows and automation.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tesseract-lang\"",
+            content: "\"Installs additional Tesseract OCR language data for recognizing languages and scripts beyond English.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"thefuck\"",
+            content: "\"Suggests corrections for the previous failed command and reruns the selected fix after confirmation.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tldr\"",
+            content: "\"Provides concise community-maintained command pages with practical examples instead of lengthy manuals.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"topgrade\"",
+            content: "\"Checks and upgrades Homebrew, language package managers, shell plugins and other development tools in one run.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tree\"",
+            content: "\"Displays directories and files as an indented tree, with depth limits and type filters for presenting project structures.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"typst\"",
+            content: "\"A modern markup typesetting system for producing high-quality PDFs from concise source files, including papers, reports and resumes.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"wget\"",
+            content: "\"A network downloader for HTTP, HTTPS and FTP with recursive downloads, resuming, batch fetching and non-interactive scripts.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"macOCR\"",
+            content: "\"An open-source macOS Vision OCR CLI that recognizes selected screen regions, prints results, copies them to the clipboard and can process image files.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"resume-cli\"",
+            content: "\"The official JSON Resume CLI for validating resume data, starting a local preview and exporting HTML or PDF with themes.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"jsonresume-theme-even\"",
+            content: "\"A clean Even theme package for resume-cli; it provides a resume layout rather than an independent primary command.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BabelDOC\"",
+            content: "\"A document translation and reflow tool for papers and complex PDFs, producing results suited to side-by-side bilingual reading.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"chardetect\"",
+            content: "\"A chardet command for estimating the encoding and confidence of text or byte files from unknown sources.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"mdict\"",
+            content: "\"Packs and unpacks electronic dictionaries, reads MDX/MDD metadata and entries, queries content and rebuilds dictionary resources.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyGlossary\"",
+            content: "\"An electronic-dictionary conversion suite with commands for converting, comparing and viewing multiple dictionary formats.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyMuPDF\"",
+            content: "\"A document-processing command entry point for extracting PDF text and images, inspecting structure and performing conversions.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"RapidOCR ONNX Runtime\"",
+            content: "\"A cross-platform local OCR tool based on ONNX Runtime for text detection and recognition without an online OCR service.\"",
+            permalink: "\"/mac-apps/\"",
+            preview: "",
+            date: ""
+        },];
+    (() => {
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = async (...args) => {
+            const response = await nativeFetch(...args);
+            const requestURL = typeof args[0] === "string" ? args[0] : args[0]?.url || "";
+            if (!requestURL.endsWith("search.json") && !requestURL.includes("/search/")) return response;
+            const data = await response.clone().json();
+            const merged = data.concat(window.searchExtraData || []);
+            return new Response(JSON.stringify(merged), { headers: { "Content-Type": "application/json" } });
+        };
+    })();
 </script><script type="text/javascript" src="/ts/search.js" defer></script>
 
 <footer class="site-footer">
@@ -706,7 +2151,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.0ac1375407717d3a42c7f7af4cb4bbdfc33d499fa5f5dba34a7a92d7b4a61a8e.js" defer></script>
+<script type="text/javascript" src="/ts/main.1ff1e5fdc4e178ed422e50aa407526dc552f26342d729343fded19416194382c.js" defer></script><script type="text/javascript" src="/ts/custom.2e6e579bdb52b9e2cba422be2c3bd4efecbeed8e2ac4f68165bcdde83a55ca86.js" defer></script>
 
 
     </body>

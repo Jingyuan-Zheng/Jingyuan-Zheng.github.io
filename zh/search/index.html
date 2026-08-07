@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/search/","currentLanguage":"zh","englishTarget":"/search/","excludePrompt":false}</script>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#f5f5fa' media='(prefers-color-scheme: light)'>
+<meta name='theme-color' content='#303030' media='(prefers-color-scheme: dark)'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/search/","currentLanguage":"zh","englishTarget":"/search/","excludePrompt":false}</script>
 <script>
     (function () {
         var configElement = document.getElementById("site-language-config");
@@ -78,7 +80,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.11e198eaa5dc160b92616981b3c2638c6b9aec2f3049accd4bb5cb418ce6dc65.css"><meta property='og:title' content="搜索">
+<link rel="stylesheet" href="/scss/style.min.83049bcf126fcf6c2c5abf13181cf6c50879eb012ed5e7a620fe6c0d8de021cb.css"><meta property='og:title' content="搜索">
 <meta property='og:description' content="">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/search/'>
 <meta property='og:site_name' content='小景'>
@@ -214,11 +216,20 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
+    <button type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="mobile-menu-icon mobile-menu-icon--menu" aria-hidden="true"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg')" aria-hidden="true"></span></span>
     </button>
+
+    <div class="mobile-profile-controls" aria-label="页面设置">
+        <button type="button" class="mobile-profile-control" data-mobile-scheme-toggle aria-label="切换深浅色模式" title="切换深浅色模式">
+            <span class="mobile-profile-control__sun"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg')" aria-hidden="true"></span></span>
+            <span class="mobile-profile-control__moon"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg')" aria-hidden="true"></span></span>
+        </button>
+        <button type="button" class="mobile-profile-control" data-mobile-language-toggle aria-label="切换语言" title="切换语言">
+            <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+        </button>
+    </div>
 
     <header>
         <figure class="site-avatar site-avatar--management">
@@ -631,6 +642,1440 @@
 
 <script>
     window.searchResultTitleTemplate = "#PAGES_COUNT 个结果 （用时 #TIME_SECONDS 秒）"
+    window.searchExtraData = [{
+            title: "\"Antigravity\"",
+            content: "\"Google 面向 AI 代理开发流程的工具套件，提供桌面端、CLI、IDE 与 SDK，可直接在代码库中构建、调试和交付软件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"chatbox\"",
+            content: "\"多模型 AI 聊天客户端，支持 OpenAI 兼容 API 和本地模型；客户端有免费功能，模型/API 与高级服务可能收费。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ChatGPT\"",
+            content: "\"OpenAI 官方桌面客户端，整合 Chat、Work 与 Codex；可用功能和额度取决于账户方案。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ChatX\"",
+            content: "\"支持 GPT、Claude、Gemini、DeepSeek 等模型的多模型 AI 客户端，提供自有或自定义 API、提示词、翻译改写、图片生成和 iCloud 同步。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cherry Studio\"",
+            content: "\"聚合云端及本地大模型的多模型 AI 桌面客户端；客户端开源免费，模型/API 费用另计。可把模型能力直接带入桌面工作流，并根据需要连接云端服务或本地模型。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Claude\"",
+            content: "\"Anthropic 官方桌面客户端，可用于长文本问答、文件分析、写作和代码协作，并通过系统级入口减少在浏览器与本地资料之间切换。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Gemini\"",
+            content: "\"Google 官方 Gemini AI 助手桌面入口，支持文本、图片和文件对话；具体模型、额度和高级功能取决于账户方案与地区。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Kimi\"",
+            content: "\"月之暗面提供的 AI 助手桌面客户端，支持长文本阅读、文件分析、搜索问答和内容整理，适合中文资料处理与日常知识工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LM Studio\"",
+            content: "\"下载、运行和测试本地大语言模型，并提供本地 API；应用免费；第三方模型许可各不相同。可把模型能力直接带入桌面工作流，并根据需要连接云端服务或本地模型。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ollama\"",
+            content: "\"在 macOS 本地下载、运行和管理大语言模型，并通过命令行与本地 API 向聊天客户端、开发工具或自动化流程提供模型服务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OpenCode\"",
+            content: "\"AI 辅助编程的终端/桌面开发工具；客户端免费；所调用模型/API 可能收费。可把模型能力直接带入桌面工作流，并根据需要连接云端服务或本地模型。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Osaurus\"",
+            content: "\"在 Mac 上运行本地 AI 模型/代理、插件和 OpenAI 兼容服务。可把模型能力直接带入桌面工作流，并根据需要连接云端服务或本地模型。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Perplexity\"",
+            content: "\"以联网检索和来源引用为核心的 AI 搜索客户端，可整合网页信息、追踪参考来源并围绕问题继续追问，适合快速研究和事实查找。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pi-gui\"",
+            content: "\"为 pi coding agent 提供 Codex 风格桌面界面，包含会话时间线、Git worktree、终端、差异查看和多代理编排。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DiffusionBee\"",
+            content: "\"在 Mac 本地运行 Stable Diffusion 的图形化生成工具，可进行文生图、图生图、局部重绘和模型管理，无需把原始图片上传到云端服务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AI Deck\"",
+            content: "\"作为 Ollama 的图形化配套工具，可浏览、筛选和管理本地模型，并集中查看模型下载状态与正在运行的实例，适合不希望频繁使用命令行的用户。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AgentIsland\"",
+            content: "\"监控 Claude Code、Claude Desktop 与 Codex 的本地会话状态、用量和成本，并在任务完成或需要人工处理时提醒；无需单独账户，不上传会话内容。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AI Memory Reader\"",
+            content: "\"原生浏览 Claude Code、Codex、Cursor、Gemini 等 AI 代理生成的记忆文件、规则文件和 JSONL 会话记录。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CodexBar\"",
+            content: "\"在 macOS 菜单栏集中显示 Codex 及相关 AI 服务的使用状态、剩余额度和刷新时间，便于在不中断工作的情况下查看资源消耗。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"GroAsk\"",
+            content: "\"macOS AI 命令中心，可启动和监控 Claude Code、Codex、Gemini CLI 等代理，并通过全局快捷键调用网页 AI；Early Access 阶段全部功能免费。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cursor\"",
+            content: "\"以 VS Code 体验为基础的 AI 编程编辑器，支持代码补全、跨文件问答、代理式修改和终端协作，适合在现有代码库中完成开发与重构。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Changes\"",
+            content: "\"原生 Git 图形客户端，可查看文件差异、暂存改动、创建提交并管理分支，适合希望以可视化方式完成常用版本控制操作的用户。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CotEditor\"",
+            content: "\"轻量原生的纯文本与代码编辑器，支持语法高亮、正则查找、字符编码和多种文本处理命令，适合快速编辑配置与源码文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DMG Maker\"",
+            content: "\"创建带 SwiftUI 背景、Retina 资源及命令行支持的 macOS DMG 安装映像。适合在 macOS 上完成代码编辑、项目检查、构建或开发资源管理等工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Gridex\"",
+            content: "\"原生跨平台数据库 IDE，支持 PostgreSQL、MySQL、SQLite、Redis、MongoDB、SQL Server 和 ClickHouse，并集成 AI 对话与 MCP 服务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nextpad++ for macOS\"",
+            content: "\"Notepad++ 代码库的原生 macOS 移植版，无需 Wine 或兼容层，支持语法高亮、插件、宏、正则搜索、分栏编辑和 Apple Silicon。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"SF Symbols\"",
+            content: "\"Apple 官方符号浏览工具，可搜索、预览和导出系统图标，并检查不同字重、缩放级别和渲染模式下的显示效果。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Visual Studio Code\"",
+            content: "\"通用代码编辑器，支持扩展、调试和 Git；Code-OSS 开源；Microsoft 官方二进制包含额外品牌与服务组件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Xcode\"",
+            content: "\"Apple 平台完整开发环境，集成代码编辑、编译、调试、性能分析、模拟器和界面设计工具，用于构建 macOS、iOS 等平台应用。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Earth Pro\"",
+            content: "\"桌面地理浏览工具，可查看卫星影像、三维地形、历史影像和自定义地图数据，适合空间资料查阅、地点分析和演示。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mathpix Snipping Tool\"",
+            content: "\"通过截图或导入内容识别数学公式、表格和文字，并转换为 LaTeX、Markdown 等可编辑格式，适合论文写作和公式录入。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MATLAB\"",
+            content: "\"面向科学计算、工程建模和数据分析的综合环境，集成矩阵运算、可视化、算法开发、仿真以及大量专业工具箱。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MixTeX-Latex-OCR\"",
+            content: "\"使用 OCR 将数学公式图片识别为 LaTeX，提供适用于 macOS 的图形界面。适合科研数据分析、论文准备或专业研究流程中的资料处理与结果表达。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QGIS-LTR\"",
+            content: "\"长期支持版本的开源地理信息系统，可制作地图、编辑矢量与栅格数据、运行空间分析，并通过插件扩展专业 GIS 工作流。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Zotero\"",
+            content: "\"文献收集、PDF 批注、引用管理和参考文献生成；客户端免费开源；额外云存储可能收费。适合科研数据分析、论文准备或专业研究流程中的资料处理与结果表达。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Easydict\"",
+            content: "\"原生多引擎翻译工具，支持划词、快捷键、截图 OCR 和输入翻译，可整合多个词典与翻译服务进行结果对照。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ora\"",
+            content: "\"调用麦克风进行实时语音识别与翻译，可把讲话内容持续转换成文字和目标语言，适合会议、交流和口语理解场景。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyGlossaryTk\"",
+            content: "\"电子词典格式转换工具，可在 StarDict、MDict 等多种词典格式之间导入、导出和处理数据，适合整理个人离线词库。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Subtitle Me\"",
+            content: "\"在 Mac 上生成实时字幕并提供语音翻译，适合会议、视频和跨语言交流。可用于跨语言阅读、会议或日常交流，并减少在多个翻译入口之间切换。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"实时字幕+\"",
+            content: "\"将系统音频或麦克风语音实时转换为字幕；当前下载入口为第三方网盘。可用于跨语言阅读、会议或日常交流，并减少在多个翻译入口之间切换。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"邦宁同传\"",
+            content: "\"将麦克风或扬声器声音实时识别并翻译为字幕，也提供屏幕文字实时翻译和字幕记录导出。可用于跨语言阅读、会议或日常交流，并减少在多个翻译入口之间切换。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Eudic\"",
+            content: "\"面向英语学习的词典与词汇工具，提供释义、例句、发音、翻译、生词本和复习功能，适合长期积累词汇与阅读资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Graker\"",
+            content: "\"面向中文英语学习者的 macOS 菜单栏语法检查工具，可读取选中文本并进行英文语法检查与改写；该仓库仅用于发布安装包，未公开源码。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"不背单词\"",
+            content: "\"面向中文用户的英语词汇学习应用，通过真实语境例句、复习计划和词库进度管理帮助持续记忆与巩固单词。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Anki\"",
+            content: "\"基于间隔重复算法的记忆卡片工具，可自定义卡片模板、媒体和复习计划，适合语言、考试和专业知识的长期记忆。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft OneNote\"",
+            content: "\"微软的跨平台数字笔记工具，可按笔记本和分区整理文字、手写、图片与附件，并在多个设备之间同步资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Obsidian\"",
+            content: "\"基于本地 Markdown 文件的双向链接知识库与笔记工具；个人使用免费；商业许可和同步/发布服务另计。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProNotes\"",
+            content: "\"增强 Apple Notes，加入 Markdown、模板、反向链接等功能。适合长期积累笔记、知识卡片和个人资料库，并在多个主题间建立组织结构。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"GUI4OCRMyPDF\"",
+            content: "\"OCRmyPDF 的 SwiftUI 图形界面，用于为扫描 PDF 添加可搜索文字层。适合扫描件、论文和复杂版式 PDF 的识别、编辑、转换与再利用。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PDFgear\"",
+            content: "\"一体化 PDF 工具，可阅读、批注、编辑、转换、签名和执行 OCR，适合处理扫描件、表单及日常办公文档。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PDFMathTranslate\"",
+            content: "\"翻译 PDF 文档并尽量保留原始排版、数学公式和版面结构。适合扫描件、论文和复杂版式 PDF 的识别、编辑、转换与再利用。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MinerU\"",
+            content: "\"面向复杂文档解析的开源工具，可将 PDF、论文和扫描文档转换为结构化 Markdown 或 JSON，并尽量识别标题、表格、公式和阅读顺序。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"FloralMD\"",
+            content: "\"原生、文件优先的 macOS Markdown 编辑器，支持行内实时渲染、多标签、文档大纲、悬浮便签和 Finder Quick Look。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MarkEdit\"",
+            content: "\"轻量原生 Markdown 编辑器，提供简洁写作界面、实时预览和常用格式支持，适合快速修改本地 Markdown 文档。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PasteMD\"",
+            content: "\"将 Markdown、网页 AI 对话和公式转换后粘贴到 Word、WPS 或 Excel，支持表格、LaTeX 与富文本。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Typora\"",
+            content: "\"所见即所得的 Markdown 编辑器，将源码标记与排版结果结合在同一界面，并支持大纲、表格、公式和多种导出格式。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OmniGraffle\"",
+            content: "\"专业图表与矢量绘图工具，可制作流程图、系统架构、线框图和精确布局的图形文档，并支持模板与对象样式管理。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Apparency\"",
+            content: "\"用于检查 macOS 应用包内部信息，可查看代码签名、权限、沙盒配置、架构和安全属性，适合安装前审查或开发排错。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AppCleaner\"",
+            content: "\"卸载应用时查找并一并移除偏好设置、缓存和支持文件，帮助减少只拖入废纸篓后留下的关联数据。适合集中处理应用安装、更新、迁移或卸载，减少手工查找相关文件的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Applite\"",
+            content: "\"基于 Homebrew Cask 的图形化应用管理器，可搜索、安装、更新和卸载软件，让不熟悉终端的用户也能使用 Homebrew。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AppPorts\"",
+            content: "\"将应用及其相关数据迁移到外置存储，并通过软链接和签名处理保持正常启动，适合释放内部磁盘空间。适合集中处理应用安装、更新、迁移或卸载，减少手工查找相关文件的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cork\"",
+            content: "\"Homebrew 的图形化包管理器；源码可自行构建；商店/预编译发行方式可能收费。适合集中处理应用安装、更新、迁移或卸载，减少手工查找相关文件的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Latest\"",
+            content: "\"集中检查支持 Sparkle 等更新机制的已安装应用，并直接查看或安装新版本，减少逐个打开软件检查更新的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LaunchNext\"",
+            content: "\"以网格、页面和文件夹方式管理并启动应用，可作为 Launchpad 的替代方案，并提供更灵活的布局整理能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LaunchOS\"",
+            content: "\"应用启动器和 Launchpad 替代品，支持搜索、分组及备份布局。适合集中处理应用安装、更新、迁移或卸载，减少手工查找相关文件的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Launchpad Manager\"",
+            content: "\"用于重新排列 Launchpad 图标、页面和文件夹，可批量调整布局并修复手工拖动大量应用时的低效率问题。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Pearcleaner\"",
+            content: "\"开源应用卸载与残留清理工具，可扫描应用关联文件、比较卸载前后变化，并帮助移除无用配置和缓存。适合集中处理应用安装、更新、迁移或卸载，减少手工查找相关文件的工作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"WailBrew\"",
+            content: "\"Homebrew 的图形化管理界面，可浏览已安装包、执行安装更新和卸载，并查看公式与 Cask 的基本信息。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"A Better Finder Attributes 7\"",
+            content: "\"批量修改文件日期、Finder 标签、扩展名可见性等文件属性。适合批量整理文件、修改属性或提升 Finder 中的多目录操作效率。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"A Better Finder Rename 12\"",
+            content: "\"通过规则链批量重命名文件和文件夹，支持编号、文本替换、日期、元数据和预览，适合整理大量照片与资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Advanced Renamer\"",
+            content: "\"使用多种规则批量重命名文件、文件夹及照片；个人使用免费，商业使用需授权。适合批量整理文件、修改属性或提升 Finder 中的多目录操作效率。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterZip\"",
+            content: "\"压缩文件管理工具，可创建、浏览、修改和解压 ZIP、RAR、7z 等格式，并支持无需完整解压即可查看或删除内部文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BookMacster\"",
+            content: "\"书签管理与同步工具，可整理重复书签、编辑层级，并在 Safari、Chrome、Firefox 等浏览器之间协调收藏内容。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dropover\"",
+            content: "\"在拖放过程中创建临时置物架，用于暂存文件、图片、网址和文本，再一次性移动、复制或分享至目标位置。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nifty File Lists\"",
+            content: "\"将文件夹内容整理成可打印或导出的清单，可选择文件属性、排序方式和输出格式，适合归档与盘点资料。适合批量整理文件、修改属性或提升 Finder 中的多目录操作效率。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QSpace Pro\"",
+            content: "\"多窗格 Finder 替代文件管理器，支持标签页、工作区、归档、服务器和云盘连接，适合同时处理多个目录。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Riffo\"",
+            content: "\"利用 AI 理解文件内容并批量生成更有意义的名称，还可按规则分类资料，适合整理截图、票据和杂乱下载文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"EasyFind\"",
+            content: "\"不依赖 Spotlight 索引的本地搜索工具，可按文件名、内容、标签和隐藏项目查找文件，适合索引异常或深层目录搜索。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Find Any File\"",
+            content: "\"按名称、大小、日期等磁盘目录属性深度搜索文件；可试用/捐赠，完整授权依发行方式而定。可从本地磁盘和外置存储中按名称、内容或元数据快速定位资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"HoudahSpot\"",
+            content: "\"基于 Spotlight 元数据构建高级搜索条件，可组合文件类型、日期、标签、内容等规则并保存为可重复使用的搜索。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProFind\"",
+            content: "\"高级本地文件搜索工具，支持元数据、文件内容、布尔条件和自然语言筛选，并可保存复杂搜索以便重复使用。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Search Everything\"",
+            content: "\"索引并快速搜索 Mac 内部及外置磁盘中的文件和文件夹，支持多关键词与实时更新。可从本地磁盘和外置存储中按名称、内容或元数据快速定位资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Drive\"",
+            content: "\"Google 的云盘同步客户端，可在 Finder 中访问云端文件、按需下载内容并与他人共享或协作编辑资料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OneDrive\"",
+            content: "\"Microsoft 云盘同步客户端，可在 Finder 中访问按需文件、备份指定文件夹，并与 Microsoft 365 协作内容保持同步。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ProvisionQL\"",
+            content: "\"在 Quick Look 中预览 iOS/macOS Provisioning Profile 和签名信息。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Folder Preview Pro\"",
+            content: "\"为 Finder 文件夹提供更丰富的 Quick Look 内容，可在不打开目录的情况下预览内部文件结构和关键信息。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Glance\"",
+            content: "\"为源代码、Markdown、压缩包、Jupyter Notebook 等格式提供 Quick Look 预览；采用 MIT 许可证，可从 GitHub Releases 或 Homebrew 免费安装。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iPreview - Powerful Quick Look\"",
+            content: "\"为 Finder Quick Look 增加代码、Markdown、Jupyter、WebP、AVIF、3D 模型和多种文档格式的预览。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Peek — A Quick Look Extension\"",
+            content: "\"扩展 Finder Quick Look，预览 Markdown、代码、PostScript 等文件，并支持搜索、跳转、语法高亮、MathJax 和 Mermaid。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"QuickLook Video\"",
+            content: "\"让 Finder Quick Look 预览更多视频格式并显示缩略图。安装后可直接扩展 Finder Quick Look，减少为查看内容而启动完整应用的次数。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Burrow\"",
+            content: "\"面向开发目录的空间清理工具，可识别构建产物、缓存、依赖和残留安装包，并在删除前展示可释放容量。适合定位磁盘占用、重复数据或无用缓存，并在确认后释放存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"DaisyDisk\"",
+            content: "\"以交互式空间图展示磁盘和文件夹占用，帮助快速定位大文件，并在确认后集中删除不再需要的内容。适合定位磁盘占用、重复数据或无用缓存，并在确认后释放存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Duplicate File Finder 8\"",
+            content: "\"扫描重复文件、相似照片和重复文件夹，可比较内容并选择保留版本，帮助回收被重复数据占用的空间。适合定位磁盘占用、重复数据或无用缓存，并在确认后释放存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Find Empty Folders\"",
+            content: "\"扫描指定目录中的空文件夹并集中列出结果，便于在删除前检查路径，适合清理长期积累的空目录结构。适合定位磁盘占用、重复数据或无用缓存，并在确认后释放存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OmniDiskSweeper\"",
+            content: "\"按文件和文件夹大小生成层级列表，可逐层定位最占空间的内容，并直接在检查后执行删除操作。适合定位磁盘占用、重复数据或无用缓存，并在确认后释放存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"OnyX\"",
+            content: "\"面向 macOS 的维护与参数调整工具，可执行缓存清理、系统检查、索引重建和隐藏设置修改，并按系统版本提供对应发行版。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Acon - Make Big Sur Style Icon\"",
+            content: "\"制作 Big Sur 风格的应用图标，支持纯色或渐变背景、图标尺寸、圆角和阴影设置；香港 App Store 当前售价 HK$22。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Aquira\"",
+            content: "\"为不同 macOS 应用分别设置强调色；原名 Aquifer，目前提供测试版，开发者称正式版计划开源。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Accents\"",
+            content: "\"为任意 Mac 启用 iMac/MacBook Neo 系列的系统强调色。通过快捷开关、脚本或系统级控制减少重复操作并扩展 macOS 原生能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Color Folder Pro - Custom Icon\"",
+            content: "\"批量修改 Finder 文件夹颜色和图标，支持自定义图片、渐变色和内置模板；香港 App Store 当前售价 HK$22。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Fancy Folders\"",
+            content: "\"为 Finder 文件夹生成自定义图标、颜色和外观样式，可用视觉差异区分项目、资料类型或重要目录。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Foldor\"",
+            content: "\"专门设计和应用自定义文件夹图标，可调整颜色、符号和样式，并把结果直接用于 Finder 目录外观。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ice\"",
+            content: "\"开源菜单栏管理器，可隐藏、显示、搜索和重新排列状态栏项目，并为图标较多的 Mac 提供更整洁的布局。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Thaw\"",
+            content: "\"免费开源的 macOS 菜单栏管理器，可隐藏、搜索、重新排列菜单栏项目并调整外观。可调整图标、文件夹或菜单栏外观，让不同项目与系统区域更容易辨认。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Accelerate\"",
+            content: "\"Safari 视频控制扩展，可通过快捷键调整网页视频播放速度、快进、后退和画中画，改善在线课程与长视频观看效率。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AdBlock\"",
+            content: "\"浏览器内容拦截扩展，可过滤常见广告和部分跟踪元素，并允许针对特定网站暂停或自定义拦截规则。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AdGuard for Safari\"",
+            content: "\"开源 Safari 内容拦截器，可过滤广告、跟踪器和烦人网页元素，并通过规则列表与用户规则调整过滤范围。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BewlyBewly\"",
+            content: "\"针对哔哩哔哩网页的开源界面增强扩展，可重构首页布局、导航和播放体验，并提供大量外观与交互选项。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dark Night\"",
+            content: "\"为 Safari 网页生成深色显示效果，可降低夜间浏览时的亮度刺激，并对不自带深色主题的网站进行适配。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Dark Reader for Safari\"",
+            content: "\"为网页生成可调节的深色主题；源码开源；Safari 版通常通过 App Store 付费获取。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Immersive Translate\"",
+            content: "\"提供网页双语对照、PDF 翻译、视频字幕和输入框翻译，可组合多种翻译服务处理阅读与跨语言浏览。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Infinity New Tab (Pro)\"",
+            content: "\"自定义浏览器新标签页，可集中放置常用网站、搜索框、壁纸和小组件，并在不同设备间同步布局。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Noir\"",
+            content: "\"Safari 深色模式扩展，可自动为网站生成深色配色，并针对单个站点保存启用状态和外观调整。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"SingleFile\"",
+            content: "\"将完整网页及其样式、图片等资源保存为单个 HTML 文件，适合离线归档文章、文档和需要长期保留的页面。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Tampermonkey\"",
+            content: "\"用户脚本管理扩展，可安装、编辑和控制脚本在指定网页上运行，从而定制页面功能或自动执行重复操作。安装后直接在浏览器中生效，用于改善网页浏览、内容处理或网站交互。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Voyager（原 Gemini Voyager）\"",
+            content: "\"面向 Gemini、Google AI Studio、Claude 和 ChatGPT 的浏览器增强套件，提供对话文件夹、时间线、提示词库、用量跟踪、聊天导出与插件扩展。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"xSearch\"",
+            content: "\"为 Safari 增加自定义搜索引擎和关键词快捷搜索，可从地址栏快速跳转到指定网站、站内搜索或自定义 URL。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cap\"",
+            content: "\"开源屏幕录制与演示视频制作工具；本地应用开源；云端托管和部分服务可能收费。适合制作教程、问题反馈和需要快速分享的视觉资料，并在捕获后完成基础编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iShot\"",
+            content: "\"集截图、滚动截图、贴图、录屏、标注和 OCR 于一体，可快速完成屏幕内容捕获、编辑与分享。适合制作教程、问题反馈和需要快速分享的视觉资料，并在捕获后完成基础编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"macshot\"",
+            content: "\"原生 macOS 截图与录屏工具，支持标注、滚动截图、GIF、OCR、翻译、敏感信息自动遮挡和视频编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PixPin\"",
+            content: "\"提供区域截图、长截图、贴图、录屏、标注和 OCR，可在捕获后快速编辑并把结果固定在桌面参考。适合制作教程、问题反馈和需要快速分享的视觉资料，并在捕获后完成基础编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Screen Studio\"",
+            content: "\"自动为录屏加入平滑缩放、光标突出和背景布局，可快速制作更整洁的产品演示、教程和操作说明视频。适合制作教程、问题反馈和需要快速分享的视觉资料，并在捕获后完成基础编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ScreenFlow\"",
+            content: "\"专业屏幕与摄像头录制工具，内置多轨时间线、标注、转场和音频处理，适合制作完整教程与演示视频。适合制作教程、问题反馈和需要快速分享的视觉资料，并在捕获后完成基础编辑。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Snapzy\"",
+            content: "\"原生 macOS 截图、滚动截图、录屏、标注、OCR、编辑与历史管理工具，支持自有 S3 或 Cloudflare R2 上传。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ExifRenamer\"",
+            content: "\"读取照片 EXIF 拍摄日期等元数据并按模板批量重命名，适合把来自不同设备的图片统一为可排序文件名。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Lap\"",
+            content: "\"本地照片资料库工具，可索引图片、添加标签，并按人脸、地点和视觉相似度查找内容，便于整理大型图库。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PowerPhotos\"",
+            content: "\"面向 Apple Photos 图库的管理工具，可查找重复照片、合并或拆分图库、复制项目并协助修复图库问题。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Audio Hijack\"",
+            content: "\"模块化音频捕获与处理工具，可从应用、麦克风和系统设备录音，并在录制前串联均衡、混音和效果模块。适合对图像、音频或视频素材进行剪辑、处理和面向发布的输出。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Pixelmator Pro\"",
+            content: "\"面向 macOS 的图像编辑工具，支持图层、修图、绘画、矢量元素和机器学习增强，适合照片处理与视觉设计。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Redacted\"",
+            content: "\"用于快速隐藏图片中的敏感内容，可对文字、账号和区域执行模糊、像素化或遮挡，适合分享截图前脱敏。适合对图像、音频或视频素材进行剪辑、处理和面向发布的输出。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"VideoFusion-macOS\"",
+            content: "\"桌面视频编辑工具，提供时间线剪辑、字幕、滤镜、转场和导出能力，适合制作社交媒体与日常视频内容。适合对图像、音频或视频素材进行剪辑、处理和面向发布的输出。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MacWhisper\"",
+            content: "\"利用 Whisper 在本地转录音频、视频和实时语音，可导出字幕与文本，并在支持的模型下减少资料上传需求。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Permute 3\"",
+            content: "\"批量转换视频、音频和图片格式，提供预设、队列和基础编辑选项，适合为不同设备或平台准备媒体文件。适合把媒体内容转换为其他格式、文本或演示辅助材料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Textream\"",
+            content: "\"简洁的提词器应用，可把讲稿以可调字号和速度滚动显示，适合录制视频、演讲或在线会议时辅助阅读。适合把媒体内容转换为其他格式、文本或演示辅助材料。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"FreeTube\"",
+            content: "\"注重隐私的第三方 YouTube 桌面客户端，可在不依赖官方网页界面的情况下订阅频道、观看视频并管理本地设置。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"IINA\"",
+            content: "\"原生 macOS 多格式视频播放器，基于 mpv 并适配系统手势、画中画、字幕和 Touch Bar 等平台功能。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Spotify\"",
+            content: "\"音乐与播客流媒体客户端。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Downie 4\"",
+            content: "\"网页音视频下载工具，可识别大量网站并选择清晰度、提取音频或发送至转换工具，适合保存允许离线观看的内容。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Folx\"",
+            content: "\"下载管理器，提供多线程加速、任务分类、浏览器集成和 BitTorrent 支持，并可在中断后继续下载。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"imFile\"",
+            content: "\"基于 Motrix 延续开发的多协议下载管理器，支持 HTTP、FTP、BitTorrent、磁力链接和 ed2k。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Motrix\"",
+            content: "\"基于 aria2 的图形化下载管理器，支持 HTTP、FTP、BitTorrent 和磁力链接，并可集中管理多协议任务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"NeatDownloadManager\"",
+            content: "\"轻量多线程下载管理器，可接管浏览器下载、分段加速文件并恢复中断任务，适合管理较大的网页下载。可集中管理下载队列、协议和保存位置，并在连接中断后继续任务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"qbittorrent\"",
+            content: "\"开源 BitTorrent 客户端，提供磁力链接、队列、限速、RSS 和远程 Web 管理，同时避免捆绑广告。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Cloudflare WARP\"",
+            content: "\"通过 Cloudflare 网络加密设备流量并优化部分连接路径，可在普通 WARP 与付费增强网络服务之间选择。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Quantumult X\"",
+            content: "\"面向高级用户的网络代理与规则工具，支持分流、重写、脚本、抓包和节点管理，可按域名或应用控制连接。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ShadowsocksX-NG\"",
+            content: "\"macOS 上的开源 Shadowsocks 客户端，可配置服务器、系统代理和 PAC 规则，为指定网络流量提供代理连接。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Stash\"",
+            content: "\"规则驱动的代理客户端，支持多协议节点、策略组、脚本、重写和网络调试，适合维护复杂分流配置。适合按规则管理不同应用或域名的网络连接，并查看或调试连接状态。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Transocks\"",
+            content: "\"通过透明转发把指定应用或系统流量送入 SOCKS 代理，可在应用本身不支持代理设置时提供连接适配。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"快帆\"",
+            content: "\"面向海外用户的中国网络加速服务，可为视频、音乐和其他地区限制内容选择回国线路，并提供桌面客户端连接。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AndroMeld: Manager for Android\"",
+            content: "\"通过 USB 或无线 ADB 在 Mac 上管理 Android 文件、镜像应用、同步通知和剪贴板；免费下载，含订阅和终身买断内购。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"fuse-t\"",
+            content: "\"为 macOS 提供用户态文件系统框架，使第三方文件系统可以在不编写内核扩展的情况下挂载并出现在 Finder 中。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"i4tools\"",
+            content: "\"面向 iPhone 和 iPad 的设备管理工具，可执行备份、文件传输、应用管理和系统维护等操作，主要服务中文用户。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"iMazing Profile Editor\"",
+            content: "\"Apple 设备配置描述文件编辑器，可创建和验证 Wi-Fi、限制、证书及其他管理载荷，适合部署和测试配置。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"LocalSend\"",
+            content: "\"跨平台局域网传输工具，可在无需账户和云端中转的情况下发送文件、文件夹与文本，并通过端到端加密保护传输。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MacDroid\"",
+            content: "\"连接 Mac 与 Android 设备的文件传输工具，支持 USB 或无线方式访问存储，并在 Finder 中浏览和管理手机文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mounty\"",
+            content: "\"利用 macOS 可用的 NTFS 支持重新挂载磁盘并尝试启用写入，提供菜单栏入口以便快速处理外置 NTFS 存储。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Nigate\"",
+            content: "\"开源 NTFS 挂载与管理工具，可识别外置 NTFS 磁盘并提供读写操作，适合在 macOS 与 Windows 设备之间交换文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterMouse\"",
+            content: "\"第三方鼠标增强工具，可分别配置按键、滚动、手势、指针速度和应用专属规则，改善 macOS 上的鼠标操作体验。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mac Mouse Fix\"",
+            content: "\"为普通鼠标加入平滑滚动、触控式手势和自定义按键动作，并支持按住按钮配合移动执行窗口或桌面操作。适合改善第三方鼠标在 macOS 上的滚动、按键和手势体验。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MiddleClick\"",
+            content: "\"通过触控板手势或鼠标操作模拟中键点击，方便在浏览器打开后台标签页或调用依赖中键的软件功能。适合改善第三方鼠标在 macOS 上的滚动、按键和手势体验。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mos\"",
+            content: "\"为外接鼠标提供平滑滚动和独立方向设置，可让鼠标与触控板分别使用符合习惯的滚动方向。适合改善第三方鼠标在 macOS 上的滚动、按键和手势体验。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MouseBoost Pro\"",
+            content: "\"扩展鼠标右键菜单、手势和按键动作，并加入窗口、文件和剪贴板操作，适合把常用命令绑定到鼠标。适合改善第三方鼠标在 macOS 上的滚动、按键和手势体验。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CleanupBuddy\"",
+            content: "\"在清洁键盘、触控栏或屏幕附近区域时临时锁定输入，避免误触按键、快捷键或系统操作。适合调整输入行为、按键映射、键盘布局或清洁时的输入锁定。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Karabiner-Elements\"",
+            content: "\"面向 macOS 的高级键盘重映射工具，可修改单键行为、组合键、设备专属规则和复杂条件映射，并提供图形配置与 JSON 规则扩展。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"KeyboardCleanTool\"",
+            content: "\"一键临时禁用键盘输入，方便在 Mac 开机状态下清洁键帽，退出工具后即可恢复正常输入。适合调整输入行为、按键映射、键盘布局或清洁时的输入锁定。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Ukelele\"",
+            content: "\"macOS 键盘布局编辑器，可创建或修改按键映射、死键和输入规则，并导出可安装的自定义布局。适合调整输入行为、按键映射、键盘布局或清洁时的输入锁定。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Input Source Pro\"",
+            content: "\"根据当前应用或网站自动切换输入法，并显示输入源状态、控制标点模式和功能键行为。适合调整输入行为、按键映射、键盘布局或清洁时的输入锁定。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AirBattery\"",
+            content: "\"在菜单栏集中显示 AirPods、iPhone、iPad 等 Apple 或蓝牙设备的电量与连接状态，便于跨设备查看剩余电量。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BetterDisplay\"",
+            content: "\"显示器管理工具，可调整分辨率、缩放、亮度和 HiDPI，创建虚拟屏幕，并为多显示器保存独立配置。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PairPods\"",
+            content: "\"菜单栏蓝牙音频设备工具，可快速查看 AirPods 等设备的连接与电量状态，并简化配对或切换操作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"WhatCable\"",
+            content: "\"在菜单栏识别 USB-C、USB4 与 Thunderbolt 连接能力，显示线缆速率、供电规格、充电瓶颈和设备拓扑；主体代码采用 MIT 许可，部分插件组件为专有代码。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"CrossOver\"",
+            content: "\"基于 Wine 等兼容技术在 macOS 上运行部分 Windows 应用和游戏，无需安装完整 Windows 虚拟机，适合较轻量的兼容需求。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"MuMuPlayer Pro\"",
+            content: "\"面向 macOS 的 Android 模拟器，可运行移动应用和游戏，并提供键鼠映射、多开及性能设置等桌面化功能。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Parallels Desktop\"",
+            content: "\"完整虚拟机软件，可在 Mac 上安装和运行 Windows、Linux 等系统，并提供共享文件、融合模式和硬件资源配置。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PlayCover\"",
+            content: "\"在 Apple Silicon Mac 上运行兼容的 iOS 与 iPadOS 应用，并提供键盘映射、窗口设置和分辨率调整等容器功能。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"AlDente\"",
+            content: "\"通过设置充电上限、温度策略和校准流程控制 MacBook 电池充电行为，帮助长期插电使用时减少满电停留。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Amphetamine\"",
+            content: "\"通过菜单栏或触发条件阻止 Mac 自动睡眠、屏幕关闭或磁盘休眠，适合下载、演示和长时间任务。通过快捷开关、脚本或系统级控制减少重复操作并扩展 macOS 原生能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Hammerspoon\"",
+            content: "\"以 Lua 脚本连接键盘、鼠标、窗口和系统事件，可构建复杂快捷键、窗口管理及跨应用自动化。通过快捷开关、脚本或系统级控制减少重复操作并扩展 macOS 原生能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Maccy\"",
+            content: "\"轻量剪贴板历史管理器，可通过快捷键搜索并重新粘贴近期文本，GitHub 版本可免费安装使用。通过快捷开关、脚本或系统级控制减少重复操作并扩展 macOS 原生能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Only Switch\"",
+            content: "\"在菜单栏集中提供深色模式、隐藏文件、屏幕保护、休眠等系统开关，减少频繁进入设置界面的操作。通过快捷开关、脚本或系统级控制减少重复操作并扩展 macOS 原生能力。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BitdefenderVirusScanner\"",
+            content: "\"按需扫描 Mac 文件、应用和外置存储中的恶意软件与风险内容，适合在下载或接收可疑文件后进行检查。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Inspect\"",
+            content: "\"测试 Mac 键盘按键是否正常，并通过纯色画面检查屏幕坏点；代码公开，但仓库未提供明确开源许可证。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Sloth\"",
+            content: "\"以图形界面展示进程正在打开的文件、目录、端口和系统资源，便于排查文件无法删除或端口被占用的问题。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Speedtest\"",
+            content: "\"使用 Ookla 服务测试当前网络的下载速度、上传速度、延迟和稳定性，方便比较连接或排查网络性能。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Stats\"",
+            content: "\"开源菜单栏系统监控工具，可显示 CPU、内存、磁盘、网络、传感器和电池信息，并允许自定义模块与刷新频率。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Suspicious Package\"",
+            content: "\"在安装前展开并检查 macOS PKG 安装包，显示将写入的文件、脚本、签名和权限，帮助判断安装行为。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Mimestream\"",
+            content: "\"针对 Gmail 构建的原生 macOS 邮件客户端，直接使用 Gmail API，并支持标签、搜索、日历邀请、多账户和服务器端过滤等 Gmail 工作流。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Thunderbird\"",
+            content: "\"Mozilla 开源邮件、日历和通讯录客户端，可统一管理多个邮箱账户，并通过本地归档、搜索、过滤器和扩展增强长期邮件工作流。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Google Chrome\"",
+            content: "\"Google 的跨平台网页浏览器，基于 Chromium 开源项目构建，并整合账户同步、扩展、开发者工具和 Google 服务；Google Chrome 发行版本身并非完整开源。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft Edge\"",
+            content: "\"Microsoft 基于 Chromium 构建的跨平台浏览器，提供账户同步、垂直标签页、阅读与 PDF 功能以及 Microsoft 服务集成；Microsoft 发行版本身并非完整开源。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Discord\"",
+            content: "\"面向社群和团队的即时通讯平台，支持频道式文字聊天、语音房间、视频通话、直播和机器人扩展，基础功能免费并提供付费增强方案。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Telegram\"",
+            content: "\"跨平台即时通讯客户端，支持私聊、群组、频道、语音视频和大文件传输；macOS 客户端源码公开，核心云端服务由 Telegram 运营。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Microsoft To Do\"",
+            content: "\"跨平台待办清单工具，可创建任务、步骤、截止日期、重复计划和提醒，并通过 Microsoft 账户在设备间同步个人任务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"NetNewsWire\"",
+            content: "\"开源 RSS 与 Atom 阅读器，可订阅网站更新、整理信息源和同步未读状态，适合建立不依赖社交平台推荐算法的阅读清单。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"Homebrew\"",
+            content: "\"macOS 常用软件包管理器，用于安装、升级和卸载命令行工具及图形应用；后续大部分 Formula 均可通过 `brew install` 管理。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"npm\"",
+            content: "\"Node.js 默认包管理器，用于安装 JavaScript 和 TypeScript 项目依赖、运行包脚本，并管理可全局调用的命令行工具。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"memo\"",
+            content: "\"通过终端读取、创建、搜索和管理 Apple Notes 内容，适合把系统笔记纳入脚本和自动化流程。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"automake\"",
+            content: "\"GNU 构建工具，可根据 Makefile 模板生成可移植构建脚本，主要用于传统 C/C++ 等源码项目的构建链。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"create-dmg\"",
+            content: "\"从应用包、文件和自定义背景快速制作 macOS DMG 安装映像，并可设置窗口布局、图标和签名相关参数。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"czkawka\"",
+            content: "\"扫描重复文件、相似图片、空目录、临时文件和大文件，适合在终端中批量检查并清理存储空间。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"duti\"",
+            content: "\"通过 Bundle ID 和文件类型声明设置 macOS 默认打开应用，可批量配置文件扩展名、UTI 和 URL Scheme 的关联程序。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"exiftool\"",
+            content: "\"读取、写入和批量修改图片、音频、视频及文档的元数据，支持大量文件格式和可脚本化的字段处理。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"folderify\"",
+            content: "\"根据图片、符号和颜色生成 macOS 文件夹图标，并可把生成结果直接应用到指定文件夹。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"gemini-cli\"",
+            content: "\"Google Gemini 的终端客户端，可围绕代码库和本地文件进行问答、生成、修改与自动化操作，模型额度取决于所用账户或 API。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"gh\"",
+            content: "\"GitHub 官方命令行客户端，可在终端管理仓库、Issue、Pull Request、Release、Actions 和认证状态。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"git\"",
+            content: "\"分布式版本控制系统，用于记录代码和文档变更、管理分支、合并协作内容并连接远程仓库。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"git-lfs\"",
+            content: "\"Git Large File Storage 扩展，把大型二进制文件替换为轻量指针并存储在独立服务中，避免普通 Git 仓库体积快速膨胀。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"googleworkspace-cli\"",
+            content: "\"在终端访问和管理 Google Workspace 服务，可把邮件、日历、云端文件和其他 Workspace 操作接入脚本。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"graphviz\"",
+            content: "\"根据 DOT 等文本描述生成流程图、依赖图和关系网络，可导出 SVG、PDF、PNG 等多种图形格式。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"hugo\"",
+            content: "\"高速静态网站生成器，可把 Markdown 内容、主题和模板构建为博客、文档站或其他无需服务器渲染的网站。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"imapsync\"",
+            content: "\"通过 IMAP 在不同邮箱服务器或账户之间迁移、复制和增量同步邮件，并保留文件夹结构与常见邮件属性。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"llmfit\"",
+            content: "\"检测本机 CPU、GPU 和内存条件，并评估不同本地大语言模型及量化版本与当前硬件的适配程度。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"mole\"",
+            content: "\"面向 macOS 的终端清理与维护工具，可检查缓存、日志、应用残留和其他可释放空间，并提供常用系统维护操作。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ocrmypdf\"",
+            content: "\"为扫描 PDF 自动校正页面并加入可搜索、可复制的 OCR 文本层，同时尽量保留原始页面图像和 PDF 结构。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pandoc\"",
+            content: "\"通用文档格式转换器，可在 Markdown、HTML、LaTeX、Word、EPUB 等格式之间转换，并通过模板和过滤器定制输出。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"pdftk-java\"",
+            content: "\"用于合并、拆分、旋转、加密、解密和填写 PDF 表单的命令行工具，是 PDFtk Server 的 Java 实现。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"poppler\"",
+            content: "\"提供 pdftotext、pdfinfo、pdftoppm 等 PDF 处理命令，可提取文字、查看文档信息并把页面渲染为图片。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"powerlevel10k\"",
+            content: "\"Zsh 提示符主题，提供快速渲染、丰富状态信息和交互式配置，可展示 Git、运行环境与命令执行状态。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"ripgrep\"",
+            content: "\"高速递归文本搜索工具，默认遵循 Git 忽略规则，并支持正则表达式、文件类型过滤和多种结果输出方式。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"shc\"",
+            content: "\"把 Shell 脚本转换为 C 源码并编译为可执行文件，主要用于分发脚本或减少脚本文本被直接查看。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"remindctl\"",
+            content: "\"通过命令行读取、创建、完成和管理 Apple Reminders，可把系统提醒事项接入终端与自动化脚本。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tesseract-lang\"",
+            content: "\"为 Tesseract OCR 安装额外语言训练数据，使其能够识别英语之外的多种语言和文字系统。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"thefuck\"",
+            content: "\"根据上一条失败命令推测并生成修正版本，确认后可直接重新执行，适合快速处理常见拼写和参数错误。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tldr\"",
+            content: "\"提供社区维护的简明命令帮助页，以常见使用示例代替冗长手册，适合快速回忆命令和参数。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"topgrade\"",
+            content: "\"统一检查并升级 Homebrew、语言包管理器、Shell 插件和其他开发工具，可在一次运行中完成多套环境更新。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"tree\"",
+            content: "\"以缩进树状结构显示目录和文件，可限制层级、筛选类型并用于快速展示项目或资料目录结构。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"typst\"",
+            content: "\"现代标记式排版系统，可从简洁源文件生成高质量 PDF，适用于论文、报告、简历和带公式的技术文档。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"wget\"",
+            content: "\"支持 HTTP、HTTPS 和 FTP 的网络下载工具，可执行递归下载、断点续传、批量抓取和非交互式脚本任务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"macOCR\"",
+            content: "\"基于 macOS Vision 框架的开源 OCR 命令行工具；运行 `ocr` 后可框选屏幕区域识别文字，将结果输出到终端并自动复制到剪贴板，也支持指定识别语言、直接处理图片文件和按坐标截取固定区域。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"resume-cli\"",
+            content: "\"JSON Resume 官方命令行工具，可校验简历数据、启动本地预览，并使用主题导出 HTML 或 PDF 等格式。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"jsonresume-theme-even\"",
+            content: "\"JSON Resume 的 Even 主题包，为 `resume-cli` 提供简洁的简历排版模板；它是主题资源而不是独立的主要命令。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"BabelDOC\"",
+            content: "\"面向论文和复杂 PDF 的文档翻译与重排工具，可通过命令行处理文件并生成便于双语对照阅读的结果，官方推荐使用 `uv tool` 隔离安装。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"chardetect\"",
+            content: "\"chardet 附带的编码检测命令，可分析文本或字节文件并估计其字符编码与置信度，适合处理来源不明的旧文本。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"mdict\"",
+            content: "\"MDict 词典打包与解包工具，可读取 MDX/MDD 元信息和词条、查询内容，并把词典资源拆分或重新打包。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyGlossary\"",
+            content: "\"电子词典格式转换套件，提供 `pyglossary`、`pyglossary-diff` 和 `pyglossary-view` 等命令，用于转换、比较和查看多种词典文件。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"PyMuPDF\"",
+            content: "\"PDF 与文档处理库附带的命令入口，可提取文本和图片、检查文档结构并执行转换，适合脚本化处理 PDF。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },{
+            title: "\"RapidOCR ONNX Runtime\"",
+            content: "\"基于 ONNX Runtime 的跨平台本地 OCR 工具，可执行文字检测与识别，不依赖在线 OCR 服务。\"",
+            permalink: "\"/zh/mac-apps/\"",
+            preview: "",
+            date: ""
+        },];
+    (() => {
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = async (...args) => {
+            const response = await nativeFetch(...args);
+            const requestURL = typeof args[0] === "string" ? args[0] : args[0]?.url || "";
+            if (!requestURL.endsWith("search.json") && !requestURL.includes("/search/")) return response;
+            const data = await response.clone().json();
+            const merged = data.concat(window.searchExtraData || []);
+            return new Response(JSON.stringify(merged), { headers: { "Content-Type": "application/json" } });
+        };
+    })();
 </script><script type="text/javascript" src="/ts/search.js" defer></script>
 
 <footer class="site-footer">
@@ -707,7 +2152,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.0ac1375407717d3a42c7f7af4cb4bbdfc33d499fa5f5dba34a7a92d7b4a61a8e.js" defer></script>
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.2e6e579bdb52b9e2cba422be2c3bd4efecbeed8e2ac4f68165bcdde83a55ca86.js" defer></script>
 
 
     </body>
