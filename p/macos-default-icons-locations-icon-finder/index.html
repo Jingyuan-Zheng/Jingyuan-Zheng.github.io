@@ -777,7 +777,7 @@
             <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
 <time class="article-time--published" datetime='2026-08-07T18:00:00&#43;02:00'>07/Aug/2026</time>
             <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
-<time class="article-time--reading">7 minutes read</time>
+<time class="article-time--reading">8 minutes read</time>
         </div>
         
         <div class="article-meta__translations inline-meta"><svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
@@ -942,6 +942,16 @@
     >Icon Finder project page</a> and open its Releases section to get the latest version. Open the DMG and drag <code>Icon Finder.app</code> to <code>Drag to Here</code>. The app supports macOS 13 or later.</p>
 <p>If this project is useful to you, please consider giving it a <strong>Star</strong> to encourage the author.</p>
 <p>This release is not notarized by Apple. If macOS warns that the developer cannot be verified the first time you open it, use Finder’s <strong>Open</strong> command or confirm the app in <strong>System Settings → Privacy &amp; Security</strong>.</p>
+<p>If macOS says that “Icon Finder” is damaged and cannot be opened, first make sure the app came from the official GitHub Release. Then remove the quarantine attribute from the installed app in Terminal:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">xattr -dr com.apple.quarantine <span class="s2">&#34;/Applications/Icon Finder.app&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Open the app again after the command finishes. It removes only the downloaded-file quarantine attribute from this app; it does not modify the application code.</p>
 <h2 id="how-to-find-and-copy-an-icon">How to find and copy an icon
 </h2><h3 id="find-a-system-icon">Find a system icon
 </h3><ol>

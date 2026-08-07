@@ -778,7 +778,7 @@
             <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
 <time class="article-time--published" datetime='2026-08-07T18:00:00&#43;02:00'>07/8月/2026</time>
             <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
-<time class="article-time--reading">阅读时长: 6 分钟</time>
+<time class="article-time--reading">阅读时长: 7 分钟</time>
         </div>
         
         <div class="article-meta__translations inline-meta"><svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
@@ -935,6 +935,16 @@
     >Icon Finder 项目主页</a>，再进入项目的 Releases 页面获取最新版本。打开 DMG 后，把 <code>Icon Finder.app</code> 拖到 <code>Drag to Here</code>，就会安装到“应用程序”目录。Icon Finder 支持 macOS 13 或更高版本。</p>
 <p>如果这个项目对你有用，欢迎给作者一个 <strong>Star</strong> 鼓励一下！</p>
 <p>这是一个未进行 Apple notarization 的开源版本。如果 macOS 第一次打开时提示无法验证开发者，可以在 Finder 中右键点击 App，选择“打开”，或前往“系统设置 → 隐私与安全性”确认打开。</p>
+<p>如果 macOS 提示“Icon Finder 已损坏，无法打开”，请先确认 App 来自官方 GitHub Release，然后打开“终端”，移除已安装 App 的下载隔离标记：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">xattr -dr com.apple.quarantine <span class="s2">&#34;/Applications/Icon Finder.app&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令执行后再次打开 App。它只会移除该 App 的下载隔离属性，不会修改应用程序代码。</p>
 <h2 id="如何查找和复制图标">如何查找和复制图标
 </h2><h3 id="查找一个系统图标">查找一个系统图标
 </h3><ol>
