@@ -1,0 +1,16 @@
+{
+  "name": "Jingyuan",
+  "short_name": "Jingyuan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5fa",
+  "theme_color": "#f5f5fa",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
