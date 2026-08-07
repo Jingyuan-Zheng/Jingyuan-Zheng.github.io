@@ -639,10 +639,18 @@ asset_collections:
     label: "google-account-registration-guide"
     media_folder: /static/img/google-account-registration-guide
     public_folder: /img/google-account-registration-guide
+  - name: img_home_app_icons
+    label: "home-app-icons"
+    media_folder: /static/img/home-app-icons
+    public_folder: /img/home-app-icons
   - name: img_launchpad
     label: "launchpad"
     media_folder: /static/img/launchpad
     public_folder: /img/launchpad
+  - name: img_mac_app_icons
+    label: "mac-app-icons"
+    media_folder: /static/img/mac-app-icons
+    public_folder: /img/mac-app-icons
   - name: img_mac_lite_translator
     label: "mac-lite-translator"
     media_folder: /static/img/mac-lite-translator

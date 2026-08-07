@@ -1219,6 +1219,24 @@
       />
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/zh/mac-apps/</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/mac-apps/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/mac-apps/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/mac-apps/"
+      />
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/zh/dashboard/</loc>
     <xhtml:link
       rel="alternate"
