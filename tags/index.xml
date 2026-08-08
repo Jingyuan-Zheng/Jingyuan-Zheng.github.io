@@ -6,7 +6,73 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Fri, 07 Aug 2026 18:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 08 Aug 2026 14:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Agent Skill</title>
+            <link>https://jingyuan-zheng.github.io/tags/agent-skill/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/agent-skill/</guid>
+            <description></description>
+        </item><item>
+            <title>Apple Dictionary</title>
+            <link>https://jingyuan-zheng.github.io/tags/apple-dictionary/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/apple-dictionary/</guid>
+            <description></description>
+        </item><item>
+            <title>AppleScript</title>
+            <link>https://jingyuan-zheng.github.io/tags/applescript/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/applescript/</guid>
+            <description></description>
+        </item><item>
+            <title>Disk Images</title>
+            <link>https://jingyuan-zheng.github.io/tags/disk-images/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/disk-images/</guid>
+            <description></description>
+        </item><item>
+            <title>DMG</title>
+            <link>https://jingyuan-zheng.github.io/tags/dmg/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/dmg/</guid>
+            <description></description>
+        </item><item>
+            <title>ISO</title>
+            <link>https://jingyuan-zheng.github.io/tags/iso/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/iso/</guid>
+            <description></description>
+        </item><item>
+            <title>MacOS</title>
+            <link>https://jingyuan-zheng.github.io/tags/macos/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/macos/</guid>
+            <description></description>
+        </item><item>
+            <title>MacOS Eject Disk Images</title>
+            <link>https://jingyuan-zheng.github.io/tags/macos-eject-disk-images/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/macos-eject-disk-images/</guid>
+            <description></description>
+        </item><item>
+            <title>MacOS Shortcut</title>
+            <link>https://jingyuan-zheng.github.io/tags/macos-shortcut/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/macos-shortcut/</guid>
+            <description></description>
+        </item><item>
+            <title>MDict</title>
+            <link>https://jingyuan-zheng.github.io/tags/mdict/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/mdict/</guid>
+            <description></description>
+        </item><item>
+            <title>MDX</title>
+            <link>https://jingyuan-zheng.github.io/tags/mdx/</link>
+            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/mdx/</guid>
+            <description></description>
+        </item><item>
             <title>Assets.car</title>
             <link>https://jingyuan-zheng.github.io/tags/assets.car/</link>
             <pubDate>Fri, 07 Aug 2026 18:00:00 +0200</pubDate>
@@ -187,12 +253,6 @@
             <guid>https://jingyuan-zheng.github.io/tags/clipboard/</guid>
             <description></description>
         </item><item>
-            <title>MacOS</title>
-            <link>https://jingyuan-zheng.github.io/tags/macos/</link>
-            <pubDate>Thu, 09 Jul 2026 18:45:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/macos/</guid>
-            <description></description>
-        </item><item>
             <title>Swift</title>
             <link>https://jingyuan-zheng.github.io/tags/swift/</link>
             <pubDate>Thu, 09 Jul 2026 18:45:00 +0200</pubDate>
@@ -305,12 +365,6 @@
             <link>https://jingyuan-zheng.github.io/tags/bash/</link>
             <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/bash/</guid>
-            <description></description>
-        </item><item>
-            <title>DMG</title>
-            <link>https://jingyuan-zheng.github.io/tags/dmg/</link>
-            <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/dmg/</guid>
             <description></description>
         </item><item>
             <title>Dictionary</title>
