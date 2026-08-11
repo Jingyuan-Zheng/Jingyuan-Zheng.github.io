@@ -655,6 +655,10 @@ asset_collections:
     label: "mac-lite-translator"
     media_folder: /static/img/mac-lite-translator
     public_folder: /img/mac-lite-translator
+  - name: img_macos_custom_video_wallpaper_snoopy
+    label: "macos-custom-video-wallpaper-snoopy"
+    media_folder: /static/img/macos-custom-video-wallpaper-snoopy
+    public_folder: /img/macos-custom-video-wallpaper-snoopy
   - name: img_macos_default_icons_locations_icon_finder
     label: "macos-default-icons-locations-icon-finder"
     media_folder: /static/img/macos-default-icons-locations-icon-finder

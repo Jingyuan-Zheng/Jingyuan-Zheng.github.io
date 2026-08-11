@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#f5f5fa' media='(prefers-color-scheme: light)'>
+<meta name='theme-color' content='#303030' media='(prefers-color-scheme: dark)'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/macos-custom-video-wallpaper-snoopy/","currentLanguage":"zh","englishTarget":"/p/macos-custom-video-wallpaper-snoopy/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="使用 Phosphene 把任意视频加入 macOS 系统墙纸设置，并实现锁屏播放、桌面静止和解锁时平滑定格；同时介绍如何提取 Apple TV 的高清 Snoopy 屏保视频。">
+<title>如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7bb0feb8a8df7755e66613cd39364dd33694c7165bff038e0938ffa05e4420e.css"><meta property='og:title' content="如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）">
+<meta property='og:description' content="使用 Phosphene 把任意视频加入 macOS 系统墙纸设置，并实现锁屏播放、桌面静止和解锁时平滑定格；同时介绍如何提取 Apple TV 的高清 Snoopy 屏保视频。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='视频壁纸' /><meta property='article:tag' content='Phosphene' /><meta property='article:tag' content='Snoopy' /><meta property='article:tag' content='动态壁纸' /><meta property='article:tag' content='锁屏' /><meta property='article:tag' content='Apple TV' /><meta property='article:published_time' content='2026-08-11T21:45:00&#43;02:00'/><meta property='article:modified_time' content='2026-08-11T21:45:00&#43;02:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/macos-custom-video-wallpaper-snoopy/featured.webp' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）">
+<meta name="twitter:description" content="使用 Phosphene 把任意视频加入 macOS 系统墙纸设置，并实现锁屏播放、桌面静止和解锁时平滑定格；同时介绍如何提取 Apple TV 的高清 Snoopy 屏保视频。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/macos-custom-video-wallpaper-snoopy/featured.webp' />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="shortcut icon" href="/favicon.png?v=2" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
+
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Jingyuan">
+<meta name="msapplication-TileImage" content="/favicon.png">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/macos-custom-video-wallpaper-snoopy/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/macos-custom-video-wallpaper-snoopy/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/macos/",
+          "name": "macOS",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/",
+          "name": "如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "macOS",
+        "工具推荐"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-08-11T21:45:00+02:00",
+      "datePublished": "2026-08-11T21:45:00+02:00",
+      "description": "使用 Phosphene 把任意视频加入 macOS 系统墙纸设置，并实现锁屏播放、桌面静止和解锁时平滑定格；同时介绍如何提取 Apple TV 的高清 Snoopy 屏保视频。",
+      "headline": "如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）",
+      "image": "https://jingyuan-zheng.github.io/img/macos-custom-video-wallpaper-snoopy/featured.webp",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "视频壁纸, Phosphene, Snoopy, 动态壁纸, 锁屏, Apple TV",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="mobile-menu-icon mobile-menu-icon--menu" aria-hidden="true"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg')" aria-hidden="true"></span></span>
+    </button>
+
+    <div class="mobile-profile-controls" aria-label="页面设置">
+        <button type="button" class="mobile-profile-control" data-mobile-scheme-toggle aria-label="切换深浅色模式" title="切换深浅色模式">
+            <span class="mobile-profile-control__sun"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg')" aria-hidden="true"></span></span>
+            <span class="mobile-profile-control__moon"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg')" aria-hidden="true"></span></span>
+        </button>
+        <button type="button" class="mobile-profile-control" data-mobile-language-toggle aria-label="切换语言" title="切换语言">
+            <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+        </button>
+    </div>
+
+    <header>
+        <figure class="site-avatar site-avatar--management">
+                <a class="site-avatar__home-link" href="/zh/" aria-label="返回主页">
+                    <img src="/img/avatar.png"
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <button
+                        class="emoji site-avatar__management-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="sidebar-management-menu"
+                        aria-label="打开网站管理选单"
+                        data-sidebar-management-toggle
+                        data-profile-emoji
+                    >
+                        <span class="profile-emoji-fallback" aria-hidden="true">🤩</span>
+                        <img
+                            class="profile-emoji-image"
+                            data-profile-emoji-image
+                            src="/img/smiling-face-with-hearts.png"
+                            data-default-src="/img/smiling-face-with-hearts-animated.png"
+                            data-birthday-src="/img/partying-face-animated.png"
+                            data-default-static-src="/img/smiling-face-with-hearts.png"
+                            data-birthday-static-src="/img/partying-face.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </button>
+                
+                <div
+    class="sidebar-management-menu"
+    id="sidebar-management-menu"
+    role="menu"
+    aria-label="网站管理"
+    data-sidebar-management-menu
+    hidden
+>
+    <div class="sidebar-management-menu__header">
+        <div class="sidebar-management-menu__heading">
+            <strong>网站管理</strong>
+            <small>仅供网站管理员使用，不对外开放</small>
+        </div>
+        <a href="/zh/">返回主页</a>
+    </div>
+    <div class="sidebar-management-menu__items">
+            <a
+                href="/admin/"
+                role="menuitem"
+                
+                
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/database.svg')" aria-hidden="true"></span>
+                </span>
+                <span>内容管理</span>
+            </a>
+            <a
+                href="https://comments.zjy.is-a.dev/ui"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                </span>
+                <span>评论管理</span>
+            </a>
+            <a
+                href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?origin=NeoPortalPage&amp;subpage=design&amp;id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUMUpUVVdFVk82T0wwVzBITkpRUUNRVDJKRC4u&amp;analysis=true&amp;tab=0"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+                </span>
+                <span>友链申请系统</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                </span>
+                <span>网站仓库主页</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/hugo-main"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code-2.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Hugo 源码</span>
+            </a>
+            <a
+                href="https://search.google.com/search-console"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlesearchconsole.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Search Console</span>
+            </a>
+            <a
+                href="https://www.bing.com/webmasters/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bing.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Bing Webmasters</span>
+            </a>
+            <a
+                href="https://analytics.google.com/analytics/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Analytics</span>
+            </a>
+            <a
+                href="https://clarity.microsoft.com/projects/view/xsh8jmde5h/dashboard"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/chart-no-axes-combined.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Microsoft Clarity</span>
+            </a>
+            <a
+                href="https://dash.cloudflare.com/"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Cloudflare 控制台</span>
+            </a>
+            <a
+                href="https://vercel.com/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Vercel 控制台</span>
+            </a>
+            <a
+                href="https://console.neon.tech/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/neon.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Neon 控制台</span>
+            </a>
+    </div>
+</div>
+
+            </figure>
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='/zh/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg class="lucide lucide-house" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg class="lucide lucide-circle-user-round" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg class="lucide lucide-archive" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg class="lucide lucide-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg class="lucide lucide-images" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/><circle cx="13" cy="7" r="1" fill="currentColor"/><rect x="8" y="2" width="14" height="14" rx="2"/></svg>
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/links/' >
+                
+                    <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">
+                        <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/macos-custom-video-wallpaper-snoopy/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/macos-custom-video-wallpaper-snoopy/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <span class="sidebar-color-icon sidebar-color-icon--light">
+                            <svg class="lucide lucide-toggle-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+
+                        </span>
+                        <span class="sidebar-color-icon sidebar-color-icon--dark">
+                            <svg class="lucide lucide-toggle-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="7"/><circle cx="15" cy="12" r="3"/></svg>
+
+                        </span>
+                        <span>暗色模式</span>
+                    </li>
+                
+
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg class="lucide lucide-list-tree" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h13"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="M3 10a2 2 0 0 0 2 2h3"/><path d="M3 5v12a2 2 0 0 0 2 2h3"/></svg>
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#先来一个效果展示">先来一个效果展示</a></li>
+    <li><a href="#一般macos视频壁纸软件缺陷--缺乏的史努比snoopy视频壁纸">一般macOS视频壁纸软件缺陷 &amp; 缺乏的史努比Snoopy视频壁纸</a></li>
+    <li><a href="#软件介绍与优势">软件介绍与优势</a>
+      <ol>
+        <li><a href="#phosphene-的主要功能">Phosphene 的主要功能</a></li>
+      </ol>
+    </li>
+    <li><a href="#步骤">步骤</a>
+      <ol>
+        <li><a href="#安装-phosphene">安装 Phosphene</a></li>
+        <li><a href="#获取原版-apple-tv-的-snoopy-屏保">获取原版 Apple TV 的 Snoopy 屏保</a></li>
+        <li><a href="#视频壁纸的安装">视频壁纸的安装</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#qa">Q&amp;A</a>
+      <ol>
+        <li><a href="#phosphene-支持哪些-mac">Phosphene 支持哪些 Mac？</a></li>
+        <li><a href="#一定要下载-snoopy-saver-才能使用吗">一定要下载 Snoopy-Saver 才能使用吗？</a></li>
+        <li><a href="#退出-phosphene-后视频壁纸为什么还能播放">退出 Phosphene 后，视频壁纸为什么还能播放？</a></li>
+        <li><a href="#墙纸变灰卡住或显示了错误的视频怎么办">墙纸变灰、卡住或显示了错误的视频怎么办？</a></li>
+        <li><a href="#怎样减少耗电">怎样减少耗电？</a></li>
+        <li><a href="#为什么要修改-snoopy-saver-的安装脚本">为什么要修改 Snoopy-Saver 的安装脚本？</a></li>
+        <li><a href="#snoopy-视频可以随意重新上传或商用吗">Snoopy 视频可以随意重新上传或商用吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/macos-custom-video-wallpaper-snoopy/">
+            <img alt="Featured image of post 如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/macos-custom-video-wallpaper-snoopy/featured.webp">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">macOS</a>
+        
+            
+            
+            
+            <a href="/zh/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" style="background-color: hsl(166, 60%, 84%); color: hsl(166, 60%, 15%);">工具推荐</a>
+        
+    </header>
+    
+    <div class="article-title-wrapper">
+        <h2 class="article-title"><a href="/zh/p/macos-custom-video-wallpaper-snoopy/">如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）</a></h2>
+        <h3 class="article-subtitle">使用 Phosphene 把任意视频加入 macOS 系统墙纸设置，并实现锁屏播放、桌面静止和解锁时平滑定格；同时介绍如何提取 Apple TV 的高清 Snoopy 屏保视频。</h3>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+        <div class="article-meta__time inline-meta">
+            <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+<time class="article-time--published" datetime='2026-08-11T21:45:00&#43;02:00'>11/8月/2026</time>
+            <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
+<time class="article-time--reading">阅读时长: 10 分钟</time>
+        </div>
+        
+        <div class="article-meta__translations inline-meta"><svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+<a href="/p/macos-custom-video-wallpaper-snoopy/" class="link">English</a></div>
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="如何在MacOS上设置自己喜欢的视频当作视频壁纸并适配系统级锁屏和解锁特效（附：设置史努比Snoopy屏保和壁纸教程）"
+    data-share-url="https://zjy.is-a.dev/zh/p/macos-custom-video-wallpaper-snoopy/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接">
+        <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmacos-custom-video-wallpaper-snoopy%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%A6%82%E4%BD%95%E5%9C%A8MacOS%E4%B8%8A%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AC%A2%E7%9A%84%E8%A7%86%E9%A2%91%E5%BD%93%E4%BD%9C%E8%A7%86%E9%A2%91%E5%A3%81%E7%BA%B8%E5%B9%B6%E9%80%82%E9%85%8D%E7%B3%BB%E7%BB%9F%E7%BA%A7%E9%94%81%E5%B1%8F%E5%92%8C%E8%A7%A3%E9%94%81%E7%89%B9%E6%95%88%EF%BC%88%E9%99%84%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%8F%B2%E5%8A%AA%E6%AF%94Snoopy%E5%B1%8F%E4%BF%9D%E5%92%8C%E5%A3%81%E7%BA%B8%E6%95%99%E7%A8%8B%EF%BC%89" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmacos-custom-video-wallpaper-snoopy%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=%E5%A6%82%E4%BD%95%E5%9C%A8MacOS%E4%B8%8A%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AC%A2%E7%9A%84%E8%A7%86%E9%A2%91%E5%BD%93%E4%BD%9C%E8%A7%86%E9%A2%91%E5%A3%81%E7%BA%B8%E5%B9%B6%E9%80%82%E9%85%8D%E7%B3%BB%E7%BB%9F%E7%BA%A7%E9%94%81%E5%B1%8F%E5%92%8C%E8%A7%A3%E9%94%81%E7%89%B9%E6%95%88%EF%BC%88%E9%99%84%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%8F%B2%E5%8A%AA%E6%AF%94Snoopy%E5%B1%8F%E4%BF%9D%E5%92%8C%E5%A3%81%E7%BA%B8%E6%95%99%E7%A8%8B%EF%BC%89" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmacos-custom-video-wallpaper-snoopy%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=%E5%A6%82%E4%BD%95%E5%9C%A8MacOS%E4%B8%8A%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AC%A2%E7%9A%84%E8%A7%86%E9%A2%91%E5%BD%93%E4%BD%9C%E8%A7%86%E9%A2%91%E5%A3%81%E7%BA%B8%E5%B9%B6%E9%80%82%E9%85%8D%E7%B3%BB%E7%BB%9F%E7%BA%A7%E9%94%81%E5%B1%8F%E5%92%8C%E8%A7%A3%E9%94%81%E7%89%B9%E6%95%88%EF%BC%88%E9%99%84%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%8F%B2%E5%8A%AA%E6%AF%94Snoopy%E5%B1%8F%E4%BF%9D%E5%92%8C%E5%A3%81%E7%BA%B8%E6%95%99%E7%A8%8B%EF%BC%89" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#先来一个效果展示">先来一个效果展示</a></li>
+    <li><a href="#一般macos视频壁纸软件缺陷--缺乏的史努比snoopy视频壁纸">一般macOS视频壁纸软件缺陷 &amp; 缺乏的史努比Snoopy视频壁纸</a></li>
+    <li><a href="#软件介绍与优势">软件介绍与优势</a>
+      <ol>
+        <li><a href="#phosphene-的主要功能">Phosphene 的主要功能</a></li>
+      </ol>
+    </li>
+    <li><a href="#步骤">步骤</a>
+      <ol>
+        <li><a href="#安装-phosphene">安装 Phosphene</a></li>
+        <li><a href="#获取原版-apple-tv-的-snoopy-屏保">获取原版 Apple TV 的 Snoopy 屏保</a></li>
+        <li><a href="#视频壁纸的安装">视频壁纸的安装</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#qa">Q&amp;A</a>
+      <ol>
+        <li><a href="#phosphene-支持哪些-mac">Phosphene 支持哪些 Mac？</a></li>
+        <li><a href="#一定要下载-snoopy-saver-才能使用吗">一定要下载 Snoopy-Saver 才能使用吗？</a></li>
+        <li><a href="#退出-phosphene-后视频壁纸为什么还能播放">退出 Phosphene 后，视频壁纸为什么还能播放？</a></li>
+        <li><a href="#墙纸变灰卡住或显示了错误的视频怎么办">墙纸变灰、卡住或显示了错误的视频怎么办？</a></li>
+        <li><a href="#怎样减少耗电">怎样减少耗电？</a></li>
+        <li><a href="#为什么要修改-snoopy-saver-的安装脚本">为什么要修改 Snoopy-Saver 的安装脚本？</a></li>
+        <li><a href="#snoopy-视频可以随意重新上传或商用吗">Snoopy 视频可以随意重新上传或商用吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/">https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>本文介绍一个依靠 macOS 系统墙纸机制运行的自定义视频壁纸方案：既能把任意视频加入“系统设置 → 墙纸”，也能实现锁屏播放、桌面静止和解锁时平滑定格，并附带 Apple TV 高清史努比 Snoopy 屏保视频的提取方法。</p>
+<h2 id="先来一个效果展示">先来一个效果展示
+</h2><div class="post-figure">
+    <video controls playsinline muted preload="metadata" poster="/img/macos-custom-video-wallpaper-snoopy/featured.webp" style="width: 100%; height: auto; border-radius: 8px;">
+        <source src="/img/macos-custom-video-wallpaper-snoopy/lock-screen-demo.mp4" type="video/mp4">
+        你的浏览器暂不支持 HTML5 视频播放。
+    </video>
+    <div class="caption">演示 1：锁屏时播放 Snoopy 动画，解锁后平滑回到桌面。</div>
+</div>
+<h2 id="一般macos视频壁纸软件缺陷--缺乏的史努比snoopy视频壁纸">一般macOS视频壁纸软件缺陷 &amp; 缺乏的史努比Snoopy视频壁纸
+</h2><p>在 Mac 上设置视频壁纸，往往需要单独下载 Wallpaper Engine 一类的动态壁纸软件。这些软件可能收费，需要在后台持续循环播放视频，不能在系统锁屏页面播放，也无法实现解锁时缓慢定格等系统级效果，更不能通过 macOS 的墙纸设置统一管理和切换。</p>
+<p>许多人也很喜欢 Apple TV 自带的史努比 Snoopy 屏保，遗憾的是苹果并没有将它引入 Mac，这些可爱的屏保和壁纸不能在 macOS 中直接使用。现在已经存在若干移植方案，比如 <a class="link" href="https://github.com/hitnology/snoopy"  target="_blank" rel="noopener"
+    >Snoopy</a> 和 <a class="link" href="https://github.com/Cyber-Yichen/Snoopy-Saver"  target="_blank" rel="noopener"
+    >Snoopy-Saver</a>。它们主要通过传统屏幕保护程序等方式实现，不能直接设置为桌面壁纸；部分旧方案还存在内存占用高、壁纸不全等问题。</p>
+<p><strong>本文介绍一个能够实现系统级自定义视频壁纸的方案：视频可以像 macOS 自带墙纸一样出现在系统设置中，整个播放过程依赖系统的墙纸管道，不需要壁纸管理软件持续在后台运行。</strong> 后文还会介绍如何在不安装 Xcode 等开发工具的情况下，获取 Apple TV 中完整、高清的史努比 Snoopy 屏保视频。如果你只想把自己的视频设为壁纸，可以直接跳到“视频壁纸的安装”。</p>
+<h2 id="软件介绍与优势">软件介绍与优势
+</h2><p>本文主要通过 <a class="link" href="https://github.com/kageroumado/phosphene"  target="_blank" rel="noopener"
+    >Phosphene</a> 实现。这是一款通过 macOS 私有墙纸框架提供原生级视频壁纸功能的开源软件：导入的视频会和苹果自带的 Aerials 视频墙纸一样显示在系统墙纸设置中，并获得锁屏播放、解锁时从动态画面平滑切换到静态墙纸等系统级效果；你也可以按喜好让视频在桌面上持续播放。</p>
+<p>由于 Phosphene 使用 macOS 内置的墙纸管道，这些功能不需要像普通动态壁纸软件那样让主程序一直驻留。设置完成后，即使使用 <code>⌘ Command + Q</code> 完全退出 Phosphene，系统的 <code>WallpaperAgent</code> 仍会通过 Phosphene 的墙纸扩展负责播放、锁屏、待机和熄屏状态切换。</p>
+<h3 id="phosphene-的主要功能">Phosphene 的主要功能
+</h3><ul>
+<li><strong>导入自己的视频</strong>：支持 MP4、MOV 以及 macOS AVFoundation 能读取的视频格式，导入后直接显示在“系统设置 → 墙纸”中。</li>
+<li><strong>无缝循环播放</strong>：在循环边界连续衔接画面，减少普通播放器循环时的停顿或闪烁。</li>
+<li><strong>多显示器和不同桌面空间</strong>：可以由 macOS 为不同显示器或 Space 保存墙纸选择。</li>
+<li><strong>跟随电量和系统状态调整</strong>：会根据供电方式、电池电量、温度、游戏模式、锁屏和闲置状态调整播放策略。</li>
+<li><strong>锁屏专用模式</strong>：开启 <code>Only on Lock Screen</code> 后，桌面显示静态画面，锁屏时再播放，并在解锁时平滑减速定格。</li>
+<li><strong>被窗口完全遮挡时暂停</strong>：可通过 <code>Pause When Hidden</code> 减少不必要的渲染。</li>
+<li><strong>生成不同质量版本</strong>：可为视频建立较低分辨率或帧率的变体，在省电状态下自动使用更轻量的版本。</li>
+<li><strong>菜单栏管理</strong>：可以预览当前墙纸、暂停播放、切换显示器、打开墙纸设置或重启系统墙纸代理。</li>
+</ul>
+<p>需要注意的是，Phosphene 使用的是 Apple 未公开的私有框架，macOS 大版本更新后存在需要适配的可能。截至本文发布时，当前版本为 <strong>Phosphene 1.2.2</strong>，要求 <strong>macOS Tahoe 26 或更高版本</strong>，同时提供 Apple 芯片和 Intel Mac 的通用版本。</p>
+<h2 id="步骤">步骤
+</h2><h3 id="安装-phosphene">安装 Phosphene
+</h3><p>如果你已经安装 Homebrew，可以通过下面的命令安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install --cask phosphene
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你也可以前往 Phosphene 的 <a class="link" href="https://github.com/kageroumado/phosphene/releases/tag/v1.2.2"  target="_blank" rel="noopener"
+    >GitHub Releases</a> 下载签名并经过 notarization 的 DMG，把 Phosphene 拖入“应用程序”文件夹后打开。</p>
+<h3 id="获取原版-apple-tv-的-snoopy-屏保">获取原版 Apple TV 的 Snoopy 屏保
+</h3><p>虽然可以通过 Xcode 下载 Apple TV 模拟环境并从中获取原版屏保，但整个过程终究太麻烦。</p>
+<p>GitHub 上的 <a class="link" href="https://github.com/Cyber-Yichen/Snoopy-Saver"  target="_blank" rel="noopener"
+    >Snoopy-Saver</a> 项目已经收集了完整屏保资源，并制作成可以在 Mac 上使用的屏幕保护程序。它本身是传统的屏幕保护程序，不属于 Aerials 视频墙纸，无法同时在桌面播放或实现本文所需的系统视频墙纸效果；因此，这里不会安装它，只会从安装包中取出 Apple TV 的高清原版视频文件。</p>
+<p>打开 Snoopy-Saver 的 <a class="link" href="https://github.com/Cyber-Yichen/Snoopy-Saver/releases/tag/V1.1.0"  target="_blank" rel="noopener"
+    >Snoopy 1.1 Release 页面</a>，下载下面 <strong>5 个附件</strong>：</p>
+<ul>
+<li><code>Install-Snoopy-1.1.zip</code></li>
+<li><code>Snoopy-1.1.dmg.part-aa</code></li>
+<li><code>Snoopy-1.1.dmg.part-ab</code></li>
+<li><code>Snoopy-1.1.dmg.part-ac</code></li>
+<li><code>Snoopy-1.1.dmg.part-ad</code></li>
+</ul>
+<p>四个 DMG 分卷每个大约 1.85 GB，请先确认磁盘空间和网络流量足够。页面中自动生成的 <code>Source code</code> 压缩包不是这里需要的文件，不必下载。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/download-assets.webp" alt="Snoopy-Saver Release 页面中的安装器 ZIP 和四个 DMG 分卷">
+    <div class="caption">图 1：需要下载安装器 ZIP 和 aa、ab、ac、ad 四个 DMG 分卷。</div>
+</div>
+<p>解压 <code>Install-Snoopy-1.1.zip</code>，并确保得到的 <code>Install Snoopy.command</code> 和四个 DMG 分卷位于同一个文件夹。Release 原版脚本会在重组、校验 DMG 后继续安装屏幕保护程序；我们只需要里面的视频资源，所以先不要运行脚本，而是在 Finder 中右键 <code>Install Snoopy.command</code>，选择“打开方式 → 文本编辑”。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/edit-installer-script.webp" alt="在 Finder 中用文本编辑打开 Install Snoopy.command">
+    <div class="caption">图 2：先用“文本编辑”打开命令文件，不要直接执行原安装流程。</div>
+</div>
+<p>打开后按下 <code>⌘ Command + A</code> 全选，再按 <code>Delete</code> 删除原内容，然后替换为下面的脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="nb">set</span> -euo pipefail
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">EXPECTED_SHA256</span><span class="o">=</span><span class="s2">&#34;63b20990a6d6d7aaa6e485bac91587a28e19eb2acedf465f0acfeeea089f8b17&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PART_NAMES</span><span class="o">=(</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;Snoopy-1.1.dmg.part-aa&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;Snoopy-1.1.dmg.part-ab&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;Snoopy-1.1.dmg.part-ac&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;Snoopy-1.1.dmg.part-ad&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span><span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PART_DIR</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> candidate in <span class="s2">&#34;</span><span class="nv">$SCRIPT_DIR</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$SCRIPT_DIR</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">complete</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> name in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PART_NAMES</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[[</span> -f <span class="s2">&#34;</span><span class="nv">$candidate</span><span class="s2">/</span><span class="nv">$name</span><span class="s2">&#34;</span> <span class="o">]]</span> <span class="o">||</span> <span class="nv">complete</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">done</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$complete</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">PART_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$candidate</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">break</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -z <span class="s2">&#34;</span><span class="nv">$PART_DIR</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;错误：没有找到全部 4 个 DMG 分卷。&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Please place the installer and all four DMG parts in the same folder.&#34;</span>
+</span></span><span class="line"><span class="cl">  /usr/bin/osascript -e <span class="s1">&#39;display alert &#34;缺少 Snoopy 安装文件&#34; message &#34;请把安装器和全部 4 个 DMG 分卷放在同一个文件夹，再重新打开。&#34; as critical&#39;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DMG</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PART_DIR</span><span class="s2">/Snoopy-1.1.dmg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TEMP_DMG</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PART_DIR</span><span class="s2">/Snoopy-1.1.dmg.tmp&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cleanup<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  rm -f <span class="s2">&#34;</span><span class="nv">$TEMP_DMG</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">trap</span> cleanup EXIT INT TERM
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;正在重组 Snoopy 1.1 DMG，请稍候…&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> name in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PART_NAMES</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  /bin/cat <span class="s2">&#34;</span><span class="nv">$PART_DIR</span><span class="s2">/</span><span class="nv">$name</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span> &gt; <span class="s2">&#34;</span><span class="nv">$TEMP_DMG</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;正在校验 SHA-256…&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">ACTUAL_SHA256</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>shasum -a <span class="m">256</span> <span class="s2">&#34;</span><span class="nv">$TEMP_DMG</span><span class="s2">&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$ACTUAL_SHA256</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$EXPECTED_SHA256</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;错误：DMG 校验失败。请重新下载全部分卷。&#34;</span>
+</span></span><span class="line"><span class="cl">  /usr/bin/osascript -e <span class="s1">&#39;display alert &#34;Snoopy 安装文件损坏&#34; message &#34;DMG 的 SHA-256 校验失败。请删除并重新下载全部 4 个分卷。&#34; as critical&#39;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mv -f <span class="s2">&#34;</span><span class="nv">$TEMP_DMG</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$DMG</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;DMG 重组完成：&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$DMG</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">open -R <span class="s2">&#34;</span><span class="nv">$DMG</span><span class="s2">&#34;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/osascript -e <span class="s1">&#39;display dialog &#34;Snoopy 1.1 DMG 已成功重组并通过 SHA-256 校验。&#34; buttons {&#34;好&#34;} default button &#34;好&#34; with icon note&#39;</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这段脚本保留了 Release 原有的分卷检查和 SHA-256 校验，但移除了把屏保安装进系统的步骤，只会把四个分卷合并成完整的 DMG 磁盘映像。</p>
+<p>保存修改后，双击 <code>Install Snoopy.command</code>。脚本完成时会在同一目录生成 <code>Snoopy-1.1.dmg</code>，并在 Finder 中显示它。如果 macOS 阻止运行，可以确认文件来自上面的项目 Release 后，右键脚本选择“打开”；必要时再前往“系统设置 → 隐私与安全性”选择“仍要打开”。</p>
+<p>双击打开 DMG，会看到其中的 <code>Snoopy.saver</code>。把它拖到一个可以正常搜索的文件夹中，例如当前下载目录；不要直接在只读的 DMG 窗口里继续操作。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/snoopy-dmg.webp" alt="Snoopy 1.1 DMG 中的 Snoopy.saver 文件">
+    <div class="caption">图 3：DMG 中的 Snoopy.saver 包，先把它拖到普通文件夹。</div>
+</div>
+<p>在刚刚复制出来的 <code>Snoopy.saver</code> 上右键。<strong>注意不要双击，也不要选择菜单第一项“打开”</strong>，而要选择 <strong>“显示包内容”</strong>；如果 Finder 使用英文，则对应 <code>Show Package Contents</code>。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/show-package-contents.webp" alt="Finder 右键菜单中的 Show Package Contents 显示包内容">
+    <div class="caption">图 4：在 Snoopy.saver 上右键，选择“显示包内容”。</div>
+</div>
+<p>进入屏幕保护程序包后，不必在复杂目录中逐层寻找。直接在 Finder 搜索框输入 <code>.mov</code>，并将搜索范围保留在 <code>Snoopy.saver</code> 中；随后按文件大小排序，就能快速找到适合作为壁纸的完整视频。包中还有许多很短的转场片段或图片资源，文件较大的 MOV 通常更容易对应完整场景。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/search-mov-files.webp" alt="在 Snoopy.saver 包中搜索 MOV 视频并按大小排序">
+    <div class="caption">图 5：搜索 .mov 并按大小排序，可以更快筛选完整场景。</div>
+</div>
+<h3 id="视频壁纸的安装">视频壁纸的安装
+</h3><p>打开刚刚安装的 Phosphene，将找到的 Snoopy 视频拖进主窗口；也可以点击右上角的 <code>+</code> 选择文件。</p>
+<p>当然，Phosphene 支持任意视频。除了 Snoopy，你也可以导入自己拍摄或下载的其他视频。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/phosphene-library.webp" alt="Phosphene 视频库中已导入的 Snoopy 视频">
+    <div class="caption">图 6：把视频拖入 Phosphene 后，它会出现在视频库中。</div>
+</div>
+<p>在 Phosphene 中选中一个视频，右侧会显示分辨率、帧率、时长、文件大小和编码格式。<code>Optimization</code> 提供三个档位：<code>Battery Saver</code>、<code>Balanced</code> 和 <code>Quality</code>，选择后可通过 <code>Create Variants</code> 生成适合不同电量状态的版本。</p>
+<p>我的建议是先保留默认的 <code>Balanced</code>。如果你特别在意画质，可以改为 <code>Quality</code>；如果更关注续航，则可以使用 <code>Battery Saver</code>。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/phosphene-quality.webp" alt="Phosphene 中 Battery Saver、Balanced 和 Quality 三种视频优化档位">
+    <div class="caption">图 7：默认 Balanced 通常已经够用，也可以按续航和画质需求调整。</div>
+</div>
+<p>最终效果仍主要取决于视频源本身。MacBook 的高分辨率屏幕更适合清晰、横向且画面稳定的视频；如果视频本身只有较低分辨率，把优化档位调高也不会凭空增加细节。</p>
+<p>如果你需要寻找 4K 视频素材，可以从下面几个网站开始：</p>
+<ul>
+<li><a class="link" href="https://www.pexels.com/home/videos/"  target="_blank" rel="noopener"
+    >Pexels Videos</a>：自然、城市和生活类素材较多。</li>
+<li><a class="link" href="https://pixabay.com/videos/search/4k/"  target="_blank" rel="noopener"
+    >Pixabay 4K Videos</a>：可以直接浏览 4K 分类。</li>
+<li><a class="link" href="https://mixkit.co/free-stock-video/"  target="_blank" rel="noopener"
+    >Mixkit 4K Stock Video</a>：提供 4K 与 HD 素材，并标明具体许可证类型。</li>
+<li><a class="link" href="https://www.ysjf.com/material"  target="_blank" rel="noopener"
+    >影视飓风素材库</a>：中文素材站，可继续寻找适合当作动态壁纸的高清视频。</li>
+</ul>
+<p>不同网站、不同素材的授权范围可能不完全相同。下载前请查看对应素材页的许可证，尤其不要把仅限个人使用或带有第三方版权角色的内容重新分发。</p>
+<p>完成导入后，视频墙纸会被 macOS 调用，并在“系统设置 → 墙纸”中与苹果自带墙纸一起显示。选择一个视频，就可以像切换系统墙纸一样进行设置。</p>
+<p>Phosphene 只是视频库和设置的管理入口。墙纸设置好后，可以使用 <code>⌘ Command + Q</code> 完全退出主程序，实际播放仍由 macOS 的墙纸进程和 Phosphene 扩展负责。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/system-wallpaper.webp" alt="macOS 系统设置墙纸页面中的 Phosphene Video Wallpapers 分组">
+    <div class="caption">图 8：导入的视频会显示在系统墙纸设置的 Phosphene 分组中。</div>
+</div>
+<p>如果以后要移除某个视频，建议在 Phosphene 中选中它并使用 <code>Delete from Library</code>；也可以先通过 <code>Show in Finder</code> 查看实际文件位置，再手动处理。</p>
+<p>默认情况下，视频会在桌面和锁屏持续播放，效果如下：</p>
+<div class="post-figure">
+    <video controls playsinline muted preload="metadata" poster="/img/macos-custom-video-wallpaper-snoopy/desktop-poster.webp" style="width: 100%; height: auto; border-radius: 8px;">
+        <source src="/img/macos-custom-video-wallpaper-snoopy/desktop-demo.mp4" type="video/mp4">
+        你的浏览器暂不支持 HTML5 视频播放。
+    </video>
+    <div class="caption">演示 2：视频墙纸在桌面上持续播放。</div>
+</div>
+<p>如果你想恢复 macOS 自带 Aerials 那种“只在锁屏播放、桌面保持静止，解锁时从动态画面平滑过渡到静态”的效果，可以点击菜单栏中的 Phosphene 图标，展开 <code>Options</code>，开启 <code>Only on Lock Screen</code>。</p>
+<div class="post-figure">
+    <img src="/img/macos-custom-video-wallpaper-snoopy/only-on-lock-screen.webp" alt="Phosphene 菜单栏设置中的 Only on Lock Screen 开关">
+    <div class="caption">图 9：开启 Only on Lock Screen 后，视频只在锁屏界面播放。</div>
+</div>
+<h2 id="总结">总结
+</h2><p>这套方案最重要的区别，不是简单地把一个视频窗口铺在桌面后面，而是让自定义视频真正进入 macOS 的系统墙纸管道。设置完成后，视频会出现在系统墙纸列表中，锁屏、解锁、睡眠和桌面状态都由 macOS 负责协调，Phosphene 主程序也不需要一直运行。</p>
+<p>如果你已经有喜欢的视频，安装 Phosphene、导入文件并在系统设置中选中它即可；Snoopy 部分完全是可选步骤。想获得更接近苹果自带 Aerials 的体验，记得开启 <code>Only on Lock Screen</code>；想让桌面一直动起来，则保持它关闭。</p>
+<p>目前最大的限制是 Phosphene 依赖未公开的系统框架，并且当前版本要求 macOS Tahoe 26 或更高版本。只要系统版本符合要求，这已经是我目前体验过最接近 macOS 原生动态墙纸的一种实现。</p>
+<h2 id="qa">Q&amp;A
+</h2><h3 id="phosphene-支持哪些-mac">Phosphene 支持哪些 Mac？
+</h3><p>截至本文发布时，Phosphene 1.2.2 要求 macOS Tahoe 26 或更高版本，同时支持 Apple 芯片和 Intel Mac。由于它依赖私有框架，升级 macOS 大版本后，建议先查看项目 README 或 Releases 是否有新的兼容性说明。</p>
+<h3 id="一定要下载-snoopy-saver-才能使用吗">一定要下载 Snoopy-Saver 才能使用吗？
+</h3><p>不需要。Snoopy-Saver 只用于取得 Apple TV 的 Snoopy 视频文件。只想使用自己的视频时，可以直接安装 Phosphene，然后跳到“视频壁纸的安装”。</p>
+<h3 id="退出-phosphene-后视频壁纸为什么还能播放">退出 Phosphene 后，视频壁纸为什么还能播放？
+</h3><p>Phosphene 主程序负责管理视频和选项，真正显示墙纸的是运行在 macOS <code>WallpaperAgent</code> 中的墙纸扩展。因此，设置完成后可以退出主程序，当前墙纸仍会继续工作。</p>
+<h3 id="墙纸变灰卡住或显示了错误的视频怎么办">墙纸变灰、卡住或显示了错误的视频怎么办？
+</h3><p>先点击菜单栏中的 Phosphene 图标，选择 <code>Restart Wallpaper Agent</code>。项目说明中提到，快速连续切换视频时，macOS 的墙纸代理偶尔可能出现状态不同步，重启代理通常可以立即恢复，不必重启整台 Mac。</p>
+<h3 id="怎样减少耗电">怎样减少耗电？
+</h3><p>可以开启 <code>Only on Lock Screen</code>，让桌面保持静态；也可以开启 <code>Pause When Hidden</code>，或在视频优化中选择 <code>Balanced</code>、<code>Battery Saver</code> 并创建较轻量的视频变体。视频的分辨率、帧率和编码复杂度也会影响实际功耗。</p>
+<h3 id="为什么要修改-snoopy-saver-的安装脚本">为什么要修改 Snoopy-Saver 的安装脚本？
+</h3><p>原版脚本的目标是重组 DMG、校验文件，然后把 <code>Snoopy.saver</code> 安装到屏幕保护程序目录。本文只需要提取视频，不需要安装另一个屏保，所以修改后的版本会在完成重组与 SHA-256 校验后停止。它不会修改四个原始分卷。</p>
+<h3 id="snoopy-视频可以随意重新上传或商用吗">Snoopy 视频可以随意重新上传或商用吗？
+</h3><p>不建议。Snoopy 角色、Apple TV 媒体和相关素材有各自的权利归属，Snoopy-Saver 项目也明确声明与 Peanuts Worldwide LLC、花生漫画及 Apple Inc. 无关。本文方法更适合个人学习和自用；如果使用其他素材，也请遵守对应网站和作者的许可证。</p>
+<h2 id="参考资料">参考资料
+</h2><ul>
+<li><a class="link" href="https://github.com/kageroumado/phosphene"  target="_blank" rel="noopener"
+    >Phosphene：项目主页与使用说明</a></li>
+<li><a class="link" href="https://github.com/kageroumado/phosphene/releases/tag/v1.2.2"  target="_blank" rel="noopener"
+    >Phosphene 1.2.2 Release</a></li>
+<li><a class="link" href="https://github.com/Cyber-Yichen/Snoopy-Saver/releases/tag/V1.1.0"  target="_blank" rel="noopener"
+    >Snoopy-Saver：Snoopy 1.1 Release 与分卷下载说明</a></li>
+<li><a class="link" href="https://github.com/hitnology/snoopy"  target="_blank" rel="noopener"
+    >hitnology/snoopy：macOS Snoopy 屏保移植项目</a></li>
+<li><a class="link" href="https://www.reddit.com/r/MacOS/comments/1i74ut2/psa_the_absolute_easiest_way_to_get_the_snoopy/"  target="_blank" rel="noopener"
+    >Reddit：The absolute easiest way to get the Snoopy screen saver on macOS</a></li>
+<li><a class="link" href="https://www.reddit.com/r/MacOS/comments/1i84ccr/snoopy_custom_screensaver_with_download_link/"  target="_blank" rel="noopener"
+    >Reddit：Snoopy custom screensaver（with download link）</a></li>
+<li><a class="link" href="https://www.reddit.com/r/MacOS/comments/1i1myyk/apple_tv_snoopy_screen_saver_now_can_use_on_macos/"  target="_blank" rel="noopener"
+    >Reddit：Apple TV Snoopy Screen Saver now can use on macOS</a></li>
+<li><a class="link" href="https://www.youtube.com/watch?v=TSOQLyqEL8U"  target="_blank" rel="noopener"
+    >YouTube：macOS Snoopy 屏保相关演示</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/%E8%A7%86%E9%A2%91%E5%A3%81%E7%BA%B8/">视频壁纸</a>
+        
+            <a href="/zh/tags/phosphene/">Phosphene</a>
+        
+            <a href="/zh/tags/snoopy/">Snoopy</a>
+        
+            <a href="/zh/tags/%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/">动态壁纸</a>
+        
+            <a href="/zh/tags/%E9%94%81%E5%B1%8F/">锁屏</a>
+        
+            <a href="/zh/tags/apple-tv/">Apple TV</a>
+        
+    </section>
+
+
+    
+    <section class="article-aigc inline-meta">
+        <!-- @license lucide-static v1.28.0 - ISC -->
+<svg class="lucide lucide-pencil-sparkles" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 3H8" />
+  <path d="m15.007 5.008 3.987 3.986" />
+  <path d="M20 15v4" />
+  <path d="M21.174 6.813a2.82 2.82 0 0 0-3.986-3.987L3.842 16.175a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+  <path d="M22 17h-4" />
+  <path d="M4 5v4" />
+  <path d="M6 7H2" />
+  <path d="M9 2v2" />
+</svg>
+
+        <span>本文使用 AIGC 技术辅助写作</span>
+    </section>
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <!-- @license lucide-static v1.28.0 - ISC -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copyright-icon lucide-copyright">
+  <circle cx="12" cy="12" r="10" />
+  <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
+</svg>
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/the-little-dict-macos/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词" loading="lazy" src="/img/the-little-dict-macos/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">The Little Dict Mac 版：安装到系统词典，用三指查词直接查单词</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh/p/mdx-to-macos-dictionary-skill/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MDX 词典转 macOS 原生词典：用 Agent Skill 自动生成 .dictionary 和 DMG</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh/p/eject-disk-images/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">macOS 一键弹出所有 DMG 和 ISO：用快捷指令清理磁盘映像</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/macos-default-icons-locations-icon-finder/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 系统图标在哪里？苹果 Mac 自带图标、系统 ICNS 与默认图标路径汇总" loading="lazy" src="/img/macos-default-icons-locations-icon-finder/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 系统图标在哪里？苹果 Mac 自带图标、系统 ICNS 与默认图标路径汇总</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/google-account-registration-guide/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 如何安全地注册一个 Google 账户不被封号？谷歌账户注册注意事项和指南" loading="lazy" src="/img/google-account-registration-guide/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何安全地注册一个 Google 账户不被封号？谷歌账户注册注意事项和指南</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+    <section class="waline-container">
+        <aside class="waline-comments-notice" aria-labelledby="comments-notice-title">
+            <div>
+                <h3 id="comments-notice-title">评论须知</h3>
+                <p>
+                    本站支持访客评论。如果您希望获得评论回复通知，可以填写您的邮箱；收到回复时，系统将自动发送通知给您。
+                </p>
+            </div>
+            <div class="waline-comments-stats" aria-label="文章互动统计">
+                <span title="浏览量">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
+                    <span class="waline-pageview-count" data-path="/zh/p/macos-custom-video-wallpaper-snoopy/">—</span>
+                </span>
+                <span title="评论数">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                    <span class="waline-comment-count" data-path="/zh/p/macos-custom-video-wallpaper-snoopy/">—</span>
+                </span>
+            </div>
+        </aside>
+        <div id="waline-comments-root"></div>
+        <template id="waline-rss-icon-template"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span></template>
+    </section>
+    <script type="module">
+        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+        import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
+
+        const serverURL = await resolveWalineServerURL({
+            primaryURL: "https://comments.zjy.is-a.dev",
+            fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+            timeoutMs:  2500 ,
+        });
+
+        const uploadMessages = {
+            invalidFile: "无法读取所选图片。",
+            unsupportedType: "仅支持 JPEG、PNG、WebP 和 GIF 图片。",
+            tooLarge: "图片不能超过 3 MB。",
+            forbidden: "当前网页没有图片上传权限。",
+            verificationRequired: "图片上传需要完成安全验证。",
+            verificationUnavailable: "安全验证暂时不可用，无法上传图片。",
+            rateLimited: "上传次数或容量已达到限制，请稍后再试。",
+            serviceUnavailable: "上传服务暂时关闭或安全服务不可用。",
+            failed: "图片上传失败，请稍后重试。",
+            invalidResponse: "上传服务没有返回有效的图片地址。",
+            tooManyImages: "每条评论最多包含 5 张图片。",
+            selectionTooManyImages: "最多只能选择 5 张图片，请先删除多余图片。",
+            submitUploadFailed: "图片上传失败，评论尚未提交。",
+        };
+
+        const uploadEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+        const uploadSessionEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-session`;
+        const commentEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment`;
+        const commentContextEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment-context`;
+
+        const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
+        let turnstileLoadPromise;
+        let turnstileWidgetId;
+        let turnstileContainer;
+        let resolveTurnstileToken;
+        let rejectTurnstileToken;
+        const pendingImageFiles = new Map();
+        const maxCommentImages = 5;
+        let submittingPendingImages = false;
+        let bypassNextSubmitClick = false;
+        let pendingCommentTurnstileToken;
+        let pendingCommentContext;
+
+        const finishTurnstileToken = (callback, value) => {
+            const finish = callback;
+            if (!finish) return;
+            resolveTurnstileToken = undefined;
+            rejectTurnstileToken = undefined;
+            finish(value);
+        };
+
+        const loadTurnstile = () => {
+            if (!turnstileSiteKey) return Promise.reject(new Error(uploadMessages.verificationRequired));
+            if (window.turnstile) return Promise.resolve(window.turnstile);
+            if (!turnstileLoadPromise) {
+                turnstileLoadPromise = new Promise((resolve, reject) => {
+                    const existingScript = document.querySelector('script[data-waline-turnstile="true"]');
+                    if (existingScript) {
+                        existingScript.addEventListener("load", () => resolve(window.turnstile), { once: true });
+                        existingScript.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                        return;
+                    }
+                    const script = document.createElement("script");
+                    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+                    script.dataset.walineTurnstile = "true";
+                    script.addEventListener("load", () => window.turnstile
+                        ? resolve(window.turnstile)
+                        : reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    script.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    document.head.append(script);
+                });
+            }
+            return turnstileLoadPromise;
+        };
+
+        const getTurnstileToken = async (action) => {
+            const turnstile = await loadTurnstile();
+            if (turnstileWidgetId === undefined) {
+                turnstileContainer = document.createElement("div");
+                turnstileContainer.dataset.walineTurnstile = "true";
+                turnstileContainer.style.cssText = [
+                    "position:fixed",
+                    "left:50%",
+                    "top:50%",
+                    "transform:translate(-50%,-50%)",
+                    "z-index:2147483647",
+                    "padding:12px",
+                    "border-radius:12px",
+                    "background:var(--card-background, #fff)",
+                    "box-shadow:0 12px 40px rgba(0,0,0,.24)",
+                    "display:block",
+                ].join(";");
+                document.body.append(turnstileContainer);
+                turnstileWidgetId = turnstile.render(turnstileContainer, {
+                    sitekey: turnstileSiteKey,
+                    action: "waline_image_upload",
+                    execution: "execute",
+                    appearance: "interaction-only",
+                    theme: document.documentElement.dataset.scheme === "dark" ? "dark" : "light",
+                    callback: (token) => finishTurnstileToken(resolveTurnstileToken, token),
+                    "error-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
+                    "expired-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
+                });
+            }
+            return new Promise((resolve, reject) => {
+                resolveTurnstileToken = resolve;
+                rejectTurnstileToken = reject;
+                const widgetId = turnstileWidgetId;
+                if (turnstileContainer) turnstileContainer.style.display = "block";
+                turnstile.reset(widgetId);
+                turnstile.execute(widgetId, {
+                    action,
+                });
+                setTimeout(() => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)), 15000);
+            });
+        };
+
+        const createUploadSession = async () => {
+            let response;
+            let turnstileToken;
+
+            try {
+                turnstileToken = await getTurnstileToken("waline_image_upload");
+                response = await fetch(uploadSessionEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "X-Turnstile-Token": turnstileToken,
+                    },
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch (error) {
+                if (!turnstileToken && error instanceof Error &&
+                    (error.message === uploadMessages.verificationRequired ||
+                        error.message === uploadMessages.verificationUnavailable)) {
+                    throw error;
+                }
+                throw new Error(uploadMessages.failed);
+            } finally {
+                if (turnstileWidgetId !== undefined && window.turnstile) {
+                    window.turnstile.reset(turnstileWidgetId);
+                }
+                if (turnstileContainer) turnstileContainer.style.display = "none";
+            }
+
+            let result = {};
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) throw new Error(uploadMessages.forbidden);
+                if (response.status === 429) throw new Error(uploadMessages.rateLimited);
+                if (response.status === 503) throw new Error(uploadMessages.serviceUnavailable);
+                throw new Error(uploadMessages.failed);
+            }
+
+            if (typeof result.sessionToken !== "string" || !result.sessionToken) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+            return result.sessionToken;
+        };
+
+        const uploadCommentImage = async (file, sessionToken) => {
+            const maxFileSize = 3 * 1024 * 1024;
+
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            if (!(file instanceof File)) {
+                throw new Error(uploadMessages.invalidFile);
+            }
+
+            if (!allowedTypes.has(file.type)) {
+                throw new Error(uploadMessages.unsupportedType);
+            }
+
+            if (file.size === 0 || file.size > maxFileSize) {
+                throw new Error(uploadMessages.tooLarge);
+            }
+
+            let response;
+
+            try {
+                response = await fetch(uploadEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/octet-stream",
+                        "X-Image-Type": file.type,
+                        "X-Upload-Session": sessionToken,
+                    },
+                    body: file,
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch (error) {
+                throw new Error(uploadMessages.failed);
+            }
+
+            let result = {};
+
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) {
+                    throw new Error(uploadMessages.forbidden);
+                }
+
+                if (response.status === 429) {
+                    throw new Error(uploadMessages.rateLimited);
+                }
+
+                if (response.status === 503) {
+                    throw new Error(uploadMessages.serviceUnavailable);
+                }
+
+                if (response.status === 413) {
+                    throw new Error(uploadMessages.tooLarge);
+                }
+
+                if (response.status === 415) {
+                    throw new Error(uploadMessages.unsupportedType);
+                }
+
+                throw new Error(
+                    typeof result.message === "string" && result.message
+                        ? result.message
+                        : uploadMessages.failed,
+                );
+            }
+
+            if (
+                typeof result.url !== "string" ||
+                !result.url.startsWith("https://")
+            ) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+
+            return result.url;
+        };
+
+        const prepareLocalCommentImage = async (file) => {
+            const maxFileSize = 3 * 1024 * 1024;
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            const rejectSelection = (message) => {
+                alert(message);
+                throw new Error(message);
+            };
+
+            if (!(file instanceof File)) {
+                return rejectSelection(uploadMessages.invalidFile);
+            }
+            if (!allowedTypes.has(file.type)) {
+                return rejectSelection(uploadMessages.unsupportedType);
+            }
+            if (file.size === 0 || file.size > maxFileSize) {
+                return rejectSelection(uploadMessages.tooLarge);
+            }
+            if (pendingImageFiles.size >= maxCommentImages) {
+                return rejectSelection(uploadMessages.selectionTooManyImages);
+            }
+
+            const localUrl = URL.createObjectURL(file);
+            pendingImageFiles.set(localUrl, file);
+            return localUrl;
+        };
+
+        const setWalineTextareaValue = (textarea, value) => {
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+            if (valueSetter) valueSetter.call(textarea, value);
+            else textarea.value = value;
+            textarea.dispatchEvent(new InputEvent("input", {
+                bubbles: true,
+                inputType: "insertText",
+                data: null,
+            }));
+        };
+
+        const cleanupUnreferencedLocalImages = (content) => {
+            for (const localUrl of pendingImageFiles.keys()) {
+                if (content.includes(localUrl)) continue;
+                URL.revokeObjectURL(localUrl);
+                pendingImageFiles.delete(localUrl);
+            }
+        };
+
+        const uploadPendingImagesBeforeSubmit = async (textarea) => {
+            let content = textarea.value;
+            cleanupUnreferencedLocalImages(content);
+
+            const localImages = [...pendingImageFiles.entries()]
+                .filter(([localUrl]) => content.includes(localUrl));
+            if (localImages.length > maxCommentImages) {
+                throw new Error(uploadMessages.tooManyImages);
+            }
+            if (localImages.length === 0) return content;
+
+            const uploadSession = await createUploadSession();
+
+            for (const [localUrl, file] of localImages) {
+                const uploadedUrl = await uploadCommentImage(file, uploadSession);
+                content = content.split(localUrl).join(uploadedUrl);
+                pendingImageFiles.delete(localUrl);
+                URL.revokeObjectURL(localUrl);
+                setWalineTextareaValue(textarea, content);
+            }
+
+            return content;
+        };
+
+        init({
+            el: "#waline-comments-root",
+            serverURL,
+            imageUploader: prepareLocalCommentImage,
+            dark: 'html[data-scheme="dark"]',
+            lang: "zh-CN",
+            pageview: false,
+            comment:  true ,
+            reaction: ["data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="],
+            emoji: [],
+            locale: {
+                emoji: "表情",
+                reactionTitle: "这篇文章对你有帮助吗？",
+                reaction0: "喜欢",
+                reaction1: "好笑",
+                reaction2: "思考",
+                reaction3: "惊讶",
+                reaction4: "难过",
+            },
+        });
+
+        let unicodeEmojiLoadPromise;
+        let unicodeEmojiPanel;
+        let unicodeEmojiPicker;
+        let activeEmojiButton;
+        let activeEmojiTextarea;
+
+        const unicodeEmojiDataSource = "https://cdn.jsdelivr.net/npm/emoji-picker-element-data@1.8.0/zh/emojibase/data.json";
+
+        const loadUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiLoadPromise) {
+                const pickerImport = import("https://cdn.jsdelivr.net/npm/emoji-picker-element@1.29.1/index.js");
+                const localeImport = 
+                    import("https://cdn.jsdelivr.net/npm/emoji-picker-element@1.29.1/i18n/zh_CN.js")
+                ;
+
+                unicodeEmojiLoadPromise = Promise.all([pickerImport, localeImport])
+                    .then(([, localeModule]) => localeModule?.default);
+            }
+
+            return unicodeEmojiLoadPromise;
+        };
+
+        const closeUnicodeEmojiPicker = () => {
+            if (unicodeEmojiPanel) unicodeEmojiPanel.hidden = true;
+            if (activeEmojiButton) activeEmojiButton.setAttribute("aria-expanded", "false");
+            activeEmojiButton = undefined;
+            activeEmojiTextarea = undefined;
+        };
+
+        const positionUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiPanel || unicodeEmojiPanel.hidden || !activeEmojiButton) return;
+
+            const buttonRect = activeEmojiButton.getBoundingClientRect();
+            const panelRect = unicodeEmojiPanel.getBoundingClientRect();
+            const edge = 12;
+            const gap = 8;
+            const maxLeft = Math.max(edge, window.innerWidth - panelRect.width - edge);
+            const left = Math.min(Math.max(edge, buttonRect.left), maxLeft);
+            const belowTop = buttonRect.bottom + gap;
+            const aboveTop = buttonRect.top - panelRect.height - gap;
+            const top = belowTop + panelRect.height <= window.innerHeight - edge
+                ? belowTop
+                : Math.max(edge, aboveTop);
+
+            unicodeEmojiPanel.style.left = `${left}px`;
+            unicodeEmojiPanel.style.top = `${Math.min(top, window.innerHeight - panelRect.height - edge)}px`;
+        };
+
+        const insertUnicodeEmoji = (event) => {
+            const emoji = event.detail?.unicode;
+            const textarea = activeEmojiTextarea;
+            if (typeof emoji !== "string" || !textarea) return;
+
+            const start = textarea.selectionStart ?? textarea.value.length;
+            const end = textarea.selectionEnd ?? start;
+            const newValue = `${textarea.value.slice(0, start)}${emoji}${textarea.value.slice(end)}`;
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+
+            if (valueSetter) {
+                valueSetter.call(textarea, newValue);
+            } else {
+                textarea.value = newValue;
+            }
+
+            try {
+                textarea.dispatchEvent(new InputEvent("input", {
+                    bubbles: true,
+                    inputType: "insertText",
+                    data: emoji,
+                }));
+            } catch {
+                textarea.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+
+            textarea.focus();
+            textarea.setSelectionRange(start + emoji.length, start + emoji.length);
+        };
+
+        const createUnicodeEmojiPicker = async () => {
+            const locale = await loadUnicodeEmojiPicker();
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+
+            if (!unicodeEmojiPanel) {
+                unicodeEmojiPanel = document.createElement("div");
+                unicodeEmojiPanel.className = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.id = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.setAttribute("role", "dialog");
+                unicodeEmojiPanel.hidden = true;
+
+                unicodeEmojiPicker = document.createElement("emoji-picker");
+                unicodeEmojiPicker.locale = "zh";
+                unicodeEmojiPicker.dataSource = unicodeEmojiDataSource;
+                
+                unicodeEmojiPicker.i18n = locale;
+                
+                unicodeEmojiPicker.addEventListener("emoji-click", insertUnicodeEmoji);
+                unicodeEmojiPanel.append(unicodeEmojiPicker);
+                document.body.append(unicodeEmojiPanel);
+
+                document.addEventListener("click", (event) => {
+                    if (!(event.target instanceof Node)) return;
+                    if (unicodeEmojiPanel?.contains(event.target) || activeEmojiButton?.contains(event.target)) return;
+                    closeUnicodeEmojiPicker();
+                });
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "Escape") closeUnicodeEmojiPicker();
+                });
+                window.addEventListener("resize", closeUnicodeEmojiPicker);
+                window.addEventListener("scroll", closeUnicodeEmojiPicker, true);
+            }
+
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+            const isDark = document.documentElement.dataset.scheme === "dark";
+            unicodeEmojiPicker.classList.toggle("dark", isDark);
+            unicodeEmojiPicker.classList.toggle("light", !isDark);
+            unicodeEmojiPanel.hidden = false;
+            activeEmojiButton.setAttribute("aria-expanded", "true");
+            positionUnicodeEmojiPicker();
+        };
+
+        const toggleUnicodeEmojiPicker = async (button, textarea) => {
+            if (unicodeEmojiPanel && !unicodeEmojiPanel.hidden && activeEmojiButton === button) {
+                closeUnicodeEmojiPicker();
+                return;
+            }
+
+            activeEmojiButton = button;
+            activeEmojiTextarea = textarea;
+            try {
+                await createUnicodeEmojiPicker();
+            } catch {
+                closeUnicodeEmojiPicker();
+            }
+        };
+
+        const walineRoot = document.querySelector("#waline-comments-root");
+        const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
+
+        const isWalineSubmitButton = (button) => {
+            if (!(button instanceof HTMLButtonElement)) return false;
+            if (button.type === "submit") return true;
+            const label = button.textContent?.trim().toLowerCase();
+            return label === "submit" || label === "提交";
+        };
+
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = (input, init) => {
+            const requestUrl = typeof input === "string" ? input : input?.url;
+            const requestMethod = String(init?.method || input?.method || "GET").toUpperCase();
+            if (pendingCommentTurnstileToken && requestMethod === "POST" && requestUrl === commentEndpoint) {
+                try {
+                    const payload = JSON.parse(init?.body || "{}");
+                    payload.turnstile = pendingCommentTurnstileToken;
+                    if (pendingCommentContext) Object.assign(payload, pendingCommentContext);
+                    pendingCommentTurnstileToken = undefined;
+                    pendingCommentContext = undefined;
+                    return nativeFetch(input, { ...init, body: JSON.stringify(payload) });
+                } catch {
+                    pendingCommentTurnstileToken = undefined;
+                }
+            }
+            return nativeFetch(input, init);
+        };
+
+        const handleDeferredImageSubmission = async (event) => {
+            if (bypassNextSubmitClick || submittingPendingImages) return;
+            if (!(event.target instanceof Element)) return;
+
+            const submitButton = event.target.closest("button");
+            if (!isWalineSubmitButton(submitButton)) return;
+
+            const editor = submitButton.closest("form") || walineRoot;
+            const textarea = editor?.querySelector("textarea.wl-editor")
+                || editor?.querySelector("textarea");
+            if (!(textarea instanceof HTMLTextAreaElement)) return;
+
+            cleanupUnreferencedLocalImages(textarea.value);
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            submittingPendingImages = true;
+            const wasDisabled = submitButton.disabled;
+            submitButton.disabled = true;
+
+            try {
+                await uploadPendingImagesBeforeSubmit(textarea);
+                const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+                let context = {};
+                try {
+                    const contextResponse = await nativeFetch(commentContextEndpoint, {
+                        credentials: "omit",
+                        cache: "no-store",
+                    });
+                    if (contextResponse.ok) context = await contextResponse.json();
+                } catch {
+                    
+                }
+                pendingCommentContext = {
+                    clientTimezone: browserTimezone,
+                    ipTimezone: typeof context.timezone === "string" ? context.timezone : "",
+                    ipTimezoneProof: typeof context.proof === "string" ? context.proof : "",
+                    ipTimezoneExpiresAt: Number(context.expiresAt || 0),
+                };
+                pendingCommentTurnstileToken = await getTurnstileToken("waline_comment");
+                bypassNextSubmitClick = true;
+                submitButton.disabled = wasDisabled;
+                submitButton.click();
+                bypassNextSubmitClick = false;
+                setTimeout(() => {
+                    if (turnstileWidgetId !== undefined && window.turnstile) {
+                        window.turnstile.reset(turnstileWidgetId);
+                    }
+                    if (turnstileContainer) turnstileContainer.style.display = "none";
+                }, 1000);
+            } catch (error) {
+                pendingCommentTurnstileToken = undefined;
+                pendingCommentContext = undefined;
+                submitButton.disabled = wasDisabled;
+                alert(error instanceof Error ? error.message : uploadMessages.submitUploadFailed);
+            } finally {
+                submittingPendingImages = false;
+            }
+        };
+
+        if (walineRoot) {
+            walineRoot.addEventListener("click", handleDeferredImageSubmission, true);
+            walineRoot.addEventListener("input", () => {
+                const textarea = walineRoot.querySelector("textarea.wl-editor")
+                    || walineRoot.querySelector("textarea");
+                if (textarea instanceof HTMLTextAreaElement) {
+                    cleanupUnreferencedLocalImages(textarea.value);
+                }
+            }, true);
+        }
+
+        const enhanceWalineComments = () => {
+            if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
+
+            walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
+                if (link.dataset.siteRssIcon === "true") return;
+
+                const currentIcon = link.querySelector("svg");
+                const siteIcon = rssIconTemplate.content.firstElementChild?.cloneNode(true);
+                if (currentIcon && siteIcon instanceof Element) {
+                    currentIcon.replaceWith(siteIcon);
+                    link.dataset.siteRssIcon = "true";
+                }
+            });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
+        };
+
+        const enhanceUnicodeEmojiButtons = () => {
+            if (!(walineRoot instanceof HTMLElement)) return;
+
+            walineRoot.querySelectorAll(".wl-comment .wl-actions button.wl-action").forEach((button) => {
+                if (!(button instanceof HTMLButtonElement)) return;
+                if (button.title !== "表情") return;
+                if (button.dataset.unicodeEmojiBound === "true") return;
+
+                button.dataset.unicodeEmoji = "true";
+                button.dataset.unicodeEmojiBound = "true";
+                button.setAttribute("aria-haspopup", "dialog");
+                button.setAttribute("aria-expanded", "false");
+                button.setAttribute("aria-controls", "waline-unicode-emoji-panel");
+                button.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const comment = button.closest(".wl-comment");
+                    const textarea = comment?.querySelector("textarea.wl-editor")
+                        || comment?.querySelector("textarea");
+                    if (textarea instanceof HTMLTextAreaElement) {
+                        void toggleUnicodeEmojiPicker(button, textarea);
+                    }
+                }, true);
+            });
+        };
+
+        const enhanceWaline = () => {
+            enhanceWalineComments();
+            enhanceUnicodeEmojiButtons();
+        };
+
+        if (walineRoot) {
+            new MutationObserver(enhanceWaline).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWaline();
+        }
+
+        pageviewCount({
+            serverURL,
+            path: "/zh/p/macos-custom-video-wallpaper-snoopy/",
+            selector: ".waline-pageview-count",
+            update: false,
+        });
+    </script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/sitemap/">网站地图</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
+            <script type="module">
+                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+                import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
+
+                const serverURL = await resolveWalineServerURL({
+                    primaryURL: "https://comments.zjy.is-a.dev",
+                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+                    timeoutMs:  2500 ,
+                });
+                const lang = "zh-CN";
+
+                pageviewCount({
+                    serverURL,
+                    lang,
+                    selector: ".waline-pageview-tracker",
+                });
+
+                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        path: "/__site_total__/",
+                        type: "time",
+                        action: "inc",
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        const count = payload?.data?.[0]?.time;
+                        const element = document.querySelector(".waline-site-pageview-count");
+                        if (!element || typeof count !== "number") return;
+                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
+                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
+                        element.textContent = `${label} ${formatted}`;
+                    })
+                    .catch(() => {});
+            </script>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+        
+            <br>
+            <small class="site-runtime">
+                本站已运行
+                <strong data-site-runtime data-launch-date="2025-09-14">0</strong>
+                天
+            </small>
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.2e6e579bdb52b9e2cba422be2c3bd4efecbeed8e2ac4f68165bcdde83a55ca86.js" defer></script>
+
+
+    </body>
+</html>

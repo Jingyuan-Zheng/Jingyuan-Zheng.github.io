@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/animated-wallpaper/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/apple-tv/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/macos-custom-video-wallpaper-snoopy/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/lock-screen/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/macos/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/open-source/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/phosphene/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/snoopy/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/video-wallpaper/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/agent-skill/</loc>
@@ -13,10 +61,6 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/applescript/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/categories/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
@@ -40,10 +84,6 @@
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/categories/macos/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/tags/macos/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
@@ -61,18 +101,6 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/mdx/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/categories/open-source/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
@@ -429,7 +457,55 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/apple-tv/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/categories/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/categories/macos/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/phosphene/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/post/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/snoopy/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/p/macos-custom-video-wallpaper-snoopy/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E8%A7%86%E9%A2%91%E5%A3%81%E7%BA%B8/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/zh/tags/%E9%94%81%E5%B1%8F/</loc>
+    <lastmod>2026-08-11T21:45:00+02:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/agent-skill/</loc>
@@ -444,19 +520,11 @@
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>https://jingyuan-zheng.github.io/zh/categories/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/dmg/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/tags/iso/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/categories/macos/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
@@ -481,14 +549,6 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/p/mdx-to-macos-dictionary-skill/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/post/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/tags/</loc>
     <lastmod>2026-08-08T14:00:00+02:00</lastmod>
   </url>
   <url>
@@ -577,10 +637,6 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/zh/p/google-account-registration-guide/</loc>
-    <lastmod>2026-07-31T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/zh/categories/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2026-07-31T00:00:00+00:00</lastmod>
   </url>
   <url>
