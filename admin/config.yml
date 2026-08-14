@@ -611,6 +611,10 @@ asset_collections:
     label: "apple-style-web-clock-widget"
     media_folder: /static/img/apple-style-web-clock-widget
     public_folder: /img/apple-style-web-clock-widget
+  - name: img_archive_peek
+    label: "archive-peek"
+    media_folder: /static/img/archive-peek
+    public_folder: /img/archive-peek
   - name: img_bewlybewly_safari_revival
     label: "bewlybewly-safari-revival"
     media_folder: /static/img/bewlybewly-safari-revival

@@ -6,7 +6,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Tue, 11 Aug 2026 21:45:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 14 Aug 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Archive Peek</title>
+            <link>https://jingyuan-zheng.github.io/tags/archive-peek/</link>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/archive-peek/</guid>
+            <description></description>
+        </item><item>
+            <title>Archives</title>
+            <link>https://jingyuan-zheng.github.io/tags/archives/</link>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/archives/</guid>
+            <description></description>
+        </item><item>
+            <title>Disk Images</title>
+            <link>https://jingyuan-zheng.github.io/tags/disk-images/</link>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/disk-images/</guid>
+            <description></description>
+        </item><item>
+            <title>Quick Look</title>
+            <link>https://jingyuan-zheng.github.io/tags/quick-look/</link>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/quick-look/</guid>
+            <description></description>
+        </item><item>
+            <title>Swift</title>
+            <link>https://jingyuan-zheng.github.io/tags/swift/</link>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/swift/</guid>
+            <description></description>
+        </item><item>
             <title>Animated Wallpaper</title>
             <link>https://jingyuan-zheng.github.io/tags/animated-wallpaper/</link>
             <pubDate>Tue, 11 Aug 2026 21:45:00 +0200</pubDate>
@@ -59,12 +89,6 @@
             <link>https://jingyuan-zheng.github.io/tags/applescript/</link>
             <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/applescript/</guid>
-            <description></description>
-        </item><item>
-            <title>Disk Images</title>
-            <link>https://jingyuan-zheng.github.io/tags/disk-images/</link>
-            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/disk-images/</guid>
             <description></description>
         </item><item>
             <title>DMG</title>
@@ -287,12 +311,6 @@
             <link>https://jingyuan-zheng.github.io/tags/clipboard/</link>
             <pubDate>Thu, 09 Jul 2026 18:45:00 +0200</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/clipboard/</guid>
-            <description></description>
-        </item><item>
-            <title>Swift</title>
-            <link>https://jingyuan-zheng.github.io/tags/swift/</link>
-            <pubDate>Thu, 09 Jul 2026 18:45:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/swift/</guid>
             <description></description>
         </item><item>
             <title>Text Tray</title>
