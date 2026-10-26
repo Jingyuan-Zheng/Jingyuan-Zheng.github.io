@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='theme-color' content='#f5f5fa' media='(prefers-color-scheme: light)'>
+<meta name='theme-color' content='#303030' media='(prefers-color-scheme: dark)'><script id="site-language-config" type="application/json">{"chineseTarget":"/zh/p/machunt-native-file-search/","currentLanguage":"zh","englishTarget":"/p/machunt-native-file-search/","excludePrompt":false}</script>
+<script>
+    (function () {
+        var configElement = document.getElementById("site-language-config");
+        if (!configElement) return;
+
+        var config;
+        try {
+            config = JSON.parse(configElement.textContent || "{}");
+        } catch (_) {
+            return;
+        }
+
+        var preference = null;
+        try {
+            preference = localStorage.getItem("jingyuan-language-preference");
+        } catch (_) {
+            
+        }
+
+        var primaryLocale = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+        var primaryLanguage = String(primaryLocale).trim().replace(/_/g, "-").split("-")[0].toLowerCase();
+        var target = null;
+
+        if ((preference === "en" || preference === "zh") && preference !== config.currentLanguage) {
+            target = preference === "zh" ? config.chineseTarget : config.englishTarget;
+        } else if (!preference && config.currentLanguage === "en" && primaryLanguage === "zh") {
+            target = config.chineseTarget;
+        }
+
+        if (!target) return;
+
+        var targetURL = new URL(target, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    })();
+</script>
+<script>
+    (function () {
+        const colorSchemeKey = "StackColorScheme";
+        if (!localStorage.getItem(colorSchemeKey)) localStorage.setItem(colorSchemeKey, "auto");
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+        document.documentElement.dataset.scheme = colorSchemeItem == "dark" || colorSchemeItem === "auto" && supportDarkMode ? "dark" : "light";
+    })();
+</script>
+<style>
+    html,
+    body {
+        min-height: 100%;
+        background: #f5f5fa;
+    }
+
+    html[data-scheme="light"],
+    html[data-scheme="light"] body {
+        background: #f5f5fa;
+        color-scheme: light;
+    }
+
+    html[data-scheme="dark"],
+    html[data-scheme="dark"] body {
+        background: #303030;
+        color-scheme: dark;
+    }
+</style><meta name='description' content="介绍 MacHunt 原生 Swift Beta：本地文件名索引、筛选、Quick Look、固定文件，以及它与文件内容搜索的区别。">
+<title>MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件</title>
+
+
+<link rel='canonical' href='https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.c782c315587386f6a7a1b506298c4870af83a84e974155bdd6dc9dcca9ed2900.css"><meta property='og:title' content="MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件">
+<meta property='og:description' content="介绍 MacHunt 原生 Swift Beta：本地文件名索引、筛选、Quick Look、固定文件，以及它与文件内容搜索的区别。">
+<meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/'>
+<meta property='og:site_name' content='小景'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='文件搜索' /><meta property='article:tag' content='Finder' /><meta property='article:tag' content='快速预览' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/machunt-native-file-search/search.png' />
+<meta name="twitter:site" content="@AndersJheng">
+    <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件">
+<meta name="twitter:description" content="介绍 MacHunt 原生 Swift Beta：本地文件名索引、筛选、Quick Look、固定文件，以及它与文件内容搜索的区别。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/machunt-native-file-search/search.png' />
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="shortcut icon" href="/favicon.png?v=2" />
+<script>
+(function() {
+    var loaded = false;
+    var respectDNT =  true ;
+
+    function doNotTrackEnabled() {
+        if (!respectDNT) return false;
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        return dnt == "1" || dnt == "yes";
+    }
+
+    function loadAnalytics() {
+        if (loaded || doNotTrackEnabled()) return;
+        loaded = true;
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLM0JS1M8M';
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JLM0JS1M8M');
+        window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+        var clarityScript = document.createElement('script');
+        clarityScript.async = true;
+        clarityScript.src = 'https://www.clarity.ms/tag/xsh8jmde5h';
+        document.head.appendChild(clarityScript);
+    }
+    loadAnalytics();
+})();
+</script>
+<meta name="blogsclub-verify" content="229b53e4a14e4ce98f30b2ed8d17b6b6">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Jingyuan">
+<meta name="msapplication-TileImage" content="/favicon.png">
+<link rel="prefetch" as="image" href="https://www.blogsclub.org/badge/jingyuan-zheng.github.io">
+<link rel="alternate" hreflang="en-US" href="https://jingyuan-zheng.github.io/p/machunt-native-file-search/">
+<link rel="alternate" hreflang="zh-Hans" href="https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/">
+<link rel="alternate" hreflang="x-default" href="https://jingyuan-zheng.github.io/p/machunt-native-file-search/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2850910173589747"
+     crossorigin="anonymous"></script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://jingyuan-zheng.github.io/#person",
+      "@type": "Person",
+      "alternateName": [
+        "小景",
+        "AndersJheng"
+      ],
+      "image": "https://jingyuan-zheng.github.io/img/avatar.png",
+      "name": "Jingyuan Zheng",
+      "sameAs": [
+        "https://github.com/Jingyuan-Zheng",
+        "https://x.com/AndersJheng",
+        "https://xhslink.com/m/4zZJoXggJEO",
+        "https://space.bilibili.com/435525623"
+      ],
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/#website",
+      "@type": "WebSite",
+      "alternateName": [
+        "小景",
+        "Jingyuan Zheng"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "description": "Jingyuan Zheng's personal site for open-source projects, macOS tools, AI notes, and life guides.",
+      "inLanguage": [
+        "en",
+        "zh"
+      ],
+      "name": "Jingyuan",
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/"
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/",
+          "name": "主页",
+          "position": 1
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/",
+          "name": "开源项目",
+          "position": 2
+        },
+        {
+          "@type": "ListItem",
+          "item": "https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/",
+          "name": "MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "@id": "https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/#blogposting",
+      "@type": "BlogPosting",
+      "articleSection": [
+        "开源项目",
+        "macOS"
+      ],
+      "author": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "dateModified": "2026-10-22T00:00:00+00:00",
+      "datePublished": "2026-08-10T00:00:00+00:00",
+      "description": "介绍 MacHunt 原生 Swift Beta：本地文件名索引、筛选、Quick Look、固定文件，以及它与文件内容搜索的区别。",
+      "headline": "MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件",
+      "image": "https://jingyuan-zheng.github.io/img/machunt-native-file-search/search.png",
+      "inLanguage": "zh",
+      "isPartOf": {
+        "@id": "https://jingyuan-zheng.github.io/#website"
+      },
+      "keywords": "文件搜索, Finder, 快速预览, macOS",
+      "mainEntityOfPage": {
+        "@id": "https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@id": "https://jingyuan-zheng.github.io/#person"
+      },
+      "url": "https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/"
+    }
+  ]
+}</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="mobile-menu-icon mobile-menu-icon--menu" aria-hidden="true"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/menu.svg')" aria-hidden="true"></span></span>
+    </button>
+
+    <div class="mobile-profile-controls" aria-label="页面设置">
+        <button type="button" class="mobile-profile-control" data-mobile-scheme-toggle aria-label="切换深浅色模式" title="切换深浅色模式">
+            <span class="mobile-profile-control__sun"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/sun.svg')" aria-hidden="true"></span></span>
+            <span class="mobile-profile-control__moon"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/moon.svg')" aria-hidden="true"></span></span>
+        </button>
+        <button type="button" class="mobile-profile-control" data-mobile-language-toggle aria-label="切换语言" title="切换语言">
+            <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+        </button>
+    </div>
+
+    <header>
+        <figure class="site-avatar site-avatar--management">
+                <a class="site-avatar__home-link" href="/zh/" aria-label="返回主页">
+                    <img src="/img/avatar.png"
+                        width="800"
+                        height="800"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <button
+                        class="emoji site-avatar__management-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="sidebar-management-menu"
+                        aria-label="打开网站管理选单"
+                        data-sidebar-management-toggle
+                        data-profile-emoji
+                    >
+                        <span class="profile-emoji-fallback" aria-hidden="true">🤩</span>
+                        <img
+                            class="profile-emoji-image"
+                            data-profile-emoji-image
+                            src="/img/smiling-face-with-hearts.png"
+                            data-default-src="/img/smiling-face-with-hearts-animated.png"
+                            data-birthday-src="/img/partying-face-animated.png"
+                            data-default-static-src="/img/smiling-face-with-hearts.png"
+                            data-birthday-static-src="/img/partying-face.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                    </button>
+                
+                <div
+    class="sidebar-management-menu"
+    id="sidebar-management-menu"
+    role="menu"
+    aria-label="网站管理"
+    data-sidebar-management-menu
+    hidden
+>
+    <div class="sidebar-management-menu__header">
+        <div class="sidebar-management-menu__heading">
+            <strong>网站管理</strong>
+            <small>仅供网站管理员使用，不对外开放</small>
+        </div>
+        <a href="/zh/">返回主页</a>
+    </div>
+    <div class="sidebar-management-menu__items">
+            <a
+                href="/admin/"
+                role="menuitem"
+                
+                
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/database.svg')" aria-hidden="true"></span>
+                </span>
+                <span>内容管理</span>
+            </a>
+            <a
+                href="https://comments.zjy.is-a.dev/ui"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                </span>
+                <span>评论管理</span>
+            </a>
+            <a
+                href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?origin=NeoPortalPage&amp;subpage=design&amp;id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__bK_KBBUMUpUVVdFVk82T0wwVzBITkpRUUNRVDJKRC4u&amp;analysis=true&amp;tab=0"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+                </span>
+                <span>友链申请系统</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/Jingyuan-Zheng.github.io"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                </span>
+                <span>网站仓库主页</span>
+            </a>
+            <a
+                href="https://github.com/Jingyuan-Zheng/hugo-main"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code-2.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Hugo 源码</span>
+            </a>
+            <a
+                href="https://search.google.com/search-console"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlesearchconsole.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Search Console</span>
+            </a>
+            <a
+                href="https://www.bing.com/webmasters/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bing.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Bing Webmasters</span>
+            </a>
+            <a
+                href="https://analytics.google.com/analytics/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Google Analytics</span>
+            </a>
+            <a
+                href="https://clarity.microsoft.com/projects/view/xsh8jmde5h/dashboard"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/chart-no-axes-combined.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Microsoft Clarity</span>
+            </a>
+            <a
+                href="https://dash.cloudflare.com/"
+                role="menuitem"
+                class="sidebar-management-menu__item--group-start"
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Cloudflare 控制台</span>
+            </a>
+            <a
+                href="https://vercel.com/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Vercel 控制台</span>
+            </a>
+            <a
+                href="https://console.neon.tech/"
+                role="menuitem"
+                
+                target="_blank" rel="noopener noreferrer"
+            >
+                <span class="sidebar-management-menu__icon" aria-hidden="true">
+                    <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/neon.svg')" aria-hidden="true"></span>
+                </span>
+                <span>Neon 控制台</span>
+            </a>
+    </div>
+</div>
+
+            </figure>
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh/">小景</a></h1>
+            <h2 class="site-description">随心分享！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a
+                        href='https://github.com/Jingyuan-Zheng'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://x.com/AndersJheng'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://xhslink.com/m/4zZJoXggJEO'
+                        target="_blank"
+                        title="小红书"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='https://space.bilibili.com/435525623'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/bilibili.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a
+                        href='/zh/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh/' >
+                
+                    <svg class="lucide lucide-house" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                    <svg class="lucide lucide-circle-user-round" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/archives/' >
+                
+                    <svg class="lucide lucide-archive" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/search/' >
+                
+                    <svg class="lucide lucide-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/pictures/' >
+                
+                    <svg class="lucide lucide-images" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/><circle cx="13" cy="7" r="1" fill="currentColor"/><rect x="8" y="2" width="14" height="14" rx="2"/></svg>
+
+                
+                <span>相册</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh/links/' >
+                
+                    <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">
+                        <svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                <option value="/p/machunt-native-file-search/" >English</option>
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh/p/machunt-native-file-search/" selected>简体中文</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <span class="sidebar-color-icon sidebar-color-icon--light">
+                            <svg class="lucide lucide-toggle-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="3"/><rect width="20" height="14" x="2" y="5" rx="7"/></svg>
+
+                        </span>
+                        <span class="sidebar-color-icon sidebar-color-icon--dark">
+                            <svg class="lucide lucide-toggle-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="7"/><circle cx="15" cy="12" r="3"/></svg>
+
+                        </span>
+                        <span>暗色模式</span>
+                    </li>
+                
+
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg class="lucide lucide-list-tree" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h13"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="M3 10a2 2 0 0 0 2 2h3"/><path d="M3 5v12a2 2 0 0 0 2 2h3"/></svg>
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#安装原生-beta">安装原生 Beta</a></li>
+    <li><a href="#先搜索再筛选和预览">先搜索，再筛选和预览</a></li>
+    <li><a href="#文件名搜索与内容搜索要分清">文件名搜索与内容搜索要分清</a></li>
+    <li><a href="#用一份找不到的报告试一遍">用一份找不到的报告试一遍</a></li>
+    <li><a href="#用命令行搜索不必重建另一份索引">用命令行搜索，不必重建另一份索引</a></li>
+    <li><a href="#已知文件搜不到时先查范围">已知文件搜不到时，先查范围</a></li>
+    <li><a href="#想自行构建时">想自行构建时</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh/p/machunt-native-file-search/">
+            <img alt="Featured image of post MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/machunt-native-file-search/search.png">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" style="background-color: hsl(47, 60%, 84%); color: hsl(47, 60%, 15%);">开源项目</a>
+        
+            
+            
+            
+            <a href="/zh/categories/macos/" style="background-color: hsl(242, 60%, 84%); color: hsl(242, 60%, 15%);">macOS</a>
+        
+    </header>
+    
+    <div class="article-title-wrapper">
+        <h2 class="article-title"><a href="/zh/p/machunt-native-file-search/">MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件</a></h2>
+        <h3 class="article-subtitle">介绍 MacHunt 原生 Swift Beta：本地文件名索引、筛选、Quick Look、固定文件，以及它与文件内容搜索的区别。</h3>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+        <div class="article-meta__time inline-meta">
+            <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+<time class="article-time--published" datetime='2026-08-10T00:00:00Z'>10/8月/2026</time>
+            <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
+<time class="article-time--reading">阅读时长: 5 分钟</time>
+        </div>
+        
+        <div class="article-meta__translations inline-meta"><svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+<a href="/p/machunt-native-file-search/" class="link">English</a></div>
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-share" aria-label="分享这篇文章"
+    data-article-share
+    data-share-title="MacHunt：用原生 Swift 文件搜索工具，在 Mac 上快速找到文件"
+    data-share-url="https://zjy.is-a.dev/zh/p/machunt-native-file-search/"
+    data-copy-label="复制链接"
+    data-copied-label="已复制"
+    data-copy-error-label="复制失败">
+    <button class="article-share__button" type="button" data-share-print aria-label="打印">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/printer.svg')" aria-hidden="true"></span>
+    </button>
+
+    <button class="article-share__button" type="button" data-share-copy aria-label="复制链接">
+        <svg class="lucide lucide-link-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+
+    </button>
+
+    <button class="article-share__button article-share__button--native" type="button" data-native-share hidden aria-label="系统分享">
+        <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/share-2.svg')" aria-hidden="true"></span>
+    </button>
+
+    
+
+    
+        <a class="article-share__button" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmachunt-native-file-search%2F%3Futm_source%3Dweibo%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=MacHunt%EF%BC%9A%E7%94%A8%E5%8E%9F%E7%94%9F&#43;Swift&#43;%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%9C%A8&#43;Mac&#43;%E4%B8%8A%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0%E6%96%87%E4%BB%B6" target="_blank" rel="noopener noreferrer" aria-label="分享到微博">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/sinaweibo.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmachunt-native-file-search%2F%3Futm_source%3Dqq%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&title=MacHunt%EF%BC%9A%E7%94%A8%E5%8E%9F%E7%94%9F&#43;Swift&#43;%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%9C%A8&#43;Mac&#43;%E4%B8%8A%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0%E6%96%87%E4%BB%B6" target="_blank" rel="noopener noreferrer" aria-label="分享到 QQ">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tencentqq.svg')" aria-hidden="true"></span>
+        </a>
+
+        <a class="article-share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fzjy.is-a.dev%2Fzh%2Fp%2Fmachunt-native-file-search%2F%3Futm_source%3Dx%26utm_medium%3Dsocial%26utm_campaign%3Darticle_share&text=MacHunt%EF%BC%9A%E7%94%A8%E5%8E%9F%E7%94%9F&#43;Swift&#43;%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%9C%A8&#43;Mac&#43;%E4%B8%8A%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0%E6%96%87%E4%BB%B6" target="_blank" rel="noopener noreferrer" aria-label="分享到 X">
+            <span class="hm-icon hm-icon--simple-icons" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/x.svg')" aria-hidden="true"></span>
+        </a>
+    
+</section>
+
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span>目录</span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#安装原生-beta">安装原生 Beta</a></li>
+    <li><a href="#先搜索再筛选和预览">先搜索，再筛选和预览</a></li>
+    <li><a href="#文件名搜索与内容搜索要分清">文件名搜索与内容搜索要分清</a></li>
+    <li><a href="#用一份找不到的报告试一遍">用一份找不到的报告试一遍</a></li>
+    <li><a href="#用命令行搜索不必重建另一份索引">用命令行搜索，不必重建另一份索引</a></li>
+    <li><a href="#已知文件搜不到时先查范围">已知文件搜不到时，先查范围</a></li>
+    <li><a href="#想自行构建时">想自行构建时</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-print-attribution" aria-label="打印来源信息">
+        <p><strong>作者：</strong> 小景</p>
+        <p><strong>文章来源：</strong> <a href="https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/">https://jingyuan-zheng.github.io/zh/p/machunt-native-file-search/</a></p>
+    </section>
+
+    <section class="article-content">
+    
+    
+    <p>MacHunt 是一个在 Mac 本地建立文件名与元数据索引的搜索工具，原生 Swift Beta 将搜索、筛选、Quick Look 和文件操作放进同一个窗口。</p>
+<p>有时记得文件名的一小部分，却忘了放在哪个目录。相比反复打开 Finder，一个能按路径、类型、日期继续缩小范围的结果列表更适合这种场景（见图 1）。</p>
+<p><a class="link" href="https://github.com/Jingyuan-Zheng/MacHunt_SwiftUI"  target="_blank" rel="noopener"
+    >这个仓库</a> Fork 自 <a class="link" href="https://github.com/dacj4n/MacHunt"  target="_blank" rel="noopener"
+    >dacj4n/MacHunt</a>。原来的 Tauri、React、Rust 版本仍保留在根目录；这里介绍的是 <code>swift_beta/</code> 中的原生 Mac 版本。它目前标为 Beta，适合先用自己的常用目录试用。</p>
+<div class="post-figure">
+<img src="/img/machunt-native-file-search/search.png" alt="MacHunt 原生 Swift Beta 搜索结果界面">
+<div class="caption">图 1：原生版本的搜索列表、元数据列和筛选入口。截图来自项目仓库。</div>
+</div>
+<h2 id="安装原生-beta">安装原生 Beta
+</h2><p>前往 <a class="link" href="https://github.com/Jingyuan-Zheng/MacHunt_SwiftUI/releases"  target="_blank" rel="noopener"
+    >Releases</a>，下载 Swift Beta 的 DMG，打开后拖入“应用程序”。当前提供的安装包面向 Apple 芯片 Mac，要求 macOS 14 或更新版本。它采用 ad-hoc 签名，尚未公证；首次启动受系统拦截时，请先核对下载来源，再按发布说明操作。</p>
+<p>应用可以建立初始索引。第一次建议只选择自己需要的目录，并检查排除规则。扫描范围越大，初始化工作越多；某些目录也可能因为权限而无法读取。</p>
+<p>例如只想找工作资料，可以先把“文稿”目录加入索引，把缓存或不需要搜索的下载目录排除。设置页能看到已索引项目数、实时监控状态和文件分类（见图 2）。先用小范围确认搜索结果符合预期，再考虑扩大范围。</p>
+<div class="post-figure">
+<img src="/img/machunt-native-file-search/settings.png" alt="MacHunt 的索引状态和文件分类设置">
+<div class="caption">图 2：在设置中查看索引状态与文件分类。截图来自项目仓库。</div>
+</div>
+<p>如果需要从命令行完整扫描，README 提供了下面的方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="s2">&#34;/Applications/MacHunt.app/Contents/Helpers/machunt&#34;</span> build --path /
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行前退出 MacHunt，等索引完成后再打开。这里的 <code>/</code> 表示整个文件系统；只是想试用时，不必一开始就选择这样的范围。</p>
+<h2 id="先搜索再筛选和预览">先搜索，再筛选和预览
+</h2><p>可以先输入有辨识度的文件名片段，再用目录、分类、日期或大小缩小结果。原生版本支持按片段、通配符或正则表达式、近似拼写搜索，也可以指定区分大小写。常用的文件分类可以修改，还能自己添加分类。</p>
+<p>找到候选项后，先按空格调用系统 Quick Look，再决定打开还是到 Finder 查看周围文件（见图 3）。经常使用的结果可以固定保存。列表支持列选择、排序和多选；“移到废纸篓”也在操作菜单中，处理之前先核对路径。</p>
+<div class="post-figure">
+<img src="/img/machunt-native-file-search/quick-look.png" alt="MacHunt 调用 macOS Quick Look 预览文件">
+<div class="caption">图 3：先用系统 Quick Look 确认内容，再决定如何处理文件。</div>
+</div>
+<h2 id="文件名搜索与内容搜索要分清">文件名搜索与内容搜索要分清
+</h2><p>MacHunt 索引的是文件名、路径、日期、大小、Finder 标签和云端状态等元数据，不索引正文。如果记得的是文档中的一句话，它不能代替文档内容搜索。</p>
+<p>原生索引保存在 <code>~/Library/Caches/MacHuntSwift/index.db</code>。文件变动通过 FSEvents 增量维护；重建时先生成新数据库，完成后再替换旧索引，避免把半成品当作完整结果。</p>
+<p>iCloud 仅在线文件也需要留意。扫描索引不会主动为了读取正文而下载它们，但打开或 Quick Look 预览可能触发系统下载。本地索引不等于搜索结果里的每个文件都已经离线保存。</p>
+<h2 id="用一份找不到的报告试一遍">用一份找不到的报告试一遍
+</h2><p>假设只记得文件名中有 <code>budget</code>，却不知道它在下载目录还是项目文件夹。先输入这个片段，观察结果的路径列；如果同名结果很多，再限定到工作资料所在目录，筛选文档类别。随后按修改时间或大小排序，把明显无关的导出副本排到一边。</p>
+<p>选中候选项按空格预览，确认标题和内容，再按需要打开原文件。对于想看旁边附件的情况，用“在 Finder 中显示”更直接。完成这次查找后，可以把经常回看的那份文件固定起来；固定项适合长期参考材料，但仍要保留能够区分项目和版本的名字。</p>
+<p>普通片段搜索没有结果时，再考虑通配符或近似匹配。比如记得扩展名而忘了主体，可以用模式搜索；只记得零散字母时，近似匹配可以帮助缩小范围。先从最简单的一种模式开始，一次只改变一个条件，避免路径、类别和大小限制叠在一起，把真正的文件也排除掉。</p>
+<h2 id="用命令行搜索不必重建另一份索引">用命令行搜索，不必重建另一份索引
+</h2><p>应用内附的命令行工具和窗口共用索引，适合已经习惯在终端处理路径的人。下面先查询索引状态，再在“文稿”路径内搜索 <code>budget</code>，最后演示按模式查找 Swift 文件。完整路径可避免没有配置 PATH 时找不到命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">cli</span><span class="o">=</span><span class="s2">&#34;/Applications/MacHunt.app/Contents/Helpers/machunt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$cli</span><span class="s2">&#34;</span> status
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$cli</span><span class="s2">&#34;</span> search --path <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Documents&#34;</span> --json budget
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$cli</span><span class="s2">&#34;</span> search --pattern <span class="s1">&#39;*.swift&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>--json</code> 方便让另一个脚本读取结果；只想自己看时，可以省略它。模式里的 <code>*.swift</code> 要保留引号，避免在 MacHunt 收到参数以前，就被当前 Shell 展开成当前目录的文件清单。这里做的是检索，不是再次运行全盘索引。</p>
+<h2 id="已知文件搜不到时先查范围">已知文件搜不到时，先查范围
+</h2><p>先确认文件是否位于索引根目录内，有没有被排除规则或隐藏文件设置跳过，再清空搜索筛选条件。如果是外接盘，核对它是否已经连接并可在 Finder 打开。索引中存在路径，也不表示盘当前在线，或者文件已经从云端下载到本机。</p>
+<p>知道完整文件名时，可以用它做一次简单查询；连这次也找不到，再检查索引状态和应用对目录的读取权限。不要一开始就扩大到全盘重建。先找出“没有扫描到”还是“条件把结果过滤掉”，通常更有助于理解自己的设置。</p>
+<h2 id="想自行构建时">想自行构建时
+</h2><p>原生版本的命令行工具与界面共用索引，还可以输出 JSON。没有另外配置 PATH 时，应使用应用包内工具的完整路径。</p>
+<p>自行构建的入口是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/Jingyuan-Zheng/MacHunt_SwiftUI.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> MacHunt_SwiftUI/swift_beta
+</span></span><span class="line"><span class="cl">swift <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">scripts/build-app.sh release
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>构建需要带 Swift 6.2 或更新版本的 Xcode。不要把根目录旧 Tauri 版本的构建命令与 <code>swift_beta/</code> 混用。</p>
+<p>如果还想改善 Finder 的列表浏览，可以看 <a class="link" href="/zh/p/finder-folder-sizes/" >批量开启文件夹大小显示</a>。Beta 的最新功能与限制以 <a class="link" href="https://github.com/Jingyuan-Zheng/MacHunt_SwiftUI#readme"  target="_blank" rel="noopener"
+    >项目 README</a> 为准。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/zh/tags/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2/">文件搜索</a>
+        
+            <a href="/zh/tags/finder/">Finder</a>
+        
+            <a href="/zh/tags/%E5%BF%AB%E9%80%9F%E9%A2%84%E8%A7%88/">快速预览</a>
+        
+            <a href="/zh/tags/macos/">MacOS</a>
+        
+    </section>
+
+
+    
+    <section class="article-aigc inline-meta">
+        <!-- @license lucide-static v1.28.0 - ISC -->
+<svg class="lucide lucide-pencil-sparkles" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 3H8" />
+  <path d="m15.007 5.008 3.987 3.986" />
+  <path d="M20 15v4" />
+  <path d="M21.174 6.813a2.82 2.82 0 0 0-3.986-3.987L3.842 16.175a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+  <path d="M22 17h-4" />
+  <path d="M4 5v4" />
+  <path d="M6 7H2" />
+  <path d="M9 2v2" />
+</svg>
+
+        <span>本文使用 AIGC 技术辅助写作</span>
+    </section>
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <!-- @license lucide-static v1.28.0 - ISC -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copyright-icon lucide-copyright">
+  <circle cx="12" cy="12" r="10" />
+  <path d="M14.83 14.83a4 4 0 1 1 0-5.66" />
+</svg>
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod inline-meta">
+        <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
+
+        <span>
+            最后更新于 22/10月/2026 00:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title">相关文章</h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh/p/compare-files-viewer/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/auto-filename-helper/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 自动命名文件：用快捷指令生成建议，再由 Auto Filename Helper 确认改名" loading="lazy" src="/img/auto-filename-helper/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 自动命名文件：用快捷指令生成建议，再由 Auto Filename Helper 确认改名</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/what-file-is-this/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post 这个文件是什么？在 Mac Finder 中查看陌生文件的用途与打开方式" loading="lazy" src="/img/what-file-is-this/result-zh.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">这个文件是什么？在 Mac Finder 中查看陌生文件的用途与打开方式</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/finder-folder-sizes/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Finder 文件夹大小不显示？批量开启“计算所有大小”" loading="lazy" src="/img/finder-folder-sizes/featured.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Finder 文件夹大小不显示？批量开启“计算所有大小”</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh/p/pdf-page-extractor/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Mac 把 PDF 指定页面转成图片：预览选页，从 Finder 导出 PNG" loading="lazy" src="/img/pdf-page-extractor/preview.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mac 把 PDF 指定页面转成图片：预览选页，从 Finder 导出 PNG</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+    <section class="waline-container">
+        <aside class="waline-comments-notice" aria-labelledby="comments-notice-title">
+            <div>
+                <h3 id="comments-notice-title">评论须知</h3>
+                <p>
+                    本站支持访客评论。如果您希望获得评论回复通知，可以填写您的邮箱；收到回复时，系统将自动发送通知给您。
+                </p>
+            </div>
+            <div class="waline-comments-stats" aria-label="文章互动统计">
+                <span title="浏览量">
+                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
+                    <span class="waline-pageview-count" data-path="/zh/p/machunt-native-file-search/">—</span>
+                </span>
+                <span title="评论数">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                    <span class="waline-comment-count" data-path="/zh/p/machunt-native-file-search/">—</span>
+                </span>
+            </div>
+        </aside>
+        <div id="waline-comments-root"></div>
+        <template id="waline-rss-icon-template"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span></template>
+    </section>
+    <script type="module">
+        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+        import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
+
+        const serverURL = await resolveWalineServerURL({
+            primaryURL: "https://comments.zjy.is-a.dev",
+            fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+            timeoutMs:  2500 ,
+        });
+
+        const uploadMessages = {
+            invalidFile: "无法读取所选图片。",
+            unsupportedType: "仅支持 JPEG、PNG、WebP 和 GIF 图片。",
+            tooLarge: "图片不能超过 3 MB。",
+            forbidden: "当前网页没有图片上传权限。",
+            verificationRequired: "图片上传需要完成安全验证。",
+            verificationUnavailable: "安全验证暂时不可用，无法上传图片。",
+            rateLimited: "上传次数或容量已达到限制，请稍后再试。",
+            serviceUnavailable: "上传服务暂时关闭或安全服务不可用。",
+            failed: "图片上传失败，请稍后重试。",
+            invalidResponse: "上传服务没有返回有效的图片地址。",
+            tooManyImages: "每条评论最多包含 5 张图片。",
+            selectionTooManyImages: "最多只能选择 5 张图片，请先删除多余图片。",
+            submitUploadFailed: "图片上传失败，评论尚未提交。",
+        };
+
+        const uploadEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-image`;
+        const uploadSessionEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/upload-session`;
+        const commentEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment`;
+        const commentContextEndpoint =
+            `${String(serverURL).replace(/\/+$/, "")}/api/comment-context`;
+
+        const turnstileSiteKey = "0x4AAAAAAEGXl5M1hl4v06Fk";
+        let turnstileLoadPromise;
+        let turnstileWidgetId;
+        let turnstileContainer;
+        let resolveTurnstileToken;
+        let rejectTurnstileToken;
+        const pendingImageFiles = new Map();
+        const maxCommentImages = 5;
+        let submittingPendingImages = false;
+        let bypassNextSubmitClick = false;
+        let pendingCommentTurnstileToken;
+        let pendingCommentContext;
+
+        const finishTurnstileToken = (callback, value) => {
+            const finish = callback;
+            if (!finish) return;
+            resolveTurnstileToken = undefined;
+            rejectTurnstileToken = undefined;
+            finish(value);
+        };
+
+        const loadTurnstile = () => {
+            if (!turnstileSiteKey) return Promise.reject(new Error(uploadMessages.verificationRequired));
+            if (window.turnstile) return Promise.resolve(window.turnstile);
+            if (!turnstileLoadPromise) {
+                turnstileLoadPromise = new Promise((resolve, reject) => {
+                    const existingScript = document.querySelector('script[data-waline-turnstile="true"]');
+                    if (existingScript) {
+                        existingScript.addEventListener("load", () => resolve(window.turnstile), { once: true });
+                        existingScript.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                        return;
+                    }
+                    const script = document.createElement("script");
+                    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+                    script.dataset.walineTurnstile = "true";
+                    script.addEventListener("load", () => window.turnstile
+                        ? resolve(window.turnstile)
+                        : reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    script.addEventListener("error", () => reject(new Error(uploadMessages.verificationUnavailable)), { once: true });
+                    document.head.append(script);
+                });
+            }
+            return turnstileLoadPromise;
+        };
+
+        const getTurnstileToken = async (action) => {
+            const turnstile = await loadTurnstile();
+            if (turnstileWidgetId === undefined) {
+                turnstileContainer = document.createElement("div");
+                turnstileContainer.dataset.walineTurnstile = "true";
+                turnstileContainer.style.cssText = [
+                    "position:fixed",
+                    "left:50%",
+                    "top:50%",
+                    "transform:translate(-50%,-50%)",
+                    "z-index:2147483647",
+                    "padding:12px",
+                    "border-radius:12px",
+                    "background:var(--card-background, #fff)",
+                    "box-shadow:0 12px 40px rgba(0,0,0,.24)",
+                    "display:block",
+                ].join(";");
+                document.body.append(turnstileContainer);
+                turnstileWidgetId = turnstile.render(turnstileContainer, {
+                    sitekey: turnstileSiteKey,
+                    action: "waline_image_upload",
+                    execution: "execute",
+                    appearance: "interaction-only",
+                    theme: document.documentElement.dataset.scheme === "dark" ? "dark" : "light",
+                    callback: (token) => finishTurnstileToken(resolveTurnstileToken, token),
+                    "error-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
+                    "expired-callback": () => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)),
+                });
+            }
+            return new Promise((resolve, reject) => {
+                resolveTurnstileToken = resolve;
+                rejectTurnstileToken = reject;
+                const widgetId = turnstileWidgetId;
+                if (turnstileContainer) turnstileContainer.style.display = "block";
+                turnstile.reset(widgetId);
+                turnstile.execute(widgetId, {
+                    action,
+                });
+                setTimeout(() => finishTurnstileToken(rejectTurnstileToken, new Error(uploadMessages.verificationUnavailable)), 15000);
+            });
+        };
+
+        const createUploadSession = async () => {
+            let response;
+            let turnstileToken;
+
+            try {
+                turnstileToken = await getTurnstileToken("waline_image_upload");
+                response = await fetch(uploadSessionEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "X-Turnstile-Token": turnstileToken,
+                    },
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch (error) {
+                if (!turnstileToken && error instanceof Error &&
+                    (error.message === uploadMessages.verificationRequired ||
+                        error.message === uploadMessages.verificationUnavailable)) {
+                    throw error;
+                }
+                throw new Error(uploadMessages.failed);
+            } finally {
+                if (turnstileWidgetId !== undefined && window.turnstile) {
+                    window.turnstile.reset(turnstileWidgetId);
+                }
+                if (turnstileContainer) turnstileContainer.style.display = "none";
+            }
+
+            let result = {};
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) throw new Error(uploadMessages.forbidden);
+                if (response.status === 429) throw new Error(uploadMessages.rateLimited);
+                if (response.status === 503) throw new Error(uploadMessages.serviceUnavailable);
+                throw new Error(uploadMessages.failed);
+            }
+
+            if (typeof result.sessionToken !== "string" || !result.sessionToken) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+            return result.sessionToken;
+        };
+
+        const uploadCommentImage = async (file, sessionToken) => {
+            const maxFileSize = 3 * 1024 * 1024;
+
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            if (!(file instanceof File)) {
+                throw new Error(uploadMessages.invalidFile);
+            }
+
+            if (!allowedTypes.has(file.type)) {
+                throw new Error(uploadMessages.unsupportedType);
+            }
+
+            if (file.size === 0 || file.size > maxFileSize) {
+                throw new Error(uploadMessages.tooLarge);
+            }
+
+            let response;
+
+            try {
+                response = await fetch(uploadEndpoint, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/octet-stream",
+                        "X-Image-Type": file.type,
+                        "X-Upload-Session": sessionToken,
+                    },
+                    body: file,
+                    credentials: "omit",
+                    cache: "no-store",
+                });
+            } catch (error) {
+                throw new Error(uploadMessages.failed);
+            }
+
+            let result = {};
+
+            try {
+                result = await response.json();
+            } catch {
+                
+            }
+
+            if (!response.ok) {
+                if (response.status === 403) {
+                    throw new Error(uploadMessages.forbidden);
+                }
+
+                if (response.status === 429) {
+                    throw new Error(uploadMessages.rateLimited);
+                }
+
+                if (response.status === 503) {
+                    throw new Error(uploadMessages.serviceUnavailable);
+                }
+
+                if (response.status === 413) {
+                    throw new Error(uploadMessages.tooLarge);
+                }
+
+                if (response.status === 415) {
+                    throw new Error(uploadMessages.unsupportedType);
+                }
+
+                throw new Error(
+                    typeof result.message === "string" && result.message
+                        ? result.message
+                        : uploadMessages.failed,
+                );
+            }
+
+            if (
+                typeof result.url !== "string" ||
+                !result.url.startsWith("https://")
+            ) {
+                throw new Error(uploadMessages.invalidResponse);
+            }
+
+            return result.url;
+        };
+
+        const prepareLocalCommentImage = async (file) => {
+            const maxFileSize = 3 * 1024 * 1024;
+            const allowedTypes = new Set([
+                "image/jpeg",
+                "image/png",
+                "image/webp",
+                "image/gif",
+            ]);
+
+            const rejectSelection = (message) => {
+                alert(message);
+                throw new Error(message);
+            };
+
+            if (!(file instanceof File)) {
+                return rejectSelection(uploadMessages.invalidFile);
+            }
+            if (!allowedTypes.has(file.type)) {
+                return rejectSelection(uploadMessages.unsupportedType);
+            }
+            if (file.size === 0 || file.size > maxFileSize) {
+                return rejectSelection(uploadMessages.tooLarge);
+            }
+            if (pendingImageFiles.size >= maxCommentImages) {
+                return rejectSelection(uploadMessages.selectionTooManyImages);
+            }
+
+            const localUrl = URL.createObjectURL(file);
+            pendingImageFiles.set(localUrl, file);
+            return localUrl;
+        };
+
+        const setWalineTextareaValue = (textarea, value) => {
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+            if (valueSetter) valueSetter.call(textarea, value);
+            else textarea.value = value;
+            textarea.dispatchEvent(new InputEvent("input", {
+                bubbles: true,
+                inputType: "insertText",
+                data: null,
+            }));
+        };
+
+        const cleanupUnreferencedLocalImages = (content) => {
+            for (const localUrl of pendingImageFiles.keys()) {
+                if (content.includes(localUrl)) continue;
+                URL.revokeObjectURL(localUrl);
+                pendingImageFiles.delete(localUrl);
+            }
+        };
+
+        const uploadPendingImagesBeforeSubmit = async (textarea) => {
+            let content = textarea.value;
+            cleanupUnreferencedLocalImages(content);
+
+            const localImages = [...pendingImageFiles.entries()]
+                .filter(([localUrl]) => content.includes(localUrl));
+            if (localImages.length > maxCommentImages) {
+                throw new Error(uploadMessages.tooManyImages);
+            }
+            if (localImages.length === 0) return content;
+
+            const uploadSession = await createUploadSession();
+
+            for (const [localUrl, file] of localImages) {
+                const uploadedUrl = await uploadCommentImage(file, uploadSession);
+                content = content.split(localUrl).join(uploadedUrl);
+                pendingImageFiles.delete(localUrl);
+                URL.revokeObjectURL(localUrl);
+                setWalineTextareaValue(textarea, content);
+            }
+
+            return content;
+        };
+
+        init({
+            el: "#waline-comments-root",
+            serverURL,
+            imageUploader: prepareLocalCommentImage,
+            dark: 'html[data-scheme="dark"]',
+            lang: "zh-CN",
+            pageview: false,
+            comment:  true ,
+            reaction: ["data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==","data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="],
+            emoji: [],
+            locale: {
+                emoji: "表情",
+                reactionTitle: "这篇文章对你有帮助吗？",
+                reaction0: "喜欢",
+                reaction1: "好笑",
+                reaction2: "思考",
+                reaction3: "惊讶",
+                reaction4: "难过",
+            },
+        });
+
+        let unicodeEmojiLoadPromise;
+        let unicodeEmojiPanel;
+        let unicodeEmojiPicker;
+        let activeEmojiButton;
+        let activeEmojiTextarea;
+
+        const unicodeEmojiDataSource = "https://cdn.jsdelivr.net/npm/emoji-picker-element-data@1.8.0/zh/emojibase/data.json";
+
+        const loadUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiLoadPromise) {
+                const pickerImport = import("https://cdn.jsdelivr.net/npm/emoji-picker-element@1.29.1/index.js");
+                const localeImport = 
+                    import("https://cdn.jsdelivr.net/npm/emoji-picker-element@1.29.1/i18n/zh_CN.js")
+                ;
+
+                unicodeEmojiLoadPromise = Promise.all([pickerImport, localeImport])
+                    .then(([, localeModule]) => localeModule?.default);
+            }
+
+            return unicodeEmojiLoadPromise;
+        };
+
+        const closeUnicodeEmojiPicker = () => {
+            if (unicodeEmojiPanel) unicodeEmojiPanel.hidden = true;
+            if (activeEmojiButton) activeEmojiButton.setAttribute("aria-expanded", "false");
+            activeEmojiButton = undefined;
+            activeEmojiTextarea = undefined;
+        };
+
+        const positionUnicodeEmojiPicker = () => {
+            if (!unicodeEmojiPanel || unicodeEmojiPanel.hidden || !activeEmojiButton) return;
+
+            const buttonRect = activeEmojiButton.getBoundingClientRect();
+            const panelRect = unicodeEmojiPanel.getBoundingClientRect();
+            const edge = 12;
+            const gap = 8;
+            const maxLeft = Math.max(edge, window.innerWidth - panelRect.width - edge);
+            const left = Math.min(Math.max(edge, buttonRect.left), maxLeft);
+            const belowTop = buttonRect.bottom + gap;
+            const aboveTop = buttonRect.top - panelRect.height - gap;
+            const top = belowTop + panelRect.height <= window.innerHeight - edge
+                ? belowTop
+                : Math.max(edge, aboveTop);
+
+            unicodeEmojiPanel.style.left = `${left}px`;
+            unicodeEmojiPanel.style.top = `${Math.min(top, window.innerHeight - panelRect.height - edge)}px`;
+        };
+
+        const insertUnicodeEmoji = (event) => {
+            const emoji = event.detail?.unicode;
+            const textarea = activeEmojiTextarea;
+            if (typeof emoji !== "string" || !textarea) return;
+
+            const start = textarea.selectionStart ?? textarea.value.length;
+            const end = textarea.selectionEnd ?? start;
+            const newValue = `${textarea.value.slice(0, start)}${emoji}${textarea.value.slice(end)}`;
+            const valueSetter = Object.getOwnPropertyDescriptor(
+                HTMLTextAreaElement.prototype,
+                "value",
+            )?.set;
+
+            if (valueSetter) {
+                valueSetter.call(textarea, newValue);
+            } else {
+                textarea.value = newValue;
+            }
+
+            try {
+                textarea.dispatchEvent(new InputEvent("input", {
+                    bubbles: true,
+                    inputType: "insertText",
+                    data: emoji,
+                }));
+            } catch {
+                textarea.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+
+            textarea.focus();
+            textarea.setSelectionRange(start + emoji.length, start + emoji.length);
+        };
+
+        const createUnicodeEmojiPicker = async () => {
+            const locale = await loadUnicodeEmojiPicker();
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+
+            if (!unicodeEmojiPanel) {
+                unicodeEmojiPanel = document.createElement("div");
+                unicodeEmojiPanel.className = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.id = "waline-unicode-emoji-panel";
+                unicodeEmojiPanel.setAttribute("role", "dialog");
+                unicodeEmojiPanel.hidden = true;
+
+                unicodeEmojiPicker = document.createElement("emoji-picker");
+                unicodeEmojiPicker.locale = "zh";
+                unicodeEmojiPicker.dataSource = unicodeEmojiDataSource;
+                
+                unicodeEmojiPicker.i18n = locale;
+                
+                unicodeEmojiPicker.addEventListener("emoji-click", insertUnicodeEmoji);
+                unicodeEmojiPanel.append(unicodeEmojiPicker);
+                document.body.append(unicodeEmojiPanel);
+
+                document.addEventListener("click", (event) => {
+                    if (!(event.target instanceof Node)) return;
+                    if (unicodeEmojiPanel?.contains(event.target) || activeEmojiButton?.contains(event.target)) return;
+                    closeUnicodeEmojiPicker();
+                });
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "Escape") closeUnicodeEmojiPicker();
+                });
+                window.addEventListener("resize", closeUnicodeEmojiPicker);
+                window.addEventListener("scroll", closeUnicodeEmojiPicker, true);
+            }
+
+            if (!activeEmojiButton || !activeEmojiTextarea) return;
+            const isDark = document.documentElement.dataset.scheme === "dark";
+            unicodeEmojiPicker.classList.toggle("dark", isDark);
+            unicodeEmojiPicker.classList.toggle("light", !isDark);
+            unicodeEmojiPanel.hidden = false;
+            activeEmojiButton.setAttribute("aria-expanded", "true");
+            positionUnicodeEmojiPicker();
+        };
+
+        const toggleUnicodeEmojiPicker = async (button, textarea) => {
+            if (unicodeEmojiPanel && !unicodeEmojiPanel.hidden && activeEmojiButton === button) {
+                closeUnicodeEmojiPicker();
+                return;
+            }
+
+            activeEmojiButton = button;
+            activeEmojiTextarea = textarea;
+            try {
+                await createUnicodeEmojiPicker();
+            } catch {
+                closeUnicodeEmojiPicker();
+            }
+        };
+
+        const walineRoot = document.querySelector("#waline-comments-root");
+        const rssIconTemplate = document.querySelector("#waline-rss-icon-template");
+
+        const isWalineSubmitButton = (button) => {
+            if (!(button instanceof HTMLButtonElement)) return false;
+            if (button.type === "submit") return true;
+            const label = button.textContent?.trim().toLowerCase();
+            return label === "submit" || label === "提交";
+        };
+
+        const nativeFetch = window.fetch.bind(window);
+        window.fetch = (input, init) => {
+            const requestUrl = typeof input === "string" ? input : input?.url;
+            const requestMethod = String(init?.method || input?.method || "GET").toUpperCase();
+            if (pendingCommentTurnstileToken && requestMethod === "POST" && requestUrl === commentEndpoint) {
+                try {
+                    const payload = JSON.parse(init?.body || "{}");
+                    payload.turnstile = pendingCommentTurnstileToken;
+                    if (pendingCommentContext) Object.assign(payload, pendingCommentContext);
+                    pendingCommentTurnstileToken = undefined;
+                    pendingCommentContext = undefined;
+                    return nativeFetch(input, { ...init, body: JSON.stringify(payload) });
+                } catch {
+                    pendingCommentTurnstileToken = undefined;
+                }
+            }
+            return nativeFetch(input, init);
+        };
+
+        const handleDeferredImageSubmission = async (event) => {
+            if (bypassNextSubmitClick || submittingPendingImages) return;
+            if (!(event.target instanceof Element)) return;
+
+            const submitButton = event.target.closest("button");
+            if (!isWalineSubmitButton(submitButton)) return;
+
+            const editor = submitButton.closest("form") || walineRoot;
+            const textarea = editor?.querySelector("textarea.wl-editor")
+                || editor?.querySelector("textarea");
+            if (!(textarea instanceof HTMLTextAreaElement)) return;
+
+            cleanupUnreferencedLocalImages(textarea.value);
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            submittingPendingImages = true;
+            const wasDisabled = submitButton.disabled;
+            submitButton.disabled = true;
+
+            try {
+                await uploadPendingImagesBeforeSubmit(textarea);
+                const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+                let context = {};
+                try {
+                    const contextResponse = await nativeFetch(commentContextEndpoint, {
+                        credentials: "omit",
+                        cache: "no-store",
+                    });
+                    if (contextResponse.ok) context = await contextResponse.json();
+                } catch {
+                    
+                }
+                pendingCommentContext = {
+                    clientTimezone: browserTimezone,
+                    ipTimezone: typeof context.timezone === "string" ? context.timezone : "",
+                    ipTimezoneProof: typeof context.proof === "string" ? context.proof : "",
+                    ipTimezoneExpiresAt: Number(context.expiresAt || 0),
+                };
+                pendingCommentTurnstileToken = await getTurnstileToken("waline_comment");
+                bypassNextSubmitClick = true;
+                submitButton.disabled = wasDisabled;
+                submitButton.click();
+                bypassNextSubmitClick = false;
+                setTimeout(() => {
+                    if (turnstileWidgetId !== undefined && window.turnstile) {
+                        window.turnstile.reset(turnstileWidgetId);
+                    }
+                    if (turnstileContainer) turnstileContainer.style.display = "none";
+                }, 1000);
+            } catch (error) {
+                pendingCommentTurnstileToken = undefined;
+                pendingCommentContext = undefined;
+                submitButton.disabled = wasDisabled;
+                alert(error instanceof Error ? error.message : uploadMessages.submitUploadFailed);
+            } finally {
+                submittingPendingImages = false;
+            }
+        };
+
+        if (walineRoot) {
+            walineRoot.addEventListener("click", handleDeferredImageSubmission, true);
+            walineRoot.addEventListener("input", () => {
+                const textarea = walineRoot.querySelector("textarea.wl-editor")
+                    || walineRoot.querySelector("textarea");
+                if (textarea instanceof HTMLTextAreaElement) {
+                    cleanupUnreferencedLocalImages(textarea.value);
+                }
+            }, true);
+        }
+
+        const enhanceWalineComments = () => {
+            if (!(walineRoot instanceof HTMLElement) || !(rssIconTemplate instanceof HTMLTemplateElement)) return;
+
+            walineRoot.querySelectorAll(".wl-meta-foot .wl-rss a").forEach((link) => {
+                if (link.dataset.siteRssIcon === "true") return;
+
+                const currentIcon = link.querySelector("svg");
+                const siteIcon = rssIconTemplate.content.firstElementChild?.cloneNode(true);
+                if (currentIcon && siteIcon instanceof Element) {
+                    currentIcon.replaceWith(siteIcon);
+                    link.dataset.siteRssIcon = "true";
+                }
+            });
+
+            walineRoot.querySelectorAll(".wl-card").forEach((card) => {
+                const head = Array.from(card.children).find((child) => child.classList.contains("wl-head"));
+                const adminActions = Array.from(card.children).find((child) => child.classList.contains("wl-admin-actions"));
+                const time = head?.querySelector(":scope > .wl-time");
+
+                if (head && adminActions && time) {
+                    time.insertAdjacentElement("afterend", adminActions);
+                }
+            });
+        };
+
+        const enhanceUnicodeEmojiButtons = () => {
+            if (!(walineRoot instanceof HTMLElement)) return;
+
+            walineRoot.querySelectorAll(".wl-comment .wl-actions button.wl-action").forEach((button) => {
+                if (!(button instanceof HTMLButtonElement)) return;
+                if (button.title !== "表情") return;
+                if (button.dataset.unicodeEmojiBound === "true") return;
+
+                button.dataset.unicodeEmoji = "true";
+                button.dataset.unicodeEmojiBound = "true";
+                button.setAttribute("aria-haspopup", "dialog");
+                button.setAttribute("aria-expanded", "false");
+                button.setAttribute("aria-controls", "waline-unicode-emoji-panel");
+                button.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const comment = button.closest(".wl-comment");
+                    const textarea = comment?.querySelector("textarea.wl-editor")
+                        || comment?.querySelector("textarea");
+                    if (textarea instanceof HTMLTextAreaElement) {
+                        void toggleUnicodeEmojiPicker(button, textarea);
+                    }
+                }, true);
+            });
+        };
+
+        const enhanceWaline = () => {
+            enhanceWalineComments();
+            enhanceUnicodeEmojiButtons();
+        };
+
+        if (walineRoot) {
+            new MutationObserver(enhanceWaline).observe(walineRoot, { childList: true, subtree: true });
+            enhanceWaline();
+        }
+
+        pageviewCount({
+            serverURL,
+            path: "/zh/p/machunt-native-file-search/",
+            selector: ".waline-pageview-count",
+            update: false,
+        });
+    </script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        
+            2025 -
+        
+        2026 Jingyuan Zheng
+    </section>
+
+    <section class="powerby">
+        <a href="/zh/privacy-policy/">隐私政策</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/sitemap/">网站地图</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
+            <script type="module">
+                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
+                import { resolveWalineServerURL } from "\/js\/waline-server.min.25372963894739ec13382b7bcb15ee5223e5cd4daa527437991e61deedb30448.js";
+
+                const serverURL = await resolveWalineServerURL({
+                    primaryURL: "https://comments.zjy.is-a.dev",
+                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
+                    timeoutMs:  2500 ,
+                });
+                const lang = "zh-CN";
+
+                pageviewCount({
+                    serverURL,
+                    lang,
+                    selector: ".waline-pageview-tracker",
+                });
+
+                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        path: "/__site_total__/",
+                        type: "time",
+                        action: "inc",
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        const count = payload?.data?.[0]?.time;
+                        const element = document.querySelector(".waline-site-pageview-count");
+                        if (!element || typeof count !== "number") return;
+                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
+                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
+                        element.textContent = `${label} ${formatted}`;
+                    })
+                    .catch(() => {});
+            </script>
+        <br>
+        <span>
+            由
+            <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+            &amp;
+            <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack v4.0.3</a>
+        </span>
+        
+            <br>
+            <small class="site-runtime">
+                本站已运行
+                <strong data-site-runtime data-launch-date="2025-09-14">0</strong>
+                天
+            </small>
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.f856840516f7c2ad1769a8f5937e3d08d6cb386e2cd2dd025ae696e0ff207958.js" defer></script><script type="text/javascript" src="/ts/custom.2e6e579bdb52b9e2cba422be2c3bd4efecbeed8e2ac4f68165bcdde83a55ca86.js" defer></script>
+
+
+    </body>
+</html>

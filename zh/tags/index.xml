@@ -6,7 +6,121 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-Hans</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Fri, 14 Aug 2026 12:00:00 +0200</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Finder 快速操作</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/finder-%E5%BF%AB%E9%80%9F%E6%93%8D%E4%BD%9C/</link>
+            <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/finder-%E5%BF%AB%E9%80%9F%E6%93%8D%E4%BD%9C/</guid>
+            <description></description>
+        </item><item>
+            <title>MacOS</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/macos/</link>
+            <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/macos/</guid>
+            <description></description>
+        </item><item>
+            <title>PDF 转图片</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/pdf-%E8%BD%AC%E5%9B%BE%E7%89%87/</link>
+            <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/pdf-%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
+            <description></description>
+        </item><item>
+            <title>PNG</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/png/</link>
+            <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/png/</guid>
+            <description></description>
+        </item><item>
+            <title>Live Photo</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/live-photo/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/live-photo/</guid>
+            <description></description>
+        </item><item>
+            <title>照片整理</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E7%85%A7%E7%89%87%E6%95%B4%E7%90%86/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E7%85%A7%E7%89%87%E6%95%B4%E7%90%86/</guid>
+            <description></description>
+        </item><item>
+            <title>重复照片</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E9%87%8D%E5%A4%8D%E7%85%A7%E7%89%87/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E9%87%8D%E5%A4%8D%E7%85%A7%E7%89%87/</guid>
+            <description></description>
+        </item><item>
+            <title>ExifTool</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/exiftool/</link>
+            <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/exiftool/</guid>
+            <description></description>
+        </item><item>
+            <title>媒体信息</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%AA%92%E4%BD%93%E4%BF%A1%E6%81%AF/</link>
+            <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%AA%92%E4%BD%93%E4%BF%A1%E6%81%AF/</guid>
+            <description></description>
+        </item><item>
+            <title>Finder</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/finder/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/finder/</guid>
+            <description></description>
+        </item><item>
+            <title>Shell 命令</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/shell-%E5%91%BD%E4%BB%A4/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/shell-%E5%91%BD%E4%BB%A4/</guid>
+            <description></description>
+        </item><item>
+            <title>Spotlight</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/spotlight/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/spotlight/</guid>
+            <description></description>
+        </item><item>
+            <title>比较报告</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%AF%94%E8%BE%83%E6%8A%A5%E5%91%8A/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%AF%94%E8%BE%83%E6%8A%A5%E5%91%8A/</guid>
+            <description></description>
+        </item><item>
+            <title>快捷指令</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
+            <description></description>
+        </item><item>
+            <title>双屏排列</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%8F%8C%E5%B1%8F%E6%8E%92%E5%88%97/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%8F%8C%E5%B1%8F%E6%8E%92%E5%88%97/</guid>
+            <description></description>
+        </item><item>
+            <title>外接显示器</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%A4%96%E6%8E%A5%E6%98%BE%E7%A4%BA%E5%99%A8/</guid>
+            <description></description>
+        </item><item>
+            <title>文件版本</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E7%89%88%E6%9C%AC/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E7%89%88%E6%9C%AC/</guid>
+            <description></description>
+        </item><item>
+            <title>文件识别</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E8%AF%86%E5%88%AB/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E8%AF%86%E5%88%AB/</guid>
+            <description></description>
+        </item><item>
+            <title>文件重命名</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D/</link>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D/</guid>
+            <description></description>
+        </item><item>
             <title>Archive Peek</title>
             <link>https://jingyuan-zheng.github.io/zh/tags/archive-peek/</link>
             <pubDate>Fri, 14 Aug 2026 12:00:00 +0200</pubDate>
@@ -73,6 +187,30 @@
             <guid>https://jingyuan-zheng.github.io/zh/tags/%E9%94%81%E5%B1%8F/</guid>
             <description></description>
         </item><item>
+            <title>快速预览</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E9%80%9F%E9%A2%84%E8%A7%88/</link>
+            <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E9%80%9F%E9%A2%84%E8%A7%88/</guid>
+            <description></description>
+        </item><item>
+            <title>文件搜索</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2/</link>
+            <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2/</guid>
+            <description></description>
+        </item><item>
+            <title>列表视图</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%88%97%E8%A1%A8%E8%A7%86%E5%9B%BE/</link>
+            <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%88%97%E8%A1%A8%E8%A7%86%E5%9B%BE/</guid>
+            <description></description>
+        </item><item>
+            <title>文件夹大小</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F/</link>
+            <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F/</guid>
+            <description></description>
+        </item><item>
             <title>Agent Skill</title>
             <link>https://jingyuan-zheng.github.io/zh/tags/agent-skill/</link>
             <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
@@ -103,12 +241,6 @@
             <guid>https://jingyuan-zheng.github.io/zh/tags/iso/</guid>
             <description></description>
         </item><item>
-            <title>MacOS</title>
-            <link>https://jingyuan-zheng.github.io/zh/tags/macos/</link>
-            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/zh/tags/macos/</guid>
-            <description></description>
-        </item><item>
             <title>MacOS 磁盘映像</title>
             <link>https://jingyuan-zheng.github.io/zh/tags/macos-%E7%A3%81%E7%9B%98%E6%98%A0%E5%83%8F/</link>
             <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
@@ -127,12 +259,6 @@
             <guid>https://jingyuan-zheng.github.io/zh/tags/mdx/</guid>
             <description></description>
         </item><item>
-            <title>快捷指令</title>
-            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
-            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
-            <description></description>
-        </item><item>
             <title>一键弹出 DMG</title>
             <link>https://jingyuan-zheng.github.io/zh/tags/%E4%B8%80%E9%94%AE%E5%BC%B9%E5%87%BA-dmg/</link>
             <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
@@ -143,12 +269,6 @@
             <link>https://jingyuan-zheng.github.io/zh/tags/assets.car/</link>
             <pubDate>Fri, 07 Aug 2026 18:00:00 +0200</pubDate>
             <guid>https://jingyuan-zheng.github.io/zh/tags/assets.car/</guid>
-            <description></description>
-        </item><item>
-            <title>Finder</title>
-            <link>https://jingyuan-zheng.github.io/zh/tags/finder/</link>
-            <pubDate>Fri, 07 Aug 2026 18:00:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/zh/tags/finder/</guid>
             <description></description>
         </item><item>
             <title>ICNS</title>
@@ -365,6 +485,30 @@
             <link>https://jingyuan-zheng.github.io/zh/tags/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F/</link>
             <pubDate>Fri, 24 Jul 2026 20:00:00 +0200</pubDate>
             <guid>https://jingyuan-zheng.github.io/zh/tags/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F/</guid>
+            <description></description>
+        </item><item>
+            <title>DNS</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/dns/</link>
+            <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/dns/</guid>
+            <description></description>
+        </item><item>
+            <title>GitHub Pages</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/github-pages/</link>
+            <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/github-pages/</guid>
+            <description></description>
+        </item><item>
+            <title>Is-A.dev</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/is-a.dev/</link>
+            <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/is-a.dev/</guid>
+            <description></description>
+        </item><item>
+            <title>自定义域名</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</link>
+            <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</guid>
             <description></description>
         </item><item>
             <title>CJK</title>
@@ -599,6 +743,48 @@
             <link>https://jingyuan-zheng.github.io/zh/tags/%E7%9F%A5%E4%B9%8E/</link>
             <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
             <guid>https://jingyuan-zheng.github.io/zh/tags/%E7%9F%A5%E4%B9%8E/</guid>
+            <description></description>
+        </item><item>
+            <title>ChatGPT</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/chatgpt/</link>
+            <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/chatgpt/</guid>
+            <description></description>
+        </item><item>
+            <title>Markdown</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/markdown/</link>
+            <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/markdown/</guid>
+            <description></description>
+        </item><item>
+            <title>Typora</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/typora/</link>
+            <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/typora/</guid>
+            <description></description>
+        </item><item>
+            <title>用户脚本</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E7%94%A8%E6%88%B7%E8%84%9A%E6%9C%AC/</link>
+            <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E7%94%A8%E6%88%B7%E8%84%9A%E6%9C%AC/</guid>
+            <description></description>
+        </item><item>
+            <title>LaTeX</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/latex/</link>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/latex/</guid>
+            <description></description>
+        </item><item>
+            <title>公式识别</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E5%85%AC%E5%BC%8F%E8%AF%86%E5%88%AB/</link>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E5%85%AC%E5%BC%8F%E8%AF%86%E5%88%AB/</guid>
+            <description></description>
+        </item><item>
+            <title>研究笔记</title>
+            <link>https://jingyuan-zheng.github.io/zh/tags/%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/zh/tags/%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid>
             <description></description>
         </item><item>
             <title>Git</title>

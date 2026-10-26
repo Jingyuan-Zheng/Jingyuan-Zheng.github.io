@@ -615,6 +615,10 @@ asset_collections:
     label: "archive-peek"
     media_folder: /static/img/archive-peek
     public_folder: /img/archive-peek
+  - name: img_auto_filename_helper
+    label: "auto-filename-helper"
+    media_folder: /static/img/auto-filename-helper
+    public_folder: /img/auto-filename-helper
   - name: img_bewlybewly_safari_revival
     label: "bewlybewly-safari-revival"
     media_folder: /static/img/bewlybewly-safari-revival
@@ -623,14 +627,30 @@ asset_collections:
     label: "categories"
     media_folder: /static/img/categories
     public_folder: /img/categories
+  - name: img_chatgpt_to_markdown_userscript
+    label: "chatgpt-to-markdown-userscript"
+    media_folder: /static/img/chatgpt-to-markdown-userscript
+    public_folder: /img/chatgpt-to-markdown-userscript
+  - name: img_compare_files_viewer
+    label: "compare-files-viewer"
+    media_folder: /static/img/compare-files-viewer
+    public_folder: /img/compare-files-viewer
   - name: img_dashboard
     label: "dashboard"
     media_folder: /static/img/dashboard
     public_folder: /img/dashboard
+  - name: img_display_layout
+    label: "display-layout"
+    media_folder: /static/img/display-layout
+    public_folder: /img/display-layout
   - name: img_dmg_maker
     label: "dmg-maker"
     media_folder: /static/img/dmg-maker
     public_folder: /img/dmg-maker
+  - name: img_finder_folder_sizes
+    label: "finder-folder-sizes"
+    media_folder: /static/img/finder-folder-sizes
+    public_folder: /img/finder-folder-sizes
   - name: img_friend_links_application_system_launch
     label: "friend-links-application-system-launch"
     media_folder: /static/img/friend-links-application-system-launch
@@ -639,6 +659,10 @@ asset_collections:
     label: "gallery"
     media_folder: /static/img/gallery
     public_folder: /img/gallery
+  - name: img_gallery_organizer
+    label: "gallery-organizer"
+    media_folder: /static/img/gallery-organizer
+    public_folder: /img/gallery-organizer
   - name: img_google_account_registration_guide
     label: "google-account-registration-guide"
     media_folder: /static/img/google-account-registration-guide
@@ -647,6 +671,10 @@ asset_collections:
     label: "home-app-icons"
     media_folder: /static/img/home-app-icons
     public_folder: /img/home-app-icons
+  - name: img_is_a_dev_domain_guide
+    label: "is-a-dev-domain-guide"
+    media_folder: /static/img/is-a-dev-domain-guide
+    public_folder: /img/is-a-dev-domain-guide
   - name: img_launchpad
     label: "launchpad"
     media_folder: /static/img/launchpad
@@ -659,6 +687,10 @@ asset_collections:
     label: "mac-lite-translator"
     media_folder: /static/img/mac-lite-translator
     public_folder: /img/mac-lite-translator
+  - name: img_machunt_native_file_search
+    label: "machunt-native-file-search"
+    media_folder: /static/img/machunt-native-file-search
+    public_folder: /img/machunt-native-file-search
   - name: img_macos_custom_video_wallpaper_snoopy
     label: "macos-custom-video-wallpaper-snoopy"
     media_folder: /static/img/macos-custom-video-wallpaper-snoopy
@@ -675,6 +707,10 @@ asset_collections:
     label: "malta-waste-collection-calendar"
     media_folder: /static/img/malta-waste-collection-calendar
     public_folder: /img/malta-waste-collection-calendar
+  - name: img_mixtex_latex_ocr_macos
+    label: "mixtex-latex-ocr-macos"
+    media_folder: /static/img/mixtex-latex-ocr-macos
+    public_folder: /img/mixtex-latex-ocr-macos
   - name: img_my_first_blog_setup_guide
     label: "my-first-blog-setup-guide"
     media_folder: /static/img/my-first-blog-setup-guide
@@ -687,6 +723,10 @@ asset_collections:
     label: "paris-travel-vocabulary"
     media_folder: /static/img/paris-travel-vocabulary
     public_folder: /img/paris-travel-vocabulary
+  - name: img_pdf_page_extractor
+    label: "pdf-page-extractor"
+    media_folder: /static/img/pdf-page-extractor
+    public_folder: /img/pdf-page-extractor
   - name: img_safari_cjk_font_fallback_fix
     label: "safari-cjk-font-fallback-fix"
     media_folder: /static/img/safari-cjk-font-fallback-fix
@@ -695,6 +735,10 @@ asset_collections:
     label: "social"
     media_folder: /static/img/social
     public_folder: /img/social
+  - name: img_spotlight_shell
+    label: "spotlight-shell"
+    media_folder: /static/img/spotlight-shell
+    public_folder: /img/spotlight-shell
   - name: img_text_tray
     label: "text-tray"
     media_folder: /static/img/text-tray
@@ -707,6 +751,10 @@ asset_collections:
     label: "translate-document-quick-action"
     media_folder: /static/img/translate-document-quick-action
     public_folder: /img/translate-document-quick-action
+  - name: img_view_media_info
+    label: "view-media-info"
+    media_folder: /static/img/view-media-info
+    public_folder: /img/view-media-info
   - name: img_waline_comment_system_migration
     label: "waline-comment-system-migration"
     media_folder: /static/img/waline-comment-system-migration
@@ -715,3 +763,7 @@ asset_collections:
     label: "waline-icons"
     media_folder: /static/img/waline-icons
     public_folder: /img/waline-icons
+  - name: img_what_file_is_this
+    label: "what-file-is-this"
+    media_folder: /static/img/what-file-is-this
+    public_folder: /img/what-file-is-this
