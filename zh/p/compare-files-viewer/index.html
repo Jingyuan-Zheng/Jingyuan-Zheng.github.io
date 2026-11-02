@@ -84,11 +84,11 @@
 <meta property='og:description' content="用原生窗口查看文件关系、建议主版本、顺序与比较依据；解释 Compare Files Viewer 和上游比较工具的分工。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/compare-files-viewer/'>
 <meta property='og:site_name' content='小景'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='文件版本' /><meta property='article:tag' content='比较报告' /><meta property='article:tag' content='Finder' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-09-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/compare-files-viewer/screenshot.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='文件版本' /><meta property='article:tag' content='比较报告' /><meta property='article:tag' content='Finder' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-09-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-11-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/compare-files-viewer/liquid-glass-main.png' />
 <meta name="twitter:site" content="@AndersJheng">
     <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据">
 <meta name="twitter:description" content="用原生窗口查看文件关系、建议主版本、顺序与比较依据；解释 Compare Files Viewer 和上游比较工具的分工。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/compare-files-viewer/screenshot.png' />
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/compare-files-viewer/liquid-glass-main.png' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
 <script>
@@ -214,11 +214,11 @@
       "author": {
         "@id": "https://jingyuan-zheng.github.io/#person"
       },
-      "dateModified": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-11-02T00:00:00+00:00",
       "datePublished": "2026-09-30T00:00:00+00:00",
       "description": "用原生窗口查看文件关系、建议主版本、顺序与比较依据；解释 Compare Files Viewer 和上游比较工具的分工。",
       "headline": "Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据",
-      "image": "https://jingyuan-zheng.github.io/img/compare-files-viewer/screenshot.png",
+      "image": "https://jingyuan-zheng.github.io/img/compare-files-viewer/liquid-glass-main.png",
       "inLanguage": "zh",
       "isPartOf": {
         "@id": "https://jingyuan-zheng.github.io/#website"
@@ -684,6 +684,7 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
+    <li><a href="#新版界面">新版界面</a></li>
     <li><a href="#从源码构建查看器">从源码构建查看器</a></li>
     <li><a href="#一份报告可以展示什么">一份报告可以展示什么</a></li>
     <li><a href="#接入自己的比较工作流">接入自己的比较工作流</a></li>
@@ -708,7 +709,7 @@
     <header class="article-header">
     <div class="article-image">
         <a href="/zh/p/compare-files-viewer/">
-            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/compare-files-viewer/screenshot.png">
+            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/compare-files-viewer/liquid-glass-main.png">
         </a>
     </div>
     
@@ -807,6 +808,7 @@
             <nav class="toc-nav">
                 
   <ol>
+    <li><a href="#新版界面">新版界面</a></li>
     <li><a href="#从源码构建查看器">从源码构建查看器</a></li>
     <li><a href="#一份报告可以展示什么">一份报告可以展示什么</a></li>
     <li><a href="#接入自己的比较工作流">接入自己的比较工作流</a></li>
@@ -833,8 +835,13 @@
 <p>目录里同时出现“最终版”“最终版 2”“修改后最终版”时，真正想知道的往往是：它们是什么关系，应该先打开哪一份？如果报告还能展示路径、时间、哈希或文字差异，判断就会更有依据。</p>
 <p><a class="link" href="https://github.com/Jingyuan-Zheng/CompareFilesViewer"  target="_blank" rel="noopener"
     >Compare Files Viewer</a> 负责把这些结果放进原生窗口。<strong>它本身不执行文件比较</strong>，需要上游工具先分析，再传入结构化报告。</p>
+<h2 id="新版界面">新版界面
+</h2><p>图 1 展示完全相同文件的示例报告，以及 Liquid Glass 操作栏。图中路径和省略的哈希值仅用于演示。</p>
+<p><img alt="Compare Files main window" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/compare-files-viewer/liquid-glass-main.png"></p>
+<p>图 2 展示详情窗口中的文件分组、元数据和本地比较依据。</p>
+<p><img alt="Compare Files details" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/compare-files-viewer/liquid-glass-details.png"></p>
 <h2 id="从源码构建查看器">从源码构建查看器
-</h2><p>项目要求 macOS 14 或更新版本，以及 Xcode Command Line Tools，目前没有 GitHub Release 安装包。</p>
+</h2><p>项目要求 macOS 26 或更新版本，以及 Xcode Command Line Tools，目前没有 GitHub Release 安装包。</p>
 <p>下载源码，在项目根目录执行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -938,7 +945,7 @@
         <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
 
         <span>
-            最后更新于 22/10月/2026 00:00 UTC
+            最后更新于 02/11月/2026 00:00 UTC
         </span>
     </section></footer>
 
