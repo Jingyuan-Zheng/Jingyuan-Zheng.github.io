@@ -657,7 +657,7 @@
             <svg class="lucide lucide-calendar-days" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
 <time class="article-time--published" datetime='2026-03-08T00:00:00Z'>08/Mar/2026</time>
             <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
-<time class="article-time--reading">6 minutes read</time>
+<time class="article-time--reading">3 minutes read</time>
         </div>
         
         <div class="article-meta__translations inline-meta"><svg class="lucide lucide-languages" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
@@ -742,6 +742,15 @@
     margin: 0 auto;
     padding: 2rem 0 4rem;
     color: var(--cv-main);
+}
+
+/* Keep CV heading decoration separate from the theme's article headings. */
+.article-content .cv-page h1,
+.article-content .cv-page h2,
+.article-content .cv-page h3 {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    border-inline-start: 0;
 }
 
 .cv-page > * {
@@ -867,7 +876,7 @@
 .cv-hero h1 {
     max-width: 720px;
     margin: 0;
-    color: var(--cv-main);
+    color: var(--cv-accent);
     font-size: clamp(3.6rem, 8vw, 6.2rem);
     line-height: 1;
     letter-spacing: -0.045em;
@@ -926,41 +935,21 @@
     align-items: center;
     gap: 1.2rem;
     margin: 0 0 2.5rem;
-    color: var(--cv-main);
+    color: var(--cv-accent);
     font-size: clamp(2rem, 4vw, 2.6rem);
     line-height: 1.2;
 }
 
-.cv-section-heading::before {
-    width: 0.45rem;
-    height: 2.6rem;
-    content: "";
-    background: var(--cv-accent);
-    border-radius: 999px;
-}
 
 .cv-entry {
     position: relative;
-    padding: 0 0 2.7rem 2.2rem;
-    border-left: 1px solid var(--cv-border);
+    padding: 0 0 2.7rem;
 }
 
 .cv-entry:last-child {
     padding-bottom: 0;
 }
 
-.cv-entry::before {
-    position: absolute;
-    top: 0.45rem;
-    left: -0.45rem;
-    width: 0.9rem;
-    height: 0.9rem;
-    content: "";
-    background: var(--cv-accent);
-    border: 3px solid var(--card-background);
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px var(--cv-border);
-}
 
 .cv-entry-header {
     display: grid;
@@ -969,11 +958,21 @@
     align-items: baseline;
 }
 
-.cv-entry h3 {
+.cv-entry h3,
+.cv-achievements li > span {
     margin: 0;
     color: var(--cv-main);
     font-size: 1.95rem;
+    font-weight: 700;
     line-height: 1.35;
+}
+
+.cv-entry h3 a {
+    color: inherit;
+}
+
+#open-source > .cv-links {
+    margin-bottom: 2.5rem;
 }
 
 .cv-date {
@@ -1000,7 +999,8 @@
 
 .cv-list {
     margin: 1.2rem 0 0;
-    padding-left: 1.4rem;
+    padding-left: 0;
+    list-style: none;
     color: var(--cv-main);
     font-size: 1.5rem;
     line-height: 1.7;
@@ -1046,14 +1046,16 @@
 
 .cv-achievements li {
     display: grid;
-    grid-template-columns: 10rem minmax(0, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem 2rem;
+    align-items: baseline;
     padding: 1.2rem 1.4rem;
     background: var(--cv-soft);
     border-radius: 14px;
     font-size: 1.45rem;
     line-height: 1.55;
 }
+
 
 .cv-achievements time {
     color: var(--cv-accent);
@@ -1177,8 +1179,7 @@
 </button>
 <ul class="cv-floating-links">
 <li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
+<li><a href="#projects">Research</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#open-source">Open Source</a></li>
 <li><a href="#achievements">Achievements</a></li>
@@ -1194,8 +1195,7 @@
 <nav aria-label="CV sections">
 <ul class="cv-nav">
 <li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
+<li><a href="#projects">Research</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#open-source">Open Source</a></li>
 <li><a href="#achievements">Achievements</a></li>
@@ -1210,7 +1210,6 @@
 <time class="cv-date">Sep 2024 - Sep 2025</time>
 </div>
 <p class="cv-subtitle">Master of Science in Engineering · Industrial Engineering and Logistics Management</p>
-<p class="cv-detail">English-medium programme · Relevant coursework: Data-driven Optimization, Operational Research, Machine Learning and Applications, Physical Internet</p>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
@@ -1218,91 +1217,63 @@
 <time class="cv-date">Sep 2019 - Jun 2024</time>
 </div>
 <p class="cv-subtitle">Bachelor of Management Studies · Logistics Management</p>
-<p class="cv-detail">GPA: 3.69/4.0 (Rank: 2/35) · Relevant coursework: Python, Database Technology and Application, Operational Research, Forecasting Methods, Logistics System Optimization, Modelling and Simulation of Logistics Systems</p>
 </article>
-</section>
-<section id="skills" class="cv-section">
-<h2 class="cv-section-heading">Research &amp; Technical Skills</h2>
-<div class="cv-skill-grid">
-<div class="cv-skill"><strong>Industrial Engineering &amp; Operations Research</strong><span>Multi-objective optimisation, network-flow modelling, Monte Carlo simulation, sensitivity analysis, and decision support.</span></div>
-<div class="cv-skill"><strong>Logistics &amp; Supply Chain</strong><span>Inventory planning, reliability and resilience analysis, maritime supply-chain risk, material requirements planning, and logistics system optimisation.</span></div>
-<div class="cv-skill"><strong>Data Analysis &amp; Research</strong><span>Data cleaning, statistical analysis, questionnaire design, factor analysis, regression, machine learning, and reproducible analytical workflows.</span></div>
-<div class="cv-skill"><strong>Tools</strong><span>Python, SQL Server, MATLAB, C, SPSS Statistics, Vensim, FlexSim, and Excel.</span></div>
-<div class="cv-skill"><strong>Development &amp; Documentation</strong><span>Familiar with AI-assisted workflows and GitHub project maintenance; technical writing.</span></div>
-</div>
 </section>
 <section id="projects" class="cv-section">
-<h2 class="cv-section-heading">Research &amp; Analytical Projects</h2>
+<h2 class="cv-section-heading">Research</h2>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>Reliability Modelling and Decision Support for PV Microinverter Systems</h3>
-<time class="cv-date">Nov 2024 - Jul 2025</time>
+<h3>Spare Parts Management Strategy for PV Power Station Inverters Based on Inventory Control Optimization</h3>
+<time class="cv-date">August 2025</time>
 </div>
-<p class="cv-subtitle">MSc Dissertation · The University of Hong Kong · Supervisor: Prof. Yao Cheng</p>
-<ul class="cv-list">
-<li>Developed a reliability-driven decision-support model for PV microinverter spare parts, linking stochastic failure behaviour, replenishment lead time, downtime loss, lifecycle cost, and carbon-emission impact.</li>
-<li>Applied CTMC-based reliability modelling, NSGA-II multi-objective optimisation, and Monte Carlo simulation to evaluate inventory policies under uncertain failures and supply conditions.</li>
-<li>Model evaluation showed a 12.9% reduction in lifecycle cost and a 20.9% reduction in carbon emissions compared with a zero-inventory baseline.</li>
-<li>Conducted sensitivity analysis and translated model outputs into practical recommendations for inventory levels, lead-time control, reliability improvement, and system resilience.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>System Dynamics Simulation of Operational Risk Evolution in Maritime Supply Chains</h3>
-<time class="cv-date">Oct 2023 - Jun 2024</time>
+<h3>Research on Logistics Optimization under Changes in Toll Fees</h3>
+<time class="cv-date">April 2025</time>
 </div>
-<p class="cv-subtitle">Undergraduate Dissertation · Fuzhou University · Supervisor: Prof. Haidong Yang</p>
-<ul class="cv-list">
-<li>Built a system dynamics model to simulate operational risk evolution in an international maritime supply-chain system using a three-tier risk indicator framework and questionnaire-based data.</li>
-<li>Applied questionnaire reliability testing and factor analysis to process survey responses, determine indicator weights, and convert qualitative risk factors into model inputs.</li>
-<li>Generated scenario-based recommendations for supplier reliability, logistics coordination, information-flow control, financial health, and operational resilience.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>Machine Learning Classification of High-Dimensional Time-Series Signals</h3>
-<time class="cv-date">Dec 2024</time>
+<h3>Sustainable Logistics in On-Demand Food Delivery: Analyzing Wolt's Business Model, Operations, and Environmental Impact</h3>
+<time class="cv-date">January 2025</time>
 </div>
-<p class="cv-subtitle">Academic Project · The University of Hong Kong · Directed by Dr. Shujia Qin</p>
-<ul class="cv-list">
-<li>Developed Python-based training and inference workflows for binary classification of 8,192-point time-series signals under limited domain information and a small labelled dataset.</li>
-<li>Extracted and compared time-domain, frequency-domain, and power spectral density features to guide feature engineering and model design.</li>
-<li>Implemented and compared a stacking ensemble, an RBF-kernel SVM, and a neural-network model with Bayesian hyperparameter tuning, documenting performance, limitations, and reproducibility.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>Emergency Evacuation Optimisation Using Network Flow and Heuristic Algorithms</h3>
-<time class="cv-date">Nov 2024</time>
+<h3>Comparative Analysis of Machine Learning and Neural Network Approaches for Binary Classification of Time-Series Data</h3>
+<time class="cv-date">December 2024</time>
 </div>
-<p class="cv-subtitle">Academic Project · The University of Hong Kong · Directed by Prof. Junwei Wang</p>
-<ul class="cv-list">
-<li>Developed a network-flow-based evacuation optimisation model for disaster-management scenarios, balancing evacuation efficiency with fairness in shelter allocation.</li>
-<li>Evaluated shelter utilisation, congestion, distribution balance, and resource-allocation performance using simulation-based results.</li>
-<li>Proposed improvements for bottleneck reduction, fairer flow distribution, and more resilient emergency planning.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>High-Quality Development Evaluation of Historical and Cultural Blocks in Fuzhou</h3>
-<time class="cv-date">May 2022 - May 2023</time>
+<h3>Balancing Efficiency and Fairness: A Study on Urban Emergency Evacuation Optimization Using Heuristic Algorithms</h3>
+<time class="cv-date">November 2024</time>
 </div>
-<p class="cv-subtitle">Undergraduate Research Project · Fuzhou University · Directed by Prof. Qin Zhang</p>
-<ul class="cv-list">
-<li>Supported a questionnaire-based research project by applying factor analysis and AHP to construct and evaluate an indicator system for historical-community development.</li>
-<li>Analysed development conditions and improvement priorities, translating quantitative findings into policy-oriented recommendations.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
-<h3>Analysis of Factors Influencing Students' Postgraduate Study Intentions</h3>
-<time class="cv-date">Mar 2022 - Jul 2022</time>
+<h3>Research on the Evolution of Operational Risks in Xiamen International Maritime Supply Chain</h3>
+<time class="cv-date">June 2024</time>
 </div>
-<p class="cv-subtitle">Research Methods Project · Fuzhou University · Directed by Prof. Quan Cheng and Yong Hu</p>
-<ul class="cv-list">
-<li>Designed and processed questionnaire data using SPSS, Likert-scale variables, and ordinal regression to analyse factors influencing postgraduate study intentions.</li>
-<li>Converted survey responses into structured numerical variables and interpreted model results to support evidence-based recommendations for higher-education planning.</li>
-</ul>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>A Study on the Layout Planning of A Enterprise Logistics Center Based on SLP and TOPSIS-Grey Correlation Comprehensive Evaluation Method</h3>
+<time class="cv-date">January 2024</time>
+</div>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>Basic Discussion on Port Loading and Unloading Technology</h3>
+<time class="cv-date">May 2023</time>
+</div>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3>An Analysis of the Development Challenges of China–Europe Container Trains from a Rail–Water Intermodal Transport Perspective</h3>
+<time class="cv-date">December 2022</time>
+</div>
 </article>
 </section>
 <section id="experience" class="cv-section">
@@ -1312,50 +1283,50 @@
 <h3>Business Intern · Oriental Logistics Group (China) Ltd. Xiamen Branch</h3>
 <time class="cv-date">Feb 2024 - Apr 2024</time>
 </div>
-<ul class="cv-list">
-<li>Maintained shipment-status records by checking vessel-space allocation, ETD/ETA changes, booking updates, documentation issues, and cargo-information discrepancies against shipping-company and partner updates.</li>
-<li>Coordinated Southeast Asia shipping-route operations and maintained structured communication with customers, customs brokers, shipping companies, and partner firms, supporting schedule visibility and exception follow-up.</li>
-<li>Built a structured cargo follow-up schedule with proactive updates three times per week, helping reduce shipment delays by approximately one day; supported client acquisition and service coordination for cross-border logistics customers.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
 <h3>Material Planner · Xiamen Wu Zhen Ni Hai Import and Export Co., Ltd.</h3>
 <time class="cv-date">May 2023 - Oct 2023</time>
 </div>
-<ul class="cv-list">
-<li>Used Python and SQL to analyse eight months of sales and inventory data, identify demand patterns and support material-requirements planning for seasonal products.</li>
-<li>Proposed inventory adjustments that reduced excess stock by 25% for two seasonal products; maintained and updated an inventory database covering approximately 100 products on a weekly basis.</li>
-</ul>
 </article>
 <article class="cv-entry">
 <div class="cv-entry-header">
 <h3>Customer Information Administrator · Xiamen Haixi Real Estate Marketing Planning Co., Ltd.</h3>
 <time class="cv-date">May 2022 - Oct 2022</time>
 </div>
-<ul class="cv-list">
-<li>Applied Python-based data analysis and mining techniques to segment customer information into four distinct customer types, supporting sales targeting and operational decision-making.</li>
-<li>Compiled and analysed two quarters of sales data and produced a 15,000-word report with a summary presentation, providing recommendations for the next-quarter focus areas.</li>
-</ul>
 </article>
 </section>
 <section id="open-source" class="cv-section">
 <h2 class="cv-section-heading">Open-Source Projects</h2>
 <p class="cv-links">I build, adapt, and maintain apps, browser tools, automation scripts, dictionaries, and web projects. Explore the source code and project guides through these links.</p>
-<ul class="cv-list">
-<li><a href="https://github.com/Jingyuan-Zheng" rel="me">GitHub Profile</a> — Browse my repositories and development activity.</li>
-<li><a href="https://github.com/Jingyuan-Zheng/Mac-Utilities-Collection">Mac Utilities Collection</a> — Explore the collection of projects I have built, adapted, or maintained.</li>
-<li><a href="/apps/">Website Launchpad</a> — Preview tools and open their articles for introductions and practical guides.</li>
-</ul>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3><a href="https://github.com/Jingyuan-Zheng" rel="me">GitHub Profile</a></h3>
+</div>
+<p class="cv-subtitle">Browse my repositories and development activity.</p>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3><a href="https://github.com/Jingyuan-Zheng/Mac-Utilities-Collection">Mac Utilities Collection</a></h3>
+</div>
+<p class="cv-subtitle">Explore the collection of projects I have built, adapted, or maintained.</p>
+</article>
+<article class="cv-entry">
+<div class="cv-entry-header">
+<h3><a href="/apps/">Website Launchpad</a></h3>
+</div>
+<p class="cv-subtitle">Preview tools and open their articles for introductions and practical guides.</p>
+</article>
 </section>
 <section id="achievements" class="cv-section">
 <h2 class="cv-section-heading">Achievements</h2>
 <ul class="cv-achievements">
-<li><time>Nov 2025</time><span>Tony Reynolds Academic Excellence Prize 2024-25, Department of Data and Systems Engineering, The University of Hong Kong</span></li>
-<li><time>Jun 2024</time><span>Outstanding Undergraduate Dissertation, Fuzhou University</span></li>
-<li><time>Sep 2021</time><span>Second-Class Prize, National College Students' Ecological and Environmental Protection Competition</span></li>
-<li><time>Sep 2021</time><span>Excellent Psychological Development Department Award, Fuzhou University; contributed as Director of the student psychological development team</span></li>
-<li><time>Apr 2021 &amp; Aug 2020</time><span>Third-Class Scholarship, Fuzhou University</span></li>
+<li><span>Tony Reynolds Academic Excellence Prize 2024-25, Department of Data and Systems Engineering, The University of Hong Kong</span><time class="cv-date">Nov 2025</time></li>
+<li><span>Outstanding Undergraduate Dissertation, Fuzhou University</span><time class="cv-date">Jun 2024</time></li>
+<li><span>Second-Class Prize, National College Students' Ecological and Environmental Protection Competition</span><time class="cv-date">Sep 2021</time></li>
+<li><span>Excellent Psychological Development Department Award, Fuzhou University; contributed as Director of the student psychological development team</span><time class="cv-date">Sep 2021</time></li>
+<li><span>Third-Class Scholarship, Fuzhou University</span><time class="cv-date">Apr 2021 &amp; Aug 2020</time></li>
 </ul>
 </section>
 <section id="additional" class="cv-section">
