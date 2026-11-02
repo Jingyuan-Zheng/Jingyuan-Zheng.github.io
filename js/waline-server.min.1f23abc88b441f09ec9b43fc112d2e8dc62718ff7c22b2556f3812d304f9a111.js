@@ -1,0 +1,1 @@
+const normalizeServerURL=e=>String(e||"").replace(/\/+$/,"");export const resolveWalineServerURL=({primaryURL:e,fallbackURL:t})=>Promise.resolve(normalizeServerURL(e)||normalizeServerURL(t))
