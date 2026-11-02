@@ -69,7 +69,7 @@
         background: #303030;
         color-scheme: dark;
     }
-</style><meta name='description' content="用 Gallery Organizer 整理已经导出的照片和视频：按拍摄年月归档，保留 Live Photo 与伴随文件，预览重复项，并单独检查日期不明的文件。">
+</style><meta name='description' content="通过 Gallery Organizer 的本地网页和 TUI 交互菜单，预览并执行两轮照片整理，检查 Live Photo 配对、重复副本与日期异常。">
 <title>Mac 导出照片怎么整理？按年月归档，保留 Live Photo，分离重复文件</title>
 
 
@@ -81,13 +81,13 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.c782c315587386f6a7a1b506298c4870af83a84e974155bdd6dc9dcca9ed2900.css"><meta property='og:title' content="Mac 导出照片怎么整理？按年月归档，保留 Live Photo，分离重复文件">
-<meta property='og:description' content="用 Gallery Organizer 整理已经导出的照片和视频：按拍摄年月归档，保留 Live Photo 与伴随文件，预览重复项，并单独检查日期不明的文件。">
+<meta property='og:description' content="通过 Gallery Organizer 的本地网页和 TUI 交互菜单，预览并执行两轮照片整理，检查 Live Photo 配对、重复副本与日期异常。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/gallery-organizer/'>
 <meta property='og:site_name' content='小景'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='照片整理' /><meta property='article:tag' content='Live Photo' /><meta property='article:tag' content='重复照片' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-10-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-zh.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='照片整理' /><meta property='article:tag' content='Live Photo' /><meta property='article:tag' content='重复照片' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-10-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-zh.jpg' />
 <meta name="twitter:site" content="@AndersJheng">
     <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Mac 导出照片怎么整理？按年月归档，保留 Live Photo，分离重复文件">
-<meta name="twitter:description" content="用 Gallery Organizer 整理已经导出的照片和视频：按拍摄年月归档，保留 Live Photo 与伴随文件，预览重复项，并单独检查日期不明的文件。"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="通过 Gallery Organizer 的本地网页和 TUI 交互菜单，预览并执行两轮照片整理，检查 Live Photo 配对、重复副本与日期异常。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-zh.jpg' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
@@ -214,9 +214,9 @@
       "author": {
         "@id": "https://jingyuan-zheng.github.io/#person"
       },
-      "dateModified": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-26T00:00:00+00:00",
       "datePublished": "2026-10-02T00:00:00+00:00",
-      "description": "用 Gallery Organizer 整理已经导出的照片和视频：按拍摄年月归档，保留 Live Photo 与伴随文件，预览重复项，并单独检查日期不明的文件。",
+      "description": "通过 Gallery Organizer 的本地网页和 TUI 交互菜单，预览并执行两轮照片整理，检查 Live Photo 配对、重复副本与日期异常。",
       "headline": "Mac 导出照片怎么整理？按年月归档，保留 Live Photo，分离重复文件",
       "image": "https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-zh.jpg",
       "inLanguage": "zh",
@@ -684,13 +684,13 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
-    <li><a href="#为什么导出的照片越整理越乱">为什么导出的照片越整理越乱</a></li>
-    <li><a href="#先准备目录和备份">先准备目录和备份</a></li>
-    <li><a href="#用网页先预览第一轮">用网页先预览第一轮</a></li>
-    <li><a href="#喜欢终端也可以走同样的两轮">喜欢终端，也可以走同样的两轮</a></li>
-    <li><a href="#第一次配置只改自己能确认的路径">第一次配置，只改自己能确认的路径</a></li>
-    <li><a href="#一次试运行应该检查哪些结果">一次试运行应该检查哪些结果</a></li>
-    <li><a href="#重复文件和日期异常另做一轮">重复文件和日期异常另做一轮</a></li>
+    <li><a href="#导出以后照片还需要怎么整理">导出以后，照片还需要怎么整理</a></li>
+    <li><a href="#先准备一个批次和输出目录">先准备一个批次和输出目录</a></li>
+    <li><a href="#启动本地图形页面">启动本地图形页面</a></li>
+    <li><a href="#在网页上完成两轮整理">在网页上完成两轮整理</a></li>
+    <li><a href="#在图形页面检查重复项和日期">在图形页面检查重复项和日期</a></li>
+    <li><a href="#用-tui-在终端里操作">用 TUI 在终端里操作</a></li>
+    <li><a href="#整理结束后再检查一遍">整理结束后再检查一遍</a></li>
   </ol>
 
             </nav>
@@ -731,7 +731,7 @@
     
     <div class="article-title-wrapper">
         <h2 class="article-title"><a href="/zh/p/gallery-organizer/">Mac 导出照片怎么整理？按年月归档，保留 Live Photo，分离重复文件</a></h2>
-        <h3 class="article-subtitle">用 Gallery Organizer 整理已经导出的照片和视频：按拍摄年月归档，保留 Live Photo 与伴随文件，预览重复项，并单独检查日期不明的文件。</h3>
+        <h3 class="article-subtitle">通过 Gallery Organizer 的本地网页和 TUI 交互菜单，预览并执行两轮照片整理，检查 Live Photo 配对、重复副本与日期异常。</h3>
     </div>
     
     
@@ -807,13 +807,13 @@
             <nav class="toc-nav">
                 
   <ol>
-    <li><a href="#为什么导出的照片越整理越乱">为什么导出的照片越整理越乱</a></li>
-    <li><a href="#先准备目录和备份">先准备目录和备份</a></li>
-    <li><a href="#用网页先预览第一轮">用网页先预览第一轮</a></li>
-    <li><a href="#喜欢终端也可以走同样的两轮">喜欢终端，也可以走同样的两轮</a></li>
-    <li><a href="#第一次配置只改自己能确认的路径">第一次配置，只改自己能确认的路径</a></li>
-    <li><a href="#一次试运行应该检查哪些结果">一次试运行应该检查哪些结果</a></li>
-    <li><a href="#重复文件和日期异常另做一轮">重复文件和日期异常另做一轮</a></li>
+    <li><a href="#导出以后照片还需要怎么整理">导出以后，照片还需要怎么整理</a></li>
+    <li><a href="#先准备一个批次和输出目录">先准备一个批次和输出目录</a></li>
+    <li><a href="#启动本地图形页面">启动本地图形页面</a></li>
+    <li><a href="#在网页上完成两轮整理">在网页上完成两轮整理</a></li>
+    <li><a href="#在图形页面检查重复项和日期">在图形页面检查重复项和日期</a></li>
+    <li><a href="#用-tui-在终端里操作">用 TUI 在终端里操作</a></li>
+    <li><a href="#整理结束后再检查一遍">整理结束后再检查一遍</a></li>
   </ol>
 
             </nav>
@@ -829,13 +829,15 @@
     <section class="article-content">
     
     
-    <p>本文介绍怎样用 Gallery Organizer 整理已经导出的 Mac 照片库：先预览移动计划，再按拍摄年月归档，并把 Live Photo、重复副本和日期不明的素材分别处理。网页和命令行两种入口都可以完成前两轮整理。</p>
-<h2 id="为什么导出的照片越整理越乱">为什么导出的照片越整理越乱
-</h2><p>手机和相机都会反复使用 <code>IMG_0001</code> 这样的文件名。几次导出重叠后，同名文件可能拍摄于不同年份，也可能是同一张照片的副本。Live Photo 导出后常变成一张 HEIC 加一段 MOV，旁边还可能有记录编辑信息的 <code>.aae</code> 或 <code>.xmp</code>。如果只按文件名移动，很容易拆散这些关系；如果只看修改时间，复制当天又可能被误当成拍摄日期。</p>
+    <p>本文介绍怎样在 Mac 上用 Gallery Organizer 的本地图形页面或 TUI 整理已导出的照片：先查看移动计划，再按拍摄年月归档，并检查 Live Photo 配对、重复副本和日期异常。</p>
+<h2 id="导出以后照片还需要怎么整理">导出以后，照片还需要怎么整理
+</h2><p>手机和相机都会重复使用 <code>IMG_0001</code> 这样的文件名。几次导出重叠后，同名文件可能拍摄于不同年份，也可能是同一张照片的副本。Live Photo 常被导出为一张 HEIC 加一段 MOV，旁边还可能有保存编辑信息的 <code>.aae</code> 或 <code>.xmp</code>。只按文件名移动容易拆散配对，只按修改时间归档又可能把复制当天当成拍摄日期。</p>
 <p><a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer"  target="_blank" rel="noopener"
-    >Gallery Organizer</a> 的做法是先区分能确认的相机素材，再检查剩下的截图、录屏、下载图片和信息有冲突的文件。它只处理<strong>已经导出的文件夹</strong>，不会从 iPhone 或 Apple 照片 App 提取照片；也不要直接把照片图库包交给它。项目仅在 macOS 上运行。</p>
-<h2 id="先准备目录和备份">先准备目录和备份
-</h2><p>先独立备份原始导出，再挑一个熟悉的小批次试用。打开项目的 <code>config.ini</code>，设置照片根目录和输出位置。默认结构可以这样理解：</p>
+    >Gallery Organizer</a> 先整理能确认的相机素材，再处理留下的截图和录屏，以及下载图片和信息有冲突的文件。它仅在 macOS 上运行，处理的是<strong>已经导出的文件夹</strong>。先从 iPhone 或 Apple 照片 App 导出素材，再交给它；不要直接选择照片图库包。</p>
+<p>喜欢看图和点击按钮，可以用本地网页；习惯留在终端，可以用 TUI，也就是终端里的交互提示和按键菜单。两种入口都能先预览再执行，照片留在自己的 Mac 上。</p>
+<h2 id="先准备一个批次和输出目录">先准备一个批次和输出目录
+</h2><p>先独立备份原始导出，拿一小批熟悉的照片试用。下载并解压项目后，用文本编辑器打开 <code>config.ini</code>，把 <code>backup_root</code> 设为自己的照片整理根目录。使用外接盘时，可以填写盘内的专用文件夹，其余子目录先沿用默认值。</p>
+<p>例如根目录采用默认位置，结构可以这样理解：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -853,20 +855,22 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">~/Pictures/GalleryOrganizer/
 </span></span><span class="line"><span class="cl">├── Incoming/
-</span></span><span class="line"><span class="cl">│   ├── Stage0/Batch A/       ← 尚未整理的导出批次
-</span></span><span class="line"><span class="cl">│   └── Stage1/Batch A/       ← 第一轮结束后留下的批次
+</span></span><span class="line"><span class="cl">│   ├── Stage0/Batch A/       ← 第一轮开始前放入这一批照片
+</span></span><span class="line"><span class="cl">│   └── Stage1/Batch A/       ← 第一轮成功后整批目录移到这里
 </span></span><span class="line"><span class="cl">└── Gallery/
-</span></span><span class="line"><span class="cl">    ├── Main/                 ← 已确认的相机照片、视频
+</span></span><span class="line"><span class="cl">    ├── Main/                 ← 第一轮确认的相机素材
 </span></span><span class="line"><span class="cl">    ├── SortedFromUnsorted/   ← 第二轮认出的相机素材
-</span></span><span class="line"><span class="cl">    ├── Screenshots/          ← 截图、录屏
-</span></span><span class="line"><span class="cl">    ├── OtherMedia/           ← 保存的图片等其他素材
+</span></span><span class="line"><span class="cl">    ├── Screenshots/          ← 截图与录屏
+</span></span><span class="line"><span class="cl">    ├── OtherMedia/           ← 保存、下载等其他素材
 </span></span><span class="line"><span class="cl">    ├── NeedsRepair/          ← 日期或伴随文件待检查
-</span></span><span class="line"><span class="cl">    └── Duplicate/            ← 已确认的重复副本
+</span></span><span class="line"><span class="cl">    └── Duplicate/            ← 确认重复的副本
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这些是可能出现的目录，不代表每次都会创建。归档通常采用 <code>2024/2024-06/</code> 的年月结构；同名但内容不同的文件不会互相覆盖，必要时会再加日期目录。<code>config.ini</code> 中的 <code>language = zh</code> 可以让报告和新建分类目录使用中文，但不会重命名已经存在的文件夹。</p>
-<h2 id="用网页先预览第一轮">用网页先预览第一轮
-</h2><p>在项目目录打开终端，运行：</p>
+</div><p><code>Stage0/Batch A</code> 和 <code>Stage1/Batch A</code> 表示同一批次在不同阶段的位置。开始时把素材放到 Stage0 的批次文件夹，选择这个批次作为输入；第一轮成功后，再处理 Stage1 中留下的文件。图中的分类目录按需生成，不代表每次都会全部出现。</p>
+<p><code>gallery_root = Gallery</code> 相对于 <code>backup_root</code>，<code>main_library_root = Main</code> 又相对于 Gallery。拍摄时间明确的素材通常进入 <code>Main/2024/2024-06/</code>；同名但内容不同的文件不会互相覆盖，必要时再加日期目录。配置文件里的路径有空格也不用加引号，来源和分类目标都应放在配置的根目录内。</p>
+<p>要用中文终端提示和新建分类目录，在 <code>[general]</code> 中设置 <code>language = zh</code>。切换语言不会重命名已有目录，网页上的界面语言则可以另外切换。</p>
+<h2 id="启动本地图形页面">启动本地图形页面
+</h2><p>在项目文件夹打开终端，首次使用时建立环境并安装网页所需的依赖：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -881,47 +885,75 @@
 </span></span><span class="line"><span class="cl">uvicorn api.app:app --host 127.0.0.1 --port <span class="m">8000</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>浏览器访问 <code>http://127.0.0.1:8000/</code>，保持终端窗口开启。在网页选择主整理工具，输入 <code>Incoming/Stage0/Batch A</code> 的完整路径，先点 <strong>Scan / Dry Run</strong>。逐项看目标位置、同名冲突、Live Photo 配对和待人工复核项，再点 <strong>Apply changes</strong>。执行前工具会重新扫描；成功后整批目录移到 <code>Stage1</code>，仍需处理的文件留在里面。</p>
+</div><p>浏览器打开 <code>http://127.0.0.1:8000/</code>，使用期间保留终端窗口。以后重新启动时，在同一个项目目录激活 <code>.venv</code>，再运行最后一条命令即可。</p>
+<p>这些 Python 包提供网页服务；媒体读取还会用到外部程序。扫描提示缺少工具时，检查 <code>config.ini</code> 的 <code>[tools]</code>：留空表示从系统查找，也可以填写已安装可执行文件的完整路径。</p>
+<h2 id="在网页上完成两轮整理">在网页上完成两轮整理
+</h2><p>先在工具下拉框选择<strong>主整理器（Main organizer）</strong>，输入 <code>Incoming/Stage0/Batch A</code> 的完整路径。批大小通常保持默认值，点击<strong>扫描 / 预览（Scan / Dry Run）</strong>。预览不移动或修改媒体，可以先看目标位置和待检查项（见图 1）。</p>
 <div class="post-figure">
-<img src="/img/gallery-organizer/web-ui-zh.jpg" alt="Gallery Organizer 中文网页中选择整理工具和目录">
-<div class="caption">图 1：网页先扫描并列出整理计划，确认后再应用。截图来自项目仓库。</div>
+<img src="/img/gallery-organizer/web-ui-zh.jpg" alt="Gallery Organizer 中文网页中选择整理工具和来源目录">
+<div class="caption">图 1：选择工具与批次目录，先扫描，再查看整理计划。截图来自项目仓库。</div>
 </div>
-<p>网页可切换中英文；详细报告使用 <code>config.ini</code> 的语言设置。任务历史会保留供回看，但中断的任务不会自动接着运行，也没有整批撤销按钮。重新运行前先核对报告和文件实际位置。</p>
-<h2 id="喜欢终端也可以走同样的两轮">喜欢终端，也可以走同样的两轮
-</h2><p>命令行适合已有固定导出目录、想逐批处理的人。下面的路径要换成自己的。<strong>每轮第一条只预览，第二条带 <code>--apply</code> 才会移动文件</strong>：</p>
+<p>第一遍重点看拍摄年月是否符合记忆、Live Photo 的照片与短视频是否成组，以及同名冲突和重复副本怎样处理。比如 <code>IMG_0100.HEIC</code>、<code>IMG_0100.MOV</code> 和能确认归属的 <code>.xmp</code> 应尽量一起整理；无法配对的伴随文件需要继续核对。</p>
+<p>确认计划后，点击<strong>执行整理（Apply changes）</strong>，在弹窗中核对来源目录并确认。工具会重新扫描、检查目标，再执行移动。等任务结束，查看执行结果是否有失败，再到目标文件夹抽查照片和视频。</p>
+<p>第一轮顺利完成后，整批目录移到 Stage1。网页上改选<strong>剩余媒体整理（第二阶段）</strong>，把来源换成 <code>Incoming/Stage1/Batch A</code>，再走一次预览和执行。截图与录屏进入 Screenshots，保存的图片等进入 OtherMedia；第二轮确认的相机素材进入 SortedFromUnsorted，日期或关联仍有问题的文件留待检查。</p>
+<p>两轮需要分别启动。第一轮的执行结果不代表剩余素材也已整理完，查看 Stage1 和第二轮报告，才能知道还有什么需要处理。</p>
+<h2 id="在图形页面检查重复项和日期">在图形页面检查重复项和日期
+</h2><p>网页还提供<strong>主库重复检查</strong>与<strong>JPEG 元数据修复</strong>。前者选择配置的主图库内目录，检查已经归档的重复副本；后者用于有足够证据的缺失日期修复。它们都按需要单独运行，继续采用先预览、后确认的方式。</p>
+<p>需要看重复图片时，勾选<strong>显示重复图片预览（并排对比）</strong>，再结合路径检查候选图与保留图（见图 2）。这个选项默认关闭，刷新后也会关闭；HEIC 首次生成预览可能较慢。图片无法显示时，仍可查看路径和文字报告。</p>
+<div class="post-figure">
+<img src="/img/gallery-organizer/duplicate-preview.jpg" alt="Gallery Organizer 中重复候选与保留图片的并排预览">
+<div class="caption">图 2：用图片对照辅助核对，同时检查保留位置与整理报告。截图来自项目仓库。</div>
+</div>
+<p>完全重复的副本可以单独隔离；连拍、修图版和不同格式的导出仍值得查看内容。JPEG 日期修复前，要在配置中确认 <code>utc_offset</code>、<code>auto_from</code> 和 <code>auto_through</code>，保留原文件备份与修复报告。日期没有依据时，先留在待检查目录。</p>
+<h2 id="用-tui-在终端里操作">用 TUI 在终端里操作
+</h2><p>TUI 使用文字提示和按键选择。先进入项目目录，运行下面这条命令，<strong>不追加目录参数</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_gallery_media.py <span class="s2">&#34;/你的照片根目录/Incoming/Stage0/Batch A&#34;</span>
-</span></span><span class="line"><span class="cl">python3 organize_gallery_media.py <span class="s2">&#34;/你的照片根目录/Incoming/Stage0/Batch A&#34;</span> --apply
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">python3 organize_leftover_media.py <span class="s2">&#34;/你的照片根目录/Incoming/Stage1/Batch A&#34;</span>
-</span></span><span class="line"><span class="cl">python3 organize_leftover_media.py <span class="s2">&#34;/你的照片根目录/Incoming/Stage1/Batch A&#34;</span> --apply
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_gallery_media.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>第一轮把能确认的相机照片与视频放进 <code>Gallery/Main/年份/年-月/</code>；照片、Live Photo 视频及能确认归属的伴随文件会尽量待在一起。第二轮检查 <code>Stage1</code> 留下的内容：截图和录屏进 <code>Screenshots</code>，保存或下载的图片进 <code>OtherMedia</code>，仍认不准的进 <code>NeedsRepair</code>。第二轮才确认的相机素材会进入 <code>SortedFromUnsorted</code>。</p>
-<p>例如 <code>IMG_0100.HEIC</code>、<code>IMG_0100.MOV</code> 和 <code>IMG_0100.HEIC.xmp</code> 可以一起出现在 <code>Gallery/Main/2024/2024-06/</code>。不确定归属的 <code>.xmp</code> 则应先留在待检查目录。相机缩略图 <code>.thm</code>、低分辨率视频 <code>.lrv</code> 等文件也可能是素材的一部分，整理结束前不要因为扩展名陌生就删除。</p>
-<h2 id="第一次配置只改自己能确认的路径">第一次配置，只改自己能确认的路径
-</h2><p>假设照片都放在外接盘，可以先把 <code>backup_root</code> 改成那块盘里的专用目录，其他子目录沿用默认值。<code>gallery_root = Gallery</code> 是相对于照片根目录的路径，<code>main_library_root = Main</code> 又是相对于 Gallery；它们不是三个互不相关的位置。路径里有空格时，<code>config.ini</code> 中不用加引号，命令行参数则需要保留示例中的引号。</p>
-<p>把一批导出放到 <code>Incoming/Stage0/Batch A</code>，处理时选择这个批次，不要直接把整个 Stage0 当输入。根目录也是工具允许处理的来源与目标边界，所以不要把输入随意指到根目录外。先让配置对应的文件夹结构清楚，再尝试不同分类位置，能少掉很多“文件到底移到哪了”的困惑。</p>
-<p><code>requirements-api.txt</code> 安装的是本地网页需要的 Python 包，不代表所有媒体读取程序也都包含在里面。如果扫描提示缺少某个外部工具，按提示检查 <code>[tools]</code>：留空表示搜索系统，也可以填写已安装程序的完整路径。不要把工具所在的文件夹当成可执行文件路径。</p>
-<h2 id="一次试运行应该检查哪些结果">一次试运行应该检查哪些结果
-</h2><p>先挑一批包含普通照片、一组 Live Photo、几张截图和一份重复导出的样本。Dry Run 以后重点看四件事：拍摄年月是否符合记忆；Live Photo 的照片与短视频是否在一起；截图是否仍混在待分类项里；重复副本保留的是哪一份。日期明显不对时，先调查元数据，不要为了完成整理就直接应用。</p>
-<p>确认第一轮后，再对 Stage1 中同一批次运行第二轮。两个脚本不是一条会自动走到底的流水线；第二轮也是独立预览、独立执行。完成以后，在目标目录抽查几张照片、播放一段视频，再确认待检查项为什么被留下。分类目录清楚，比文件全部“消失在输入文件夹”更有意义。</p>
-<p>JPEG 日期修复更适合放在整理之后的专项检查里。比如一批旧照片只有复制日期，不能因为文件名看起来像某天，就把整批时间全部写进去。先确定时区、允许修改的日期范围和要人工保留的月份，再使用工具提供的备份与报告。<code>NeedsRepair</code> 是提醒你继续判断的入口，不是应该直接删除的废料箱。</p>
-<h2 id="重复文件和日期异常另做一轮">重复文件和日期异常另做一轮
-</h2><p>主整理会把确认的重复副本单独放置；另有可选工具检查已经进入主库的重复文件。<strong>完全重复</strong>和“看起来相似”不是一回事：连拍、修图版、不同格式导出，都值得先看内容再决定保留哪一份。网页的图片对照默认关闭，需要时再打开；HEIC 首次生成预览可能稍慢。</p>
-<div class="post-figure">
-<img src="/img/gallery-organizer/duplicate-preview.jpg" alt="Gallery Organizer 的重复图片并排预览">
-<div class="caption">图 2：并排预览能辅助判断，路径和整理报告也要一起看。</div>
+</div><p>出现输入目录的提示后，把 Finder 中 <code>Stage0/Batch A</code> 文件夹拖进终端，再按回车；也可以输入完整路径。路径无效或超出配置范围时，程序会提示重新输入。</p>
+<p>接下来选择运行模式。按回车走默认 <strong>DRY RUN</strong>，先阅读扫描报告。<strong>模式选择时按 <code>A</code> 会直接开始移动文件</strong>，第一次操作应先预览。预览结束后，再决定下一步：</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>预览结束后的按键</th>
+					<th>作用</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>A</code></td>
+					<td>对同一目录重新扫描并执行 APPLY</td>
+			</tr>
+			<tr>
+					<td><code>Q</code></td>
+					<td>退出</td>
+			</tr>
+			<tr>
+					<td>其他键</td>
+					<td>回到开始界面，重新输入目录</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>按 <code>A</code> 执行后，等报告结束再核对结果。返回开始界面不会撤销已经完成的移动。目录输入阶段可以用 <code>Ctrl+C</code> 退出；上表的 <code>Q</code> 指的是预览结束后的选择。</p>
+<p>第一轮成功后，另行启动第二轮 TUI：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_leftover_media.py
+</span></span></code></pre></td></tr></table>
 </div>
-<p>JPEG 日期修复是另一项独立操作。写入前先在 <code>config.ini</code> 确认时区和可处理日期范围，保留它生成的备份与报告。一次只允许一个网页或终端任务应用更改。若只想先核对某张照片的拍摄参数，可用 <a class="link" href="/zh/p/view-media-info/" >View Media Info</a> 查看。更多路径配置和可选工具见 <a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer#readme"  target="_blank" rel="noopener"
+</div><p>这次拖入 Stage1 中的同一批次，同样先按回车预览，核对后按 <code>A</code> 重新扫描并执行；预览结果页按 <code>Q</code> 退出。第二轮不会自动替你选择第一轮留下的目录，输入前先在 Finder 确认它的位置。</p>
+<h2 id="整理结束后再检查一遍">整理结束后再检查一遍
+</h2><p>网页的<strong>本机任务历史</strong>可以打开旧结果，重启服务后仍会保留。记录中的预览和实际执行要分开看；任务若中断，先检查报告与文件位置，再决定是否重跑。工具目前没有整批撤销，也不会自动续跑中断任务。</p>
+<p>网页和终端共用执行保护，同一时间只允许一个任务修改文件。看到已有任务执行的提示时，等它完成再继续。网页操作结束后，再到启动服务的终端按 <code>Ctrl+C</code> 停止服务。</p>
+<p>最后抽查 Main 中的拍摄年月，确认 Live Photo 还能配对，并查看 NeedsRepair 和重复文件目录。<code>.aae</code>、<code>.xmp</code> 等伴随文件可能保存编辑信息，<code>.thm</code> 和 <code>.lrv</code> 也可能属于相机素材，先保留到关联核对完毕。想检查某张照片的拍摄字段，可配合 <a class="link" href="/zh/p/view-media-info/" >View Media Info</a>；完整配置见 <a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer#readme"  target="_blank" rel="noopener"
     >项目 README</a>。</p>
 
 </section>
@@ -974,7 +1006,7 @@
         <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
 
         <span>
-            最后更新于 22/10月/2026 00:00 UTC
+            最后更新于 26/10月/2026 00:00 UTC
         </span>
     </section></footer>
 
@@ -1061,7 +1093,7 @@
     <a href="/zh/p/display-layout/">
         
         <div class="article-image">
-            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/featured.png">
+            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/screenshot.png">
 
         </div>
         
@@ -1077,7 +1109,7 @@
     <a href="/zh/p/compare-files-viewer/">
         
         <div class="article-image">
-            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/featured.png">
+            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/screenshot.png">
 
         </div>
         

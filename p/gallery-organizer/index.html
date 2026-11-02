@@ -69,7 +69,7 @@
         background: #303030;
         color-scheme: dark;
     }
-</style><meta name='description' content="A practical Gallery Organizer workflow for sorting exported photos and videos locally, reviewing duplicates, keeping companion files together, and checking uncertain dates.">
+</style><meta name='description' content="Use Gallery Organizer’s local graphical page and interactive TUI to preview and run both sorting passes, review duplicates, and check Live Photos and capture dates.">
 <title>Organize an Exported Photo Library on Mac: Live Photos, Duplicates, and Capture Dates</title>
 
 
@@ -81,13 +81,13 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.c782c315587386f6a7a1b506298c4870af83a84e974155bdd6dc9dcca9ed2900.css"><meta property='og:title' content="Organize an Exported Photo Library on Mac: Live Photos, Duplicates, and Capture Dates">
-<meta property='og:description' content="A practical Gallery Organizer workflow for sorting exported photos and videos locally, reviewing duplicates, keeping companion files together, and checking uncertain dates.">
+<meta property='og:description' content="Use Gallery Organizer’s local graphical page and interactive TUI to preview and run both sorting passes, review duplicates, and check Live Photos and capture dates.">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/p/gallery-organizer/'>
 <meta property='og:site_name' content='Jingyuan'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Photo Library' /><meta property='article:tag' content='Live Photos' /><meta property='article:tag' content='Duplicates' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-10-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-en.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Photo Library' /><meta property='article:tag' content='Live Photos' /><meta property='article:tag' content='Duplicates' /><meta property='article:tag' content='macOS' /><meta property='article:published_time' content='2026-10-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-en.jpg' />
 <meta name="twitter:site" content="@AndersJheng">
     <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="Organize an Exported Photo Library on Mac: Live Photos, Duplicates, and Capture Dates">
-<meta name="twitter:description" content="A practical Gallery Organizer workflow for sorting exported photos and videos locally, reviewing duplicates, keeping companion files together, and checking uncertain dates."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Use Gallery Organizer’s local graphical page and interactive TUI to preview and run both sorting passes, review duplicates, and check Live Photos and capture dates."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-en.jpg' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
@@ -213,9 +213,9 @@
       "author": {
         "@id": "https://jingyuan-zheng.github.io/#person"
       },
-      "dateModified": "2026-10-22T00:00:00+00:00",
+      "dateModified": "2026-10-26T00:00:00+00:00",
       "datePublished": "2026-10-02T00:00:00+00:00",
-      "description": "A practical Gallery Organizer workflow for sorting exported photos and videos locally, reviewing duplicates, keeping companion files together, and checking uncertain dates.",
+      "description": "Use Gallery Organizer’s local graphical page and interactive TUI to preview and run both sorting passes, review duplicates, and check Live Photos and capture dates.",
       "headline": "Organize an Exported Photo Library on Mac: Live Photos, Duplicates, and Capture Dates",
       "image": "https://jingyuan-zheng.github.io/img/gallery-organizer/web-ui-en.jpg",
       "inLanguage": "en",
@@ -683,13 +683,13 @@
             <nav class="toc-nav" id="TableOfContents">
                 
   <ol>
-    <li><a href="#why-an-exported-library-gets-messy">Why an exported library gets messy</a></li>
-    <li><a href="#prepare-a-batch-and-a-backup">Prepare a batch and a backup</a></li>
-    <li><a href="#preview-the-first-pass-in-your-browser">Preview the first pass in your browser</a></li>
-    <li><a href="#run-the-same-two-passes-from-terminal">Run the same two passes from Terminal</a></li>
-    <li><a href="#configure-a-root-you-can-recognize">Configure a root you can recognize</a></li>
-    <li><a href="#review-a-representative-trial-batch">Review a representative trial batch</a></li>
-    <li><a href="#handle-duplicates-and-doubtful-dates-separately">Handle duplicates and doubtful dates separately</a></li>
+    <li><a href="#why-an-exported-library-needs-sorting">Why an exported library needs sorting</a></li>
+    <li><a href="#prepare-a-batch-and-its-destinations">Prepare a batch and its destinations</a></li>
+    <li><a href="#start-the-local-graphical-page">Start the local graphical page</a></li>
+    <li><a href="#complete-both-passes-in-the-browser">Complete both passes in the browser</a></li>
+    <li><a href="#review-duplicates-and-dates-in-the-graphical-page">Review duplicates and dates in the graphical page</a></li>
+    <li><a href="#use-the-interactive-tui-in-terminal">Use the interactive TUI in Terminal</a></li>
+    <li><a href="#check-the-result-before-finishing">Check the result before finishing</a></li>
   </ol>
 
             </nav>
@@ -730,7 +730,7 @@
     
     <div class="article-title-wrapper">
         <h2 class="article-title"><a href="/p/gallery-organizer/">Organize an Exported Photo Library on Mac: Live Photos, Duplicates, and Capture Dates</a></h2>
-        <h3 class="article-subtitle">A practical Gallery Organizer workflow for sorting exported photos and videos locally, reviewing duplicates, keeping companion files together, and checking uncertain dates.</h3>
+        <h3 class="article-subtitle">Use Gallery Organizer’s local graphical page and interactive TUI to preview and run both sorting passes, review duplicates, and check Live Photos and capture dates.</h3>
     </div>
     
     
@@ -814,13 +814,13 @@
             <nav class="toc-nav">
                 
   <ol>
-    <li><a href="#why-an-exported-library-gets-messy">Why an exported library gets messy</a></li>
-    <li><a href="#prepare-a-batch-and-a-backup">Prepare a batch and a backup</a></li>
-    <li><a href="#preview-the-first-pass-in-your-browser">Preview the first pass in your browser</a></li>
-    <li><a href="#run-the-same-two-passes-from-terminal">Run the same two passes from Terminal</a></li>
-    <li><a href="#configure-a-root-you-can-recognize">Configure a root you can recognize</a></li>
-    <li><a href="#review-a-representative-trial-batch">Review a representative trial batch</a></li>
-    <li><a href="#handle-duplicates-and-doubtful-dates-separately">Handle duplicates and doubtful dates separately</a></li>
+    <li><a href="#why-an-exported-library-needs-sorting">Why an exported library needs sorting</a></li>
+    <li><a href="#prepare-a-batch-and-its-destinations">Prepare a batch and its destinations</a></li>
+    <li><a href="#start-the-local-graphical-page">Start the local graphical page</a></li>
+    <li><a href="#complete-both-passes-in-the-browser">Complete both passes in the browser</a></li>
+    <li><a href="#review-duplicates-and-dates-in-the-graphical-page">Review duplicates and dates in the graphical page</a></li>
+    <li><a href="#use-the-interactive-tui-in-terminal">Use the interactive TUI in Terminal</a></li>
+    <li><a href="#check-the-result-before-finishing">Check the result before finishing</a></li>
   </ol>
 
             </nav>
@@ -836,13 +836,15 @@
     <section class="article-content">
     
     
-    <p>This guide shows how to organize a photo library already exported on a Mac with Gallery Organizer. You can preview the plan before moving files, file confirmed camera media by capture month, and review Live Photos, duplicates, and uncertain dates separately. Both the browser and CLI support the two main sorting passes.</p>
-<h2 id="why-an-exported-library-gets-messy">Why an exported library gets messy
-</h2><p>Phones and cameras reuse names such as <code>IMG_0001</code>. After overlapping exports, the same name may refer to different years or to another copy of the same picture. A Live Photo often arrives as a HEIC still plus a MOV clip, sometimes with <code>.aae</code> or <code>.xmp</code> editing information alongside it. Sorting by filename can split those relationships; sorting by modification date can mistake the day of copying for the day of capture.</p>
+    <p>This guide explains how to organize an exported photo library on Mac using Gallery Organizer’s local graphical page or terminal interface (TUI). Preview destinations first, then file media by capture month and check Live Photo pairings, duplicates, and uncertain dates.</p>
+<h2 id="why-an-exported-library-needs-sorting">Why an exported library needs sorting
+</h2><p>Phones and cameras reuse names such as <code>IMG_0001</code>. Overlapping exports can mix different photographs with the same name and repeated copies of the same image. A Live Photo often arrives as a HEIC still and MOV clip, with <code>.aae</code> or <code>.xmp</code> editing information nearby. Sorting by name can split companions; modification dates can mistake copying for capture.</p>
 <p><a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer"  target="_blank" rel="noopener"
-    >Gallery Organizer</a> first files camera media it can identify, then checks the screenshots, recordings, saved images, and uncertain files left in the batch. It works on <strong>already exported folders</strong> on macOS. Export from your phone or Apple Photos first, and do not point it at a Photos library package.</p>
-<h2 id="prepare-a-batch-and-a-backup">Prepare a batch and a backup
-</h2><p>Keep a separate copy of the original export and start with a small batch you know well. Edit the project’s <code>config.ini</code> to set the library root and destinations. The default layout is easier to understand as a journey through two stages:</p>
+    >Gallery Organizer</a> sorts confirmed camera media first, then examines remaining screenshots, recordings, saved images, and uncertain files. It runs on macOS and handles <strong>already exported folders</strong>. Export from your device or Apple Photos first, keeping the Photos library package out of the input.</p>
+<p>Use the local browser page for buttons and image comparison. The TUI offers text prompts and keyboard choices inside Terminal. Both let you preview before applying changes, with media staying on your Mac.</p>
+<h2 id="prepare-a-batch-and-its-destinations">Prepare a batch and its destinations
+</h2><p>Back up the original export separately and begin with a small, familiar batch. Download and unzip the project, then edit <code>config.ini</code>. Set <code>backup_root</code> to a dedicated photo-organizing folder, including one on an external drive if preferred. Keep child paths at their defaults while learning the workflow.</p>
+<p>The default structure is:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -860,20 +862,22 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">~/Pictures/GalleryOrganizer/
 </span></span><span class="line"><span class="cl">├── Incoming/
-</span></span><span class="line"><span class="cl">│   ├── Stage0/Batch A/       ← exported batch before sorting
-</span></span><span class="line"><span class="cl">│   └── Stage1/Batch A/       ← batch after a successful first pass
+</span></span><span class="line"><span class="cl">│   ├── Stage0/Batch A/       ← input before the first pass
+</span></span><span class="line"><span class="cl">│   └── Stage1/Batch A/       ← whole batch after a successful first pass
 </span></span><span class="line"><span class="cl">└── Gallery/
-</span></span><span class="line"><span class="cl">    ├── Main/                 ← confirmed camera media
-</span></span><span class="line"><span class="cl">    ├── SortedFromUnsorted/   ← camera media found in pass two
+</span></span><span class="line"><span class="cl">    ├── Main/                 ← camera media confirmed in pass one
+</span></span><span class="line"><span class="cl">    ├── SortedFromUnsorted/   ← camera media identified in pass two
 </span></span><span class="line"><span class="cl">    ├── Screenshots/          ← screenshots and recordings
-</span></span><span class="line"><span class="cl">    ├── OtherMedia/           ← saved images and other material
-</span></span><span class="line"><span class="cl">    ├── NeedsRepair/          ← dates or sidecars to check
+</span></span><span class="line"><span class="cl">    ├── OtherMedia/           ← saved and downloaded material
+</span></span><span class="line"><span class="cl">    ├── NeedsRepair/          ← dates or companions needing review
 </span></span><span class="line"><span class="cl">    └── Duplicate/            ← confirmed redundant copies
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>These are possible outputs, not folders every run will create. Media with a known capture date normally goes under <code>2024/2024-06/</code>. A same-name conflict can add a day-level folder rather than overwriting either file. Set <code>language = zh</code> in <code>config.ini</code> if you want Chinese reports and newly created category names; existing folders are not renamed.</p>
-<h2 id="preview-the-first-pass-in-your-browser">Preview the first pass in your browser
-</h2><p>From the project directory, start its local web service:</p>
+</div><p>Stage0 and Stage1 show the same batch at different times. Put the export in a batch folder under Stage0 and select that batch as input. After a successful first pass, inspect what remains under Stage1. Category folders are created when needed.</p>
+<p><code>gallery_root = Gallery</code> is relative to <code>backup_root</code>; <code>main_library_root = Main</code> is relative to Gallery. Known capture dates normally produce paths such as <code>Main/2024/2024-06/</code>. Different files sharing a name are not overwritten; a day-level folder may resolve the collision. Config-file paths need no quotes around spaces. Keep sources and destinations within the configured root.</p>
+<p>Set <code>language = zh</code> under <code>[general]</code> for Chinese terminal reports and newly generated category names. Existing folders are not renamed. The browser’s interface language is a separate choice.</p>
+<h2 id="start-the-local-graphical-page">Start the local graphical page
+</h2><p>Open Terminal in the project folder. On first use, create an environment and install the website dependencies:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -888,48 +892,76 @@
 </span></span><span class="line"><span class="cl">uvicorn api.app:app --host 127.0.0.1 --port <span class="m">8000</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Open <code>http://127.0.0.1:8000/</code> and keep Terminal open. Choose the main organizer, enter the full path to <code>Incoming/Stage0/Batch A</code>, and select <strong>Scan / Dry Run</strong>. Read the proposed destinations, filename collisions, Live Photo pairings, and items flagged for review. Only then select <strong>Apply changes</strong>. The tool scans again before applying. After a successful pass, the whole batch moves to <code>Stage1</code>; files still needing classification remain there.</p>
+</div><p>Open <code>http://127.0.0.1:8000/</code> and keep Terminal running. On later launches, activate the same <code>.venv</code> in the project folder and run the final command again.</p>
+<p>These Python packages supply the website. Media analysis can also require external executables. If a scan reports a missing tool, check <code>[tools]</code> in <code>config.ini</code>: blank values search the system; explicit values must name the installed executable.</p>
+<h2 id="complete-both-passes-in-the-browser">Complete both passes in the browser
+</h2><p>Choose <strong>Main organizer</strong> and enter the full path to <code>Incoming/Stage0/Batch A</code>. Leave Batch size at its default initially and select <strong>Scan / Dry Run</strong>. This previews destinations and review items without moving or modifying media (see Figure 1).</p>
 <div class="post-figure">
-<img src="/img/gallery-organizer/web-ui-en.jpg" alt="Gallery Organizer local browser interface with tool and folder selection">
-<div class="caption">Figure 1: Scan and read the sorting plan before applying it. Screenshot from the repository.</div>
+<img src="/img/gallery-organizer/web-ui-en.jpg" alt="Gallery Organizer browser tool and source-folder selection">
+<div class="caption">Figure 1: Select a tool and batch, scan, then inspect the proposed sorting plan. Screenshot from the repository.</div>
 </div>
-<p>The browser can switch between English and Chinese, while detailed reports follow <code>config.ini</code>. Job history helps you inspect a previous run, but an interrupted job does not resume itself and there is no whole-batch Undo. Check the report and real file locations before restarting.</p>
-<h2 id="run-the-same-two-passes-from-terminal">Run the same two passes from Terminal
-</h2><p>The CLI is useful when you have a regular export folder and want to process batches one at a time. Replace the sample paths below. <strong>The first command in each pair previews; the command with <code>--apply</code> moves files</strong>:</p>
+<p>Check capture months, Live Photo pairings, filename collisions, and retained duplicate copies. A matching <code>IMG_0100.HEIC</code>, <code>IMG_0100.MOV</code>, and identifiable <code>.xmp</code> should be kept together where their association can be established. Uncertain companions need further review.</p>
+<p>Select <strong>Apply changes</strong>, check the source in the confirmation dialog, and confirm. The tool scans again and checks destinations before moving files. Read the execution result for failures, then open sample media in the destination.</p>
+<p>After a successful first pass, the whole batch moves to Stage1. Choose <strong>Remaining media (second pass)</strong>, change the source to <code>Incoming/Stage1/Batch A</code>, and repeat preview and apply. Screenshots and recordings go to Screenshots, saved material to OtherMedia, and newly identified camera media to SortedFromUnsorted. Date or association problems remain available for review.</p>
+<p>Start each pass separately. Inspect Stage1 and the second-pass report to understand what remains after the main organizer finishes.</p>
+<h2 id="review-duplicates-and-dates-in-the-graphical-page">Review duplicates and dates in the graphical page
+</h2><p>Two additional tools are available: <strong>Library duplicate check</strong> examines a folder inside the configured main library, while <strong>JPEG metadata repair</strong> handles supported missing dates when sufficient evidence exists. Run them separately when needed, previewing before applying.</p>
+<p>Enable <strong>Show duplicate image previews</strong> to compare a candidate with its retained image and paths (see Figure 2). It is off by default and resets after refresh. First-time HEIC previews can take longer. Paths and reports remain usable even when an image cannot be displayed.</p>
+<div class="post-figure">
+<img src="/img/gallery-organizer/duplicate-preview.jpg" alt="Gallery Organizer comparing a duplicate candidate and retained image">
+<div class="caption">Figure 2: Use image comparison alongside the retained location and sorting report. Screenshot from the repository.</div>
+</div>
+<p>Confirmed exact copies can be isolated; bursts, edits, and different-format exports still deserve inspection. Before JPEG repair, confirm <code>utc_offset</code>, <code>auto_from</code>, and <code>auto_through</code> in configuration, retaining original backups and repair reports. Leave unsupported dates for review.</p>
+<h2 id="use-the-interactive-tui-in-terminal">Use the interactive TUI in Terminal
+</h2><p>The TUI uses text prompts and key choices. From the project directory, launch without a folder argument:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_gallery_media.py <span class="s2">&#34;/your/photo/root/Incoming/Stage0/Batch A&#34;</span>
-</span></span><span class="line"><span class="cl">python3 organize_gallery_media.py <span class="s2">&#34;/your/photo/root/Incoming/Stage0/Batch A&#34;</span> --apply
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">python3 organize_leftover_media.py <span class="s2">&#34;/your/photo/root/Incoming/Stage1/Batch A&#34;</span>
-</span></span><span class="line"><span class="cl">python3 organize_leftover_media.py <span class="s2">&#34;/your/photo/root/Incoming/Stage1/Batch A&#34;</span> --apply
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_gallery_media.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Pass one puts confirmed photos and videos in <code>Gallery/Main/year/year-month/</code> and tries to keep a Live Photo still, its movie, and identified companion files together. Pass two inspects what remains in <code>Stage1</code>: screenshots and screen recordings go to <code>Screenshots</code>, saved or downloaded images to <code>OtherMedia</code>, and unresolved items to <code>NeedsRepair</code>. Camera media confirmed only on pass two goes to <code>SortedFromUnsorted</code>.</p>
-<p>For example, <code>IMG_0100.HEIC</code>, <code>IMG_0100.MOV</code>, and <code>IMG_0100.HEIC.xmp</code> may end up together under <code>Gallery/Main/2024/2024-06/</code>. An <code>.xmp</code> whose owner cannot be identified should stay available for review. Camera thumbnails such as <code>.thm</code> and preview clips such as <code>.lrv</code> can also be companion files, so keep unfamiliar sidecars until the relationship is clear.</p>
-<h2 id="configure-a-root-you-can-recognize">Configure a root you can recognize
-</h2><p>For a library on an external disk, start by changing <code>backup_root</code> to a dedicated folder on that disk and keep the child paths at their defaults. <code>gallery_root = Gallery</code> is relative to that root; <code>main_library_root = Main</code> is relative to Gallery. These settings form a hierarchy rather than three unrelated destinations.</p>
-<p>Put the test export in <code>Incoming/Stage0/Batch A</code> and select that batch, not the entire Stage0 parent. The configured root also bounds allowed source and destination paths. In <code>config.ini</code>, spaces do not need quotes; in Terminal, retain the quotes around folder arguments. Understand this structure before customizing category destinations.</p>
-<p>The Python packages in <code>requirements-api.txt</code> support the local website. They do not necessarily supply every external media-reading executable. If a scan identifies a missing tool, inspect <code>[tools]</code>: an empty setting searches the system, while an explicit setting should point to the executable itself. A directory containing a tool is not the executable path.</p>
-<h2 id="review-a-representative-trial-batch">Review a representative trial batch
-</h2><p>Choose ordinary photos, one Live Photo pair, a few screenshots, and an overlapping export copy. After Dry Run, check capture months, photo/video pairings, remaining screenshots, and which duplicate copy will be retained. Investigate a clearly wrong date before applying the plan.</p>
-<p>After pass one, preview pass two on the same batch under Stage1. The scripts are separate operations, not an automatic end-to-end pipeline. After applying, open sample photos and play a video in their destinations. Read why unresolved items were left aside. A clear classification matters more than an empty incoming folder.</p>
-<p>Treat JPEG date repair as a separate investigation. A copied old photo may have a recent filesystem date, but that does not justify inventing its capture time from a plausible filename. Confirm the time zone, eligible range, and months reserved for manual review. Keep the repair backups and reports. <code>NeedsRepair</code> is a place for further judgment, not a bin of disposable material.</p>
-<h2 id="handle-duplicates-and-doubtful-dates-separately">Handle duplicates and doubtful dates separately
-</h2><p>The main pass sets confirmed duplicate copies aside. An optional tool checks duplicates already in the main library. <strong>Byte-identical copies</strong> are different from similar-looking photos: bursts, edited versions, and exports in different formats can all be worth keeping. Browser image comparison is off by default; enable it when visual review helps. First-time HEIC previews can take longer.</p>
-<div class="post-figure">
-<img src="/img/gallery-organizer/duplicate-preview.jpg" alt="Gallery Organizer showing duplicate candidates side by side">
-<div class="caption">Figure 2: Compare the images, then check paths and the sorting report before deciding.</div>
+</div><p>At the folder prompt, drag <code>Stage0/Batch A</code> from Finder into Terminal and press Return, or type its full path. Invalid paths and sources outside the configured boundary prompt you to try again.</p>
+<p>At mode selection, press Return for the default <strong>DRY RUN</strong> and read the report. <strong>Pressing <code>A</code> at mode selection starts actual moves</strong>, so preview first. After the preview, choose:</p>
+<div class="table-wrapper"><table>
+	<thead>
+			<tr>
+					<th>Key after the preview</th>
+					<th>Action</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>A</code></td>
+					<td>Rescan the same directory and execute APPLY</td>
+			</tr>
+			<tr>
+					<td><code>Q</code></td>
+					<td>Exit</td>
+			</tr>
+			<tr>
+					<td>Another key</td>
+					<td>Return to the start and enter a folder again</td>
+			</tr>
+	</tbody>
+</table></div>
+<p>After applying, wait for the report and inspect the result. Returning to the start does not undo completed moves. Use <code>Ctrl+C</code> to leave the folder-entry prompt; the table’s <code>Q</code> applies to the post-preview menu.</p>
+<p>After pass one succeeds, start the second TUI separately:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 organize_leftover_media.py
+</span></span></code></pre></td></tr></table>
 </div>
-<p>JPEG date repair is another separate operation. Confirm its time-zone offset and eligible date range in <code>config.ini</code> before allowing writes, and keep its backup and report. Only one browser or CLI job can apply changes at once. To check one photo’s capture fields first, use <a class="link" href="/p/view-media-info/" >View Media Info</a>. The <a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer#readme"  target="_blank" rel="noopener"
-    >project README</a> documents every path setting and optional tool.</p>
+</div><p>Supply the same batch under Stage1. Press Return to preview, inspect the classification, then <code>A</code> to rescan and apply; <code>Q</code> exits the preview-results menu. This entry does not automatically choose the batch left by pass one. Confirm its location in Finder first.</p>
+<h2 id="check-the-result-before-finishing">Check the result before finishing
+</h2><p><strong>Local job history</strong> reopens browser results and survives service restarts. Distinguish a preview from the actual execution report. For an interrupted task, inspect reports and real file locations before rerunning. There is no whole-batch Undo or automatic resume.</p>
+<p>The browser and terminal share execution protection: only one job can modify files at a time. Wait for an active job to finish. After browser work is complete, stop its service with <code>Ctrl+C</code> in the terminal that started it.</p>
+<p>Check months in Main, verify Live Photo pairing, and inspect NeedsRepair and duplicate destinations. Keep <code>.aae</code> and <code>.xmp</code> companions until their associations are understood; <code>.thm</code> and <code>.lrv</code> can also belong with camera footage. For an individual file’s capture fields, use <a class="link" href="/p/view-media-info/" >View Media Info</a>. The <a class="link" href="https://github.com/Jingyuan-Zheng/gallery-organizer#readme"  target="_blank" rel="noopener"
+    >project README</a> explains the complete configuration.</p>
 
 </section>
 
@@ -965,7 +997,7 @@
         <svg class="lucide lucide-clock-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h4"/></svg>
 
         <span>
-            Last updated on 22/Oct/2026 00:00 UTC
+            Last updated on 26/Oct/2026 00:00 UTC
         </span>
     </section></footer>
 
@@ -1052,7 +1084,7 @@
     <a href="/p/display-layout/">
         
         <div class="article-image">
-            <img alt="Featured image of post Move a Second Mac Display Above, Below, Left, or Right with Display Layout" loading="lazy" src="/img/display-layout/featured.png">
+            <img alt="Featured image of post Move a Second Mac Display Above, Below, Left, or Right with Display Layout" loading="lazy" src="/img/display-layout/screenshot.png">
 
         </div>
         
@@ -1068,7 +1100,7 @@
     <a href="/p/compare-files-viewer/">
         
         <div class="article-image">
-            <img alt="Featured image of post Review File Versions on Mac with Compare Files Viewer" loading="lazy" src="/img/compare-files-viewer/featured.png">
+            <img alt="Featured image of post Review File Versions on Mac with Compare Files Viewer" loading="lazy" src="/img/compare-files-viewer/screenshot.png">
 
         </div>
         

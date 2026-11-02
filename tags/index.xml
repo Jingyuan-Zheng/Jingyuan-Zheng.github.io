@@ -6,7 +6,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
         <copyright>Jingyuan Zheng</copyright>
-        <lastBuildDate>Thu, 22 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 26 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jingyuan-zheng.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
             <title>Finder Quick Actions</title>
             <link>https://jingyuan-zheng.github.io/tags/finder-quick-actions/</link>
             <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
@@ -31,6 +31,12 @@
             <guid>https://jingyuan-zheng.github.io/tags/png/</guid>
             <description></description>
         </item><item>
+            <title>Dictionary</title>
+            <link>https://jingyuan-zheng.github.io/tags/dictionary/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/dictionary/</guid>
+            <description></description>
+        </item><item>
             <title>Duplicates</title>
             <link>https://jingyuan-zheng.github.io/tags/duplicates/</link>
             <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
@@ -41,6 +47,24 @@
             <link>https://jingyuan-zheng.github.io/tags/live-photos/</link>
             <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/live-photos/</guid>
+            <description></description>
+        </item><item>
+            <title>Maltese</title>
+            <link>https://jingyuan-zheng.github.io/tags/maltese/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/maltese/</guid>
+            <description></description>
+        </item><item>
+            <title>MDX</title>
+            <link>https://jingyuan-zheng.github.io/tags/mdx/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/mdx/</guid>
+            <description></description>
+        </item><item>
+            <title>Offline Lookup</title>
+            <link>https://jingyuan-zheng.github.io/tags/offline-lookup/</link>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+            <guid>https://jingyuan-zheng.github.io/tags/offline-lookup/</guid>
             <description></description>
         </item><item>
             <title>Photo Library</title>
@@ -251,12 +275,6 @@
             <link>https://jingyuan-zheng.github.io/tags/mdict/</link>
             <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/mdict/</guid>
-            <description></description>
-        </item><item>
-            <title>MDX</title>
-            <link>https://jingyuan-zheng.github.io/tags/mdx/</link>
-            <pubDate>Sat, 08 Aug 2026 14:00:00 +0200</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/mdx/</guid>
             <description></description>
         </item><item>
             <title>Assets.car</title>
@@ -557,18 +575,6 @@
             <link>https://jingyuan-zheng.github.io/tags/bash/</link>
             <pubDate>Tue, 12 May 2026 20:10:17 +0800</pubDate>
             <guid>https://jingyuan-zheng.github.io/tags/bash/</guid>
-            <description></description>
-        </item><item>
-            <title>Dictionary</title>
-            <link>https://jingyuan-zheng.github.io/tags/dictionary/</link>
-            <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/dictionary/</guid>
-            <description></description>
-        </item><item>
-            <title>Maltese</title>
-            <link>https://jingyuan-zheng.github.io/tags/maltese/</link>
-            <pubDate>Fri, 17 Apr 2026 18:30:00 +0800</pubDate>
-            <guid>https://jingyuan-zheng.github.io/tags/maltese/</guid>
             <description></description>
         </item><item>
             <title>AI Translation</title>

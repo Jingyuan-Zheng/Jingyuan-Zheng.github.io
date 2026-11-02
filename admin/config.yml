@@ -655,6 +655,10 @@ asset_collections:
     label: "friend-links-application-system-launch"
     media_folder: /static/img/friend-links-application-system-launch
     public_folder: /img/friend-links-application-system-launch
+  - name: img_gabra_mdx_cross_platform_update
+    label: "gabra-mdx-cross-platform-update"
+    media_folder: /static/img/gabra-mdx-cross-platform-update
+    public_folder: /img/gabra-mdx-cross-platform-update
   - name: img_gallery
     label: "gallery"
     media_folder: /static/img/gallery

@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -63,7 +63,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/categories/macos/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/macos/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -101,7 +101,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/categories/open-source/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/pdf/</loc>
@@ -143,7 +143,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -180,16 +180,81 @@
       />
   </url>
   <url>
+    <loc>https://jingyuan-zheng.github.io/tags/dictionary/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/dictionary/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/dictionary/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/dictionary/"
+      />
+  </url>
+  <url>
     <loc>https://jingyuan-zheng.github.io/tags/duplicates/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/gabra-mdx-cross-platform-update/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/p/gabra-mdx-cross-platform-update/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/p/gabra-mdx-cross-platform-update/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/p/gabra-mdx-cross-platform-update/"
+      />
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/live-photos/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/maltese/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/mdx/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/tags/mdx/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/tags/mdx/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/tags/mdx/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/tags/offline-lookup/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/p/gallery-organizer/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -208,7 +273,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/photo-library/</loc>
-    <lastmod>2026-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/exiftool/</loc>
@@ -797,25 +862,6 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/tags/mdict/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/mdx/</loc>
-    <lastmod>2026-08-08T14:00:00+02:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/tags/mdx/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/tags/mdx/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/tags/mdx/"
       />
   </url>
   <url>
@@ -1738,29 +1784,6 @@
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/p/dmg-maker-create-beautiful-macos-installers-automatically/"
       />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/dictionary/</loc>
-    <lastmod>2026-04-17T18:30:00+08:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/tags/dictionary/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/tags/dictionary/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/tags/dictionary/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/tags/maltese/</loc>
-    <lastmod>2026-04-17T18:30:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/p/introducing-%C4%A1abra-a-native-maltese-dictionary-for-macos/</loc>

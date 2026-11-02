@@ -874,7 +874,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>把识别结果放进去以后，先看有没有重复的数学环境：如果文本本来带着 <code>\[ ... \]</code> 或 <code>align*</code>，就不要再机械地套进另一层独立公式。很多“无法编译”其实来自外层标记重复，而不是公式识别本身。</p>
+</div><p>把识别结果放进去以后，先看有没有重复的数学环境：如果文本本来带着 <code>\[ ... \]</code> 或 <code>align*</code>，就不要再机械地套进另一层独立公式。很多“无法编译”来自外层标记重复，与公式识别本身无关。</p>
 <p>出现未定义命令时，看错误提示指向哪个命令，再核对它来自宏包、拼写还是识别错误。不要为了让编译继续就直接删除符号。先让最小文档正常显示，再回到自己的笔记或论文模板，问题通常更容易定位。</p>
 <h2 id="一页里有很多公式时按逻辑拆开处理">一页里有很多公式时，按逻辑拆开处理
 </h2><p>双栏论文、矩阵和带推导过程的长公式，适合按完整表达式分块。裁得太紧可能切掉积分上下限，裁得太大又会把旁边的文字混进来。比较稳妥的范围是保留一个完整公式及必要标点，让每次结果都能和原图一一对应。</p>
@@ -882,7 +882,7 @@
 <p>整理长期笔记时，最好保留论文名、页码和公式截图的来源。以后想修正一个下标或引用原推导，不必重新寻找整篇文献。识别工具节省的是手工录入时间，保留来源则让这份可编辑文本以后仍然可追溯。</p>
 <h2 id="检查数学含义而不只是外观">检查数学含义，而不只是外观
 </h2><p>负号、不等号、下标、希腊字母、括号与矩阵维度，都是容易出现“小改动、大影响”的地方。即使结果看起来很像原文，也要检查关键符号。</p>
-<p>表格则需要逐行逐列对照。数字识别正确，却落到另一列，同样会改变结论。用于作业、论文或计算之前，最好把它当作辅助录入，而不是最终答案。</p>
+<p>表格则需要逐行逐列对照。数字识别正确，却落到另一列，同样会改变结论。用于作业、论文或计算之前，最好用它辅助录入，不要把结果当作最终答案。</p>
 <p>中文 README 明确提到，主要适合清晰印刷体、中英文混合公式和较简单的表格。手写公式和复杂表格尤其值得逐项核对。</p>
 <h2 id="本地推理与-latex-环境">本地推理与 LaTeX 环境
 </h2><p>上游项目描述的是 CPU 本地推理，不需要为每张截图调用在线识别服务。不过，安装时仍可能需要获取应用、模型或依赖，不能把“离线推理”理解成整个安装过程不涉及下载。</p>
@@ -1043,7 +1043,7 @@
     <a href="/zh/p/display-layout/">
         
         <div class="article-image">
-            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/featured.png">
+            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/screenshot.png">
 
         </div>
         
@@ -1059,7 +1059,7 @@
     <a href="/zh/p/compare-files-viewer/">
         
         <div class="article-image">
-            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/featured.png">
+            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/screenshot.png">
 
         </div>
         

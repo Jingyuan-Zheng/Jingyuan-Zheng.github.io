@@ -84,11 +84,11 @@
 <meta property='og:description' content="介绍浏览器用户脚本如何导出已加载对话、处理公式与代码，并说明 Typora 检查方法和网页结构变化造成的兼容限制。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/chatgpt-to-markdown-userscript/'>
 <meta property='og:site_name' content='小景'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Markdown' /><meta property='article:tag' content='用户脚本' /><meta property='article:tag' content='ChatGPT' /><meta property='article:tag' content='Typora' /><meta property='article:published_time' content='2025-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/featured.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Markdown' /><meta property='article:tag' content='用户脚本' /><meta property='article:tag' content='ChatGPT' /><meta property='article:tag' content='Typora' /><meta property='article:published_time' content='2025-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/screenshot.png' />
 <meta name="twitter:site" content="@AndersJheng">
     <meta name="twitter:creator" content="@AndersJheng"><meta name="twitter:title" content="把 ChatGPT 对话导出为 Markdown：保留代码、公式，放进 Typora 整理">
 <meta name="twitter:description" content="介绍浏览器用户脚本如何导出已加载对话、处理公式与代码，并说明 Typora 检查方法和网页结构变化造成的兼容限制。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/featured.png' />
+    <meta name="twitter:image" content='https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/screenshot.png' />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.png?v=2" />
 <script>
@@ -218,7 +218,7 @@
       "datePublished": "2025-09-16T00:00:00+00:00",
       "description": "介绍浏览器用户脚本如何导出已加载对话、处理公式与代码，并说明 Typora 检查方法和网页结构变化造成的兼容限制。",
       "headline": "把 ChatGPT 对话导出为 Markdown：保留代码、公式，放进 Typora 整理",
-      "image": "https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/featured.png",
+      "image": "https://jingyuan-zheng.github.io/img/chatgpt-to-markdown-userscript/screenshot.png",
       "inLanguage": "zh",
       "isPartOf": {
         "@id": "https://jingyuan-zheng.github.io/#website"
@@ -709,7 +709,7 @@
     <header class="article-header">
     <div class="article-image">
         <a href="/zh/p/chatgpt-to-markdown-userscript/">
-            <img alt="Featured image of post 把 ChatGPT 对话导出为 Markdown：保留代码、公式，放进 Typora 整理" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/chatgpt-to-markdown-userscript/featured.png">
+            <img alt="Featured image of post 把 ChatGPT 对话导出为 Markdown：保留代码、公式，放进 Typora 整理" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/img/chatgpt-to-markdown-userscript/screenshot.png">
         </a>
     </div>
     
@@ -846,8 +846,8 @@
 <p>下载文件名为 <code>chat-export.md</code>。用 Typora 或其他 Markdown 编辑器打开，再改成容易识别的名称，例如带主题和日期的文件名。先数一数问答轮次，再检查代码块是否闭合、公式是否显示正常；这些比预览看起来整齐更重要。</p>
 <p>代码按照选中的页面元素顺序配对消息。布局变化、缺失消息或 DOM 结构调整，可能影响实际导出范围，而不只是字体样式。</p>
 <h2 id="公式和代码如何转换">公式和代码如何转换
-</h2><p>脚本会把页面中的标题、列表、链接、代码块和公式改写成 Markdown。对公式，它尝试保留原本的 LaTeX 表达，而不是把屏幕上看到的符号拍成一张图片。</p>
-<p>第一次可以用包含一个代码块、一个行内公式、一个独立公式和短列表的小对话检查。Markdown 源码和渲染结果都看一遍，更容易发现问题。</p>
+</h2><p>脚本会把页面中的标题和列表改写成 Markdown，也会转换链接、代码块和公式。对公式，它尝试保留原本的 LaTeX 表达，不把屏幕上看到的符号拍成一张图片。</p>
+<p>第一次可以用一个小对话检查，其中包含一个代码块、一个行内公式、一个独立公式和短列表。Markdown 源码和渲染结果都看一遍，更容易发现问题。</p>
 <p>独立公式应保留类似结构：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -867,7 +867,7 @@
 <p>看到 <strong>No conversation content found</strong> 时，先确认对话已加载、脚本运行在目标页面，再检查选择器或向项目反馈。如果是选择器失效，重新安装同一份未修改的脚本不会自动修复。</p>
 <p>如果按钮还在、导出的文件却是空的，先在脚本页面查看近期更新和反馈；网页结构变动后，脚本可能需要更新。</p>
 <h2 id="脚本装好以后先检查它有没有在当前页面启用">脚本装好以后，先检查它有没有在当前页面启用
-</h2><p>用户脚本要由浏览器里的脚本管理器运行，不能像普通网页链接一样点开就自动生效。通过 Greasy Fork 安装时，应看到管理器给出的脚本名称、匹配地址和安装确认；如果只是显示一页 JavaScript 文字，先检查管理器是否已安装并启用，而不是把代码当作浏览器扩展文件夹导入。</p>
+</h2><p>用户脚本要由浏览器里的脚本管理器运行，不能像普通网页链接一样点开就自动生效。通过 Greasy Fork 安装时，应看到管理器给出的脚本名称、匹配地址和安装确认；如果只是显示一页 JavaScript 文字，先检查管理器是否已安装并启用，不要把代码当作浏览器扩展文件夹导入。</p>
 <p>安装后重新加载对话页面，再打开管理器菜单，确认这份脚本在当前站点处于启用状态。同一功能如果已经装过另一份用户脚本或 Chrome 扩展，可以先只保留一个入口做检查，避免出现两个同名按钮，却不知道实际运行的是哪一版。</p>
 <p>一段长对话里，先滚动到需要的部分，让消息真正显示出来，再导出。尤其是回到很久以前的对话时，不要只看到最后一条回答就认为此前内容已经全部加载。导出完成后，用最早和最后两轮问答对照首尾，再抽查中间一段，比只看文件大小更容易发现遗漏。</p>
 <h2 id="用一个小样本检查代码公式和链接">用一个小样本检查代码、公式和链接
@@ -1033,6 +1033,22 @@
             
                 
 <article class="has-image">
+    <a href="/zh/p/gabra-mdx-cross-platform-update/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post Ġabra 马耳他语词典更新：新增 MDX，手机和 Windows 也能离线查词" loading="lazy" src="/img/gabra-mdx-cross-platform-update/macos-dictionary.png">
+
+        </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ġabra 马耳他语词典更新：新增 MDX，手机和 Windows 也能离线查词</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
     <a href="/zh/p/view-media-info/">
         
         <div class="article-image">
@@ -1052,29 +1068,13 @@
     <a href="/zh/p/display-layout/">
         
         <div class="article-image">
-            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/featured.png">
+            <img alt="Featured image of post Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏" loading="lazy" src="/img/display-layout/screenshot.png">
 
         </div>
         
 
         <div class="article-details">
             <h2 class="article-title">Mac 双屏位置快速切换：用 Display Layout 自动居中排列副屏</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/zh/p/compare-files-viewer/">
-        
-        <div class="article-image">
-            <img alt="Featured image of post Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据" loading="lazy" src="/img/compare-files-viewer/featured.png">
-
-        </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Mac 多个文件版本怎么判断？用 Compare Files Viewer 查看比较结果与依据</h2>
         </div>
     </a>
 </article>
