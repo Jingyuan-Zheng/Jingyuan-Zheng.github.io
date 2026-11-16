@@ -80,7 +80,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.c782c315587386f6a7a1b506298c4870af83a84e974155bdd6dc9dcca9ed2900.css"><meta property='og:title' content="Ġabra 马耳他语词典更新：新增 MDX，手机和 Windows 也能离线查词">
+<link rel="stylesheet" href="/scss/style.min.e7bb0feb8a8df7755e66613cd39364dd33694c7165bff038e0938ffa05e4420e.css"><meta property='og:title' content="Ġabra 马耳他语词典更新：新增 MDX，手机和 Windows 也能离线查词">
 <meta property='og:description' content="Ġabra 新增跨平台 MDX 版本：介绍手机与电脑的导入方法、MDX 和 macOS 原生版的检索区别，以及新的构建入口。">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/zh/p/gabra-mdx-cross-platform-update/'>
 <meta property='og:site_name' content='小景'>
@@ -834,25 +834,25 @@
 </h2><p>发布页仍使用 <a class="link" href="https://github.com/Jingyuan-Zheng/gabra-maltese-dictionary/releases/tag/v1.0"  target="_blank" rel="noopener"
     >v1.0</a> 这个版本号，现在同时提供 MDX ZIP 和 macOS DMG。两个下载包的用途不同，检索范围也有区别。</p>
 <div class="table-wrapper"><table>
-	<thead>
-			<tr>
-					<th>版本</th>
-					<th>内容与检索范围</th>
-					<th>使用方式</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>MDX + CSS</td>
-					<td>19,831 个可检索主词条，包含 21,083 条源记录</td>
-					<td>导入支持 MDX 的词典阅读器</td>
-			</tr>
-			<tr>
-					<td>macOS <code>.dictionary</code></td>
-					<td>21,083 个条目，约 450 万个可检索词形</td>
-					<td>安装到系统“词典”，配合支持的查询入口使用</td>
-			</tr>
-	</tbody>
+  <thead>
+      <tr>
+          <th>版本</th>
+          <th>内容与检索范围</th>
+          <th>使用方式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>MDX + CSS</td>
+          <td>19,831 个可检索主词条，包含 21,083 条源记录</td>
+          <td>导入支持 MDX 的词典阅读器</td>
+      </tr>
+      <tr>
+          <td>macOS <code>.dictionary</code></td>
+          <td>21,083 个条目，约 450 万个可检索词形</td>
+          <td>安装到系统“词典”，配合支持的查询入口使用</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>MDX 的主词条数较少，是因为同一词头下可以收录多条记录。项目的<a class="link" href="https://github.com/Jingyuan-Zheng/gabra-maltese-dictionary/blob/main/docs/mdx-validation.json"  target="_blank" rel="noopener"
     >验证记录</a>确认保留了 21,083 条源记录，不能只看主词条数量就判断内容少了一批。</p>
@@ -883,41 +883,41 @@
 </div><p>把两个文件放在同一文件夹。<code>Gabra.mdx</code> 是词库，<code>Gabra.css</code> 控制词条样式。只传 MDX 可能让阅读器使用自己的默认样式，因此复制或同步词库时，也把 CSS 一起带上。</p>
 <p>MDX 需要另装兼容阅读器。仓库提供的是词典文件，下载 ZIP 不会同时安装这些 App。项目 README 列出的选择包括：</p>
 <div class="table-wrapper"><table>
-	<thead>
-			<tr>
-					<th>平台</th>
-					<th>README 列出的阅读器</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>iPhone / iPad</td>
-					<td><a class="link" href="https://apps.apple.com/app/id6759032057"  target="_blank" rel="noopener"
+  <thead>
+      <tr>
+          <th>平台</th>
+          <th>README 列出的阅读器</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>iPhone / iPad</td>
+          <td><a class="link" href="https://apps.apple.com/app/id6759032057"  target="_blank" rel="noopener"
     >OpenMDict</a> 或 <a class="link" href="https://apps.apple.com/app/id389083586"  target="_blank" rel="noopener"
     >MDict</a></td>
-			</tr>
-			<tr>
-					<td>Android</td>
-					<td><a class="link" href="https://github.com/Jimex/DictTango-Android/releases"  target="_blank" rel="noopener"
+      </tr>
+      <tr>
+          <td>Android</td>
+          <td><a class="link" href="https://github.com/Jimex/DictTango-Android/releases"  target="_blank" rel="noopener"
     >DictTango</a> 或 <a class="link" href="https://www.mdict.cn/wp/?page_id=5227&amp;lang=en"  target="_blank" rel="noopener"
     >MDict</a></td>
-			</tr>
-			<tr>
-					<td>Windows</td>
-					<td><a class="link" href="https://github.com/xiaoyifang/goldendict-ng/releases/latest"  target="_blank" rel="noopener"
+      </tr>
+      <tr>
+          <td>Windows</td>
+          <td><a class="link" href="https://github.com/xiaoyifang/goldendict-ng/releases/latest"  target="_blank" rel="noopener"
     >GoldenDict-ng</a> 或 <a class="link" href="https://github.com/Jimex/DictTango-Windows/releases"  target="_blank" rel="noopener"
     >DictTango Windows</a></td>
-			</tr>
-			<tr>
-					<td>Linux</td>
-					<td><a class="link" href="https://xiaoyifang.github.io/goldendict-ng/install/#linux"  target="_blank" rel="noopener"
+      </tr>
+      <tr>
+          <td>Linux</td>
+          <td><a class="link" href="https://xiaoyifang.github.io/goldendict-ng/install/#linux"  target="_blank" rel="noopener"
     >GoldenDict-ng</a></td>
-			</tr>
-			<tr>
-					<td>macOS 上使用 MDX</td>
-					<td>GoldenDict-ng 或 MDict；系统“词典”使用上面的原生版</td>
-			</tr>
-	</tbody>
+      </tr>
+      <tr>
+          <td>macOS 上使用 MDX</td>
+          <td>GoldenDict-ng 或 MDict；系统“词典”使用上面的原生版</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>打开阅读器，用它的“导入词典”或“添加词典目录”功能选择文件。手机和平板要把两个文件传到阅读器能访问的词典存储位置，不能只让它们留在另一个 App 无权访问的位置。各阅读器的入口不同，以所选 App 的操作方式为准。</p>
 <p>导入完成后，先查询一个主词条，检查释义和样式是否正常。MDX 词条可以包含已有的词性、发音与词根；具体字段取决于原记录。样式表可跟随阅读器的浅色或深色主题，需要自定义外观时可以编辑 <code>Gabra.css</code>。不同阅读器的显示可能有差异，先用几条词目确认效果。</p>
@@ -1153,10 +1153,6 @@
                 </p>
             </div>
             <div class="waline-comments-stats" aria-label="文章互动统计">
-                <span title="浏览量">
-                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
-                    <span class="waline-pageview-count" data-path="/zh/p/gabra-mdx-cross-platform-update/">—</span>
-                </span>
                 <span title="评论数">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -1174,7 +1170,7 @@
         <template id="waline-rss-icon-template"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span></template>
     </section>
     <script type="module">
-        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+        import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
         import { resolveWalineServerURL } from "\/js\/waline-server.min.1f23abc88b441f09ec9b43fc112d2e8dc62718ff7c22b2556f3812d304f9a111.js";
 
         const serverURL = await resolveWalineServerURL({
@@ -1827,12 +1823,7 @@
             enhanceWaline();
         }
 
-        pageviewCount({
-            serverURL,
-            path: "/zh/p/gabra-mdx-cross-platform-update/",
-            selector: ".waline-pageview-count",
-            update: false,
-        });
+        
     </script>
 
     
@@ -1851,44 +1842,7 @@
         <span aria-hidden="true"> · </span>
         <a href="/zh/sitemap/">网站地图</a>
         <span aria-hidden="true"> · </span>
-        <a href="/zh/dashboard/">仪表盘</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
-            <script type="module">
-                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
-                import { resolveWalineServerURL } from "\/js\/waline-server.min.1f23abc88b441f09ec9b43fc112d2e8dc62718ff7c22b2556f3812d304f9a111.js";
-
-                const serverURL = await resolveWalineServerURL({
-                    primaryURL: "https://comments.zjy.is-a.dev",
-                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
-                    timeoutMs:  2500 ,
-                });
-                const lang = "zh-CN";
-
-                pageviewCount({
-                    serverURL,
-                    lang,
-                    selector: ".waline-pageview-tracker",
-                });
-
-                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        path: "/__site_total__/",
-                        type: "time",
-                        action: "inc",
-                    }),
-                })
-                    .then((response) => response.json())
-                    .then((payload) => {
-                        const count = payload?.data?.[0]?.time;
-                        const element = document.querySelector(".waline-site-pageview-count");
-                        if (!element || typeof count !== "number") return;
-                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
-                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
-                        element.textContent = `${label} ${formatted}`;
-                    })
-                    .catch(() => {});
-            </script>
+        <a href="/zh/dashboard/">仪表盘</a>
         <br>
         <span>
             由

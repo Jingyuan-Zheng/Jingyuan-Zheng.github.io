@@ -80,7 +80,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.c782c315587386f6a7a1b506298c4870af83a84e974155bdd6dc9dcca9ed2900.css"><meta property='og:title' content="Backlinks and the New Online Application System">
+<link rel="stylesheet" href="/scss/style.min.e7bb0feb8a8df7755e66613cd39364dd33694c7165bff038e0938ffa05e4420e.css"><meta property='og:title' content="Backlinks and the New Online Application System">
 <meta property='og:description' content="The site now has a dedicated backlinks section and a bilingual online application system. This post explains how the feature works, what to prepare, and where to apply.">
 <meta property='og:url' content='https://jingyuan-zheng.github.io/p/friend-links-application-system-launch/'>
 <meta property='og:site_name' content='Jingyuan'>
@@ -1025,10 +1025,6 @@
                 </p>
             </div>
             <div class="waline-comments-stats" aria-label="Article engagement statistics">
-                <span title="Page views">
-                    <span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/eye.svg')" aria-hidden="true"></span>
-                    <span class="waline-pageview-count" data-path="/p/friend-links-application-system-launch/">—</span>
-                </span>
                 <span title="Comments">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -1046,7 +1042,7 @@
         <template id="waline-rss-icon-template"><span class="hm-icon hm-icon--lucide" style="--hm-icon-url: url('https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rss.svg')" aria-hidden="true"></span></template>
     </section>
     <script type="module">
-        import { init, pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+        import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
         import { resolveWalineServerURL } from "\/js\/waline-server.min.1f23abc88b441f09ec9b43fc112d2e8dc62718ff7c22b2556f3812d304f9a111.js";
 
         const serverURL = await resolveWalineServerURL({
@@ -1697,12 +1693,7 @@
             enhanceWaline();
         }
 
-        pageviewCount({
-            serverURL,
-            path: "/p/friend-links-application-system-launch/",
-            selector: ".waline-pageview-count",
-            update: false,
-        });
+        
     </script>
 
     
@@ -1721,44 +1712,7 @@
         <span aria-hidden="true"> · </span>
         <a href="/en/sitemap/">Sitemap</a>
         <span aria-hidden="true"> · </span>
-        <a href="/dashboard/">Dashboard</a><span class="waline-pageview-tracker" hidden aria-hidden="true"></span>
-            <script type="module">
-                import { pageviewCount } from "https://unpkg.com/@waline/client@v3/dist/pageview.js";
-                import { resolveWalineServerURL } from "\/js\/waline-server.min.1f23abc88b441f09ec9b43fc112d2e8dc62718ff7c22b2556f3812d304f9a111.js";
-
-                const serverURL = await resolveWalineServerURL({
-                    primaryURL: "https://comments.zjy.is-a.dev",
-                    fallbackURL: "https://zjy-blog-waline-comments.vercel.app",
-                    timeoutMs:  2500 ,
-                });
-                const lang = "en-US";
-
-                pageviewCount({
-                    serverURL,
-                    lang,
-                    selector: ".waline-pageview-tracker",
-                });
-
-                fetch(`${serverURL}/api/article?lang=${encodeURIComponent(lang)}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        path: "/__site_total__/",
-                        type: "time",
-                        action: "inc",
-                    }),
-                })
-                    .then((response) => response.json())
-                    .then((payload) => {
-                        const count = payload?.data?.[0]?.time;
-                        const element = document.querySelector(".waline-site-pageview-count");
-                        if (!element || typeof count !== "number") return;
-                        const formatted = new Intl.NumberFormat(document.documentElement.lang || undefined).format(count);
-                        const label = document.documentElement.lang.startsWith("zh") ? "全站浏览：" : "Site views:";
-                        element.textContent = `${label} ${formatted}`;
-                    })
-                    .catch(() => {});
-            </script>
+        <a href="/dashboard/">Dashboard</a>
         <br>
         <span>
             Powered by
