@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
     <xhtml:link
       rel="alternate"
       hreflang="en-US"
@@ -37,6 +37,41 @@
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/categories/"
       />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/french-mqf1-notes/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-06/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-Hans"
+      href="https://jingyuan-zheng.github.io/zh/post/"
+      />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://jingyuan-zheng.github.io/post/"
+      />
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-02/</loc>
+    <lastmod>2026-10-14T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-01/</loc>
+    <lastmod>2026-10-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/p/pdf-page-extractor/</loc>
@@ -139,25 +174,6 @@
       rel="alternate"
       hreflang="x-default"
       href="https://jingyuan-zheng.github.io/tags/png/"
-      />
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-US"
-      href="https://jingyuan-zheng.github.io/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-Hans"
-      href="https://jingyuan-zheng.github.io/zh/post/"
-      />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://jingyuan-zheng.github.io/post/"
       />
   </url>
   <url>

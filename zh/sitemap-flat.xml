@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jingyuan-zheng.github.io/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/categories/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/categories/french-mqf1-notes/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-06/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/post/</loc>
+    <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-02/</loc>
+    <lastmod>2026-10-14T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://jingyuan-zheng.github.io/p/french-mqf1-lecture-01/</loc>
+    <lastmod>2026-10-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/p/pdf-page-extractor/</loc>
@@ -34,10 +54,6 @@
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/png/</loc>
     <lastmod>2026-10-22T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://jingyuan-zheng.github.io/post/</loc>
-    <lastmod>2026-11-02T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://jingyuan-zheng.github.io/tags/</loc>
